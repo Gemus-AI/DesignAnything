@@ -1,0 +1,622 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-photo-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "hero-square",
+      "label": "Square whole-watch hero",
+      "description": "One square frontal hero photograph showing the complete case, crown and four lugs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "hero-portrait",
+      "label": "Portrait whole-watch hero",
+      "description": "One portrait crop of the same frontal hero exposure showing the complete case, crown and four lugs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dial-macro",
+      "label": "Dial and hand assembly macro",
+      "description": "One dial macro photograph showing the double 12 o'clock baton, central hand assembly and adjacent minute ticks.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-macro",
+      "label": "Crown and steel finish macro",
+      "description": "One material macro photograph showing the crown, polished bezel, brushed flank and upper crown-side lug.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tabletop-scene",
+      "label": "Watch and strap tabletop scene",
+      "description": "One tabletop scene photograph showing the complete watch, loosely curved charcoal leather strap and visible steel pin buckle.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "editorial-page",
+      "label": "A4 watch editorial page",
+      "description": "One A4 editorial page with the square hero, dial macro and material macro in sequence, the series name, headline and three fixed captions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "dial-inscription",
+      "kind": "text-verbatim",
+      "text": "MANUAL",
+      "scope": {
+        "slots": [
+          "hero-square",
+          "hero-portrait",
+          "tabletop-scene"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "series-name",
+      "kind": "text-verbatim",
+      "text": "INDEX 38",
+      "scope": {
+        "slots": [
+          "editorial-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "editorial-headline",
+      "kind": "text-verbatim",
+      "text": "Light reveals the finish",
+      "scope": {
+        "slots": [
+          "editorial-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "hero-caption",
+      "kind": "text-verbatim",
+      "text": "38 mm steel case",
+      "scope": {
+        "slots": [
+          "editorial-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "dial-caption",
+      "kind": "text-verbatim",
+      "text": "Hands set to 10:10",
+      "scope": {
+        "slots": [
+          "editorial-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "material-caption",
+      "kind": "text-verbatim",
+      "text": "Polished bezel, brushed flank",
+      "scope": {
+        "slots": [
+          "editorial-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "INDEX 38",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-watch-photography",
+      "slots": [
+        "hero-square",
+        "hero-portrait",
+        "dial-macro",
+        "material-macro",
+        "tabletop-scene"
+      ],
+      "items": [
+        {
+          "item": "All photographs depict the same watch construction, with matching dial details, case geometry and finishes wherever those features are visible.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The sweep, light direction, color rendering and controlled steel reflections form one photographic series despite changes in crop and viewpoint.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Visible dial markings and transitions between polished and brushed steel remain legible under the required lighting treatment.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "INDEX 38",
+    "carryThrough": {
+      "none": "The editorial page is the final document, and no later deliverable must repeat facts extracted from it."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Art Design",
+    "slots": [
+      "hero-square",
+      "hero-portrait",
+      "dial-macro",
+      "material-macro",
+      "tabletop-scene"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge watch redesign, internal movement engineering, or exact physical dimensions and capture settings that cannot be established from the delivered imagery."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "hero-square",
+        "hero-portrait",
+        "dial-macro",
+        "material-macro",
+        "tabletop-scene"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-hero-square",
+      "requirementId": "R-format-hero-square",
+      "method": "artifact-property",
+      "targetSlots": [
+        "hero-square"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-hero-portrait",
+      "requirementId": "R-format-hero-portrait",
+      "method": "artifact-property",
+      "targetSlots": [
+        "hero-portrait"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dial-macro",
+      "requirementId": "R-format-dial-macro",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dial-macro"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-macro",
+      "requirementId": "R-format-material-macro",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-macro"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tabletop-scene",
+      "requirementId": "R-format-tabletop-scene",
+      "method": "artifact-property",
+      "targetSlots": [
+        "tabletop-scene"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-editorial-page",
+      "requirementId": "R-format-editorial-page",
+      "method": "artifact-property",
+      "targetSlots": [
+        "editorial-page"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "hero-exposure-and-framing",
+      "requirementId": "R-hero-exposure-and-framing",
+      "method": "visual",
+      "targetSlots": [
+        "hero-square",
+        "hero-portrait"
+      ],
+      "criteria": "Align the shared watch area across the square and portrait crops: perspective, hand positions, reflections and surface details must match one underlying exposure. Cropping and uniform scaling may differ. In each image, the case-and-lugs vertical extent must occupy at least 80% of the image height, with the entire bezel, crown and all four lugs inside the frame. A changed exposure or clipped required component fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "dial-construction-and-position",
+      "requirementId": "R-dial-construction-and-position",
+      "method": "visual",
+      "targetSlots": [
+        "hero-square",
+        "hero-portrait",
+        "dial-macro",
+        "tabletop-scene"
+      ],
+      "criteria": "Check the visible dial against the supplied frontal identity and fact sheet: matte ivory #E8E2D6, applied steel markers, fine black minute track, polished dauphine hour and minute hands, and a slender blue seconds hand. Whole-dial views must retain the specified marker counts and hand positions, with MANUAL centered above the 6 marker. The macro must include the double 12 marker, central hand assembly and adjacent minute ticks; features outside its crop are exempt. Missing, duplicated, relocated or redesigned visible dial elements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "steel-strap-and-hardware",
+      "requirementId": "R-steel-strap-and-hardware",
+      "method": "visual",
+      "targetSlots": [
+        "material-macro",
+        "tabletop-scene"
+      ],
+      "criteria": "Visible components must follow the side reference: a smooth circular polished steel bezel, horizontal flank grain, gently downturned lugs with brushed upper surfaces, and one grooved crown with a plain end face at 3. The macro must include the upper crown-side lug. In the scene, verify smooth #202020 charcoal leather with straight cut edges and tonal stitching, plus a rectangular brushed steel buckle with softly rounded corners and one central tang. Viewpoint and lighting may alter apparent brightness; changed construction, grain direction or hardware fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "macro-detail-and-capture-specification",
+      "requirementId": "R-macro-detail-and-capture-specification",
+      "method": "visual",
+      "targetSlots": [
+        "dial-macro",
+        "material-macro"
+      ],
+      "criteria": "The dial image must distinctly resolve both members of the 12 marker and neighboring minute ticks. The material image must distinctly resolve horizontal brushing, the polished-to-brushed transition and crown grooves. Blur, merged details or stacking artifacts that obscure these features fail. The required capture parameters are 1:1, f/8 and 12 frames; exact values cannot be established from rendered appearance alone and must not be claimed as visually verified.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "lighting-sweep-and-reflection-control",
+      "requirementId": "R-lighting-sweep-and-reflection-control",
+      "method": "visual",
+      "targetSlots": [
+        "hero-square",
+        "hero-portrait",
+        "dial-macro",
+        "material-macro",
+        "tabletop-scene"
+      ],
+      "criteria": "Compare all five photographs with the supplied lighting diagram and empty-table reference. Look for a consistent matte warm-gray sweep corresponding to #D8D3CA, neutral illumination from camera upper left, subordinate fill, and dark reflected edge definition consistent with flags on either side. Natural shading and crop differences are allowed. Inconsistent lighting direction, a visibly incompatible background, or reflections obscuring required dial details or the finish boundary fail. Exact kelvin, elevation, intensity ratio and physical flag count are not independently measurable from the photographs.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "editorial-copy-and-caption-association",
+      "requirementId": "R-editorial-copy-and-caption-association",
+      "method": "content",
+      "targetSlots": [
+        "editorial-page"
+      ],
+      "criteria": "Read the page for the series title and headline, then verify that each photograph has its assigned caption: 38 mm steel case for the square hero, Hands set to 10:10 for the dial detail, and Polished bezel, brushed flank for the material detail. Typography and placement may vary if reading order and associations remain clear. Missing, altered or swapped copy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "editorial-photograph-reuse",
+      "requirementId": "R-editorial-photograph-reuse",
+      "method": "manual",
+      "targetSlots": [
+        "editorial-page"
+      ],
+      "criteria": "Each of the three source photographs must be visibly identifiable on the editorial page, encountered as square hero, dial detail, then material detail. Scaling and page placement may vary while preserving recognizable source content. Replacing a source with a different exposure or reconstruction, omitting one, using the portrait hero in place of the square source, or reversing the reading sequence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "hero-square",
+        "dial-macro",
+        "material-macro"
+      ]
+    },
+    {
+      "id": "tabletop-watch-composition",
+      "requirementId": "R-tabletop-watch-composition",
+      "method": "visual",
+      "targetSlots": [
+        "tabletop-scene"
+      ],
+      "criteria": "The tabletop composition must include the complete watch with its leather strap arranged in a relaxed curve and its pin buckle visibly recognizable. Placement and curvature may vary. Cropping away part of the watch or strap, concealing the buckle, or presenting a rigidly straight strap fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "watch-envelope-and-proportions",
+      "requirementId": "R-watch-envelope-and-proportions",
+      "method": "visual",
+      "targetSlots": [
+        "hero-square",
+        "hero-portrait",
+        "dial-macro",
+        "material-macro",
+        "tabletop-scene"
+      ],
+      "criteria": "Compare visible geometry with the supplied measured envelope: case diameter excludes the crown, and thickness, lug span and strap width should be proportionally consistent with 9:38, 46:38 and 20:38 respectively. Allow perspective and macro cropping; assess each relationship only where visible. Contradictory proportions or a different case construction fail. Absolute millimeter measurements and the internal hand-wound mechanism cannot be confirmed from exterior images alone.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-coherent-watch-photography",
+      "requirementId": "R-set-coherent-watch-photography",
+      "method": "visual",
+      "targetSlots": [
+        "hero-square",
+        "hero-portrait",
+        "dial-macro",
+        "material-macro",
+        "tabletop-scene"
+      ],
+      "criteria": "All photographs depict the same watch construction, with matching dial details, case geometry and finishes wherever those features are visible. The sweep, light direction, color rendering and controlled steel reflections form one photographic series despite changes in crop and viewpoint. Visible dial markings and transitions between polished and brushed steel remain legible under the required lighting treatment.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "front-watch-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "watch-front-identity.png"
+      ],
+      "subjectSlots": [
+        "hero-square",
+        "hero-portrait",
+        "dial-macro",
+        "tabletop-scene"
+      ],
+      "notes": "Both whole-watch heroes and the tabletop scene preserve the front identity's 11 single batons, double baton at 12, 60 minute ticks, 10:10 hand position, seconds hand at 6 and MANUAL dial text; the dial macro preserves the same arrangement within its crop."
+    },
+    {
+      "id": "side-watch-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "watch-side-identity.png"
+      ],
+      "subjectSlots": [
+        "material-macro",
+        "tabletop-scene"
+      ],
+      "notes": "The material macro and tabletop scene retain the side identity's polished bezel, horizontally brushed flank and single crown at 3 o'clock; the scene also shows the buckle identity's charcoal leather strap and brushed steel pin buckle."
+    },
+    {
+      "id": "strap-and-buckle-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "watch-buckle-identity.png"
+      ],
+      "subjectSlots": [
+        "tabletop-scene"
+      ],
+      "notes": "The material macro and tabletop scene retain the side identity's polished bezel, horizontally brushed flank and single crown at 3 o'clock; the scene also shows the buckle identity's charcoal leather strap and brushed steel pin buckle."
+    }
+  ]
+}

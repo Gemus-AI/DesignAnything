@@ -1,0 +1,599 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ecom-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "collection-main",
+      "label": "Collection main image",
+      "description": "One collection main image comparing both plants with their SKU codes, names, prices and individual-purchase wording.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "golden-specification",
+      "label": "Golden Pothos specification card",
+      "description": "One RL-01 Golden Pothos specification card with size ranges, measurement endpoints, pot dimensions, price and a 100 mm reference bar.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "marble-specification",
+      "label": "Marble Queen Pothos specification card",
+      "description": "One RL-02 Marble Queen Pothos specification card with size ranges, measurement endpoints, pot dimensions, price and a 100 mm reference bar.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "purchase-contents",
+      "label": "Purchase contents and separate accessory",
+      "description": "One contents image with the shared six-entry packing inventory and a separate ceramic cover-pot panel.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "placement-conditions",
+      "label": "Placement conditions for both plants",
+      "description": "One placement image with two shelf scenes, the stated light, distance and temperature conditions, and both SKU names, codes and prices.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "arrival-care",
+      "label": "Arrival states and care",
+      "description": "One arrival-and-care image with sleeved and unpacked views of both plants, their packing items and the complete fixed care copy.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "collection-name",
+      "kind": "text-verbatim",
+      "text": "ROOMLEAF",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "individual-purchase-wording",
+      "kind": "text-verbatim",
+      "text": "Choose one plant",
+      "scope": {
+        "slots": [
+          "collection-main",
+          "golden-specification",
+          "marble-specification",
+          "placement-conditions"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "included-inventory-heading",
+      "kind": "text-verbatim",
+      "text": "Included with your plant",
+      "scope": {
+        "slots": [
+          "purchase-contents"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "separate-accessory-heading",
+      "kind": "text-verbatim",
+      "text": "Sold separately",
+      "scope": {
+        "slots": [
+          "purchase-contents"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "ROOMLEAF",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "plant-and-nursery-pot-continuity",
+      "slots": [
+        "collection-main",
+        "placement-conditions",
+        "arrival-care"
+      ],
+      "sourceSlots": [
+        "golden-specification",
+        "marble-specification"
+      ],
+      "items": [
+        {
+          "item": "Each SKU remains the same recognizable plant across comparison, specification, placement and arrival views, preserving its characteristic markings, size and nursery-pot geometry while allowing viewpoint changes and sleeve-related leaf gathering or release.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "packing-inventory-continuity",
+      "slots": [
+        "arrival-care"
+      ],
+      "sourceSlots": [
+        "purchase-contents"
+      ],
+      "items": [
+        {
+          "item": "Each SKU's arrival packing group agrees with the contents image's six inventory entries, quantities and accessory separation; a separately sold ceramic cover pot is never substituted for the included nursery pot or saucer.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "ROOMLEAF"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "collection-main",
+      "golden-specification",
+      "marble-specification",
+      "purchase-contents",
+      "placement-conditions",
+      "arrival-care"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not score horticultural suitability, product-record accuracy or exact copy compliance, which are evaluated by the commission checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "collection-main",
+        "golden-specification",
+        "marble-specification",
+        "purchase-contents",
+        "placement-conditions",
+        "arrival-care"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-collection-main",
+      "requirementId": "R-format-collection-main",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-main"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-golden-specification",
+      "requirementId": "R-format-golden-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "golden-specification"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-marble-specification",
+      "requirementId": "R-format-marble-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "marble-specification"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-purchase-contents",
+      "requirementId": "R-format-purchase-contents",
+      "method": "artifact-property",
+      "targetSlots": [
+        "purchase-contents"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-placement-conditions",
+      "requirementId": "R-format-placement-conditions",
+      "method": "artifact-property",
+      "targetSlots": [
+        "placement-conditions"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-arrival-care",
+      "requirementId": "R-format-arrival-care",
+      "method": "artifact-property",
+      "targetSlots": [
+        "arrival-care"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "collection-comparison-and-layout",
+      "requirementId": "R-collection-comparison-and-layout",
+      "method": "visual",
+      "targetSlots": [
+        "collection-main"
+      ],
+      "criteria": "Both products are visibly available for comparison, with RL-01 paired with Golden Pothos and EUR 16, and RL-02 paired with Marble Queen Pothos and EUR 24. Wording communicates that an order buys one plant, rather than the pictured pair. The combined plant-and-pot group spans 85–90% of the image width and stays in the upper 80% area; shopping copy occupies the lower 20% band. Arrangement within those areas may vary; incorrect product associations, bundle implications or materially different area allocation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "specification-measurements",
+      "requirementId": "R-specification-measurements",
+      "method": "visual",
+      "targetSlots": [
+        "golden-specification",
+        "marble-specification"
+      ],
+      "criteria": "The Golden card reports height 200–300 mm and crown width 180–260 mm; the Marble card reports height 220–320 mm and crown width 200–280 mm. Both label the nursery pot's outer rim diameter as 120 mm and height as 110 mm, and include a visibly dimensioned 100 mm reference bar. Height endpoints run from the nursery-pot base to the highest leaf; width endpoints span the widest leaf-to-leaf extent. Diagram styling may vary, but swapped ranges, missing units, incorrect endpoints or a reference bar materially inconsistent with the drawing's scale fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "purchase-inventory-and-accessory",
+      "requirementId": "R-purchase-inventory-and-accessory",
+      "method": "visual",
+      "targetSlots": [
+        "purchase-contents"
+      ],
+      "criteria": "A shared inventory clearly applies to one purchase of either SKU and accounts for six entries, each with quantity one: rooted plant, nursery pot containing plant and compost, matching saucer, paper plant sleeve, care card and plant passport. The sleeve is unprinted brown paper, the care card is white, and the passport is a paper document in a clear sleeve. The saucer is identified as 140 mm outer diameter and 20 mm high. A distinct optional-accessory panel identifies a Chalk #E8E3D9 ceramic cover pot at EUR 12, 150 mm outer diameter and 140 mm high. Inventory organization may vary, but missing or extra included quantities, a two-plant purchase implication, or presenting the cover pot as included fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "placement-conditions-and-product-continuity",
+      "requirementId": "R-placement-conditions-and-product-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "placement-conditions"
+      ],
+      "criteria": "Two shelf scenes represent the two SKUs individually. Each scene shows a sheer-curtained window and communicates a 1000 mm window-to-shelf separation, bright indirect light and 18–26 C; shared labels are acceptable if their application to both scenes is unambiguous. RL-01 Golden Pothos is paired with EUR 16 and RL-02 Marble Queen Pothos with EUR 24. Compare each plant's apparent dimensions and nursery-pot geometry against its specification card, allowing perspective and natural leaf positioning. Missing scenes or conditions, direct harsh sunlight, incorrect product records or materially changed plant or pot sizes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "golden-specification",
+        "marble-specification"
+      ]
+    },
+    {
+      "id": "arrival-states-packing-and-care",
+      "requirementId": "R-arrival-states-packing-and-care",
+      "method": "visual",
+      "targetSlots": [
+        "arrival-care"
+      ],
+      "criteria": "There are four clearly attributable plant views: sleeved and unpacked versions of each SKU. Arrival plants remain rooted in compost with upright stems and loosely gathered foliage inside unprinted brown paper sleeves; unpacked views retain the same plants with sleeves removed and leaves released. Each SKU's packing group accounts for the same six entries and quantities as the contents image, with the saucer beneath the pot, care card beside the pot and passport in a clear sleeve beside the care card. The complete printed care passage reads: \"Unpack on arrival. Remove the paper sleeve. Check the top 20 mm of compost; water when dry. Empty the saucer after watering.\" Line wrapping may vary. Missing views, substituted plants, conflicting packing contents or any omitted or altered care instruction fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "purchase-contents"
+      ]
+    },
+    {
+      "id": "collection-wide-copy-identity-and-margins",
+      "requirementId": "R-collection-wide-copy-identity-and-margins",
+      "method": "visual",
+      "targetSlots": [
+        "collection-main",
+        "golden-specification",
+        "marble-specification",
+        "purchase-contents",
+        "placement-conditions",
+        "arrival-care"
+      ],
+      "criteria": "Every image visibly carries ROOMLEAF. The collection main, both specification cards and placement image also carry Choose one plant. Every text element stays inside a safe area inset by at least 5% of the canvas width at the left and right and 5% of its height at the top and bottom. Where plants appear, RL-01 has green heart-shaped leaves with irregular golden-yellow streaks and RL-02 has green heart-shaped leaves with irregular cream marbling, following the corresponding identity reference. A shared contents depiction may represent either SKU but must preserve that SKU's markings. Nursery pots remain Charcoal #343434, allowing lighting and shading. Misspellings, absent required wording, text outside the safe area, exchanged plant identities or recolored nursery pots fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "nursery-pot-and-saucer-material",
+      "requirementId": "R-nursery-pot-and-saucer-material",
+      "method": "visual",
+      "targetSlots": [
+        "collection-main",
+        "golden-specification",
+        "marble-specification",
+        "purchase-contents",
+        "placement-conditions",
+        "arrival-care"
+      ],
+      "criteria": "Whenever a nursery pot or included saucer is depicted, it reads as Charcoal #343434 plastic, and the saucer matches the nursery pot. Ordinary shading and reflections are allowed; a different base color or a visibly ceramic, metallic or other substituted material fails. Images that do not depict a saucer need not add one for this check.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "specification-product-records",
+      "requirementId": "R-specification-product-records",
+      "method": "visual",
+      "targetSlots": [
+        "golden-specification",
+        "marble-specification"
+      ],
+      "criteria": "The pair contains one clearly attributable specification card for each SKU. The Golden Pothos card displays EUR 16 and the Marble Queen Pothos card displays EUR 24, with each price visibly associated with its own product. Price placement may vary. Duplicating one SKU, omitting the other or omitting or exchanging prices fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-plant-and-nursery-pot-continuity",
+      "requirementId": "R-set-plant-and-nursery-pot-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "collection-main",
+        "placement-conditions",
+        "arrival-care"
+      ],
+      "criteria": "Each SKU remains the same recognizable plant across comparison, specification, placement and arrival views, preserving its characteristic markings, size and nursery-pot geometry while allowing viewpoint changes and sleeve-related leaf gathering or release.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "golden-specification",
+        "marble-specification"
+      ]
+    },
+    {
+      "id": "set-packing-inventory-continuity",
+      "requirementId": "R-set-packing-inventory-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "arrival-care"
+      ],
+      "criteria": "Each SKU's arrival packing group agrees with the contents image's six inventory entries, quantities and accessory separation; a separately sold ceramic cover pot is never substituted for the included nursery pot or saucer.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "purchase-contents"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "golden-pothos-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "golden-pothos.png"
+      ],
+      "subjectSlots": [
+        "collection-main",
+        "golden-specification",
+        "placement-conditions",
+        "arrival-care"
+      ],
+      "notes": "All six images print \"ROOMLEAF\", use the leaf markings of the corresponding identity attachment and retain Charcoal #343434 nursery pots."
+    },
+    {
+      "id": "marble-queen-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "marble-queen-pothos.png"
+      ],
+      "subjectSlots": [
+        "collection-main",
+        "marble-specification",
+        "placement-conditions",
+        "arrival-care"
+      ],
+      "notes": "All six images print \"ROOMLEAF\", use the leaf markings of the corresponding identity attachment and retain Charcoal #343434 nursery pots."
+    }
+  ]
+}

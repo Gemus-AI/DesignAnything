@@ -1,0 +1,208 @@
+{
+  "id": "bench-da-ecom-material-02",
+  "title": "FOLDLINE H35 — Cabinet hinge fit and installation guide, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "ECOMMERCE",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# FOLDLINE H35\n\n## Product\n- Product name: FOLDLINE H35\n- SKU: FH35-F16\n- Product type: concealed cup hinge with detachable mounting plate\n- Pack price: GBP 12.00\n- Pack contents: two hinges; two mounting plates; eight countersunk wood screws\n- Screw size: 3.5 × 16 mm\n- Finish name: Satin nickel\n- Flat illustration color: #B9BEC4\n- Existing forms: straight arm; circular recessed cup; two cup-fixing holes; cross-shaped detachable mounting plate\n- Purchase headline: Measure before you order\n\n## Matching interface\n| Property | Value |\n|---|---|\n| Door material | MDF or solid timber |\n| Door thickness | 18–22 mm inclusive |\n| Cabinet side thickness | 18 mm |\n| Arrangement | Full overlay |\n| Overlay | 16 mm |\n| Cup bore diameter | 35 mm |\n| Cup bore depth | 12 mm |\n| Door edge to bore edge | 5 mm |\n| Door edge to bore center | 22.5 mm |\n| Cup-fixing hole centers | 45 mm, parallel to the door edge |\n| Mounting plate height | 0 mm |\n| Plate-fixing hole centers | 32 mm, parallel to the cabinet front edge |\n| Cabinet front edge to plate-fixing centerline | 37 mm |\n| Opening angle | 110° |\n| Reference ruler length | 50 mm |\n\n## Arrangement comparison\n| Arrangement | Overlay | Outcome |\n|---|---|---|\n| Full overlay | 16 mm | Fits when all matching interface values apply |\n| Half overlay | 8 mm | Does not fit |\n| Inset | 0 mm | Does not fit |\n\n## Gallery geometry\n- Gallery: FOLDLINE H35 direct-store product gallery\n- Square layout: product overview\n- Landscape layout: parts inventory; interface dimensions; compatibility; installation\n- Vertical layout: purchase checklist\n- Safe margins: 5% of canvas width and height\n- Main image field: upper 70% of canvas\n- Main text area: lower 25% of canvas\n- Overview assembled product width: 85–90% of canvas width\n- Diagram callouts: inside the safe margins\n- Overview background: white\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# FOLDLINE H35 — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | product-overview | Product overview | 6 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | parts-inventory | Parts inventory | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | interface-dimensions | Interface dimensions | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | compatibility | Door compatibility | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | installation | Four-step installation | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | purchase-checklist | Purchase checklist | 6 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-door-fit-records.en.md",
+            "config": {
+              "text": "# Door fit records\n\n## Shared interface values\n- Cabinet side: 18 mm\n- Door edge to bore edge: 5 mm\n- Cup-fixing centers: 45 mm\n- Mounting plate height: 0 mm\n- Plate-fixing centers: 32 mm\n- Plate-fixing centerline behind cabinet front edge: 37 mm\n- Dimensions in the table: mm\n\n| Record | Door material | Door thickness | Arrangement | Overlay | Bore diameter | Bore depth | Outcome | Deciding fact |\n|---|---|---:|---|---:|---:|---:|---|---|\n| C01 | MDF | 18 | Full overlay | 16 | 35 | 12 | Fits | All matching interface values |\n| C02 | Solid timber | 22 | Full overlay | 16 | 35 | 12 | Fits | All matching interface values |\n| C03 | MDF | 16 | Full overlay | 16 | 35 | 12 | Does not fit | Door below 18 mm minimum |\n| C04 | MDF | 18 | Half overlay | 8 | 35 | 12 | Does not fit | Half-overlay arrangement |\n| C05 | MDF | 18 | Inset | 0 | 35 | 12 | Does not fit | Inset arrangement |\n| C06 | MDF | 18 | Full overlay | 16 | 26 | 12 | Does not fit | Bore diameter differs from 35 mm |\n| C07 | Glass | 18 | Full overlay | 16 | 35 | 12 | Does not fit | Material outside MDF or solid timber |\n| C08 | MDF | Unknown | Full overlay | 16 | 35 | 12 | Measure first | Door thickness unknown |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 04-installation-sequence.en.md",
+            "config": {
+              "text": "# Installation and purchase records\n\n## Installation sequence\n| Step | Panel heading | Action record | Quantity or dimension |\n|---|---|---|---|\n| 1 | Measure the interfaces | Door material, thickness, overlay, cup preparation and plate hole positions compared with the matching interface | Five purchase checks below |\n| 2 | Fasten the cups | Cups seated in prepared bores and secured through both flange holes | Two screws per cup; four screws total |\n| 3 | Attach the plates and arms | Plates secured to the cabinet side; hinge arms clipped onto the plates | Two screws per plate; four screws total; 37 mm setback |\n| 4 | Check the movement | Door supported while both connections are checked and the opening movement is checked for clearance | Two connected hinges; 110° opening |\n\n## Purchase checks\n| Check | Heading | Matching values |\n|---|---|---|\n| 1 | Door material and thickness | MDF or solid timber; 18–22 mm inclusive |\n| 2 | Overlay and cabinet side | Full overlay; 16 mm overlay; 18 mm cabinet side |\n| 3 | Cup preparation | 35 mm bore diameter; 12 mm depth; 5 mm edge gap; 22.5 mm center setback; 45 mm fixing centers |\n| 4 | Mounting plate interface | 0 mm plate height; 32 mm fixing centers; 37 mm setback |\n| 5 | Pack contents and price | FH35-F16; two hinges; two plates; eight 3.5 × 16 mm screws; GBP 12.00 |\n\n## Decision labels\n- Fits: all matching interface values present\n- Does not fit: one or more known interface values differ\n- Measure first: one or more interface measurements unknown\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: hinge-interface.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: gallery-layout.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: cabinet-workbench.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: hinge-overall.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: hinge-plate.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-6",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: hinge-cup.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "FOLDLINE H35 | Cabinet hinge fit and installation guide\n\nWe sell cabinet hardware directly to people replacing their own fittings. Build six finished product-gallery images for our concealed hinge, with the measurements buyers need before ordering and a clear installation sequence. The product name is \"FOLDLINE H35\", SKU FH35-F16. One pack costs GBP 12.00 and contains two hinges, two detachable mounting plates and eight 3.5 × 16 mm countersunk wood screws. The finish is Satin nickel, with #B9BEC4 as its flat illustration color. Preserve the straight arm, circular recessed cup, two cup-fixing holes and cross-shaped detachable plate shown in the product images.\n\nThis model serves full-overlay doors with a 16 mm overlay on an 18 mm cabinet side. The door material is MDF or solid timber, with thickness from 18 to 22 mm inclusive. Its cup bore is 35 mm in diameter and 12 mm deep; the gap from the door edge to the bore edge is 5 mm, placing the bore center 22.5 mm from the door edge. Cup-fixing centers are 45 mm apart. The mounting plate has a height of 0 mm, fixing centers 32 mm apart and a fixing centerline 37 mm behind the cabinet front edge. Opening angle is 110°. Half-overlay and inset arrangements belong in the comparison graphic as incompatible examples. Print the product name on all six images and \"Measure before you order\" on the product overview and purchase checklist. These are images for our own product gallery: use the attached gallery geometry for the image fields and text areas.\n\nAudience: consumers choosing their own home-improvement hardware, deciding whether this hinge matches their cabinet and existing door preparation.\n\nInputs (attached): 01-client-facts.en.md contains the product, pack, price, finish and interface facts. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. 03-door-fit-records.en.md contains eight door configurations and their fit outcomes. 04-installation-sequence.en.md contains the four installation steps and five purchase checks. hinge-interface.png defines the measured door and cabinet interfaces and the three overlay arrangements. gallery-layout.png defines the gallery image fields, margins and text areas. hinge-overall.png establishes the assembled hinge identity. hinge-cup.png establishes the cup and its fixing flange. hinge-plate.png establishes the detached mounting plate. cabinet-workbench.png supplies the domestic installation atmosphere.\n\nDeliverables:\n1. One square product overview with the assembled hinge, SKU FH35-F16, GBP 12.00 pack price, two-hinge pack quantity and Measure before you order headline\n2. One parts inventory image with two hinges, two mounting plates and eight 3.5 × 16 mm screws, with separate cup, arm and plate callouts\n3. One interface dimensions image with a door-face view, cup section and cabinet-side view, all interface measurements, the 110° opening arc and a dimensioned 50 mm reference ruler\n4. One compatibility image with full-overlay, half-overlay and inset diagrams and all eight door records C01–C08, each carrying its configuration and Fits, Does not fit or Measure first outcome\n5. One installation image with four numbered panels: Measure the interfaces, Fasten the cups, Attach the plates and arms, and Check the movement\n6. One vertical purchase checklist with the five checks for door material and thickness, overlay and cabinet side, cup preparation, mounting plate interface, and pack contents and price\n\nAcceptance:\n- The product overview, parts inventory, interface dimensions, compatibility, installation and purchase checklist images all print FOLDLINE H35 and preserve the Satin nickel finish, straight arm, circular cup, two cup-fixing holes and cross-shaped plate wherever those parts are visible.\n- The product overview and purchase checklist both print FH35-F16, GBP 12.00 and Measure before you order. The parts inventory and purchase checklist both account for two hinges, two plates and eight 3.5 × 16 mm screws.\n- The interface dimensions image labels the 35 mm bore diameter, 12 mm bore depth, 5 mm edge gap, 22.5 mm center setback, 45 mm cup-fixing centers, 18–22 mm door thickness, 18 mm cabinet side, 16 mm overlay, 0 mm plate height, 32 mm plate-fixing centers, 37 mm plate setback and 110° opening. Its 50 mm ruler uses the same drawing scale as the door-face view.\n- The compatibility image assigns Fits to C01 and C02, Does not fit to C03–C07 and Measure first to C08, with every configuration stated in 03-door-fit-records.en.md. Its three overlay diagrams identify full overlay at 16 mm as the matching arrangement, half overlay at 8 mm and inset at 0 mm as incompatible arrangements.\n- The installation image follows steps 1–4 in 04-installation-sequence.en.md, using two screws per cup and two per plate. The purchase checklist carries all five checks from that attachment, including a Measure first outcome for any unknown measurement.\n- The product overview follows the square layout, the parts inventory, interface dimensions, compatibility and installation images follow the landscape layout, and the purchase checklist follows the vertical layout in gallery-layout.png: 5% safe margins, a lower 25% text area and the overview product width at 85–90% of the canvas.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/hinge-interface.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "c20aaed14ccedb4d7ad73e6b654fd154cb1e3b533ab7c2a0cb180c8bd795bc58"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/gallery-layout.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "d168bb84695c2db9e02ca15ba810e5772b1f7f8a1ba1186bac213f2603160986"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/cabinet-workbench.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "9fd614d876112b78bfe8d8be5fad87cd093380aebe1e22ecc82eff05786f764a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/hinge-overall.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "35179da908d7686a0f4fc8d96cb0dda1891b1af0b284cc8e96b77d9963f76afe"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/hinge-plate.png",
+      "nodeId": "provided-image-5",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "b3dd591214929b45e4d4e84881b9bc5861d34d5eccb5a2324c675c49b16851d9"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/hinge-cup.png",
+      "nodeId": "provided-image-6",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "712567657913ee1cab2f7782bd76a300588492a47ab5dbf6f3a99cdfbf6ce109"
+    }
+  ]
+}

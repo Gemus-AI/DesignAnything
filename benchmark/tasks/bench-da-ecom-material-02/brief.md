@@ -1,0 +1,27 @@
+FOLDLINE H35 | Cabinet hinge fit and installation guide
+
+We sell cabinet hardware directly to people replacing their own fittings. Build six finished product-gallery images for our concealed hinge, with the measurements buyers need before ordering and a clear installation sequence. The product name is "FOLDLINE H35", SKU FH35-F16. One pack costs GBP 12.00 and contains two hinges, two detachable mounting plates and eight 3.5 × 16 mm countersunk wood screws. The finish is Satin nickel, with #B9BEC4 as its flat illustration color. Preserve the straight arm, circular recessed cup, two cup-fixing holes and cross-shaped detachable plate shown in the product images.
+
+This model serves full-overlay doors with a 16 mm overlay on an 18 mm cabinet side. The door material is MDF or solid timber, with thickness from 18 to 22 mm inclusive. Its cup bore is 35 mm in diameter and 12 mm deep; the gap from the door edge to the bore edge is 5 mm, placing the bore center 22.5 mm from the door edge. Cup-fixing centers are 45 mm apart. The mounting plate has a height of 0 mm, fixing centers 32 mm apart and a fixing centerline 37 mm behind the cabinet front edge. Opening angle is 110°. Half-overlay and inset arrangements belong in the comparison graphic as incompatible examples. Print the product name on all six images and "Measure before you order" on the product overview and purchase checklist. These are images for our own product gallery: use the attached gallery geometry for the image fields and text areas.
+
+Audience: consumers choosing their own home-improvement hardware, deciding whether this hinge matches their cabinet and existing door preparation.
+
+Inputs (attached): 01-client-facts.en.md contains the product, pack, price, finish and interface facts. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. 03-door-fit-records.en.md contains eight door configurations and their fit outcomes. 04-installation-sequence.en.md contains the four installation steps and five purchase checks. hinge-interface.png defines the measured door and cabinet interfaces and the three overlay arrangements. gallery-layout.png defines the gallery image fields, margins and text areas. hinge-overall.png establishes the assembled hinge identity. hinge-cup.png establishes the cup and its fixing flange. hinge-plate.png establishes the detached mounting plate. cabinet-workbench.png supplies the domestic installation atmosphere.
+
+Deliverables:
+1. One square product overview with the assembled hinge, SKU FH35-F16, GBP 12.00 pack price, two-hinge pack quantity and Measure before you order headline
+2. One parts inventory image with two hinges, two mounting plates and eight 3.5 × 16 mm screws, with separate cup, arm and plate callouts
+3. One interface dimensions image with a door-face view, cup section and cabinet-side view, all interface measurements, the 110° opening arc and a dimensioned 50 mm reference ruler
+4. One compatibility image with full-overlay, half-overlay and inset diagrams and all eight door records C01–C08, each carrying its configuration and Fits, Does not fit or Measure first outcome
+5. One installation image with four numbered panels: Measure the interfaces, Fasten the cups, Attach the plates and arms, and Check the movement
+6. One vertical purchase checklist with the five checks for door material and thickness, overlay and cabinet side, cup preparation, mounting plate interface, and pack contents and price
+
+Acceptance:
+- The product overview, parts inventory, interface dimensions, compatibility, installation and purchase checklist images all print FOLDLINE H35 and preserve the Satin nickel finish, straight arm, circular cup, two cup-fixing holes and cross-shaped plate wherever those parts are visible.
+- The product overview and purchase checklist both print FH35-F16, GBP 12.00 and Measure before you order. The parts inventory and purchase checklist both account for two hinges, two plates and eight 3.5 × 16 mm screws.
+- The interface dimensions image labels the 35 mm bore diameter, 12 mm bore depth, 5 mm edge gap, 22.5 mm center setback, 45 mm cup-fixing centers, 18–22 mm door thickness, 18 mm cabinet side, 16 mm overlay, 0 mm plate height, 32 mm plate-fixing centers, 37 mm plate setback and 110° opening. Its 50 mm ruler uses the same drawing scale as the door-face view.
+- The compatibility image assigns Fits to C01 and C02, Does not fit to C03–C07 and Measure first to C08, with every configuration stated in 03-door-fit-records.en.md. Its three overlay diagrams identify full overlay at 16 mm as the matching arrangement, half overlay at 8 mm and inset at 0 mm as incompatible arrangements.
+- The installation image follows steps 1–4 in 04-installation-sequence.en.md, using two screws per cup and two per plate. The purchase checklist carries all five checks from that attachment, including a Measure first outcome for any unknown measurement.
+- The product overview follows the square layout, the parts inventory, interface dimensions, compatibility and installation images follow the landscape layout, and the purchase checklist follows the vertical layout in gallery-layout.png: 5% safe margins, a lower 25% text area and the overview product width at 85–90% of the canvas.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

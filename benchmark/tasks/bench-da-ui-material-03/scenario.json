@@ -1,0 +1,172 @@
+{
+  "id": "bench-da-ui-material-03",
+  "title": "NEIGHBOUR SPACE — Community venue booking across three languages, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "UIUX",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# NEIGHBOUR SPACE\n\n## Service identity\n- Product name: NEIGHBOUR SPACE\n- Service: community venue booking\n- Interface languages: English, Portuguese, Polish\n- Locale identifiers: en, pt-PT, pl-PL\n- Language control labels: English, Português, Polski\n- Existing symbol: doorway-symbol.png\n- Primary colour: #165A63\n- Booking date: 2027-09-18\n- Clock basis: service-local date and time\n- Booking price: Free booking\n\n## Venue records\n| ID | English display | Capacity | Opens | Closes | Occupied at 10:00 |\n|---|---|---|---|---|---|\n| R1 | Community room | 20 | 09:00 | 18:00 | 13:00–14:00; 15:30–16:30 |\n| C1 | Outdoor court | 8 | 08:00 | 20:00 | 10:00–11:00 |\n\n## Time and venue rules\n- Start interval: 30 minutes\n- Duration choices: 60 minutes; 90 minutes\n- Valid booking interval: entirely inside the selected venue's opening hours\n- Unavailable interval: any positive overlap with an occupied interval\n- Permitted boundary: one interval ending exactly when another begins\n- Availability basis: the entire selected duration\n- Capacity basis: every attendee, including the organiser\n- Venue rule 1: attendance within the confirmed interval and capacity\n- Venue rule 2: a tidy venue at departure\n- Venue rule 3: booking retained by the named organiser\n- Draft and Review time-hold status: none\n- Confirmed reference creation: successful explicit final submission\n\n## Stable field contract\n| Field ID | Type | Rule |\n|---|---|---|\n| venue_id | enum | R1 or C1 |\n| booking_date | date | 2027-09-18 only |\n| start_time | time | 30-minute boundary within opening hours |\n| duration_minutes | integer | 60 or 90 |\n| full_name | text | required; raw entry preserved |\n| email | text | required; supplied sample is valid |\n| activity_name | text | required; raw entry preserved |\n| participants | integer | 1 to venue capacity, inclusive |\n| accept_rules | boolean | true before entering Review |\n\n## Shared booking values\n- Organiser: Lin Wei\n- Email: lin.wei@example.com\n- Venue in every named record: R1\n- Date in every named record: 2027-09-18\n- Initial raw activity_name: Saturday Sketch Circle\n- Edited raw activity_name: Neighbour Sketch Circle\n- Initial participants: 24\n- Initial accept_rules: false\n- Corrected participants: 12\n- Corrected accept_rules: true\n- Initial errors: participants above R1 capacity; accept_rules false\n- Error summary: Check the highlighted fields.\n- Participants error: Enter a whole number from 1 to 20.\n- Agreement error: Agree to the venue rules to continue.\n- Error clearance: valid correction of the corresponding field\n\n## Language behaviour\n- Translated content: system labels, venue displays, duration displays, validation messages and booking-status messages\n- Preserved content: field IDs, current step, raw user entries, selected venue, date, time, duration, participants, agreement and active error attachment\n- Language-only transition: unchanged draft and booking status\n- Field labels: persistent visible text\n- Selection, unavailability, errors and confirmation: colour plus text or a symbol\n- Language access: every complete screen\n- Navigation: a primary action and a return route preserving the current draft or booking\n- Source record keys: stable identifiers independent of display language\n- validation-zh, corrected, review, cancel-review, cancelled-branch and late-branch display language: Portuguese\n- Polish comparison state: the validation-zh data with locale pl-PL\n- Raw activity names, personal name, email, venue IDs and reference: identical across locales\n\n## Journey structure\n| Step | English name | Status scope |\n|---|---|---|\n| 1 | Choose venue and time | draft |\n| 2 | Your details | draft; validation-errors |\n| 3 | Review | not-submitted |\n| 0 | Booking status | confirmed; cancelled |\n\n## Submission and cancellation\n- Initial availability snapshot: 10:00\n- R1 initial available interval: 14:00–15:00\n- Submission conflict snapshot: 10:06\n- Additional occupied interval at 10:06: R1 14:00–15:00\n- Conflict result: retained corrected draft; reference none\n- Alternative available interval: R1 16:30–17:30\n- Successful explicit submission: 10:08\n- Confirmed reference: NS-1042\n- Cancellation interval: at or before two hours before the booking start\n- Inclusive cancellation deadline: 2027-09-18 14:30\n- Cancellation review clock: 2027-09-18 14:20\n- Explicit cancellation branch: 14:20; cancelled; this booking's hold released\n- Independent late attempt branch: 14:40; confirmed; cancellation unavailable\n- Cancellation branch source: the same confirmed NS-1042 record\n- Cancellation branch relationship: mutually exclusive alternatives\n- Cancellation review and language changes: confirmed status retained\n- Branch display label: Illustrative state, localised through the terminology table\n\n## Component values\n| Component | State | Values |\n|---|---|---|\n| Page | default | background #F6F8F7; text #172B2E |\n| Primary button | default | fill #165A63; text #FFFFFF |\n| Primary button | pressed | fill #123F46; text #FFFFFF; inset outline |\n| Primary button | disabled | fill #D9E1E2; text #465455; explanatory status text |\n| Field | default | fill #FFFFFF; border #637579; text #172B2E; visible label |\n| Field | error | fill #FFFFFF; border and message #A12622; error icon and linked message |\n| Selection | selected | outline #165A63; check symbol; localised Selected label |\n| Time option | unavailable | status icon; localised Unavailable label |\n- Body text: 16 logical units; line height 24 logical units\n- Large text: at least 24 logical units\n- Touch target minimum: 44 × 44 logical units\n- Body-text contrast minimum: 4.5:1\n- Large-text and icon contrast minimum: 3:1\n- Disabled cancellation location: late-branch\n- Pressed primary action location: interaction video, Continue activation\n\n## Screen geometry\n| Measurement | Value |\n|---|---|\n| Complete screen logical width | 390 |\n| Complete screen logical height | 844 |\n| Top safe area | 62 logical units |\n| Bottom safe area | 34 logical units |\n| Single-screen artwork proportion | 1170 × 2532 |\n| Two-screen artwork proportion | 2340 × 2532 |\n| Process specification panel proportion | 1800 × 1600 |\n- Screen orientation: portrait\n- Screen treatment: complete flat artwork\n- Comparison boards: two complete equal-size screens side by side\n- Delivery canvas: surrounding space around the complete screen artwork\n- Interaction video duration: 12 seconds\n- Interaction video segments: four, 3 seconds each\n- Handoff presentation length: at least 8 pages\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# NEIGHBOUR SPACE — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | process-specification | Booking flow and component specification | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | choose-time | Choose venue and time screen | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | details-en | English details draft screen | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | validation-en | English validation screen | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | language-comparison | Portuguese and Polish validation comparison | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | corrected | Portuguese corrected details screen | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | review | Portuguese booking review screen | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | edit-details | English edited activity screen | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | recovery-board | Submission conflict and alternative time board | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | confirmed | English booking confirmation screen | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | cancel-review | Portuguese cancellation review screen | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | cancellation-outcomes | Portuguese cancellation outcomes board | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | language-interaction | Twelve-second language switching and correction video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | handoff-presentation | Booking interface handoff presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 04-terminology.en.md",
+            "config": {
+              "text": "# NEIGHBOUR SPACE terminology\n\n## Language records\n| Locale | Language | Language-control label |\n|---|---|---|\n| en | English | English |\n| pt-PT | Portuguese | Português |\n| pl-PL | Polish | Polski |\n\n## System terms\n| Concept / stable ID | English | Portuguese | Polish |\n|---|---|---|---|\n| language | Language | Idioma | Język |\n| step1 | Choose venue and time | Escolher espaço e horário | Wybierz obiekt i termin |\n| step2 | Your details | Os seus dados | Twoje dane |\n| step3 | Review | Rever reserva | Sprawdź rezerwację |\n| venue_id | Venue | Espaço | Obiekt |\n| R1 | Community room | Sala comunitária | Sala społecznościowa |\n| C1 | Outdoor court | Campo ao ar livre | Boisko plenerowe |\n| booking_date | Date | Data | Data |\n| start_time | Start time | Hora de início | Godzina rozpoczęcia |\n| duration_minutes | Duration | Duração | Czas trwania |\n| duration60 | 60 minutes | 60 minutos | 60 minut |\n| duration90 | 90 minutes | 90 minutos | 90 minut |\n| end_time | End time | Hora de fim | Godzina zakończenia |\n| capacity | Capacity | Lotação | Limit osób |\n| full_name | Full name | Nome completo | Imię i nazwisko |\n| email | Email | Email | Email |\n| activity_name | Activity name | Nome da atividade | Nazwa zajęć |\n| participants | Participants | Participantes | Uczestnicy |\n| accept_rules | I agree to the venue rules. | Concordo com as regras do espaço. | Akceptuję regulamin obiektu. |\n| free | Free booking | Reserva gratuita | Bezpłatna rezerwacja |\n| continue | Continue | Continuar | Dalej |\n| previous | Previous | Anterior | Wstecz |\n| edit_details | Edit details | Editar dados | Edytuj dane |\n| change_time | Change time | Alterar horário | Zmień termin |\n| return_review | Return to review | Voltar à revisão | Wróć do podsumowania |\n| submit | Submit booking | Submeter reserva | Złóż rezerwację |\n| available | Available | Disponível | Dostępny |\n| unavailable | Unavailable | Indisponível | Niedostępny |\n| selected | Selected | Selecionado | Wybrany |\n| draft | Draft | Rascunho | Wersja robocza |\n| not_submitted | Not submitted | Por submeter | Jeszcze niezłożona |\n| confirmed | Booking confirmed | Reserva confirmada | Rezerwacja potwierdzona |\n| booking_id | Booking reference | Referência da reserva | Numer rezerwacji |\n| error_room | Enter a whole number from 1 to 20. | Introduza um número inteiro de 1 a 20. | Wpisz liczbę całkowitą od 1 do 20. |\n| error_court | Enter a whole number from 1 to 8. | Introduza um número inteiro de 1 a 8. | Wpisz liczbę całkowitą od 1 do 8. |\n| error_rules | Agree to the venue rules to continue. | Aceite as regras do espaço para continuar. | Zaakceptuj regulamin obiektu, aby kontynuować. |\n| errors_summary | Check the highlighted fields. | Confira os campos assinalados. | Sprawdź wyróżnione pola. |\n| slot_conflict | This time is no longer available. | Este horário deixou de estar disponível. | Ten termin nie jest już dostępny. |\n| not_booked | No booking has been created. Your details are saved in this draft. | A reserva ainda não foi criada. Os seus dados estão guardados neste rascunho. | Rezerwacja nie została utworzona. Twoje dane są zapisane w tej wersji roboczej. |\n| cancel_booking | Cancel booking | Cancelar reserva | Anuluj rezerwację |\n| cancel_by | Cancel by | Cancelar até | Termin anulowania |\n| confirm_cancel | Confirm cancellation | Confirmar cancelamento | Potwierdź anulowanie |\n| keep_booking | Keep booking | Manter reserva | Zachowaj rezerwację |\n| cancelled | Booking cancelled | Reserva cancelada | Rezerwacja anulowana |\n| cancel_unavailable | Cancellation unavailable | Cancelamento indisponível | Anulowanie niedostępne |\n| cutoff_passed | The cancellation deadline has passed. Your booking remains confirmed. | O prazo de cancelamento terminou. A sua reserva continua confirmada. | Termin anulowania minął. Twoja rezerwacja pozostaje potwierdzona. |\n| cancel_release | This booking is cancelled and no longer holds this time. | Esta reserva foi cancelada e deixou de ocupar este horário. | Ta rezerwacja została anulowana i nie zajmuje już tego terminu. |\n| back_booking | Back to booking | Voltar à reserva | Wróć do rezerwacji |\n| simulation | Illustrative state | Estado ilustrativo | Stan przykładowy |\n\n## Venue-rule text\n| Rule ID | English | Portuguese | Polish |\n|---|---|---|---|\n| interval_capacity | Stay within the confirmed interval and capacity. | Respeite o horário e a lotação confirmados. | Przestrzegaj potwierdzonego terminu i limitu osób. |\n| tidy | Leave the venue tidy. | Deixe o espaço arrumado. | Pozostaw obiekt w porządku. |\n| organiser | The booking stays with the named organiser. | A reserva permanece em nome do organizador indicado. | Rezerwacja pozostaje przypisana do wskazanego organizatora. |\n\n## Unchanged strings\n- Product name: NEIGHBOUR SPACE\n- Organiser: Lin Wei\n- Email: lin.wei@example.com\n- Initial activity: Saturday Sketch Circle\n- Edited activity: Neighbour Sketch Circle\n- Reference: NS-1042\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 05-booking-states.en.md",
+            "config": {
+              "text": "# NEIGHBOUR SPACE booking states\n\n## Shared fields\n- venue_id: R1\n- booking_date: 2027-09-18\n- full_name: Lin Wei\n- email: lin.wei@example.com\n- Step 0: booking-status view\n\n## Named state records\n| Screen / branch | Language | Step | Start | Duration minutes | Raw activity_name | Participants | Agreement | Status | Reference |\n|---|---|---|---|---|---|---|---|---|---|\n| choose-time | en | 1 | 14:00 | 60 | Saturday Sketch Circle | 24 | false | draft | none |\n| details-en | en | 2 | 14:00 | 60 | Saturday Sketch Circle | 24 | false | draft | none |\n| validation-en | en | 2 | 14:00 | 60 | Saturday Sketch Circle | 24 | false | validation-errors | none |\n| validation-zh | pt-PT | 2 | 14:00 | 60 | Saturday Sketch Circle | 24 | false | validation-errors | none |\n| corrected | pt-PT | 2 | 14:00 | 60 | Saturday Sketch Circle | 12 | true | draft | none |\n| review | pt-PT | 3 | 14:00 | 60 | Saturday Sketch Circle | 12 | true | not-submitted | none |\n| edit-details | en | 2 | 14:00 | 60 | Neighbour Sketch Circle | 12 | true | draft | none |\n| conflict | en | 3 | 14:00 | 60 | Neighbour Sketch Circle | 12 | true | not-submitted | none |\n| alternative | en | 1 | 16:30 | 60 | Neighbour Sketch Circle | 12 | true | draft | none |\n| confirmed | en | 0 | 16:30 | 60 | Neighbour Sketch Circle | 12 | true | confirmed | NS-1042 |\n| cancel-review | pt-PT | 0 | 16:30 | 60 | Neighbour Sketch Circle | 12 | true | confirmed | NS-1042 |\n| cancelled-branch | pt-PT | 0 | 16:30 | 60 | Neighbour Sketch Circle | 12 | true | cancelled | NS-1042 |\n| late-branch | pt-PT | 0 | 16:30 | 60 | Neighbour Sketch Circle | 12 | true | confirmed | NS-1042 |\n\n## Additional language views\n| View | Source record | Locale | Data relationship |\n|---|---|---|---|\n| Polish validation | validation-zh | pl-PL | identical field values, step and two active errors |\n| Polish correction in video | corrected | pl-PL | identical corrected field values and cleared errors |\n\n## Transitions\n| From | Action | Result |\n|---|---|---|\n| choose-time | Continue | details-en; existing draft details retained |\n| details-en | Continue | validation-en; participants and accept_rules errors active |\n| validation-en | Portuguese language selection | validation-zh; same step, data and errors |\n| validation-zh | Polish language selection | Polish validation; same step, data and errors |\n| validation-zh | participants 12 and accept_rules true | corrected; both field errors cleared |\n| Polish validation | participants 12 and accept_rules true | Polish correction; both field errors cleared |\n| corrected | Continue | review; not-submitted |\n| review | Edit details, English language selection, explicit activity edit | edit-details; only activity_name changed |\n| edit-details | Return to review | English Review; edited activity retained |\n| English Review | Submit booking at 10:06 | conflict; draft retained; reference none |\n| conflict | Change time | alternative; 16:30 selected; details retained |\n| alternative | Return to review | English Review; 16:30–17:30 and edited details |\n| English Review with alternative time | Submit booking at 10:08 | confirmed; NS-1042 |\n| confirmed | Cancel booking and Portuguese language selection at 14:20 | cancel-review; confirmed status retained |\n| cancel-review | Confirm cancellation at 14:20 | cancelled-branch; this booking's time released |\n| confirmed | Independent cancellation attempt at 14:40 | late-branch; confirmed status retained |\n\n## Snapshot records\n| Local date | Local time | Event | Occupied intervals for R1 | Result |\n|---|---|---|---|---|\n| 2027-09-18 | 10:00 | Initial availability | 13:00–14:00; 15:30–16:30 | 14:00–15:00 available |\n| 2027-09-18 | 10:06 | Submission conflict | 13:00–14:00; 14:00–15:00; 15:30–16:30 | 14:00–15:00 unavailable; reference none |\n| 2027-09-18 | 10:08 | Successful submission | 13:00–14:00; 14:00–15:00; 15:30–16:30; 16:30–17:30 | NS-1042 confirmed |\n\n## Cancellation alternatives\n| Branch | Source | Local clock | Deadline | Action | Resulting status | This booking's hold |\n|---|---|---|---|---|---|---|\n| cancelled-branch | confirmed | 2027-09-18 14:20 | 2027-09-18 14:30 inclusive | Confirm cancellation | cancelled | released |\n| late-branch | confirmed | 2027-09-18 14:40 | 2027-09-18 14:30 inclusive | Cancellation attempt | confirmed | retained |\n\n## Display-state details\n- choose-time: existing organiser and activity details retained in the draft\n- details-en: populated fields before validation; active error count 0\n- validation-en and validation-zh: active field error count 2; textual summary and field-linked messages\n- corrected: active error count 0; changes limited to participants and accept_rules\n- review: complete draft summary and explicit submission action\n- edit-details: edited activity and Return to review action\n- conflict: slot_conflict and not_booked messages; Change time action\n- alternative: replacement interval and Return to review action\n- confirmed: NS-1042, 16:30–17:30 and cancellation deadline\n- cancel-review: clock 14:20; confirmed status; Confirm cancellation and Keep booking actions\n- cancelled-branch: cancelled, cancel_release, simulation and Back to booking terms\n- late-branch: confirmed, cancel_unavailable, cutoff_passed, simulation and Back to booking terms\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: mobile-layout.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: terminology-lengths.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: doorway-symbol.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: community-desk.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "NEIGHBOUR SPACE | Community venue booking across three languages\n\nOur community centre needs a mobile booking flow that residents can use in English, Portuguese and Polish, including when they change language halfway through a form. The service name is \"NEIGHBOUR SPACE\". Build from the supplied booking records, terminology and component values. Every complete screen uses a portrait layout of 390 × 844 logical units, with a 62-unit top safe area and a 34-unit bottom safe area. The existing doorway symbol remains the service mark; the primary colour is #165A63.\n\nThe booking date is 2027-09-18. Community room, R1, holds 20 people and opens 09:00–18:00; Outdoor court, C1, holds 8 and opens 08:00–20:00. Both are free. Starts fall on 30-minute boundaries and bookings last 60 or 90 minutes. The three numbered steps are Choose venue and time, Your details and Review. Our worked journey follows Lin Wei, lin.wei@example.com, booking R1: Participants changes from 24 to 12, agreement changes from false to true, and a separate activity-name edit changes Saturday Sketch Circle to Neighbour Sketch Circle. A failed submission at 10:06 moves the journey from 14:00–15:00 to 16:30–17:30; submission at 10:08 creates NS-1042. Its cancellation deadline is 14:30, inclusive. Language changes preserve the current step, entered values, agreement and active field errors. Use \"Continue\" and \"Submit booking\" for those English actions and their supplied equivalents in Portuguese and Polish.\n\nAudience: residents using different languages, community centre staff and the product team, for agreement on the booking journey and its interface handoff.\n\nInputs (attached): 01-client-facts.en.md contains venue rules, field definitions, component values and screen geometry. 02-delivery-catalog.en.md lists the deliverables, proportions, formats and stages. 04-terminology.en.md contains the English, Portuguese and Polish system terminology. 05-booking-states.en.md contains the named drafts, submission snapshots and cancellation branches. mobile-layout.png fixes the screen boundary and safe areas. terminology-lengths.png compares the five longest English glossary entries with their Portuguese and Polish equivalents. doorway-symbol.png supplies the existing service symbol. community-desk.png provides the atmosphere of residents receiving help at the community centre.\n\nDeliverables:\n1. One process specification containing a step × screen × state flow table, the nine stable field IDs, and a component × state × value table covering default, pressed, disabled and error states\n2. One Choose venue and time screen for choose-time, with both venues, their capacities, the 60- and 90-minute choices and R1 14:00–15:00 selected\n3. One Your details screen for details-en, showing the populated draft before validation\n4. One English validation screen for validation-en, with the error summary and the two field-linked errors\n5. One language-switch comparison board containing two complete validation screens, in Portuguese and Polish, retaining the validation-zh record's data and errors\n6. One corrected Portuguese Your details screen for corrected, with Participants 12 and agreement selected\n7. One Portuguese Review screen for review, with the complete booking summary and submission action\n8. One English Edit details screen for edit-details, showing Neighbour Sketch Circle and the return action\n9. One recovery board containing two complete English screens: conflict at Review and alternative at Choose venue and time\n10. One English booking confirmation screen for confirmed, including NS-1042, 16:30–17:30 and the cancellation deadline\n11. One Portuguese cancellation review screen for cancel-review, showing the confirmed booking at 14:20 and both cancellation choices\n12. One cancellation-outcomes board containing two equal-size Portuguese status screens: cancelled-branch at 14:20 and late-branch at 14:40\n13. One 12-second interaction video following English validation, Portuguese validation, Polish validation and correction, with four equal-duration segments\n14. One handoff presentation of at least 8 pages, reusing the specification, all screen deliverables and the video sequence, with the booking flow, language behaviour, recovery and cancellation branches explained\n\nAcceptance:\n- The process specification names Choose venue and time, Your details and Review in that numbered order and places confirmation and cancellation outside the numbered steps. Every screen deliverable and the handoff presentation repeat the applicable page and state names from that specification; the presentation also repeats #165A63 and the 390 × 844 logical screen size.\n- Every screen in deliverables 2–12 uses the 62-unit top and 34-unit bottom safe areas, the doorway symbol and NEIGHBOUR SPACE, visible field labels, and a reachable control offering English, Português and Polski. The specification, screen deliverables and presentation use the supplied component colours, touch targets of at least 44 × 44 logical units, body-text contrast of at least 4.5:1 and large-text and icon contrast of at least 3:1. Selection, availability, errors and booking status each pair colour with text or a symbol. The specification contains all four component states; the video shows pressed Continue, and the late-branch screen shows disabled cancellation with its deadline explanation.\n- The Choose venue and time screen and recovery board calculate availability over the entire 60- or 90-minute interval, respecting R1 capacity 20, C1 capacity 8 and their opening hours. They treat R1 13:00–14:00 and 15:30–16:30, and C1 10:00–11:00, as occupied at 10:00. The recovery board adds R1 14:00–15:00 at 10:06 and offers the available 16:30–17:30 interval while retaining the edited activity name and corrected details.\n- The English validation screen, language-switch board and video retain Lin Wei, lin.wei@example.com, Saturday Sketch Circle, R1, 2027-09-18, 14:00, 60 minutes, Participants 24 and agreement false through both language changes. Each validation view has exactly two field errors, attached to participants and accept_rules, plus the glossary's error summary. The corrected screen and video's final segment change only Participants to 12 and agreement to true, clearing both errors. All three language versions use the corresponding terms in 04-terminology.en.md.\n- The Review screen carries the not-submitted state; the Edit details screen changes only Saturday Sketch Circle to Neighbour Sketch Circle. The recovery board retains that edit, shows the glossary's conflict and saved-draft messages, and provides Change time followed by Return to review. The confirmation screen and presentation place explicit submission after the return to Review and show NS-1042 created at 10:08. Continue and Submit booking appear exactly on the applicable English screens, with their glossary equivalents on the Portuguese and Polish views.\n- The cancellation review screen retains NS-1042 and confirmed status at 14:20. The cancellation-outcomes board labels both branches with the Portuguese equivalent of Illustrative state: explicit confirmation at 14:20 produces cancelled status and releases this booking's time, while the separate 14:40 attempt retains confirmed status and shows the passed-deadline message. Both branches and the presentation repeat the inclusive deadline 2027-09-18 14:30 and trace independently to the same confirmed record.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/mobile-layout.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "341adb98a5d39e0f569149d78a73be6c946bc3977c52c1110c24899f57794632"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/terminology-lengths.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "dc7644aa8cdc040eb38efd02dd296a25dc937b834034aab9ae9e0b5491bf56d8"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/doorway-symbol.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "85562c55b792bc99c73947b8f46a2fbe3adebd4517f3df73d4b9d6af168d755c"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/community-desk.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "729a43ae142999173e02194f15eca02ee394cb15ebd05592ade3df04ee8f808c"
+    }
+  ]
+}

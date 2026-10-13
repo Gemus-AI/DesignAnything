@@ -1,0 +1,29 @@
+KEEPSAKE | Commemorative silver charms for two interchangeable hosts
+
+We are extending KEEPSAKE around an existing silver connector: three distinct charms, C1, C2 and C3, moving between necklace N and bracelet B. Adults should be able to add a memory while keeping the pieces they already wear. Develop three related silhouettes, each within 22 × 18 × 3 mm including its integral eye, and state each charm’s chosen height, width and depth. N measures 460 mm and B measures 190 mm along the closed chain path, including the clasp and excluding hanging charms. Each host has three receiving stations, R1–R2–R3 in its labelled flat front view; choose and record their spacing and the chain construction. The charms, chains, clasps and visible connectors are 925 silver, with a consistent allocation of polished, satin/brushed or oxidized silver surfaces. Engrave both inscription lines on each charm’s outward decorated face: C1 carries "FIRST LIGHT" above 08.06.2019; C2 carries "MIRA + NOAH" above 14.09.2022; C3 carries "HOMEWARD" above 03.04.2025. The first line may wrap; each date remains a single readable line.
+
+The supplied K/R/L interface is fixed. K has a closed outer diameter of 6.0 mm, circular wire diameter of 1.0 mm and open-gate clear gap of 2.5 mm. The closed host ring R has an outer diameter of 4.0 mm, wire diameter of 1.0 mm and clear bore of 2.0 mm. Each integral charm eye L has an outer diameter of 4.0 mm, clear bore of 2.0 mm and axial thickness of 1.0 mm. One K passes through one L and one host R for each attached charm; opening K releases that charm while R and L remain closed. An empty station consists of its R alone. Retain the existing connector’s recognisable circular form and gate placement. Use the eight recorded combinations, preserving station identities as the chains move. Bracelet wearing views use a nominal 170 mm adult left wrist. Print "KEEPSAKE" on every final design sheet, assembly board and wearing board, and on the video title and presentation cover where supplied.
+
+Audience: our collection lead and silver workshop, choosing the range and preparing the development brief for adults building a personal collection over time.
+
+Inputs (attached): 01-client-facts.en.md contains the collection, material, interface and wearing facts. 02-delivery-catalog.en.md lists each deliverable’s proportion, format and stage. 03-inscriptions.md contains the three engraving records. 04-combinations.md contains the eight station assignments. attachment-interfaces.png is the constraint image defining the undecorated K/R/L geometry. keepsake-connector.png is the identity image recording the existing circular connector and its gate placement. wrist-layering-reference.png is the atmosphere reference for adult wrist framing and neutral clothing layers.
+
+Deliverables:
+1. One one-page materials and craft sheet recording 925 silver, finish allocation, the K/R/L dimensions, chosen C1–C3 dimensions, N and B lengths, station spacing, chain construction and engraving treatment
+2. Three charm design sheets, one each for C1, C2 and C3, with front, reverse and side views, readable engraving, dimensions and finish annotations
+3. One host-chain design sheet showing N and B in labelled flat front views, their clasps, chain construction, lengths and three station positions
+4. Two detail sheets: one for closed and open K/R/L connection and gate access, and one for the three engraved silver faces and their surface treatment
+5. Three flat assembly boards: WN1 with N carrying C1 at R1 and C2 at R2; WN2 with N carrying C3 at R2; WB1 with B carrying C2 at R1 and C3 at R3, each showing all three stations and labelling the remaining stations empty
+6. Two wearing boards: WN1 on an adult upper chest at an open neckline, and WB1 on an adult left wrist with a relaxed hand and shirt cuff, each with a readable connection and engraving inset
+7. One 10-second WB1 wearing video showing the complete bracelet configuration during a gentle wrist rotation
+8. One collection presentation of at least 8 pages, reusing the materials and craft sheet, charm and host designs, details, assemblies and wearing boards
+
+Acceptance:
+- The materials and craft sheet precedes the design sheets and records 925 silver, the complete fixed K/R/L dimensions and the N 460 mm and B 190 mm lengths; the connection detail repeats those interface dimensions, the host-chain sheet repeats both lengths, and the presentation repeats all three sets of facts.
+- The three charm design sheets and engraving detail show C1 FIRST LIGHT / 08.06.2019, C2 MIRA + NOAH / 14.09.2022 and C3 HOMEWARD / 03.04.2025 engraved on their respective decorated faces, preserving every letter, space, plus sign and date punctuation; the design sheets state dimensions within 22 × 18 × 3 mm and carry the craft sheet’s finish allocation.
+- The connection detail and three assembly boards use one K through one R and one L per attached charm and R alone at empty stations; the boards label WN1 as C1/C2/empty, WN2 as empty/C3/empty and WB1 as C2/empty/C3 in R1–R2–R3 order.
+- The WN1 and WB1 wearing boards label their W code, host length and all three station assignments, preserve their corresponding assembly configurations and use the specified neckline and cuff settings; WB1 uses the nominal 170 mm wrist.
+- The 10-second WB1 video preserves B at 190 mm with C2 at R1, R2 empty and C3 at R3 throughout the wrist rotation; its title prints KEEPSAKE and WB1.
+- The presentation has at least 8 pages and reuses all three charm designs, both hosts and both wearing boards; its cover and every final design sheet, assembly board and wearing board print KEEPSAKE.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

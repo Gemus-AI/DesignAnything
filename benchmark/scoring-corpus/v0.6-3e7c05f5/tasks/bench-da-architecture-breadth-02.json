@@ -1,0 +1,1163 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-architecture-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "accommodation-schedule",
+      "label": "Accommodation schedule",
+      "description": "An accommodation schedule of room IDs, names, areas, heights, floor datums, adjacencies and circulation totals.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "site-massing",
+      "label": "Site and massing sheet",
+      "description": "One site and massing sheet showing the building, courtyard, neighbours, setbacks and core zone.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ground-floor",
+      "label": "Ground Floor plan",
+      "description": "One furnished Ground Floor plan with six private rooms, shared facilities and controlled thresholds.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "first-floor",
+      "label": "First Floor plan",
+      "description": "One furnished First Floor plan with rooms U07 to U12 and vertical circulation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "second-floor",
+      "label": "Second Floor plan",
+      "description": "One furnished Second Floor plan with rooms U13 to U18 and vertical circulation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "private-room-details",
+      "label": "Private-room plans and sections",
+      "description": "One detail sheet of the standard and accessible private rooms with bathroom layouts and accessibility dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shared-space-details",
+      "label": "Shared-space plan and section",
+      "description": "One shared-space detail sheet of Shared Kitchen, Dining Room and Lounge with equipment, seating and soffit treatment.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "building-section",
+      "label": "Courtyard and residential wing section",
+      "description": "One building section through the courtyard and residential wing with levels, heights, spans and roof construction.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "elevations",
+      "label": "Four building elevations",
+      "description": "One sheet of four elevations with opening positions, material boundaries and the east neighbour in the street elevation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "weekday-interior",
+      "label": "Weekday 14:00 Work Room view",
+      "description": "One eye-level interior view of six residents working in Work Room at weekday 14:00.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "night-exterior",
+      "label": "21:00 south street view",
+      "description": "One eye-level south street view at 21:00 showing the named entrance, occupied Lounge and existing east neighbour.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "circulation",
+      "label": "Resident and visitor circulation",
+      "description": "One circulation sheet with two timed ground-floor diagrams, access thresholds and routes between three floors.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "architectural-video",
+      "label": "Entrance to courtyard video",
+      "description": "One 10-second architectural video following the route from the south entrance through Lounge to the courtyard.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Housing proposal presentation",
+      "description": "One presentation of at least eight pages assembling the schedule, architectural drawings, circulation and occupancy views.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "COMMON YARD",
+      "scope": {
+        "slots": [
+          "site-massing",
+          "ground-floor",
+          "first-floor",
+          "second-floor",
+          "private-room-details",
+          "shared-space-details",
+          "building-section",
+          "elevations",
+          "circulation",
+          "night-exterior",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "controlled-threshold-label",
+      "kind": "text-verbatim",
+      "text": "Resident access",
+      "scope": {
+        "slots": [
+          "ground-floor",
+          "first-floor",
+          "second-floor",
+          "circulation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON YARD",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-building-proposal",
+      "slots": [
+        "site-massing",
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "private-room-details",
+        "shared-space-details",
+        "building-section",
+        "elevations",
+        "weekday-interior",
+        "night-exterior",
+        "circulation"
+      ],
+      "sourceSlots": [
+        "accommodation-schedule"
+      ],
+      "items": [
+        {
+          "item": "Room labels, areas, floor allocation and datums agree with the accommodation schedule wherever the corresponding spaces are represented.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The footprint, floor stacking, western core, courtyard edges, openings and shared-room relationships describe one coordinated building across drawings and occupied views.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Circulation diagrams and occupied views remain compatible with the planned resident thresholds, visitor destinations and the two prescribed occupancy states.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Comparable depictions preserve the specified concrete frame, brick infill, aluminium frames and exposed shared-room soffits while allowing changes of lighting and representation.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON YARD"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "site-massing",
+      "ground-floor",
+      "first-floor",
+      "second-floor",
+      "private-room-details",
+      "shared-space-details",
+      "building-section",
+      "elevations",
+      "weekday-interior",
+      "night-exterior",
+      "circulation"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge unrequested statutory compliance, engineering certification or demonstrated construction-cost affordability."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "accommodation-schedule",
+        "site-massing",
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "private-room-details",
+        "shared-space-details",
+        "building-section",
+        "elevations",
+        "weekday-interior",
+        "night-exterior",
+        "circulation",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "site-massing",
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "private-room-details",
+        "shared-space-details",
+        "building-section",
+        "elevations",
+        "weekday-interior",
+        "night-exterior",
+        "circulation"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-accommodation-schedule",
+      "requirementId": "R-format-accommodation-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "accommodation-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-site-massing",
+      "requirementId": "R-format-site-massing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-massing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ground-floor",
+      "requirementId": "R-format-ground-floor",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ground-floor"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-first-floor",
+      "requirementId": "R-format-first-floor",
+      "method": "artifact-property",
+      "targetSlots": [
+        "first-floor"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-second-floor",
+      "requirementId": "R-format-second-floor",
+      "method": "artifact-property",
+      "targetSlots": [
+        "second-floor"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-private-room-details",
+      "requirementId": "R-format-private-room-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "private-room-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shared-space-details",
+      "requirementId": "R-format-shared-space-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shared-space-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-building-section",
+      "requirementId": "R-format-building-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "building-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-elevations",
+      "requirementId": "R-format-elevations",
+      "method": "artifact-property",
+      "targetSlots": [
+        "elevations"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-weekday-interior",
+      "requirementId": "R-format-weekday-interior",
+      "method": "artifact-property",
+      "targetSlots": [
+        "weekday-interior"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-night-exterior",
+      "requirementId": "R-format-night-exterior",
+      "method": "artifact-property",
+      "targetSlots": [
+        "night-exterior"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-circulation",
+      "requirementId": "R-format-circulation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "circulation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-architectural-video",
+      "requirementId": "R-format-architectural-video",
+      "method": "manual",
+      "targetSlots": [
+        "architectural-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "schedule-records-and-totals",
+      "requirementId": "R-schedule-records-and-totals",
+      "method": "content",
+      "targetSlots": [
+        "accommodation-schedule"
+      ],
+      "criteria": "The schedule establishes the accommodation baseline and contains all specified record fields. U01–U02 are Accessible Room, 26 m² each, on Ground Floor; U03–U06 are Standard Room, 20 m² each, on Ground Floor; U07–U12 and U13–U18 are Standard Room, 20 m² each, on First and Second Floor respectively. Each private room houses one resident and includes its bathroom within its net area. All enclosed rooms have 2800 mm clear height. Floor datums are ±0.000, +3.200 m and +6.400 m. S01–S08 reproduce the attachment's names, ground-floor placement, areas and adjacencies; E01 is an open-to-sky Courtyard of at least 60 m². Private-room subtotals are 132, 120 and 120 m²; shared/support enclosed rooms total 150 m²; fixed enclosed rooms total 522 m². Floor totals separately account for circulation, with stairs, lift and walls additional to fixed room net areas. Missing records, incorrect fields or totals, and invented fixed private-room adjacencies fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ]
+    },
+    {
+      "id": "room-records-in-drawings",
+      "requirementId": "R-room-records-in-drawings",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "private-room-details"
+      ],
+      "criteria": "Read the printed room records and compare them with the schedule and fixed attachment data. Ground Floor contains U01–U02 Accessible Room at 26 m² and U03–U06 Standard Room at 20 m²; First Floor contains U07–U12 and Second Floor U13–U18, all Standard Room at 20 m². There are exactly six single-occupancy private rooms per floor. Detail drawings identify the corresponding scheduled room IDs or ID groups and retain their names and areas; representative room-type details are acceptable. Duplicate IDs, omitted rooms, relocated accessible rooms or conflicting records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "accommodation-schedule"
+      ]
+    },
+    {
+      "id": "presentation-facts",
+      "requirementId": "R-presentation-facts",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation has at least eight pages and preserves the schedule's room IDs, names, net areas and floor assignments, including all 18 private rooms, six per floor and both 26 m² accessible rooms on Ground Floor. Its floor datums match ±0.000, +3.200 m and +6.400 m wherever stated. Reused legible schedules or drawings count as evidence; a summary that omits the required room records or contradicts the schedule fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "sourceSlots": [
+        "accommodation-schedule"
+      ]
+    },
+    {
+      "id": "site-envelope-compliance",
+      "requirementId": "R-site-envelope-compliance",
+      "method": "visual",
+      "targetSlots": [
+        "site-massing",
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "building-section"
+      ],
+      "criteria": "Dimensions and aligned geometry establish a 30000 mm east–west by 36000 mm north–south site, area 1080 m², with the street to the south. The building remains inside the 24000 mm by 28000 mm buildable envelope created by 3000 mm east/west and 4000 mm north/south setbacks. The level ground datum meets the south pavement, whose width is 3000 mm. Footprint and courtyard arrangement may vary within these limits. Conflicting orientation, encroachment or inconsistent placement between drawings fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "neighbouring-footprints",
+      "requirementId": "R-neighbouring-footprints",
+      "method": "visual",
+      "targetSlots": [
+        "site-massing"
+      ],
+      "criteria": "Using the southwest site corner as origin, with x east and y north in millimetres, the west neighbour occupies x −12000 to −6000 and y 2000 to 34000, the east neighbour x 36000 to 48000 and y 2000 to 34000, and the north neighbour x 0 to 30000 and y 44000 to 52000. Their heights are respectively 9600, 9600 and 6400 mm. Dimensioned or scaled geometry may establish these facts without printing every coordinate. Missing neighbours or materially different footprints, offsets or heights fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "core-and-dimensional-framework",
+      "requirementId": "R-core-and-dimensional-framework",
+      "method": "visual",
+      "targetSlots": [
+        "site-massing",
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "building-section"
+      ],
+      "criteria": "The site and plans locate the vertical core within the western 6000 mm of the buildable envelope, with one stair at each end and one lift; corresponding core positions align between floors. The section explicitly dimensions enclosed-room clear heights at 2800 mm, structural spans no greater than 6000 mm, floor datums ±0.000, +3.200 m and +6.400 m, roof datum +9.600 m and height limit +10.200 m. Geometry must agree with its labels; extra occupied floors, misplaced circulation cores or exceeded limits fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "shared-program-and-courtyard",
+      "requirementId": "R-shared-program-and-courtyard",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor",
+        "shared-space-details",
+        "site-massing"
+      ],
+      "criteria": "Ground Floor labels S01 Shared Kitchen 24 m², S02 Dining Room 36 m², S03 Lounge 30 m², S04 Work Room 18 m², S05 Laundry 12 m², S06 Entrance Lobby 12 m², S07 Guest WC 6 m² and S08 Service Room 12 m². Furnishing or equipment symbols establish six cooking positions, 6000 mm usable worktop, 18 dining seats, 12 lounge seats, six desks, three washers, three dryers, and a WC and basin in Guest WC. Shared-space details agree for the spaces they depict. Layouts realize the recorded adjacencies, including kitchen–dining, dining–courtyard, lounge–lobby/courtyard/south frontage and lobby–south pavement/Guest WC/resident threshold; Work Room and Laundry connect to resident circulation and Service Room has operator access. Site and Ground Floor both label the open courtyard at at least 60 m². Arrangement may vary, but missing facilities, insufficient equipment, wrong areas, displaced upper-floor shared facilities or conflicting adjacencies fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "accommodation-schedule"
+      ]
+    },
+    {
+      "id": "private-room-detail-function",
+      "requirementId": "R-private-room-detail-function",
+      "method": "visual",
+      "targetSlots": [
+        "private-room-details"
+      ],
+      "criteria": "Both room types have readable plans and sections, with 20 m² and 26 m² net areas including their private bathrooms and 2800 mm clear height. Each accommodates a single bed, desk and wardrobe. Entrance openings are dimensioned 950 mm clear; the accessible room entrance and bathroom entrance both meet that value. Separate 1500 mm diameter turning circles fit within the accessible room and its bathroom without fixed obstructions. Furniture arrangement may vary; absent sections, shared rather than private bathrooms, missing dimensions or obstructed turning spaces fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "floor-plan-information",
+      "requirementId": "R-floor-plan-information",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor",
+        "first-floor",
+        "second-floor"
+      ],
+      "criteria": "Each plan identifies its floor and includes legible room IDs, names, net areas, the appropriate floor datum, a structural grid, a north arrow and a usable metric scale bar. Private-room furniture shows a single bed, desk, wardrobe and private bathroom. Circulation areas are stated separately from room net areas. Graphic style and grid naming may vary; missing required information, unfurnished accommodation or circulation absorbed into stated room net areas fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "site-sheet-information",
+      "requirementId": "R-site-sheet-information",
+      "method": "visual",
+      "targetSlots": [
+        "site-massing"
+      ],
+      "criteria": "The sheet makes the proposed footprint and massing readable alongside the open courtyard, surrounding buildings, setbacks and western core zone, and provides a north arrow and metric scale bar. These features must be distinguishable rather than implied by an unannotated perspective. Composition and representation technique may vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "shared-space-section-and-plan",
+      "requirementId": "R-shared-space-section-and-plan",
+      "method": "visual",
+      "targetSlots": [
+        "shared-space-details"
+      ],
+      "criteria": "A ground-floor plan and section explain Shared Kitchen, Dining Room and Lounge, with equipment and seating readable in plan and the exposed concrete soffit legible in section. The plan and section correspond spatially and show the scheduled kitchen worktop and cooking provision, 18 dining seats and 12 lounge seats. A decorative interior image without the required plan/section evidence, or a ceiling treatment concealing the specified soffit, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "section-cut-and-roof",
+      "requirementId": "R-section-cut-and-roof",
+      "method": "visual",
+      "targetSlots": [
+        "building-section"
+      ],
+      "criteria": "The section genuinely cuts both the open courtyard and a residential wing and explains all three occupied levels and the roof construction. Its 3200 mm floor-to-floor spacing reconciles 2800 mm clear enclosed-room height with a 400 mm floor and service zone. A readable roof build-up fits the +9.600 m roof datum and +10.200 m maximum height. Roof assembly design may vary; an elevation substituted for a section, an omitted courtyard/wing cut or unresolved height contradictions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "four-elevations",
+      "requirementId": "R-four-elevations",
+      "method": "visual",
+      "targetSlots": [
+        "elevations"
+      ],
+      "criteria": "North, south, east and west elevations are identifiable, with opening locations and changes of material legible. The south street elevation includes the existing neighbour to the east. Openings and storey levels correspond to the plans and section where comparable. Sheet arrangement may vary; an omitted face, absent neighbour or contradictory opening positions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "building-section"
+      ]
+    },
+    {
+      "id": "timed-occupancy",
+      "requirementId": "R-timed-occupancy",
+      "method": "visual",
+      "targetSlots": [
+        "circulation",
+        "weekday-interior",
+        "night-exterior"
+      ],
+      "criteria": "The circulation sheet clearly distinguishes weekday 14:00 from 21:00 and accounts for the complete records: at 14:00, six residents work at Work Room desks, two rest in private rooms, ten are away and there are no visitors; at 21:00, 12 residents dine and six residents plus four visitors socialise in Lounge, with none away or in Work Room/private rooms. The weekday image is an eye-level Work Room interior showing six residents working. The night image is an eye-level view from the south pavement showing the entrance and evening Lounge use, with occupation consistent with the ten-person Lounge group. Off-camera occupants need not appear in either view; complete counts must remain recoverable from the diagrams. Wrong activities, conflicting counts or viewpoints fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "circulation-and-access",
+      "requirementId": "R-circulation-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "circulation"
+      ],
+      "criteria": "Separate timed ground-floor diagrams distinguish resident and visitor routes. Visitors can travel from Entrance Lobby to Lounge, Guest WC and Courtyard without entering resident-controlled routes. Resident access thresholds precede routes to private rooms, Shared Kitchen, Dining Room, Work Room and Laundry. Service Room is served by operator access. A vertical route diagram connects Ground, First and Second Floor through the planned stairs and lift, consistent with their western core locations. Route colours and symbols may vary; missing destinations, bypassable residential thresholds or disconnected vertical routes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "ground-floor",
+        "first-floor",
+        "second-floor"
+      ]
+    },
+    {
+      "id": "building-and-material-consistency",
+      "requirementId": "R-building-and-material-consistency",
+      "method": "visual",
+      "targetSlots": [
+        "building-section",
+        "shared-space-details",
+        "elevations",
+        "weekday-interior",
+        "night-exterior"
+      ],
+      "criteria": "Comparable views agree on the three occupied storeys, openings, courtyard boundaries and material transitions. Section and elevations explicitly identify a cast-in-place reinforced concrete frame and floor slabs, brick infill and aluminium window frames. Shared Kitchen, Dining Room and Lounge show exposed concrete soffits wherever their ceilings are represented. Differences of scale, lighting and viewpoint are allowed; incompatible geometry, substituted construction materials or concealed specified soffits fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "east-neighbour-character",
+      "requirementId": "R-east-neighbour-character",
+      "method": "visual",
+      "targetSlots": [
+        "elevations",
+        "night-exterior"
+      ],
+      "criteria": "The east neighbour remains a 9600 mm-high, three-storey red-brown brick building with pale concrete lintels and a flat parapet roof. Its west, site-facing elevation retains four aligned window bays; the south street elevation representation and night view preserve that identity wherever visible. Perspective and partial occlusion may affect visibility but must not replace the four-bay rhythm or alter the neighbour's storey count, material character or roof form.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "title-and-sign-placement",
+      "requirementId": "R-title-and-sign-placement",
+      "method": "visual",
+      "targetSlots": [
+        "site-massing",
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "private-room-details",
+        "shared-space-details",
+        "building-section",
+        "elevations",
+        "circulation",
+        "night-exterior"
+      ],
+      "criteria": "Each drawing sheet uses COMMON YARD as its title. In the night exterior, COMMON YARD is visibly associated with the building entrance as signage. On each floor plan and the circulation sheet, Resident access labels sit at the controlled residential thresholds and clearly identify the relevant boundaries. Typography and sign design may vary; incidental text elsewhere on the page does not satisfy the required placement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "architectural-video",
+      "requirementId": "R-architectural-video",
+      "method": "manual",
+      "targetSlots": [
+        "architectural-video"
+      ],
+      "criteria": "Review the complete video and its runtime: it lasts 10 seconds and travels from the south entrance through Lounge to the courtyard in that order. The route is spatially plausible against the Ground Floor plan, and visible openings, courtyard edges, material boundaries and Lounge's exposed concrete soffit belong to the same three-storey building shown in the drawings. Camera pacing may vary; a different route, disconnected sequence, conflicting architecture or incorrect duration fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "ground-floor",
+        "shared-space-details",
+        "building-section",
+        "elevations"
+      ]
+    },
+    {
+      "id": "presentation-reuses-deliverables",
+      "requirementId": "R-presentation-reuses-deliverables",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation visibly reuses identifiable, legible content from every listed source role, including all three floor plans and both occupancy views. Reformatting, scaling and selective crops are acceptable if the required source content remains recognizable and its essential information survives. Merely naming a source, substituting unrelated imagery or omitting a listed source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "sourceSlots": [
+        "accommodation-schedule",
+        "site-massing",
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "private-room-details",
+        "building-section",
+        "elevations",
+        "circulation",
+        "weekday-interior",
+        "night-exterior"
+      ]
+    },
+    {
+      "id": "set-coordinated-building-proposal",
+      "requirementId": "R-set-coordinated-building-proposal",
+      "method": "visual",
+      "targetSlots": [
+        "site-massing",
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "private-room-details",
+        "shared-space-details",
+        "building-section",
+        "elevations",
+        "weekday-interior",
+        "night-exterior",
+        "circulation"
+      ],
+      "criteria": "Room labels, areas, floor allocation and datums agree with the accommodation schedule wherever the corresponding spaces are represented. The footprint, floor stacking, western core, courtyard edges, openings and shared-room relationships describe one coordinated building across drawings and occupied views. Circulation diagrams and occupied views remain compatible with the planned resident thresholds, visitor destinations and the two prescribed occupancy states. Comparable depictions preserve the specified concrete frame, brick infill, aluminium frames and exposed shared-room soffits while allowing changes of lighting and representation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-02/03-accommodation-and-use.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "accommodation-schedule"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "building-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "building-section",
+      "subjectSlots": [
+        "shared-space-details",
+        "elevations",
+        "weekday-interior",
+        "night-exterior"
+      ],
+      "notes": "The building section, shared-space details, elevation sheet, occupancy views and video depict the same three-storey building, with matching openings, courtyard edges and material boundaries."
+    },
+    {
+      "id": "existing-east-neighbour",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "east-neighbour.png"
+      ],
+      "subjectSlots": [
+        "elevations",
+        "night-exterior"
+      ],
+      "notes": "The street elevation and night view retain the east neighbour's three storeys and four window bays."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "scheduled-accommodation",
+      "fromSlot": "accommodation-schedule",
+      "toSlots": [
+        "ground-floor",
+        "first-floor",
+        "second-floor",
+        "private-room-details",
+        "presentation"
+      ],
+      "extract": [
+        "room IDs, room names and net areas",
+        "room allocation by floor",
+        "floor datums"
+      ],
+      "notes": "The accommodation schedule, three floor plans, private-room detail sheet and presentation repeat the same room IDs, names and net areas from 03-accommodation-and-use.en.md: 18 rooms for 18 residents, six rooms per floor, including both 26 m² accessible rooms on Ground Floor. The schedule and floor plans also state each floor datum and account separately for circulation areas."
+    }
+  ]
+}

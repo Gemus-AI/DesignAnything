@@ -1,0 +1,134 @@
+{
+  "id": "bench-da-photo-breadth-01",
+  "title": "ALDER COMMON LIBRARY — A morning journey from street to reading table, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PHOTOGRAPHY",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# ALDER COMMON LIBRARY\n\n## Publication\n- Project: morning architectural photography\n- Uses: resident newsletter; architectural journal feature\n- Sequence heading: A place to begin the day\n- Existing entrance sign: ALDER COMMON LIBRARY\n\n## Building geometry\n| Element | Record |\n|---|---|\n| Storeys | 1 |\n| Footprint | 18000 mm east–west × 12000 mm north–south |\n| Parapet height | 3600 mm above finished floor |\n| Internal ceiling height | 3200 mm above finished floor |\n| South entrance | Centred glazed double door; 1800 mm wide; 2400 mm high |\n| Entrance sign | Centred above south door; baseline 2900 mm above finished floor |\n| East windows | 3 equal openings; each 2400 mm wide × 2100 mm high |\n| East window sill | 600 mm above finished floor |\n| East window centres | 2000 mm, 6000 mm and 10000 mm south of northeast corner |\n| Other facade openings | South: entrance only; north and west: solid walls |\n| Arrival zone | Full-width strip extending 2400 mm north from south entrance wall |\n| Interior relationship | Arrival zone and reading room occupy one continuous open volume |\n| Reading table | 1 oak table; 900 mm east–west × 2400 mm north–south; height 740 mm |\n| Table centre | 14500 mm east of west wall; 6000 mm south of north wall |\n| South approach | Level paved area extending 6000 mm south of entrance |\n| East access | Level paved strip extending 4000 mm east of facade |\n| Camera access | South approach; east paved strip; interior floor |\n\n## Materials\n| Surface | Existing material |\n|---|---|\n| Exterior walls and parapet | Warm grey brick with flush mortar joints |\n| Door and window frames | Matte charcoal aluminium |\n| Entrance sign | Individual charcoal uppercase letters |\n| Interior walls and window reveals | Warm white plaster |\n| Interior floor | Pale terrazzo with fine grey aggregate |\n| Reading table | Natural oak with visible grain |\n| Exterior paving | Light grey concrete slabs |\n\n## Morning light\n- Session window: 08:00–09:00, one morning\n- Site count: 1\n- Illumination: daylight\n- Sun azimuth: 105 degrees clockwise from north\n- Sun altitude: 20 degrees\n- Sun position: east-southeast\n- Ground shadow bearing: 285 degrees, west-northwest\n- White balance: 5500 K\n\n## Publication geometry\n| Use | Proportion |\n|---|---|\n| Landscape opening | 3:2 |\n| Portrait opening alternative | 2:3 |\n| Interior photographs | 3:2 |\n| Material detail | 1:1 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# ALDER COMMON LIBRARY — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | landscape-arrival | Landscape exterior arrival photograph | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | portrait-arrival | Portrait crop of the exterior arrival photograph | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | interior-threshold | Interior threshold photograph | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | reading-room | Reading-room spatial photograph | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | window-material-detail | Window and floor material detail photograph | 6 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | sequence-and-shooting-notes | Final sequence and shooting notes | 6 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: library-plan-and-crops.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: morning-light-study.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: library-facades-and-materials.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "ALDER COMMON LIBRARY | A morning journey from street to reading table\n\nWe are commissioning a morning architectural photography series for our community library's resident newsletter and an architectural journal feature. The sequence should let someone approaching for the first time understand how the street leads through the entrance to a place to read. Deliver five finished photographs and a final sequence sheet, with the exterior supplied in two crops from the same exposure.\n\nThe library is a single-storey rectangle, 18000 mm east to west and 12000 mm north to south, with a flat parapet at 3600 mm. A centred, 1800 mm-wide glazed double entrance occupies the south facade; the existing sign above it reads \"ALDER COMMON LIBRARY\". The east facade has three equal windows, each 2400 mm wide and 2100 mm high, with sills at 600 mm. Warm grey brick, charcoal aluminium frames, pale terrazzo flooring and one oak reading table establish the material continuity. The table stands beside the middle east window. The south entrance opens directly into the reading room through a 2400 mm-deep arrival zone.\n\nThe session uses this single building between 08:00 and 09:00. The supplied light condition is east-southeast sunlight at azimuth 105 degrees and altitude 20 degrees, casting shadows toward west-northwest. Use daylight as the sole illumination and a common 5500 K white balance. Camera positions and focal lengths are yours to choose within the mapped access areas. Print \"A place to begin the day\" as the heading of the final sequence sheet.\n\nAudience: local residents deciding how the library fits into their morning routine, and architectural journal readers assessing its arrival experience, spatial connections and daylight.\n\nInputs (attached): 01-client-facts.en.md contains the building dimensions, opening locations, material records and morning light conditions. 02-delivery-catalog.en.md contains the proportions, formats and stages for all six deliverables. library-plan-and-crops.png supplies the measured plan, accessible camera areas, north orientation, light direction and publication crop geometry. library-facades-and-materials.png records the existing facades, entrance sign, window arrangement and material appearance. morning-light-study.png supplies an empty-space reference for low sunlight, shadow edges and surface texture.\n\nDeliverables:\n1. Two exterior arrival photographs from one exposure: a landscape view connecting the south approach, entrance and east facade, and a portrait crop retaining the entrance sign and nearest east window\n2. One interior threshold photograph connecting the south entrance, arrival zone and east-side reading table\n3. One reading-room photograph showing the oak table and all three east windows in their spatial relationship\n4. One square material detail photograph of an east-window reveal, charcoal frame and sunlit terrazzo floor\n5. One two-page final sequence and shooting-notes document, with all five photographs as numbered thumbnails, the four distinct camera positions marked on the plan, captions and exposure records\n\nAcceptance:\n- In both exterior photographs, retain the centred 1800 mm entrance, the legible ALDER COMMON LIBRARY sign above it and the nearest east window; show all three east windows in the landscape version and derive the portrait version from that same exposure.\n- In the threshold and reading-room photographs, place the oak table beside the middle east window; show the entrance opening into the 2400 mm-deep arrival zone in the threshold view, and all three equal east windows in the reading-room view.\n- Across the exterior, threshold, reading-room and material detail photographs, match the identity reference's warm grey brick, charcoal frames, pale terrazzo and oak wherever those materials appear; retain the 600 mm window sill height in views that show the sill and floor together.\n- In the threshold, reading-room and material detail photographs, direct sunlight from the east windows toward west-northwest; record the shared 5500 K white balance and each exposure's time within 08:00–09:00 in the shooting notes.\n- In the final sequence document, print ALDER COMMON LIBRARY and the heading \"A place to begin the day\"; number the thumbnails 01 landscape arrival, 02 threshold, 03 reading room, 04 material detail and 05 portrait arrival, with 05 identified as the alternate opening crop.\n- On page two of the final sequence document, map the four distinct camera positions and viewing directions, link both arrival crops to one position, and give the time, focal length, aperture, shutter speed and ISO for each of the four exposures.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/library-plan-and-crops.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "de772467e839ea4f2991752be7bde1711a847fb24462e0fcbdeb8996a4784037"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/morning-light-study.png",
+      "nodeId": "provided-image-2",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "a4828c58c08b015b6b982939acaefb5e46ba59afc7b411cc85552f4dd58faecc"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/library-facades-and-materials.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "8fe911d2005841d5e73f9ae1aac93650f9bbb54e1db91b50aafc1acb69643338"
+    }
+  ]
+}

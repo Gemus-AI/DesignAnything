@@ -1,0 +1,172 @@
+{
+  "id": "bench-da-game-breadth-03",
+  "title": "THE REED COURT — Letters, loyalties and a sealed court secret, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GAME",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# THE REED COURT\n\n## Project\n- Setting: the palace of Avel during a royal curfew.\n- Genre: single-player court correspondence and branching narrative.\n- Player character: Mara Venn, junior envoy of House Venn.\n- Central question: the identity of the person who ordered East Gate opened.\n- Opening location: Reed Gallery.\n- Fixed direction: ink contours, translucent gouache and upper-left candlelight.\n\n## Palette and sender recognition\n| Element | Color | Shape |\n|---|---|---|\n| Paper | #F2E6CC | Parchment field |\n| Text and contours | #252A30 | Ink strokes |\n| House Venn | #8A4934 | One forked reed |\n| House Sere | #315B70 | Three vertical reeds |\n| House Orlan | #69445C | One stepped arch |\n\n## Reading geometry\n- Logical canvas: 1920 × 1080 units.\n- Safe inset: 48 units on all four sides.\n- Letter body rectangle: x 576, y 144, width 960, height 648 logical units.\n- Default text height: at least 18 logical units.\n- Maximum line length: 75 English characters, including spaces.\n- Enlarged reading: 200%, with vertical scrolling.\n- Body text and ordinary control contrast: at least 4.5:1.\n- Large text, icon and disabled control contrast: at least 3:1.\n- Disabled action treatment: lock icon and Sealed label.\n- Return to hall control area: x 1488, y 912, width 336, height 72 logical units.\n- Controller action symbol: south face button.\n- Touch action symbol: fingertip.\n\n## Pendant\n- Record: P01, Reed Pendant.\n- Owner: Ivo Sere.\n- Holder throughout the opening and both branches: Mara Venn.\n- Closed dimensions: 36 × 24 × 6 mm, height × width × thickness.\n- Material: silver.\n- Features: oval body, one top loop, right-side hinge, three vertical reeds with a diagonal break across the middle reed.\n- States: Closed; Open.\n- Inner inscription: Tessa ordered the gate opened.\n\n## Opening outcomes\n| State | Trust | Clues | P01 | Inscription visibility |\n|---|---:|---:|---|---|\n| Arrival | 1 | 0 | Closed | Sealed |\n| B01 Confidence | 2 | 0 | Closed | Sealed |\n| B02 Disclosure | 0 | 1 | Open | Full inscription |\n\n## Screen wording\n- Game title: THE REED COURT.\n- Places: Reed Gallery; East Gate.\n- Actions: Read letter; Return to hall.\n- Disabled label: Sealed.\n- Counter labels: Trust; Clues.\n- Choice labels: Leave the pendant closed; Open the pendant.\n- Presentation section labels: Player-visible facts; Author notes.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# THE REED COURT — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | art-rules | Art style rule sheet | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | character-prop-register | Character and prop register | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 3 | interface-map | Interface information map | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 4 | mara-character | Mara Venn character sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | ivo-character | Ivo Sere character sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | tessa-character | Tessa Orlan character sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | ivo-letter | L01 correspondence sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | tessa-letter | L02 correspondence sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | mara-letter | L03 correspondence sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | reed-pendant | P01 pendant sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | confidence-interface | B01 Confidence meeting interface | 14 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | disclosure-interface | B02 Disclosure meeting interface | 14 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | disclosure-sequence | Pendant disclosure sequence | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | art-presentation | Opening sequence art presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-court-records.en.md",
+            "config": {
+              "text": "# Court records\n\n## Characters\n| ID | Name | Position and house | Height | Fixed appearance | Expression states |\n|---|---|---|---|---|---|\n| C01 | Mara Venn | Junior envoy, House Venn; player character | 168 cm | Brown skin; black hair in one low braid; rust #8A4934 coat over charcoal #252A30 trousers; one brass forked-reed collar pin; one cream shoulder sash | Composed; Concerned |\n| C02 | Ivo Sere | Keeper of correspondence, House Sere | 182 cm | Light brown skin; short silver curls; blue #315B70 robe with charcoal #252A30 cuffs; one silver three-reed collar pin; one round spectacle frame | Reserved; Relieved |\n| C03 | Tessa Orlan | Palace marshal, House Orlan | 174 cm | Dark brown skin; cropped black hair; plum #69445C tunic over charcoal #252A30 trousers; one silver stepped-arch collar pin; one cream belt | Formal; Wary |\n\n## Relationships\n| Pair | Public relationship at Arrival | Author notes |\n|---|---|---|\n| Mara Venn / Ivo Sere | Ivo has lent Mara his pendant as a sign of trust | Opening its cover reduces Ivo's trust from 1 to 0; leaving it closed raises trust from 1 to 2 |\n| Mara Venn / Tessa Orlan | Mara is questioning Tessa about the curfew | The inscription identifies Tessa as the person who ordered East Gate opened |\n| Ivo Sere / Tessa Orlan | Correspondence keeper and palace marshal | Ivo holds a written record of Tessa's order inside his pendant |\n\n## Existing marks\n| House | Color | Geometry |\n|---|---|---|\n| House Venn | #8A4934 | One upright stem dividing into two outward branches at its upper third; flat stroke ends |\n| House Sere | #315B70 | Three parallel upright stems, middle stem taller; each topped by one narrow oval reed head; flat lower ends |\n| House Orlan | #69445C | One continuous thick arch with two square steps rising on each side to a flat top; open at the bottom |\n\n## Existing prop\n| ID | Name | Owner | Holder | Dimensions | Visible features | States |\n|---|---|---|---|---|---|---|\n| P01 | Reed Pendant | Ivo Sere | Mara Venn | 36 × 24 × 6 mm closed, height × width × thickness | Silver oval; one top loop; hinge on right; three vertical reeds on cover; diagonal break across middle reed; smooth back | Closed; Open |\n\n## Prop state details\n| State | Exterior | Interior |\n|---|---|---|\n| Closed | Cover shut; loop, hinge and reed engraving visible | Sealed |\n| Open | Same body and cover; cover swung right | Tessa ordered the gate opened. |\n\n## Reed Gallery\n- Long interior passage with three shallow arched recesses.\n- Pale limewashed plaster, dark timber bench and unglazed terracotta floor.\n- One candle niche at the upper left of the composed meeting view.\n- Meeting arrangement: Mara at left, Ivo at centre, Tessa at right.\n- Inventory possession: P01 with Mara in Arrival, Confidence and Disclosure.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 04-letters-and-states.en.md",
+            "config": {
+              "text": "# Correspondence and opening states\n\n## Letters\n\n### L01\n- Sender: Ivo Sere.\n- Recipient: Mara Venn.\n- House mark: House Sere.\n- Subject: A borrowed trust.\n- Available stage: Arrival.\n\nMara,\n\nCarry my pendant into Reed Gallery. Its cover holds a record I have guarded for years. I lend it to you as a pledge, and ask you to leave it closed while we speak. Tessa will meet us there before the candles burn low.\n\nIvo Sere\n\n### L02\n- Sender: Tessa Orlan.\n- Recipient: Mara Venn.\n- House mark: House Orlan.\n- Subject: East Gate.\n- Available stage: Arrival.\n\nEnvoy Venn,\n\nEast Gate opened during the curfew. The watch ledger records the hour but leaves the commander's name blank. Bring your questions to Reed Gallery. I will answer in the presence of the keeper of correspondence.\n\nTessa Orlan\n\n### L03\n- Sender: Mara Venn.\n- Recipient: Tessa Orlan.\n- House mark: House Venn.\n- Subject: A request for names.\n- Status: Sent copy.\n- Available stage: Arrival.\n\nMarshal Orlan,\n\nI have read the watch ledger. A blank space cannot settle responsibility. I will attend your meeting with Ivo Sere and ask whose order reached the guards. Until then, I will hold judgment.\n\nMara Venn\n\n## Branch conditions\n| Branch | Starting state | Selected choice | Resulting stage | Trust | Clues | P01 state | Holder |\n|---|---|---|---|---:|---:|---|---|\n| B01 | Arrival; Trust 1; Clues 0; P01 Closed | Leave the pendant closed | Confidence | 2 | 0 | Closed | Mara Venn |\n| B02 | Arrival; Trust 1; Clues 0; P01 Closed | Open the pendant | Disclosure | 0 | 1 | Open | Mara Venn |\n\n## Scene excerpts\n| State | Location | Speaker | Visible dialogue |\n|---|---|---|---|\n| Arrival | Reed Gallery | Ivo Sere | You have read my letter. Will you leave the cover closed? |\n| Confidence | Reed Gallery | Ivo Sere | You kept faith with me. Let us ask the marshal together. |\n| Disclosure | Reed Gallery | Tessa Orlan | Yes. The order was mine. Now ask why I gave it. |\n\n## Expressions\n| Character | Arrival | Confidence | Disclosure |\n|---|---|---|---|\n| C01 Mara Venn | Composed | Composed | Concerned |\n| C02 Ivo Sere | Reserved | Relieved | Reserved |\n| C03 Tessa Orlan | Formal | Formal | Wary |\n\n## Player knowledge\n| Character | Arrival | Confidence | Disclosure |\n|---|---|---|---|\n| C01 Mara Venn | Envoy identity known; pendant possession known | Envoy identity known; pendant possession known | Envoy identity known; pendant possession known |\n| C02 Ivo Sere | Keeper identity known; pendant ownership known; inscription Sealed | Keeper identity known; pendant ownership known; inscription Sealed | Keeper identity known; pendant ownership known; inscription visible |\n| C03 Tessa Orlan | Marshal identity known; gate order Sealed | Marshal identity known; gate order Sealed | Marshal identity known; gate order attributed to Tessa |\n\n## Interface records\n| Screen | Visible content | Actions |\n|---|---|---|\n| L01 reader | THE REED COURT; L01 subject, sender, recipient and full body; Arrival; Trust 1; Clues 0; closed P01; Sealed | Read letter; Return to hall; Leave the pendant closed; Open the pendant |\n| L02 reader | THE REED COURT; L02 subject, sender, recipient and full body; Arrival; Trust 1; Clues 0 | Read letter; Return to hall |\n| L03 reader | THE REED COURT; L03 subject, sender, recipient, Sent copy and full body; Arrival; Trust 1; Clues 0 | Read letter; Return to hall |\n| B01 outcome | THE REED COURT; Reed Gallery; Confidence; Trust 2; Clues 0; Confidence dialogue; closed P01; Sealed | Return to hall |\n| B02 outcome | THE REED COURT; Reed Gallery; Disclosure; Trust 0; Clues 1; Disclosure dialogue; open P01; Tessa ordered the gate opened. | Return to hall |\n\n## Input pairing\n| Interaction | Controller symbol | Touch symbol | Position | Meaning |\n|---|---|---|---|---|\n| Return to hall | South face button | Fingertip | x 1488, y 912, width 336, height 72 logical units | Exit the current reading or outcome view to the hall |\n\n## Video timing\n| Time | Image and state |\n|---|---|\n| 0–3 seconds | L01 reader; Arrival; Trust 1; Clues 0; P01 Closed |\n| 3–6 seconds | Open the pendant selected; cover swings right; inscription enters view |\n| 6–10 seconds | B02 outcome; Disclosure; Trust 0; Clues 1; P01 Open; recorded Disclosure expressions and dialogue |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: letter-layout.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: knowledge-matrix.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: court-marks-and-pendant.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: correspondence-materials.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "THE REED COURT | Letters, loyalties and a sealed court secret\n\nWe are developing THE REED COURT, an original single-player court correspondence game set in the palace of Avel. The player is Mara Venn, a junior envoy trying to establish who ordered East Gate opened during a royal curfew. Our first playable sequence moves from Arrival into either Confidence or Disclosure. Its emotional centre is a borrowed pendant: Ivo Sere owns it, Mara holds it, and opening it trades his trust for evidence about Tessa Orlan.\n\nThe art direction is fixed: ink contours, translucent gouache, parchment #F2E6CC and charcoal #252A30, with candlelight entering from the upper left. House Venn uses rust #8A4934 and a forked reed; House Sere uses blue #315B70 and three vertical reeds; House Orlan uses plum #69445C and a stepped arch. These existing marks identify correspondents alongside their names. The pendant is a silver oval, 36 × 24 × 6 mm, with one top loop and a right-side hinge. Its inner inscription becomes visible in Disclosure. Build around a 1920 × 1080 logical canvas with a 48-unit safe inset, a 960-unit letter column, default text at least 18 logical units high and lines of at most 75 English characters. Reading at 200% uses vertical scrolling. Body text and ordinary controls need 4.5:1 contrast; large text, icons and disabled controls need 3:1. Disabled actions carry a lock icon and the label \"Sealed\".\n\nAudience: the art director, narrative designer and interface designer, choosing the visual system for a playable opening aimed at solo players who enjoy character relationships and written choices.\n\nInputs (attached): 01-client-facts.en.md contains the fixed world, palette and reading requirements. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. 03-court-records.en.md contains character appearances, relationships, house marks and pendant details. 04-letters-and-states.en.md contains the complete correspondence, scene excerpts, branch conditions, visible information and interface wording. letter-layout.png records the logical canvas, safe inset and reading column. knowledge-matrix.png maps the three characters across Arrival, Confidence and Disclosure. court-marks-and-pendant.png supplies the existing house marks and pendant identity. correspondence-materials.png supplies paper, wax and candlelight atmosphere.\n\nDeliverables:\n1. A one-page art style rule sheet recording the five palette values, ink contours, translucent gouache, paper, wax and silver materials, and upper-left candlelight\n2. A character and prop register covering C01–C03 and P01, with dimensions, clothing, ownership, possession, visible features and named states\n3. An interface information map covering the three letter readers and both branch outcomes, with visible facts, locked content, text scaling and controller/touch prompts\n4. Three character sheets, one each for Mara Venn, Ivo Sere and Tessa Orlan, with front, side and back standing views, their two expression states, a portrait close-up and a small correspondence portrait\n5. Three correspondence sheets, one each for L01, L02 and L03, with the complete letter, envelope, sender's house mark and an Arrival reading screen; L01 also carries the two branch choices\n6. One pendant sheet for P01, with closed front, side and back views, an open view, a close-up and a small inventory icon\n7. Two meeting and choice interface sheets set in Reed Gallery, one for B01 Confidence and one for B02 Disclosure, each containing controller and touch versions of the same outcome screen\n8. One 10-second sequence moving from L01 at Arrival through opening the pendant to B02 Disclosure, with the corresponding expression, inscription and counter changes\n9. One presentation document of at least 8 pages, reusing the rules, register, information map, character sheets, correspondence, pendant, branch interfaces and video stills, with an explanation of both branches\n\nAcceptance:\n- The art style rule sheet records #F2E6CC, #252A30, #8A4934, #315B70 and #69445C. Character, correspondence, pendant and branch sheets use its ink-and-gouache treatment and upper-left light; the presentation repeats all five codes and the light direction.\n- The character register and three character sheets repeat C01–C03, their recorded heights and both expression names. Their clothing colors, accessory counts and house marks match 03-court-records.en.md across the correspondence portraits, branch interfaces, video and presentation. The pendant sheet and presentation repeat P01, 36 × 24 × 6 mm, Ivo Sere as owner and Mara Venn as holder; its loop, hinge and reed pattern remain recognizable in the close-up, inventory icon and branch screens.\n- The three correspondence sheets reproduce L01–L03 from 04-letters-and-states.en.md with their sender names and matching colored house marks. Their reading screens print \"THE REED COURT\", \"Read letter\" and \"Return to hall\"; L01 prints both recorded choices. The branch interfaces print \"Reed Gallery\", and the L02 reading screen prints \"East Gate\".\n- The information map, branch interfaces, video and presentation follow the recorded transition: Arrival has Trust 1 and Clues 0; B01 Confidence has Trust 2 and Clues 0 with P01 Closed; B02 Disclosure has Trust 0 and Clues 1 with P01 Open. The branch interfaces use the recorded character expressions. Player-facing Arrival and Confidence views represent the inscription with the lock icon and \"Sealed\"; Disclosure shows its exact sentence. The presentation separates player-visible facts from author notes in labeled sections.\n- Every reading and branch screen follows the 1920 × 1080 logical canvas, 48-unit safe inset, 18-unit minimum text height and stated contrast thresholds. Correspondence sheets demonstrate the 960-unit column, lines of at most 75 English characters and a 200% reading inset with vertical scrolling. Each branch sheet pairs controller and touch versions with the same Return to hall action at the lower right; its controller version uses a south-face-button symbol and its touch version a fingertip symbol.\n- The 10-second sequence starts with Arrival counters and ends with B02 counters and the revealed inscription. The presentation contains at least 8 pages, names Confidence and Disclosure on its opening page, and places reused artwork beside the rules, record IDs and branch states it implements.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-03/letter-layout.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "bd999fa37bc98e25b186ce1feccad08c17d6178964d8e9387ab038cde22000c8"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-03/knowledge-matrix.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "0e9dcbae4cf9e6b5187bd3be5714e68ad69d03766e3e6a26cb40be6fe58de2bd"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-03/court-marks-and-pendant.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "fd933460d759deac8efe28c6a0672b6e451fb01fab8e1adafbf3ff7c6eeaf1c8"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-03/correspondence-materials.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "cbe46d115e0ce009968261849e914fe8dcbde21c97546db478064d5de42ddbc6"
+    }
+  ]
+}

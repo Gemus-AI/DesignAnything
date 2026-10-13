@@ -1,0 +1,698 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ui-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "digital-product",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "wardrobe-main",
+      "label": "Complete phone wardrobe",
+      "description": "One phone wardrobe screen with seven garments, five available items and manual garment entry.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "sweater-detail",
+      "label": "Cream knit sweater detail",
+      "description": "One phone detail screen for Cream knit sweater with its fields, note, laundry interval and manual-edit action.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "rain-walk-editor",
+      "label": "Rain walk draft editor",
+      "description": "One phone editor screen for unsaved D03 with four garments, the planning outlook and the applied jacket suggestion.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "calendar-confirmed",
+      "label": "Phone calendar after confirmation",
+      "description": "One phone calendar screen with the recorded E01, confirmed E02 and future E03 plans.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "rain-walk-detail",
+      "label": "Saved Rain walk detail",
+      "description": "One phone detail screen for saved Rain walk and its confirmed Coffee catch-up appointment at 11:00–12:00.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "state-components",
+      "label": "Six-group state-components sheet",
+      "description": "One finished components sheet with six labelled availability, search, reservation, repeat, discard and success groups.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "WARDROBE DAY",
+      "scope": {
+        "slots": [
+          "wardrobe-main"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "wardrobe-total",
+      "kind": "text-verbatim",
+      "text": "7 items",
+      "scope": {
+        "slots": [
+          "wardrobe-main"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "available-count",
+      "kind": "text-verbatim",
+      "text": "5 available",
+      "scope": {
+        "slots": [
+          "wardrobe-main"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "save-outfit-action",
+      "kind": "text-verbatim",
+      "text": "Save outfit",
+      "scope": {
+        "slots": [
+          "rain-walk-editor"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "confirm-plan-action",
+      "kind": "text-verbatim",
+      "text": "Confirm plan",
+      "scope": {
+        "slots": [
+          "rain-walk-editor",
+          "state-components"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "available-label",
+      "kind": "text-verbatim",
+      "text": "Available",
+      "scope": {
+        "slots": [
+          "wardrobe-main",
+          "state-components"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "laundry-label",
+      "kind": "text-verbatim",
+      "text": "In laundry",
+      "scope": {
+        "slots": [
+          "wardrobe-main",
+          "sweater-detail",
+          "state-components"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "loaned-label",
+      "kind": "text-verbatim",
+      "text": "Loaned",
+      "scope": {
+        "slots": [
+          "wardrobe-main",
+          "state-components"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "planning-outlook-label",
+      "kind": "text-verbatim",
+      "text": "Planning outlook",
+      "scope": {
+        "slots": [
+          "rain-walk-editor"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "WARDROBE DAY",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "core-interface-family",
+      "slots": [
+        "wardrobe-main",
+        "sweater-detail",
+        "rain-walk-editor",
+        "calendar-confirmed",
+        "rain-walk-detail",
+        "state-components"
+      ],
+      "items": [
+        {
+          "item": "Availability badges, action meanings, status symbols and feedback states use a coherent interface language across the five screens and component examples.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Repeated garment, outfit and appointment records remain compatible with the supplied records and distinguish unsaved drafts, saved outfits and confirmed plans.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "WARDROBE DAY"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "wardrobe-main",
+      "sweater-detail",
+      "rain-walk-editor",
+      "calendar-confirmed",
+      "rain-walk-detail",
+      "state-components"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge interface communication and interaction-state clarity, excluding garment styling, material realism, lighting and unspecified garment performance."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "wardrobe-main",
+        "sweater-detail",
+        "rain-walk-editor",
+        "calendar-confirmed",
+        "rain-walk-detail",
+        "state-components"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-wardrobe-main",
+      "requirementId": "R-format-wardrobe-main",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wardrobe-main"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-sweater-detail",
+      "requirementId": "R-format-sweater-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "sweater-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-rain-walk-editor",
+      "requirementId": "R-format-rain-walk-editor",
+      "method": "artifact-property",
+      "targetSlots": [
+        "rain-walk-editor"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-calendar-confirmed",
+      "requirementId": "R-format-calendar-confirmed",
+      "method": "artifact-property",
+      "targetSlots": [
+        "calendar-confirmed"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-rain-walk-detail",
+      "requirementId": "R-format-rain-walk-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "rain-walk-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-state-components",
+      "requirementId": "R-format-state-components",
+      "method": "artifact-property",
+      "targetSlots": [
+        "state-components"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "main-wardrobe-records",
+      "requirementId": "R-main-wardrobe-records",
+      "method": "visual",
+      "targetSlots": [
+        "wardrobe-main"
+      ],
+      "criteria": "Show seven distinct records corresponding to T01, T02, B01, B02, F01, F02 and J01, with each matching footwear pair represented as one record. T01, B01, F01, F02 and J01 are available; T02 is in laundry and B02 is loaned. Include category browsing and a recognisable manual garment-entry action. The main totals must be seven items and five available. Layout and navigation may vary; duplicate records, incorrect statuses, automatic-only entry or missing browsing controls fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "sweater-detail-record",
+      "requirementId": "R-sweater-detail-record",
+      "method": "visual",
+      "targetSlots": [
+        "sweater-detail"
+      ],
+      "criteria": "Identify Cream knit sweater as the cream top with long sleeves, crew neck and ribbed neck, cuffs and hem. Retain the original note, 'Recorded laundry window ends Monday at 18:00.', and show its laundry window from 13 September 2026 at 20:00 to 14 September 2026 at 18:00, UTC+08:00. Provide a manual-edit action. Date formatting and field arrangement may vary if the same record is unambiguous; altered fields, an omitted original note or a shortened laundry record fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "rain-walk-editor-and-saved-detail",
+      "requirementId": "R-rain-walk-editor-and-saved-detail",
+      "method": "visual",
+      "targetSlots": [
+        "rain-walk-editor",
+        "rain-walk-detail"
+      ],
+      "criteria": "Both views retain exactly T01, B01, F01 and J01. The editor visibly represents unsaved D03 for Coffee catch-up initially at 09:30–10:30, with the manually added jacket suggestion applied. Beside that suggestion, show Planning outlook, 18°C and light rain for 14 September. Saving an outfit and committing an occasion must remain distinct actions named Save outfit and Confirm plan wherever those actions are offered. The detail identifies saved Rain walk and confirmed Coffee catch-up on 14 September 2026 at 11:00–12:00. Internal IDs may be discreet or omitted; human-readable identity, membership and state must be clear. Missing members, treating the applied jacket as merely proposed, conflating save with confirmation or presenting the saved detail as an unsaved draft fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "confirmed-calendar-records",
+      "requirementId": "R-confirmed-calendar-records",
+      "method": "visual",
+      "targetSlots": [
+        "calendar-confirmed",
+        "rain-walk-detail"
+      ],
+      "criteria": "The calendar shows Studio review with Navy weekday on 14 September 2026, 09:00–10:00; Coffee catch-up with Rain walk that day, 11:00–12:00; and Bookshop afternoon with Easy weekend on 16 September, 14:00–15:00. Rain walk detail agrees with the Coffee catch-up record. Interpret all times as UTC+08:00; a shared timezone context is sufficient. Calendar layout and date formatting may vary, but changed existing events, conflicting appointment details or retaining Coffee catch-up at its initial time fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-state-component-groups",
+      "requirementId": "R-six-state-component-groups",
+      "method": "visual",
+      "targetSlots": [
+        "state-components"
+      ],
+      "criteria": "Provide six clearly labelled groups. Availability includes Available, In laundry and Loaned badges with labelled symbols and distinguishable suggested, awaiting-confirmation and applied outer-layer indicators; the suggestion remains dismissible. Search shows query purple, zero matches and query clearing without deleting the wardrobe. Reservation preserves editable D03 with T01, B01, F01 and J01 at 09:30–10:30, identifies only Navy Oxford shirt and Charcoal straight trousers as reserved by Studio review at 09:00–10:00, and includes disabled Confirm plan and an error time field. Repeat advice connects the identical Navy weekday set T01, B01 and F02 used on 14 September to Portfolio coffee on 15 September, 18:00–19:00, and offers acknowledgement and continuation rather than a hard block. Discard contrasts the unsaved T01 note 'Steam collar before use.' with original 'Hang after wearing.' and offers continued editing or discarding to restore the original. Success names saved Rain walk, confirmed Coffee catch-up and 11:00–12:00, with default and pressed Confirm plan samples. Group arrangement and discreet ID display may vary; missing groups, incorrect records, indistinguishable required control states or missing recovery actions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "core-phone-safe-areas",
+      "requirementId": "R-core-phone-safe-areas",
+      "method": "visual",
+      "targetSlots": [
+        "wardrobe-main",
+        "sweater-detail",
+        "rain-walk-editor",
+        "calendar-confirmed",
+        "rain-walk-detail"
+      ],
+      "criteria": "Each screen uses a platform-neutral portrait phone interface and keeps meaningful text and interactive controls inside the safe region indicated by the supplied phone drawing: 62 logical points clear at the top and 34 at the bottom. Judge placement proportionally when exports are scaled; backgrounds may extend into the reserved regions. Essential content or controls intruding into those regions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "final-interface-accessibility",
+      "requirementId": "R-final-interface-accessibility",
+      "method": "visual",
+      "targetSlots": [
+        "wardrobe-main",
+        "sweater-detail",
+        "rain-walk-editor",
+        "calendar-confirmed",
+        "rain-walk-detail",
+        "state-components"
+      ],
+      "criteria": "Rendered body text must achieve at least 4.5:1 foreground/background contrast, and large text and meaningful icons at least 3:1. Availability and feedback must pair colour with readable labels and meaningful symbols. Apply the thresholds to the actual visible background, including component samples. Different palettes are allowed; insufficient contrast, colour-only status distinctions or symbols lacking understandable labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "intact-final-garment-representations",
+      "requirementId": "R-intact-final-garment-representations",
+      "method": "visual",
+      "targetSlots": [
+        "wardrobe-main",
+        "sweater-detail",
+        "rain-walk-editor",
+        "calendar-confirmed",
+        "rain-walk-detail",
+        "state-components"
+      ],
+      "criteria": "Where garments are pictured, use the corresponding supplied identity image while preserving its colour, construction, parts, orientation and existing surface details. Uniform resizing, framing that retains identifying construction and background removal are allowed. Redrawing, recolouring, distortion, mirroring that changes the supplied orientation, destructive cropping or substituting different garments fail. This rule does not require garment pictures in feedback examples that communicate their records through text.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-core-interface-family",
+      "requirementId": "R-set-core-interface-family",
+      "method": "visual",
+      "targetSlots": [
+        "wardrobe-main",
+        "sweater-detail",
+        "rain-walk-editor",
+        "calendar-confirmed",
+        "rain-walk-detail",
+        "state-components"
+      ],
+      "criteria": "Availability badges, action meanings, status symbols and feedback states use a coherent interface language across the five screens and component examples. Repeated garment, outfit and appointment records remain compatible with the supplied records and distinguish unsaved drafts, saved outfits and confirmed plans.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "navy-shirt-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "t01.png"
+      ],
+      "subjectSlots": [
+        "wardrobe-main",
+        "rain-walk-editor",
+        "rain-walk-detail"
+      ],
+      "notes": "t01.png is the fixed identity image for Navy Oxford shirt."
+    },
+    {
+      "id": "cream-sweater-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "t02.png"
+      ],
+      "subjectSlots": [
+        "wardrobe-main",
+        "sweater-detail"
+      ],
+      "notes": "t02.png is the fixed identity image for Cream knit sweater."
+    },
+    {
+      "id": "charcoal-trousers-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "b01.png"
+      ],
+      "subjectSlots": [
+        "wardrobe-main",
+        "rain-walk-editor",
+        "rain-walk-detail"
+      ],
+      "notes": "b01.png is the fixed identity image for Charcoal straight trousers."
+    },
+    {
+      "id": "indigo-jeans-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "b02.png"
+      ],
+      "subjectSlots": [
+        "wardrobe-main"
+      ],
+      "notes": "b02.png is the fixed identity image for Indigo straight jeans."
+    },
+    {
+      "id": "white-sneakers-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "f01.png"
+      ],
+      "subjectSlots": [
+        "wardrobe-main",
+        "rain-walk-editor",
+        "rain-walk-detail"
+      ],
+      "notes": "f01.png is the fixed identity image for the White low-top sneakers pair."
+    },
+    {
+      "id": "black-loafers-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "f02.png"
+      ],
+      "subjectSlots": [
+        "wardrobe-main"
+      ],
+      "notes": "f02.png is the fixed identity image for the Black penny loafers pair."
+    },
+    {
+      "id": "olive-jacket-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "j01.png"
+      ],
+      "subjectSlots": [
+        "wardrobe-main",
+        "rain-walk-editor",
+        "rain-walk-detail"
+      ],
+      "notes": "j01.png is the fixed identity image for Olive hooded jacket."
+    }
+  ]
+}

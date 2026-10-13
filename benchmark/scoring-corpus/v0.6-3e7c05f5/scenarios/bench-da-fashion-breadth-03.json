@@ -1,0 +1,134 @@
+{
+  "id": "bench-da-fashion-breadth-03",
+  "title": "PHASE CHOIR — Digital fashion for a three-part virtual performance, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "FASHION",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# PHASE CHOIR\n\n## Project\n- Project: PHASE CHOIR\n- Descriptor: Digital fashion for a three-part virtual performance\n- Context: Independent online music performance\n- Performer: Aster\n- Collection: PC-01, PC-02, PC-03\n- Direction development: Three collection alternatives; one selected collection direction\n- Production medium: Digital character garments and animated material surfaces\n\n## Fixed copy\n| Text | Placement |\n| --- | --- |\n| PHASE CHOIR | Upper-chest core panel on each look; performance scene; video end frame; presentation cover |\n| LIVE IN THREE STATES | Performance scene; video end frame; presentation cover |\n| Still | Still movement sheet; first video section |\n| Walk | Walk movement sheet; second video section |\n| Leap | Leap movement sheet; third video section |\n\n## Aster identity\n- Skin: Graphite gray\n- Hair: Ivory, close-cropped, with a straight hairline\n- Eyes: Amber\n- Temple inserts: One circular amber insert on each side\n- Character presentation: Adult, androgynous, elongated proportions\n- Base character surface: Smooth continuous body surface\n\n## Neutral rig\n- Coordinate unit: mm\n- Front-view origin: Ground midway between the feet\n- Front-view axes: x horizontal; y upward\n- Side-view direction: Forward to image right\n- Head height: 225 mm\n- Shoulder joint spacing: 440 mm\n- Hip joint spacing: 280 mm\n- Upper arm length: 320 mm\n- Forearm length: 280 mm\n- Thigh length: 450 mm\n- Shin length: 450 mm\n- Ankle-to-sole vertical offset: 100 mm\n\n| Landmark | Front-view x, mm | Neutral y, mm |\n| --- | --- | --- |\n| Crown | 0 | 1800 |\n| Chin | 0 | 1575 |\n| Shoulder joints | -220, 220 | 1500 |\n| Elbow joints | -220, 220 | 1180 |\n| Wrist joints | -220, 220 | 900 |\n| Hip joints | -140, 140 | 1000 |\n| Knee joints | -140, 140 | 550 |\n| Ankle joints | -140, 140 | 100 |\n| Soles | -140, 140 | 0 |\n\n## Digital material records\n| Code | Zone | Textile reference | Reference weight | Reference width | Structure | Reference finish | Digital color | Digital opacity |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| M01 | Torso-and-pelvis core | 100% polyester | 180 g/m2 | 1500 mm | Interlock knit | Matte | #202532 | 1.00 |\n| M02 | Two outer panels per look | 100% polyester | 35 g/m2 | 1400 mm | Plain-weave organza | Smooth, uncoated | #A8E6E1 | Still 0.35; Walk 0.35; Leap 0.55 |\n\n- Textile reference values: Digital surface and drape inputs\n- M01 assembly: Continuous virtual seam joins\n- M02 assembly: One fixed attachment per panel, one at each shoulder joint\n- Attachment geometry: 20 mm diameter virtual circular connector at each shoulder\n- Shared garment structure: One opaque core and two translucent outer panels per look\n- Motion displacement: Outward surface-normal offset from each panel's neutral shape, tapering to 0 mm at the shoulder connector\n- Core boundaries and shoulder attachment locations: Constant across Still, Walk and Leap for each look\n\n## Performance states\n| State | Music section | Video interval | M02 opacity | Peak outward displacement |\n| --- | --- | --- | --- | --- |\n| Still | Intro | 0–4 seconds | 0.35 | 0 mm |\n| Walk | Verse | 4–8 seconds | 0.35 | 80 mm |\n| Leap | Chorus | 8–12 seconds | 0.55 | 180 mm |\n\n- Still pose: Front view, both soles on the ground, arms down\n- Walk pose: Side view, lead thigh 25 degrees forward of downward vertical, lead shin 5 degrees forward, trailing thigh 25 degrees backward, trailing shin 45 degrees backward\n- Walk arms: Lead-side upper arm 20 degrees backward and forearm vertical; trailing-side upper arm 20 degrees forward and forearm 40 degrees forward\n- Walk ground position: Lowest sole at 0 mm\n- Leap pose: Side view, thighs at 55 degrees forward and backward of downward vertical, shins at 5 degrees forward and backward\n- Leap arms: Upper arms and forearms aligned at 120 degrees forward and backward of downward vertical\n- Leap ground position: Lowest sole at 350 mm above ground\n- Side-view torso: Upright, shoulder center 500 mm above hip center\n- Side-view head: Crown 800 mm above hip center; chin 575 mm above hip center\n- Transitions: Continuous interpolation of panel displacement and opacity between states\n\n## Stage\n- Platform: Circular, 6000 mm diameter\n- Platform surface: Matte charcoal\n- Background: Charcoal\n- Key atmosphere: Amber side lighting with a restrained pale cyan overhead fill\n- Performance scene cast: Three instances of Aster, one per look\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# PHASE CHOIR — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | materials-construction | Materials and digital construction sheet | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | direction-one | Collection direction one | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | direction-two | Collection direction two | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 4 | direction-three | Collection direction three | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 5 | direction-selection | Collection direction selection | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 6 | collection-front | Three-look front flat-view sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | collection-back | Three-look back flat-view sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | performance-scene | Three-look performance scene | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | state-still | Still movement sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | state-walk | Walk movement sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | state-leap | Leap movement sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | material-attachment-detail | Material and shoulder attachment details | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | performance-video | Twelve-second performance video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | collection-presentation | Collection presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: avatar-rig-and-poses.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: aster-character.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: empty-stage.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "PHASE CHOIR | Digital fashion for a three-part virtual performance\n\nWe are producing an independent online music performance called PHASE CHOIR. Develop three digital looks for our performer Aster: PC-01, PC-02 and PC-03. Start with three competing collection directions, then select one for the whole wardrobe. Aster has a 1800 mm neutral standing height, a 225 mm head height, 440 mm between shoulder joints and 280 mm between hip joints. Upper arms measure 320 mm, forearms 280 mm, thighs 450 mm and shins 450 mm. Preserve the character's graphite skin, ivory cropped hair, amber eyes and circular amber temple inserts throughout the dressed views.\n\nEach look has an opaque M01 core covering the torso and pelvis, with two translucent M02 outer panels attached at the shoulder joints. Garment shapes are open for exploration. M01 uses #202532; M02 uses #A8E6E1. The performance moves through Still, Walk and Leap: M02 opacity is 0.35, 0.35 and 0.55 respectively, with peak outward displacement from the neutral panel surface of 0 mm, 80 mm and 180 mm. Shoulder attachments stay fixed as the panels move. Our textile references are polyester interlock and polyester organza; their recorded properties guide digital surface and drape, while virtual joins define construction. Print \"PHASE CHOIR\" on each look's upper-chest core panel, and use \"LIVE IN THREE STATES\" on the performance scene, video end frame and presentation cover. The stage has a 6000 mm diameter circular platform, a charcoal background and amber side lighting.\n\nAudience: our digital content director, character artist and animation team, choosing the wardrobe direction and preparing the performance sequence.\n\nInputs (attached): 01-client-facts.en.md contains the character measurements, textile reference properties, digital material settings, movement records and stage dimensions. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. avatar-rig-and-poses.png supplies the fixed character proportions, joint geometry and three movement poses. aster-character.png supplies Aster's existing face, hair, skin and temple details. empty-stage.png supplies the performance atmosphere, lighting and palette.\n\nDeliverables:\n1. A one-page materials and digital construction sheet recording M01 and M02 textile composition, reference weight, width, weave or knit, finish, digital color and opacity, virtual joins, the three motion settings, Aster's dimensions and the three look IDs\n2. Three collection direction boards, one per direction, each showing proposed silhouettes for PC-01, PC-02 and PC-03\n3. A one-page selection note naming the chosen direction, its silhouette principle and the panel arrangement carried into all three looks\n4. Two collection flat-view sheets, one front and one back, each showing all three looks with core boundaries, two outer panels, shoulder attachments, look IDs and material codes\n5. One performance scene with three instances of Aster wearing PC-01, PC-02 and PC-03 on the circular stage\n6. Three movement sheets, one each for Still, Walk and Leap, each showing all three dressed looks, their opacity and displacement values, and a small neutral silhouette overlay\n7. One material and attachment detail sheet with an enlarged M01/M02 junction and both shoulder attachment positions for each of the three looks\n8. One 12-second performance video, with Still at 0–4 seconds, Walk at 4–8 seconds and Leap at 8–12 seconds, showing all three looks in each section and the required end-frame wording\n9. One presentation document of at least 8 pages, reusing the materials sheet, three directions, selection, front and back views, performance scene, movement sheets, attachment details and video stills\n\nAcceptance:\n- The three direction boards each contain PC-01, PC-02 and PC-03; the selection note names one direction, and the flat-view sheets, performance scene, movement sheets and detail sheet develop its stated silhouette principle and panel arrangement.\n- The materials and digital construction sheet records M01, M02, the three look IDs and Aster's 1800 mm height; the front and back sheets, detail sheet and presentation repeat the material codes and look IDs, and every movement sheet and the presentation repeat the 1800 mm neutral height.\n- The front and back sheets, performance scene and movement sheets retain one opaque torso-and-pelvis core and two translucent shoulder-attached panels per look; the dressed views preserve Aster's four identity features, and the front sheet and Still sheet show PHASE CHOIR legibly on all three upper-chest panels.\n- The Still, Walk and Leap sheets carry those exact state labels and the respective opacity/displacement pairs 0.35/0 mm, 0.35/80 mm and 0.55/180 mm; their overlays and the attachment detail sheet locate the same two shoulder anchors and core boundaries through all three states.\n- The 12-second video shows all three looks in each of its three 4-second sections, repeats the movement sheets' panel behavior and labels each section Still, Walk or Leap; its end frame and the performance scene both carry PHASE CHOIR and LIVE IN THREE STATES.\n- The presentation contains at least 8 pages, names the selected direction on page 1, repeats #202532, #A8E6E1 and all three motion settings, and reuses every earlier deliverable category; its cover carries PHASE CHOIR and LIVE IN THREE STATES.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/avatar-rig-and-poses.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "b48de94e4ff9b7851cb7a27a16346d50cf618e93dd4f256c66285667370b42ae"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/aster-character.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "eef366a41b433e70d8dee469b1e4af380b42263d59ff4e623bf154a89fc9f397"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/empty-stage.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "176f42bad59e3a84e725ec8f8ecc75d2db850e4b32a81cf6352be6948b015a5b"
+    }
+  ]
+}

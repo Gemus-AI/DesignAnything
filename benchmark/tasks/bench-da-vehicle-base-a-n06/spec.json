@@ -1,0 +1,563 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-vehicle-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "vehicle-specification",
+      "label": "Final whole-vehicle specification",
+      "description": "An Ink vehicle specification board with front, left and top orthographic views, a perspective, dimensions and fixed coordinates.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "rear-storage",
+      "label": "Rear storage and independent retrieval",
+      "description": "A storage board with a dimensioned section, A1/B2 zones, divider, hinge/latch positions and independent retrieval examples.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "main-side-covers",
+      "label": "Main side covers and left inspection access",
+      "description": "A main-cover board with the closed assembly, fixed B1/C1 volumes and labelled left-cover power-off inspection.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "colour-material-lighting",
+      "label": "Ink and Pearl materials and lighting",
+      "description": "A board of both colourways, material and finish assignments, lamp locations and OFF, NIGHT and BRAKE comparisons.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "n1-night-return",
+      "label": "N1 night return",
+      "description": "An Ink NIGHT arrival scene with a helmeted seated adult, one foot grounded and a rear recognition inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "p1-parking",
+      "label": "P1 Ink parking and access envelopes",
+      "description": "An Ink P1 parking board with a dimensioned plan, angled context view, margins and moving-part envelopes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "side-cover-brand",
+      "kind": "text-verbatim",
+      "text": "LATER",
+      "scope": {
+        "slots": [
+          "main-side-covers"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "inspection-label",
+      "kind": "text-verbatim",
+      "text": "POWER OFF - LEFT COVER ACCESS",
+      "scope": {
+        "slots": [
+          "main-side-covers"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "LATER",
+      "maxEditDistance": 1,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-complete-vehicle-system",
+      "slots": [
+        "rear-storage",
+        "main-side-covers",
+        "colour-material-lighting",
+        "n1-night-return",
+        "p1-parking"
+      ],
+      "sourceSlots": [
+        "vehicle-specification"
+      ],
+      "items": [
+        {
+          "item": "All component and scene boards preserve the specified vehicle's proportions, fixed component placement, storage, covers, supports, mirrors and lamp housings; access states move only the intended parts.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Ink and Pearl share geometry and functional lamp colours, with Ink used for N1 and P1 and state changes confined to the recorded operating differences.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Storage retrieval, cover access and P1 movement envelopes describe compatible mechanisms and leave the same left-side access route clear.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "LATER"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "vehicle-specification",
+      "rear-storage",
+      "main-side-covers",
+      "colour-material-lighting",
+      "n1-night-return",
+      "p1-parking"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not treat the supplied hard-point drawing as finished styling or infer validated suspension travel, structural strength, roadworthiness or regulatory certification from the proposal images."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "vehicle-specification",
+        "rear-storage",
+        "main-side-covers",
+        "colour-material-lighting",
+        "n1-night-return",
+        "p1-parking"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-vehicle-specification",
+      "requirementId": "R-format-vehicle-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "vehicle-specification"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-rear-storage",
+      "requirementId": "R-format-rear-storage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "rear-storage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-main-side-covers",
+      "requirementId": "R-format-main-side-covers",
+      "method": "artifact-property",
+      "targetSlots": [
+        "main-side-covers"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-colour-material-lighting",
+      "requirementId": "R-format-colour-material-lighting",
+      "method": "artifact-property",
+      "targetSlots": [
+        "colour-material-lighting"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-n1-night-return",
+      "requirementId": "R-format-n1-night-return",
+      "method": "artifact-property",
+      "targetSlots": [
+        "n1-night-return"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-p1-parking",
+      "requirementId": "R-format-p1-parking",
+      "method": "artifact-property",
+      "targetSlots": [
+        "p1-parking"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "complete-vehicle-form",
+      "requirementId": "R-complete-vehicle-form",
+      "method": "visual",
+      "targetSlots": [
+        "vehicle-specification"
+      ],
+      "criteria": "The proposal depicts a complete single-adult seated electric two-wheeler with credible everyday proportions, purposeful surfacing, integrated storage behind the seat above the rear-wheel region, and substantial left and right panels covering the B1/C1 region. Frame shape, surface treatment, lamp form and compartment styling may vary. A partial component study, token side panels or an unrelated add-on storage object fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "rider-contacts-and-functional-clearance",
+      "requirementId": "R-rider-contacts-and-functional-clearance",
+      "method": "visual",
+      "targetSlots": [
+        "vehicle-specification"
+      ],
+      "criteria": "Read the dimensions and coordinate annotations against the views: seat reference (450,0,750), grip centres (970,±300,980), and unobstructed footboard X 650–910 / Y -120–120 at Z 240. Body underside clearance is at least 150 mm outside wheels and stand. Show one adult seat, two grips, two brake levers, two mirrors, steering/fork hardware and braking interfaces at both wheels. Body, storage and footboard solids must avoid the front-wheel clearance volume X 930–1430 / Y -180–180 / Z 0–500; only the wheel, fork and necessary steering hardware occupy it. Any steering examples use ±30 degrees. Styling may vary without relocating contacts or consuming required clearances.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "complete-closed-envelope",
+      "requirementId": "R-complete-closed-envelope",
+      "method": "visual",
+      "targetSlots": [
+        "vehicle-specification"
+      ],
+      "criteria": "The recorded overall dimensions and orthographic extents locate the complete closed assembly within all three coordinate limits. Include unfolded mirrors, normal controls, closed storage and the deployed stand. Chosen dimensions may be smaller than the limiting envelope. Dimensions that omit protrusions, use folded mirrors, or conceal a boundary violation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-specification",
+      "requirementId": "R-tier6-specification",
+      "method": "visual",
+      "targetSlots": [
+        "vehicle-specification"
+      ],
+      "criteria": "Provide front, left and top orthographic views plus a perspective, with readable overall length/width/height and usable seat length/width. Record exactly two inline wheels, axles at (0,0,225) and (1180,0,225), 1180 mm wheelbase, 450 mm tyre outer diameter, 90 mm tyre width and a 180 mm hub-drive envelope centred on the rear axle. Record B1 at X 250–550 / Y -100–100 / Z 240–420 and C1 at X 560–620 / Y -60–60 / Z 260–350, with credible enclosure/support around these solid volumes. All projections must support the same geometry, components and clear footboard; a correct label contradicted by the drawing fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-storage",
+      "requirementId": "R-tier6-storage",
+      "method": "visual",
+      "targetSlots": [
+        "rear-storage"
+      ],
+      "criteria": "A dimensioned section shows both objects simultaneously in separate non-overlapping retained zones: a flat 340 × 250 × 30 mm sleeve and a horizontal diameter-80 × 260 mm bottle, both lengthwise along X. Record actual usable zone dimensions, at least 5 mm clearance at every side/end and above each object, and a physical polypropylene divider with chosen thickness. Direct floor support is allowed. Identify hinge/latch positions and show a lid that closes over both loaded zones. Two retrieval examples use the left-side access route and leave the other object retained. Preserve the charcoal rectangular sleeve with muted blue binding and perimeter zip, and brushed silver cylindrical bottle with black screw cap; shrinking objects or overlapping their zones fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-cover-inspection",
+      "requirementId": "R-tier6-cover-inspection",
+      "method": "visual",
+      "targetSlots": [
+        "main-side-covers"
+      ],
+      "criteria": "Show both substantial main covers, their closed assembly and a power-OFF inspection view with the left cover opened or detached. Place the required access label on that illustration and LATER on each main cover. Read B1/C1 against their fixed coordinate records; their locations, support structure, seam geometry, latch and fastener positions must remain unchanged between states. The right cover stays attached. Either an opening or detachable left-cover design is acceptable if its access and fastening approach are legible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-colour-material-lighting",
+      "requirementId": "R-tier6-colour-material-lighting",
+      "method": "visual",
+      "targetSlots": [
+        "colour-material-lighting"
+      ],
+      "criteria": "Present both colourways on identical vehicle geometry. Ink uses deep blue-black body/covers/rear shell, warm light-grey seat/footboard and muted amber accents; Pearl uses warm off-white body/covers/rear shell, deep blue-black seat/footboard and muted teal accents. Assign steel support, painted ABS covers/rear shell, coated-polyester seat, rubber footboard and polypropylene divider, with selected finishes and precise colour values. Retain neutral mechanical finishes and functional lamp colours between colourways. Locate one forward white headlamp, one rear red tail/brake assembly, two front and two rear amber indicators, and one passive reflective strip per side. Label OFF, NIGHT and BRAKE: OFF has all lamps unlit; NIGHT has white headlamp and red tail; BRAKE keeps the white headlamp and produces stronger red in the same rear housing. All four indicators remain off in all three samples. Strips read as reflected light, and recognition elements remain visible from their intended directions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-night-return",
+      "requirementId": "R-tier6-night-return",
+      "method": "visual",
+      "targetSlots": [
+        "n1-night-return"
+      ],
+      "criteria": "Show the specified Ink vehicle on a dry level forecourt in a quiet urban residential setting after dark, labelled N1. A helmeted adult sits at the controls with one foot grounded. Storage is closed with capacity for both carried objects, and both main covers are closed. NIGHT uses a white headlamp and red tail with all four indicators unlit; a small rear inset makes the tail and rear recognition visible. Visible geometry, covers, storage, lamp housings, colour mapping and LATER lettering agree with the source boards. Scene lighting and viewpoint may vary without changing the vehicle or operating state.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "vehicle-specification",
+        "rear-storage",
+        "main-side-covers",
+        "colour-material-lighting"
+      ]
+    },
+    {
+      "id": "tier6-parking",
+      "requirementId": "R-tier6-parking",
+      "method": "visual",
+      "targetSlots": [
+        "p1-parking"
+      ],
+      "criteria": "A labelled P1 dimensioned plan and angled context view show the unoccupied Ink vehicle upright with straight wheels/handlebars, unfolded mirrors, deployed stand, closed storage and OFF lamps. Read the bay as X -275–1525 / Y -400–400, rear wall X -275, front opening X 1525, unavailable neighbouring side beyond Y -400, and 900 mm left aisle Y 400–1300. Rear/front axle positions remain (0,0,225)/(1180,0,225). Record the actual closed plan envelope including mirrors and stand and all four resulting margins, each at least 25 mm. Lid and left-cover movement envelopes must remain inside the bay throughout travel, clear of wall, neighbouring side and aisle. Unsupported margin labels or movement crossing a boundary fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "vehicle-specification",
+        "rear-storage",
+        "main-side-covers"
+      ]
+    },
+    {
+      "id": "set-tier6-complete-vehicle-system",
+      "requirementId": "R-set-tier6-complete-vehicle-system",
+      "method": "visual",
+      "targetSlots": [
+        "rear-storage",
+        "main-side-covers",
+        "colour-material-lighting",
+        "n1-night-return",
+        "p1-parking"
+      ],
+      "criteria": "All component and scene boards preserve the specified vehicle's proportions, fixed component placement, storage, covers, supports, mirrors and lamp housings; access states move only the intended parts. Ink and Pearl share geometry and functional lamp colours, with Ink used for N1 and P1 and state changes confined to the recorded operating differences. Storage retrieval, cover access and P1 movement envelopes describe compatible mechanisms and leave the same left-side access route clear.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-a-n06/parking-and-objects.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "vehicle-specification"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "selected-vehicle-geometry",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "vehicle-specification",
+      "subjectSlots": [
+        "rear-storage",
+        "main-side-covers",
+        "colour-material-lighting",
+        "n1-night-return",
+        "p1-parking"
+      ],
+      "notes": "Develop both Ink and Pearl on the same geometry."
+    }
+  ]
+}

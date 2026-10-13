@@ -1,0 +1,1422 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-infovis-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "data",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "data-summary",
+      "label": "Data summary and chart inventory",
+      "description": "A two-page specification of counting units, time formulas, visual encodings, source credit and the chart inventory.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "station-network",
+      "label": "Station network map",
+      "description": "A local-coordinate map of four stations and six directed trip connections.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "planned-parcel-flow",
+      "label": "Planned parcel-flow map",
+      "description": "A planned parcel-flow map with per-trip parcel counts and 21 parcel boardings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "actual-parcel-flow",
+      "label": "Actual parcel-flow map",
+      "description": "An actual parcel-flow map with per-trip parcel counts and P05's changed connection.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "trip-timetable",
+      "label": "Planned and actual trip timetable",
+      "description": "A six-trip timetable comparing planned and actual departure and arrival records.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "handoff-timeline",
+      "label": "Handoff event timeline",
+      "description": "A timeline of H01–H09 separating arrival-to-ready and ready-to-departure intervals.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "waiting-distribution",
+      "label": "Station-wait distribution",
+      "description": "A comparison of planned and actual station-wait distributions across nine handoff events.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "p05-case",
+      "label": "P05 connection-change case sheet",
+      "description": "A case sheet tracing P05's planned T04–T05 connection and actual T04–T03 connection through H08.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "t06-case",
+      "label": "T06 missing-arrival case sheet",
+      "description": "A case sheet connecting T06's missing actual arrival to the destination-arrival coverage of P07 and P08.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "operations-overview",
+      "label": "A3 landscape operations overview",
+      "description": "A single A3 landscape publication combining the station network, timetable and principal operational findings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "public-explainer",
+      "label": "Portrait public explainer",
+      "description": "A portrait public explainer linking parcel movement, station waiting and the P05 and T06 cases.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "a4-summary",
+      "label": "A4 service-window summary",
+      "description": "A one-page A4 summary of headline counts, waiting distribution and destination-arrival coverage.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "p05-video",
+      "label": "P05 connection explainer video",
+      "description": "A 12-second video comparing P05's planned and actual connections at Market Lane.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "operations-presentation",
+      "label": "Operations and public communication presentation",
+      "description": "A presentation of at least eight pages reusing the specification, charts, exception cases and publication layouts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-name",
+      "kind": "text-verbatim",
+      "text": "RELAY CARGO",
+      "scope": {
+        "slots": [
+          "station-network",
+          "planned-parcel-flow",
+          "actual-parcel-flow",
+          "trip-timetable",
+          "handoff-timeline",
+          "waiting-distribution",
+          "p05-case",
+          "t06-case",
+          "operations-overview",
+          "public-explainer",
+          "a4-summary",
+          "operations-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "source-credit",
+      "kind": "text-verbatim",
+      "text": "Source: Relay Cargo, 2026",
+      "scope": {
+        "slots": [
+          "data-summary",
+          "station-network",
+          "planned-parcel-flow",
+          "actual-parcel-flow",
+          "trip-timetable",
+          "handoff-timeline",
+          "waiting-distribution",
+          "p05-case",
+          "t06-case",
+          "operations-overview",
+          "public-explainer",
+          "a4-summary",
+          "operations-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "missing-arrival-label",
+      "kind": "text-verbatim",
+      "text": "Arrival not recorded",
+      "scope": {
+        "slots": [
+          "trip-timetable",
+          "t06-case",
+          "operations-overview",
+          "public-explainer",
+          "a4-summary",
+          "operations-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "planned-label",
+      "kind": "text-verbatim",
+      "text": "Planned",
+      "scope": {
+        "slots": [
+          "planned-parcel-flow",
+          "trip-timetable",
+          "waiting-distribution",
+          "p05-case"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "actual-label",
+      "kind": "text-verbatim",
+      "text": "Actual",
+      "scope": {
+        "slots": [
+          "actual-parcel-flow",
+          "trip-timetable",
+          "waiting-distribution",
+          "p05-case"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "RELAY CARGO",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-chart-language",
+      "slots": [
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case",
+        "public-explainer"
+      ],
+      "sourceSlots": [
+        "data-summary"
+      ],
+      "items": [
+        {
+          "item": "Planned and actual operation retain the specification's respective colors, line styles, marker shapes and direct-label meanings wherever those scenarios appear.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Parcel, trip and handoff identifiers and counting units retain the same meanings across views, including the distinction between 21 boardings and 12 unique parcels.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Scenario distinctions remain readable without color, and the T06 arrival gap is never converted into a recorded arrival or numerical delay.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "public-explainer-source-agreement",
+      "slots": [
+        "public-explainer"
+      ],
+      "sourceSlots": [
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case"
+      ],
+      "items": [
+        {
+          "item": "The public explainer's reused parcel-flow, waiting and exception graphics preserve the values, scenario meanings and missing-data treatment established by their source files.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The letter establishes an existing identity and a shared chart language but does not require a particular logo, bicycle depiction or other object to recur across specified images."
+    },
+    "brandToken": "RELAY CARGO"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "station-network",
+      "planned-parcel-flow",
+      "actual-parcel-flow",
+      "trip-timetable",
+      "handoff-timeline",
+      "waiting-distribution",
+      "p05-case",
+      "t06-case",
+      "public-explainer"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge operational data correctness or require photographic realism in schematic charts, since factual compliance is checked separately."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "data-summary",
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case",
+        "operations-overview",
+        "public-explainer",
+        "a4-summary",
+        "operations-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case",
+        "public-explainer"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-data-summary",
+      "requirementId": "R-format-data-summary",
+      "method": "artifact-property",
+      "targetSlots": [
+        "data-summary"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-station-network",
+      "requirementId": "R-format-station-network",
+      "method": "artifact-property",
+      "targetSlots": [
+        "station-network"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-planned-parcel-flow",
+      "requirementId": "R-format-planned-parcel-flow",
+      "method": "artifact-property",
+      "targetSlots": [
+        "planned-parcel-flow"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-actual-parcel-flow",
+      "requirementId": "R-format-actual-parcel-flow",
+      "method": "artifact-property",
+      "targetSlots": [
+        "actual-parcel-flow"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-trip-timetable",
+      "requirementId": "R-format-trip-timetable",
+      "method": "artifact-property",
+      "targetSlots": [
+        "trip-timetable"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-handoff-timeline",
+      "requirementId": "R-format-handoff-timeline",
+      "method": "artifact-property",
+      "targetSlots": [
+        "handoff-timeline"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-waiting-distribution",
+      "requirementId": "R-format-waiting-distribution",
+      "method": "artifact-property",
+      "targetSlots": [
+        "waiting-distribution"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-p05-case",
+      "requirementId": "R-format-p05-case",
+      "method": "artifact-property",
+      "targetSlots": [
+        "p05-case"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-t06-case",
+      "requirementId": "R-format-t06-case",
+      "method": "artifact-property",
+      "targetSlots": [
+        "t06-case"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-operations-overview",
+      "requirementId": "R-format-operations-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "operations-overview"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-public-explainer",
+      "requirementId": "R-format-public-explainer",
+      "method": "artifact-property",
+      "targetSlots": [
+        "public-explainer"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-a4-summary",
+      "requirementId": "R-format-a4-summary",
+      "method": "artifact-property",
+      "targetSlots": [
+        "a4-summary"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-p05-video",
+      "requirementId": "R-format-p05-video",
+      "method": "manual",
+      "targetSlots": [
+        "p05-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-operations-presentation",
+      "requirementId": "R-format-operations-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "operations-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "summary-specification",
+      "requirementId": "R-summary-specification",
+      "method": "content",
+      "targetSlots": [
+        "data-summary"
+      ],
+      "criteria": "The document contains two pages and an inventory identifying every commissioned chart's input columns, chart type, intended carrier and printed labels. It separates stations, distinct parcels, distinct trips, handoff events and parcel boardings. It defines arrival delay as actual minus planned arrival; planned waiting from the parcel's planned incoming arrival to planned outgoing departure; actual waiting as departedStation minus arrivalAtStation; and the two readiness intervals using readyForOutgoing. Durations use minutes. It states the exact source credit and specifies planned #0072B2, dashed lines and open markers versus actual #D55E00, solid lines and filled markers. Equivalent formula notation is acceptable; omitted inventory fields or conflicting definitions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ]
+    },
+    {
+      "id": "document-counts-and-repeated-formulas",
+      "requirementId": "R-document-counts-and-repeated-formulas",
+      "method": "content",
+      "targetSlots": [
+        "data-summary",
+        "operations-overview",
+        "a4-summary",
+        "operations-presentation"
+      ],
+      "criteria": "Each target explicitly reports four separately named measures: stations 4, unique parcels 12, unique trips 6 and handoff events 9. The presentation also states both planned and actual station-waiting formulas consistently with the summary and repeats its source credit. Layout and equivalent mathematical wording may differ; replacing distinct counts with boardings or leaving the measures ambiguous fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "sourceSlots": [
+        "data-summary"
+      ]
+    },
+    {
+      "id": "public-counts",
+      "requirementId": "R-public-counts",
+      "method": "visual",
+      "targetSlots": [
+        "public-explainer"
+      ],
+      "criteria": "The explainer visibly identifies 4 stations, 12 distinct parcels, 6 distinct trips and 9 handoff events as separate quantities. Their placement may vary, but a reader must not have to infer which number belongs to which counting unit.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "coordinate-network",
+      "requirementId": "R-coordinate-network",
+      "method": "visual",
+      "targetSlots": [
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow"
+      ],
+      "criteria": "All three maps preserve A Canal Depot (0,0), B North Gate (2,3), C Market Lane (5,1) and D Library Steps (7,4), with x rightward and y upward in local km. They identify six directed trips: T01 A→B, T02 B→C, T03 C→D, T04 A→C, T05 C→D and T06 B→D. Scaling, translation and curved or offset connections are allowed if station geometry and endpoints remain correct. T03 and T05 must remain separately identifiable despite sharing endpoints; relocated stations, reversed arrows or merged trip identities fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "parcel-flow-counts",
+      "requirementId": "R-parcel-flow-counts",
+      "method": "visual",
+      "targetSlots": [
+        "planned-parcel-flow",
+        "actual-parcel-flow"
+      ],
+      "criteria": "The planned map labels T01–T06 with 4, 5, 4, 3, 3, 2 parcels respectively; the actual map labels them 4, 5, 5, 3, 2, 2. Each scenario identifies 21 boardings separately from 12 unique parcels. The actual map makes P05's transfer from T04 to T03 legible. Label placement and line-width scaling may vary; swapped scenarios, incorrect trip loads or treating boardings as unique parcels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "record-traceability",
+      "requirementId": "R-record-traceability",
+      "method": "visual",
+      "targetSlots": [
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case"
+      ],
+      "criteria": "Displayed clock times and durations can be traced through visible trip or handoff identifiers; grouped distributions may identify contributing events in a key or annotation. The timetable includes planned departure/arrival and actual departure/arrival for every trip: T01 09:00/09:12 and 09:02/09:16; T02 09:18/09:30 and 09:22/09:36; T03 09:36/09:50 and 09:40/09:56; T04 09:10/09:28 and 09:12/09:29; T05 09:34/09:48 and 09:35/09:50; T06 09:28/09:48 and 09:31/missing. Displayed arrival delays are respectively 4, 6, 6, 1 and 2 minutes for T01–T05; T06 has no calculable arrival delay. Equivalent clock formatting is allowed. Incorrect or untraceable records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "handoff-interval-decomposition",
+      "requirementId": "R-handoff-interval-decomposition",
+      "method": "visual",
+      "targetSlots": [
+        "handoff-timeline"
+      ],
+      "criteria": "All nine events are individually identifiable and divide actual station waiting at readiness. H01/H03/H05 show 09:16→09:18→09:22; H02/H04/H06/H09 show 09:36→09:38→09:40; H07 shows 09:29→09:31→09:35; H08 shows 09:29→09:37→09:40. The corresponding interval pairs are 2+4, 2+2, 2+4 and 8+3 minutes. Shared tracks or grouped labeling are allowed if no event is lost. An undivided waiting interval or invented planned readiness fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "waiting-distribution-and-p05",
+      "requirementId": "R-waiting-distribution-and-p05",
+      "method": "visual",
+      "targetSlots": [
+        "waiting-distribution",
+        "p05-case"
+      ],
+      "criteria": "The distribution represents nine planned waits at 6 minutes and actual frequencies of four at 4 minutes, four at 6 minutes and one at 11 minutes, identifying the last as H08. Event marks or aggregated frequencies are acceptable if the counts are recoverable. The P05 sheet traces planned T04→T05 and actual T04→T03 through H08 at Market Lane, showing arrival 09:29, readiness 09:37, T05 actual departure 09:35 and T03 actual departure 09:40. It distinguishes the planned 6-minute wait from the actual 11-minute wait. Reversing the missed and taken connection, or presenting readiness as preceding T05's actual departure, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "missing-arrival-images",
+      "requirementId": "R-missing-arrival-images",
+      "method": "visual",
+      "targetSlots": [
+        "trip-timetable",
+        "t06-case",
+        "public-explainer"
+      ],
+      "criteria": "Each image associates the prescribed missing-arrival wording with T06 and distinguishes trip coverage of 5 recorded arrivals out of 6 trips from parcel coverage of 10 recorded destination arrivals out of 12 parcels. The T06 case explicitly links the missing final-trip record to P07 and P08. Fractions or equivalent labeled counts are acceptable. Treating the empty field as zero delay, a known arrival, or proof of non-delivery fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "missing-arrival-documents",
+      "requirementId": "R-missing-arrival-documents",
+      "method": "content",
+      "targetSlots": [
+        "operations-overview",
+        "a4-summary",
+        "operations-presentation"
+      ],
+      "criteria": "Each document visibly states the prescribed T06 gap label and separately reports 5/6 actual trip-arrival records and 10/12 parcel destination-arrival records. Coverage may appear in a caption, chart or labeled summary. An invented T06 arrival or delay, a missing denominator, or confusion between trips and parcels fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ]
+    },
+    {
+      "id": "chart-encoding-and-grayscale",
+      "requirementId": "R-chart-encoding-and-grayscale",
+      "method": "visual",
+      "targetSlots": [
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case",
+        "public-explainer"
+      ],
+      "criteria": "Where planned and actual operation are represented, planned uses blue #0072B2 with dashed lines and open markers, and actual uses orange #D55E00 with solid lines and filled markers, agreeing with the specification. Direct scenario labels and non-color distinctions preserve interpretation in grayscale. Composition and neutral supporting colors may vary. Reversed meanings, contradictory styles or reliance on hue alone fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "data-summary"
+      ]
+    },
+    {
+      "id": "image-chart-reading-requirements",
+      "requirementId": "R-image-chart-reading-requirements",
+      "method": "visual",
+      "targetSlots": [
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case",
+        "public-explainer"
+      ],
+      "criteria": "Each chart, case sheet and publication page includes a descriptive title, relevant counting or time/coordinate units, exact source credit and brand name, plus at least one annotation explaining a reading or finding. Printed quantities agree with the supplied station, trip, parcel and handoff records and calculated data-guide values. Each numerical axis starts at zero or explicitly labels its nonzero starting value; clock-time axes may use labeled clock starts. Placement and typography may vary. Unsupported numerical claims, missing reading aids or unlabeled truncated axes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "document-chart-reading-requirements",
+      "requirementId": "R-document-chart-reading-requirements",
+      "method": "content",
+      "targetSlots": [
+        "operations-overview",
+        "a4-summary",
+        "operations-presentation"
+      ],
+      "criteria": "Every publication page and included chart visibly supplies a title, applicable units, exact source credit, brand name and an explanatory reading annotation. All printed numbers remain consistent with the attachments. Numerical axes either begin at zero or state their starting value, including explicit clock starts for time axes. Planned/actual keys and chart markings agree with the summary's fixed colors, dashed/open versus solid/filled distinctions and direct labels. Page layout may change; incorrect values, missing page information or contradictory encodings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "sourceSlots": [
+        "data-summary"
+      ]
+    },
+    {
+      "id": "overview-chart-reuse",
+      "requirementId": "R-overview-chart-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "operations-overview"
+      ],
+      "criteria": "The overview visibly incorporates recognizable versions of both the earlier network and timetable, retaining their station/trip identities, values and visual encoding meanings. Resizing and rearrangement are acceptable when the relevant information remains readable. Merely mentioning these charts or replacing them with incompatible graphics fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "sourceSlots": [
+        "station-network",
+        "trip-timetable"
+      ]
+    },
+    {
+      "id": "a4-chart-reuse",
+      "requirementId": "R-a4-chart-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "a4-summary"
+      ],
+      "criteria": "The A4 page visibly reuses the earlier waiting-distribution chart with its nine-event planned and actual frequencies and unchanged encoding meanings. Scale and placement may change. A textual reference alone or a chart whose data changes fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "sourceSlots": [
+        "waiting-distribution"
+      ]
+    },
+    {
+      "id": "public-explainer-reuse-and-surface",
+      "requirementId": "R-public-explainer-reuse-and-surface",
+      "method": "visual",
+      "targetSlots": [
+        "public-explainer"
+      ],
+      "criteria": "The portrait explainer visibly connects parcel movement, station waiting, P05's changed transfer and T06's missing arrival through recognizable reuse of the relevant earlier graphics. Planned and actual views may be combined, and excerpts may be rearranged, provided their values and encodings remain consistent. Its publication surface follows the supplied 210-by-315-mm portrait reference in proportion and orientation, without requiring an exact pixel count. Omission of either exception, disconnected subject fragments or contradictory reused data fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case"
+      ]
+    },
+    {
+      "id": "presentation-source-reuse",
+      "requirementId": "R-presentation-source-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "operations-presentation"
+      ],
+      "criteria": "The presentation visibly reuses identifiable specification content and graphics from every listed source, including both flow maps, both exception sheets and all three publication layouts. Excerpts, scaled reproductions and rearrangement are acceptable if source identity, values and encoding meanings survive. Source filenames or prose references without visible source content do not count.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "sourceSlots": [
+        "data-summary",
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case",
+        "operations-overview",
+        "public-explainer",
+        "a4-summary"
+      ]
+    },
+    {
+      "id": "publication-content-surfaces-and-page-count",
+      "requirementId": "R-publication-content-surfaces-and-page-count",
+      "method": "content",
+      "targetSlots": [
+        "operations-overview",
+        "a4-summary",
+        "operations-presentation"
+      ],
+      "criteria": "The overview is a single A3 landscape publication surface corresponding to 420 by 297 mm and combines the network, timetable and principal operational findings. The A4 summary is one portrait page corresponding to 210 by 297 mm and includes headline counts, waiting distribution and arrival-record coverage. Judge physical page proportions and orientation against the supplied surfaces, without enforcing raster pixel dimensions. The presentation contains at least eight pages. Different arrangements are acceptable; missing required subject matter, wrong surface orientation or an undersized presentation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ]
+    },
+    {
+      "id": "p05-video-whole-file",
+      "requirementId": "R-p05-video-whole-file",
+      "method": "manual",
+      "targetSlots": [
+        "p05-video"
+      ],
+      "criteria": "Review the whole video and its runtime: it lasts 12 seconds and clearly compares P05's planned T04→T05 transfer with actual T04→T03 at Market Lane. Visible times are tied to trip or H08 identifiers and agree with the records, including arrival 09:29, readiness 09:37, T05 actual departure 09:35 and T03 actual departure 09:40. Planned and actual use the summary's blue dashed/open and orange solid/filled encodings with direct labels distinguishable in grayscale. Storytelling and camera treatment may vary; incorrect chronology, unsupported times, an omitted comparison or wrong duration fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "data-summary",
+        "p05-case"
+      ]
+    },
+    {
+      "id": "existing-identity-reference",
+      "requirementId": "R-existing-identity-reference",
+      "method": "visual",
+      "targetSlots": [
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case",
+        "public-explainer"
+      ],
+      "criteria": "Assess use of the supplied cargo-bike identity wherever a bicycle, cargo box or badge is depicted: retain the blue front box, black frame and white circular badge with two dark horizontal bars. Simplified schematic treatment is acceptable, and a literal bicycle illustration is not required on every chart. A depicted replacement identity that contradicts these defining features fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-shared-chart-language",
+      "requirementId": "R-set-shared-chart-language",
+      "method": "visual",
+      "targetSlots": [
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case",
+        "public-explainer"
+      ],
+      "criteria": "Planned and actual operation retain the specification's respective colors, line styles, marker shapes and direct-label meanings wherever those scenarios appear. Parcel, trip and handoff identifiers and counting units retain the same meanings across views, including the distinction between 21 boardings and 12 unique parcels. Scenario distinctions remain readable without color, and the T06 arrival gap is never converted into a recorded arrival or numerical delay.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "data-summary"
+      ]
+    },
+    {
+      "id": "set-public-explainer-source-agreement",
+      "requirementId": "R-set-public-explainer-source-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "public-explainer"
+      ],
+      "criteria": "The public explainer's reused parcel-flow, waiting and exception graphics preserve the values, scenario meanings and missing-data treatment established by their source files.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/stations.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/trips.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/parcels.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/handoffs.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/data-definitions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case"
+      ]
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "summary-counts",
+      "fromSlot": "data-summary",
+      "toSlots": [
+        "operations-overview",
+        "public-explainer",
+        "a4-summary",
+        "operations-presentation"
+      ],
+      "extract": [
+        "station count and unit",
+        "distinct parcel count and unit",
+        "distinct trip count and unit",
+        "handoff-event count and unit"
+      ],
+      "notes": "The data summary, landscape overview, portrait explainer, A4 summary and presentation repeat 4 stations, 12 distinct parcels, 6 distinct trips and 9 handoff events as separate measures; the presentation also repeats the summary's waiting formulas and source credit."
+    },
+    {
+      "id": "presentation-formulas-and-credit",
+      "fromSlot": "data-summary",
+      "toSlots": [
+        "operations-presentation"
+      ],
+      "extract": [
+        "planned station-waiting formula",
+        "actual station-waiting formula",
+        "source credit"
+      ],
+      "notes": "The data summary, landscape overview, portrait explainer, A4 summary and presentation repeat 4 stations, 12 distinct parcels, 6 distinct trips and 9 handoff events as separate measures; the presentation also repeats the summary's waiting formulas and source credit."
+    },
+    {
+      "id": "summary-encodings",
+      "fromSlot": "data-summary",
+      "toSlots": [
+        "station-network",
+        "planned-parcel-flow",
+        "actual-parcel-flow",
+        "trip-timetable",
+        "handoff-timeline",
+        "waiting-distribution",
+        "p05-case",
+        "t06-case",
+        "operations-overview",
+        "public-explainer",
+        "a4-summary",
+        "p05-video"
+      ],
+      "extract": [
+        "planned-operation color, line style and marker shape",
+        "actual-operation color, line style and marker shape"
+      ],
+      "notes": "Every chart, case sheet, publication layout and the video follows the summary's planned/actual colors, line styles and marker shapes, with direct labels that remain distinguishable in grayscale."
+    }
+  ]
+}

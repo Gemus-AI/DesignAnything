@@ -1,0 +1,26 @@
+MILO | A paper plane performance
+
+We are commissioning the finished acting drawings for an 18-second scene featuring our existing character Milo. In an empty rehearsal room, Milo launches a paper plane, watches it fall, then retrieves it and places it on the windowsill. The emotional sequence is anticipation, disappointment and release. This is a quiet moment for viewers aged 8 and above, intended for a short animation watched at home. The performance is silent; the change should read through the hands, shoulders, breath and distribution of weight.
+
+The attached rough character model is the identity source for every drawing. Milo is 1000 mm tall with a four-head body proportion, ochre skin #D99B55, a single dark forelock curving toward the character's left and one dark circular mark on the character's left cheek. The complete outfit consists of a navy #233D54 sweatshirt with one orange square patch on the character's left upper sleeve, cream trousers and navy shoes. The scene contains one cream paper plane, 160 mm long with a 140 mm wingspan. Six shots run for 3 seconds each. The room's north window, east door and floor cross remain fixed. Use 16:9 shot frames; the framing attachment also records a 9:16 composition guide. Both guides have action margins of 3.5% and graphic margins of 5% on every edge. Print "MILO" and "Room to breathe" as the headings on the storyboard and shot table.
+
+Audience: the character animation production team, for agreeing the acting choices and transferring the poses, timing and continuity into animation.
+
+Inputs (attached): 01-client-facts.en.md contains the character, prop, setting and timing facts. 02-delivery-catalog.en.md lists the six delivery files with their proportions, formats and stages. 03-scene-records.en.md contains the fixed synopsis and six shot records, including action wording, durations and dialogue status. milo-model.png is the existing rough working model: loose pencil front, side and back views and three established expressions, not a finished sheet; it fixes the face, hair, clothing and expressions, and where its proportions differ from milo-proportions.png the measurements in milo-proportions.png govern. milo-proportions.png records the body measurements, facial movement ranges and complete clothing inventory. framing-guides.png supplies the two aspect-ratio guides and their safety margins. rehearsal-room-plan.png fixes the room geometry, landmarks and three camera distances. rehearsal-light.png supplies the empty room's materials and soft daylight atmosphere.
+
+Deliverables:
+1. One finished character model sheet with front, character-left side and back views, plus neutral, closed-mouth smile and frown expressions
+2. One expression and pose sheet with six paired facial studies and full-body poses, one pair for each shot from 01 to 06
+3. Two finished color keyframes, one for shot 04 and one for shot 06, with the final character treatment, room lighting and visible shot numbers
+4. One continuous storyboard sheet with six panels in shot order, each carrying its shot number, shot size, duration in seconds and character name inside the graphic-safe area
+5. One shot table containing the fixed synopsis and six records with shot number, shot size, duration, character, action and dialogue, plus the 18-second total
+
+Acceptance:
+- Match the character model sheet to milo-model.png and milo-proportions.png: 1000 mm height, four-head proportion, left-curving forelock, left-cheek mark and the four listed clothing items. Carry those same features into the pose sheet, both keyframes and all six storyboard panels wherever the corresponding body area is visible; use the attached facial movement ranges in every expression.
+- Give the pose sheet six numbered pairs and the storyboard six numbered panels. In 01–02, show anticipation through forward weight and raised hands; in 03–04, show disappointment through falling shoulders and lowered gaze; in 05–06, show release through an exhale, lowered shoulders and an open supporting hand. Retain the action sequence in 03-scene-records.en.md.
+- Match the storyboard and shot table to these records: 01 MS, 02 MS, 03 WS, 04 CU, 05 MS and 06 MS; every shot lasts 3 seconds and names Milo. Repeat the attached synopsis and action wording exactly in the shot table, with Silent in all six dialogue cells and a total of 18 seconds.
+- Use the north window, east door and floor cross from rehearsal-room-plan.png consistently in the storyboard and both keyframes when visible. Use camera distances of 4000 mm for WS, 2400 mm for MS and 1200 mm for CU, measured to the acting center; carry the same cream paper plane through launch, fall, retrieval and placement on the windowsill.
+- Match keyframes 04 and 06 to the corresponding storyboard poses, shot sizes and prop positions. Use 16:9 picture areas for the storyboard panels and both keyframes, with essential acting inside the 3.5% action margins and panel labels inside the 5% graphic margins; show the north window as the daylight source.
+- Print MILO and Room to breathe on the storyboard and shot table, and place the shot number, shot size, duration and Milo inside each storyboard panel.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

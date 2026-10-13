@@ -1,0 +1,586 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-fashion-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "collection-front",
+      "label": "Collection front flat-lay",
+      "description": "A size-M front flat-lay of P01, C01 and V01 with garment measurements and three enlarged back-neck labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "collection-back",
+      "label": "Collection back flat-lay",
+      "description": "A size-M back flat-lay of P01, C01 and V01 with garment measurements, texture repeat and dimensioned elbow patch positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "home-pullover",
+      "label": "Pullover seated at home",
+      "description": "A home wearing image of an adult seated in P01 with its Rust body, Cream elbow repair and rib cuff visible.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "office-layering",
+      "label": "Three-piece office layering",
+      "description": "An office wearing image of P01 beneath V01 beneath open C01 with three visible openings and exposed P01 and C01 elbow patches.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "patch-attached",
+      "label": "Elbow patch attached",
+      "description": "A P01 elbow detail with its Cream M01 patch attached and patch size, placement and vertical running-stitch geometry dimensioned.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "patch-removed",
+      "label": "Elbow patch removed",
+      "description": "A matching P01 elbow detail with the Cream patch removed beside the exposed attachment area and its size and placement dimensioned.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "collection-name",
+      "kind": "text-verbatim",
+      "text": "COMMON LOOP",
+      "scope": {
+        "slots": [
+          "collection-front"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "repair-label-line",
+      "kind": "text-verbatim",
+      "text": "Made to be mended",
+      "scope": {
+        "slots": [
+          "collection-front"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON LOOP",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "t6-wardrobe-system",
+      "slots": [
+        "collection-back",
+        "home-pullover",
+        "office-layering"
+      ],
+      "sourceSlots": [
+        "collection-front"
+      ],
+      "items": [
+        {
+          "item": "P01, C01 and V01 retain the same designed neckline, hem, pocket, band and silhouette choices between front, back and wearing views, allowing pose, drape and occlusion.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The three garments form a relaxed autumn-and-winter layering family with Rust P01, Navy C01 and Cream V01; neckline, hem and pocket choices may be developed freely within that family.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Size-M garment proportions follow the client records, including 480 mm P01 and 460 mm C01 underarm sleeve lengths measured to the cuff joining seam, with the 60 mm cuff depth separate.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "t6-repair-system",
+      "slots": [
+        "patch-attached",
+        "patch-removed"
+      ],
+      "sourceSlots": [
+        "collection-back"
+      ],
+      "items": [
+        {
+          "item": "The repair close-ups preserve the P01 sleeve, Cream M01 patch, knit scale and attachment location established by the back flat-lay.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The construction uses linked body and sleeve seams in matching yarn, matching-colour replaceable M02 cuffs and removable running-stitch patch attachment wherever those features are exposed.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON LOOP"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "collection-front",
+      "collection-back",
+      "home-pullover",
+      "office-layering",
+      "patch-attached",
+      "patch-removed"
+    ],
+    "layoutExtras": false,
+    "naRules": "Do not judge logo originality, model attractiveness or exact reproduction of reference photography as knitwear design quality."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "home-pullover",
+        "office-layering",
+        "patch-attached",
+        "patch-removed"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-collection-front",
+      "requirementId": "R-format-collection-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-collection-back",
+      "requirementId": "R-format-collection-back",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-back"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-home-pullover",
+      "requirementId": "R-format-home-pullover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "home-pullover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-office-layering",
+      "requirementId": "R-format-office-layering",
+      "method": "artifact-property",
+      "targetSlots": [
+        "office-layering"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-patch-attached",
+      "requirementId": "R-format-patch-attached",
+      "method": "artifact-property",
+      "targetSlots": [
+        "patch-attached"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-patch-removed",
+      "requirementId": "R-format-patch-removed",
+      "method": "artifact-property",
+      "targetSlots": [
+        "patch-removed"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "material-surface-construction",
+      "requirementId": "R-material-surface-construction",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "home-pullover",
+        "office-layering",
+        "patch-attached",
+        "patch-removed"
+      ],
+      "criteria": "Where knit surfaces are resolved, M01 has a double moss structure and M02 has paired knit-and-purl rib columns at a compatible fine-gauge scale. Bodies, sleeves and patches use M01; cuffs and neckline, hem and cardigan opening bands use M02. Surfaces have a washed, unbrushed character. View distance and lighting may reduce detail, but a clearly different stitch structure or brushed pile fails. Any printed material records must agree with the fixed composition, gauge, weights and usable widths; those physical properties need not be inferred from a photograph.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "neck-label-construction",
+      "requirementId": "R-neck-label-construction",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front"
+      ],
+      "criteria": "Each of the three label enlargements is associated with its own garment and represents an inside centre-back-neck label, with the collection name above the repair message. The label represents a 75 × 20 mm component; enlargement for readability is allowed. Reversed line order, a missing garment label, an exterior label location or contradictory dimensions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "removable-cuff-interface",
+      "requirementId": "R-removable-cuff-interface",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "home-pullover",
+        "office-layering",
+        "patch-attached",
+        "patch-removed"
+      ],
+      "criteria": "P01 and C01 cuff interfaces, wherever exposed or explained, support removal by undoing hand linking around the sleeve opening. An enlarged interface must allow access to linking-yarn ends inside the sleeve seam. Ordinary wearing views may conceal those ends. Integral knitting, a cut-off sleeve, a zipper or another incompatible replacement mechanism fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "patch-stitch-colour",
+      "requirementId": "R-patch-stitch-colour",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "home-pullover",
+        "office-layering",
+        "patch-attached",
+        "patch-removed"
+      ],
+      "criteria": "Resolved attachment stitches on either patch colour are Navy. Lighting and small-scale loss of stitch detail are allowed; clearly contrasting stitch yarn in another colour fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "t6-collection-identities",
+      "requirementId": "R-t6-collection-identities",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back"
+      ],
+      "criteria": "Both flat-lays contain the pullover, cardigan and vest in their assigned Rust, Navy and Cream colours, with no missing or duplicated style. The cardigan front has exactly five corozo buttons, with its 18 mm button size clearly communicated. All three front-image label enlargements make both required lines readable. Buttons need not be visible from the back.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "t6-size-m-annotations",
+      "requirementId": "R-t6-size-m-annotations",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back"
+      ],
+      "criteria": "Each flat-lay independently assigns chest/body values of 1120/640 mm to P01, 1280/720 mm to C01 and 1200/670 mm to V01. Both sleeved styles carry 240 mm cuff joining circumference and 60 mm cuff depth annotations. Dimension lines or a clearly associated measurement key are acceptable; half-chest widths presented as full circumferences, swapped values or missing labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "t6-texture-and-patch-transfer",
+      "requirementId": "R-t6-texture-and-patch-transfer",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "home-pullover",
+        "office-layering",
+        "patch-attached",
+        "patch-removed"
+      ],
+      "criteria": "Visible garments preserve the same M01 repeat scale and rectangular elbow patches across the six images. Patches measure 80 mm across and 100 mm along the sleeve, centred on the rear sleeve line 180 mm above the cuff joining seam; P01 uses Cream patches and C01 uses Rust patches, one per sleeve. The back flat-lay dimensions the 8 × 8 mm repeat, patch size and centre position. Repair details communicate patch dimensions. Perspective and natural knit deformation are allowed; incompatible geometry, colours or attachment locations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "t6-wearing-situations",
+      "requirementId": "R-t6-wearing-situations",
+      "method": "visual",
+      "targetSlots": [
+        "home-pullover",
+        "office-layering"
+      ],
+      "criteria": "The home image shows an adult seated in P01. The office image shows P01 closest to the body, V01 above it and an open C01 outside, with all three neckline or opening shapes separately visible and at least one Cream P01 patch and one Rust C01 patch exposed. Poses and room design may vary; a standing home subject, incorrect layer order or concealed required office details fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "t6-patch-removal-demonstration",
+      "requirementId": "R-t6-patch-removal-demonstration",
+      "method": "visual",
+      "targetSlots": [
+        "patch-attached",
+        "patch-removed"
+      ],
+      "criteria": "The paired views depict the same Rust P01 elbow, preserving sleeve shape, knit scale and attachment position. One view shows the Cream patch secured by removable running stitches; the other places that patch beside the intact, exposed attachment area. The attached view labels stitches running along the sleeve with 5 mm stitch length, 5 mm gaps, 10 mm between rows and 5 mm edge inset. A changed sleeve, missing loose patch, cut-out elbow or incorrect stitch geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-t6-wardrobe-system",
+      "requirementId": "R-set-t6-wardrobe-system",
+      "method": "visual",
+      "targetSlots": [
+        "collection-back",
+        "home-pullover",
+        "office-layering"
+      ],
+      "criteria": "P01, C01 and V01 retain the same designed neckline, hem, pocket, band and silhouette choices between front, back and wearing views, allowing pose, drape and occlusion. The three garments form a relaxed autumn-and-winter layering family with Rust P01, Navy C01 and Cream V01; neckline, hem and pocket choices may be developed freely within that family. Size-M garment proportions follow the client records, including 480 mm P01 and 460 mm C01 underarm sleeve lengths measured to the cuff joining seam, with the 60 mm cuff depth separate.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "collection-front"
+      ]
+    },
+    {
+      "id": "set-t6-repair-system",
+      "requirementId": "R-set-t6-repair-system",
+      "method": "visual",
+      "targetSlots": [
+        "patch-attached",
+        "patch-removed"
+      ],
+      "criteria": "The repair close-ups preserve the P01 sleeve, Cream M01 patch, knit scale and attachment location established by the back flat-lay. The construction uses linked body and sleeve seams in matching yarn, matching-colour replaceable M02 cuffs and removable running-stitch patch attachment wherever those features are exposed.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "collection-back"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-pullover-elbow",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "patch-attached",
+      "subjectSlots": [
+        "patch-removed"
+      ],
+      "notes": "Show matching P01 sleeve geometry in the attached and removed repair details, with vertical 5 mm stitches, 5 mm gaps, 10 mm row spacing and 5 mm edge inset labelled on the attached view, and the same attachment area exposed on the removed view."
+    }
+  ]
+}

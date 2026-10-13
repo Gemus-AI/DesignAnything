@@ -1,0 +1,1199 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-interior-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "functional-schedule",
+      "label": "Functional and furniture schedule",
+      "description": "One functional and furniture schedule recording six zone areas, capacities, inventory dimensions and four finish codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "furnished-plan",
+      "label": "Furnished plan and circulation",
+      "description": "One furnished plan showing six zones, inventory, circulation dimensions, camera cones and fixed room features.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ceiling-services",
+      "label": "Reflected ceiling and services plan",
+      "description": "One coordinated ceiling and services plan locating felt panels, three lighting layers, controls and cable routes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "north-elevation",
+      "label": "North wall interior elevation",
+      "description": "One north wall elevation with window dimensions, furniture, height datums and finish codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "east-elevation",
+      "label": "East wall interior elevation",
+      "description": "One east wall elevation with service locations, equipment mounting heights, furniture and finish codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "meeting-nodes",
+      "label": "Team Call and Solo Call detail sheet",
+      "description": "One meeting-node sheet showing both call settings, camera cones, seated participants, screen assemblies and background finishes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "equipment-storage",
+      "label": "Equipment and storage detail sheet",
+      "description": "One storage detail sheet covering twelve locker compartments and the technology cabinet with charging and cable access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-lighting",
+      "label": "Materials and lighting board",
+      "description": "One materials and lighting board recording four coded finishes and three coded lighting layers with locations and controls.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "perspective-c1",
+      "label": "C1 interior perspective",
+      "description": "One C1 interior perspective showing the developed room and reception wall wording from the fixed southwest viewpoint.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "perspective-c2",
+      "label": "C2 interior perspective",
+      "description": "One C2 interior perspective showing the developed room and a legible AC-01 label from the fixed northeast viewpoint.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tuesday-workshop",
+      "label": "Tuesday Workshop occupied state",
+      "description": "One C1 occupied-state view with six people at Focus and six at Discussion during Tuesday Workshop.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "wednesday-calls",
+      "label": "Wednesday Calls occupied state",
+      "description": "One C1 occupied-state view showing two simultaneous calls, two focused workers and two visitors during Wednesday Calls.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "office-walkthrough",
+      "label": "Ten-second office walkthrough",
+      "description": "One ten-second walkthrough connecting Reception, Focus and Team Call with the reception wording and meeting equipment visible.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "office-presentation",
+      "label": "Office layout and installation presentation",
+      "description": "One presentation of at least eight pages reusing the functional schedule, coordinated drawings, materials and occupied states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "reception-project-name",
+      "kind": "text-verbatim",
+      "text": "COMMON SIGNAL",
+      "scope": {
+        "slots": [
+          "perspective-c1",
+          "tuesday-workshop",
+          "wednesday-calls",
+          "office-walkthrough",
+          "office-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "reception-phrase",
+      "kind": "text-verbatim",
+      "text": "Room for remote voices",
+      "scope": {
+        "slots": [
+          "perspective-c1",
+          "tuesday-workshop",
+          "wednesday-calls",
+          "office-walkthrough",
+          "office-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON SIGNAL",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-spatial-layout",
+      "slots": [
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "meeting-nodes",
+        "equipment-storage",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "sourceSlots": [
+        "furnished-plan"
+      ],
+      "items": [
+        {
+          "item": "The plans, elevations, details and views depict the same room, fixed features, partition locations, furniture positions and meeting equipment arrangement; occupancy changes do not rearrange the office.",
+          "kind": "consistency"
+        },
+        {
+          "item": "C1 and C2 follow the specified camera positions and targets, both occupied states use C1, and both viewpoint positions remain in clear circulation.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "coordinated-material-and-lighting-system",
+      "slots": [
+        "furnished-plan",
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "meeting-nodes",
+        "equipment-storage",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "materials-lighting"
+      ],
+      "items": [
+        {
+          "item": "Depicted finishes and applicable material codes agree with the schedule and materials board across technical drawings and rendered views.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The developed office uses sealed cork flooring, clear matte oak, warm-grey wool felt above Focus and on the Team Call wall, and matte clay PT-01 on both camera backgrounds.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Lighting locations agree across representations with the specified ambient, task and Reception accent layers wherever those fixtures are visible.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON SIGNAL"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "furnished-plan",
+      "ceiling-services",
+      "north-elevation",
+      "east-elevation",
+      "meeting-nodes",
+      "equipment-storage",
+      "materials-lighting",
+      "perspective-c1",
+      "perspective-c2",
+      "tuesday-workshop",
+      "wednesday-calls"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design-quality judging must not rescore exact wording, numerical records, inventory counts, fixed geometry, camera coordinates, occupancy, video duration or presentation page count covered by acceptance checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "functional-schedule",
+        "furnished-plan",
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "meeting-nodes",
+        "equipment-storage",
+        "materials-lighting",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls",
+        "office-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "meeting-nodes",
+        "equipment-storage",
+        "materials-lighting",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-functional-schedule",
+      "requirementId": "R-format-functional-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "functional-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-furnished-plan",
+      "requirementId": "R-format-furnished-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ceiling-services",
+      "requirementId": "R-format-ceiling-services",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ceiling-services"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-north-elevation",
+      "requirementId": "R-format-north-elevation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "north-elevation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-east-elevation",
+      "requirementId": "R-format-east-elevation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "east-elevation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-meeting-nodes",
+      "requirementId": "R-format-meeting-nodes",
+      "method": "artifact-property",
+      "targetSlots": [
+        "meeting-nodes"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-equipment-storage",
+      "requirementId": "R-format-equipment-storage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "equipment-storage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-lighting",
+      "requirementId": "R-format-materials-lighting",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-lighting"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-perspective-c1",
+      "requirementId": "R-format-perspective-c1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "perspective-c1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-perspective-c2",
+      "requirementId": "R-format-perspective-c2",
+      "method": "artifact-property",
+      "targetSlots": [
+        "perspective-c2"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tuesday-workshop",
+      "requirementId": "R-format-tuesday-workshop",
+      "method": "artifact-property",
+      "targetSlots": [
+        "tuesday-workshop"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-wednesday-calls",
+      "requirementId": "R-format-wednesday-calls",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wednesday-calls"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-office-walkthrough",
+      "requirementId": "R-format-office-walkthrough",
+      "method": "manual",
+      "targetSlots": [
+        "office-walkthrough"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-office-presentation",
+      "requirementId": "R-format-office-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "office-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "complete-functional-schedule",
+      "requirementId": "R-complete-functional-schedule",
+      "method": "content",
+      "targetSlots": [
+        "functional-schedule"
+      ],
+      "criteria": "Read a proposed net area, capacity, allocated furniture and equipment, quantities and dimensions for every zone. Minimum areas are Focus 24, Team Call 12, Solo Call 4, Discussion 14, Reception 8 and Equipment 6 m²; larger proposals are allowed if the full layout fits the room. Capacities are six Focus users, four local Team Call seats, one Solo Call user, six Discussion users and two Reception visitors; Equipment must provide storage and equipment access. Allocations must match the fact-sheet inventory, including retained furniture and both AV assemblies. Record FL-01, WD-01, AC-01 and PT-01 with their correct materials. Missing fields, deficient areas or conflicting allocations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "plan-area-and-circulation-accounting",
+      "requirementId": "R-plan-area-and-circulation-accounting",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Read all six zone labels and proposed net areas and compare them with the schedule, including inventory counts. Check minima of 24, 12, 4, 14, 8 and 6 m² for Focus, Team Call, Solo Call, Discussion, Reception and Equipment respectively. A legible area breakdown must total 96 m² without overlapping or double-counting net zones, circulation, partition footprints, the 0.16 m² column and the 0.36 m² shaft. Main circulation must maintain at least 1200 mm clear width, and an unobstructed 1500 mm diameter turning circle must fit at Reception. Any inconsistent area, omitted category or clearance infringement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "presentation-schedule-agreement",
+      "requirementId": "R-presentation-schedule-agreement",
+      "method": "content",
+      "targetSlots": [
+        "office-presentation"
+      ],
+      "criteria": "Locate readable records for Focus, Team Call, Solo Call, Discussion, Reception and Equipment. Their net areas and furniture and equipment quantities must agree with the schedule and plan and satisfy the stated zone minima. Reused schedule or drawing pages count if legible; missing records or contradictory values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "fixed-shell-and-services",
+      "requirementId": "R-fixed-shell-and-services",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "criteria": "Use the southwest origin with x east and y north. Verify a 12.0 × 8.0 m interior and 3.2 m ceiling; south entrance x 0.6–1.8 m, width 1.2 m, height 2.2 m, west hinge and inward swing; north windows x 1.0–4.0 and 7.0–10.0 m, sill 0.9 m and head 2.7 m; full-height 0.4 m square column centred at (6.0, 4.0); and full-height shaft x 11.4–12.0, y 0.0–0.6 m. Preserve floor points (3.0, 5.0) and (9.0, 5.0), east-wall power/data at (12.0, 1.0), height 0.3 m, and east-wall tray spanning y 0.6–8.0 at height 2.9 m. Technical drawings must establish these facts, and rendered views must agree wherever visible. Cropping and natural occlusion are allowed; relocation, altered dimensions or removal fail. Added lightweight partitions and cable branches are allowed within the shell.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "viewpoints-and-layout-continuity",
+      "requirementId": "R-viewpoints-and-layout-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "criteria": "Reconcile visible sightlines and perspective geometry with C1 at (2.0, 1.0, 1.6) m looking toward (10.0, 6.0, 1.6) m and C2 at (10.5, 6.5, 1.6) m looking toward (2.0, 2.0, 1.6) m. Both camera positions must fall in clear circulation. Both occupied states must use C1. Furniture and partitions must remain in the plan positions across views; people and displayed call content may change. Arbitrary substitute viewpoints or rearrangement to accommodate a scene fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "simultaneous-calls-and-safe-routes",
+      "requirementId": "R-simultaneous-calls-and-safe-routes",
+      "method": "visual",
+      "targetSlots": [
+        "meeting-nodes",
+        "furnished-plan",
+        "wednesday-calls"
+      ],
+      "criteria": "Establish concurrent Team Call use by three seated local and five remote participants and Solo Call use by one seated local and one remote participant. Both cameras must have readable 1200 mm lens-height evidence and 90-degree horizontal coverage evidence, with local participants inside their respective cones and PT-01 behind them. The Wednesday scene must agree with the technical geometry. Trace visitor access to Reception and Team Call outside both cones and all six 1200 × 1600 mm desk working envelopes, each comprising 700 mm desk depth and 900 mm chair-use depth. Remote participants may appear on displays; annotations may establish camera geometry where perspective obscures measurement. A missing call, excluded local participant or conflicting visitor route fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "inventory-counts-and-dimensions",
+      "requirementId": "R-inventory-counts-and-dimensions",
+      "method": "visual",
+      "targetSlots": [
+        "equipment-storage",
+        "furnished-plan"
+      ],
+      "criteria": "Verify six 1200 × 700 × 740 mm desks; one 2000 × 900 × 740 mm discussion table; one 1600 × 800 × 740 mm video table; and one 900 × 500 × 740 mm call shelf. The 19 chairs comprise six 650 × 650 × 900 mm task chairs, six 500 × 520 × 800 mm stackable chairs, four 550 × 550 × 820 mm meeting chairs, one 550 × 550 × 820 mm call chair and two 650 × 650 × 800 mm visitor chairs. Verify one 2400 × 450 × 2100 mm locker bank and a separate 800 × 600 × 1800 mm technology cabinet. Readable dimensions or keyed inventory records may establish sizes across the sheets; the plan must account for every item and storage details must substantiate storage dimensions. Duplicated, missing, substituted or incorrectly sized inventory fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "occupied-state-headcounts",
+      "requirementId": "R-occupied-state-headcounts",
+      "method": "visual",
+      "targetSlots": [
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "criteria": "Count Tuesday as six physical people at Focus and six at Discussion, totalling twelve. Count Wednesday as two physical people at Focus, three at Team Call, one at Solo Call and two visitors at Reception, totalling eight; additionally show five remote Team Call participants and one remote Solo Call participant. Screen images must be distinguishable from physical occupants and must not inflate the on-site count. Clothing and individual appearances may vary. Missing, additional or incorrectly allocated people fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "document-finish-records",
+      "requirementId": "R-document-finish-records",
+      "method": "content",
+      "targetSlots": [
+        "functional-schedule",
+        "office-presentation"
+      ],
+      "criteria": "Read a consistent four-code specification in both documents: FL-01 for clear matte sealed cork flooring, WD-01 for clear matte oak, AC-01 for warm-grey 40 mm wool-felt panels, and PT-01 for matte clay paint #B66F52. These assignments must agree with the materials board. Legible reused specification pages count; absent codes or changed material assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "materials-lighting"
+      ]
+    },
+    {
+      "id": "finish-specification-and-placement",
+      "requirementId": "R-finish-specification-and-placement",
+      "method": "visual",
+      "targetSlots": [
+        "materials-lighting",
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "perspective-c2"
+      ],
+      "criteria": "The board, ceiling/services sheet and both elevations must use the same FL-01, WD-01, AC-01 and PT-01 assignments as the schedule, through labels or legends appropriate to each drawing. Confirm sealed cork in occupied floor areas, clear matte oak on retained oak furniture and locker fronts, warm-grey 40 mm wool felt suspended over Focus and on the Team Call wall, and matte clay #B66F52 on both call backgrounds. C2 must contain a readable AC-01 label associated with the panels. Normal rendered colour shifts from lighting are allowed; conflicting specifications, missing required panel locations or an illegible C2 code fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "lighting-controls-and-cable-branches",
+      "requirementId": "R-lighting-controls-and-cable-branches",
+      "method": "visual",
+      "targetSlots": [
+        "ceiling-services",
+        "materials-lighting"
+      ],
+      "criteria": "Both sheets must identify and locate L-01 linear ambient pendants over circulation and Discussion at 3500 K, L-02 task lamps at each of six Focus desks, the Team Call table and Solo Call shelf at 4000 K, and L-03 wall washers at the Reception wording at 3000 K. Show separate entrance dimmers for L-01 and L-03 and local work-surface switches for L-02. The ceiling/services plan must locate AC-01 over Focus and at the Team Call wall and show traceable cable branches connected to P1, P2, E1 and the retained east-wall tray. Symbols and diagrammatic routing may vary; missing lighting layers, incorrect locations or controls, or unconnected service routing fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "dimensioned-wall-elevations",
+      "requirementId": "R-dimensioned-wall-elevations",
+      "method": "visual",
+      "targetSlots": [
+        "north-elevation",
+        "east-elevation"
+      ],
+      "criteria": "Each drawing must depict its designated wall and show readable floor and 3.2 m ceiling datums, furniture dimensions or heights, applicable equipment mounting heights and finish references. The north elevation must establish both 3.0 m window widths, 0.9 m sills and 2.7 m heads. The east elevation must establish the power/data height of 0.3 m and tray height of 2.9 m. Proposed equipment heights may vary except for the specified camera lens height. Placement must reconcile with the plans; a wrong wall, missing applicable height evidence or contradictory mounting position fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "furnished-plan",
+        "ceiling-services"
+      ]
+    },
+    {
+      "id": "meeting-assemblies-and-dimensions",
+      "requirementId": "R-meeting-assemblies-and-dimensions",
+      "method": "visual",
+      "targetSlots": [
+        "meeting-nodes"
+      ],
+      "criteria": "Provide distinct, dimensioned Team Call and Solo Call details consistent with their planned furniture. Team Call must include the 1600 × 800 × 740 mm table, four local seats, a large display 1230 mm wide × 710 mm high × 60 mm deep and video bar 600 mm wide × 70 mm high × 80 mm deep. Solo Call must include the 900 × 500 × 740 mm shelf, one chair, a small display 610 mm wide × 360 mm high × 50 mm deep, webcam 90 mm wide × 30 mm high × 30 mm deep and 180 × 80 × 200 mm headset. Show seated participants, both 1200 mm camera lens heights, both 90-degree horizontal cones and coded PT-01 backgrounds. Dimensioned diagrams or keyed detail records count; an omitted assembly component or incompatible mounting arrangement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "furnished-plan",
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "storage-access-and-technology-fit",
+      "requirementId": "R-storage-access-and-technology-fit",
+      "method": "visual",
+      "targetSlots": [
+        "equipment-storage"
+      ],
+      "criteria": "Resolve the locker bank as four columns by three rows, with twelve compartments each providing at least 550 × 400 × 450 mm clear space within the specified bank envelope. Show a physically separate technology cabinet with a printer shelf accommodating a 420 × 400 × 300 mm printer, a router shelf accommodating a 220 × 160 × 40 mm router, six laptop charging positions and rear cable access. Sections, open-door views and dimensioned callouts may supply evidence. Compartment counts, clearances or equipment arrangements that cannot fit, missing charging capacity or blocked cable access fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "retained-object-appearance",
+      "requirementId": "R-retained-object-appearance",
+      "method": "visual",
+      "targetSlots": [
+        "meeting-nodes",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "criteria": "Where retained objects are depicted, preserve their recorded characteristics: desks have rectangular clear matte oak tops with rounded corners and four square oak legs; task chairs have charcoal fabric seats, grey mesh backs and five-star black bases; the discussion table has a clear matte oak top and square oak legs; stackable chairs have oak seats and backs with charcoal tubular frames. Displays have slim black frames; the charcoal video bar has a central circular lens and perforated side grilles; the black clip-mounted webcam has a central lens. Perspective, lighting and drawing simplification may vary while these distinguishing features remain coherent. Replacement with visibly different furniture or AV designs fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "reception-wall-wording-placement",
+      "requirementId": "R-reception-wall-wording-placement",
+      "method": "visual",
+      "targetSlots": [
+        "perspective-c1",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "criteria": "Both required phrases must be readable as wording installed on the Reception wall in each image. Typography and arrangement may vary consistently with the developed interior. Captions, floating overlays or wording placed only on another surface do not satisfy the wall requirement; missing or obscured wording fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "walkthrough-content-and-continuity",
+      "requirementId": "R-walkthrough-content-and-continuity",
+      "method": "manual",
+      "targetSlots": [
+        "office-walkthrough"
+      ],
+      "criteria": "Review the whole video and its duration. It must run for 10 seconds and form a spatially coherent walkthrough connecting Reception, Focus and Team Call. The room must retain the documented 12.0 × 8.0 m shell, 3.2 m ceiling and fixed features wherever visible, with furniture and partitions matching the developed drawings. Both reception phrases must become readable on the Reception wall, and meeting equipment must be visible. Camera movement may vary along the required connection; a disconnected slideshow, altered layout, missing required content or incorrect duration fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "furnished-plan",
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "meeting-nodes",
+        "perspective-c1",
+        "perspective-c2"
+      ]
+    },
+    {
+      "id": "presentation-length-and-wall-wording",
+      "requirementId": "R-presentation-length-and-wall-wording",
+      "method": "content",
+      "targetSlots": [
+        "office-presentation"
+      ],
+      "criteria": "Read the complete presentation and verify at least eight pages. It must include legible zone-area and furniture-quantity records and earlier drawings, plus a visible depiction of the Reception wall carrying both required phrases. Additional pages are allowed. Wording appearing only as document titles or captions does not establish wall placement; insufficient pages or missing required records or wall evidence fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "presentation-reuses-developed-work",
+      "requirementId": "R-presentation-reuses-developed-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "office-presentation"
+      ],
+      "criteria": "The opening must communicate the selected spatial arrangement. Find identifiable, readable reuse from every listed source, including the schedule, both plans, both elevations, both detail sheets, materials board, both perspectives and both occupied states. Scaling, cropping and page recomposition are allowed when source identity and relevant information remain visible. Generic substitutes, incompatible revisions or omission of any source fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "furnished-plan",
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "meeting-nodes",
+        "equipment-storage",
+        "materials-lighting",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ]
+    },
+    {
+      "id": "furnished-plan-technical-annotations",
+      "requirementId": "R-furnished-plan-technical-annotations",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Require a readable furnished plan with zone names and areas, all furniture and equipment located directly or through keyed symbols, partition thickness dimensions, the retained entrance swing and any added door swings, both camera cones, distinguishable visitor and staff routes, the dimension of the narrowest clear passage and the Reception turning circle. Small AV items may use callouts or linked detail references, but their location and quantity must remain traceable. Different graphic conventions are allowed; missing annotations, unlocatable inventory or routes crossing desk working space fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-coordinated-spatial-layout",
+      "requirementId": "R-set-coordinated-spatial-layout",
+      "method": "visual",
+      "targetSlots": [
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "meeting-nodes",
+        "equipment-storage",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "criteria": "The plans, elevations, details and views depict the same room, fixed features, partition locations, furniture positions and meeting equipment arrangement; occupancy changes do not rearrange the office. C1 and C2 follow the specified camera positions and targets, both occupied states use C1, and both viewpoint positions remain in clear circulation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "set-coordinated-material-and-lighting-system",
+      "requirementId": "R-set-coordinated-material-and-lighting-system",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "meeting-nodes",
+        "equipment-storage",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "criteria": "Depicted finishes and applicable material codes agree with the schedule and materials board across technical drawings and rendered views. The developed office uses sealed cork flooring, clear matte oak, warm-grey wool felt above Focus and on the Team Call wall, and matte clay PT-01 on both camera backgrounds. Lighting locations agree across representations with the specified ambient, task and Reception accent layers wherever those fixtures are visible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "functional-schedule",
+        "materials-lighting"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "developed-office-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "furnished-plan",
+      "subjectSlots": [
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "meeting-nodes",
+        "equipment-storage",
+        "perspective-c1",
+        "perspective-c2",
+        "tuesday-workshop",
+        "wednesday-calls"
+      ],
+      "notes": "C1 and C2 match their stated coordinates and directions; the furniture and partitions occupy the same positions throughout."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "scheduled-zone-and-inventory-records",
+      "fromSlot": "functional-schedule",
+      "toSlots": [
+        "furnished-plan",
+        "office-presentation"
+      ],
+      "extract": [
+        "all six zone names",
+        "proposed net area for each zone",
+        "inventory quantities"
+      ],
+      "notes": "The functional and furniture schedule, furnished plan and presentation repeat all six zone names, the same proposed net areas meeting the six stated minima, and the inventory quantities."
+    },
+    {
+      "id": "scheduled-finish-codes",
+      "fromSlot": "functional-schedule",
+      "toSlots": [
+        "ceiling-services",
+        "north-elevation",
+        "east-elevation",
+        "materials-lighting",
+        "office-presentation"
+      ],
+      "extract": [
+        "the four finish codes and their material assignments"
+      ],
+      "notes": "The schedule, materials and lighting board, ceiling and services plan, elevations and presentation use the same four finish codes; the ceiling and services plan and materials board locate all three lighting layers and their separate controls."
+    },
+    {
+      "id": "scheduled-detail-records",
+      "fromSlot": "functional-schedule",
+      "toSlots": [
+        "meeting-nodes",
+        "equipment-storage"
+      ],
+      "extract": [
+        "zone names and proposed areas relevant to each detail",
+        "furniture and equipment quantities relevant to each detail",
+        "material codes relevant to each detail"
+      ],
+      "notes": "Develop the functional and furniture schedule first, then carry its zone names, areas, quantities and material codes through the drawings."
+    }
+  ]
+}

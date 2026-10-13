@@ -1,0 +1,621 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-game-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "digital-product",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "level-overview",
+      "label": "Finished level overview",
+      "description": "One finished level overview with the playable envelope, both locations, three spark positions and dimensioned required jumps.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "character-relay-sheet",
+      "label": "Finished character and relay sheet",
+      "description": "One finished sheet of Pip and the relay with front, side and rear views, two poses or states each, close-ups and small gameplay depictions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "environment-assets",
+      "label": "Finished environment asset sheet",
+      "description": "One finished asset sheet containing three platform modules, two copper-pipe foreground pieces, one distant-tank backdrop and one triangular spark.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entry-state",
+      "label": "Entry touch and controller composition",
+      "description": "One paired Entry composition with touch and controller screens at Dock Steps displaying 0/3.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "relay-waiting-state",
+      "label": "Relay Waiting touch and controller composition",
+      "description": "One paired Relay Waiting composition with touch and controller screens at Relay Gate displaying 2/3 and the Dormant relay.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "relay-restored-state",
+      "label": "Relay Restored touch and controller composition",
+      "description": "One paired Relay Restored composition with touch and controller screens at Relay Gate displaying 3/3 and the Powered relay.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "game-title",
+      "kind": "text-verbatim",
+      "text": "COPPER HOP",
+      "scope": {
+        "slots": [
+          "entry-state",
+          "relay-waiting-state",
+          "relay-restored-state"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "jump-label",
+      "kind": "text-verbatim",
+      "text": "Jump",
+      "scope": {
+        "slots": [
+          "entry-state",
+          "relay-waiting-state",
+          "relay-restored-state"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "activate-label",
+      "kind": "text-verbatim",
+      "text": "Activate",
+      "scope": {
+        "slots": [
+          "entry-state",
+          "relay-waiting-state",
+          "relay-restored-state"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COPPER HOP",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "environment-form-system",
+      "slots": [
+        "level-overview",
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "sourceSlots": [
+        "environment-assets"
+      ],
+      "items": [
+        {
+          "item": "The overview and state scenes use recognizable platform, pipe, tank and spark forms established by the environment sheet.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The rooftop waterworks treatment preserves readable platform boundaries and keeps foreground objects from obscuring the route or collectibles.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "paired-state-interface-system",
+      "slots": [
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "sourceSlots": [
+        "character-relay-sheet"
+      ],
+      "items": [
+        {
+          "item": "Across all six panels, the safe-area arrangement, action-label treatment and control positions form one interface system, with the specified controller mappings and state-dependent feedback.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The two panels within each composition agree on location, collectible count and activation status, and visible relay states match the character and relay sheet.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COPPER HOP"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Game Design",
+    "slots": [
+      "level-overview",
+      "character-relay-sheet",
+      "environment-assets",
+      "entry-state",
+      "relay-waiting-state",
+      "relay-restored-state"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design-quality judging must not assess executable gameplay, animation, sound or implementation performance, because this commission delivers static level, asset and interface images."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "level-overview",
+        "character-relay-sheet",
+        "environment-assets",
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-level-overview",
+      "requirementId": "R-format-level-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "level-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-character-relay-sheet",
+      "requirementId": "R-format-character-relay-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "character-relay-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-environment-assets",
+      "requirementId": "R-format-environment-assets",
+      "method": "artifact-property",
+      "targetSlots": [
+        "environment-assets"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entry-state",
+      "requirementId": "R-format-entry-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entry-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-relay-waiting-state",
+      "requirementId": "R-format-relay-waiting-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "relay-waiting-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-relay-restored-state",
+      "requirementId": "R-format-relay-restored-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "relay-restored-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "traversable-route",
+      "requirementId": "R-traversable-route",
+      "method": "visual",
+      "targetSlots": [
+        "level-overview"
+      ],
+      "criteria": "Every mandatory gap and ascent has a readable dimension within Pip's horizontal and vertical movement limits. The depicted geometry agrees with those dimensions and permits collection of sparks 1, 2 and 3 before exit activation, including access to spark 3 from the gate waiting position. Missing dimensions, contradictory geometry or an unreachable collectible fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "character-sheet-completeness-and-scale",
+      "requirementId": "R-character-sheet-completeness-and-scale",
+      "method": "visual",
+      "targetSlots": [
+        "character-relay-sheet",
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "The sheet includes front, side and rear depictions of both objects, named Idle and Jumping depictions for Pip, named Dormant and Powered depictions for the relay, and close-ups plus separate 32 pt-high gameplay depictions of each object. Shared gameplay scenes maintain a standing-height ratio of 1:1.2 between Pip and the relay. Both panels of every state retain Pip's ochre body, navy face, single horizontal ivory eye slit, two teal boots and single ivory backpack wherever the viewpoint exposes them. Pose and perspective may vary; the independently normalized small sheet depictions need not preserve the physical height ratio. The relay need not appear in Entry.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "environment-assets-and-reuse",
+      "requirementId": "R-environment-assets-and-reuse",
+      "method": "visual",
+      "targetSlots": [
+        "environment-assets",
+        "level-overview",
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "The asset sheet contains three identifiable pale-plaster platform modules, two copper-pipe foreground pieces, one distant storage-tank backdrop and one triangular spark asset. Scene depictions use recognizable instances of these designs to establish a disused rooftop waterworks. Repetition, cropping and perspective changes are allowed; incompatible replacement designs fail. Platform boundaries retain at least 3:1 contrast against neighboring scenery, and foreground placement does not hide the traversable route or visible collectibles. A state camera need not show every asset.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "paired-screen-interface-geometry",
+      "requirementId": "R-paired-screen-interface-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "Each composition visibly pairs a portrait touch interface with its controller counterpart. Using the supplied logical-coordinate reference, all interface content fits within y=62–840. Both controls have 56 pt-square targets: Jump at (346, 766), Activate at (258, 766), within the specified right-thumb region. The controller panel associates A with Jump and X with Activate at their corresponding positions. Uniform export scaling is allowed; judge logical placement and target size rather than raster dimensions. Missing panels, swapped mappings or interface content outside the safe region fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "screen-copy-state-records-and-legibility",
+      "requirementId": "R-screen-copy-state-records-and-legibility",
+      "method": "visual",
+      "targetSlots": [
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "Read both panels individually. Each includes the exact title and both action labels, including on controller panels. Entry displays Dock Steps and 0/3; Relay Waiting displays Relay Gate and 2/3; Relay Restored displays Relay Gate and 3/3. Every text element is at least 18 logical pt and reaches 4.5:1 contrast; ordinary interface elements meet 4.5:1, while icons and unavailable-control graphics meet 3:1. Entry and Waiting each show a visibly unavailable Activate control with a lock in both panels. An incorrect record, omitted label, undersized text or insufficient contrast fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "relay-indicators-and-activation-feedback",
+      "requirementId": "R-relay-indicators-and-activation-feedback",
+      "method": "visual",
+      "targetSlots": [
+        "character-relay-sheet",
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "Both Waiting panels depict the relay with a square amber #B87421 indicator. Both Restored panels depict a circular teal #267D80 indicator and a check mark on Activate. The sheet associates those same shape-and-color combinations with Dormant and Powered. Entry keeps the dormant relay outside its camera view, as specified in the state record. Rendering and shading may vary without changing the intended colors or indicator silhouettes; swapped states, missing feedback or contradictory panel states fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "overview-envelope-and-progression",
+      "requirementId": "R-overview-envelope-and-progression",
+      "method": "visual",
+      "targetSlots": [
+        "level-overview"
+      ],
+      "criteria": "The overview identifies a playable region measuring 20 m along the route and 4 m vertically, labels the start Dock Steps and the exit Relay Gate, and locates exactly three triangular collectibles numbered 1, 2 and 3. Its route supports automatic rightward progression and waiting at the unpowered exit, with jumping and relay activation as the player actions and all three sparks required to power the exit. Presentation scale and annotation style may vary; missing extent information, duplicated numbering or a route that requires contradictory movement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "pip-anatomy-and-proportions",
+      "requirementId": "R-pip-anatomy-and-proportions",
+      "method": "visual",
+      "targetSlots": [
+        "character-relay-sheet",
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "Visible depictions preserve the supplied character design: ochre #C88A32 body, navy #203342 face, one horizontal ivory eye slit, two teal #267D80 boots and one ivory #F4E9CF backpack. Standing anatomy follows the recorded 30% head, 40% torso and 30% legs, with two short navy arms, a rounded-rectangle head and a shallow rectangular backpack. The sheet establishes a 1 m standing height. Jumping articulation, perspective and natural occlusion are allowed; altered anatomy, proportions or identity colors fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "relay-geometry",
+      "requirementId": "R-relay-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "character-relay-sheet",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "The sheet's orthographic views establish the recorded 1.2 m height, 0.6 m width and 0.4 m depth. The relay remains a copper rectangular pedestal with two upright prongs and one ivory indicator plate. Scene versions preserve those proportions. Dormant and Powered may change indicator shape and color, while the pedestal and prong geometry remain consistent. Perspective is allowed; incompatible proportions, missing structural features or unrelated state-dependent geometry changes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-environment-form-system",
+      "requirementId": "R-set-environment-form-system",
+      "method": "visual",
+      "targetSlots": [
+        "level-overview",
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "The overview and state scenes use recognizable platform, pipe, tank and spark forms established by the environment sheet. The rooftop waterworks treatment preserves readable platform boundaries and keeps foreground objects from obscuring the route or collectibles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "environment-assets"
+      ]
+    },
+    {
+      "id": "set-paired-state-interface-system",
+      "requirementId": "R-set-paired-state-interface-system",
+      "method": "visual",
+      "targetSlots": [
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "criteria": "Across all six panels, the safe-area arrangement, action-label treatment and control positions form one interface system, with the specified controller mappings and state-dependent feedback. The two panels within each composition agree on location, collectible count and activation status, and visible relay states match the character and relay sheet.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "character-relay-sheet"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "pip-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "pip-model.png"
+      ],
+      "subjectSlots": [
+        "character-relay-sheet",
+        "entry-state",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "notes": "Preserve these features and the attached proportions."
+    },
+    {
+      "id": "relay-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "relay-model.png"
+      ],
+      "subjectSlots": [
+        "character-relay-sheet",
+        "relay-waiting-state",
+        "relay-restored-state"
+      ],
+      "notes": "The character and relay sheet repeats both indicator shapes and colours."
+    }
+  ]
+}

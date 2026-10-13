@@ -1,0 +1,574 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-furniture-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "assembly-sheet",
+      "label": "Final assembly and parts sheet",
+      "description": "One final assembly sheet containing a module exploded view, retained frame connections and the complete six-module parts schedule.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "independent-layout",
+      "label": "Independent working layout",
+      "description": "One dimensioned room plan and occupied view of six independent workstations with their detached couplers stored.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "discussion-layout",
+      "label": "Face-to-face discussion layout",
+      "description": "One dimensioned room plan and occupied view of three face-to-face pairs connected by six bridge couplers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-layout",
+      "label": "Complete furniture storage layout",
+      "description": "One dimensioned storage plan and overall view locating all six modules and six detached couplers within the allocated floor area.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "top-connection-details",
+      "label": "Tabletop and connection details",
+      "description": "One dimensioned detail sheet covering the birch plywood top, padded frame clamps, bridge coupler and hand-operated release sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tray-details",
+      "label": "Under-top tray and coupler storage details",
+      "description": "One dimensioned detail sheet covering tray construction, tabletop attachment and the packed arrangement of two bridge couplers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "SECOND BELL",
+      "scope": {
+        "slots": [
+          "assembly-sheet",
+          "top-connection-details",
+          "tray-details"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "supporting-wording",
+      "kind": "text-verbatim",
+      "text": "Built from six school desks",
+      "scope": {
+        "slots": [
+          "assembly-sheet",
+          "top-connection-details",
+          "tray-details"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SECOND BELL",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "one-reconfigurable-furniture-system",
+      "slots": [
+        "independent-layout",
+        "discussion-layout",
+        "storage-layout",
+        "top-connection-details",
+        "tray-details"
+      ],
+      "sourceSlots": [
+        "assembly-sheet"
+      ],
+      "items": [
+        {
+          "item": "The assembled modules, retained frame construction, tops, trays, padded clamps and bridge couplers match the assembly-sheet design across all layouts and details; only arrangement and coupler attachment state change.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The different views remain physically compatible with intact welded frames, six complete modules and the specified component sizes, including the storage arrangement and coupler packing.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "SECOND BELL"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "assembly-sheet",
+      "independent-layout",
+      "discussion-layout",
+      "storage-layout",
+      "top-connection-details",
+      "tray-details"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not rescore exact wording, inventory totals, specified dimensions, retained connections or finish compliance covered by these rules."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-sheet",
+        "independent-layout",
+        "discussion-layout",
+        "storage-layout",
+        "top-connection-details",
+        "tray-details"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-assembly-sheet",
+      "requirementId": "R-format-assembly-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembly-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-independent-layout",
+      "requirementId": "R-format-independent-layout",
+      "method": "artifact-property",
+      "targetSlots": [
+        "independent-layout"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-discussion-layout",
+      "requirementId": "R-format-discussion-layout",
+      "method": "artifact-property",
+      "targetSlots": [
+        "discussion-layout"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-layout",
+      "requirementId": "R-format-storage-layout",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-layout"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-top-connection-details",
+      "requirementId": "R-format-top-connection-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "top-connection-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tray-details",
+      "requirementId": "R-format-tray-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "tray-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "assembly-inventory-and-explosion",
+      "requirementId": "R-assembly-inventory-and-explosion",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-sheet"
+      ],
+      "criteria": "A legible six-module schedule identifies F01 through F06 once each and reconciles to 6 frames, 6 tops, 6 trays, 24 clamp assemblies and 6 couplers. An exploded complete module distinguishes existing steel from added parts and locates four top-ring corner welds, four leg-to-ring welds and two stretcher-end welds. A representative frame may explain the repeated construction; missing parts, incorrect totals or unaccounted connections fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "inventory-and-occupied-states",
+      "requirementId": "R-inventory-and-occupied-states",
+      "method": "visual",
+      "targetSlots": [
+        "independent-layout",
+        "discussion-layout",
+        "storage-layout"
+      ],
+      "criteria": "Each sheet includes its plan and corresponding occupied or overall view, with six complete modules and the full component inventory traceable to the assembly sheet, including 24 frame clamps. Independent work provides six individually occupied stations and stores all detached couplers in trays. Discussion provides three opposing pairs occupied by six people, with two installed couplers per pair. Storage preserves all six complete modules. Position and orientation may change; omitted, duplicated or substituted components, conflicting plan/view arrangements or incorrect seating states fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "assembly-sheet"
+      ]
+    },
+    {
+      "id": "room-circulation-and-storage-footprint",
+      "requirementId": "R-room-circulation-and-storage-footprint",
+      "method": "visual",
+      "targetSlots": [
+        "independent-layout",
+        "discussion-layout",
+        "storage-layout"
+      ],
+      "criteria": "Every plan labels the room's 6000 mm and 4800 mm extents and demonstrates an uninterrupted route entering from the bottom edge with at least 900 mm clear width to all relevant destinations. Furniture and occupied seating must not obstruct that clearance. The storage plan measures the outermost extent of all six complete modules, including projecting parts, within the 2100 × 1100 mm allocation. Arrangement may vary; unsupported dimension claims, blocked routes or an oversized stored group fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "top-clamps-and-coupler-details",
+      "requirementId": "R-top-clamps-and-coupler-details",
+      "method": "visual",
+      "targetSlots": [
+        "top-connection-details"
+      ],
+      "criteria": "Dimensioned drawings establish a 660 mm by 500 mm plywood top, 18 mm thickness, R20 corners and a 718 mm floor-to-working-surface height. Sections show padded split clamps engaging the existing frame, with four assemblies securing each top, and a removable connector bridging neighboring tops. Each coupler stays within 120 × 60 × 35 mm. An intelligible release sequence demonstrates hand actuation for clamps and couplers. Mechanism design may vary; absent padding, incorrect dimensions, insufficient clamps or tool-dependent operation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tray-construction-and-coupler-packing",
+      "requirementId": "R-tray-construction-and-coupler-packing",
+      "method": "visual",
+      "targetSlots": [
+        "tray-details",
+        "storage-layout"
+      ],
+      "criteria": "The tray drawing labels external dimensions of 300 × 200 × 70 mm and 9 mm wall and base thicknesses, producing a clear interior of 282 × 182 × 61 mm. It explains attachment beneath the added tabletop. A packed view fits two of the designed couplers inside that interior without intersection or protrusion. The storage layout identifies three trays holding two couplers apiece, accounting for all six. Attachment hardware and packing orientation may vary if the specified geometry and capacity remain credible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "top-connection-details"
+      ]
+    },
+    {
+      "id": "printed-wording-materials-and-finish",
+      "requirementId": "R-printed-wording-materials-and-finish",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-sheet",
+        "top-connection-details",
+        "tray-details",
+        "independent-layout",
+        "discussion-layout",
+        "storage-layout"
+      ],
+      "criteria": "Each assembly or detail sheet visibly includes both required phrases and labels birch plywood, clear water-based varnish, retained steel, local rust removal and a clear water-based protective finish. The occupied and stored furniture views depict grey-green painted frames with retained wear, including exposed steel at worn edges, consistent with the specified existing appearance. Rendering style may vary; missing wording or treatment labels, opaque replacement finishes or uniformly pristine frames fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "retained-frame-integrity",
+      "requirementId": "R-retained-frame-integrity",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-sheet",
+        "independent-layout",
+        "discussion-layout",
+        "storage-layout",
+        "top-connection-details",
+        "tray-details"
+      ],
+      "criteria": "The design preserves each original frame as an intact welded structure throughout assembly, use and storage. No illustrated operation or connection requires shortening a tube, separating a weld or replacing retained frame members. Across six frames the retained connection count remains 60. Added removable components and rearrangement are allowed; storage or assembly schemes that depend on dismantling the welded frames fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "existing-frame-dimensions",
+      "requirementId": "R-existing-frame-dimensions",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-sheet",
+        "top-connection-details"
+      ],
+      "criteria": "The frame information and sections consistently establish a 600 mm overall width, 450 mm depth, 700 mm height and 25 mm square steel members. Dimensions may be distributed between these sheets, but the drawings must support the specified frame rather than contradict their labels. Changed frame proportions, a different tube section or incompatible top attachment geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "existing-frame-construction",
+      "requirementId": "R-existing-frame-construction",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-sheet",
+        "top-connection-details"
+      ],
+      "criteria": "The retained structure has a rectangular 600 × 450 mm outer top ring, four vertical legs with outer faces flush to the ring, and one horizontal stretcher between the rear legs. Geometry places the ring between 675 and 700 mm above the floor, the leg upper ends at 675 mm and the stretcher centreline at 250 mm. Views and dimensions may jointly establish these relationships; extra original stretchers, missing members or incompatible member positions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-one-reconfigurable-furniture-system",
+      "requirementId": "R-set-one-reconfigurable-furniture-system",
+      "method": "visual",
+      "targetSlots": [
+        "independent-layout",
+        "discussion-layout",
+        "storage-layout",
+        "top-connection-details",
+        "tray-details"
+      ],
+      "criteria": "The assembled modules, retained frame construction, tops, trays, padded clamps and bridge couplers match the assembly-sheet design across all layouts and details; only arrangement and coupler attachment state change. The different views remain physically compatible with intact welded frames, six complete modules and the specified component sizes, including the storage arrangement and coupler packing.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-01/03-frame-register.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "assembly-sheet"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "module-identity-across-states",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "assembly-sheet",
+      "subjectSlots": [
+        "independent-layout",
+        "discussion-layout",
+        "storage-layout",
+        "top-connection-details",
+        "tray-details"
+      ],
+      "notes": "The independent-work, discussion and storage layouts each account for the same six frames, tops and trays and all six bridge couplers."
+    }
+  ]
+}

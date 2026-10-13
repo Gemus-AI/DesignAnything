@@ -1,0 +1,170 @@
+{
+  "id": "bench-da-photo-material-02",
+  "title": "ALDER TABLE — Menu photography for the Lemon Chicken Plate, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PHOTOGRAPHY",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# ALDER TABLE\n\n## Menu identity\n- Restaurant name: ALDER TABLE\n- Dish name: Lemon Chicken Plate\n- Serving label: One serving\n- Existing emblem: one charcoal stem with three solid oval leaves\n- Emblem colour: #343A36\n\n## One serving\n| Ingredient | Served quantity | Visible form | Plate position |\n| --- | --- | --- | --- |\n| Cooked chicken breast | 150 g | 3 overlapping slices | Centre |\n| Roasted potatoes | 120 g | 4 halves, skin on, cut faces upwards | 10 o'clock |\n| Roasted carrots | 80 g | 3 lengths | 3 o'clock |\n| Lemon | 1 wedge | Yellow peel and exposed flesh | 6 o'clock |\n| Jus | 20 g | Shallow amber pool | Beneath chicken |\n\n## Plate\n- Material: ivory stoneware\n- Rim: continuous charcoal line\n- Outside diameter: 260 mm\n- Inner well diameter: 200 mm\n- Height: 24 mm\n\n## Dining room\n- Photography window: 14:00–15:00\n- Main light: diffuse daylight from west window\n- Fill: white reflector east of table\n- Tabletop: matte warm grey, #ECE7DE\n- Table dimensions: 900 × 700 mm\n- Table height: 750 mm\n- Scene objects: one plated serving, one fork, one knife, one empty water glass\n\n## Menu geometry\n- Trim: 180 × 270 mm\n- Bleed: 3 mm on all sides\n- Photograph window: 150 × 100 mm\n- Photograph window left offset: 15 mm from trim\n- Photograph window top offset: 40 mm from trim\n\n## Image framing\n- Overhead view: complete plate, plate diameter 80–90% of image width\n- Three-quarter view: complete plate and visible plate profile\n- Close detail: three chicken slices, lemon wedge and jus in plated positions\n- Square scene crop: same exposure as dining-table scene, complete plate, plate diameter 80–90% of image width\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# ALDER TABLE — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | plate-overhead | Complete plate overhead | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | plate-three-quarter | Complete plate three-quarter view | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | chicken-detail | Chicken and lemon detail | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | dining-scene | Dining-table scene | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | dining-scene-square | Square dining-table crop | 6 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | menu-page | Finished lunch menu page | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-and-menu-geometry.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: dining-room-light-plan.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: sprig-emblem.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: lemon-chicken-identity.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: empty-dining-table.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "ALDER TABLE | Menu photography for the Lemon Chicken Plate\n\nOur lunch menu needs photographs of the Lemon Chicken Plate that let customers see exactly what arrives at the table. One serving contains 150 g cooked chicken breast cut into 3 slices, 120 g roasted potatoes comprising 4 halves, 80 g roasted carrots comprising 3 lengths, 1 lemon wedge and 20 g jus. The chicken overlaps across the centre, potatoes sit at 10 o'clock, carrots at 3 o'clock and the lemon at 6 o'clock; the jus pools beneath the chicken. Our existing ivory stoneware plate has a charcoal rim, a 260 mm outside diameter, a 200 mm inner well and a height of 24 mm. These ingredients and their positions define the dish throughout the set.\n\nUse our dining room between 14:00 and 15:00, with diffuse light from the west window and a white reflector to the east. The tabletop is matte warm grey, #ECE7DE; retain the chicken's browned edges, potato skins and carrot surface texture. Complete views should make the portion easy to count. The printed menu page measures 180 × 270 mm with 3 mm bleed and a 150 × 100 mm photograph window. Print \"ALDER TABLE\", \"Lemon Chicken Plate\" and \"One serving\" on this page, together with our existing sprig emblem.\n\nAudience: restaurant customers choosing a lunch dish from the printed menu or its accompanying ordering images.\n\nInputs (attached): 01-client-facts.en.md records the recipe, portion, plate, lighting and printed wording. 02-delivery-catalog.en.md lists the six finished files with their proportions, formats and stages. plate-and-menu-geometry.png defines the plate dimensions and menu photograph window. dining-room-light-plan.png locates the table, west window and east reflector. lemon-chicken-identity.png records the dish's ingredients, quantities and plating relationships. sprig-emblem.png supplies the restaurant's existing emblem. empty-dining-table.png provides the room's tabletop and afternoon window-light atmosphere.\n\nDeliverables:\n1. One overhead photograph of the complete Lemon Chicken Plate, with the entire plate rim and all ingredient counts visible\n2. One three-quarter photograph of the complete Lemon Chicken Plate, showing the chicken thickness, overlapping slices and plate profile\n3. One close-detail photograph of the three chicken slices and lemon wedge in their plated positions, showing browned edges, meat texture and jus\n4. One dining-table scene photograph of the complete serving beside one fork, one knife and one empty water glass\n5. One square crop of the dining-table scene, retaining the complete plate and every ingredient portion\n6. One finished menu page using the overhead photograph, the sprig emblem and the three fixed text strings\n\nAcceptance:\n- In both complete-dish photographs, the dining-table scene, its square crop and the menu photograph, show 3 chicken slices, 4 potato halves, 3 carrot lengths and 1 lemon wedge on the ivory plate with its charcoal rim; preserve the portion proportions recorded in lemon-chicken-identity.png and 01-client-facts.en.md.\n- In both complete-dish photographs and the menu photograph, retain chicken at the centre, potatoes at 10 o'clock, carrots at 3 o'clock, lemon at 6 o'clock and jus beneath the chicken. In the close-detail photograph, preserve the same chicken overlaps and lemon position within the visible area.\n- Across the five photographic files and the photograph reused on the menu page, retain the #ECE7DE tabletop, west-side diffuse light and east-side fill recorded in dining-room-light-plan.png; render browned chicken edges, potato skins and carrot texture wherever those surfaces appear.\n- In the overhead photograph and square scene crop, give the plate an outside diameter spanning 80–90% of the image width and retain its complete rim. Derive the square crop from the delivered dining-table scene, preserving the positions of the plate, fork, knife and glass within the retained area.\n- On the finished menu page, use the 180 × 270 mm trim, 3 mm bleed and 150 × 100 mm photograph window positioned 15 mm from the left edge and 40 mm from the top edge. Reuse the overhead photograph and print \"ALDER TABLE\", \"Lemon Chicken Plate\" and \"One serving\" beside the recognisable sprig emblem.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/plate-and-menu-geometry.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "af1d45597978e9413d3ed3e99fc1b9355355733405d06af061238916ad6670cf"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/dining-room-light-plan.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "2298114de0212fe8b511c1da678b3aaa76f6ad2b240ba303bcf8184bcf090363"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/sprig-emblem.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "bb3fefa639de49b0205070859b9b68975530800b4052ebc1126aba3e234e281d"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/lemon-chicken-identity.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "81beec6c19492908f55a8611db2711487d0181704b65eceac34b5cb865a2749f"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/empty-dining-table.png",
+      "nodeId": "provided-image-5",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "66ca881ac15299032139c4bdef8bf5436a11759a94666afd81723f875b8c0d74"
+    }
+  ]
+}

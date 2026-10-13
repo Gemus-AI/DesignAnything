@@ -1,0 +1,1128 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-story-base-a-n14",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "character-world",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "direction-navigator",
+      "label": "Navigator View direction board",
+      "description": "One narrative direction board exploring Mira's perception, city geography, wind clues and action rhythm.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-city",
+      "label": "City View direction board",
+      "description": "One narrative direction board exploring shared city movement, spatial transitions, wind clues and action rhythm.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-instrument",
+      "label": "Instrument View direction board",
+      "description": "One narrative direction board exploring the course finder, environmental clues, city geography and action rhythm.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-selection",
+      "label": "Selected direction note",
+      "description": "One selection note naming the chosen direction and its viewpoint, transition and discovery decisions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "rhythm-specification",
+      "label": "Rhythm and continuity specification",
+      "description": "One page recording act timings, beat events, shot count, duration, Mira's anchors and fixed title and dialogue.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "mira-city-identity",
+      "label": "Mira and city identity sheet",
+      "description": "One identity sheet containing Mira's three views, three expressions and a city silhouette with three landmarks.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "city-environments",
+      "label": "Three-zone environment sheet",
+      "description": "One environment sheet containing wheelhouse, central market and stern berth studies.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "continuous-storyboard",
+      "label": "Complete storyboard and portrait recompositions",
+      "description": "One storyboard document containing 12 landscape panels and portrait recompositions of S03 and S10.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "keyframe-departure",
+      "label": "S03 departure instrument keyframe",
+      "description": "One finished landscape keyframe of Mira raising the course finder in S03.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "keyframe-new-course",
+      "label": "S10 recovered course keyframe",
+      "description": "One finished landscape keyframe of sunlight crossing the course finder's sight ring in S10.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shot-table",
+      "label": "Complete shot table",
+      "description": "One 12-row shot table recording shot IDs, sizes, durations, characters, actions, dialogue and timing.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "landscape-colour-script",
+      "label": "Landscape colour script",
+      "description": "One landscape colour script containing 12 sequential thumbnails labelled S01–S12.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "animatic-new-course",
+      "label": "S10–S12 New Course animatic",
+      "description": "One 12-second animatic of S10–S12 with the final dialogue subtitle and film title.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "development-presentation",
+      "label": "Selected film development presentation",
+      "description": "One presentation reusing the selected film's development work, with at least eight pages for tier 14 and 12 pages for tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "film-title",
+      "kind": "text-verbatim",
+      "text": "SKYWARD COMMON",
+      "scope": {
+        "slots": [
+          "continuous-storyboard",
+          "shot-table",
+          "rhythm-specification",
+          "development-presentation",
+          "animatic-new-course"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "instrument-engraving",
+      "kind": "text-verbatim",
+      "text": "TRUE COURSE",
+      "scope": {
+        "slots": [
+          "continuous-storyboard",
+          "keyframe-departure",
+          "keyframe-new-course"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "final-dialogue",
+      "kind": "text-verbatim",
+      "text": "We steer together.",
+      "scope": {
+        "slots": [
+          "continuous-storyboard",
+          "shot-table",
+          "rhythm-specification",
+          "development-presentation",
+          "animatic-new-course"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SKYWARD COMMON",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "selected-direction-and-character",
+      "slots": [
+        "mira-city-identity",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "sourceSlots": [
+        "direction-selection",
+        "rhythm-specification"
+      ],
+      "items": [
+        {
+          "item": "The final character and shot artwork develops the selected viewpoint, spatial-transition and lower-current discovery decisions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Visible Mira and course-finder features remain consistent across the established identity, keyframes and colour sequence.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "selected-city-and-sequence",
+      "slots": [
+        "city-environments",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "sourceSlots": [
+        "mira-city-identity",
+        "direction-selection",
+        "rhythm-specification",
+        "continuous-storyboard"
+      ],
+      "items": [
+        {
+          "item": "Environment studies and shot artwork develop the selected direction while preserving the supplied city geometry and exterior travel convention.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The colour sequence and keyframes agree with their named storyboard shots and the specified three-act progression.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "SKYWARD COMMON"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Storyboard Creation",
+    "slots": [
+      "mira-city-identity",
+      "city-environments",
+      "keyframe-departure",
+      "keyframe-new-course",
+      "landscape-colour-script"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not impose photorealism, finished-animation polish on boards or animatics, or a particular open character and rendering style, and must leave factual wording, timing, geometry and continuity to these acceptance rules."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "direction-navigator",
+        "direction-city",
+        "direction-instrument",
+        "direction-selection",
+        "rhythm-specification",
+        "mira-city-identity",
+        "city-environments",
+        "continuous-storyboard",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "shot-table",
+        "landscape-colour-script",
+        "development-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "direction-navigator",
+        "direction-city",
+        "direction-instrument",
+        "mira-city-identity",
+        "city-environments",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-direction-navigator",
+      "requirementId": "R-format-direction-navigator",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-navigator"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-city",
+      "requirementId": "R-format-direction-city",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-city"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-instrument",
+      "requirementId": "R-format-direction-instrument",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-instrument"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-selection",
+      "requirementId": "R-format-direction-selection",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-selection"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-rhythm-specification",
+      "requirementId": "R-format-rhythm-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "rhythm-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-mira-city-identity",
+      "requirementId": "R-format-mira-city-identity",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mira-city-identity"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-city-environments",
+      "requirementId": "R-format-city-environments",
+      "method": "artifact-property",
+      "targetSlots": [
+        "city-environments"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-continuous-storyboard",
+      "requirementId": "R-format-continuous-storyboard",
+      "method": "artifact-property",
+      "targetSlots": [
+        "continuous-storyboard"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-keyframe-departure",
+      "requirementId": "R-format-keyframe-departure",
+      "method": "artifact-property",
+      "targetSlots": [
+        "keyframe-departure"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-keyframe-new-course",
+      "requirementId": "R-format-keyframe-new-course",
+      "method": "artifact-property",
+      "targetSlots": [
+        "keyframe-new-course"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shot-table",
+      "requirementId": "R-format-shot-table",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shot-table"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-landscape-colour-script",
+      "requirementId": "R-format-landscape-colour-script",
+      "method": "artifact-property",
+      "targetSlots": [
+        "landscape-colour-script"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-animatic-new-course",
+      "requirementId": "R-format-animatic-new-course",
+      "method": "manual",
+      "targetSlots": [
+        "animatic-new-course"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-development-presentation",
+      "requirementId": "R-format-development-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "development-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "story-record-fidelity",
+      "requirementId": "R-story-record-fidelity",
+      "method": "content",
+      "targetSlots": [
+        "continuous-storyboard",
+        "shot-table"
+      ],
+      "criteria": "Read the rendered panels and table against every shot record in 03-story-records.en.md. The complete sequence has S01–S12 in order, each lasting 4 seconds, totalling 48 seconds, with the recorded acts, characters, actions and dialogue. The continuous storyboard includes 12 landscape panels plus distinct portrait versions of S03 and S10. Every panel prints its shot ID, a designer-selected WS, MS or CU label, duration in seconds and Mira or None; these agree with the corresponding table row. The table contains all required columns and reproduces Release the lines. at absolute 4–6 seconds, Follow the lower current. at 28–31 seconds and We steer together. at 40–43 seconds. Preserve S07's uninterrupted environmental action without dialogue, the steady/spinning/settled needle progression, the ribbons prompting descent and the top suspension loop functioning as the sight ring. Record S12 title visibility at 45–48 seconds. Added detail panels retain their parent events and timing. Camera treatment and performance may vary within the supplied constraints; changed events, missing records, contradictory annotations or invented dialogue fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ]
+    },
+    {
+      "id": "identity-and-environment-tier-14",
+      "requirementId": "R-identity-and-environment-tier-14",
+      "method": "visual",
+      "targetSlots": [
+        "mira-city-identity",
+        "city-environments"
+      ],
+      "criteria": "The identity sheet supplies front, side and back views, anticipation/alarm/resolve expressions and a three-landmark city silhouette. The environment sheet supplies three distinguishable studies of the wheelhouse, central market and stern berth. Together they establish the specified 18-year-old navigator, her three visible identity features and the three connected locations. Artistic treatment may vary; missing required studies or contradictory character or location designs fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "mira-visible-anchors",
+      "requirementId": "R-mira-visible-anchors",
+      "method": "visual",
+      "targetSlots": [
+        "city-environments",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "criteria": "Where Mira appears, compare her design with the identity sheet. Preserve the amber patch on her anatomical left cuff, the navy coat's divided rear hem and the triangular clip above her anatomical right temple whenever the relevant area is visible. Perspective, pose, lighting and legitimate occlusion may change their appearance; mirrored placement, replacement features or unexplained character redesign fail. Do not require Mira in shots whose character record is None.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "mira-city-identity"
+      ]
+    },
+    {
+      "id": "course-finder-details-and-keyframes",
+      "requirementId": "R-course-finder-details-and-keyframes",
+      "method": "visual",
+      "targetSlots": [
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "criteria": "Compare visible instrument features with both supplied course-finder references and the complete instrument record in 01-client-facts.en.md: brushed brass circular case, 80 mm diameter and 20 mm depth proportions, ivory dial under flat glass, two engraved rim rings, correctly arranged cardinal letters, dark needle shaft with one red triangular tip, centred 16 mm brass top loop, E-side knurled crown and brown leather strap through the loop. TRUE COURSE sits beneath the dial centre and is readable in both instrument keyframes. The departure keyframe depicts S03's raised instrument and steady needle; the recovered-course keyframe depicts S10's settled needle and sunlight crossing the existing loop. Colour-script S06 conveys needle instability. Evaluate size through depicted scale, proportions and any annotations, not image pixels. Occluded or thumbnail-scale details need not be independently legible, but visible contradictions, an invented separate sight ring or unreadable keyframe engraving fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "city-geometry-and-colour-correspondence",
+      "requirementId": "R-city-geometry-and-colour-correspondence",
+      "method": "visual",
+      "targetSlots": [
+        "mira-city-identity",
+        "city-environments",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "criteria": "Use city-plan-section.png and the coordinate record to verify the 240000 × 120000 × 60000 mm city envelope and zone centres: berth (40000, 0, 0), market (120000, 0, 24000), wheelhouse (200000, 0, 48000). The wheelhouse is above the market, the berth is aft, travel is +X and exterior motion reads left to right. Cameras remain in the supplied south-side areas, with the wheelhouse looking southwest toward the market. Judge compatible spatial relationships and any explicit measurements without demanding printed coordinates or pixel-derived physical measurements. Each colour script contains 12 thumbnails labelled S01–S12 and depicts the corresponding storyboard event and location. S01 and S08 keyframes, when required, show their named mooring and decision events. Allowed camera and rendering choices must not reverse geography, cross the prohibited axis or substitute another shot.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "continuous-storyboard"
+      ]
+    },
+    {
+      "id": "storyboard-continuity-tier-14",
+      "requirementId": "R-storyboard-continuity-tier-14",
+      "method": "content",
+      "targetSlots": [
+        "continuous-storyboard"
+      ],
+      "criteria": "Inspect all rendered storyboard panels against the established Mira design, environment studies and supplied geometry. Preserve anatomical anchor placement, the instrument reference design and S03/S10 engraving, the three zone coordinates and levels, stern location and permitted camera side. Exterior travel must retain its specified screen direction. Pose, viewpoint within allowed areas and visibility may vary; contradictions with the sources fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "sourceSlots": [
+        "mira-city-identity",
+        "city-environments",
+        "keyframe-departure",
+        "keyframe-new-course"
+      ]
+    },
+    {
+      "id": "storyboard-recomposition-and-safe-areas",
+      "requirementId": "R-storyboard-recomposition-and-safe-areas",
+      "method": "content",
+      "targetSlots": [
+        "continuous-storyboard"
+      ],
+      "criteria": "Inspect every rendered panel using the supplied landscape and portrait safe-area references. Measure insets relative to each panel, not the surrounding document page: principal action stays within 3.5% on every edge and graphics within 5%. S03 and S10 portrait panels preserve their landscape actions through deliberate 9:16 recomposition; a crop that loses required action fails. Dialogue panels provide lower-centred subtitle placeholders of at most two lines and recorded cue lengths between 5/6 second and 7 seconds. Placement and annotation positions follow the applicable supplied template. Nonessential background may extend outside action margins; principal-action or graphic intrusions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ]
+    },
+    {
+      "id": "keyframe-safe-areas",
+      "requirementId": "R-keyframe-safe-areas",
+      "method": "visual",
+      "targetSlots": [
+        "keyframe-departure",
+        "keyframe-new-course"
+      ],
+      "criteria": "Each landscape keyframe keeps principal action inside the 3.5% inset and any graphics inside the 5% inset on every edge, following landscape-safe-areas.png. Evaluate normalized margins within the composition. Background scenery may reach the edges; required action or graphics outside their safe areas fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "printed-records-and-presentation-tier-14",
+      "requirementId": "R-printed-records-and-presentation-tier-14",
+      "method": "content",
+      "targetSlots": [
+        "continuous-storyboard",
+        "shot-table",
+        "development-presentation"
+      ],
+      "criteria": "Verify the title in storyboard S12, final dialogue in storyboard S11, title as the table heading and title in the presentation. The presentation repeats the specification's final line and all three Mira anchors, then explicitly associates each anchor with named storyboard evidence, both instrument appearances with S03 and S10, and the lower-current decision with the relevant discovery and decision shots. Each claimed anchor must be visible or otherwise supported in its cited shot. Unmapped lists, unsupported shot references or changed wording fail; video placement is checked separately.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "sourceSlots": [
+        "rhythm-specification",
+        "mira-city-identity",
+        "keyframe-departure",
+        "keyframe-new-course"
+      ]
+    },
+    {
+      "id": "direction-comparison",
+      "requirementId": "R-direction-comparison",
+      "method": "visual",
+      "targetSlots": [
+        "direction-navigator",
+        "direction-city",
+        "direction-instrument"
+      ],
+      "criteria": "The three boards explore distinguishable approaches organised around Mira's perception, shared city movement and instrument/environmental clues respectively. Each supplies assessable decisions about viewpoint, geography, wind clues and action rhythm while retaining the fixed story. Differences may be expressed through staging, emphasis and camera treatment; three cosmetically different copies or alternatives that change fixed events fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "selection-and-document-development",
+      "requirementId": "R-selection-and-document-development",
+      "method": "content",
+      "targetSlots": [
+        "direction-selection",
+        "rhythm-specification",
+        "continuous-storyboard",
+        "shot-table",
+        "development-presentation"
+      ],
+      "criteria": "The selection note resolves the three prior explorations to exactly one of the named directions and states concrete decisions for viewpoint, spatial transitions and discovering the lower current. Delivered process ordering or explicit development narrative must place comparison before selection. The specification and final documents enact those decisions, and presentation page 1 repeats the selected name. Refinement is allowed; an unnamed or multiple unresolved selection, reversed decision sequence or final treatment contradicting the choice fails. Image and video development of the selection is checked in sets and manual review.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "sourceSlots": [
+        "direction-navigator",
+        "direction-city",
+        "direction-instrument"
+      ]
+    },
+    {
+      "id": "rhythm-specification-and-repetition-tier-14",
+      "requirementId": "R-rhythm-specification-and-repetition-tier-14",
+      "method": "content",
+      "targetSlots": [
+        "rhythm-specification",
+        "continuous-storyboard",
+        "shot-table",
+        "development-presentation"
+      ],
+      "criteria": "The one-page specification records all three acts with correct time ranges, their beat events, 12 shots, 48 seconds, S07's silent description interval, Mira's three anchors, title wording and final dialogue. The storyboard, table and presentation explicitly repeat the count, total duration and act boundaries. The table retains S07 at 24–28 seconds without dialogue. Equivalent clear timing notation is allowed; relying only on arithmetic, omitting repeated boundaries or filling the reserved gap fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ]
+    },
+    {
+      "id": "animatic-new-course-tier-14",
+      "requirementId": "R-animatic-new-course-tier-14",
+      "method": "manual",
+      "targetSlots": [
+        "animatic-new-course"
+      ],
+      "criteria": "Review the entire 12 seconds. S10, S11 and S12 occur in order at local 0–4, 4–8 and 8–12 seconds and reproduce their recorded events. The exact final-line subtitle appears at local 4–7 seconds and the title at local 9–12 seconds within S12. Subtitles are lower-centred, at most two lines, within the 5% graphic inset and within the permitted cue-duration range; principal action stays within the 3.5% inset. Preserve the selected direction, visible character and instrument anchors, city geometry and permitted exterior screen direction. Animatic-level motion and rendering are allowed; wrong timing, omitted action, contradictory continuity or framing violations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "direction-selection",
+        "rhythm-specification",
+        "continuous-storyboard",
+        "mira-city-identity",
+        "city-environments",
+        "keyframe-new-course",
+        "shot-table",
+        "landscape-colour-script"
+      ]
+    },
+    {
+      "id": "presentation-reuse-tier-14",
+      "requirementId": "R-presentation-reuse-tier-14",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "development-presentation"
+      ],
+      "criteria": "The presentation has at least eight pages and visibly incorporates identifiable material from every listed source, including all three direction boards and stills from the delivered animatic. Cropped excerpts and legible reductions are allowed when provenance and relevant content remain clear. Mentioning a source without showing or substantively reproducing it, substituting unrelated artwork or omitting a source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "sourceSlots": [
+        "direction-navigator",
+        "direction-city",
+        "direction-instrument",
+        "direction-selection",
+        "rhythm-specification",
+        "mira-city-identity",
+        "city-environments",
+        "continuous-storyboard",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "shot-table",
+        "landscape-colour-script"
+      ]
+    },
+    {
+      "id": "set-selected-direction-and-character",
+      "requirementId": "R-set-selected-direction-and-character",
+      "method": "visual",
+      "targetSlots": [
+        "mira-city-identity",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "criteria": "The final character and shot artwork develops the selected viewpoint, spatial-transition and lower-current discovery decisions. Visible Mira and course-finder features remain consistent across the established identity, keyframes and colour sequence.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "direction-selection",
+        "rhythm-specification"
+      ]
+    },
+    {
+      "id": "set-selected-city-and-sequence",
+      "requirementId": "R-set-selected-city-and-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "city-environments",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "criteria": "Environment studies and shot artwork develop the selected direction while preserving the supplied city geometry and exterior travel convention. The colour sequence and keyframes agree with their named storyboard shots and the specified three-act progression.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-a-n14/03-story-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "mira-city-identity",
+        "direction-selection",
+        "rhythm-specification",
+        "continuous-storyboard"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "mira-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "mira-city-identity",
+      "subjectSlots": [
+        "city-environments",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "notes": "All storyboard panels, keyframes, colour thumbnails and the animatic follow these anchors where visible, the wheelhouse-above-market relationship, the stern berth and left-to-right exterior movement from south-side cameras."
+    },
+    {
+      "id": "existing-course-finder",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "course-finder-front.png",
+        "course-finder-side.png"
+      ],
+      "subjectSlots": [
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "notes": "S03 and S10 preserve the course finder's brass case, top loop, red needle tip and TRUE COURSE engraving; their finished keyframes show the engraving legibly."
+    },
+    {
+      "id": "city-geography",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "city-plan-section.png"
+      ],
+      "subjectSlots": [
+        "mira-city-identity",
+        "city-environments",
+        "keyframe-departure",
+        "keyframe-new-course",
+        "landscape-colour-script"
+      ],
+      "notes": "All storyboard panels, keyframes, colour thumbnails and the animatic follow these anchors where visible, the wheelhouse-above-market relationship, the stern berth and left-to-right exterior movement from south-side cameras."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "chosen-direction",
+      "fromSlot": "direction-selection",
+      "toSlots": [
+        "rhythm-specification",
+        "development-presentation"
+      ],
+      "extract": [
+        "chosen direction name",
+        "viewpoint decision",
+        "spatial-transition decision",
+        "lower-current discovery decision"
+      ],
+      "notes": "The specification and all final deliverables develop that choice, and presentation page 1 repeats its name."
+    },
+    {
+      "id": "rhythm-records",
+      "fromSlot": "rhythm-specification",
+      "toSlots": [
+        "continuous-storyboard",
+        "shot-table",
+        "development-presentation"
+      ],
+      "extract": [
+        "12-shot count",
+        "48-second duration",
+        "Departure 0–16 seconds",
+        "Disorientation 16–32 seconds",
+        "New Course 32–48 seconds"
+      ],
+      "notes": "The complete storyboard, shot table and presentation repeat its 12-shot count, 48-second duration and act boundaries."
+    },
+    {
+      "id": "presentation-continuity-facts",
+      "fromSlot": "rhythm-specification",
+      "toSlots": [
+        "development-presentation"
+      ],
+      "extract": [
+        "final dialogue line",
+        "Mira's three identity anchors"
+      ],
+      "notes": "The shot table heading and presentation repeat SKYWARD COMMON; the presentation repeats the specification's final dialogue and three Mira anchors and maps those anchors, the instrument's two appearances and Mira's lower-current decision to named shots using the delivered artwork."
+    }
+  ]
+}

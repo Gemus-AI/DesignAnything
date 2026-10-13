@@ -1,0 +1,564 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-architecture-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "site-plan",
+      "label": "Site plan",
+      "description": "A site plan with boundary A–D, the building footprint, waterfront route and public and service connections.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "floor-plans",
+      "label": "Coordinated floor plans",
+      "description": "One coordinated sheet of the open ground level and both occupied floor plans with room records and operating states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "site-building-section",
+      "label": "Site and building section",
+      "description": "A section sheet through the levee, railway, building and river edge with levels, clearances and structural materials.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "four-elevations",
+      "label": "Four building elevations",
+      "description": "One sheet of four building elevations with openings, material zones and public entrance lettering.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "daytime-commons",
+      "label": "Daytime Cooling Commons view",
+      "description": "An eye-level daytime view of the Cooling Commons with its 80-seat arrangement and entrance sign.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "evening-community",
+      "label": "Evening Community Room view",
+      "description": "An eye-level evening view of the Community Room arranged for 80 people.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "RIVER COMMONS",
+      "scope": {
+        "slots": [
+          "site-plan",
+          "floor-plans",
+          "site-building-section",
+          "four-elevations"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "cooling-commons-label",
+      "kind": "text-verbatim",
+      "text": "Cooling Commons",
+      "scope": {
+        "slots": [
+          "floor-plans",
+          "daytime-commons"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "RIVER COMMONS",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-coordinated-building",
+      "slots": [
+        "site-plan",
+        "floor-plans",
+        "site-building-section",
+        "four-elevations",
+        "daytime-commons",
+        "evening-community"
+      ],
+      "items": [
+        {
+          "item": "Plans, section, all four elevations and public views describe one building with compatible columns, openings, levels and material zones.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The daytime and evening arrangements preserve the required capacities, independent evening access and access to toilets outside the closed reading areas.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Project titles, public entrance lettering and the Cooling Commons entrance sign appear in their commissioned locations.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "RIVER COMMONS"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "site-plan",
+      "floor-plans",
+      "site-building-section",
+      "four-elevations",
+      "daytime-commons",
+      "evening-community"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge surveyed source accuracy, regulatory approval, structural certification or simulated thermal and flood performance that the commission does not request."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "floor-plans",
+        "site-building-section",
+        "four-elevations",
+        "daytime-commons",
+        "evening-community"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-site-plan",
+      "requirementId": "R-format-site-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-floor-plans",
+      "requirementId": "R-format-floor-plans",
+      "method": "artifact-property",
+      "targetSlots": [
+        "floor-plans"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-site-building-section",
+      "requirementId": "R-format-site-building-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-building-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-four-elevations",
+      "requirementId": "R-format-four-elevations",
+      "method": "artifact-property",
+      "targetSlots": [
+        "four-elevations"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-daytime-commons",
+      "requirementId": "R-format-daytime-commons",
+      "method": "artifact-property",
+      "targetSlots": [
+        "daytime-commons"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-evening-community",
+      "requirementId": "R-format-evening-community",
+      "method": "artifact-property",
+      "targetSlots": [
+        "evening-community"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "site-area-and-boundary-record",
+      "requirementId": "R-site-area-and-boundary-record",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan"
+      ],
+      "criteria": "The proposed library and refuge occupy the supplied A–D design boundary. The site geometry and any stated area or boundary dimensions agree with approximately 4,563 m² and the recorded lengths 24, 147, 39 and 145 m. Use site-plan.png to associate lengths with edges rather than inventing an edge assignment. Normal diagrammatic simplification is allowed; relocating the boundary, levee, railway, retaining wall or river edge is a failure.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "building-area-and-circulation",
+      "requirementId": "R-building-area-and-circulation",
+      "method": "visual",
+      "targetSlots": [
+        "floor-plans",
+        "site-building-section"
+      ],
+      "criteria": "Plans and section show an open undercroft at ±0.000 and exactly two enclosed public floors, each 3,400 m² gross, for 6,800 m² enclosed total. The undercroft is excluded from that total. Each occupied floor accommodates 2,800 m² net rooms and a 600 m² allowance for circulation, cores, partitions and structure. One passenger lift and two stairs connect ground and both occupied floors, with a traceable step-free public route. Layout may vary; missing connections, an enclosed ground floor or incompatible area accounting fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "specified-material-system",
+      "requirementId": "R-specified-material-system",
+      "method": "visual",
+      "targetSlots": [
+        "site-building-section",
+        "four-elevations",
+        "daytime-commons"
+      ],
+      "criteria": "Structural annotations establish exposed cast-in-place concrete ground supports and circulation cores, cross-laminated timber occupied-floor decks, and exposed glulam beams in both named rooms. The daytime interior shows the Cooling Commons beams and timber soffit between them, with the floor finish above the deck. Depicted window frames are aluminum, and external shading is aluminum fins or canopies. Frame finish and architectural expression may vary. Material substitution, concealed required beams or conflicting annotations and rendering fails; invisible components need not be exposed by the camera.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "season-and-operating-program",
+      "requirementId": "R-season-and-operating-program",
+      "method": "visual",
+      "targetSlots": [
+        "floor-plans",
+        "daytime-commons",
+        "evening-community"
+      ],
+      "criteria": "The operating information agrees with daily summer refuge from June 1 through October 15, 10:00–18:00, and an 80-seat Cooling Commons. The Community Room supports 80 people daily from 18:00–21:00, with its entrance route and Public Support toilets accessible while reading areas close. Public Support includes toilets, drinking water, a cleaner's room and storage. Read schedules, plan labels and furniture arrangements together; equivalent date typography is allowed, but changed hours, capacity, season or blocked evening toilet access fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-site-access-and-notation",
+      "requirementId": "R-tier6-site-access-and-notation",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "floor-plans"
+      ],
+      "criteria": "Compare the site drawing with site-plan.png: A–D and the existing levee and railway remain in their supplied positions. A continuous waterfront path has an explicit 4 m clear-width dimension, and the street-to-library-to-waterfront public route is distinguishable from delivery and staff access. Both sheets have north arrows and usable metric scale bars. Graphic style may vary; missing notation, an obstructed route or conflated access fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-room-records",
+      "requirementId": "R-tier6-room-records",
+      "method": "visual",
+      "targetSlots": [
+        "floor-plans"
+      ],
+      "criteria": "Read every room record. Level 1 contains Cooling Commons 900 m², Children's Library 650 m², Community Room 450 m², Welcome and Lending 400 m², and Public Support 400 m². Level 2 contains Reading Room 1,000 m², Collections 1,000 m², Study Suite 400 m², Staff Workroom 250 m², and Building Services 150 m². Names, areas and assignments are exact, with no omitted or duplicated room. Each floor totals 3,400 m² gross. Check the fact-sheet adjacencies: Cooling Commons and Children's Library connect to Welcome and Lending and Public Support; Community Room connects to independent evening access and Public Support; Welcome and Lending connects to vertical circulation; Reading Room connects to Collections and Study Suite; Collections connects to Staff Workroom; staff and services have service-route access. Cooling Commons has a waterfront outlook. A continuous step-free route reaches both occupied floors.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-section-records",
+      "requirementId": "R-tier6-section-records",
+      "method": "visual",
+      "targetSlots": [
+        "site-building-section"
+      ],
+      "criteria": "The section crosses the levee, railway, building and river edge. It associates ±0.000 with the local datum, −1.10 m with the riverbank sample, +4.48 m with the railway embankment sample, +3.5 m with the project flood scenario, +4.80 m and +9.30 m with occupied floors, and +13.80 m with the roof. Ground overhead clearance is dimensioned 4.5 m; occupied rooms respect the scheduled 3.6 m clear height. South- and west-facing occupied-room glazing has dimensioned 2 m shading projections. Both named rooms have identified exposed glulam beams. Wrong associations, treating the scenario as a surveyed flood level, missing dimensions or contradictory geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-day-evening-arrangements",
+      "requirementId": "R-tier6-day-evening-arrangements",
+      "method": "visual",
+      "targetSlots": [
+        "floor-plans",
+        "daytime-commons",
+        "evening-community"
+      ],
+      "criteria": "Furniture symbols or a legible seating arrangement substantiate 80 daytime seats and 80 evening places in their respective rooms. Both eye-level views agree with those planned arrangements; every place need not be visible through occlusion, but a capacity label alone is insufficient. Plans distinguish the two specified time states and show an evening route from the independent entrance to Community Room and toilets without crossing the closed reading zone. Changed capacities, incompatible layouts or inaccessible toilets fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-drawing-view-coordination-and-lettering",
+      "requirementId": "R-tier6-drawing-view-coordination-and-lettering",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "floor-plans",
+        "site-building-section",
+        "four-elevations",
+        "daytime-commons",
+        "evening-community"
+      ],
+      "criteria": "All four building faces are represented. Trace the same column grid, occupied-floor and roof levels, openings and material zones from plans and section into elevations and both eye-level views. Perspective, illumination and drawing scale may change; architectural contradictions fail. RIVER COMMONS appears in each of the four drawing titles and at the public entrance on the elevations. Cooling Commons appears as an entrance sign in the daytime view and as the room's plan label.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-tier6-coordinated-building",
+      "requirementId": "R-set-tier6-coordinated-building",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "floor-plans",
+        "site-building-section",
+        "four-elevations",
+        "daytime-commons",
+        "evening-community"
+      ],
+      "criteria": "Plans, section, all four elevations and public views describe one building with compatible columns, openings, levels and material zones. The daytime and evening arrangements preserve the required capacities, independent evening access and access to toilets outside the closed reading areas. Project titles, public entrance lettering and the Cooling Commons entrance sign appear in their commissioned locations.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-a-n06/source-status.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-waterfront-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "site-overhead.png"
+      ],
+      "subjectSlots": [
+        "site-plan"
+      ],
+      "notes": "site-overhead.png is the identity source for the existing waterfront setting.",
+      "comparisonScope": "compare only the existing setting, the site boundary and its proportions, the levee, railway line and river edge, the orientation and the surroundings beyond the boundary; the new library, its massing, materials and everything built inside the boundary are the design work"
+    }
+  ]
+}

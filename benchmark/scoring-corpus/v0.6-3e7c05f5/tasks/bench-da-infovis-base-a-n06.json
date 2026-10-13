@@ -1,0 +1,610 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-infovis-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "data",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "national-overview-2025",
+      "label": "2025 national landscape overview",
+      "description": "One landscape overview of the 2025 national total, four mode volumes and four mode shares.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "national-portrait-2025",
+      "label": "2025 national portrait story",
+      "description": "One portrait reading sequence containing the 2025 national total, four mode volumes and four mode shares.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "national-change",
+      "label": "National annual snapshots and growth",
+      "description": "One national change chart with 2024 and 2025 volume snapshots and separate official 2025 growth for the total and four modes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "regional-coastal",
+      "label": "Shanghai, Jiangsu and Fujian comparison",
+      "description": "One 2024 province-level comparison of Shanghai, Jiangsu and Fujian with totals, four mode shares and national navigation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "regional-river",
+      "label": "Hubei, Guangdong and Chongqing comparison",
+      "description": "One 2024 province-level comparison of Hubei, Guangdong and Chongqing with totals, four mode shares and national navigation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "a4-summary",
+      "label": "A4 public reading summary",
+      "description": "One A4 summary page containing the 2025 national total, four shares, three numerical findings and concise counting, coverage and calculation explanations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "publication-name",
+      "kind": "text-verbatim",
+      "text": "CHINA URBAN RIDES",
+      "scope": {
+        "slots": [
+          "national-overview-2025",
+          "national-portrait-2025",
+          "national-change",
+          "regional-coastal",
+          "regional-river",
+          "a4-summary"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "printed-descriptor",
+      "kind": "text-verbatim",
+      "text": "Counting passenger trips",
+      "scope": {
+        "slots": [
+          "national-overview-2025",
+          "national-portrait-2025",
+          "national-change",
+          "regional-coastal",
+          "regional-river",
+          "a4-summary"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "recurring-2025-credit",
+      "kind": "text-verbatim",
+      "text": "Ministry of Transport | 2025",
+      "scope": {
+        "slots": [
+          "national-overview-2025",
+          "national-portrait-2025",
+          "a4-summary"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CHINA URBAN RIDES",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-file-reading-system",
+      "slots": [
+        "national-overview-2025",
+        "national-portrait-2025",
+        "national-change",
+        "regional-coastal",
+        "regional-river"
+      ],
+      "items": [
+        {
+          "item": "The charts form a coherent reading route between national scale, annual change and regional differences through related headings, annotations and usable page references.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The landscape and portrait national views preserve the same 2025 facts while adapting their reading order to their respective carriers.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Mode colors, direct labels and the recognizable reading-room window retain their identities throughout the image set.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "CHINA URBAN RIDES",
+    "carryThrough": {
+      "none": "Every declared carry-through of the family reads from or writes to roles that tier 6 does not commission."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "national-overview-2025",
+      "national-portrait-2025",
+      "national-change",
+      "regional-coastal",
+      "regional-river"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge information hierarchy, chart readability and editorial coherence, but do not score transport policy, statistical findings, photorealistic architectural rendering or exact raster dimensions as design quality."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "national-overview-2025",
+        "national-portrait-2025",
+        "national-change",
+        "regional-coastal",
+        "regional-river"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-national-overview-2025",
+      "requirementId": "R-format-national-overview-2025",
+      "method": "artifact-property",
+      "targetSlots": [
+        "national-overview-2025"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-national-portrait-2025",
+      "requirementId": "R-format-national-portrait-2025",
+      "method": "artifact-property",
+      "targetSlots": [
+        "national-portrait-2025"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-national-change",
+      "requirementId": "R-format-national-change",
+      "method": "artifact-property",
+      "targetSlots": [
+        "national-change"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-regional-coastal",
+      "requirementId": "R-format-regional-coastal",
+      "method": "artifact-property",
+      "targetSlots": [
+        "regional-coastal"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-regional-river",
+      "requirementId": "R-format-regional-river",
+      "method": "artifact-property",
+      "targetSlots": [
+        "regional-river"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-a4-summary",
+      "requirementId": "R-format-a4-summary",
+      "method": "artifact-property",
+      "targetSlots": [
+        "a4-summary"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "image-data-and-required-series",
+      "requirementId": "R-image-data-and-required-series",
+      "method": "visual",
+      "targetSlots": [
+        "national-overview-2025",
+        "national-portrait-2025",
+        "national-change",
+        "regional-coastal",
+        "regional-river"
+      ],
+      "criteria": "Read every numerical label and plotted encoding against 03-national-data.en.md and 04-regional-data.en.md, preserving observation year, geography, measure and unit. The 2025 overview and portrait must each contain total 1043.46; Bus 365.66 and 35.04%; Urban rail 332.24 and 31.84%; Taxi 344.82 and 33.05%; Ferry 0.74 and 0.07%. The 2024 structure variants, where delivered, must each contain total 1067.97; Bus 386.70 and 36.21%; Urban rail 322.09 and 30.16%; Taxi 358.41 and 33.56%; Ferry 0.77 and 0.07%. The combined change chart must include both annual totals and all four modes for both years, plus official 2025 growth for total -2.3%, Bus -5.5%, Urban rail 3.2%, Taxi -3.8% and Ferry -3.7%. Each expanded change chart must contain its named mode's two annual volumes and official 2025 rate. Regional records must match the supplied totals and four shares: Shanghai 592330, 17.98/63.58/17.99/0.45%; Jiangsu 570913, 34.58/38.50/26.88/0.05%; Fujian 315766, 43.21/18.13/37.85/0.81%; Hubei 434582, 40.32/33.89/25.66/0.14%; Guangdong 1244871, 24.68/52.18/23.04/0.10%; Chongqing 484764, 40.92/29.81/29.24/0.04%, in Bus/Urban rail/Taxi/Ferry order. Additional printed regional volumes or growth must also match the attachment. Thousands separators and typographic layout may vary; wrong records, missing required series, altered values or misleading plotted magnitudes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "image-chart-reading-apparatus",
+      "requirementId": "R-image-chart-reading-apparatus",
+      "method": "visual",
+      "targetSlots": [
+        "national-overview-2025",
+        "national-portrait-2025",
+        "national-change",
+        "regional-coastal",
+        "regional-river"
+      ],
+      "criteria": "Inspect every chart, including charts embedded in direction boards. Each must have an informative title, an observation-year indication, a unit inside its chart area, a Ministry of Transport credit appropriate to 2024, 2025 or 2024–2025, mode names attached clearly to the represented series, and at least one specific annotation that helps interpret the data. Mixed volume, share and growth panels must identify their respective units. Annotation wording and placement may vary; a detached legend alone, a publication date substituted for the observation year, missing units or generic decorative text do not satisfy these requirements.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "mode-colors-labels-and-baselines",
+      "requirementId": "R-mode-colors-labels-and-baselines",
+      "method": "visual",
+      "targetSlots": [
+        "national-overview-2025",
+        "national-portrait-2025",
+        "national-change",
+        "regional-coastal",
+        "regional-river"
+      ],
+      "criteria": "Where a mode appears, its encoded color must follow Bus orange #E69F00, Urban rail blue #0072B2, Taxi pink #CC79A7 and Ferry green #009E73. Allow ordinary rendering and antialiasing differences, but reject swapped or materially changed assignments. Mode identities must remain unambiguous when color is removed because direct labels remain readable. Every displayed volume or share axis must begin at zero; axis-free representations are permitted if their magnitudes remain truthful. Every signed growth panel must visibly identify zero and distinguish positive from negative values.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "annual-snapshots-versus-growth",
+      "requirementId": "R-annual-snapshots-versus-growth",
+      "method": "visual",
+      "targetSlots": [
+        "national-change"
+      ],
+      "criteria": "The 2024 and 2025 reported-volume snapshots must be distinct from the official 2025 percentage-growth panel, with labels explaining their different statistical bases. Include a concise explanation that published annual volumes are rounded and official growth uses a comparable basis. The combined chart and expanded Ferry chart, when present, must identify -3.7% as the official 2025 Ferry rate. A separately explained arithmetic result of -3.9% may appear, but it must never replace or be confused with official growth. Panel arrangement may vary; merged measures, an unlabeled basis or recalculated growth presented as official fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "regional-six",
+      "requirementId": "R-regional-six",
+      "method": "visual",
+      "targetSlots": [
+        "regional-coastal",
+        "regional-river"
+      ],
+      "criteria": "The coastal chart must compare Shanghai, Jiangsu and Fujian; the river chart must compare Hubei, Guangdong and Chongqing. Both must state 2024 and province-level geography, display each region's total in 10,000 passenger trips, and show all four mode shares in a distinct percent presentation. Each must print a page reference that resolves to the delivered national overview. Region ordering and chart orientation may vary; substitutions, omitted shares, city-level framing, mixed units or unresolved navigation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "national-overview-2025"
+      ]
+    },
+    {
+      "id": "physical-image-carriers",
+      "requirementId": "R-physical-image-carriers",
+      "method": "visual",
+      "targetSlots": [
+        "national-overview-2025",
+        "national-portrait-2025"
+      ],
+      "criteria": "Assess the depicted physical page envelope against carrier-dimensions.png and the stated carriers: landscape overviews correspond to 420 × 280 mm boards and portrait stories to 200 × 300 mm leaflets. Their content must respect a 10 mm inset on every edge, evaluated proportionally to the physical carrier rather than by an exact raster pixel count. Uniform image scaling is allowed; a wrong physical page proportion or content intruding into the required inner margin fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "window-on-image-files",
+      "requirementId": "R-window-on-image-files",
+      "method": "visual",
+      "targetSlots": [
+        "national-overview-2025",
+        "national-portrait-2025",
+        "national-change",
+        "regional-coastal",
+        "regional-river"
+      ],
+      "criteria": "Every image must visibly include the supplied reading-room feature as a recognizable vignette with three adjacent rounded arches and a circular opening centered above the middle arch. Scale, position and illustrative simplification may vary while preserving the reference architecture and its pale stone surround and dark bronze frames where material is represented. A missing vignette, changed arch count or missing or displaced upper opening fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "summary-six",
+      "requirementId": "R-summary-six",
+      "method": "content",
+      "targetSlots": [
+        "a4-summary"
+      ],
+      "criteria": "The summary must contain the 2025 total 1043.46 in 100 million passenger trips, Ministry of Transport | 2025, and all four shares: Bus 35.04%, Urban rail 31.84%, Taxi 33.05% and Ferry 0.07%. Require three distinct numerical findings supported by the supplied tables; findings may be selected or worded differently if their numbers and interpretations are correct. Explain repeat trips by one person, both Taxi service types, and share = mode volume / reported total × 100. Distinguish reported annual snapshots from official comparable growth, explain source rounding and retain -3.7% as official 2025 Ferry growth. Any charts must include titles, observation years, in-chart units, matching credits, direct mode labels, a reading annotation, the fixed mode colors and appropriate zero references. Verify the publication name, descriptor, recognizable three-arch-and-circle window, A4 physical carrier and 10 mm inner margins. Equivalent explanatory prose is allowed; omitted required facts, incorrect calculations, misleading scope or missing carrier and identity requirements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ]
+    },
+    {
+      "id": "set-six-file-reading-system",
+      "requirementId": "R-set-six-file-reading-system",
+      "method": "visual",
+      "targetSlots": [
+        "national-overview-2025",
+        "national-portrait-2025",
+        "national-change",
+        "regional-coastal",
+        "regional-river"
+      ],
+      "criteria": "The charts form a coherent reading route between national scale, annual change and regional differences through related headings, annotations and usable page references. The landscape and portrait national views preserve the same 2025 facts while adapting their reading order to their respective carriers. Mode colors, direct labels and the recognizable reading-room window retain their identities throughout the image set.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/03-national-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/04-regional-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-a-n06/05-field-definitions.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "reading-room-window",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "reading-room-window.png"
+      ],
+      "subjectSlots": [
+        "national-overview-2025",
+        "national-portrait-2025",
+        "national-change",
+        "regional-coastal",
+        "regional-river"
+      ],
+      "notes": "Our reading-room window, with three rounded arches and a circular opening above the middle arch, is the recurring location image on every delivered file."
+    }
+  ]
+}

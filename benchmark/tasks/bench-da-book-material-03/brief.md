@@ -1,0 +1,27 @@
+FIRST TAKE | An illustrated first session with DJI Osmo Pocket 4
+
+We publish practical guides for people learning unfamiliar equipment. Design six finished interior spreads for FIRST TAKE, taking an adult beginner through an ordinary video session with DJI Osmo Pocket 4: identifying controls, preparing the camera, choosing Video, recording and reviewing, transferring files, and putting the camera away. The editorial baseline is the Osmo Pocket 4 User Manual v1.0, April 2026, 33 pages, with the 16 April 2026 release notes recording firmware v01.01.32.02 and DJI Mimo v2.8.1 for iOS and Android. The attached F1–F6 records supply the actions and their order.
+
+These are pages 2–13 of a 16-page saddle-stitched booklet, including its covers, trimmed to 135 × 180 mm. Use 120 gsm uncoated paper throughout, four-color printing, 3 mm bleed and a folded spine with 0 mm flat spine width. Each page has 10 mm margins and two columns separated by 4 mm. Use sans serif text, a running task heading at the top, numbered action captions beneath their illustrations, and page numbers at the outer bottom corners. Print "FIRST TAKE" in every spread's running footer and DJI Osmo Pocket 4 on the controls spread. Print "Source basis: DJI documentation, April 2026. Independent illustrated guide." on that spread. Device drawings take their identity from control-reference.png; F1–F6 supply control relationships and operating states. Screens use concise mode and state labels, and physical-button illustrations place the fingertip on the named control.
+
+Audience: adults using a pocket gimbal camera for the first time, with the publishing team choosing the pages for the booklet's first print run.
+
+Inputs (attached): 01-client-facts.en.md supplies the source baseline, F1–F6 operation records, exact functional names and publication facts. 02-delivery-catalog.en.md lists the six finished spreads and their delivery proportions and formats. control-reference.png is the identity reference for the camera's front controls, side cover and bottom USB-C port. booklet-geometry.png is the constraint drawing for the trim, bleed, fold, margins and columns. first-session-desk.png is an atmosphere reference for a beginner's tabletop setup.
+
+Deliverables:
+1. One controls spread, pages 2–3, with six labeled component callouts, the publication title, device name, source line and a task finder linking preparation to page 4, video setup to page 6, recording and review to page 8, transfer to page 10 and storage to page 12
+2. One preparation spread, pages 4–5, with USB-C charging, clamp removal, physical-button power-on and first activation through phone Wi-Fi, Bluetooth and DJI Mimo
+3. One video setup spread, pages 6–7, with illustrated selection of Video and the upward swipe from live view to recording parameters
+4. One recording and review spread, pages 8–9, with the first Shutter/Record press, recording state, second press and rightward swipe to recorded media
+5. One computer-transfer spread, pages 10–11, with the powered camera, USB-C connection, Transfer File: USB selection, file copying and safe removal
+6. One storage spread, pages 12–13, with accessory removal when applicable, recording stopped, physical-button shutdown and the fitted gimbal clamp
+
+Acceptance:
+- Across all six spreads, apply the 135 × 180 mm page geometry, two-column grid, 4 mm column gap, 10 mm margins and FIRST TAKE footer. On pages 2–3, place Zoom upper-left, Custom upper-right, 5D Joystick lower-left and Shutter/Record lower-right when facing the touchscreen; identify the side microSD cover and underside USB-C port. Print the device name and source line, and give the task finder destinations as 4, 6, 8, 10 and 12.
+- On the preparation spread, show clamp removal before a single Shutter/Record press for power-on. Show USB-C charging with a PD charger recommendation, then first activation with phone Wi-Fi and Bluetooth enabled, DJI Mimo opened, camera connection selected and its prompts followed.
+- On the video setup spread, label the shooting mode Video and show an upward swipe from live view leading to recording parameters. Number the action captions in reading order, starting at 1, using the same position beneath illustrations as the preparation spread.
+- On the recording and review spread, show Shutter/Record starting and stopping recording in two successive presses, followed by a rightward swipe to recorded media. Match the button location established on the controls spread and distinguish the recording and stopped states.
+- On the computer-transfer spread, show the camera on before connection and print the selection label "Transfer File: USB" exactly. State that capture is unavailable during transfer, and place file copying before the computer's safe-removal indication and unplugging.
+- On the storage spread, show removal of an attached fill light or wide-angle attachment when present, followed by recording stopped, a held Shutter/Record press for power-off and the clamp fitted afterward. Add concise handling captions for free gimbal movement during startup and carrying the camera by its body.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

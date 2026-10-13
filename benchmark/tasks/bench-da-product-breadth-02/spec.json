@@ -1,0 +1,1190 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-product-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "component-state-spec",
+      "label": "Component and state specification",
+      "description": "A one-page specification of service-part IDs, dimensions, connections, operating states, control motion and meal volumes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "closed-orthographic",
+      "label": "Closed orthographic views and utensil section",
+      "description": "One Closed drawing sheet with front, top and right views, overall dimensions and a dimensioned utensil-storage section.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "open-meal-layout",
+      "label": "Open M1 meal layout",
+      "description": "One Open layout drawing of M1 in zones A, B and C with fill planes, utensil storage and lid support.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "right-hand-operation",
+      "label": "H-R opening and closing",
+      "description": "One H-R board with numbered right-hand opening and closing actions, contact dimensions, support points and closure states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "left-hand-operation",
+      "label": "H-L opening and closing",
+      "description": "One H-L board with numbered left-hand opening and closing actions and access to both utensils and all three meal zones.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "utensil-eating",
+      "label": "H-R utensil retrieval and eating",
+      "description": "One H-R eating board with sequential utensil retrieval, M1 access in A, B and C, unused-utensil storage and Open for lunch wording.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "separated-cleaning",
+      "label": "Separated parts and cleaning access",
+      "description": "One Separated cleaning board covering residue removal, utensil removal, lid release, every service part and washing access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "drying-storage",
+      "label": "DR1 drying and ST1 storage",
+      "description": "One board of the complete separated inventory drying on DR1 and the dry reassembled box with stored utensils in ST1.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-surfaces",
+      "label": "Materials and contact surfaces",
+      "description": "One materials board matching every service-part ID to a material family, finish, contact surfaces and development questions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "desk-meal",
+      "label": "D1 desk meal with M2",
+      "description": "One D1 desk scene with the complete open product, all three M2 portions and both utensils within the working-zone dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "bag-carry",
+      "label": "C1 base-down carrying",
+      "description": "One C1 carrying scene with the complete Closed box base-down, both utensils stored and all protrusions inside the compartment envelope.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "closed-hero",
+      "label": "Closed product hero",
+      "description": "One Closed product hero with a legible PALMSET exterior lid mark and visible grip and closure geometry.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "operation-video",
+      "label": "H-R operation video",
+      "description": "One 10-second video of the H-R opening sequence, utensil retrieval and closing sequence with Open for lunch in the opening scene.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "product-presentation",
+      "label": "Product development presentation",
+      "description": "A presentation of at least 8 pages reusing the specification, product drawings, operation, meals, cleaning, materials and context work.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exterior-lid-name",
+      "kind": "text-verbatim",
+      "text": "PALMSET",
+      "scope": {
+        "slots": [
+          "closed-hero"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "eating-and-video-wording",
+      "kind": "text-verbatim",
+      "text": "Open for lunch",
+      "scope": {
+        "slots": [
+          "utensil-eating",
+          "operation-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "PALMSET",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "component-and-state-system",
+      "slots": [
+        "closed-orthographic",
+        "open-meal-layout",
+        "right-hand-operation",
+        "left-hand-operation",
+        "utensil-eating",
+        "separated-cleaning",
+        "drying-storage"
+      ],
+      "sourceSlots": [
+        "component-state-spec"
+      ],
+      "items": [
+        {
+          "item": "The drawings develop one specified assembly, retaining the identities and relationships of BX, LD, chosen additional parts, zones, closure and utensil storage through operation, cleaning, drying and storage.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The right-hand and left-hand sequences operate the same loaded product, and their open and closed endpoints agree with the layout and state drawings.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Depicted states use the specified state names, and disassembly and reassembly account for the chosen service inventory and both utensils without unexplained additions or losses.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "finished-product-geometry-and-materials",
+      "slots": [
+        "closed-hero",
+        "desk-meal",
+        "bag-carry"
+      ],
+      "sourceSlots": [
+        "closed-orthographic",
+        "materials-surfaces"
+      ],
+      "items": [
+        {
+          "item": "Hero and context views retain the orthographic product's body, lid, grip, closure, partitions and utensil-storage geometry wherever those features are visible.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Visible service parts preserve their assigned material families and finishes across hero and contexts; lighting and viewpoint changes may alter appearance without changing the assignments.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "PALMSET"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "closed-orthographic",
+      "open-meal-layout",
+      "right-hand-operation",
+      "left-hand-operation",
+      "utensil-eating",
+      "separated-cleaning",
+      "drying-storage",
+      "materials-surfaces",
+      "desk-meal",
+      "bag-carry",
+      "closed-hero"
+    ],
+    "layoutExtras": false,
+    "naRules": "Do not judge unverified force, torque, durability, food-contact certification, thermal performance or production readiness as demonstrated engineering performance; assess the specified design evidence and development questions."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "component-state-spec",
+        "closed-orthographic",
+        "open-meal-layout",
+        "right-hand-operation",
+        "left-hand-operation",
+        "utensil-eating",
+        "separated-cleaning",
+        "drying-storage",
+        "materials-surfaces",
+        "desk-meal",
+        "bag-carry",
+        "closed-hero",
+        "product-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "closed-orthographic",
+        "open-meal-layout",
+        "right-hand-operation",
+        "left-hand-operation",
+        "utensil-eating",
+        "separated-cleaning",
+        "drying-storage",
+        "materials-surfaces",
+        "desk-meal",
+        "bag-carry",
+        "closed-hero"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-component-state-spec",
+      "requirementId": "R-format-component-state-spec",
+      "method": "artifact-property",
+      "targetSlots": [
+        "component-state-spec"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-closed-orthographic",
+      "requirementId": "R-format-closed-orthographic",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closed-orthographic"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-open-meal-layout",
+      "requirementId": "R-format-open-meal-layout",
+      "method": "artifact-property",
+      "targetSlots": [
+        "open-meal-layout"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-right-hand-operation",
+      "requirementId": "R-format-right-hand-operation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "right-hand-operation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-left-hand-operation",
+      "requirementId": "R-format-left-hand-operation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "left-hand-operation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-utensil-eating",
+      "requirementId": "R-format-utensil-eating",
+      "method": "artifact-property",
+      "targetSlots": [
+        "utensil-eating"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-separated-cleaning",
+      "requirementId": "R-format-separated-cleaning",
+      "method": "artifact-property",
+      "targetSlots": [
+        "separated-cleaning"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-drying-storage",
+      "requirementId": "R-format-drying-storage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "drying-storage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-surfaces",
+      "requirementId": "R-format-materials-surfaces",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-surfaces"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-desk-meal",
+      "requirementId": "R-format-desk-meal",
+      "method": "artifact-property",
+      "targetSlots": [
+        "desk-meal"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-bag-carry",
+      "requirementId": "R-format-bag-carry",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bag-carry"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-closed-hero",
+      "requirementId": "R-format-closed-hero",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closed-hero"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-operation-video",
+      "requirementId": "R-format-operation-video",
+      "method": "manual",
+      "targetSlots": [
+        "operation-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-product-presentation",
+      "requirementId": "R-format-product-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "product-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "component-and-state-specification",
+      "requirementId": "R-component-and-state-specification",
+      "method": "content",
+      "targetSlots": [
+        "component-state-spec"
+      ],
+      "criteria": "The specification occupies one page and defines 2–8 removable box service parts, including BX and LD, with additional IDs drawn from P1–P6. Each part has dimensions and an intelligible connection record; captive hardware belongs to its service assembly. U-S and U-F are recorded separately from the service-part count. It states the chosen overall dimensions, control motion, Closed/Open/Separated/Drying/Stored states and A/B/C working volumes of 350/200/50 mL, totaling 600 mL. Missing records or inconsistent counts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ]
+    },
+    {
+      "id": "inventory-and-state-drawing-continuity",
+      "requirementId": "R-inventory-and-state-drawing-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "closed-orthographic",
+        "open-meal-layout",
+        "right-hand-operation",
+        "left-hand-operation",
+        "utensil-eating",
+        "separated-cleaning",
+        "drying-storage",
+        "materials-surfaces"
+      ],
+      "criteria": "Compare the boards with the specification: cleaning and materials must reproduce every chosen service-part ID without additions or substitutions, and the orthographic dimensions must equal the chosen dimensions. State depictions use the specified labels appropriate to their depicted conditions, collectively covering all five states. Different views and assembled groupings are allowed; changed IDs, omitted inventory entries or contradictory state labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-spec"
+      ]
+    },
+    {
+      "id": "closed-drawing-and-utensil-section",
+      "requirementId": "R-closed-drawing-and-utensil-section",
+      "method": "visual",
+      "targetSlots": [
+        "closed-orthographic"
+      ],
+      "criteria": "The sheet contains identifiable front, top and right orthographic projections of the closed assembly, overall dimensions and a storage section showing both utensils. The section labels the full spoon envelope as 160 L x 35 W x 18 H mm and fork envelope as 160 L x 25 W x 18 H mm, plus the designed storage clearances. Drawing style is open; omitted views, shortened utensil envelopes or unlabeled clearances fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "box-envelope-and-meal-capacity",
+      "requirementId": "R-box-envelope-and-meal-capacity",
+      "method": "visual",
+      "targetSlots": [
+        "closed-orthographic",
+        "open-meal-layout"
+      ],
+      "criteria": "The drawings describe one compatible assembly whose complete closed envelope, including stored utensils, grip, closure and protrusions, does not exceed 230/165/90 mm in L/W/H. Three distinct food zones are identified as A=350 mL, B=200 mL and C=50 mL; dimensioned fill planes sit at least 5 mm below the corresponding rims. The open arrangement permits retrieval of both utensils without direct food contact. Partition shape and retention design may vary, but conflicting geometry, insufficient headspace or obstructed retrieval fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-spec"
+      ]
+    },
+    {
+      "id": "m1-open-meal-layout",
+      "requirementId": "R-m1-open-meal-layout",
+      "method": "visual",
+      "targetSlots": [
+        "open-meal-layout"
+      ],
+      "criteria": "The Open drawing places cooked rice in A, mixed vegetables in B and thick sauce in C at the recorded nominal portions. It shows fill-plane dimensions, the storage locations of both utensils and either a supported attached lid or a lid resting stably on the desk. Food rendering can be schematic when identification is clear; swapped foods, absent storage or an unsupported lid fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "one-hand-operation-and-access",
+      "requirementId": "R-one-hand-operation-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "right-hand-operation",
+        "left-hand-operation",
+        "utensil-eating"
+      ],
+      "criteria": "H-R uses only the right hand and H-L only the left, starting from the same loaded closed box facing the user on a level ordinary desk. Each operation board numbers no more than four opening and four closing actions and identifies the active contact, support and resulting latch or lid condition at every step. Simultaneous contact centers are dimensioned at no more than 70 mm; single contacts are identified; push/slide releases show travel no greater than 12 mm, and other releases show their motion paths. Opening ends with stable lid support and meal access; closing ends ready for carrying. H-L and the eating board demonstrate access to both utensils and A/B/C. Sequential ghost positions or schematic contact maps are acceptable when unambiguous; second-hand assistance, missing motion evidence or exceeded limits fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "action-unit-accounting",
+      "requirementId": "R-action-unit-accounting",
+      "method": "visual",
+      "targetSlots": [
+        "right-hand-operation",
+        "left-hand-operation"
+      ],
+      "criteria": "Count the movements actually depicted rather than accepting the numbering alone. Every box rotation consumes an action, and distinct successive movements cannot be hidden inside one numbered step. Continuous purposeful movements may use integrated support; omitted rotations or bundled separate movements that conceal exceeding the four-action opening or closing limit fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "right-hand-eating",
+      "requirementId": "R-right-hand-eating",
+      "method": "visual",
+      "targetSlots": [
+        "utensil-eating"
+      ],
+      "criteria": "The eating board shows right-hand retrieval paths for either the spoon or fork from the established open arrangement, with sequence labels distinguishing successive positions. Fingers remain clear of food, all three M1 zones are reachable, and the other utensil retains an identifiable storage position away from direct meal contact. M1 remains rice/vegetables/thick sauce in A/B/C. Demonstrating only one utensil option, requiring a second hand or leaving the unused utensil in food fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "open-meal-layout",
+        "right-hand-operation"
+      ]
+    },
+    {
+      "id": "cleaning-sequence-and-access",
+      "requirementId": "R-cleaning-sequence-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "separated-cleaning"
+      ],
+      "criteria": "The cleaning sequence empties residues, removes U-S and U-F, releases LD and separates every selected service part by hand. Joint directions explain disassembly, and exposed views demonstrate washing and rinsing access to food-contact surfaces, grooves and any sealing interface. If a removable seal exists, its ID and removal/return paths are shown. Two hands are permitted here. Missing parts, required tools or inaccessible food-contact features fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-state-spec"
+      ]
+    },
+    {
+      "id": "drying-and-cabinet-fit",
+      "requirementId": "R-drying-and-cabinet-fit",
+      "method": "visual",
+      "targetSlots": [
+        "drying-storage"
+      ],
+      "criteria": "The Drying stage accounts for every separated service part plus both utensils inside a dimensioned 500 x 400 mm DR1 footprint, with food-contact surfaces exposed for air drying. The subsequent Stored stage shows the same empty, dry, reassembled closed box with both utensils stored inside the 260 L x 190 W x 120 H mm ST1 opening. Arrangement is flexible; missing pieces, blocked drying surfaces, wet reassembly or an envelope overrun fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-state-spec",
+        "separated-cleaning"
+      ]
+    },
+    {
+      "id": "materials-and-contact-map",
+      "requirementId": "R-materials-and-contact-map",
+      "method": "content",
+      "targetSlots": [
+        "materials-surfaces"
+      ],
+      "criteria": "Every service-part ID receives an explicit material family and finish. Text or keyed diagrams map meal-contact, utensil-contact, hand-contact and exterior/base surfaces, and the board lists development questions. Different material proposals are allowed; an unmapped part, missing finish or omitted contact category fails. Exact grades and unrequested performance values are not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "sourceSlots": [
+        "component-state-spec"
+      ]
+    },
+    {
+      "id": "required-development-questions",
+      "requirementId": "R-required-development-questions",
+      "method": "content",
+      "targetSlots": [
+        "materials-surfaces",
+        "product-presentation"
+      ],
+      "criteria": "Each target explicitly identifies development questions concerning food-contact qualification, closure retention, base friction and one-hand usability, plus seal performance if the design includes a seal. Wording and organization may differ. Omitting a required topic or replacing unresolved qualification questions solely with unsupported assurances fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ]
+    },
+    {
+      "id": "desk-and-bag-context-records",
+      "requirementId": "R-desk-and-bag-context-records",
+      "method": "visual",
+      "targetSlots": [
+        "desk-meal",
+        "bag-carry"
+      ],
+      "criteria": "D1 visibly accounts for the open box, supported or parked lid, both utensils and any temporarily removed opening parts inside a 520 x 340 mm working area. M2 assigns 350 mL short noodles to A, 200 mL salad to B and 50 mL thick dip to C, with the unused utensil's resting place identified. C1 contains the same complete closed assembly base-down, both utensils stored, within 245 L x 180 W x 105 H mm including protrusions. Dimension annotations or clear spatial evidence may establish fit; omitted contents, wrong meal assignments, an unidentified resting place or an orientation/envelope conflict fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-spec",
+        "closed-orthographic"
+      ]
+    },
+    {
+      "id": "closed-hero-content",
+      "requirementId": "R-closed-hero-content",
+      "method": "visual",
+      "targetSlots": [
+        "closed-hero"
+      ],
+      "criteria": "The hero presents the complete closed product with the exterior lid, grip and closure visible and PALMSET readable on the lid. Camera angle and lighting are open, provided they reveal these features and preserve the established geometry and material assignments. Concealed required features, an unreadable lid name or a redesigned assembly fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "closed-orthographic",
+        "materials-surfaces"
+      ]
+    },
+    {
+      "id": "video-sequence-and-product-continuity",
+      "requirementId": "R-video-sequence-and-product-continuity",
+      "method": "manual",
+      "targetSlots": [
+        "operation-video"
+      ],
+      "criteria": "Review the complete video and its duration. It lasts 10 seconds, prints Open for lunch in the opening scene, and depicts the selected H-R opening sequence, utensil retrieval and corresponding closing sequence using the right hand. Actions and resulting states agree with the H-R board, while product geometry, material families and finishes agree with their sources. Editing and camera changes are permitted if the sequence remains evident; skipped required stages, contradictory movements, a changed product or incorrect duration fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "right-hand-operation",
+        "closed-orthographic",
+        "materials-surfaces"
+      ]
+    },
+    {
+      "id": "presentation-reuse-and-length",
+      "requirementId": "R-presentation-reuse-and-length",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "product-presentation"
+      ],
+      "criteria": "The presentation has at least eight pages and visibly incorporates identifiable content from every listed source. Reformatting, scaling and selective cropping are allowed when the relevant specification, drawings, operation sequences, meal information, cleaning, materials and contexts remain legible. Merely naming an earlier deliverable, substituting unrelated imagery or omitting a source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "sourceSlots": [
+        "component-state-spec",
+        "closed-orthographic",
+        "open-meal-layout",
+        "right-hand-operation",
+        "left-hand-operation",
+        "utensil-eating",
+        "separated-cleaning",
+        "materials-surfaces",
+        "desk-meal",
+        "bag-carry"
+      ]
+    },
+    {
+      "id": "presentation-inventory-and-dimensions",
+      "requirementId": "R-presentation-inventory-and-dimensions",
+      "method": "content",
+      "targetSlots": [
+        "product-presentation"
+      ],
+      "criteria": "The presentation explicitly repeats the complete chosen service-part inventory and the chosen overall L/W/H dimensions, matching the specification and orthographic sheet. Utensils remain separate contents rather than additional service parts, and any reproduced state drawings retain the applicable specified labels. Layout and prose may change; missing entries or contradictory IDs, dimensions or labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "sourceSlots": [
+        "component-state-spec",
+        "closed-orthographic"
+      ]
+    },
+    {
+      "id": "presentation-capacity-and-storage-records",
+      "requirementId": "R-presentation-capacity-and-storage-records",
+      "method": "content",
+      "targetSlots": [
+        "product-presentation"
+      ],
+      "criteria": "The presentation communicates the same box design, with a complete closed envelope within 230 L x 165 W x 90 H mm, A/B/C capacities of 350/200/50 mL and at least 5 mm of rim-to-fill-plane clearance. Reused storage and open-layout records must remain consistent with the full utensil envelopes, designed clearances and food-separated retrieval arrangement. Legible incorporated drawings may supply these facts; missing capacity or fill-plane evidence and conflicting records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "sourceSlots": [
+        "closed-orthographic",
+        "open-meal-layout"
+      ]
+    },
+    {
+      "id": "presentation-material-agreement",
+      "requirementId": "R-presentation-material-agreement",
+      "method": "content",
+      "targetSlots": [
+        "product-presentation"
+      ],
+      "criteria": "The presentation associates every chosen service-part ID with the same material family and finish assigned on the materials board. A legible reused assignment table is sufficient. Equivalent wording is allowed, but missing assignments or contradictory families or finishes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "sourceSlots": [
+        "materials-surfaces"
+      ]
+    },
+    {
+      "id": "ordinary-office-context",
+      "requirementId": "R-ordinary-office-context",
+      "method": "visual",
+      "targetSlots": [
+        "desk-meal",
+        "bag-carry"
+      ],
+      "criteria": "The desk scene reads as a warm, neutral, ordinary office setting, and the carrying scene uses an everyday commuter bag. Furniture, props and composition may vary within that context. A setting or bag type that contradicts the specified everyday commuting use fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-component-and-state-system",
+      "requirementId": "R-set-component-and-state-system",
+      "method": "visual",
+      "targetSlots": [
+        "closed-orthographic",
+        "open-meal-layout",
+        "right-hand-operation",
+        "left-hand-operation",
+        "utensil-eating",
+        "separated-cleaning",
+        "drying-storage"
+      ],
+      "criteria": "The drawings develop one specified assembly, retaining the identities and relationships of BX, LD, chosen additional parts, zones, closure and utensil storage through operation, cleaning, drying and storage. The right-hand and left-hand sequences operate the same loaded product, and their open and closed endpoints agree with the layout and state drawings. Depicted states use the specified state names, and disassembly and reassembly account for the chosen service inventory and both utensils without unexplained additions or losses.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-spec"
+      ]
+    },
+    {
+      "id": "set-finished-product-geometry-and-materials",
+      "requirementId": "R-set-finished-product-geometry-and-materials",
+      "method": "visual",
+      "targetSlots": [
+        "closed-hero",
+        "desk-meal",
+        "bag-carry"
+      ],
+      "criteria": "Hero and context views retain the orthographic product's body, lid, grip, closure, partitions and utensil-storage geometry wherever those features are visible. Visible service parts preserve their assigned material families and finishes across hero and contexts; lighting and viewpoint changes may alter appearance without changing the assignments.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/client-fixtures.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "closed-orthographic",
+        "materials-surfaces"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "product-geometry-continuity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "closed-orthographic",
+      "subjectSlots": [
+        "closed-hero",
+        "desk-meal",
+        "bag-carry"
+      ],
+      "notes": "The hero, context images and video preserve those assignments and the geometry of the orthographic sheet."
+    },
+    {
+      "id": "existing-utensil-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "existing-utensils.png"
+      ],
+      "subjectSlots": [
+        "closed-orthographic",
+        "open-meal-layout",
+        "left-hand-operation",
+        "utensil-eating",
+        "separated-cleaning",
+        "drying-storage",
+        "desk-meal"
+      ],
+      "notes": "existing-utensils.png establishes the recognizable forms of U-S and U-F."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "chosen-service-inventory",
+      "fromSlot": "component-state-spec",
+      "toSlots": [
+        "separated-cleaning",
+        "materials-surfaces",
+        "product-presentation"
+      ],
+      "extract": [
+        "chosen service-part count, IDs and corresponding components"
+      ],
+      "notes": "The specification assigns BX, LD and any P1–P6 IDs to 2–8 service parts. The cleaning board, materials board and presentation repeat that inventory; the orthographic sheet and presentation repeat its chosen overall dimensions, and the state drawings use its Closed, Open, Separated, Drying and Stored labels."
+    },
+    {
+      "id": "chosen-overall-dimensions",
+      "fromSlot": "component-state-spec",
+      "toSlots": [
+        "closed-orthographic",
+        "product-presentation"
+      ],
+      "extract": [
+        "chosen complete closed-box length, width and height"
+      ],
+      "notes": "The specification assigns BX, LD and any P1–P6 IDs to 2–8 service parts. The cleaning board, materials board and presentation repeat that inventory; the orthographic sheet and presentation repeat its chosen overall dimensions, and the state drawings use its Closed, Open, Separated, Drying and Stored labels."
+    }
+  ]
+}

@@ -1,0 +1,585 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-game-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "character-world",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "bea-character",
+      "label": "Bea C01 character sheet",
+      "description": "A Bea C01 sheet with front, side and back views, Idle and Holding poses, dimensions, a close-up and a map icon.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "kit-character",
+      "label": "Kit C02 character sheet",
+      "description": "A Kit C02 sheet with front, side and back views, Idle and Turning poses, dimensions, a close-up and a map icon.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "mailbox-p01",
+      "label": "Mailbox P01 object sheet",
+      "description": "A Mailbox P01 sheet with three orthographic views, Rest and Engaged states, dimensions, a close-up and a map icon.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cabinet-p02",
+      "label": "Utility Cabinet P02 object sheet",
+      "description": "A Utility Cabinet P02 sheet with three orthographic views, Rest and Engaged states, dimensions, a close-up and a map icon.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "mail-court-scene",
+      "label": "Mail Court S01 puzzle scene",
+      "description": "A Mail Court S01 scene sheet with P01 and P02, operating positions, a connection route and four puzzle state treatments.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "mail-court-interface",
+      "label": "Mail Court interface comparison",
+      "description": "A Mail Court interface sheet comparing the commissioned input layouts and four puzzle states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-title",
+      "kind": "text-verbatim",
+      "text": "NEXT DOOR",
+      "scope": {
+        "slots": [
+          "mail-court-interface"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "flap-prompt",
+      "kind": "text-verbatim",
+      "text": "Hold flap",
+      "scope": {
+        "slots": [
+          "mail-court-interface"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "wheel-prompt",
+      "kind": "text-verbatim",
+      "text": "Turn wheel",
+      "scope": {
+        "slots": [
+          "mail-court-interface"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "mailbox-label",
+      "kind": "text-verbatim",
+      "text": "Mailbox",
+      "scope": {
+        "slots": [
+          "mail-court-interface"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "cabinet-label",
+      "kind": "text-verbatim",
+      "text": "Utility Cabinet",
+      "scope": {
+        "slots": [
+          "mail-court-interface"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "NEXT DOOR",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "mail-court-asset-system",
+      "slots": [
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "sourceSlots": [
+        "bea-character",
+        "kit-character",
+        "mailbox-p01",
+        "cabinet-p02"
+      ],
+      "items": [
+        {
+          "item": "Scene and interface preserve the character sheets' clothing colours, accessory counts, silhouettes and ownership symbols and the object sheets' identifying geometry and fittings.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Scene and interface agree on the four state meanings, label/counter mappings, ownership channels and three-second overlapping-operation mechanic.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "NEXT DOOR"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Game Design",
+    "slots": [
+      "bea-character",
+      "kit-character",
+      "mailbox-p01",
+      "cabinet-p02",
+      "mail-court-scene",
+      "mail-court-interface"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not prescribe an uncommissioned world or rendering style, assess executable gameplay from static sheets, or rescore fixed text, record accuracy, timing and interface measurements covered by acceptance checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "bea-character",
+        "kit-character",
+        "mailbox-p01",
+        "cabinet-p02",
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-bea-character",
+      "requirementId": "R-format-bea-character",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bea-character"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-kit-character",
+      "requirementId": "R-format-kit-character",
+      "method": "artifact-property",
+      "targetSlots": [
+        "kit-character"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-mailbox-p01",
+      "requirementId": "R-format-mailbox-p01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mailbox-p01"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cabinet-p02",
+      "requirementId": "R-format-cabinet-p02",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cabinet-p02"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-mail-court-scene",
+      "requirementId": "R-format-mail-court-scene",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mail-court-scene"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-mail-court-interface",
+      "requirementId": "R-format-mail-court-interface",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mail-court-interface"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "six-asset-system",
+      "requirementId": "R-six-asset-system",
+      "method": "visual",
+      "targetSlots": [
+        "bea-character",
+        "kit-character",
+        "mailbox-p01",
+        "cabinet-p02",
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "criteria": "Compare each asset's main views, detail and map icon with its appearances in the scene and interface. Clothing colours, accessory quantities, identifying outlines and ownership shapes remain attributable to the same asset. Each character sheet includes front, side and back views, a close-up, a map icon, and Idle plus Holding for Bea or Turning for Kit. Pose, perspective and icon simplification may vary without changing identifying features.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-asset-records",
+      "requirementId": "R-six-asset-records",
+      "method": "visual",
+      "targetSlots": [
+        "bea-character",
+        "kit-character",
+        "mailbox-p01",
+        "cabinet-p02"
+      ],
+      "criteria": "Read the corresponding asset records: Bea/C01 is 1600 mm tall, Kit/C02 is 1750 mm tall, P01 is 400 × 300 × 600 mm and P02 is 600 × 250 × 800 mm in width–depth–height order. Each object sheet includes front, side and back views, a detail, map icon, and Rest and Engaged depictions. P01 has a muted-red #A84438 body, rounded crown, raised vertical front rib, one brass flap knob and rear mounting plate; its flap moves from closed to 60 degrees from closed. P02 has a grey-green #68756B body, flat top, three horizontal vents above a five-spoke wheel and two right-side hinges; its stationary wheel and unlit lamp change to clockwise operation and a lit lamp. Stylization is allowed, but incorrect records, fitting counts or state mechanics fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-scene-and-state-records",
+      "requirementId": "R-six-scene-and-state-records",
+      "method": "visual",
+      "targetSlots": [
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "criteria": "The S01 scene uses P01/P02 and depicts the connection route and both operating positions on an 8000 × 6000 mm footprint with 1000 mm cells. With a southwest origin, operating points are (2500, 3000) and (5500, 3000) mm, characters operate at (2500, 2500) and (5500, 2500) mm, and each reach circle has a 1000 mm radius. Perspective is allowed if the underlying layout is readable. Both sheets map Idle to 0/2 with neither input, Ready to 1/2 with one input, Linked to 2/2 during simultaneous operation, and Completed to 2/2 after three uninterrupted seconds. Annotations or state sequences must communicate reset to zero when overlap breaks before completion, return to Ready or Idle according to remaining input, and a latched completion with illuminated lamp and open shared route.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-interface-copy-and-inputs",
+      "requirementId": "R-six-interface-copy-and-inputs",
+      "method": "visual",
+      "targetSlots": [
+        "mail-court-interface"
+      ],
+      "criteria": "Both controller and touch layouts are legible and carry the project title, Mail Court location, both object labels, their interaction prompts and the 3 s duration. Bea's prompt sits at the bottom centre of the left view and Kit's at the bottom centre of the right view. Controller input is holding the south face button for Bea and rotating the left stick clockwise for Kit; touch input is holding the on-screen flap control and dragging the wheel clockwise. Different device glyphs are allowed; swapped actors, changed actions or mismatched prompt anchors fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-interface-accessibility",
+      "requirementId": "R-six-interface-accessibility",
+      "method": "visual",
+      "targetSlots": [
+        "mail-court-interface"
+      ],
+      "criteria": "Evaluate each depicted interface in logical coordinates: equal left and right player views occupy the 1920 × 1080 design space, each 960 × 1080, with content inside a 48-unit inset on all four sides of each view. Text character height is at least 26 logical units. Text/background contrast reaches 4.5:1, and icons and unavailable controls reach 3:1; unavailable controls also display a lock. Scaled sheet previews are acceptable when their logical measurements and colour evidence support these limits. Incorrect split proportions, safe-area intrusions, undersized text, insufficient contrast or missing locks fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-ownership-and-symbols",
+      "requirementId": "R-six-ownership-and-symbols",
+      "method": "visual",
+      "targetSlots": [
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "criteria": "In both sheets, player ownership uses colour and shape together: Bea has #1F4E5F plus a circle and Kit has #B35C1E plus a triangle. State treatments consistently assign a hollow circle to Idle, half-filled circle to Ready, chain to Linked and check mark to Completed. Icon drawing style may change with the art direction, but substituting symbols, exchanging owners or relying on colour alone fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-mail-court-asset-system",
+      "requirementId": "R-set-mail-court-asset-system",
+      "method": "visual",
+      "targetSlots": [
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "criteria": "Scene and interface preserve the character sheets' clothing colours, accessory counts, silhouettes and ownership symbols and the object sheets' identifying geometry and fittings. Scene and interface agree on the four state meanings, label/counter mappings, ownership channels and three-second overlapping-operation mechanic.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/03-game-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "bea-character",
+        "kit-character",
+        "mailbox-p01",
+        "cabinet-p02"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "bea-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "bea-character",
+      "subjectSlots": [
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "notes": "The character and object sheets establish the clothing colours, accessory counts and silhouettes used in the Mail Court scene and interface; their close-ups and map icons retain those features, Bea's circle and Kit's triangle."
+    },
+    {
+      "id": "kit-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "kit-character",
+      "subjectSlots": [
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "notes": "The character and object sheets establish the clothing colours, accessory counts and silhouettes used in the Mail Court scene and interface; their close-ups and map icons retain those features, Bea's circle and Kit's triangle."
+    },
+    {
+      "id": "existing-mailbox",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "mailbox-identity.png"
+      ],
+      "subjectSlots": [
+        "mailbox-p01",
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "notes": "The character sheets state C01 at 1600 mm and C02 at 1750 mm; the object sheets state P01 at 400 × 300 × 600 mm and P02 at 600 × 250 × 800 mm, retaining the mailbox's rounded crown, raised front rib and brass knob, and the cabinet's flat top, three vents and five-spoke wheel."
+    },
+    {
+      "id": "existing-cabinet",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "cabinet-identity.png"
+      ],
+      "subjectSlots": [
+        "cabinet-p02",
+        "mail-court-scene",
+        "mail-court-interface"
+      ],
+      "notes": "The character sheets state C01 at 1600 mm and C02 at 1750 mm; the object sheets state P01 at 400 × 300 × 600 mm and P02 at 600 × 250 × 800 mm, retaining the mailbox's rounded crown, raised front rib and brass knob, and the cabinet's flat top, three vents and five-spoke wheel."
+    }
+  ]
+}

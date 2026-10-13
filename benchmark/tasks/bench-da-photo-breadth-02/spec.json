@@ -1,0 +1,1145 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-photo-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "publication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "shooting-plan",
+      "label": "Photographic concept and shooting plan",
+      "description": "A two-page photographic concept and six-record shooting plan for S01–S06.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "camera-map",
+      "label": "Camera positions and movement map",
+      "description": "One camera map with six shot positions, sightlines and connecting aisle routes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "arrival-wide",
+      "label": "S01 Arrival stage overview",
+      "description": "One landscape photograph of the complete stage during Arrival, identified as S01.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "crossing-space",
+      "label": "S02 Crossing spatial relationship",
+      "description": "One landscape photograph of both performers and the bench during Crossing, identified as S02.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "crossing-action",
+      "label": "S03 Mara airborne",
+      "description": "One landscape photograph of Mara's airborne crossing, identified as S03.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "held-gesture",
+      "label": "S04 Held seated gesture",
+      "description": "One portrait photograph of the performers' sustained seated gesture during Held, identified as S04.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "held-detail",
+      "label": "S05 Ellis hand and cuff detail",
+      "description": "One detail photograph of Ellis's left cuff and hand at the bench during Held, identified as S05.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "audience-relationship",
+      "label": "S06 Audience and stage relationship",
+      "description": "One photograph connecting audience backs with both performers during Held, identified as S06.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "chronological-edit",
+      "label": "Chronological photographic edit",
+      "description": "One two-page chronological edit of six photographs with passage captions, shot IDs, aspect ratios and cue codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "opening-spread",
+      "label": "Arrival and Crossing feature spread",
+      "description": "One programme opening spread connecting Arrival and Crossing with the production title, feature line and company emblem.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "closing-spread",
+      "label": "Held feature spread",
+      "description": "One programme closing spread presenting Held through the gesture, detail and audience photographs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "social-crop",
+      "label": "S03 vertical social image",
+      "description": "One vertical social crop of S03 with Mara's complete airborne figure, production title, feature line and company emblem.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "photo-sequence",
+      "label": "Ten-second performance photo sequence",
+      "description": "One 10-second video sequencing S01–S06 under the three passage labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Performance photography presentation",
+      "description": "One presentation of at least eight pages reusing the planning, photographs, edit, applications and video sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "production-title",
+      "kind": "text-verbatim",
+      "text": "STILL HERE",
+      "scope": {
+        "slots": [
+          "opening-spread",
+          "social-crop",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "feature-line",
+      "kind": "text-verbatim",
+      "text": "A room held in common",
+      "scope": {
+        "slots": [
+          "opening-spread",
+          "social-crop",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "company-credit",
+      "kind": "text-verbatim",
+      "text": "FOLD ROOM",
+      "scope": {
+        "slots": [
+          "opening-spread",
+          "social-crop",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "STILL HERE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "performance-photograph-continuity",
+      "slots": [
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship"
+      ],
+      "sourceSlots": [
+        "camera-map"
+      ],
+      "items": [
+        {
+          "item": "The photographs depict one continuous production with stable performer identities, costumes, bench, curtain and stage-to-audience geometry despite changes of viewpoint and framing.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The photographic sequence follows the recorded Arrival, Crossing and Held actions and programmed light states, conveying movement and sustained stillness within the available-light capture requirement.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "published-feature-continuity",
+      "slots": [
+        "opening-spread",
+        "closing-spread",
+        "social-crop"
+      ],
+      "sourceSlots": [
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship"
+      ],
+      "items": [
+        {
+          "item": "Published crops preserve the identities, costumes, gestures and spatial evidence of their delivered source photographs.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The opening and closing spreads develop tentative occupation into rapid movement and shared stillness, while the social application retains the complete airborne figure from S03.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "STILL HERE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "arrival-wide",
+      "crossing-space",
+      "crossing-action",
+      "held-gesture",
+      "held-detail",
+      "audience-relationship",
+      "opening-spread",
+      "closing-spread",
+      "social-crop"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not reward changes to the supplied performers, costumes, staging or programmed lighting, or claim to verify shutter speed from image appearance."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "shooting-plan",
+        "camera-map",
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship",
+        "chronological-edit",
+        "opening-spread",
+        "closing-spread",
+        "social-crop",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "camera-map",
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship",
+        "opening-spread",
+        "closing-spread",
+        "social-crop"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-shooting-plan",
+      "requirementId": "R-format-shooting-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shooting-plan"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-camera-map",
+      "requirementId": "R-format-camera-map",
+      "method": "artifact-property",
+      "targetSlots": [
+        "camera-map"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-arrival-wide",
+      "requirementId": "R-format-arrival-wide",
+      "method": "artifact-property",
+      "targetSlots": [
+        "arrival-wide"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-crossing-space",
+      "requirementId": "R-format-crossing-space",
+      "method": "artifact-property",
+      "targetSlots": [
+        "crossing-space"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-crossing-action",
+      "requirementId": "R-format-crossing-action",
+      "method": "artifact-property",
+      "targetSlots": [
+        "crossing-action"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-held-gesture",
+      "requirementId": "R-format-held-gesture",
+      "method": "artifact-property",
+      "targetSlots": [
+        "held-gesture"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-held-detail",
+      "requirementId": "R-format-held-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "held-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-audience-relationship",
+      "requirementId": "R-format-audience-relationship",
+      "method": "artifact-property",
+      "targetSlots": [
+        "audience-relationship"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-chronological-edit",
+      "requirementId": "R-format-chronological-edit",
+      "method": "artifact-property",
+      "targetSlots": [
+        "chronological-edit"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-opening-spread",
+      "requirementId": "R-format-opening-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "opening-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-closing-spread",
+      "requirementId": "R-format-closing-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closing-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-social-crop",
+      "requirementId": "R-format-social-crop",
+      "method": "artifact-property",
+      "targetSlots": [
+        "social-crop"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-photo-sequence",
+      "requirementId": "R-format-photo-sequence",
+      "method": "manual",
+      "targetSlots": [
+        "photo-sequence"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "shooting-plan-structure-and-records",
+      "requirementId": "R-shooting-plan-structure-and-records",
+      "method": "content",
+      "targetSlots": [
+        "shooting-plan"
+      ],
+      "criteria": "The document has two pages, a photographic concept and exactly six uniquely identified records, S01 through S06. Every record supplies all seven requested fields. S01 maps to Arrival/L01, S02 and S03 to Crossing/L02, and S04–S06 to Held/L03. All six exposures specify available light and 1/200 second or faster. S01–S03 specify landscape 3:2 and S04 portrait 2:3; other still-photo choices use the supplied landscape or portrait proportions. Missing fields, duplicate IDs, incorrect mappings or slower exposures fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ]
+    },
+    {
+      "id": "capture-schedule",
+      "requirementId": "R-capture-schedule",
+      "method": "content",
+      "targetSlots": [
+        "shooting-plan"
+      ],
+      "criteria": "Planned capture is feasible during one continuous rehearsal: Arrival occupies 19:00–19:08, Crossing 19:08–19:16 and Held 19:16–19:24 on 19 September 2026. S03 accommodates the airborne crossing at 19:12, and the sustained seated gesture is captured during 19:20–19:22. Any stated delivery deadline agrees with noon on 20 September 2026, and stated time zones agree with venue local time UTC+01:00. Resets, additional runs or conflicting schedule records fail; exact timestamps need not be printed on photographs.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ]
+    },
+    {
+      "id": "repeated-shot-metadata",
+      "requirementId": "R-repeated-shot-metadata",
+      "method": "content",
+      "targetSlots": [
+        "chronological-edit",
+        "presentation"
+      ],
+      "criteria": "Each document includes an identifiable entry for every planned shot and repeats its ID, aspect ratio and cue code with the same values and associations. Typographic notation may vary where the meaning remains identical. Omitted shots, swapped metadata or discrepancies with the plan fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "sourceSlots": [
+        "shooting-plan"
+      ]
+    },
+    {
+      "id": "camera-access-and-spatial-record",
+      "requirementId": "R-camera-access-and-spatial-record",
+      "method": "visual",
+      "targetSlots": [
+        "camera-map",
+        "arrival-wide",
+        "crossing-space",
+        "audience-relationship"
+      ],
+      "criteria": "The map identifies all six planned camera positions, their sightlines and connected travel routes. Camera positions and travel stay within the recorded side and rear aisle bounds; sightlines may cross the seating and stage. Geometry agrees with stage-access-plan.png and the room records: an 8000 × 9000 mm room, a centered 6000 × 4000 mm stage against the rear wall, a black rear curtain and one pale plywood bench measuring 1800 × 400 × 450 mm, centered 2000 mm forward of the curtain. S01 includes the complete stage; S02 includes both performers and the bench; S06 maintains the recorded stage-to-seating relationship. Perspective changes are allowed, but relocated scenery, extra benches, inaccessible viewpoints or routes through seating fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "shooting-plan"
+      ]
+    },
+    {
+      "id": "cast-actions-and-light-cues",
+      "requirementId": "R-cast-actions-and-light-cues",
+      "method": "visual",
+      "targetSlots": [
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship",
+        "opening-spread",
+        "closing-spread",
+        "social-crop"
+      ],
+      "criteria": "Visible cast details agree with cast-and-costume.png and the costume records, including Mara's rust band-collar long-sleeved shirt, charcoal trousers and black lace-up shoes, and Ellis's slate sleeveless tunic, black trousers, black slip-on shoes and single left silver cuff. Arrival shows the approach to the bench under warm frontal light; Crossing uses dominant cooler audience-left side light with weaker warm audience-right light; Held uses warm audience-right and weaker frontal light with the recorded seated positions and hand gesture. S03 places Mara airborne downstage of the bench and Ellis behind it. Lighting may alter apparent fabric color, and hidden details need not be exposed. Identity changes, visible costume contradictions, mirrored cuff placement or incompatible actions and light directions fail; numerical fixture settings are not inferred from pixels.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "required-gesture-detail-and-audience-views",
+      "requirementId": "R-required-gesture-detail-and-audience-views",
+      "method": "visual",
+      "targetSlots": [
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship"
+      ],
+      "criteria": "S03 visibly resolves Mara off the floor in the airborne crossing. S04 is a portrait view of both performers seated, Mara left and Ellis right, sustaining the gesture toward the bench center. S05 clearly connects Ellis's left silver cuff and hand to the bench's front edge. S06 connects the backs of seated spectators with both performers. Framing may vary within these subjects; an unreadable airborne gesture, substituted action, wrong wrist, missing bench contact or frontal audience coverage fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "chronological-edit-content",
+      "requirementId": "R-chronological-edit-content",
+      "method": "content",
+      "targetSlots": [
+        "chronological-edit"
+      ],
+      "criteria": "The edit occupies two pages and contains the six delivered photographs with captions associating each image with its passage and planned shot metadata. Reading order moves from S01 in Arrival through S02–S03 in Crossing to S04–S06 in Held. Layout and image sizes may vary, but missing or substituted photographs, unclear caption associations or passage reversals fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "sourceSlots": [
+        "shooting-plan",
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship"
+      ]
+    },
+    {
+      "id": "feature-spread-sequence-and-reuse",
+      "requirementId": "R-feature-spread-sequence-and-reuse",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "closing-spread"
+      ],
+      "criteria": "Across the two spreads, all six delivered photographs are recognizably reused and captioned with their correct S01–S06 IDs. The opening develops Arrival into Crossing using S01–S03; the closing presents Held through S04–S06. Cropping, scale and placement may vary while preserving required subjects and shot identity. Missing photographs or IDs, substituted scenes, incorrect captions or reversed passage progression fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship"
+      ]
+    },
+    {
+      "id": "social-crop-source-and-figure",
+      "requirementId": "R-social-crop-source-and-figure",
+      "method": "visual",
+      "targetSlots": [
+        "social-crop"
+      ],
+      "criteria": "The social application is recognizably cropped from the delivered S03 and has a vertical 9:16 composition. Mara's entire airborne figure, including hair, hands and feet, remains inside the crop and readable beneath any graphics. A different exposure or pose, reconstructed scene, clipped body part or substantially incorrect proportion fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "crossing-action"
+      ]
+    },
+    {
+      "id": "photo-sequence-content-and-continuity",
+      "requirementId": "R-photo-sequence-content-and-continuity",
+      "method": "manual",
+      "targetSlots": [
+        "photo-sequence"
+      ],
+      "criteria": "Review the whole video and its duration: it lasts 10 seconds, visibly uses all six delivered photographs in Arrival, Crossing and Held order, and displays those three passage labels with the corresponding material. Timing and transitions may vary, with pacing conveying the final shared stillness. Any crops or treatments preserve visible cast identity, costume details, actions and cue appearance against the source photographs and cast reference. Missing or substituted shots, incorrect labels, passage reversals, altered visible costume details or an incorrect duration fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship"
+      ]
+    },
+    {
+      "id": "programme-print-geometry",
+      "requirementId": "R-programme-print-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "closing-spread"
+      ],
+      "criteria": "Each spread follows the physical trim, bleed and fold relationships in publication-windows.png: 296 × 210 mm trim, 3 mm outer bleed, a central fold 148 mm from the left trim edge, and text clearance of 10 mm from trim and 8 mm on either side of the fold. Assess proportional geometry and any supplied print boundaries rather than exact raster pixel counts; printed measurement annotations are not required. Missing bleed allowance, incorrect fold placement or text entering the protected margins fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "image-application-branding",
+      "requirementId": "R-image-application-branding",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "social-crop"
+      ],
+      "criteria": "Each application visibly prints the production title and feature line with the FOLD ROOM credit and its supplied emblem. The emblem sits beside the company credit and preserves three black vertical bars with relative heights 2:3:2 and aligned bottoms. Scale and layout may adapt to the application. Missing, illegible or altered wording, a redrawn incompatible emblem or separation of the emblem from its credit fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "presentation-cover-branding",
+      "requirementId": "R-presentation-cover-branding",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The cover itself contains the exact production title, feature line and company credit, with the supplied FOLD ROOM emblem beside the credit. The emblem retains its three bottom-aligned black bars in the recorded 2:3:2 height relationship. Branding appearing only on an interior page, missing wording or an incompatible emblem fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ]
+    },
+    {
+      "id": "presentation-earlier-work-reuse",
+      "requirementId": "R-presentation-earlier-work-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation visibly incorporates recognizable material from every listed source role. Rescaling, page excerpts and explanatory arrangements are allowed when the source remains identifiable. Merely naming a deliverable, substituting new work or omitting any source role fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "sourceSlots": [
+        "shooting-plan",
+        "camera-map",
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship",
+        "chronological-edit",
+        "opening-spread",
+        "closing-spread",
+        "social-crop"
+      ]
+    },
+    {
+      "id": "presentation-length-and-video-record",
+      "requirementId": "R-presentation-length-and-video-record",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The document contains at least eight pages and a readable representation of the video's six-shot sequence and timing. The representation proceeds through Arrival, Crossing and Held and accounts for a 10-second duration. A storyboard, timeline or equivalent is acceptable; a title-only video placeholder, missing timing or a conflicting sequence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ]
+    },
+    {
+      "id": "audience-configuration",
+      "requirementId": "R-audience-configuration",
+      "method": "visual",
+      "targetSlots": [
+        "camera-map",
+        "audience-relationship"
+      ],
+      "criteria": "The mapped seating configuration agrees with four rows of six seats and the supplied room layout. Visible spectators are adults seated in that configuration. The photograph may crop or occlude guests, so all 24 need not be individually countable there; a visibly conflicting row arrangement, standing crowd or child audience fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "photographic-concept-and-editorial-arc",
+      "requirementId": "R-photographic-concept-and-editorial-arc",
+      "method": "content",
+      "targetSlots": [
+        "shooting-plan"
+      ],
+      "criteria": "The photographic concept explains how framing, selected gestures and editorial use develop an initially tentative occupation of the room into energetic movement and then shared stillness. The six shot records support that progression. Different photographic treatments are acceptable within the fixed staging and light cues; a generic concept with no connection to the three-stage experience fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ]
+    },
+    {
+      "id": "set-performance-photograph-continuity",
+      "requirementId": "R-set-performance-photograph-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship"
+      ],
+      "criteria": "The photographs depict one continuous production with stable performer identities, costumes, bench, curtain and stage-to-audience geometry despite changes of viewpoint and framing. The photographic sequence follows the recorded Arrival, Crossing and Held actions and programmed light states, conveying movement and sustained stillness within the available-light capture requirement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "camera-map"
+      ]
+    },
+    {
+      "id": "set-published-feature-continuity",
+      "requirementId": "R-set-published-feature-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "closing-spread",
+        "social-crop"
+      ],
+      "criteria": "Published crops preserve the identities, costumes, gestures and spatial evidence of their delivered source photographs. The opening and closing spreads develop tentative occupation into rapid movement and shared stillness, while the social application retains the complete airborne figure from S03.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-02/03-performance-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "cast-reference-consistency",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "cast-and-costume.png"
+      ],
+      "subjectSlots": [
+        "arrival-wide",
+        "crossing-space",
+        "crossing-action",
+        "held-gesture",
+        "held-detail",
+        "audience-relationship",
+        "opening-spread",
+        "closing-spread",
+        "social-crop"
+      ],
+      "notes": "Their appearance follows the attached cast reference throughout."
+    },
+    {
+      "id": "company-emblem-consistency",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "fold-room-emblem.png"
+      ],
+      "subjectSlots": [
+        "opening-spread",
+        "social-crop"
+      ],
+      "notes": "Print \"STILL HERE\" and \"A room held in common\" on the opening feature spread, social image and presentation cover, with the existing FOLD ROOM emblem beside the company credit."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "shot-record-repetition",
+      "fromSlot": "shooting-plan",
+      "toSlots": [
+        "chronological-edit",
+        "presentation"
+      ],
+      "extract": [
+        "the ID of each shot S01–S06",
+        "the aspect ratio assigned to each shot",
+        "the cue code assigned to each shot"
+      ],
+      "notes": "The shooting plan contains exactly S01–S06 and records the three passage names and cue codes L01–L03 from 03-performance-records.en.md; the chronological photo edit and presentation repeat each shot's ID, aspect ratio and cue code from that plan."
+    }
+  ]
+}

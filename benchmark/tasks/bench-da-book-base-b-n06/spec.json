@@ -1,0 +1,718 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-book-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "publication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "front-cover",
+      "label": "Illustrated front cover",
+      "description": "One illustrated front cover bearing SMALL WILD NEIGHBOURS, A nature notebook for English towns and Ages 8–12.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "species-robin",
+      "label": "European robin overview, pages 4–5",
+      "description": "One European robin overview spread on pages 4–5 with Erithacus rubecula, three facts, linked feature labels and an observation question.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "species-daisy",
+      "label": "Common daisy overview, pages 8–9",
+      "description": "One Common daisy overview spread on pages 8–9 with Bellis perennis, three facts, linked feature labels and an observation question.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "species-ladybird",
+      "label": "7-spot ladybird overview, pages 12–13",
+      "description": "One 7-spot ladybird overview spread on pages 12–13 with Coccinella septempunctata, three facts, linked feature labels and an observation question.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "index",
+      "label": "Species index, pages 36–37",
+      "description": "One Find a neighbour index spread on pages 36–37 listing six common names, scientific names and fixed overview page pairs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "record-blank",
+      "label": "Blank observation record, pages 38–39",
+      "description": "One blank record spread on pages 38–39 with seven recording spaces and the Pause, Notice, Record, I noticed, I wonder and Not seen labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "book-title",
+      "kind": "text-verbatim",
+      "text": "SMALL WILD NEIGHBOURS",
+      "scope": {
+        "slots": [
+          "front-cover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "book-subtitle",
+      "kind": "text-verbatim",
+      "text": "A nature notebook for English towns",
+      "scope": {
+        "slots": [
+          "front-cover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "cover-age-label",
+      "kind": "text-verbatim",
+      "text": "Ages 8–12",
+      "scope": {
+        "slots": [
+          "front-cover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "method-pause",
+      "kind": "text-verbatim",
+      "text": "Pause",
+      "scope": {
+        "slots": [
+          "record-blank"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "method-notice",
+      "kind": "text-verbatim",
+      "text": "Notice",
+      "scope": {
+        "slots": [
+          "record-blank"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "method-record",
+      "kind": "text-verbatim",
+      "text": "Record",
+      "scope": {
+        "slots": [
+          "record-blank"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "index-heading",
+      "kind": "text-verbatim",
+      "text": "Find a neighbour",
+      "scope": {
+        "slots": [
+          "index"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SMALL WILD NEIGHBOURS",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "sample-book-system",
+      "slots": [
+        "front-cover",
+        "species-robin",
+        "species-daisy",
+        "species-ladybird",
+        "index",
+        "record-blank"
+      ],
+      "items": [
+        {
+          "item": "The cover and interior samples share an observational ink-and-wash illustration language and the same three layout colours.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The interior spreads use a coherent two-column page grid, protected outer and fold bands, and matching navigation conventions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Species colours and structures remain natural rather than being restricted to the layout palette.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "SMALL WILD NEIGHBOURS"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "front-cover",
+      "species-robin",
+      "species-daisy",
+      "species-ladybird",
+      "index",
+      "record-blank"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the illustrated publication's visual design, excluding manufacturing readiness, exact raster dimensions, photographic realism and any requirement that separate natural reference views share an individual, location or physical scale."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "species-robin",
+        "species-daisy",
+        "species-ladybird",
+        "index",
+        "record-blank"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-front-cover",
+      "requirementId": "R-format-front-cover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "front-cover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-species-robin",
+      "requirementId": "R-format-species-robin",
+      "method": "artifact-property",
+      "targetSlots": [
+        "species-robin"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-species-daisy",
+      "requirementId": "R-format-species-daisy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "species-daisy"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-species-ladybird",
+      "requirementId": "R-format-species-ladybird",
+      "method": "artifact-property",
+      "targetSlots": [
+        "species-ladybird"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-index",
+      "requirementId": "R-format-index",
+      "method": "artifact-property",
+      "targetSlots": [
+        "index"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-record-blank",
+      "requirementId": "R-format-record-blank",
+      "method": "artifact-property",
+      "targetSlots": [
+        "record-blank"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "observational-illustration",
+      "requirementId": "R-observational-illustration",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "species-robin",
+        "species-daisy",
+        "species-ladybird",
+        "index",
+        "record-blank"
+      ],
+      "criteria": "Where illustrations appear, they show independently composed natural subjects with visible ink marks and transparent colour washes. Simplified incidental texture and different poses or crops are acceptable; photographs substituted for commissioned illustrations, opaque rendering throughout, or invented diagnostic anatomy fail. An index or form need not contain an illustration.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "natural-species-features",
+      "requirementId": "R-natural-species-features",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "species-robin",
+        "species-daisy",
+        "species-ladybird",
+        "index",
+        "record-blank"
+      ],
+      "criteria": "Assess each depicted supplied species against its relevant features. Adult robin: orange-red face and breast, brown back, pale belly. Adult blue tit: blue cap and wings, white face with dark eye stripe, greenish back, yellow underparts and fine short beak; its overview shows it resting on a twig. Daisy: white rays and yellow centre on a slender stalk connected to a rooted low rosette of spoon-shaped leaves. Clover: an intact leaf normally has three leaflets joined at one point, beside a rounded white or pinkish head; pale markings may vary. Adult ladybird: red wing cases with three black spots on each side and one shared near the front, plus black-and-white thorax markings. Snail: mottled coiled shell attached to its body and two long upper tentacles; lower tentacles can be small or hidden. Detail crops may isolate the named feature, and natural occlusion is allowed; the ladybird overview must still communicate the seven-spot arrangement. Unrelated plants in reference backgrounds must not become daisy anatomy.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "editorial-setting-and-reader",
+      "requirementId": "R-editorial-setting-and-reader",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "species-robin",
+        "species-daisy",
+        "species-ladybird",
+        "index",
+        "record-blank"
+      ],
+      "criteria": "Reader-facing language and activities suit children aged 8–12 with adults, and depicted outings fit brief daytime observation in English town parks or gardens. Broader seasonal species facts and nighttime snail behaviour may be explained without changing the activity setting. Foreign reference-photo locations must not be presented as the book's outing locations, and the six subjects must remain possible encounters rather than guaranteed sightings.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "cover-tier-6",
+      "requirementId": "R-cover-tier-6",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover"
+      ],
+      "criteria": "The three identity phrases are visibly readable on the cover, which includes an original illustration of at least one supplied species. Its identifying colours and structures agree with the relevant supplied biological notes and photographs; the composition and pose may differ.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "overview-content-tier-6",
+      "requirementId": "R-overview-content-tier-6",
+      "method": "visual",
+      "targetSlots": [
+        "species-robin",
+        "species-daisy",
+        "species-ladybird"
+      ],
+      "criteria": "Require European robin / Erithacus rubecula on 4–5, Common daisy / Bellis perennis on 8–9, and 7-spot ladybird / Coccinella septempunctata on 12–13. Each spread shows both folios, three concise statements faithful to its supplied facts, at least two labels whose connectors reach the correct illustrated structures, and one question preserving its supplied prompt's meaning. Paraphrased facts and questions are allowed; incorrect names, biological meaning, connector destinations, or missing adjacent first-use definitions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "spread-grid",
+      "requirementId": "R-spread-grid",
+      "method": "visual",
+      "targetSlots": [
+        "species-robin",
+        "species-daisy",
+        "species-ladybird",
+        "index",
+        "record-blank"
+      ],
+      "criteria": "Each artwork reads as two facing portrait pages in the nominal 148:210 page proportion, with two text columns per page and a visible grid consistent with 66 mm columns, a 4 mm gap, 6 mm outer margins and a 6 mm protected band on each side of the central fold. Text, labels and diagnostic features stay outside protected bands; background washes may enter them. Judge relative geometry rather than exact raster dimensions. Both assigned folios appear on their corresponding pages: method 2–3, overviews 4–15 in species order, details 16–27 in the same order, bird comparison 28–29, flower comparison 30–31, places 32–33, questions 34–35, index 36–37, blank record 38–39 and worked record 40–41.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "layout-palette",
+      "requirementId": "R-layout-palette",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "species-robin",
+        "species-daisy",
+        "species-ladybird",
+        "index",
+        "record-blank"
+      ],
+      "criteria": "Typography, rules, panels and other layout elements use the specified dark green, pale green and rust system, with all three present on the tier-6 overview, index and blank-record spreads. Allow substrate white, transparency, antialiasing and small reproduction shifts. Natural organism colours are independent of the three layout inks. Substituting a different layout palette or recolouring diagnostic organism patches to match it fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "index-entries",
+      "requirementId": "R-index-entries",
+      "method": "visual",
+      "targetSlots": [
+        "index"
+      ],
+      "criteria": "Read the index as a complete navigation record headed Find a neighbour. It must pair European robin / Erithacus rubecula with 4–5; Blue tit / Cyanistes caeruleus with 6–7; Common daisy / Bellis perennis with 8–9; White clover / Trifolium repens with 10–11; 7-spot ladybird / Coccinella septempunctata with 12–13; and Garden snail / Cornu aspersum with 14–15. Both 36 and 37 are printed. Ordering and visual grouping may vary, but missing, duplicated or misassociated entries fail, including omission of species without delivered overviews in tier 6.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "blank-record-tier-6",
+      "requirementId": "R-blank-record-tier-6",
+      "method": "visual",
+      "targetSlots": [
+        "record-blank"
+      ],
+      "criteria": "The uncompleted form shows Pause, Notice and Record in reading order; exact labels I noticed, I wonder and Not seen; and usable spaces for place, date/time, weather, visible features, sketch, behaviour and uncertainty. Observations and questions have distinguishable entry areas. A short reminder directs quiet adult-accompanied observation from an accessible path or permitted garden, with plants rooted and animals left in position. Field arrangement and reminder wording may vary; prefilled practice values, missing fields or contradictory handling instructions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-sample-book-system",
+      "requirementId": "R-set-sample-book-system",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "species-robin",
+        "species-daisy",
+        "species-ladybird",
+        "index",
+        "record-blank"
+      ],
+      "criteria": "The cover and interior samples share an observational ink-and-wash illustration language and the same three layout colours. The interior spreads use a coherent two-column page grid, protected outer and fold bands, and matching navigation conventions. Species colours and structures remain natural rather than being restricted to the layout palette.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/03-species-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/04-practice-record.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/05-reference-credits.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-b-n06/06-page-plan.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "robin-appearance",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "ref-robin.jpg"
+      ],
+      "subjectSlots": [
+        "species-robin"
+      ],
+      "notes": "ref-robin.jpg is an identity reference for the adult robin's face, breast, back and belly."
+    },
+    {
+      "id": "daisy-appearance",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "ref-daisy.jpg",
+        "ref-daisy-leaves.jpg"
+      ],
+      "subjectSlots": [
+        "species-daisy"
+      ],
+      "notes": "ref-daisy-leaves.jpg is an identity reference for the daisy's rooted leaf rosette."
+    },
+    {
+      "id": "ladybird-appearance",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "ref-ladybird.jpg"
+      ],
+      "subjectSlots": [
+        "species-ladybird"
+      ],
+      "notes": "ref-ladybird.jpg is an identity reference for the adult beetle's form and spot pattern."
+    }
+  ]
+}

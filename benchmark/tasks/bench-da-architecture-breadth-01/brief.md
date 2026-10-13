@@ -1,0 +1,27 @@
+CORNER PAUSE | Public toilets and a sheltered street corner rest stop
+
+We operate neighbourhood public facilities and need a single-storey toilet building with a sheltered place to pause at the corner of Alder Street and Mill Lane. Print "CORNER PAUSE" and "Toilets and rest" at the public entrance. The site is 18000 mm east–west by 14000 mm north–south, with Alder Street to the south, Mill Lane to the west and a 3000 mm service lane to the east. Both public pavements are 3000 mm wide. All building walls and roof projections sit at least 2000 mm inside each boundary. The inner pavement edges and ground floor share datum ±0.000 m; maximum roof height is +4.200 m. Retain the north boundary's 1200 mm brick wall, the pavement pattern, both dropped kerbs and cabinet E1 in their recorded positions.
+
+The facility opens daily from 07:00 to 21:00. Provide two individual WC rooms, one Care toilet with a 3000 × 4000 mm clear interior and at least 2400 mm clear height, an Attendant room of at least 6 m2, a Cleaner room of at least 4 m2, and a covered Rest area of at least 18 m2 with six seats and two wheelchair spaces. The Care toilet has a ceiling hoist, adjustable adult changing bench, privacy curtain, WC and basin; its automatic door has a 950 mm clear opening. Public routes have 1500 mm clear width. Use exposed glulam beams beneath the rest canopy, facing-brick enclosure walls and aluminium external doors. Massing, entrance positions and room arrangement are open for design. At 14:00, one ordinary WC closes for cleaning while the other WC, Care toilet and Rest area remain available; the cleaning trolley travels from the east service entrance through the Cleaner room to the closed WC.
+
+Audience: neighbourhood residents, visitors and family carers are the users; our facilities and streets teams will use the work to choose the building layout and operating arrangement.
+
+Inputs (attached): 01-client-facts.en.md contains the site coordinates, room schedule, equipment envelopes and operating sequence. 02-delivery-catalog.en.md lists the six deliverables and their proportions, formats and stages. corner-site-baseline.png supplies the boundary, setbacks, pavement widths, dropped kerbs, utility positions and Care toilet dimensions. existing-corner-interface.png records the paving, kerbs, north wall and cabinet that give this corner its existing identity. everyday-street-reference.png supplies the pedestrian and caregiving context.
+
+Deliverables:
+1. One site and entrance plan, with boundaries, setbacks, retained features, utility connections, public approaches from both streets and the east service approach
+2. One dimensioned ground-floor plan, with the six room labels, net areas, fixtures, door clear openings, wheelchair spaces and structural supports
+3. One coordinated section and elevation sheet, with a section through the Care toilet and Rest area, south and west elevations, floor and roof levels, opening identifiers and the exposed canopy beam junction
+4. One Daily use sheet for 10:00, with separate ordinary-user and assisted-care routes, an enlarged Care toilet layout and its hoist, changing bench, curtain and transfer clearances
+5. One Cleaning sheet for 14:00, with the closed WC, the three continuing public destinations, trolley route, temporary closure position and an enlarged Cleaner room threshold and wash-down junction
+6. One eye-level perspective from the southwest pavement, with both public-facing elevations, entrance wording, retained street features and occupied sheltered seating
+
+Acceptance:
+- The site plan locates the 18000 × 14000 mm boundary, 2000 mm building setbacks, both 3000 mm pavements, both dropped kerbs, the north wall and W1, F1 and E1 at the coordinates in 01-client-facts.en.md; its public approaches connect both streets to the entrance and its service approach connects the east lane to the Cleaner room.
+- The ground-floor plan and Daily use sheet label WC 1, WC 2, Care toilet, Attendant room, Cleaner room and Rest area exactly as listed in the room schedule; the ground-floor plan dimensions the scheduled room sizes, 1500 mm public routes, six seats and two 900 × 1400 mm wheelchair spaces.
+- The ground-floor plan, section and Daily use enlargement agree on the Care toilet's 3000 × 4000 mm clear interior, minimum 2400 mm clear height and 950 mm automatic-door opening; the enlargement dimensions the scheduled equipment and transfer spaces and traces the hoist connection between WC and changing bench.
+- The Daily use and Cleaning sheets identify 10:00 and 14:00 respectively; the Cleaning sheet identifies one closed WC and continuous public routes to the other WC, Care toilet and Rest area, with its 600 × 900 mm trolley route passing through the Cleaner room and using the east service entrance.
+- The ground-floor plan and section and elevation sheet share support and opening identifiers; the section records ±0.000 m, the proposed roof level within +4.200 m and exposed glulam at the canopy junction. The perspective matches their roof outline, opening positions and material divisions and displays "CORNER PAUSE" and "Toilets and rest" at the entrance.
+- The site and ground-floor plans carry north arrows and metric scale bars; the section and elevation sheet and both enlarged layouts carry metric scale bars, with dimensions in mm and levels in m.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

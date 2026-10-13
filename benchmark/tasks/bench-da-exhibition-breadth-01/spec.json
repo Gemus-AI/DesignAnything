@@ -1,0 +1,568 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-exhibition-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "gallery-layout",
+      "label": "Final gallery layout and visitor route",
+      "description": "One final gallery plan with six specimen locations, fixture footprints, clear routes and two viewing positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "gallery-section",
+      "label": "Coordinated gallery elevation and section",
+      "description": "One elevation and section sheet with room, fixture and graphic heights and display lighting annotations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "open-hours-view",
+      "label": "C1 open-hours visitor view",
+      "description": "One open-hours view from C1 with the collection cases, four touch samples and entrance lettering.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "closed-hours-view",
+      "label": "C2 closed-hours visitor view",
+      "description": "One closed-hours view from C2 with enclosed collection specimens and two locked teaching-table covers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fixture-details",
+      "label": "Collection case and touch-table details",
+      "description": "One fixture detail sheet with specimen arrangements, seated reach, component inventory, joints and storage crates.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "interpretation-artwork",
+      "label": "Finished interpretation artwork and specimen catalogue",
+      "description": "One seven-page document containing entrance artwork, two process panels, two label sheets, a touch panel and a six-entry specimen catalogue.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "entrance-title",
+      "kind": "text-verbatim",
+      "text": "STONE STORIES",
+      "scope": {
+        "slots": [
+          "open-hours-view",
+          "interpretation-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "original-status",
+      "kind": "text-verbatim",
+      "text": "Collection original",
+      "scope": {
+        "slots": [
+          "interpretation-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "teaching-status",
+      "kind": "text-verbatim",
+      "text": "Teaching sample",
+      "scope": {
+        "slots": [
+          "interpretation-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "STONE STORIES",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-gallery-installation",
+      "slots": [
+        "gallery-section",
+        "open-hours-view",
+        "closed-hours-view",
+        "fixture-details"
+      ],
+      "sourceSlots": [
+        "gallery-layout"
+      ],
+      "items": [
+        {
+          "item": "The section, visitor views and fixture details describe one installation whose fixed room elements, four fixture footprints and specimen allocations agree with the layout plan wherever represented.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Fixture proportions, materials, specimen scale and graphic placement agree across the drawings and views, allowing schematic drawing conventions, perspective occlusion and the specified open-hours versus closed-hours changes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The coordinated installation preserves two separately enclosed collection originals and two teaching tables grouped as Granite with Basalt and Sandstone with Marble, while retaining the specified circulation and seated access.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "STONE STORIES",
+    "carryThrough": {
+      "none": "The document contains prescribed interpretation artwork and catalogue records, but the letter does not require later files to repeat facts established by that document."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "gallery-layout",
+      "gallery-section",
+      "open-hours-view",
+      "closed-hours-view",
+      "fixture-details"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge the natural specimens' aesthetic appeal or demand photorealism in technical drawings, and must leave exact text, dimensions, inventory and protection compliance to the dedicated checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "gallery-layout",
+        "gallery-section",
+        "open-hours-view",
+        "closed-hours-view",
+        "fixture-details"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-gallery-layout",
+      "requirementId": "R-format-gallery-layout",
+      "method": "artifact-property",
+      "targetSlots": [
+        "gallery-layout"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-gallery-section",
+      "requirementId": "R-format-gallery-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "gallery-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-open-hours-view",
+      "requirementId": "R-format-open-hours-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "open-hours-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-closed-hours-view",
+      "requirementId": "R-format-closed-hours-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closed-hours-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fixture-details",
+      "requirementId": "R-format-fixture-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fixture-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-interpretation-artwork",
+      "requirementId": "R-format-interpretation-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interpretation-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "fixed-room-and-access",
+      "requirementId": "R-fixed-room-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "gallery-layout",
+        "gallery-section"
+      ],
+      "criteria": "Read dimensions and drawing geometry together. The room must remain 9000 mm east–west by 6000 mm north–south with a 3200 mm clear height. Using the southwest internal corner as origin, the south entrance spans x=0–1500 mm and the exit x=7500–9000 mm; both openings reach z=2400 mm. The entire south strip y=0–1500 mm remains unobstructed. Displays stay within x=0–9000 mm, y=1800–6000 mm and outside the bench footprint at x=0–1500 mm, y=1800–2300 mm; the existing bench has a 450 mm seat height. No windows or internal columns are introduced. Secondary circulation provides at least 1200 mm clear width, and each touch table has an unobstructed 1500 mm diameter turning area. Dimensions may be distributed across the two sheets, but conflicting drawings, relocated fixed elements or clearance annotations contradicted by footprints fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "viewpoints-and-operating-states",
+      "requirementId": "R-viewpoints-and-operating-states",
+      "method": "visual",
+      "targetSlots": [
+        "open-hours-view",
+        "closed-hours-view"
+      ],
+      "criteria": "Compare both perspectives with the plan, allowing perspective distortion and natural occlusion but no changed architecture or fixture placement. C1 uses the southwest eye position (750, 750, 1500) mm looking toward (5000, 3800, 1000) mm; C2 uses the southeast eye position (8250, 750, 1500) mm looking toward (4000, 3800, 1000) mm. Judge camera placement from the visible spatial relationships rather than requiring coordinate text in the rendered views. Both views show two originals inside transparent locked case hoods. C1 makes all four teaching samples visibly available on two uncovered tables; C2 shows both teaching tables covered with visible evidence of keyed locking and dimmed room lighting. Finishes remain matte warm-white walls and ceiling, continuous light-grey terrazzo flooring and a pale birch bench. Different visitor arrangements and lighting appropriate to the operating state are allowed; missing required specimens, an incorrect viewpoint, opaque original cases or changed fixtures fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "gallery-layout"
+      ]
+    },
+    {
+      "id": "fixture-dimensions-and-accessibility",
+      "requirementId": "R-fixture-dimensions-and-accessibility",
+      "method": "visual",
+      "targetSlots": [
+        "fixture-details",
+        "gallery-section"
+      ],
+      "criteria": "The coordinated drawings must establish four display decks at 750 mm above floor, two acrylic case hoods rising 300 mm above their decks and specimen-label centres at 1000 mm above floor. Every teaching sample must be within 300 mm of an accessible visitor edge. Each touch table provides seated knee space at least 760 mm wide, 480 mm deep and 700 mm high; framing and trays must not contradict that space. Process graphics have upper edges no higher than 2200 mm. The detail sheet must account for four bases, two hoods, two lockable covers and four storage crates, and show a credible dismantled-component envelope no larger than 1200 × 600 × 300 mm. Dimensioned details, sections and schedules may share the evidence; a stated dimension contradicted by the assembly fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "specimen-identification-and-allocation",
+      "requirementId": "R-specimen-identification-and-allocation",
+      "method": "visual",
+      "targetSlots": [
+        "gallery-layout",
+        "fixture-details"
+      ],
+      "criteria": "Both sheets must identify all six objects without duplication or reassignment: M-01 Quartz, M-02 Calcite, T-01 Granite, T-02 Basalt, T-03 Sandstone and T-04 Marble. M-01 and M-02 each occupy their own enclosed case in Observe. T-01 and T-02 share touch table A in Compare; T-03 and T-04 share touch table B in Form. Legends and leader lines are acceptable if each location is unambiguous. Missing names or IDs, swapped pairings, combined originals or incorrectly grouped teaching samples fail. The document's corresponding records are assessed by the interpretation-document check.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "interpretation-document",
+      "requirementId": "R-interpretation-document",
+      "method": "content",
+      "targetSlots": [
+        "interpretation-artwork"
+      ],
+      "criteria": "Require seven finished pages: one entrance panel, two process panels, two specimen-label sheets, one touch-instruction panel and one catalogue page containing six entries. Across the label sheets and catalogue, pair M-01 with Quartz and Collection original; M-02 with Calcite and Collection original; T-01 with Granite, T-02 with Basalt, T-03 with Sandstone and T-04 with Marble, each with Teaching sample. Status must be beside the corresponding ID and name, not merely present in a general legend. The six label bodies must reproduce: M-01, 'Quartz is a mineral made of silicon and oxygen. Look for six-sided crystals ending in points.'; M-02, 'Calcite is a calcium carbonate mineral. Look for flat faces that meet at sloping angles.'; T-01, 'Granite forms when magma cools slowly underground. Its visible, interlocking mineral grains grew as the melt cooled.'; T-02, 'Basalt forms when lava cools rapidly at or near the surface. Most of its mineral grains are too small to distinguish here.'; T-03, 'Sandstone forms from sand that is buried and cemented together. Look for grains and the thin layers across this sample.'; T-04, 'Marble forms when limestone changes under heat and pressure. Its calcite recrystallises while the rock remains solid.'. P-01 must use headline 'Cooling makes igneous rocks' and overview 'Molten rock cools and crystallises into igneous rock. Slow cooling underground gives crystals time to grow, as in granite. Rapid cooling at or near the surface produces much smaller crystals, as in basalt. Compare the visible grains in the two teaching samples.'. Its diagram labels are Magma; Slow cooling underground; Granite; Lava; Rapid cooling near the surface; Basalt, with specimen links T-01 Granite and T-02 Basalt. P-02 must use headline 'Burial and heat change rocks' and overview 'Sand accumulates in layers. Burial and cementation turn it into sandstone. A different route begins with limestone: heat and pressure cause its calcite to recrystallise into marble while it remains solid. These samples show two pathways through which existing material becomes rock or changes into another rock.'. Its diagram labels are Sand; Burial and cementation; Sandstone; Limestone; Heat and pressure; Marble, with specimen links T-03 Sandstone and T-04 Marble. Both process headlines must contain at most eight words and each overview 40–60 words. Process diagrams must preserve the correct pathways, including limestone remaining solid during metamorphism. The entrance panel must print 'STONE STORIES'. The touch panel heading must be 'Look closely. Touch the teaching samples.' and its instructions must pair T-01 Granite with 'Feel the coarse grains with your fingertips.', T-02 Basalt with 'Compare its finer surface with the granite.', T-03 Sandstone with 'Trace a layer across the sample.', and T-04 Marble with 'Feel the crystalline texture on the unpolished face.'. Include 'Rest each sample in its tray as you explore.'. Verify 24 pt specimen-label body text and 50 pt process-overview text from document text properties or an explicit artwork specification. Line wrapping, page composition and illustration style may vary; missing pages, substituted wording, incorrect record associations, wrong type sizes or missing process links fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ]
+    },
+    {
+      "id": "installed-printed-wording",
+      "requirementId": "R-installed-printed-wording",
+      "method": "visual",
+      "targetSlots": [
+        "open-hours-view"
+      ],
+      "criteria": "The entrance lettering must visibly read 'STONE STORIES'. Each of the two touch tables must independently display the complete wording 'Look closely. Touch the teaching samples.', including both sentences. Allow line breaks and differences in physical sign placement, but require readable installed text rather than a detached caption or one shared sign serving both tables. Missing words, changed spelling or punctuation, or wording on only one table fails. Corresponding artwork, status assignments and point sizes are assessed in the interpretation-document check.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "visitor-route-and-interpretive-medium",
+      "requirementId": "R-visitor-route-and-interpretive-medium",
+      "method": "visual",
+      "targetSlots": [
+        "gallery-layout",
+        "open-hours-view"
+      ],
+      "criteria": "The plan must make the entrance-to-exit progression Observe → Compare → Form legible, with mineral observation at the two original cases, cooling and grain-size comparison at the Granite/Basalt table, and sedimentary and metamorphic processes at the Sandstone/Marble table. It must show fixture footprints, the bench, route widths and C1/C2 viewing positions. The plan and visitor view together must support a family and school-group visit using six physical specimens and printed interpretation. Assess whether the circulation and stopping areas can accommodate the stated 18 simultaneous visitors and a typical 12-minute visit without blocking the protected aisle or required access spaces; do not require exactly 18 drawn figures or printed timing labels. Route shape and graphic treatment may vary. A reversed or missing stage, contradictory specimen grouping, implausible crowding, or replacement of physical specimens and printed interpretation with digital media fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fabrication-inventory-and-dismantling",
+      "requirementId": "R-fabrication-inventory-and-dismantling",
+      "method": "visual",
+      "targetSlots": [
+        "fixture-details"
+      ],
+      "criteria": "Require readable assembly details and component accounting for four 1200 × 600 × 750 mm bases with aluminium frames and birch plywood tops. Totals must be 16 aluminium legs, 16 aluminium horizontal rails, 32 aluminium corner brackets, 64 M6 socket-head frame bolts, four 1200 × 600 × 30 mm birch plywood tops with threaded inserts and 16 M6 socket-head top-fixing bolts. Each base therefore uses four legs, four rails, eight brackets, 16 frame bolts and four top-fixing bolts; the specified tool is a 5 mm hex key. Include two removable clear-acrylic 1200 × 600 × 300 mm hoods with keyed retaining locks, two inert-polyethylene-foam supports in shallow trays, four cork-lined birch plywood teaching trays and two 1200 × 600 × 200 mm birch plywood covers with keyed retaining locks. Show four reusable plywood storage crates with screw-fastened lids and internal dimensions 1300 × 700 × 850 mm, allocating one dismantled fixture to each. A shared detail for identical components is acceptable if counts and allocations remain explicit. Missing hardware, substituted principal materials, non-removable hoods, permanently joined frames or an assembly that cannot fit the stated packing arrangement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "specimen-appearance-and-protection",
+      "requirementId": "R-specimen-appearance-and-protection",
+      "method": "visual",
+      "targetSlots": [
+        "fixture-details",
+        "gallery-section",
+        "open-hours-view",
+        "closed-hours-view"
+      ],
+      "criteria": "Judge specimen appearance where visible and dimensions from annotated placement details, allowing schematic simplification in technical drawings. M-01 Quartz is a clear-to-milky cluster of six-sided pointed crystals on pale matrix, 180 × 140 × 160 mm; M-02 Calcite is a honey-coloured cluster of sloping rhombohedral crystals, 160 × 120 × 110 mm. T-01 Granite has coarse pink, white, grey and black interlocking grains, 200 × 150 × 90 mm; T-02 Basalt is dark grey and fine-grained with a few small pores, 180 × 140 × 80 mm; T-03 Sandstone has cemented tan grains and thin horizontal bedding, 210 × 150 × 100 mm; T-04 Marble is white crystalline rock with faint grey veins and a granular unpolished face, 190 × 140 × 90 mm. Teaching samples have rounded handling edges. The original specimens require individual enclosure, inert foam support and keyed curator access. Teaching specimens remain seated in fixed cork-lined trays during hand contact; their absence from view beneath closed-hours covers is expected. The elevation and section sheet must annotate collection illumination at no more than 150 lux, teaching-sample illumination at a 200 lux target and printed-interpretation illumination at a 200 lux target. Do not infer numerical lux compliance from rendered brightness alone. Wrong specimen morphology or scale, exposed originals, unsupported originals, loose teaching trays or absent or contradictory lighting annotations fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-coordinated-gallery-installation",
+      "requirementId": "R-set-coordinated-gallery-installation",
+      "method": "visual",
+      "targetSlots": [
+        "gallery-section",
+        "open-hours-view",
+        "closed-hours-view",
+        "fixture-details"
+      ],
+      "criteria": "The section, visitor views and fixture details describe one installation whose fixed room elements, four fixture footprints and specimen allocations agree with the layout plan wherever represented. Fixture proportions, materials, specimen scale and graphic placement agree across the drawings and views, allowing schematic drawing conventions, perspective occlusion and the specified open-hours versus closed-hours changes. The coordinated installation preserves two separately enclosed collection originals and two teaching tables grouped as Granite with Basalt and Sandstone with Marble, while retaining the specified circulation and seated access.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-01/03-specimen-register.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "gallery-layout"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "gallery-space-consistency",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "gallery-layout",
+      "subjectSlots": [
+        "open-hours-view",
+        "closed-hours-view"
+      ],
+      "notes": "The C1 open-hours view and C2 closed-hours view match the layout plan's walls, openings, bench and four fixtures."
+    }
+  ]
+}

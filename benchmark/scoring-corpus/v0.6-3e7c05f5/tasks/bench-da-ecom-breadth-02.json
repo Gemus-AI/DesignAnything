@@ -1,0 +1,1204 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ecom-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "information-hierarchy",
+      "label": "Selling points and information hierarchy",
+      "description": "A one-page hierarchy sheet covering course facts, fixed wording, colour, priorities, carrier assignments and minimum type sizes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "shot-image-list",
+      "label": "Shot and image list",
+      "description": "A one-page image list recording each final image's subject, role, proportion, required copy and source attachment.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "solo-hero",
+      "label": "FC-S Solo package hero",
+      "description": "A square FC-S Solo hero with SGD 68, one adult, 120 minutes and one retained piece per person.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pair-hero",
+      "label": "FC-P Pair package hero",
+      "description": "A square FC-P Pair hero with SGD 128, two adults, 120 minutes and one retained piece per person.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "vertical-value-cover",
+      "label": "Course value image and video cover",
+      "description": "A vertical course value image and video cover with both prices, duration and the making-to-collection sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "experience-steps",
+      "label": "Five-step class experience",
+      "description": "A five-step experience graphic with the named activities and durations totalling 120 minutes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "studio-scene",
+      "label": "Six-station studio scene",
+      "description": "A studio scene showing six wheel stations, class tools and preparation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "package-comparison",
+      "label": "Package contents and price comparison",
+      "description": "A Solo and Pair comparison image with package codes, prices, participant counts, inclusions and additional charges.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "collection-guide",
+      "label": "Finishing and collection graphic",
+      "description": "A collection graphic covering studio finishing, readiness timing, the email, collection window and delivery price.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "purchase-notes",
+      "label": "Purchase and cancellation notes",
+      "description": "A purchase-notes image with the age threshold, capacity, cancellation windows, refunds and enquiry sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "desktop-product-page",
+      "label": "Desktop course product page",
+      "description": "A static desktop product-page layout combining the course visuals, package information and enquiry action.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "mobile-product-page",
+      "label": "Mobile course product page",
+      "description": "A static mobile product-page layout combining the course visuals, package information and enquiry action.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "course-video",
+      "label": "Ten-second course video",
+      "description": "A 10-second vertical course video with experience steps and a closing frame carrying both prices, duration and enquiry action.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "purchase-presentation",
+      "label": "Course purchase presentation",
+      "description": "A presentation of at least eight pages reusing the process sheets, ten final images and video closing frame with a course-fact location map.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "studio-name",
+      "kind": "text-verbatim",
+      "text": "SOFT EARTH STUDIO",
+      "scope": {
+        "slots": [
+          "solo-hero",
+          "pair-hero",
+          "vertical-value-cover",
+          "desktop-product-page",
+          "mobile-product-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "course-name",
+      "kind": "text-verbatim",
+      "text": "First Clay",
+      "scope": {
+        "slots": [
+          "solo-hero",
+          "pair-hero",
+          "vertical-value-cover",
+          "desktop-product-page",
+          "mobile-product-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "selling-line",
+      "kind": "text-verbatim",
+      "text": "Your first turn at the wheel",
+      "scope": {
+        "slots": [
+          "solo-hero",
+          "pair-hero",
+          "vertical-value-cover",
+          "desktop-product-page",
+          "mobile-product-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "example-caption",
+      "kind": "text-verbatim",
+      "text": "Example outcome",
+      "scope": {
+        "slots": [
+          "solo-hero",
+          "pair-hero",
+          "vertical-value-cover",
+          "experience-steps",
+          "studio-scene",
+          "package-comparison",
+          "collection-guide",
+          "purchase-notes",
+          "desktop-product-page",
+          "mobile-product-page"
+        ],
+        "select": "representative"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "equipment-caption",
+      "kind": "text-verbatim",
+      "text": "Tools for use in class",
+      "scope": {
+        "slots": [
+          "studio-scene"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "enquiry-action",
+      "kind": "text-verbatim",
+      "text": "Enquire about a session",
+      "scope": {
+        "slots": [
+          "purchase-notes",
+          "desktop-product-page",
+          "mobile-product-page",
+          "course-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SOFT EARTH STUDIO",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "planned-course-purchase-system",
+      "slots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-image-list"
+      ],
+      "items": [
+        {
+          "item": "The ten final images preserve the written plans' subject assignments, carrier purposes and information priorities, allowing composition changes that retain those decisions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The final image family uses the existing warm clay palette led by #825C46, allowing photographic lighting and supporting colours.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Repeated package, duration, inclusion, collection and enquiry information agrees across the finished images and the hierarchy sheet, with each carrier containing the facts assigned to it.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "SOFT EARTH STUDIO"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "solo-hero",
+      "pair-hero",
+      "vertical-value-cover",
+      "experience-steps",
+      "studio-scene",
+      "package-comparison",
+      "collection-guide",
+      "purchase-notes",
+      "desktop-product-page",
+      "mobile-product-page"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge live website functionality or physical pottery craftsmanship beyond the required faithful depiction of the supplied example bowl."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "information-hierarchy",
+        "shot-image-list",
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page",
+        "purchase-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-information-hierarchy",
+      "requirementId": "R-format-information-hierarchy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-shot-image-list",
+      "requirementId": "R-format-shot-image-list",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shot-image-list"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-solo-hero",
+      "requirementId": "R-format-solo-hero",
+      "method": "artifact-property",
+      "targetSlots": [
+        "solo-hero"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pair-hero",
+      "requirementId": "R-format-pair-hero",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pair-hero"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-vertical-value-cover",
+      "requirementId": "R-format-vertical-value-cover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "vertical-value-cover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-experience-steps",
+      "requirementId": "R-format-experience-steps",
+      "method": "artifact-property",
+      "targetSlots": [
+        "experience-steps"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-studio-scene",
+      "requirementId": "R-format-studio-scene",
+      "method": "artifact-property",
+      "targetSlots": [
+        "studio-scene"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-package-comparison",
+      "requirementId": "R-format-package-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "package-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-collection-guide",
+      "requirementId": "R-format-collection-guide",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-guide"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-purchase-notes",
+      "requirementId": "R-format-purchase-notes",
+      "method": "artifact-property",
+      "targetSlots": [
+        "purchase-notes"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-desktop-product-page",
+      "requirementId": "R-format-desktop-product-page",
+      "method": "artifact-property",
+      "targetSlots": [
+        "desktop-product-page"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-mobile-product-page",
+      "requirementId": "R-format-mobile-product-page",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mobile-product-page"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-course-video",
+      "requirementId": "R-format-course-video",
+      "method": "manual",
+      "targetSlots": [
+        "course-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-purchase-presentation",
+      "requirementId": "R-format-purchase-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "purchase-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "hierarchy-sheet-content",
+      "requirementId": "R-hierarchy-sheet-content",
+      "method": "content",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "The document occupies one page and supplies a usable content plan: FC-S Solo costs SGD 68 for one adult; FC-P Pair costs SGD 128 for two adults attending together; duration is 120 minutes. It records the per-person contents, finishing, SGD 18 additional-piece charge, SGD 12 delivery charge per order, prescribed wording and primary colour. It explicitly ranks information, assigns content to carriers and gives minimum type sizes. Organization may vary; missing categories, incorrect facts or unspecified minimum sizes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "image-list-content",
+      "requirementId": "R-image-list-content",
+      "method": "content",
+      "targetSlots": [
+        "shot-image-list"
+      ],
+      "criteria": "A single page accounts for all ten final image roles individually and states each subject, communication purpose, proportion, required copy and source attachment. Role names may be expressed through unambiguous equivalents. Missing image assignments, vague source references or contradictory copy fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "planned-content-carried-into-images",
+      "requirementId": "R-planned-content-carried-into-images",
+      "method": "visual",
+      "targetSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "Compare the finished images with the two written plans. Each image fulfils its assigned subject and role. Each hero repeats its own planned price and 120-minute duration; the cover and both pages repeat both prices and that duration. The five purchase carriers visibly use the planned #825C46 colour. Composition may develop from the plan, but changed subjects, contradictory facts or a replaced primary colour fail; printing the hex code on customer-facing artwork is not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-image-list"
+      ]
+    },
+    {
+      "id": "purchase-copy-and-carrier-geometry",
+      "requirementId": "R-purchase-copy-and-carrier-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "Each carrier visibly includes the three required identity phrases. Both heroes and the cover keep essential content within a 6% margin, with image content in x 6–94%, y 6–62% and the text panel in x 6–94%, y 66–94%. Their main subject spans approximately 70–85% of image-panel width, and image captions sit along the bottom inside that panel. Both pages retain the 6% outer margin while their internal panels may vary. Judge normalized placement rather than exact pixels; material encroachment or incompatible panel placement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "package-hero-records",
+      "requirementId": "R-package-hero-records",
+      "method": "visual",
+      "targetSlots": [
+        "solo-hero",
+        "pair-hero"
+      ],
+      "criteria": "The square Solo image identifies FC-S Solo, SGD 68, one adult, 120 minutes and one retained piece for that person. The square Pair image identifies FC-P Pair, SGD 128, two adults, 120 minutes and one retained piece for each person. Different compositions are allowed. Swapped packages, an omitted record or implying that the Pair package includes only one retained piece in total fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "vertical-value-sequence",
+      "requirementId": "R-vertical-value-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "vertical-value-cover"
+      ],
+      "criteria": "The vertical cover pairs Solo with SGD 68 and Pair with SGD 128, gives a 120-minute class duration and communicates that making happens during class while collection follows studio firing later. A timeline, captions or another clear sequence may establish the distinction. A same-day take-home implication, missing price or absent duration fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "five-step-session",
+      "requirementId": "R-five-step-session",
+      "method": "visual",
+      "targetSlots": [
+        "experience-steps"
+      ],
+      "criteria": "Five ordered, readable steps identify welcome and preparation for 15 minutes, demonstration for 20, wheel practice for 60, choosing and marking a piece for 15, and cleanup for 10. These durations must sum to 120 minutes. Capitalization and graphic arrangement may vary; missing, reordered, merged or incorrectly timed activities fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "studio-stations-and-preparation",
+      "requirementId": "R-studio-stations-and-preparation",
+      "method": "visual",
+      "targetSlots": [
+        "studio-scene"
+      ],
+      "criteria": "The scene shows six distinct wheel stations that can be counted, class tools and visible preparation for the session. Perspective and staging may vary. Fewer or more stations, ambiguous duplication, missing equipment or a scene without class preparation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "package-comparison-and-page-facts",
+      "requirementId": "R-package-comparison-and-page-facts",
+      "method": "visual",
+      "targetSlots": [
+        "package-comparison",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "Each image clearly distinguishes FC-S Solo, one adult, SGD 68 from FC-P Pair, two adults in the same session, SGD 128. It states 500 g of clay and one retained piece per person, SGD 18 for each additional retained piece and SGD 12 delivery per order. Tables, cards or prose are acceptable. Missing facts, switched prices or ambiguity about per-person, per-piece or per-order quantities fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "complete-per-person-inclusions",
+      "requirementId": "R-complete-per-person-inclusions",
+      "method": "visual",
+      "targetSlots": [
+        "package-comparison",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "The package information in each carrier makes the full per-person entitlement readable: 500 g of clay, one wheel station, shared instruction, use of tools and an apron, and one retained piece finished by studio trimming, clear glazing and two firings. Shared inclusions may be listed once if clearly applicable to both packages. Omitted services, private-instruction claims or presenting equipment as take-home property fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "bowl-and-tool-depiction-labels",
+      "requirementId": "R-bowl-and-tool-depiction-labels",
+      "method": "visual",
+      "targetSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "Whenever the example bowl appears, it retains the recognizable softly irregular rounded form, open circular mouth, ivory clear-glazed body and small exposed terracotta foot, with the readable caption Example outcome. Every depicted class-tool group has the readable caption Tools for use in class. Angle, scale and lighting may vary without changing identity; an absent object creates no caption obligation. Any unlabeled depiction or materially changed bowl fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "equipment-reference-appearance",
+      "requirementId": "R-equipment-reference-appearance",
+      "method": "visual",
+      "targetSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "Depicted reference equipment remains identifiable as the specified wooden rib, loop trimming tool, wire cutter with two wooden handles, round yellow sponge and plain beige apron. Individual shots may show a subset, and multiple stations may repeat equipment; a complete depiction of the supplied shared group must preserve its listed composition. Different viewpoints are allowed, but incompatible materials, colours or tool identities fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "finishing-readiness-and-collection",
+      "requirementId": "R-finishing-readiness-and-collection",
+      "method": "visual",
+      "targetSlots": [
+        "collection-guide",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "Each carrier distinguishes the class from subsequent studio trimming, clear glazing and two firings. It gives readiness as 21–28 calendar days after class, a readiness email, collection at the studio and a 30-day collection window measured from that email. Optional delivery is separately charged at SGD 12 per order. Wording and sequence graphics may vary; missing stages, a wrong time origin or implying immediate collection or included delivery fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "eligibility-refunds-and-enquiry",
+      "requirementId": "R-eligibility-refunds-and-enquiry",
+      "method": "visual",
+      "targetSlots": [
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "Each image states minimum age 18, maximum class capacity 6, a full refund for cancellation received at least 72 hours before the session, and a 0% refund for cancellation within 72 hours or a missed session. It communicates enquiry followed by staff replying with available sessions and a payment link; both pages visibly use Enquire about a session as the action. Exactly 72 hours belongs to the full-refund category. Equivalent explanatory wording is allowed, but missing conditions, altered boundaries or a conflicting booking sequence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "product-pages-assemble-earlier-images",
+      "requirementId": "R-product-pages-assemble-earlier-images",
+      "method": "visual",
+      "targetSlots": [
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "The desktop and mobile compositions visibly incorporate recognizable earlier course images and organize the package choice and enquiry action into purchase-page layouts. Cropping, scaling and responsive rearrangement are allowed when required content stays readable. Replacing the earlier visual work with unrelated imagery, omitting a usable package distinction or failing to adapt the layout to its carrier fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes"
+      ]
+    },
+    {
+      "id": "course-video-complete-review",
+      "requirementId": "R-course-video-complete-review",
+      "method": "manual",
+      "targetSlots": [
+        "course-video"
+      ],
+      "criteria": "Review the entire vertical video and verify a 10-second runtime. It visibly reuses the five experience steps in their intended sequence without contradicting their durations. The closing frame identifies Solo at SGD 68 and Pair at SGD 128, gives 120 minutes and displays Enquire about a session legibly. Inspect every bowl or class-tool appearance for the required identity and captions: the rounded ivory clear-glazed bowl with terracotta foot carries Example outcome, and class tools carry Tools for use in class. Motion and transitions may vary; missing steps, an incorrect ending, wrong runtime or any uncaptained relevant frame fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "experience-steps",
+        "vertical-value-cover"
+      ]
+    },
+    {
+      "id": "presentation-reuses-process-and-final-images",
+      "requirementId": "R-presentation-reuses-process-and-final-images",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "purchase-presentation"
+      ],
+      "criteria": "The presentation visibly reproduces recognizable material from both process sheets and every one of the ten final images. Scaling, page placement and readable crops may vary, but names, descriptions or placeholders alone do not establish reuse. Any source role absent from the presentation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-image-list",
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page"
+      ]
+    },
+    {
+      "id": "presentation-length-closing-frame-and-fact-map",
+      "requirementId": "R-presentation-length-closing-frame-and-fact-map",
+      "method": "content",
+      "targetSlots": [
+        "purchase-presentation"
+      ],
+      "criteria": "The document contains at least eight pages, includes the actual recognizable video closing frame and provides a readable map linking the supplied course facts to named finished deliverables. The map covers package records, session steps, eligibility and capacity, inclusions, finishing, additional charges, collection timing and email, cancellation terms and the enquiry sequence. Map organization may vary; a generic claim of coverage, missing fact categories or a closing-frame substitute that does not match the video fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-image-list"
+      ]
+    },
+    {
+      "id": "presentation-planned-facts",
+      "requirementId": "R-presentation-planned-facts",
+      "method": "content",
+      "targetSlots": [
+        "purchase-presentation"
+      ],
+      "criteria": "The presentation repeats Solo at SGD 68, Pair at SGD 128 and the 120-minute session, and retains #825C46 through the documented identity and reproduced artwork. Its named subjects and visual assignments agree with the image list. These facts may appear in reused materials rather than separate prose; omissions, inconsistent package mappings or contradictions between the plan and presentation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-image-list"
+      ]
+    },
+    {
+      "id": "presentation-object-captions",
+      "requirementId": "R-presentation-object-captions",
+      "method": "content",
+      "targetSlots": [
+        "purchase-presentation"
+      ],
+      "criteria": "Inspect every presentation page containing the bowl or class tools, including embedded images and the video closing frame. Bowl appearances preserve the rounded ivory clear-glazed body and terracotta foot and carry a readable Example outcome caption; class-tool depictions carry Tools for use in class. Captions retained inside reproduced artwork count if readable. A label elsewhere in the deck does not cover an unlabeled depiction; any such omission or altered bowl identity fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-planned-course-purchase-system",
+      "requirementId": "R-set-planned-course-purchase-system",
+      "method": "visual",
+      "targetSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "criteria": "The ten final images preserve the written plans' subject assignments, carrier purposes and information priorities, allowing composition changes that retain those decisions. The final image family uses the existing warm clay palette led by #825C46, allowing photographic lighting and supporting colours. Repeated package, duration, inclusion, collection and enquiry information agrees across the finished images and the hierarchy sheet, with each carrier containing the facts assigned to it.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-image-list"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "reference-bowl-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "studio-example-bowl.png"
+      ],
+      "subjectSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page"
+      ],
+      "notes": "Every final image, video frame and presentation page featuring the example bowl preserves its rounded profile, ivory clear-glazed surface and terracotta foot and carries Example outcome; every class-tool depiction carries Tools for use in class."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "hierarchy-to-purchase-materials",
+      "fromSlot": "information-hierarchy",
+      "toSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "desktop-product-page",
+        "mobile-product-page",
+        "purchase-presentation"
+      ],
+      "extract": [
+        "package codes and their corresponding prices",
+        "120-minute session duration",
+        "primary colour #825C46"
+      ],
+      "notes": "The hierarchy sheet and image list establish the content before the final images; both package heroes, the vertical cover, both product-page layouts and presentation repeat their package prices, 120-minute duration and #825C46, with the image list's subject assignments preserved."
+    },
+    {
+      "id": "image-list-to-final-subjects",
+      "fromSlot": "shot-image-list",
+      "toSlots": [
+        "solo-hero",
+        "pair-hero",
+        "vertical-value-cover",
+        "experience-steps",
+        "studio-scene",
+        "package-comparison",
+        "collection-guide",
+        "purchase-notes",
+        "desktop-product-page",
+        "mobile-product-page",
+        "purchase-presentation"
+      ],
+      "extract": [
+        "each final image's assigned subject and role",
+        "each final image's required copy and source attachment"
+      ],
+      "notes": "The hierarchy sheet and image list establish the content before the final images; both package heroes, the vertical cover, both product-page layouts and presentation repeat their package prices, 120-minute duration and #825C46, with the image list's subject assignments preserved."
+    }
+  ]
+}

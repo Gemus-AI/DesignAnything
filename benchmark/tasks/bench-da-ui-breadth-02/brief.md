@@ -1,0 +1,28 @@
+CUTLINE | A desktop workspace for arranging podcast audio
+
+We are building a desktop editing workspace for independent podcast creators. Use "CUTLINE" as the product name and SMALL SIGNALS as the project. The designer works from the four source records and their waveform image: H01 / Host introduction, 10.000 s; R01 / Street response, 10.000 s; J01 / Three-note jingle, 2.000 s; and P01 / Two-hit percussion, 1.000 s. The central relationship is one source recording to independently editable timeline instances, followed by an export tied to a particular project revision.
+
+Build the specification first, then develop the screens from it. The desktop window has a minimum logical size of 1440 × 900 units, landscape. Use background #182128 and accent #82D9C6. Numeric edit fields use seconds to three decimal places. The three tracks are V / Voice at 0 dB, M / Music at -12 dB and P / Percussion at -18 dB; the export range stays [0.000, 24.000) s through r01–r05. Label the trim action "Apply trim" and the completed-export action "Download". I01 and I04 share J01, while I05 repeats P01. Make those relationships readable alongside the selected instance's source interval and timeline placement.
+
+Audience: independent interview and audio-program creators, with our product and engineering team using the work to agree the editing behavior and desktop interface.
+
+Inputs (attached): 01-client-facts.en.md contains the project, track, revision, interaction and export records. 02-delivery-catalog.en.md contains the proportions, formats and stages of all 14 deliverables. 03-source-records.en.md contains the four source recordings' names, durations, timestamps, content and waveform metadata. desktop-window-constraint.png is the constraint image establishing the minimum logical window. source-waveforms.png is the identity image preserving each source's envelope and separate source-time axis. creator-desk-reference.png is the atmosphere reference for a focused editing session.
+
+Deliverables:
+1. A one-page information architecture and behavior specification, with a page × entry × data table for Sources, Workspace, Export and Versions, plus source-to-instance-to-snapshot relationships, track gains and revision rules
+2. A one-page component × state × value table covering Default, Pressed, Disabled and Error, with color values, contrast ratios, numeric fields, buttons, mute indicators and status labels
+3. Two screens: Sources with four recordings and a distinct source-preview context; Workspace at r01 with five instances and I02 selected
+4. Four editing-state boards: the r02 trim result with an r01 invalid-input inset; P muted at r03; I05 changed to eight plays at r04; and Undo producing r05 with the next Redo visible
+5. Four export screens: E2 settings, E3 rendering, E4 completed outdated export, and E5 version history with all three versions
+6. One 12-second interaction video following Apply trim, P mute, I05 repeat editing and Undo from r01 through r05, with readable revision labels and pressed-control feedback
+7. One presentation document of at least eight pages, reusing the specification, component table, source library, workspace, editing boards and export screens, with CUTLINE and SMALL SIGNALS on its first page
+
+Acceptance:
+- The specification and component table establish the four page names, track gains, #182128 background and #82D9C6 accent; the library, workspace, editing boards, export screens and presentation repeat those names and values wherever used. Every application screen, including each inset and video frame, uses the 1440 × 900 logical window.
+- The Sources screen and r01 Workspace show H01 and R01 at 10.000 s, J01 at 2.000 s and P01 at 1.000 s. The Workspace shows I01 and I04 referencing J01 and I02 referencing H01 at source [0.000, 10.000), timeline [2.000, 12.000). Waveforms in the library, workspace and editing boards preserve the attached source's event and silence structure and distinguish source time from project time.
+- The trim board shows I02 at source [0.500, 9.500), duration 9.000 s and timeline [2.000, 11.000), with I03 still starting at 12.000 and H01 still 10.000 s. Its r01 inset shows SourceOut 10.500, the Outside source range error and disabled Apply trim. The component table and application screens provide text contrast of at least 4.5:1, large-text and icon contrast of at least 3:1, and text or icon indicators for every mute, error and export status.
+- The mute, repeat and Undo boards and the video retain P at -18 dB: r03 has P muted and I05 at 10 plays ending 12.000; r04 has eight plays ending 10.000; r05 restores 10 plays ending 12.000 while retaining mute and the I02 trim. The Undo board identifies Set I05 Repeats to 8 as the next Redo. The video displays the four operations in that order over 12 seconds.
+- The four export screens retain range [0.000, 24.000) s and the settings in the fact sheet. E3 shows current r04, V02 snapshot r03, Rendering at 60% and disabled Download; E4 shows V02 Ready and Outdated with Download enabled. E5 lists V01/r02 and V02/r03 as Ready and Outdated, and V03/r05 as Ready and Current, each with 24.000 s duration and its recorded filename.
+- The presentation has at least eight pages and repeats the specification's three track gains, three-decimal seconds rule and snapshot-revision rule beside the reused editing and export screens; its first page prints CUTLINE and SMALL SIGNALS.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

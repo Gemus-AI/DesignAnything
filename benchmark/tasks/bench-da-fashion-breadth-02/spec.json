@@ -1,0 +1,1112 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-fashion-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "materials-craft",
+      "label": "Materials and craft sheet",
+      "description": "One materials and craft sheet containing three fabric records, four style codes, construction specifications and five sizes of garment measurements.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "front-flats",
+      "label": "Four-piece front flat sheet",
+      "description": "One front flat sheet of SW01, SW02, SW03 and CV01 with style codes and readable internal-label insets.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "back-flats",
+      "label": "Four-piece back flat sheet",
+      "description": "One back flat sheet of SW01, SW02, SW03 and CV01 with style codes and readable internal-label insets.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-pattern",
+      "label": "Material and pattern placement sheet",
+      "description": "One front-and-back placement sheet for all four pieces with fabric codes, lining zones and pattern boundaries.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entry-motion",
+      "label": "SW01 overhead entry comparison",
+      "description": "One movement sheet comparing SW01 in S and 2XL during an overhead water-entry pose.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "streamline-motion",
+      "label": "SW02 and SW03 streamline comparison",
+      "description": "One movement sheet comparing SW02 with SW03 in S and 2XL during a horizontal streamline pose.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dressing-sequences",
+      "label": "SW01 and CV01 dressing sequences",
+      "description": "One six-stage sheet covering opening, putting on and closing SW01 and CV01.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "size-details",
+      "label": "S and 2XL size detail comparison",
+      "description": "One S and 2XL comparison sheet dimensioning SW01 side coverage and zipper length and CV01 pocket opening length and waist offset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "training-styling",
+      "label": "Pool training worn outfits",
+      "description": "One poolside worn image of an adult in S wearing SW01 and an adult in 2XL wearing SW02 with SW03.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "waterfront-covered",
+      "label": "Waterfront outfits with cover shirts",
+      "description": "One waterfront image of the same two adults wearing CV01 over their S and 2XL training outfits.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "waterfront-uncovered",
+      "label": "Waterfront outfits with cover shirts removed",
+      "description": "One matching waterfront image of the same two adults wearing their swim outfits and carrying the removed CV01 shirts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "construction-labels",
+      "label": "Construction and internal label details",
+      "description": "One detail sheet containing four internal labels, lined sections, seam finishes, the 5 mm zipper chain and the 6 mm drawcord.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "range-motion",
+      "label": "Ten-second training-to-waterfront video",
+      "description": "One 10-second video connecting the training and covered waterfront outfits with CURRENT HOURS and the four style codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "range-presentation",
+      "label": "Range presentation",
+      "description": "One presentation of at least 10 pages reusing the earlier range work and recording the series name, fabric codes, palette and S/2XL dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "series-name",
+      "kind": "text-verbatim",
+      "text": "CURRENT HOURS",
+      "scope": {
+        "slots": [
+          "front-flats",
+          "back-flats",
+          "construction-labels",
+          "range-motion",
+          "range-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "care-label",
+      "kind": "text-verbatim",
+      "text": "Rinse after swimming",
+      "scope": {
+        "slots": [
+          "front-flats",
+          "back-flats",
+          "construction-labels"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CURRENT HOURS",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-range-system",
+      "slots": [
+        "front-flats",
+        "back-flats",
+        "material-pattern",
+        "entry-motion",
+        "streamline-motion",
+        "dressing-sequences",
+        "size-details",
+        "training-styling",
+        "waterfront-covered",
+        "waterfront-uncovered",
+        "construction-labels"
+      ],
+      "sourceSlots": [
+        "materials-craft"
+      ],
+      "items": [
+        {
+          "item": "The four styles form a recognizable wardrobe through coordinated silhouettes, seam divisions and pattern treatment across technical and worn views; each style retains its distinct function.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Views of the same garment preserve its fabric assignments, construction, pattern placement and size-specific landmarks, allowing perspective, movement and natural drape.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Technical and worn depictions agree with the craft sheet's material and construction specifications wherever those features are shown.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "CURRENT HOURS"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "front-flats",
+      "back-flats",
+      "material-pattern",
+      "entry-motion",
+      "streamline-motion",
+      "dressing-sequences",
+      "size-details",
+      "training-styling",
+      "waterfront-covered",
+      "waterfront-uncovered",
+      "construction-labels"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge wearer attractiveness or demand photorealistic lighting and material rendering from technical flats and specification sheets."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "materials-craft",
+        "front-flats",
+        "back-flats",
+        "material-pattern",
+        "entry-motion",
+        "streamline-motion",
+        "dressing-sequences",
+        "size-details",
+        "training-styling",
+        "waterfront-covered",
+        "waterfront-uncovered",
+        "construction-labels",
+        "range-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "back-flats",
+        "material-pattern",
+        "entry-motion",
+        "streamline-motion",
+        "dressing-sequences",
+        "size-details",
+        "training-styling",
+        "waterfront-covered",
+        "waterfront-uncovered",
+        "construction-labels"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-materials-craft",
+      "requirementId": "R-format-materials-craft",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-front-flats",
+      "requirementId": "R-format-front-flats",
+      "method": "artifact-property",
+      "targetSlots": [
+        "front-flats"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-back-flats",
+      "requirementId": "R-format-back-flats",
+      "method": "artifact-property",
+      "targetSlots": [
+        "back-flats"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-pattern",
+      "requirementId": "R-format-material-pattern",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-pattern"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entry-motion",
+      "requirementId": "R-format-entry-motion",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entry-motion"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-streamline-motion",
+      "requirementId": "R-format-streamline-motion",
+      "method": "artifact-property",
+      "targetSlots": [
+        "streamline-motion"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dressing-sequences",
+      "requirementId": "R-format-dressing-sequences",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dressing-sequences"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-size-details",
+      "requirementId": "R-format-size-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "size-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-training-styling",
+      "requirementId": "R-format-training-styling",
+      "method": "artifact-property",
+      "targetSlots": [
+        "training-styling"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-waterfront-covered",
+      "requirementId": "R-format-waterfront-covered",
+      "method": "artifact-property",
+      "targetSlots": [
+        "waterfront-covered"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-waterfront-uncovered",
+      "requirementId": "R-format-waterfront-uncovered",
+      "method": "artifact-property",
+      "targetSlots": [
+        "waterfront-uncovered"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-construction-labels",
+      "requirementId": "R-format-construction-labels",
+      "method": "artifact-property",
+      "targetSlots": [
+        "construction-labels"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-range-motion",
+      "requirementId": "R-format-range-motion",
+      "method": "manual",
+      "targetSlots": [
+        "range-motion"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-range-presentation",
+      "requirementId": "R-format-range-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "range-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "craft-fabric-records",
+      "requirementId": "R-craft-fabric-records",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "Require three identifiable fabric records: F01, 78% recycled nylon and 22% elastane, 190 g/m², warp knit, chlorine-resistant finish; F02, 100% polyester, 110 g/m², warp knit, smooth finish; F03, 100% polyester, 130 g/m², plain weave, washed finish. Each must state usable width 1500 mm. Tables or prose are acceptable; missing fields, swapped codes or conflicting values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ]
+    },
+    {
+      "id": "craft-five-size-measurements",
+      "requirementId": "R-craft-five-size-measurements",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "Require garment measurements for S, M, L, XL and 2XL. In that size order, the values in mm must be: SW01 side coverage 160, 175, 190, 210, 230; SW01 zipper 320, 340, 360, 390, 420; CV01 zipper 600, 620, 640, 670, 700; CV01 pocket opening 140, 150, 160, 175, 190; CV01 pocket offset 50, 55, 60, 65, 70; SW03 inseam 100 throughout. Measurement names and units must be unambiguous. Equivalent unit conversions are acceptable; body measurements cannot substitute for garment dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ]
+    },
+    {
+      "id": "craft-style-construction-records",
+      "requirementId": "R-craft-style-construction-records",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "Identify SW01 as a waist-seamed training one-piece with a closed-end centre-front zipper; SW02 as a waist-length pullover top; SW03 as waist-height pull-on shorts with an internal drawcord; and CV01 as a waist-seamed cover shirt with a separating centre-front zipper and two front patch pockets. Record four-thread overlock swim seams, 6 mm coverstitched swim edges, enclosed shirt seams, 6 mm double-turned shirt hems, 5 mm nylon coil zipper chains with acetal sliders, and a 6 mm round polyester drawcord in an internal waistband channel. Record F01 swim outers, the specified F02 lining zones and F03 shirt construction. Wording may vary, but omissions or contradictory specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ]
+    },
+    {
+      "id": "flats-placement-range-and-structure",
+      "requirementId": "R-flats-placement-range-and-structure",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "back-flats",
+        "material-pattern"
+      ],
+      "criteria": "Each sheet must identify all four styles; the flat sheets show their respective front or back views, and placement shows both sides of every style with fabric codes and readable pattern boundaries. Verify the one-piece waist seam and centre-front zipper, waist-length pullover top, waist-height shorts with 100 mm inseam, and front-opening waist-seamed shirt with two front patch pockets. Match corresponding seam and pattern boundaries across views. Placement must assign F01 to swim outers, F03 to the shirt and F02 beneath SW01/SW02 fronts and SW01/SW03 seats and crotches, agreeing with the craft sheet. Diagrammatic cutaways or lining overlays are acceptable; missing styles, conflicting geometry or misplaced lining fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "material-and-colour-identity",
+      "requirementId": "R-material-and-colour-identity",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "back-flats",
+        "material-pattern",
+        "entry-motion",
+        "streamline-motion",
+        "dressing-sequences",
+        "size-details",
+        "training-styling",
+        "waterfront-covered",
+        "waterfront-uncovered",
+        "construction-labels"
+      ],
+      "criteria": "Where surfaces are represented, maintain F01 as compact deep-teal swim knit based on #153C4A, F02 as fine chalk lining knit based on #F2EEE4, and F03 as chalk plain weave. F01 pattern colours are chalk and clay #D97762; F03 pattern colours are deep teal and clay. Pattern design is open, and lighting or technical line drawing may alter literal colour appearance. Contradictory fabric character, base-colour assignments or replacement palette colours fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "size-detail-values-and-landmarks",
+      "requirementId": "R-size-detail-values-and-landmarks",
+      "method": "visual",
+      "targetSlots": [
+        "size-details"
+      ],
+      "criteria": "Show distinct S and 2XL comparisons with readable mm annotations: SW01 side coverage 160 and 230, centre-front zipper 320 and 420, CV01 pocket opening 140 and 190, and pocket-top offset 50 and 70. Side coverage must run along the side seam from waist seam to leg opening; zipper length starts at the centre-front neckline; pocket offset runs downward from the waist seam to the opening's top edge and applies to both pockets. Values must agree with the craft sheet. Schematic scaling is acceptable, but swapped sizes, incorrect landmarks or missing dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "movement-pose-size-and-position",
+      "requirementId": "R-movement-pose-size-and-position",
+      "method": "visual",
+      "targetSlots": [
+        "entry-motion",
+        "streamline-motion"
+      ],
+      "criteria": "Entry must compare adults in S and 2XL wearing SW01 upright with arms beside the ears and legs together. Streamline must compare adults in S and 2XL wearing SW02 plus SW03 horizontally with arms extended beyond the head and legs together. Carry the relevant style's seams, hems and openings into each pose, preserving the size-specific SW01 side coverage and zipper endpoints from the detail sheet. Natural fabric deformation is allowed; omitted size comparisons, incorrect outfits or poses, and displaced garment landmarks fail. CV01 pocket positions need not appear on poses that do not include CV01.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "front-flats",
+        "back-flats",
+        "size-details"
+      ]
+    },
+    {
+      "id": "movement-coverage",
+      "requirementId": "R-movement-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "entry-motion",
+        "streamline-motion"
+      ],
+      "criteria": "For both S and 2XL, provide visible evidence that the relevant swim garments retain chest coverage from the front underarm-fold level to the waist and full seat coverage through the gluteal fold during the assigned pose. SW02 must continue to reach the waist. Supporting rear views or coverage diagrams may establish obscured zones. Exposure beyond the required boundaries, riding-up that defeats coverage, or insufficient evidence for either size fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "dressing-six-stages",
+      "requirementId": "R-dressing-six-stages",
+      "method": "visual",
+      "targetSlots": [
+        "dressing-sequences"
+      ],
+      "criteria": "Require six readable stages arranged as an ordered three-stage sequence for each named garment. SW01 must use its closed-end centre-front zipper to open, permit entry and close; CV01 must separate at the centre front, be put on and then close with its separating zipper. Poses and layout may vary, but each stage must depict a distinct usable action on the established garment. Missing stages, incompatible opening mechanisms or unexplained garment changes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "front-flats"
+      ]
+    },
+    {
+      "id": "styling-outfits-and-continuity",
+      "requirementId": "R-styling-outfits-and-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "training-styling",
+        "waterfront-covered",
+        "waterfront-uncovered"
+      ],
+      "criteria": "Track the same two identifiable adults across all three images: the S wearer uses SW01, and the 2XL wearer uses SW02 with SW03. Covered waterfront styling adds CV01 over each established swim outfit and visibly shows both front pockets on each shirt. The matching uncovered waterfront image retains the swim outfits and shows each removed shirt being carried. Camera framing and pose may vary while wearer identity, garment design, pattern placement and waterfront continuity remain recognizable. Substituted people or outfits, missing pockets, discarded shirts or size assignments that change fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "front-flats",
+        "material-pattern"
+      ]
+    },
+    {
+      "id": "pool-setting",
+      "requirementId": "R-pool-setting",
+      "method": "visual",
+      "targetSlots": [
+        "training-styling"
+      ],
+      "criteria": "The worn training scene must visibly read as a public lap pool, with lane ropes, a tiled deck and daylight. Composition and the particular pool may vary; a studio, unrelated waterside setting or omission of the defining pool features fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "waterfront-setting",
+      "requirementId": "R-waterfront-setting",
+      "method": "visual",
+      "targetSlots": [
+        "waterfront-covered",
+        "waterfront-uncovered"
+      ],
+      "criteria": "Each scene must depict an everyday paved walk beside water, include seating and convey afternoon light. Viewpoint and seating design may vary; a beach-only scene, missing paving or seating, or clearly incompatible lighting fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "internal-labels-and-hardware-dimensions",
+      "requirementId": "R-internal-labels-and-hardware-dimensions",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "back-flats",
+        "construction-labels"
+      ],
+      "criteria": "Each target must include four readable labels associated with SW01, SW02, SW03 and CV01. Each label uses CURRENT HOURS on line one, Rinse after swimming on line two and a matching S, M, L, XL or 2XL size beneath. Insets or callouts must locate labels at the inside back neckline for SW01, SW02 and CV01 and inside back waistband for SW03. The construction sheet must additionally identify the zipper chain as 5 mm and drawcord as 6 mm. Inset layout may vary; missing or illegible labels, wrong text order, invalid sizes, incorrect locations or hardware dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "construction-sections-and-finishes",
+      "requirementId": "R-construction-sections-and-finishes",
+      "method": "visual",
+      "targetSlots": [
+        "construction-labels"
+      ],
+      "criteria": "Require readable construction views establishing F01 over F02 at SW01/SW02 fronts and SW01/SW03 seats and crotches. Identify four-thread overlock swim seams, 6 mm coverstitched swim edges, enclosed CV01 seams and 6 mm double-turned shirt hems. Show nylon coil zipper chain with an acetal slider and round polyester drawcord housed inside the SW03 waistband channel, consistent with the craft and placement sheets. Annotated sections, diagrams or close-ups are acceptable; an exterior-only view, omitted finishes or contradictory layer and hardware construction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "materials-craft",
+        "material-pattern"
+      ]
+    },
+    {
+      "id": "motion-transition-and-titles",
+      "requirementId": "R-motion-transition-and-titles",
+      "method": "manual",
+      "targetSlots": [
+        "range-motion"
+      ],
+      "criteria": "Review the complete video and its duration. Require a 10-second sequence progressing from SW01 and SW02-plus-SW03 training outfits to waterfront outfits with CV01 worn over them. CURRENT HOURS and all four codes, SW01, SW02, SW03 and CV01, must be readable during playback. Editing and transition style are open; incorrect duration, an absent outfit state or omitted or unreadable required names fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "presentation-pages-and-facts",
+      "requirementId": "R-presentation-pages-and-facts",
+      "method": "content",
+      "targetSlots": [
+        "range-presentation"
+      ],
+      "criteria": "Require at least 10 pages, the printed series name, fabric codes F01/F02/F03 and the three explicit palette codes #153C4A, #D97762 and #F2EEE4 accompanying the range work. Repeat the craft sheet's S and 2XL garment dimensions with identifiable measurement names and units: SW01 side coverage 160/230 mm and zipper 320/420 mm; CV01 zipper 600/700 mm, pocket opening 140/190 mm and pocket offset 50/70 mm; SW03 inseam 100/100 mm. Page order and record layout are open. Missing pages, codes or dimensions, and contradictions with the craft sheet or fixed records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "sourceSlots": [
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "presentation-reuses-range-work",
+      "requirementId": "R-presentation-reuses-range-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "range-presentation"
+      ],
+      "criteria": "The presentation must visibly incorporate identifiable content from every listed source. Resizing, cropping and page recomposition are acceptable when the source's substantive work remains recognizable and readable. Merely naming a source, replacing it with unrelated imagery or omitting any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "sourceSlots": [
+        "materials-craft",
+        "front-flats",
+        "back-flats",
+        "material-pattern",
+        "entry-motion",
+        "streamline-motion",
+        "training-styling",
+        "waterfront-covered",
+        "waterfront-uncovered"
+      ]
+    },
+    {
+      "id": "set-coherent-range-system",
+      "requirementId": "R-set-coherent-range-system",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "back-flats",
+        "material-pattern",
+        "entry-motion",
+        "streamline-motion",
+        "dressing-sequences",
+        "size-details",
+        "training-styling",
+        "waterfront-covered",
+        "waterfront-uncovered",
+        "construction-labels"
+      ],
+      "criteria": "The four styles form a recognizable wardrobe through coordinated silhouettes, seam divisions and pattern treatment across technical and worn views; each style retains its distinct function. Views of the same garment preserve its fabric assignments, construction, pattern placement and size-specific landmarks, allowing perspective, movement and natural drape. Technical and worn depictions agree with the craft sheet's material and construction specifications wherever those features are shown.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-02/03-range-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-craft"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "flat-and-placement-products",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "front-flats",
+      "subjectSlots": [
+        "back-flats",
+        "material-pattern"
+      ],
+      "notes": "The front flats, back flats and placement sheet each contain SW01, SW02, SW03 and CV01; their seam divisions and pattern boundaries correspond, with F02 beneath the SW01/SW02 fronts and the SW01/SW03 seats and crotches."
+    },
+    {
+      "id": "styling-garment-continuity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "training-styling",
+      "subjectSlots": [
+        "waterfront-covered",
+        "waterfront-uncovered"
+      ],
+      "notes": "The dressing sheet contains six stages across SW01 and CV01; the three styling images retain the same two adults, swim pieces and pattern placements, with two CV01 pockets visible in the covered view and the removed shirts carried in the uncovered view."
+    },
+    {
+      "id": "styling-wearer-continuity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "training-styling",
+      "subjectSlots": [
+        "waterfront-covered",
+        "waterfront-uncovered"
+      ],
+      "notes": "The dressing sheet contains six stages across SW01 and CV01; the three styling images retain the same two adults, swim pieces and pattern placements, with two CV01 pockets visible in the covered view and the removed shirts carried in the uncovered view."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "fabric-code-repetition",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "material-pattern",
+        "range-presentation"
+      ],
+      "extract": [
+        "the three fabric codes and their associated fabric identities"
+      ],
+      "notes": "The materials and craft sheet records F01, F02 and F03, all four style codes and all five sizes; the placement sheet and presentation repeat those fabric codes, and the size detail sheet and presentation repeat its S/2XL dimensions."
+    },
+    {
+      "id": "size-detail-measurement-repetition",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "size-details"
+      ],
+      "extract": [
+        "S and 2XL SW01 side coverage",
+        "S and 2XL SW01 zipper length",
+        "S and 2XL CV01 pocket opening length",
+        "S and 2XL CV01 pocket top offset below the waist seam"
+      ],
+      "notes": "The materials and craft sheet records F01, F02 and F03, all four style codes and all five sizes; the placement sheet and presentation repeat those fabric codes, and the size detail sheet and presentation repeat its S/2XL dimensions."
+    },
+    {
+      "id": "presentation-measurement-repetition",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "range-presentation"
+      ],
+      "extract": [
+        "the S and 2XL garment dimensions, with their style codes, measurement names and units"
+      ],
+      "notes": "The materials and craft sheet records F01, F02 and F03, all four style codes and all five sizes; the placement sheet and presentation repeat those fabric codes, and the size detail sheet and presentation repeat its S/2XL dimensions."
+    }
+  ]
+}

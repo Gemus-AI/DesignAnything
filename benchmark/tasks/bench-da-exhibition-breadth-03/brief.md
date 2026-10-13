@@ -1,0 +1,33 @@
+PLAYER MOVES | A temporary exhibition about how we play
+
+We are commissioning a temporary exhibition for visitors who know contemporary games but may never have handled an early controller. The exhibition follows three collection examples in this order: Turn, Press, Move. These are dated examples of different interactions: E01, Rotary paddle and console, 1978; E02, Directional pad and console, 1986; and E03, Motion handset and console, 2007. Each example pairs two collection objects with one hands-on teaching controller and one screen. A typical visit lasts 20 minutes, including a 60-second activity at each station. Print "PLAYER MOVES" and "How do you play?" at the entrance. Collection objects, archive excerpts and newly drawn explanations carry the labels "Collection object", "Archive content" and "New diagram" respectively; activity instructions begin with "Try the action".
+
+The room is 12000 mm east–west by 8000 mm north–south, with a clear height of 3200 mm. Entry and exit occupy opposite ends of the south wall, each 1800 mm wide. The south circulation strip stays 1800 mm clear; connecting routes are at least 1500 mm clear. Three archive benches occupy the north display band and three activity benches occupy the central play zone shown on the attached plan. Bench tops are 800 mm above the floor, graphic centres are 1400 mm above the floor and freestanding elements reach at most 1800 mm. Our six-bench kit uses aluminium rails and legs, birch plywood tops and interchangeable graphic panels, joined with M6 bolts using a 5 mm hex key. It has 72 main parts and 192 bolts, packs into six cases and has a largest detached part of 1200 × 600 × 60 mm. Build the exhibit register and label copy first, then develop the route, interpretation and installation from those two documents.
+
+Audience: the exhibition producer, interpretation team and installation crew, for approving the visitor experience and planning the temporary build.
+
+Inputs (attached): 01-client-facts.en.md contains the room, visitor, interaction and kit facts. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-collection-records.md contains the exhibit names, dates, dimensions, label bodies, archive excerpts and activity records. room-constraints.png fixes the room boundary, doors, circulation strip, power points and equipment zones. collection-equipment.png records the recognisable forms of the three controller-and-console sets. empty-room.png provides the room's material and daylight atmosphere. waiting-visitors.png provides the scale and social spacing of a small group waiting to take turns.
+
+Deliverables:
+1. A two-page exhibit register and route schedule covering E01–E03, their names, dates, dimensions, Turn–Press–Move sequence, bench assignments and installation heights
+2. A two-page label copy table containing three exhibit titles and bodies, three archive excerpts, three activity instructions and the four content labels, with a 45-word limit for each exhibit body
+3. One dimensioned floor and visitor-route plan with E01–E03 names and dates, zone names, six benches, three screens, power routes, two seats and clear passage widths
+4. One coordinated elevation and section sheet with bench tops, graphic centres, screen positions, knee spaces and maximum installation height
+5. One continuous timeline graphic connecting the three dated examples to turning, pressing and moving, with the entrance title and question
+6. One display-detail sheet covering all three controller-and-console pairs, their complete exhibit labels, archive excerpts and newly drawn interface explanations
+7. One interaction storyboard sheet covering the instruction, action, response and reset of all three 60-second activities
+8. Two visitor-eye spatial views, one from the entrance towards Turn and one from Move towards the exit
+9. Two operational-state drawings of the same installation, one open and one closed, showing collection covers, teaching controllers and screen states
+10. One assembly and packing sheet showing the six-bench kit, material assignments, bolted joints, component counts, dismantling sequence and six packed cases
+11. One 10-second visitor-route video moving through Turn, Press and Move and ending with the exhibition name
+12. One presentation document of at least 10 pages, reusing the register, copy table, drawings, graphics, activity sequence and spatial views, with a three-exhibit catalogue and a fact-to-deliverable index
+
+Acceptance:
+- The exhibit register establishes E01–E03, Turn–Press–Move order, 800 mm bench tops and 1400 mm graphic centres; the floor plan repeats the IDs and zone order, the elevation repeats both heights, and the presentation repeats all four facts.
+- The label copy table, display-detail sheet and presentation catalogue reproduce all three ID–name–year combinations and exhibit bodies from 03-collection-records.md; each body stays within 45 words. The display-detail sheet places Collection object beside each physical pair, Archive content beside each supplied excerpt and New diagram beside each new interface explanation.
+- The floor plan, elevation, two visitor-eye views and two state drawings describe the same six-bench installation within the 12000 × 8000 × 3200 mm room. The drawings dimension the 1800 mm south strip, connecting routes of at least 1500 mm, two 1500 mm turning spaces, two seats, activity knee spaces of 900 × 600 × 700 mm and the 1800 mm height limit.
+- The interaction storyboard begins each activity with Try the action and shows the recorded action, visible response, 60-second duration and 5-second reset for E01–E03. The open-state drawing shows three active screens and three available teaching controllers; the closed-state drawing shows three dark screens and three secured teaching controllers, with collection covers fitted in both states.
+- The assembly and packing sheet accounts for six benches, 72 main parts, 192 M6 bolts, a 5 mm hex key and six 1250 × 650 × 650 mm cases; its exploded views identify aluminium, birch plywood and graphic panels, and its packing views retain the 1200 × 600 × 60 mm maximum detached-part envelope.
+- The timeline graphic, entrance visitor-eye view and presentation print PLAYER MOVES and How do you play? The 10-second video follows Turn, Press, Move and ends with PLAYER MOVES. The presentation contains at least 10 pages and identifies the deliverable carrying each room, collection, interaction and kit fact.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

@@ -1,0 +1,1200 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-exhibition-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "inventory-flow",
+      "label": "Exhibit inventory and circulation specification",
+      "description": "A one-page specification of three exhibits, six zones, visitor sequence, capacities and mounting heights.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "label-copy",
+      "label": "Label and demonstration copy table",
+      "description": "A one-page table of three exhibit labels, fascia wording and five timed demonstration steps.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "master-plan",
+      "label": "Dimensioned booth master plan",
+      "description": "A dimensioned booth plan with six zones, exhibit IDs, visitor positions and circulation widths.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "elevation-section",
+      "label": "Booth elevation and section",
+      "description": "One coordinated elevation and section sheet showing structure, fascia and installation heights.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "demo-detail",
+      "label": "Live demonstration detail",
+      "description": "One demonstration detail sheet with operating clearance, equipment positions and the complete 240-second sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "observation-detail",
+      "label": "Close observation detail",
+      "description": "One observation detail sheet with HB-02, six visitor positions and product label placement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "brand-display",
+      "label": "Brand and display artwork",
+      "description": "One artwork sheet combining the branded fascia, three exhibit panels and a five-step demonstration strip.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "meeting-storage",
+      "label": "Meeting and storage detail",
+      "description": "One detail sheet of the four-seat meeting area and 6 m² enclosed storage.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entrance-view",
+      "label": "South entrance visitor perspective",
+      "description": "One visitor perspective from the south entrance showing arrival, queue and brand visibility.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "seated-view",
+      "label": "Seated observation perspective",
+      "description": "One seated visitor perspective showing the live demonstration, observation unit and product information.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "assembled-state",
+      "label": "Assembled construction state",
+      "description": "One assembled construction sheet identifying the frame kit, hand connections and crate allocation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dismantled-state",
+      "label": "Dismantled packing state",
+      "description": "One dismantled construction sheet showing counted components, the largest part and three packed transport crates.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "walkthrough",
+      "label": "Booth walkthrough",
+      "description": "A 12-second walkthrough connecting arrival, queue, demonstration, close observation and partner meetings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Booth design presentation",
+      "description": "A presentation of at least eight pages reusing the earlier work and indexing fixed facts to their deliverables.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-name",
+      "kind": "text-verbatim",
+      "text": "KINVA",
+      "scope": {
+        "slots": [
+          "brand-display",
+          "entrance-view",
+          "seated-view",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "fascia-phrase",
+      "kind": "text-verbatim",
+      "text": "See everyday assistance in action",
+      "scope": {
+        "slots": [
+          "brand-display",
+          "entrance-view",
+          "seated-view",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "KINVA",
+      "maxEditDistance": 1,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-spatial-and-construction-system",
+      "slots": [
+        "elevation-section",
+        "demo-detail",
+        "observation-detail",
+        "meeting-storage",
+        "entrance-view",
+        "seated-view",
+        "assembled-state",
+        "dismantled-state"
+      ],
+      "sourceSlots": [
+        "master-plan",
+        "inventory-flow"
+      ],
+      "items": [
+        {
+          "item": "Drawings, details and perspectives describe the same booth, preserving access locations, zone relationships, exhibit placement, furniture arrangement and storage enclosure.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Installation heights, visitor capacities and clearances agree with the inventory specification and fixed site records.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The assembled and dismantled construction states reconcile with the booth structure and with each other's component and crate schedules.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "coordinated-public-information",
+      "slots": [
+        "brand-display",
+        "elevation-section",
+        "demo-detail",
+        "observation-detail",
+        "entrance-view",
+        "seated-view"
+      ],
+      "sourceSlots": [
+        "label-copy"
+      ],
+      "items": [
+        {
+          "item": "Visible fascia, product panels and demonstration graphics consistently apply KINVA branding and the specified primary green, allowing ordinary lighting and perspective variation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Exhibit identities, panel wording and demonstration steps agree with the label copy table wherever those records are reproduced.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Graphic placements correspond between artwork, installation drawings and visitor perspectives.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "KINVA"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "master-plan",
+      "elevation-section",
+      "demo-detail",
+      "observation-detail",
+      "brand-display",
+      "meeting-storage",
+      "entrance-view",
+      "seated-view",
+      "assembled-state",
+      "dismantled-state"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the booth's spatial and communication design without rewarding redesign of the fixed robot, dock or reusable construction kit, or treating rendering realism as proof of operational compliance."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "inventory-flow",
+        "label-copy",
+        "master-plan",
+        "elevation-section",
+        "demo-detail",
+        "observation-detail",
+        "brand-display",
+        "meeting-storage",
+        "entrance-view",
+        "seated-view",
+        "assembled-state",
+        "dismantled-state",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "master-plan",
+        "elevation-section",
+        "demo-detail",
+        "observation-detail",
+        "brand-display",
+        "meeting-storage",
+        "entrance-view",
+        "seated-view",
+        "assembled-state",
+        "dismantled-state"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-inventory-flow",
+      "requirementId": "R-format-inventory-flow",
+      "method": "artifact-property",
+      "targetSlots": [
+        "inventory-flow"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-label-copy",
+      "requirementId": "R-format-label-copy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "label-copy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-master-plan",
+      "requirementId": "R-format-master-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "master-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-elevation-section",
+      "requirementId": "R-format-elevation-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "elevation-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-demo-detail",
+      "requirementId": "R-format-demo-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "demo-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-observation-detail",
+      "requirementId": "R-format-observation-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "observation-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-brand-display",
+      "requirementId": "R-format-brand-display",
+      "method": "artifact-property",
+      "targetSlots": [
+        "brand-display"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-meeting-storage",
+      "requirementId": "R-format-meeting-storage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "meeting-storage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-view",
+      "requirementId": "R-format-entrance-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-seated-view",
+      "requirementId": "R-format-seated-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "seated-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-assembled-state",
+      "requirementId": "R-format-assembled-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembled-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dismantled-state",
+      "requirementId": "R-format-dismantled-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dismantled-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-walkthrough",
+      "requirementId": "R-format-walkthrough",
+      "method": "manual",
+      "targetSlots": [
+        "walkthrough"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "inventory-specification",
+      "requirementId": "R-inventory-specification",
+      "method": "content",
+      "targetSlots": [
+        "inventory-flow"
+      ],
+      "criteria": "The single-page specification records HB-01 as the working K1 in Live Demo, HB-02 as the stationary K1 in Observation, and HB-03 as the dock in Live Demo. Both robots measure 600 × 650 × 1150 mm and the dock 700 × 450 × 180 mm, in width × depth × height order. It names Welcome and Queue, Live Demo, Observation, Partner Meeting, Storage and Exit, with the recorded visitor sequence, optional meeting visit and staff-only storage access. Capacities are four waiting visitors, one demo presenter, six observers including one wheelchair position, four meeting seats, 6 m² enclosed storage and a 1500 mm exit opening. It records 1500 mm visitor routes, 900 mm rail height, 1200 mm label centres and 750 mm shelf and tray surfaces. Table or diagram layouts may vary; missing or contradictory records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "label-copy-source-record",
+      "requirementId": "R-label-copy-source-record",
+      "method": "content",
+      "targetSlots": [
+        "label-copy"
+      ],
+      "criteria": "One page associates each HB exhibit ID with its exact title and complete body from the client-facts exhibit table, respecting the 30-word body limits. It includes KINVA and the exact fascia phrase, plus all five demonstration steps with their exact strip wording, time spans and durations. The intervals run consecutively from 0 to 240 seconds with durations 30, 60, 60, 60 and 30 seconds. Formatting and line breaks may vary; paraphrased copy, incorrect associations, missing steps or timing gaps fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "master-plan-record-carry-through",
+      "requirementId": "R-master-plan-record-carry-through",
+      "method": "visual",
+      "targetSlots": [
+        "master-plan"
+      ],
+      "criteria": "The plan visibly repeats all three exhibit IDs and all six exact zone names from the specification. Exhibit placement follows the recorded zone assignments, and circulation connects Welcome and Queue, viewing of Live Demo from Observation, close observation, optional Partner Meeting and the east Exit. Storage has staff access. Alternative furniture arrangements are acceptable within these relationships; renamed or omitted zones, misplaced exhibits or a conflicting visitor order fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "inventory-flow"
+      ]
+    },
+    {
+      "id": "boundary-clearances-and-visitor-positions",
+      "requirementId": "R-boundary-clearances-and-visitor-positions",
+      "method": "visual",
+      "targetSlots": [
+        "master-plan",
+        "demo-detail"
+      ],
+      "criteria": "Both sheets provide dimensions or contextual dimension diagrams establishing the 10000 × 8000 mm booth, 4500 × 4000 mm demo envelope and 500 mm clearance around the 3500 × 3000 mm swept operating envelope. Using the southwest origin, the demo envelope occupies x 500–5000, y 3000–7000 mm and the operating envelope x 1000–4500, y 3500–6500 mm. The plan agrees with booth-boundary.png: closed north edge; 3000 mm clear adjacent aisles on the other edges; south entrance at x 6000–7500, y 0; east exit at x 10000, y 1500–3000; and observation band at x 500–5000, y 1500–3000 mm. It marks unobstructed 1500 mm internal routes, four internal queue positions and six observation positions, including one 900 × 1400 mm wheelchair position inside the band. Drawing orientation may vary if coordinates remain unambiguous; conflicting dimensions, displaced openings or occupied clearances fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "elevation-section-installation",
+      "requirementId": "R-elevation-section-installation",
+      "method": "visual",
+      "targetSlots": [
+        "elevation-section"
+      ],
+      "criteria": "The sheet includes mutually compatible elevation and section views locating the fascia and showing a booth height no greater than 3500 mm, assembled frames at 2500 mm, rail tops at 900 mm, shelf and tray surfaces at 750 mm and exhibit label centres at 1200 mm above floor. Heights are readable dimensions or annotations and correspond to the plan and specification. Fascia shape and architectural composition may vary within the height limit; absent installation heights or conflicting views fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "inventory-flow",
+        "master-plan"
+      ]
+    },
+    {
+      "id": "demonstration-detail-operation",
+      "requirementId": "R-demonstration-detail-operation",
+      "method": "visual",
+      "targetSlots": [
+        "demo-detail"
+      ],
+      "criteria": "The detail shows HB-01 performing the sequence with HB-03 as both start and finish, a presenter controlling the live sequence, a 1500 mm dock-to-shelf drive and one empty 150 g cup transferred to the receiving tray. It identifies the 1000 × 500 × 750 mm shelf and adjacent 300 × 300 mm tray, with both working surfaces at 750 mm. Any detailed exhibit label has its 1200 mm centre height recorded. All five steps are accounted for in order: introduction 0–30 seconds, drive 30–90, cup transfer 90–150, return 150–210 and reset 210–240, with the recorded step wording and no unallocated time. The ten-minute start interval is distinguished from the four-minute sequence. Diagram style may vary; impossible equipment relationships, additional cups, incorrect roles or timing discrepancies fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "label-copy",
+        "inventory-flow"
+      ]
+    },
+    {
+      "id": "observation-detail-access-and-label",
+      "requirementId": "R-observation-detail-access-and-label",
+      "method": "visual",
+      "targetSlots": [
+        "observation-detail"
+      ],
+      "criteria": "HB-02 is identified as stationary with its right arm folded and is placed consistently with the plan's Observation zone. Six viewing positions are identifiable, one being a 900 × 1400 mm wheelchair position within the observation band. The product label is located and its centre dimensioned at 1200 mm; any observation rail shown uses the recorded 900 mm top height. Viewing and access positions do not obstruct the clear route. Presentation style may vary; a moving HB-02, missing accessible position, incorrect capacity or conflicting label height fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "inventory-flow",
+        "master-plan"
+      ]
+    },
+    {
+      "id": "brand-artwork-record-and-colour",
+      "requirementId": "R-brand-artwork-record-and-colour",
+      "method": "visual",
+      "targetSlots": [
+        "brand-display"
+      ],
+      "criteria": "The artwork sheet visibly contains a fascia design and three separate exhibit panel designs. KINVA appears on the fascia and product information panels, and the fascia uses the exact required phrase. Each exhibit panel reproduces the corresponding client-facts title and complete body without substitution or truncation and remains within its 30-word body limit. The specified #245C53 is identified and used as the primary brand colour. Typography, layout and line wrapping may vary; missing panels, altered record copy, incorrect exhibit associations or a different primary colour fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "label-copy"
+      ]
+    },
+    {
+      "id": "demonstration-strip-copy-and-time",
+      "requirementId": "R-demonstration-strip-copy-and-time",
+      "method": "visual",
+      "targetSlots": [
+        "brand-display"
+      ],
+      "criteria": "The demonstration strip has five ordered entries reproducing Presenter introduction, Drive 1500 mm to the shelf, Move one empty cup to the tray, Return to the charging dock and Presenter reset. Their timing records match 0–30, 30–90, 90–150, 150–210 and 210–240 seconds, with corresponding durations of 30, 60, 60, 60 and 30 seconds. Icons and layout may vary, but shortened wording, reordered steps or inconsistent timing fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "label-copy"
+      ]
+    },
+    {
+      "id": "meeting-and-storage-provision",
+      "requirementId": "R-meeting-and-storage-provision",
+      "method": "visual",
+      "targetSlots": [
+        "meeting-storage"
+      ],
+      "criteria": "The detail identifies one meeting table and exactly four seats, plus an enclosed storage room whose dimensions substantiate 6 m². Access and furniture placement agree with the master plan and preserve visitor routes. The furniture provision is identified as locally rented meeting furniture, storage fittings and pickup shelf where scheduled. Furniture form and storage proportions may vary; an open storage alcove, unsupported area claim, incorrect seat count or conflicting access fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "master-plan",
+        "inventory-flow"
+      ]
+    },
+    {
+      "id": "perspectives-and-plan-agreement",
+      "requirementId": "R-perspectives-and-plan-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-view",
+        "seated-view",
+        "meeting-storage"
+      ],
+      "criteria": "The entrance perspective is taken from the south entrance and communicates arrival, queue and brand visibility; the seated perspective uses a seated observation viewpoint and shows the live demonstration, observation unit and product information. Together with the meeting detail, they preserve the plan's entrance, east exit, zone relationships, four meeting seats and enclosed 6 m² storage. Both perspectives visibly carry KINVA, the exact fascia phrase and the primary green established by the artwork sheet. Perspective, lighting and partial occlusion may vary; hidden areas need not be exposed solely for counting, but visible relocations, contradictory furniture or altered branding fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "master-plan",
+        "brand-display"
+      ]
+    },
+    {
+      "id": "construction-kit-and-packing",
+      "requirementId": "R-construction-kit-and-packing",
+      "method": "visual",
+      "targetSlots": [
+        "assembled-state",
+        "dismantled-state"
+      ],
+      "criteria": "Each state sheet explicitly accounts for 12 aluminium-extrusion frames, 12 tensioned-polyester skins, 24 steel feet and 48 steel hand-knob bolts, and identifies three plywood transport crates with reusable latches. The schedule records frames at 2500 × 1000 × 40 mm, skins at 2500 × 1000 mm, feet at 500 × 300 × 10 mm, bolts at M8 × 25 mm and crates at 2700 × 1100 × 700 mm external dimensions, using the stated dimension conventions. Both identify the frame as the largest dismantled part and show or annotate hand-operated cam locks, two hand bolts per foot and silicone graphic edges seated in frame channels. Packing allocates four frames, four folded skins, eight feet and sixteen bolts per crate. One sheet demonstrates the assembled structure and the other dismantling and packing; diagrams and schedules may jointly establish counts. Missing quantities, incompatible connections, incorrect crate allocation or a structure inconsistent with the booth drawings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "master-plan",
+        "elevation-section"
+      ]
+    },
+    {
+      "id": "walkthrough-duration-route-and-product",
+      "requirementId": "R-walkthrough-duration-route-and-product",
+      "method": "manual",
+      "targetSlots": [
+        "walkthrough"
+      ],
+      "criteria": "Review the complete video and its duration: it lasts 12 seconds and connects the entrance, internal queue, demonstration, close observation and meeting area in a coherent visitor journey. Visible entrance and exit positions, four-seat meeting layout and enclosed storage agree with the master plan and details. Robot and dock appearances match robot-and-dock.png, preserving the robot's warm grey body, rounded wheeled base, dark horizontal sensor band, green chest insert and single articulated right arm with two-finger gripper; HB-02 remains stationary with its arm folded. Camera movement and editing may vary, and the whole four-minute demonstration need not play out. A missing destination, contradictory layout, changed product form or wrong duration fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "master-plan",
+        "demo-detail",
+        "observation-detail",
+        "meeting-storage"
+      ]
+    },
+    {
+      "id": "presentation-length-and-index",
+      "requirementId": "R-presentation-length-and-index",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation has at least eight pages and contains a readable index mapping fixed client facts to identifiable deliverables or pages demonstrating them. Index organisation may vary; a generic contents list without fact-to-deliverable mappings or fewer than eight pages fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "presentation-visible-reuse",
+      "requirementId": "R-presentation-visible-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Every listed source is visibly reused through legible pages, figures or identifiable excerpts. Scaling, cropping and presentation formatting are allowed when the reused content remains recognisable and retains the relevant evidence. Merely naming a deliverable, replacing it with unrelated imagery or reducing it beyond useful recognition fails coverage for that source.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "inventory-flow",
+        "label-copy",
+        "master-plan",
+        "elevation-section",
+        "demo-detail",
+        "observation-detail",
+        "brand-display",
+        "meeting-storage",
+        "entrance-view",
+        "seated-view",
+        "assembled-state",
+        "dismantled-state"
+      ]
+    },
+    {
+      "id": "presentation-inventory-and-height-repetition",
+      "requirementId": "R-presentation-inventory-and-height-repetition",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation explicitly repeats HB-01, HB-02 and HB-03 with their correct roles, all six exact zone names, the 750 mm shelf height and the 1200 mm exhibit label centre height. Readable reused specifications or drawing annotations count. Missing terms, changed assignments or contradictory heights fail; export order alone is not treated as proof of authoring chronology.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "inventory-flow",
+        "label-copy"
+      ]
+    },
+    {
+      "id": "presentation-demonstration-record",
+      "requirementId": "R-presentation-demonstration-record",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation reproduces all five exact demonstration step phrases and their recorded time spans and durations, accounting for 240 seconds without gaps or overlaps. HB-01 performs the demonstration and HB-03 marks its starting and finishing position. Readable reuse of the approved table or strip counts; summaries that omit wording or timing, swapped roles or an incorrect total fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "label-copy",
+        "demo-detail"
+      ]
+    },
+    {
+      "id": "presentation-brand-and-panel-record",
+      "requirementId": "R-presentation-brand-and-panel-record",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation contains KINVA, the exact fascia phrase and all three exhibit titles and complete bodies associated with the correct IDs. Its displayed brand applications retain the specified #245C53 primary colour. Readable embedded artwork counts, and line wrapping may change; paraphrased bodies, omitted panels, incorrect associations or conflicting brand colour specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "label-copy",
+        "brand-display"
+      ]
+    },
+    {
+      "id": "presentation-construction-schedule",
+      "requirementId": "R-presentation-construction-schedule",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation repeats the construction schedule: 12 aluminium frames, 12 fabric skins, 24 feet, 48 hand bolts, hand-operated connections, the 2500 × 1000 × 40 mm largest dismantled frame and three 2700 × 1100 × 700 mm crates. The packing allocation agrees with four frames, four folded skins, eight feet and sixteen bolts per crate. Legible reused schedules count; missing quantities, conflicting dimensions or a packing total that does not reconcile fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "assembled-state",
+        "dismantled-state"
+      ]
+    },
+    {
+      "id": "public-information-language",
+      "requirementId": "R-public-information-language",
+      "method": "visual",
+      "targetSlots": [
+        "brand-display",
+        "entrance-view",
+        "seated-view",
+        "observation-detail"
+      ],
+      "criteria": "Visitor-facing fascia, exhibit information and demonstration instructions use English wherever visible. Technical symbols, exhibit IDs and measurement notation are acceptable. Required information replaced by another language or unreadable pseudo-text fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "exhibition-arrival-context",
+      "requirementId": "R-exhibition-arrival-context",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-view",
+        "seated-view"
+      ],
+      "criteria": "The perspectives together convey an operating exhibition session with visitors arriving or observing, consistent with exhibition-aisle.png. A mix of adult visitors is evident; family groups may appear without being required in both views. Crowd density, clothing and lighting may vary while preserving the specified routes and observation capacity. A closed or empty-show atmosphere, or crowd staging that occupies required clearances, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-coordinated-spatial-and-construction-system",
+      "requirementId": "R-set-coordinated-spatial-and-construction-system",
+      "method": "visual",
+      "targetSlots": [
+        "elevation-section",
+        "demo-detail",
+        "observation-detail",
+        "meeting-storage",
+        "entrance-view",
+        "seated-view",
+        "assembled-state",
+        "dismantled-state"
+      ],
+      "criteria": "Drawings, details and perspectives describe the same booth, preserving access locations, zone relationships, exhibit placement, furniture arrangement and storage enclosure. Installation heights, visitor capacities and clearances agree with the inventory specification and fixed site records. The assembled and dismantled construction states reconcile with the booth structure and with each other's component and crate schedules.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "master-plan",
+        "inventory-flow"
+      ]
+    },
+    {
+      "id": "set-coordinated-public-information",
+      "requirementId": "R-set-coordinated-public-information",
+      "method": "visual",
+      "targetSlots": [
+        "brand-display",
+        "elevation-section",
+        "demo-detail",
+        "observation-detail",
+        "entrance-view",
+        "seated-view"
+      ],
+      "criteria": "Visible fascia, product panels and demonstration graphics consistently apply KINVA branding and the specified primary green, allowing ordinary lighting and perspective variation. Exhibit identities, panel wording and demonstration steps agree with the label copy table wherever those records are reproduced. Graphic placements correspond between artwork, installation drawings and visitor perspectives.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "label-copy"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-robot-and-dock",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "robot-and-dock.png"
+      ],
+      "subjectSlots": [
+        "demo-detail",
+        "observation-detail",
+        "entrance-view",
+        "seated-view"
+      ],
+      "notes": "Reconcile both visitor perspectives, the meeting and storage detail sheet and the 12-second walkthrough with the master plan's entrance, exit, four meeting seats and 6 m² storage; depict the robot and dock forms from robot-and-dock.png consistently in the demonstration detail, observation detail, perspectives and video."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "inventory-identifiers-and-zones",
+      "fromSlot": "inventory-flow",
+      "toSlots": [
+        "master-plan",
+        "presentation"
+      ],
+      "extract": [
+        "three exhibit IDs and their assigned roles",
+        "six exact zone names"
+      ],
+      "notes": "Establish the inventory and circulation specification and label copy table first; repeat HB-01–HB-03 and the six zone names on the master plan and presentation, and repeat the 750 mm shelf height and 1200 mm label centre height on the elevation and section sheet, relevant detail sheets and presentation."
+    },
+    {
+      "id": "inventory-mounting-heights",
+      "fromSlot": "inventory-flow",
+      "toSlots": [
+        "elevation-section",
+        "demo-detail",
+        "observation-detail",
+        "presentation"
+      ],
+      "extract": [
+        "750 mm shelf height where a shelf is detailed",
+        "1200 mm exhibit label centre height where labels are detailed"
+      ],
+      "notes": "Establish the inventory and circulation specification and label copy table first; repeat HB-01–HB-03 and the six zone names on the master plan and presentation, and repeat the 750 mm shelf height and 1200 mm label centre height on the elevation and section sheet, relevant detail sheets and presentation."
+    },
+    {
+      "id": "label-table-demonstration-record",
+      "fromSlot": "label-copy",
+      "toSlots": [
+        "demo-detail",
+        "brand-display",
+        "presentation"
+      ],
+      "extract": [
+        "five demonstration steps in order",
+        "each step's exact wording, time span and duration",
+        "240-second total"
+      ],
+      "notes": "Account for all 240 seconds on the label copy table and demonstration detail sheet using the five recorded steps; reproduce their timings and wording on the demonstration strip and in the presentation, with HB-01 and HB-03 in their recorded roles."
+    },
+    {
+      "id": "label-table-panel-and-fascia-copy",
+      "fromSlot": "label-copy",
+      "toSlots": [
+        "brand-display",
+        "presentation"
+      ],
+      "extract": [
+        "three exhibit titles and their complete bodies",
+        "KINVA fascia name",
+        "exact fascia phrase"
+      ],
+      "notes": "Print KINVA and the exact fascia phrase on the brand and display artwork sheet, both visitor perspectives and presentation; reproduce all three exhibit titles and bodies from 01-client-facts.en.md on the artwork sheet and in the presentation, and carry #245C53 through these applications."
+    }
+  ]
+}

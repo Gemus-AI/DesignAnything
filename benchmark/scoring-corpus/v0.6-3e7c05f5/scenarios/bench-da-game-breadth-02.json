@@ -1,0 +1,180 @@
+{
+  "id": "bench-da-game-breadth-02",
+  "title": "SKYWAKE — Sail-glider racing above a sea of clouds, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GAME",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# SKYWAKE\n\n## Project\n- Genre: fantasy sail-glider racing above cloud islands.\n- Players: racing players interested in speed and route judgement.\n- Direction: painted cloud masses and sharply cut sail silhouettes.\n- Printed game name: SKYWAKE.\n- Printed tagline: Ride the high line.\n- Circuit regions: Dawn Shelf; Needle Reach.\n\n## Art language\n| Property | Value |\n|---|---|\n| Navy enamel | #132C46 |\n| Active amber | #F3B544 |\n| Ivory fabric | #F4EBDD |\n| Copper fittings | #B76E45 |\n| Cloud shadow | #8095AB |\n| Brushwork | Broad cloud strokes; crisp vehicle edges |\n| Route treatment | Paired ivory edge lines |\n| Obstacle treatment | Dark diagonal bands across the silhouette |\n| Sun azimuth | 315 degrees; world northwest |\n| Sun elevation | 35 degrees |\n\n## Race\n- Circuit boundary: 800 m east–west by 600 m north–south.\n- Coordinate origin: southwest corner; positive x east; positive y north.\n- Travel order: G1, G2, G3, G4, G1; clockwise.\n- Consecutive gate spacing: 600 m, 400 m, 600 m, 400 m.\n- Route corridor: 120 m wide, centred on the connected gate segments.\n- Race length: 2 laps.\n- Field: 6 racers.\n- Phases: Countdown, Racing, Results.\n- Gate, obstacle, landmark, camera and snapshot records: 03-race-records.en.md.\n\n## Asset identity\n| ID | Asset | Dimensions | States | Visible features |\n|---|---|---|---|---|\n| R01 | Rider | Standing height 1700 mm | Idle; Lean | Ivory helmet; amber right sleeve; navy suit; two copper belt pouches |\n| V01 | Sail-glider | Length 4200 mm; sail span 6000 mm; height 3000 mm; hull width 1200 mm | Cruise; Trimmed | Two ivory sail tips; navy hull; one copper mast |\n| B01 | Checkpoint buoy | Height 2000 mm; width 800 mm; depth 800 mm | Upcoming; Active; Cleared | Navy body; copper forked crown; ivory circular face; event emblem on rear |\n- V01 collision volume: rounded hull volume, 4200 mm long, 1800 mm wide, 1600 mm high.\n- V01 collision footprint: capsule with 900 mm end radii and 2400 mm between end centres.\n- V01 sail span: visual geometry.\n- Existing event emblem: three ascending amber tapered bars above an upward-open navy arc.\n- Gate assembly: two B01 buoys, 24000 mm between buoy centres; traversable opening 23200 mm wide and 12000 mm high above route altitude.\n\n## Checkpoint states\n| State | Colour | Shape |\n|---|---|---|\n| Upcoming | Ivory | Hollow circle |\n| Active | Amber | Double chevron |\n| Cleared | Navy and white | White check on navy panel |\n\n## Interface\n- Logical canvas: 1920 by 1080 units.\n- Safe insets: left 96 units; right 96 units; top 54 units; bottom 54 units.\n- Default text height: at least 26 logical units.\n- Large text threshold: 52 logical units.\n- Text and ordinary indicator contrast: 4.5:1 against immediate background.\n- Large text and icon contrast: 3:1 against immediate background.\n- Printed control prompts: Trim sail; Reset to last gate.\n- Controller bindings: RT for Trim sail; Y for Reset to last gate.\n- Shared control centres: Trim sail at (1530, 880); Reset to last gate at (1530, 980).\n- Map orientation: north up.\n- Snapshot fields: location, lap, position, next checkpoint, elapsed time, speed.\n\n## Motion and presentation\n- Video duration: 10 seconds.\n- Video sections: C1 at 0–4 seconds; C2 at 4–8 seconds; game name and tagline at 8–10 seconds.\n- Presentation length: at least 10 pages.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# SKYWAKE — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | art-style-sheet | Art style sheet | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | character-prop-inventory | Character and prop inventory | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 3 | glider-sheet | V01 glider design sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | rider-sheet | R01 rider design sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | circuit-overview | Circuit overview | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | dawn-shelf-environment | Dawn Shelf environment | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | needle-reach-environment | Needle Reach environment | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | checkpoint-sheet | B01 checkpoint design sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | controller-race-interface | Controller race interface | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | touch-race-interface | Touch race interface | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | dawn-shelf-keyframe | C1 Dawn Shelf race keyframe | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | needle-reach-keyframe | C2 Needle Reach race keyframe | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | race-video | Ten-second race video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | art-presentation | Circuit art presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-race-records.en.md",
+            "config": {
+              "text": "# SKYWAKE race records\n\n## Coordinate system\n| Property | Value |\n|---|---|\n| World units | m |\n| Origin | Southwest corner |\n| x axis | East |\n| y axis | North |\n| z axis | Up |\n| Boundary | x 0–800; y 0–600 |\n| Route altitude | z 100 |\n| Cloud surface | z 0 |\n| Corridor | 60 m either side of each gate-to-gate segment; round joins |\n| Course direction | G1 to G2 to G3 to G4 to G1; clockwise |\n\n## Gates\n| Gate | x | y | z | Outgoing distance | Region |\n|---|---:|---:|---:|---:|---|\n| G1 | 100 | 100 | 100 | 600 m | Dawn Shelf |\n| G2 | 700 | 100 | 100 | 400 m | Dawn Shelf |\n| G3 | 700 | 500 | 100 | 600 m | Needle Reach |\n| G4 | 100 | 500 | 100 | 400 m | Upper cloud shelf |\n\n## Landmarks and obstacles\n| ID | Name | x | y | Footprint | Vertical extent |\n|---|---|---:|---:|---|---|\n| L1 | Dawn Shelf arch | 400 | 180 | 60 m east–west by 30 m north–south | z 20–180 m |\n| L2 | Needle Reach spire | 780 | 300 | Circle, radius 15 m | z 0–220 m |\n| O1 | Southern rock tooth | 400 | 130 | Circle, radius 20 m | z 40–145 m |\n| O2 | Eastern rock tooth | 730 | 300 | Circle, radius 20 m | z 40–145 m |\n\n## Sport rules\n| Property | Record |\n|---|---|\n| Racers | 6 |\n| Laps | 2 |\n| Start | G1 |\n| Gate sequence | G2, G3, G4, G1 per lap |\n| Lap completion | G1 crossing after G4 |\n| Race completion | Second lap completion |\n| Gate passage | Hull collision centre through the gate opening in route order |\n| Gate opening | 23200 mm wide; 12000 mm high above z 100 m |\n| Buoy arrangement | Two B01 units per gate; centres 24000 mm apart perpendicular to the incoming segment |\n| Reset destination | 20 m before the last passed gate along its incoming segment |\n| Reset time penalty | 3 seconds added to elapsed time |\n| Trim sail | Held input; V01 Trimmed state; R01 Lean state |\n| Released trim | V01 Cruise state; R01 Idle state |\n\n## Race phases\n| Phase | Visible information |\n|---|---|\n| Countdown | 3, 2, 1 in sequence; lap and position |\n| Racing | Location; lap; position; next checkpoint; elapsed time; speed; minimap; trim and reset prompts |\n| Results | Final position; total elapsed time |\n\n## Asset records\n| ID | Dimensions | States | Fixed features |\n|---|---|---|---|\n| R01 | Standing height 1700 mm | Idle; Lean | Ivory helmet; amber right sleeve; navy suit; two copper belt pouches |\n| V01 | Length 4200 mm; sail span 6000 mm; total height 3000 mm; hull width 1200 mm | Cruise; Trimmed | Two ivory sail tips; navy hull; one copper mast |\n| B01 | Height 2000 mm; width 800 mm; depth 800 mm | Upcoming; Active; Cleared | Navy body; copper forked crown; ivory circular face; rear event emblem |\n\n## V01 geometry\n| Property | Value |\n|---|---|\n| Visual envelope | 4200 mm longitudinal; 6000 mm transverse; 3000 mm vertical |\n| Collision volume | Rounded footprint extruded vertically to 1600 mm |\n| Collision footprint | 4200 mm longitudinal by 1800 mm transverse |\n| Capsule end radius | 900 mm |\n| Capsule end-centre spacing | 2400 mm |\n| Hull width | 1200 mm |\n| Sail geometry | Within the same visual envelope in Cruise and Trimmed |\n\n## Checkpoint signals\n| State | Colour | Shape |\n|---|---|---|\n| Upcoming | #F4EBDD | Hollow circle |\n| Active | #F3B544 | Double chevron |\n| Cleared | #132C46 and white | White check on navy panel |\n\n## Chase camera\n| Property | Value |\n|---|---|\n| Camera offset | 10 m behind R01 along the route heading; 4 m above route altitude |\n| Pitch | 10 degrees below horizontal |\n| Horizontal field of view | 70 degrees |\n| Roll | 0 degrees |\n| C1 rider anchor | x 250 m; y 100 m; z 100 m |\n| C1 camera position | x 240 m; y 100 m; z 104 m |\n| C1 heading | East |\n| C1 landmark relation | L1 ahead-left; G2 ahead |\n| C2 rider anchor | x 700 m; y 250 m; z 100 m |\n| C2 camera position | x 700 m; y 240 m; z 104 m |\n| C2 heading | North |\n| C2 landmark relation | L2 ahead-right; G3 ahead |\n\n## Interface snapshots\n| Field | C1 | C2 |\n|---|---|---|\n| Location | Dawn Shelf | Needle Reach |\n| Lap | Lap 1/2 | Lap 1/2 |\n| Position | Position 2/6 | Position 2/6 |\n| Next checkpoint | Checkpoint 2/4 | Checkpoint 3/4 |\n| Elapsed time | 00:38.40 | 00:52.10 |\n| Speed | 144 km/h | 144 km/h |\n| Phase | Racing | Racing |\n| Rider state | Lean | Lean |\n| Glider state | Trimmed | Trimmed |\n| Cleared gates | G1 | G1, G2 |\n| Active gate | G2 | G3 |\n| Upcoming gates | G3, G4 | G4 |\n\n## Input mapping\n| Action text | Controller | Touch | Control centre in logical units |\n|---|---|---|---|\n| Trim sail | RT; hold | Sail icon; hold | (1530, 880) |\n| Reset to last gate | Y; press | Circular arrow; tap | (1530, 980) |\n\n## Interface geometry\n| Property | Value |\n|---|---|\n| Logical canvas | 1920 by 1080 units |\n| Safe rectangle | x 96–1824; y 54–1026 |\n| Coordinate origin | Top left |\n| Minimum default text height | 26 logical units |\n| Large text threshold | 52 logical units |\n| Text and ordinary indicator contrast | 4.5:1 |\n| Large text and icon contrast | 3:1 |\n| Minimap orientation | North up |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: course-topology.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: glider-envelope.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: race-interface-safe-area.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: event-emblem-and-buoy.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: cloud-sea-sailing-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "SKYWAKE | Sail-glider racing above a sea of clouds\n\nWe are building SKYWAKE for racing players who enjoy fast movement and choosing their line through open space. Design the visual world of its first cloud-island circuit, connecting sail-gliders, riders, floating checkpoints and the race interface. The art direction is fixed: painted cloud masses, sharply cut sail silhouettes, ivory fabric, navy enamel and exposed copper fittings. Use #132C46 for navy and #F3B544 for active race signals. Sunlight comes from world northwest at an elevation of 35 degrees. Print \"SKYWAKE\" and \"Ride the high line\" on the presentation cover and the video's closing frame.\n\nThe circuit occupies 800 m by 600 m and runs clockwise through four gates over two laps, with six racers. Dawn Shelf covers the southern straight; Needle Reach covers the eastern climb through the islands. Gate centres, obstacles, landmarks and two race snapshots are fixed in 03-race-records.en.md. Build the glider inside a 4200 mm length, 6000 mm sail span and 3000 mm overall height; collision uses a rounded hull volume measuring 4200 mm by 1800 mm by 1600 mm. The existing event emblem and checkpoint buoy carry through the work. Upcoming gates use an ivory hollow circle, the active gate uses an amber double chevron, and cleared gates use a navy panel with a white check. The interface uses a 1920 by 1080 logical canvas with horizontal insets of 96 units and vertical insets of 54 units. Default text is at least 26 logical units high. Both input versions carry \"Trim sail\" and \"Reset to last gate\" in matching positions.\n\nAudience: the game director, environment artists, vehicle artists and interface team, for approval of the first circuit's visual language and production asset brief.\n\nInputs (attached): 01-client-facts.en.md contains the fixed art direction, dimensions, identity features and interface requirements. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. 03-race-records.en.md contains the circuit coordinates, race rules, asset records, camera settings and interface snapshots. course-topology.png supplies the measured circuit boundary, gate spacing and spatial anchors. glider-envelope.png supplies the vehicle envelope and collision geometry. race-interface-safe-area.png supplies the logical canvas, safe area and control anchors. event-emblem-and-buoy.png supplies the existing emblem and buoy identity. cloud-sea-sailing-reference.png supplies cloud light, sail tension and material atmosphere.\n\nDeliverables:\n1. A one-page art style sheet recording the palette codes, silhouette and brushwork rules, ivory fabric, navy enamel, copper fittings and northwest light at 35 degrees\n2. A two-page character and prop inventory recording R01, V01 and B01 with dimensions, visible features, state names and full-view and map-icon treatments\n3. One V01 glider sheet with front, side and rear views, a dimensioned top view, Cruise and Trimmed states, and a map icon\n4. One R01 rider sheet with front, side and rear views, Idle and Lean states, a full-height portrait and a map icon\n5. One circuit overview with four numbered gates, the clockwise route, the 120 m route corridor, two obstacle footprints, two landmarks and the C1 and C2 camera anchors\n6. Two environment paintings, one each for Dawn Shelf and Needle Reach, showing their recorded gate, landmark and obstacle positions\n7. One B01 checkpoint sheet with front, side and rear views, a close detail, map icons, and Upcoming, Active and Cleared treatments on the existing buoy\n8. Two race interface compositions of snapshot C1, one for controller input and one for touch input, with the recorded race values, minimap and both control prompts\n9. Two finished race keyframes, C1 at Dawn Shelf and C2 at Needle Reach, using the recorded chase camera and controller interface\n10. One 10-second race video with C1 during seconds 0–4, C2 during seconds 4–8, and the game name and tagline during seconds 8–10\n11. One presentation document of at least 10 pages, reusing the style sheet, inventory, glider, rider, circuit, environments, checkpoint states, interfaces and keyframes, with a page comparing the map anchors to both race views\n\nAcceptance:\n- The art style sheet records #132C46, #F3B544 and northwest light at 35 degrees; the glider sheet, checkpoint sheet and presentation repeat both codes in their annotations, and the environment paintings, keyframes and video use the recorded materials and world lighting.\n- The inventory, glider sheet, rider sheet, checkpoint sheet and presentation repeat the relevant R01, V01 and B01 identifiers, dimensions and state names from 03-race-records.en.md. The rider's ivory helmet, amber right sleeve and two belt pouches, the glider's twin sail tips, and the buoy's forked crown and event emblem remain recognisable in detailed views, map icons, environments, keyframes and video wherever those assets appear.\n- The circuit overview places G1–G4 at the recorded coordinates with consecutive spacings of 600 m, 400 m, 600 m and 400 m. The environment paintings, interface minimaps, keyframes and video preserve that clockwise order and both obstacle footprints. C1 faces east with the Dawn Shelf arch to the rider's left; C2 faces north with the Needle Reach spire to the rider's right. The presentation's comparison page pairs each keyframe with its map anchor.\n- The checkpoint sheet, interface compositions, keyframes and video use the hollow circle for Upcoming, double chevron for Active and white check on navy for Cleared. Route ribbons use paired ivory edge lines; obstacle silhouettes use dark diagonal bands. Interface text and ordinary indicators reach 4.5:1 contrast, while large text of at least 52 logical units and icons reach 3:1 against their immediate backgrounds.\n- Both interface compositions and both keyframes use the 1920 by 1080 logical canvas, the 96-unit horizontal and 54-unit vertical safe insets, and text at least 26 logical units high. The interface compositions repeat C1's six recorded HUD fields; each keyframe repeats its own snapshot's fields. Controller RT and Y prompts and touch controls share the recorded anchors and the exact wording \"Trim sail\" and \"Reset to last gate\". Race interfaces within the video follow the same layout and text rules.\n- The video lasts 10 seconds and follows the three timed sections. Its closing frame and the presentation cover print \"SKYWAKE\" and \"Ride the high line\". The presentation contains at least 10 pages and reuses all nine named groups of earlier work.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/course-topology.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "4fbb8863c7dd7abaffd10c787dbdfb72d985b4c22bd8b3711980968800e878a6"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/glider-envelope.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "50d746442dadfc2f693f6ef7fa00c3c1429b004de77d75d011274185b9fa3f19"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/race-interface-safe-area.png",
+      "nodeId": "provided-image-3",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "fbb1cab8727f03735d98395659c8d6c38b836a84d35d309c8226de5f2f31eadb"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/event-emblem-and-buoy.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "9203d2e90326e12ae45b81b8e825565840e81699e10ad4f49e51ef32cbd0bee1"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/cloud-sea-sailing-reference.png",
+      "nodeId": "provided-image-5",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "c922a594f2ad289e0d8996179137d8c9c539e94413a0d0946de3c0be0ddb57c3"
+    }
+  ]
+}

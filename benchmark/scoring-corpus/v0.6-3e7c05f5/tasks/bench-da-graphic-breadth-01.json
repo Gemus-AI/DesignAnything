@@ -1,0 +1,567 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-graphic-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "overview-wall-guide",
+      "label": "Overview wall guide",
+      "description": "One finished overview wall guide with six numbered action illustrations and the individual workstation responsibility line.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "preparation-sign",
+      "label": "Preparation sign",
+      "description": "One finished preparation sign showing handwashing at the dedicated basin before food preparation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "hob-reset-sign",
+      "label": "Hob reset sign",
+      "description": "One finished hob reset sign assigning switching off and subsequent cooling to the current hob user.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "wash-return-strip",
+      "label": "Wash-and-return strip",
+      "description": "One finished utensil strip showing washing, rinsing, drying and returning in four ordered illustrations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-destination-sign",
+      "label": "Storage destination sign",
+      "description": "One finished storage destination sign pairing boards, colanders and pans with the three bays from left to right.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "departure-check-card",
+      "label": "Departure check card",
+      "description": "One finished session host departure card with four closing conditions and four empty tick boxes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "facility-name",
+      "kind": "text-verbatim",
+      "text": "Nook Community Kitchen",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "individual-responsibility",
+      "kind": "text-verbatim",
+      "text": "Every user resets their own station.",
+      "scope": {
+        "slots": [
+          "overview-wall-guide"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "Nook Community Kitchen",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-action-and-equipment-vocabulary",
+      "slots": [
+        "preparation-sign",
+        "hob-reset-sign",
+        "wash-return-strip",
+        "storage-destination-sign",
+        "departure-check-card"
+      ],
+      "sourceSlots": [
+        "overview-wall-guide"
+      ],
+      "items": [
+        {
+          "item": "Corresponding objects and action gestures remain recognisably consistent between the overview and the four local signs, allowing differences in scale, crop and detail.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Equipment pictures on the departure card agree with the corresponding equipment pictures on the wall signs.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Across the artworks, handwashing remains distinct from utensil washing, switching off precedes cooling, any hob wiping follows cooling, and equipment return follows cleaning and drying.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The commission requires a shared vocabulary of recognisable equipment drawings and gestures, rather than one fixed logo, product, character or space; this relationship is covered in sets."
+    },
+    "brandToken": "Nook Community Kitchen"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "overview-wall-guide",
+      "preparation-sign",
+      "hob-reset-sign",
+      "wash-return-strip",
+      "storage-destination-sign",
+      "departure-check-card"
+    ],
+    "layoutExtras": true,
+    "naRules": "The design-quality checklist must not prescribe a logo, illustration style, font, palette or exact equipment geometry, or assess photorealistic materials and lighting for these instructional artworks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "overview-wall-guide",
+        "preparation-sign",
+        "hob-reset-sign",
+        "wash-return-strip",
+        "storage-destination-sign",
+        "departure-check-card"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-overview-wall-guide",
+      "requirementId": "R-format-overview-wall-guide",
+      "method": "artifact-property",
+      "targetSlots": [
+        "overview-wall-guide"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-preparation-sign",
+      "requirementId": "R-format-preparation-sign",
+      "method": "artifact-property",
+      "targetSlots": [
+        "preparation-sign"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-hob-reset-sign",
+      "requirementId": "R-format-hob-reset-sign",
+      "method": "artifact-property",
+      "targetSlots": [
+        "hob-reset-sign"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-wash-return-strip",
+      "requirementId": "R-format-wash-return-strip",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wash-return-strip"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-destination-sign",
+      "requirementId": "R-format-storage-destination-sign",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-destination-sign"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-departure-check-card",
+      "requirementId": "R-format-departure-check-card",
+      "method": "artifact-property",
+      "targetSlots": [
+        "departure-check-card"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "assigned-artwork-copy",
+      "requirementId": "R-assigned-artwork-copy",
+      "method": "visual",
+      "targetSlots": [
+        "overview-wall-guide",
+        "preparation-sign",
+        "hob-reset-sign",
+        "wash-return-strip",
+        "storage-destination-sign",
+        "departure-check-card"
+      ],
+      "criteria": "Read each artwork against its assigned copy record. Every artwork must print Nook Community Kitchen. The overview requires SHARED KITCHEN; WASH HANDS; PREPARE; COOK; SWITCH OFF; CLEAN; RETURN; and Every user resets their own station. The preparation sign requires BEFORE YOU PREPARE; WASH HANDS; PREPARE; and Use the handwashing basin. The hob sign requires HOB HANDOVER; HOB USER; SWITCH OFF; LEAVE TO COOL; and Do not wipe a hot hob. The utensil strip requires WASH AND RETURN; WASH; RINSE; DRY; RETURN. The storage sign requires RETURN DRY EQUIPMENT; BOARDS; COLANDERS; PANS. The departure card requires BEFORE LOCKING UP; SESSION HOST; Hobs switched off; Work surfaces clear; Utensils clean and dry; Equipment in the right bays. Semicolons here separate fields and are not additional required punctuation. Preserve each field's spelling, capitalisation and punctuation; line breaks may vary. Additional short English labels may clarify the operating records but must not contradict them. Missing, substituted or incorrectly assigned copy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "overview-sequence-and-shared-drawings",
+      "requirementId": "R-overview-sequence-and-shared-drawings",
+      "method": "visual",
+      "targetSlots": [
+        "overview-wall-guide",
+        "preparation-sign",
+        "hob-reset-sign",
+        "wash-return-strip",
+        "storage-destination-sign"
+      ],
+      "criteria": "The overview must contain six numbered action illustrations progressing from handwashing to bench preparation, electric-hob cooking, switching off, cleaning used utensils and the workstation, and returning clean, dry equipment. Numbers or arrows must establish this order without relying on colour. Compare corresponding equipment and gestures with the four local signs: their meanings must remain recognisably equivalent. Scale, crop and detail may change with the layout. Missing actions, reordered steps, ambiguous sequencing or conflicting representations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "preparation-and-hob-responsibility",
+      "requirementId": "R-preparation-and-hob-responsibility",
+      "method": "visual",
+      "targetSlots": [
+        "preparation-sign",
+        "hob-reset-sign",
+        "overview-wall-guide"
+      ],
+      "criteria": "The preparation artwork must visibly place handwashing at the dedicated basin before food preparation. The hob artwork must identify the current hob user as responsible for two distinct actions, first turning off the hob and then allowing it to cool. Grouping, labels and sequence cues must make responsibility for both actions clear. If the overview depicts wiping a hob, it must establish cooling before wiping; depicting hob wiping is optional. Reversing, merging or assigning these actions to the session host fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "utensil-process-and-storage-mapping",
+      "requirementId": "R-utensil-process-and-storage-mapping",
+      "method": "visual",
+      "targetSlots": [
+        "wash-return-strip",
+        "storage-destination-sign"
+      ],
+      "criteria": "The strip must show four utensil illustrations with an unambiguous progression through washing, rinsing, drying and returning. Equipment must be clean and dry before storage. The destination sign must present three distinguishable equipment categories and correctly pair their graphics and labels with the left board bay, centre colander bay and right pan bay when facing the counter. Equipment quantities, brands, materials and exact geometry may vary. Missing or reordered stages, wet-equipment return, mislabelled objects or reversed bay assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "host-departure-checklist",
+      "requirementId": "R-host-departure-checklist",
+      "method": "visual",
+      "targetSlots": [
+        "departure-check-card"
+      ],
+      "criteria": "The card must clearly assign the closing inspection to SESSION HOST and provide one distinct, unmarked tick box for each condition: hobs off, work surfaces clear, utensils clean and dry, and equipment in its correct bays. There must be exactly four boxes, with no condition omitted or combined under a shared box. Equipment illustrations must be recognisably consistent with their counterparts on the wall signs; simplified versions are acceptable. Missing equipment pictures, contradictory depictions, prechecked boxes or participant responsibility replacing host responsibility fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "overview-wall-guide",
+        "preparation-sign",
+        "hob-reset-sign",
+        "wash-return-strip",
+        "storage-destination-sign"
+      ]
+    },
+    {
+      "id": "physical-print-layout-and-reading-size",
+      "requirementId": "R-physical-print-layout-and-reading-size",
+      "method": "visual",
+      "targetSlots": [
+        "overview-wall-guide",
+        "preparation-sign",
+        "hob-reset-sign",
+        "wash-return-strip",
+        "storage-destination-sign",
+        "departure-check-card"
+      ],
+      "criteria": "Assess the artwork at its specified physical trim: overview 400 × 600 mm; preparation and hob signs 300 × 300 mm each; wash-return and storage signs 480 × 270 mm each; departure card 100 × 150 mm. Check for a 3 mm bleed allowance on every edge and at least 5 mm between the trim boundary and essential text or graphics. At these print sizes, all lettering, including facility credits and instructions, must reach a minimum printed height of 8 mm on the overview, 5 mm on each local sign and 3 mm on the card. Larger margins and lettering are allowed. Insufficient bleed, essential content within the safe margin, or undersized lettering fails. Judge physical layout and proportional scale without requiring an exact raster pixel count.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "text-and-graphic-contrast",
+      "requirementId": "R-text-and-graphic-contrast",
+      "method": "visual",
+      "targetSlots": [
+        "overview-wall-guide",
+        "preparation-sign",
+        "hob-reset-sign",
+        "wash-return-strip",
+        "storage-destination-sign",
+        "departure-check-card"
+      ],
+      "criteria": "Evaluate every text element and every graphic that communicates an action, object, direction or checklist control against its actual adjacent background. Text must meet a contrast ratio of at least 4.5:1 and meaningful graphics at least 3:1, including over patterned or varying backgrounds. Palette choices are unrestricted when these thresholds are satisfied. Any required element below its applicable threshold fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "separate-washing-pictures",
+      "requirementId": "R-separate-washing-pictures",
+      "method": "visual",
+      "targetSlots": [
+        "overview-wall-guide",
+        "preparation-sign",
+        "wash-return-strip"
+      ],
+      "criteria": "Handwashing must be identifiable through hands being washed at the dedicated basin, while utensil washing must depict equipment being washed at the separate utensil sink. A shared illustration style is allowed, but the object being washed and the basin's function must remain distinguishable from the pictures themselves. Reusing an ambiguous washing icon for both tasks, or depicting utensil washing at the handwashing basin, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-shared-action-and-equipment-vocabulary",
+      "requirementId": "R-set-shared-action-and-equipment-vocabulary",
+      "method": "visual",
+      "targetSlots": [
+        "preparation-sign",
+        "hob-reset-sign",
+        "wash-return-strip",
+        "storage-destination-sign",
+        "departure-check-card"
+      ],
+      "criteria": "Corresponding objects and action gestures remain recognisably consistent between the overview and the four local signs, allowing differences in scale, crop and detail. Equipment pictures on the departure card agree with the corresponding equipment pictures on the wall signs. Across the artworks, handwashing remains distinct from utensil washing, switching off precedes cooling, any hob wiping follows cooling, and equipment return follows cleaning and drying.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/kitchen-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-01/required-copy.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "overview-wall-guide"
+      ]
+    }
+  ]
+}

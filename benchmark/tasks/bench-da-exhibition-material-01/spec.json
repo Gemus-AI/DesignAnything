@@ -1,0 +1,1160 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-exhibition-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "collection-route",
+      "label": "Collection and route schedule",
+      "description": "A two-page schedule of four collection records, section assignments, route order and installation heights.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "label-copy",
+      "label": "Label copy schedule",
+      "description": "A copy schedule containing four object labels, three section names, two touch labels and three screen captions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "loom-hall-plan",
+      "label": "Loom Hall route plan",
+      "description": "A dimensioned Loom Hall plan locating the collection, sections, circulation, screen and seats.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shuttle-room-plan",
+      "label": "Shuttle Room route plan",
+      "description": "A dimensioned Shuttle Room plan locating the same touring kit within the smaller venue.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "elevations-sections",
+      "label": "Display elevations and sections",
+      "description": "An elevation and section sheet recording four cases, mounting heights, touch ledges and lighting separation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "furniture-packing",
+      "label": "Furniture and packing document",
+      "description": "A furniture document with assembly drawings, component counts, material and joint details and three crate layouts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "interpretation-artwork",
+      "label": "Interpretation artwork",
+      "description": "A six-page artwork document containing entrance graphics, three section headers, four object labels and two touch labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "screen-storyboard",
+      "label": "Digital weaving screen storyboard",
+      "description": "A three-frame storyboard connecting punched-card control, digital warp selection and woven structure.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "loom-hall-view",
+      "label": "Loom Hall entrance perspective",
+      "description": "A visitor perspective from Loom Hall's south entrance showing the installed exhibition.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shuttle-room-view",
+      "label": "Shuttle Room Code perspective",
+      "description": "A visitor perspective from Shuttle Room's east exit looking toward the Code section.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "assembly-state",
+      "label": "Shuttle Room assembly state",
+      "description": "An installation drawing of the Shuttle Room kit during assembly with identified hex-key connections.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dismantled-state",
+      "label": "Shuttle Room dismantled state",
+      "description": "A dismantled-state drawing showing the complete touring kit allocated to three open crates in Shuttle Room.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "exhibition-video",
+      "label": "Exhibition route video",
+      "description": "A 10-second exhibition video following the three sections and presenting both teaching replicas.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "touring-presentation",
+      "label": "Touring exhibition presentation",
+      "description": "A presentation of at least 10 pages reusing the exhibition work with collection pages and a touring-facts index.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exhibition-name",
+      "kind": "text-verbatim",
+      "text": "THREAD LOGIC",
+      "scope": {
+        "slots": [
+          "interpretation-artwork",
+          "exhibition-video",
+          "touring-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "exhibition-phrase",
+      "kind": "text-verbatim",
+      "text": "From fibre to code",
+      "scope": {
+        "slots": [
+          "interpretation-artwork",
+          "exhibition-video",
+          "touring-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "THREAD LOGIC",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "loom-hall-installation-consistency",
+      "slots": [
+        "elevations-sections",
+        "loom-hall-view"
+      ],
+      "sourceSlots": [
+        "loom-hall-plan",
+        "collection-route",
+        "furniture-packing"
+      ],
+      "items": [
+        {
+          "item": "The Loom Hall portions depict the same case, ledge, screen, seating and section arrangement established by its route plan.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Depicted case construction and mounting heights agree with the furniture document and collection schedule.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Original textiles remain enclosed, the two replicas remain touch-accessible beside their assigned originals, and the reserved circulation strips remain clear.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "shuttle-room-installation-consistency",
+      "slots": [
+        "elevations-sections",
+        "shuttle-room-view",
+        "assembly-state",
+        "dismantled-state"
+      ],
+      "sourceSlots": [
+        "shuttle-room-plan",
+        "collection-route",
+        "furniture-packing"
+      ],
+      "items": [
+        {
+          "item": "The Shuttle Room depictions agree on venue geometry and the planned installation, allowing incomplete assembly and movement into crates during dismantling.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Installed, partly assembled and packed representations account for the same touring kit and component inventory.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The dismantled kit fits three open crates, with four horizontal padded original-textile trays in C3 and the remaining touring equipment allocated to C1–C2.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "THREAD LOGIC"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "loom-hall-plan",
+      "shuttle-room-plan",
+      "elevations-sections",
+      "screen-storyboard",
+      "loom-hall-view",
+      "shuttle-room-view",
+      "assembly-state",
+      "dismantled-state"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not rescore exact collection copy, numeric specifications, packing completeness or textile-pattern fidelity, which are covered by factual checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "collection-route",
+        "label-copy",
+        "loom-hall-plan",
+        "shuttle-room-plan",
+        "elevations-sections",
+        "furniture-packing",
+        "interpretation-artwork",
+        "screen-storyboard",
+        "loom-hall-view",
+        "shuttle-room-view",
+        "assembly-state",
+        "dismantled-state",
+        "touring-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "loom-hall-plan",
+        "shuttle-room-plan",
+        "elevations-sections",
+        "screen-storyboard",
+        "loom-hall-view",
+        "shuttle-room-view",
+        "assembly-state",
+        "dismantled-state"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-collection-route",
+      "requirementId": "R-format-collection-route",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-route"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-label-copy",
+      "requirementId": "R-format-label-copy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "label-copy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-loom-hall-plan",
+      "requirementId": "R-format-loom-hall-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "loom-hall-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shuttle-room-plan",
+      "requirementId": "R-format-shuttle-room-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shuttle-room-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-elevations-sections",
+      "requirementId": "R-format-elevations-sections",
+      "method": "artifact-property",
+      "targetSlots": [
+        "elevations-sections"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-furniture-packing",
+      "requirementId": "R-format-furniture-packing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furniture-packing"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-interpretation-artwork",
+      "requirementId": "R-format-interpretation-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interpretation-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-screen-storyboard",
+      "requirementId": "R-format-screen-storyboard",
+      "method": "artifact-property",
+      "targetSlots": [
+        "screen-storyboard"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-loom-hall-view",
+      "requirementId": "R-format-loom-hall-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "loom-hall-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shuttle-room-view",
+      "requirementId": "R-format-shuttle-room-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shuttle-room-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-assembly-state",
+      "requirementId": "R-format-assembly-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembly-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dismantled-state",
+      "requirementId": "R-format-dismantled-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dismantled-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-exhibition-video",
+      "requirementId": "R-format-exhibition-video",
+      "method": "manual",
+      "targetSlots": [
+        "exhibition-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-touring-presentation",
+      "requirementId": "R-format-touring-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "touring-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "collection-schedule",
+      "requirementId": "R-collection-schedule",
+      "method": "content",
+      "targetSlots": [
+        "collection-route"
+      ],
+      "criteria": "Require two pages containing T01 / Linen Ground / 1984 / Fibre; T02 / Twill Study / 1992 / Repeat; T03 / Card Check / 2006 / Code; and T04 / Digital Check / 2024 / Code. Each original is 600 × 400 mm, width × height. The route proceeds through Fibre, Repeat and Code; the order of T03 and T04 within Code may vary. State textile support at 800 mm, case top at 850 mm, label centre at 900 mm and graphic support at 1800 mm above floor. Layout may vary; missing or conflicting records, assignments, dimensions or heights fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ]
+    },
+    {
+      "id": "plan-collection-records",
+      "requirementId": "R-plan-collection-records",
+      "method": "visual",
+      "targetSlots": [
+        "loom-hall-plan",
+        "shuttle-room-plan"
+      ],
+      "criteria": "Each plan must independently identify all four originals with their correct ID, title, year, 600 × 400 mm dimensions and section. Verify T01 / Linen Ground / 1984 in Fibre, T02 / Twill Study / 1992 in Repeat, T03 / Card Check / 2006 and T04 / Digital Check / 2024 in Code. A keyed schedule on the plan is acceptable if its links to positions are unambiguous. Any missing, duplicated, misassigned or incorrect record fails, including errors copied from the source schedule.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "collection-route"
+      ]
+    },
+    {
+      "id": "venue-boundaries-and-route-equipment",
+      "requirementId": "R-venue-boundaries-and-route-equipment",
+      "method": "visual",
+      "targetSlots": [
+        "loom-hall-plan",
+        "shuttle-room-plan"
+      ],
+      "criteria": "Read coordinates from the southwest interior origin, with east as x and north as y. Loom Hall must measure 10000 × 8000 mm and Shuttle Room 8000 × 6000 mm. In each, the south entrance spans x = 1000–2400 mm and the east exit y = 1000–2400 mm. Keep y = 0–1200 mm clear along the south wall and the easternmost 1200 mm clear along the east wall: x = 8800–10000 mm in Loom Hall and 6800–8000 mm in Shuttle Room. Dimension circulation widths and show four cases, two touch ledges, one screen in Code and two host seats. Furniture arrangements may differ between venues; incorrect dimensions, blocked reserved strips or missing equipment fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "venue-position-continuity",
+      "requirementId": "R-venue-position-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "elevations-sections",
+        "loom-hall-view",
+        "shuttle-room-view",
+        "assembly-state",
+        "dismantled-state"
+      ],
+      "criteria": "Compare each depiction with the corresponding venue plan: room boundaries, openings, section locations and installed case, ledge, screen and seat positions must agree wherever represented. The elevation sheet must make its venue correspondence understandable. Assembly may show incomplete furniture, and dismantling may move components into crates; these changes must remain compatible with Shuttle Room and the planned installation. Viewpoint changes and state-appropriate omissions are allowed; incompatible room geometry or contradictory installed positions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "loom-hall-plan",
+        "shuttle-room-plan"
+      ]
+    },
+    {
+      "id": "elevations-mounting-and-lighting",
+      "requirementId": "R-elevations-mounting-and-lighting",
+      "method": "visual",
+      "targetSlots": [
+        "elevations-sections"
+      ],
+      "criteria": "Require elevation and section information covering all four flat cases, label mounting, graphic supports, touch ledges and lighting positions. Confirm textile supports at 800 mm, case tops at 850 mm, label centres at 900 mm, graphic supports at 1800 mm and touch ledges at 800 mm above floor. Identify 24 pt label body type, mark the original-textile lighting limit as 50 lux and separate label lighting as 150 lux, and visibly draw shielding between these lighting areas. Shared details may cover identical cases if their applicability is clear. Missing heights, contradictory dimensions, absent shielding or undifferentiated lighting fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "collection-route"
+      ]
+    },
+    {
+      "id": "furniture-construction-and-packing",
+      "requirementId": "R-furniture-construction-and-packing",
+      "method": "content",
+      "targetSlots": [
+        "furniture-packing"
+      ],
+      "criteria": "Require assembled and exploded drawings, a numbered inventory with quantities for every component type, material thicknesses and joint details sufficient to account for four cases and the touring equipment. Frames must be aluminium, supports birch plywood and enclosure panels removable acrylic, joined with M6 bolts operated by a 5 mm hex key. Every detached furniture part must have dimensions demonstrating fit within 850 × 600 × 80 mm. Packing layouts must account for the complete inventory: furniture, rolled flexible graphics and detached supports, one 13-inch screen, replicas and installation accessories in C1–C2; four padded original-textile trays in C3. Each tray is 700 × 500 × 40 mm externally with a 620 × 420 × 10 mm recess, holding its original flat and face upward; C3 contains four horizontal tray layers. Host seats are venue equipment. Construction choices and allocation between C1 and C2 may vary within these conditions; uncounted parts, unexplained packing omissions, oversized parts or incompatible materials and joints fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ]
+    },
+    {
+      "id": "transport-and-access-records",
+      "requirementId": "R-transport-and-access-records",
+      "method": "content",
+      "targetSlots": [
+        "furniture-packing",
+        "touring-presentation"
+      ],
+      "criteria": "Assess stated logistics and packing against 04-tour-logistics.md. There are exactly three crates, C1–C3, each 1000 × 750 × 900 mm externally including wheels and 900 × 650 × 750 mm internally; they travel upright in a single layer. Loom Hall has a 1300 × 2200 mm loading door, 1200 × 2100 mm lift door and 1600 × 2200 × 2400 mm lift cabin; Shuttle Room has a 1200 × 2100 mm loading door, 1100 × 2000 mm lift door and 1400 × 2000 × 2200 mm cabin. Both straight loading corridors are 1200 mm wide, with west service doors at y = 4000–5200 mm measuring 1200 × 2100 mm. Visitor openings are 2200 mm high. Clear venue heights are 3000 mm and 2700 mm respectively, and each venue supplies one floor-level outlet at the north-wall midpoint. The packing document must demonstrate usable crate fit and transport feasibility; the presentation must locate these fixed records through its index. Turning a crate in plan to pass a doorway is allowed while maintaining upright transit. Incorrect records, use of external dimensions as packing capacity, physical overlaps or an infeasible stated loading route fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ]
+    },
+    {
+      "id": "label-copy-fidelity",
+      "requirementId": "R-label-copy-fidelity",
+      "method": "content",
+      "targetSlots": [
+        "label-copy",
+        "interpretation-artwork"
+      ],
+      "criteria": "Read each document against the supplied collection tables. Require all four exact object titles and bodies, with the correct object ID and year kept together; the section names Fibre, Repeat and Code; and the complete R01 and R02 touch-label titles and bodies. Titles must contain no more than six words and object bodies no more than 45 words. The label-copy schedule must also contain all three exact screen captions in their supplied order. Typography and line wrapping may change, but substitutions, shortened copy, altered punctuation, incorrect record associations or omitted labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ]
+    },
+    {
+      "id": "interpretation-artwork-structure",
+      "requirementId": "R-interpretation-artwork-structure",
+      "method": "content",
+      "targetSlots": [
+        "interpretation-artwork"
+      ],
+      "criteria": "Require exactly six pages: page 1 contains the entrance graphic and all three section headers; pages 2–5 each contain one distinct original-object label, collectively covering T01–T04; page 6 contains both touch labels. The entrance graphic must visibly carry the exhibition name and phrase. The artwork must identify object-label body type as 24 pt. Composition may vary within the specified page allocation; incorrect pagination, duplicated or absent labels, missing entrance copy or a different stated body size fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ]
+    },
+    {
+      "id": "screen-sequence",
+      "requirementId": "R-screen-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "screen-storyboard"
+      ],
+      "criteria": "Require three ordered frames with these exact captions: 'T03: Punched cards select warp threads for lifting.'; 'T04: A digital pattern file controls warp selection.'; 'Both samples form cloth by interlacing warp and weft.' Frame 1 must connect a card sequence to selected warp threads, frame 2 a digital pattern grid to selected warp threads, and frame 3 the shared warp-and-weft structure beside the two samples. Diagrammatic or illustrative treatment is allowed. Missing or reordered captions, reversed object associations, or visuals that do not explain the common weaving principle fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "label-copy"
+      ]
+    },
+    {
+      "id": "visitor-perspective-viewpoints",
+      "requirementId": "R-visitor-perspective-viewpoints",
+      "method": "visual",
+      "targetSlots": [
+        "loom-hall-view",
+        "shuttle-room-view"
+      ],
+      "criteria": "The Loom Hall perspective must be spatially consistent with a visitor standing at its south entrance. The Shuttle Room perspective must originate at its east exit and look toward Code. Establish the viewpoints through openings, room geometry and collection placement rather than captions alone. Lens, rendering style and natural occlusion may vary; a conflicting viewpoint or a Shuttle Room view directed away from Code fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "loom-hall-plan",
+        "shuttle-room-plan"
+      ]
+    },
+    {
+      "id": "installation-and-dismantled-states",
+      "requirementId": "R-installation-and-dismantled-states",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-state",
+        "dismantled-state"
+      ],
+      "criteria": "Both drawings must represent Shuttle Room in distinct installation states. The assembly drawing must visibly show assembly in progress and identify M6 connections operated by a 5 mm hex key. The dismantled drawing must show C1, C2 and C3 open, with the complete touring inventory traceable to the packing document and contained within each 900 × 650 × 750 mm usable envelope. C3 must account for four 700 × 500 × 40 mm padded trays in horizontal layers, with originals flat and face upward. Cutaways and keyed callouts may reveal concealed contents. Closed crates without inspectable allocation, missing components, furniture mixed into C3, oversized contents or an assembly drawing lacking tool connections fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furniture-packing",
+        "shuttle-room-plan"
+      ]
+    },
+    {
+      "id": "video-whole-file",
+      "requirementId": "R-video-whole-file",
+      "method": "manual",
+      "targetSlots": [
+        "exhibition-video"
+      ],
+      "criteria": "Review the entire video and its runtime. It must last 10 seconds and progress from the entrance through Fibre, Repeat and Code to both touch replicas. THREAD LOGIC and From fibre to code must be visibly readable. Check the four original textile identities against the supplied references, including the 12 × 8 rust/ecru T03 checkerboard and 24 × 16 navy/ecru T04 checkerboard; R01 must be beside T01 and R02 beside T04. Editing and camera movement may vary while preserving the required progression. Missing sections, replicas or identity copy, wrong duration, altered textile faces or incorrect replica placement fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "presentation-records-and-facts-index",
+      "requirementId": "R-presentation-records-and-facts-index",
+      "method": "content",
+      "targetSlots": [
+        "touring-presentation"
+      ],
+      "criteria": "Require at least 10 pages, visible THREAD LOGIC and From fibre to code, and collection pages that keep each object's ID, title and year together. Verify T01 / Linen Ground / 1984 / Fibre, T02 / Twill Study / 1992 / Repeat, T03 / Card Check / 2006 / Code and T04 / Digital Check / 2024 / Code, each at 600 × 400 mm. Repeat the 800 mm textile support, 850 mm case top, 900 mm label centre and 1800 mm graphic support heights. Collection imagery must preserve the supplied textile faces and checkerboard counts; installation imagery must retain the correct replica pairings. The touring-facts index must name the delivered file and page or view locating every fixed fact, including the schedules' collection records, section names and installation heights. Page design and grouping may vary; missing facts, incorrect records, altered faces, too few pages or absent or unresolvable index references fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "sourceSlots": [
+        "collection-route",
+        "label-copy"
+      ]
+    },
+    {
+      "id": "presentation-visible-reuse",
+      "requirementId": "R-presentation-visible-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "touring-presentation"
+      ],
+      "criteria": "Require recognizable visible reuse from every listed source: both schedules, both venue plans, furniture drawings, interpretation artwork, the screen storyboard and both visitor perspectives. Legible excerpts, crops and scaled placements are acceptable when their source content remains identifiable. Merely naming a source, substituting unrelated new material or omitting any source role fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "sourceSlots": [
+        "collection-route",
+        "label-copy",
+        "loom-hall-plan",
+        "shuttle-room-plan",
+        "furniture-packing",
+        "interpretation-artwork",
+        "screen-storyboard",
+        "loom-hall-view",
+        "shuttle-room-view"
+      ]
+    },
+    {
+      "id": "original-and-replica-display",
+      "requirementId": "R-original-and-replica-display",
+      "method": "visual",
+      "targetSlots": [
+        "elevations-sections",
+        "loom-hall-view",
+        "shuttle-room-view"
+      ],
+      "criteria": "Require two visitor-accessible teaching replicas on 800 mm touch ledges, each 150 × 150 mm: R01 beside T01 in Fibre and R02 beside T04 in Code. R01 must represent undyed linen plain weave; R02 must represent navy/ecru 25 mm checks in a 6 × 6 grid. Originals must remain enclosed in the four flat cases while replicas are available for touch. The technical sheet may establish dimensions that are not printed in perspectives, and normal perspective occlusion is allowed. Wrong pairings, replica structures or sizes, inaccessible touch samples, or exposed originals presented for handling fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "loom-hall-plan",
+        "shuttle-room-plan"
+      ]
+    },
+    {
+      "id": "visitor-duration-and-capacity",
+      "requirementId": "R-visitor-duration-and-capacity",
+      "method": "visual",
+      "targetSlots": [
+        "loom-hall-plan",
+        "shuttle-room-plan"
+      ],
+      "criteria": "The schedule and plans together must establish a 20-minute route through Fibre, Repeat and Code and accommodation for 12 concurrent visitors in each venue. Assess the dimensioned circulation, viewing and touch locations, screen location and two seats for a workable arrangement that keeps the reserved strips usable. Visitors need not all be seated, and no fixed time split between sections is required. A different stated duration or capacity, no evidence of planning for the brief, or evident obstruction preventing the proposed group from using the route fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "collection-route"
+      ]
+    },
+    {
+      "id": "textile-face-fidelity",
+      "requirementId": "R-textile-face-fidelity",
+      "method": "visual",
+      "targetSlots": [
+        "loom-hall-view",
+        "shuttle-room-view"
+      ],
+      "criteria": "Compare represented originals with the supplied collection images and records. T01 is an oatmeal undyed-linen field with alternating over-one, under-one intersections; T02 has navy warp, ecru weft and 2/2 twill diagonals rising from lower left to upper right. T03 has rust/ecru 50 mm checks, 12 columns × 8 rows and a rust upper-left square. T04 has navy/ecru 25 mm checks, 24 columns × 16 rows and a navy upper-left square. All have straight bound edges and a 600:400 width-to-height proportion before perspective distortion. Natural lighting, perspective and partial occlusion may vary; invented patterns, reversed diagonal direction, incorrect checker counts or colours, or changed textile proportions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-loom-hall-installation-consistency",
+      "requirementId": "R-set-loom-hall-installation-consistency",
+      "method": "visual",
+      "targetSlots": [
+        "elevations-sections",
+        "loom-hall-view"
+      ],
+      "criteria": "The Loom Hall portions depict the same case, ledge, screen, seating and section arrangement established by its route plan. Depicted case construction and mounting heights agree with the furniture document and collection schedule. Original textiles remain enclosed, the two replicas remain touch-accessible beside their assigned originals, and the reserved circulation strips remain clear.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "loom-hall-plan",
+        "collection-route",
+        "furniture-packing"
+      ]
+    },
+    {
+      "id": "set-shuttle-room-installation-consistency",
+      "requirementId": "R-set-shuttle-room-installation-consistency",
+      "method": "visual",
+      "targetSlots": [
+        "elevations-sections",
+        "shuttle-room-view",
+        "assembly-state",
+        "dismantled-state"
+      ],
+      "criteria": "The Shuttle Room depictions agree on venue geometry and the planned installation, allowing incomplete assembly and movement into crates during dismantling. Installed, partly assembled and packed representations account for the same touring kit and component inventory. The dismantled kit fits three open crates, with four horizontal padded original-textile trays in C3 and the remaining touring equipment allocated to C1–C2.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/03-collection.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-01/04-tour-logistics.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "shuttle-room-plan",
+        "collection-route",
+        "furniture-packing"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "original-textile-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "textile-fronts.png",
+        "textile-details.png"
+      ],
+      "subjectSlots": [
+        "loom-hall-view",
+        "shuttle-room-view"
+      ],
+      "notes": "Preserve the textile patterns in the attached collection images, including T03's 12 × 8 checkerboard and T04's 24 × 16 checkerboard."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "collection-records-forward",
+      "fromSlot": "collection-route",
+      "toSlots": [
+        "loom-hall-plan",
+        "shuttle-room-plan",
+        "touring-presentation"
+      ],
+      "extract": [
+        "T01–T04 object IDs, titles and years",
+        "each object's 600 × 400 mm dimensions",
+        "each object's section assignment"
+      ],
+      "notes": "The collection and route schedule assigns T01 to Fibre, T02 to Repeat and T03–T04 to Code; both route plans and the presentation repeat those assignments, the 600 × 400 mm object dimensions, and every object's ID, title and year from 03-collection.md."
+    },
+    {
+      "id": "installation-heights-forward",
+      "fromSlot": "collection-route",
+      "toSlots": [
+        "elevations-sections",
+        "touring-presentation"
+      ],
+      "extract": [
+        "800 mm textile support height",
+        "850 mm case top height",
+        "900 mm label centre height",
+        "1800 mm graphic support height"
+      ],
+      "notes": "The collection and route schedule, elevation sheet and presentation repeat the 800 mm textile support, 850 mm case top, 900 mm label centre and 1800 mm graphic support heights."
+    }
+  ]
+}

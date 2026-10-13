@@ -1,0 +1,134 @@
+{
+  "id": "bench-da-fashion-material-02",
+  "title": "HEIRLOOM HOUR — Archive lace for a contemporary personal ceremony, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "FASHION",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# HEIRLOOM HOUR\n\n## Commission\n- Project: HEIRLOOM HOUR\n- Garment: one contemporary ceremony dress\n- Occasion: a personal anniversary at home with family\n- Wearer: an adult preserving a family textile memory\n- Wearing needs: seated dining, standing conversation and walking indoors\n- Sleeve length: elbow length\n- Hem position: 100 mm below the knee\n- Open design choices: neckline, silhouette volume, fastening and lace placement on opaque areas\n\n## Material inventory\n| Material | Colour | Composition | Construction | Weight | Available dimensions |\n|---|---|---|---|---|---|\n| Archive lace 01 | Ivory | 70% cotton, 30% polyamide | Warp-knitted lace | 100 g/m² | One usable rectangle, 900 mm wide × 2400 mm long |\n| Opaque backing | Ivory | 100% cupro | Plain weave | 90 g/m² | Available to suit the dress |\n| Sleeve underlayer | Ivory | 100% silk | Organza, plain weave | 24 g/m² | Available to suit the two sleeve windows |\n\n## Archive motif\n- Repeat: 60 mm across the width × 80 mm along the length\n- Arrangement: aligned rows and columns\n- Orientation: flower above downward stem\n- Central feature: one round eyelet\n- Petals: six oval eyelets arranged around the central eyelet\n- Leaves: two pointed leaves attached to the stem, one on each side\n- Appearance source: archive-lace-detail.png\n\n## Coverage record\n| Zone | Position and dimensions | Assembly | Appearance |\n|---|---|---|---|\n| Left sleeve window | Front upper sleeve, 100 × 120 mm | Archive lace over silk organza | Semi-sheer |\n| Right sleeve window | Front upper sleeve, 100 × 120 mm | Archive lace over silk organza | Semi-sheer |\n| Back window | Centred upper back, 120 × 80 mm; top edge 40 mm below back neckline | Archive lace alone | Sheer |\n| Remaining garment | All other garment areas from neckline to hem | Cupro backing, with lace where allocated | Opaque |\n\n## Label record\n- Location: inside neck\n- First line: HEIRLOOM HOUR\n- Second line: Archive lace 01\n\n## Setting\n- Ordinary family dining room\n- Soft window daylight\n- Timber table, linen tablecloth and a small arrangement of garden flowers\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# HEIRLOOM HOUR — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | dress-front | Finished dress front flat | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | dress-back | Finished dress back flat | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | lace-allocation | Dimensioned archive lace allocation | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | construction-details | Lace and coverage construction details | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | ceremony-standing | Standing ceremony look | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | ceremony-walking | Walking ceremony look | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: lace-width-and-coverage.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: archive-lace-detail.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: family-ceremony-room.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "HEIRLOOM HOUR | Archive lace for a contemporary personal ceremony\n\nWe are commissioning one dress for adults marking a personal anniversary at home with family. The lace carries the family's textile memory; the silhouette should feel comfortable at a dining table and composed when walking across the room. Develop a calf-length dress with elbow-length sleeves and a hem 100 mm below the knee. The neckline, volume and fastening are open to your design. Print \"HEIRLOOM HOUR\" and \"Archive lace 01\" on the inside neck label.\n\nOur available archive lace is one usable rectangle, 900 mm wide by 2400 mm long: ivory, 70% cotton and 30% polyamide, warp-knitted, 100 g/m². Its repeat is 60 mm across the width by 80 mm along the length. Each upright motif has one round central eyelet, six oval petal eyelets, a downward stem and two pointed leaves, one on each side. Preserve that motif, its orientation and repeat spacing throughout. The dress has three transparency windows: two front upper-sleeve panels, each 100 × 120 mm, in lace over silk organza; and one centred upper-back panel, 120 × 80 mm, in lace alone, starting 40 mm below the back neckline. The remaining garment area from neckline to hem is opaque. Use ivory 100% cupro plain weave, 90 g/m², for opaque backing and ivory 100% silk organza, 24 g/m², for the two sleeve windows. Lace placement across the opaque areas is open.\n\nAudience: the wearer and our dressmaker, for choosing the finished silhouette and agreeing the lace placement before cutting the archive material.\n\nInputs (attached): 01-client-facts.en.md contains the material inventory, motif record, coverage dimensions and wearing needs. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. lace-width-and-coverage.png records the usable lace rectangle, repeat dimensions and front and back coverage zones. archive-lace-detail.png supplies the existing motif, mesh and ivory thread appearance to carry into the dress. family-ceremony-room.png supplies the domestic setting, daylight and intimate atmosphere for the worn images.\n\nDeliverables:\n1. One finished front flat view of the dress, showing the silhouette, seams, sleeve windows and lace placement\n2. One finished back flat view of the same dress, showing the fastening, upper-back window and hem position\n3. One dimensioned lace allocation drawing, with every lace piece numbered and positioned within the single 900 × 2400 mm rectangle, including cutting allowances and repeat alignment\n4. One finished construction detail sheet, with enlarged views of the archive motif, opaque backing, semi-sheer sleeve assembly, sheer back assembly and readable inside neck label\n5. One full-length standing image of the dress worn during a family ceremony at home\n6. One full-length walking image of the same wearer and dress in the same room\n\nAcceptance:\n- Carry the archive's central round eyelet, six oval petal eyelets, downward stem and two pointed leaves into the front flat, back flat, lace allocation, construction details and both worn images; dimension the 60 × 80 mm repeat on the allocation drawing and motif detail.\n- Dimension the two 100 × 120 mm front upper-sleeve windows and the centred 120 × 80 mm upper-back window on the flat views and construction details, with the back window starting 40 mm below the neckline; show lace over organza at the sleeves, lace alone at the back and opaque coverage elsewhere in both worn images.\n- Account for every lace-covered area in the flat views through matching piece numbers on the lace allocation drawing; fit all pieces and their cutting allowances within 900 × 2400 mm, with the motifs upright and their repeat spacing preserved.\n- Match the silhouette, seams, fastening and lace placement across both flat views and both worn images; show elbow-length sleeves and mark the hem 100 mm below the knee in the standing image, with the same coverage maintained during walking.\n- Show the inside neck label clearly in the construction detail sheet, with the exact wording HEIRLOOM HOUR and Archive lace 01.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/lace-width-and-coverage.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "6bc6d991fb625ecf3f44e1dd49ed55ea4fecbe1b384d9385a1102fca167634f0"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/archive-lace-detail.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "3c83a4eef7180462945d3da586ca6156c54f8112d5d7b9b7e44c22f7469a1116"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/family-ceremony-room.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "4aa2e5e9588258faa1505a30f30597a65338c4e5eff32e2f4d89d46f64c5ad36"
+    }
+  ]
+}

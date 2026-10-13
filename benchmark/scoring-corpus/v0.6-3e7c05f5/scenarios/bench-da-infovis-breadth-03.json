@@ -1,0 +1,270 @@
+{
+  "id": "bench-da-infovis-breadth-03",
+  "title": "KILN LEDGER — A pottery studio archive across three years, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GRAPHIC",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# KILN LEDGER\n\n- Project: a pottery studio archive across three years\n- Collection owner: KILN LEDGER\n- Record source: KILN LEDGER studio records\n- Snapshot date: 2026-08-31\n- Record years: 2024, 2025, 2026\n- Collection size: 8 distinct pieces\n- Permanent IDs: KL-001 through KL-008\n- Named firing batches: B24-01, B24-02, B25-01, B26-01\n- Archive name: KILN LEDGER\n- Missing-value label: Missing\n- Source credit: Source: KILN LEDGER studio records, 2024-2026\n\n## Record structure\n\n| Core field | Definition |\n| --- | --- |\n| Piece ID | Permanent identifier for one physical piece |\n| Photograph | One image filename assigned to the piece ID |\n| Vessel form | Bowl, Cup, Vase or Plate |\n| Glaze category | One or more of Ash, Iron and Clear; semicolons separate multiple labels |\n| Firing batch | Recorded batch identifier |\n| Finished status | Finished or Second |\n| Record date | Date the piece record was entered; basis for annual grouping |\n\n- Browsing facets: vessel form, glaze category, firing batch, finished status, record date\n- Missing: an absent recorded value\n- Finished: studio stock accepted as finished work\n- Second: studio stock retained as a second\n- Complete record: all seven core fields populated\n- Complete records: 5 of 8\n- Complete-record percentage: 5 ÷ 8 × 100 = 62.5%\n- Incomplete records: 3 of 8\n- Distinct-piece count: number of unique piece IDs in the selected group\n- Glaze membership: one piece ID paired with one recorded glaze label\n- Recorded glaze memberships: 9 across 7 distinct pieces\n- Multi-label pieces: KL-002 and KL-005\n- Missing glaze category: KL-006\n- Missing firing batch: KL-007\n- Missing finished status: KL-008\n- Batch comparison scope: distribution of recorded finished statuses\n- Counts unit: pieces\n- Glaze association unit: glaze memberships\n- Completeness percentage unit: %\n\n## Category encoding\n\n| Glaze category | Colour |\n| --- | --- |\n| Ash | #0072B2 |\n| Iron | #E69F00 |\n| Clear | #CC79A7 |\n| Missing | #666666 |\n\n- Secondary category encoding: direct category labels\n- Quantitative axis origin: 0\n\n## Archive surfaces\n\n| Surface | Physical dimensions | Orientation |\n| --- | --- | --- |\n| Tablet viewing area | 240 × 135 mm | Landscape |\n| Tablet viewing area | 135 × 240 mm | Portrait |\n| Printed summary | 210 × 297 mm, A4 | Portrait |\n\n- Printed summary margins: 12 mm on all sides\n- Example retrieval path: Ash → KL-002 → B24-01 → KL-001\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# KILN LEDGER — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | data-summary | Data summary and chart inventory | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | image-index | Landscape collection image index | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | vessel-classification | Vessel form classification | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | glaze-classification | Glaze category classification | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | batch-distribution | Firing batch and status distribution | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | annual-distribution | Annual piece distribution | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | form-glaze-relationships | Vessel form and glaze relationships | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | record-completeness | Record completeness | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | detail-kl-002 | KL-002 sample detail | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | detail-kl-007 | KL-007 sample detail | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | portrait-browsing | Portrait archive browsing example | 14 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | collection-summary | A4 collection summary | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n| 13 | archive-walkthrough | Archive walkthrough video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | archive-presentation | Archive presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-piece-records.en.md",
+            "config": {
+              "text": "# KILN LEDGER piece records\n\n- Source: KILN LEDGER studio records\n- Snapshot date: 2026-08-31\n- Coverage: record dates from 2024 through 2026\n- Count unit: pieces, counted by distinct piece ID\n- Glaze association unit: glaze memberships\n- Percentage unit: %\n- Missing-value token: Missing\n- Multiple glaze labels: semicolon-separated\n- Photograph correspondence: one filename per piece ID\n- Annual grouping basis: record date\n\n## Piece records\n\n| Piece ID | Photograph | Vessel form | Glaze category | Firing batch | Finished status | Record date | Missing fields | Missing-field note |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| KL-001 | kl-001.png | Bowl | Ash | B24-01 | Finished | 2024-03-18 | None | Complete record |\n| KL-002 | kl-002.png | Cup | Ash; Iron | B24-01 | Finished | 2024-03-18 | None | Complete record |\n| KL-003 | kl-003.png | Vase | Iron | B24-02 | Second | 2024-10-07 | None | Complete record |\n| KL-004 | kl-004.png | Plate | Clear | B25-01 | Finished | 2025-05-12 | None | Complete record |\n| KL-005 | kl-005.png | Bowl | Ash; Clear | B25-01 | Finished | 2025-05-12 | None | Complete record |\n| KL-006 | kl-006.png | Cup | Missing | B25-01 | Finished | 2025-05-13 | Glaze category | Glaze label absent from the studio entry |\n| KL-007 | kl-007.png | Vase | Iron | Missing | Second | 2026-02-09 | Firing batch | Batch identifier absent from the studio entry |\n| KL-008 | kl-008.png | Plate | Clear | B26-01 | Missing | 2026-07-21 | Finished status | Finished-status field left blank in the studio entry |\n\n## Photograph identity notes\n\n| Piece ID | Recognisable features |\n| --- | --- |\n| KL-001 | Low round bowl, pale sage ash glaze, dark speckling, small exposed buff foot |\n| KL-002 | Straight-sided handled cup, pale sage upper glaze, dark iron-brown lower band, buff foot |\n| KL-003 | Tall narrow iron-brown vase, short neck, flared lip, small chip on the right edge of the lip |\n| KL-004 | Round shallow plate, transparent glossy glaze over buff clay, three incised concentric rings |\n| KL-005 | Deep bowl, pale sage exterior upper band, transparent glossy interior, exposed buff foot |\n| KL-006 | Rounded handleless cup, ivory satin surface, small buff foot |\n| KL-007 | Squat iron-brown vase, broad shoulder, narrow mouth, diagonal pale surface scar on the front |\n| KL-008 | Rounded-square plate, transparent glossy glaze over buff clay, gently raised corners |\n\n## Vessel-form totals\n\n| Vessel form | Pieces |\n| --- | ---: |\n| Bowl | 2 |\n| Cup | 2 |\n| Vase | 2 |\n| Plate | 2 |\n| Total | 8 |\n\n## Annual totals\n\n| Record year | Pieces |\n| --- | ---: |\n| 2024 | 3 |\n| 2025 | 3 |\n| 2026 | 2 |\n| Total | 8 |\n\n## Firing-batch and finished-status totals\n\n| Firing batch | Finished pieces | Second pieces | Missing status pieces | Total pieces |\n| --- | ---: | ---: | ---: | ---: |\n| B24-01 | 2 | 0 | 0 | 2 |\n| B24-02 | 0 | 1 | 0 | 1 |\n| B25-01 | 3 | 0 | 0 | 3 |\n| B26-01 | 0 | 0 | 1 | 1 |\n| Missing | 0 | 1 | 0 | 1 |\n| Total | 5 | 2 | 1 | 8 |\n\n## Glaze-category totals\n\n| Glaze category | Distinct pieces carrying the label | Piece IDs |\n| --- | ---: | --- |\n| Ash | 3 | KL-001; KL-002; KL-005 |\n| Iron | 3 | KL-002; KL-003; KL-007 |\n| Clear | 3 | KL-004; KL-005; KL-008 |\n| Missing | 1 | KL-006 |\n\n| Measure | Value | Unit |\n| --- | ---: | --- |\n| Recorded glaze memberships | 9 | glaze memberships |\n| Pieces with recorded glaze labels | 7 | pieces |\n| Pieces with multiple glaze labels | 2 | pieces |\n| Pieces with missing glaze category | 1 | pieces |\n| Archive total | 8 | pieces |\n\n## Vessel-form-to-glaze intersections\n\n| Vessel form | Ash pieces | Iron pieces | Clear pieces | Missing glaze pieces |\n| --- | ---: | ---: | ---: | ---: |\n| Bowl | 2 | 0 | 1 | 0 |\n| Cup | 1 | 1 | 0 | 1 |\n| Vase | 0 | 2 | 0 | 0 |\n| Plate | 0 | 0 | 2 | 0 |\n\n- Relationship meaning: recorded glaze membership\n- Intersection membership: piece IDs sharing both the row's vessel form and the column's glaze category\n\n## Record completeness\n\n| Measure | Pieces | Percentage |\n| --- | ---: | ---: |\n| Complete records | 5 | 62.5 |\n| Incomplete records | 3 | 37.5 |\n| Total | 8 | 100 |\n\n| Missing core field | Pieces | Piece IDs |\n| --- | ---: | --- |\n| Piece ID | 0 | None |\n| Photograph | 0 | None |\n| Vessel form | 0 | None |\n| Glaze category | 1 | KL-006 |\n| Firing batch | 1 | KL-007 |\n| Finished status | 1 | KL-008 |\n| Record date | 0 | None |\n\n- Complete-record calculation: 5 ÷ 8 × 100 = 62.5%\n- Complete-record IDs: KL-001; KL-002; KL-003; KL-004; KL-005\n- Incomplete-record IDs: KL-006; KL-007; KL-008\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: archive-surfaces.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kl-001.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kl-002.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kl-003.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kl-004.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-6",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kl-005.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-7",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kl-006.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-8",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kl-007.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-9",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kl-008.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-10",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: studio-browsing.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "KILN LEDGER | A pottery studio archive across three years\n\nOur studio needs a visual archive that helps us return to individual pots as readily as we compare years of work. The first collection contains 8 pieces recorded from 2024 through 2026, across 4 named firing batches. Build the archive around the existing photographs and permanent piece IDs KL-001 through KL-008. Print \"KILN LEDGER\" on the image index, sample detail pages, browsing example, summary and presentation.\n\nThe structure is fixed: vessel form, glaze category, firing batch, finished status and record date. A piece can carry several glaze labels; totals count distinct piece IDs. Five of the 8 records have all seven core fields populated, giving 62.5% complete records. Display absent values as \"Missing\". Use Ash #0072B2, Iron #E69F00, Clear #CC79A7 and Missing #666666 for category encoding, with direct labels that remain readable in grayscale. Describe batch comparisons as distributions of recorded outcomes. Our tablet viewing area measures 240 × 135 mm in landscape and 135 × 240 mm in portrait; the printed summary is A4 portrait with 12 mm margins.\n\nAudience: studio potters and learners, choosing how to organise accumulated work, retrieve related pieces and prioritise incomplete records.\n\nInputs (attached): 01-client-facts.en.md contains the collection facts, field definitions and fixed category colours. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-piece-records.en.md contains the piece records, photograph assignments, missing-field notes and aggregate tables as of 2026-08-31. archive-surfaces.png supplies the tablet viewing areas and printed-page geometry. kl-001.png identifies the ash-glazed bowl. kl-002.png identifies the cup with ash and iron glaze areas. kl-003.png identifies the iron-glazed vase. kl-004.png identifies the clear-glazed plate. kl-005.png identifies the bowl with ash and clear glaze areas. kl-006.png identifies the cup whose glaze category is missing from its record. kl-007.png identifies the iron-glazed vase whose firing batch is missing. kl-008.png identifies the clear-glazed plate whose finished status is missing. studio-browsing.png provides the atmosphere of a working archive wall and tablet station.\n\nDeliverables:\n1. A two-page data summary and chart inventory defining the seven core fields, permanent-ID and multi-label counting rules, category colours, and each chart's data columns, chart type, units, carrier and printed wording\n2. One landscape image index containing all 8 photographs, their piece IDs and the five browsing facets\n3. Two classification sheets: vessel forms and glaze categories, with counts and matching piece thumbnails\n4. Two distribution sheets: firing batches with finished-status breakdowns, and annual piece counts\n5. One vessel-form-to-glaze relationship sheet with labelled intersections and the contributing piece IDs\n6. One record-completeness sheet with the complete-record calculation and the three incomplete records\n7. Two sample detail pages, for KL-002 and KL-007, each containing its photograph, seven core fields and links by shared category or batch\n8. One portrait browsing example tracing Ash to KL-002 and then to the other piece in batch B24-01\n9. One A4 collection summary containing the annual totals, glaze membership counts and complete-record calculation\n10. One 10-second archive walkthrough video following the portrait browsing example\n11. One presentation document of at least 8 pages, reusing the data summary, coding rules, index, charts, detail pages and browsing sequence\n\nAcceptance:\n- The data summary and chart inventory state 8 pieces, 62.5% complete records and the source credit \"Source: KILN LEDGER studio records, 2024-2026\". Repeat all three on the landscape image index, portrait browsing example, A4 summary and presentation; every chart carries that source credit, a title, its unit and one reading annotation. Every plotted value comes from the records or aggregate tables in 03-piece-records.en.md.\n- The image index and classification sheets pair each thumbnail with the ID assigned to its photograph. The KL-002 and KL-007 detail pages reproduce their respective records, and the browsing example and video follow Ash → KL-002 → B24-01 → KL-001 using those same photographs.\n- The classification and distribution sheets show 2 pieces per vessel form; annual totals of 3, 3 and 2 for 2024, 2025 and 2026; and batch totals of 2, 1, 3 and 1 for B24-01, B24-02, B25-01 and B26-01, plus 1 Missing. The glaze sheet, relationship sheet and A4 summary show Ash 3, Iron 3 and Clear 3 as 9 glaze memberships across 7 pieces, alongside 1 piece with Missing glaze and an archive total of 8 distinct pieces.\n- The completeness sheet and A4 summary display 5 ÷ 8 × 100 = 62.5%. The completeness sheet identifies KL-006: glaze category, KL-007: firing batch and KL-008: finished status. The relationship sheet labels connections as glaze membership; the batch distribution sheet describes the recorded Finished, Second and Missing counts within each batch.\n- The data summary, glaze classification sheet, relationship sheet and presentation use Ash #0072B2, Iron #E69F00, Clear #CC79A7 and Missing #666666 consistently. Every chart names its categories directly, and every quantitative axis begins at zero.\n- The landscape index and portrait browsing example fit the respective tablet areas; the A4 summary retains 12 mm margins. The video lasts 10 seconds. The presentation contains at least 8 pages and repeats the seven-field structure and complete-record calculation from the opening data summary.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/archive-surfaces.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "cf6823c5b7e8d64f53f71a26942ead88f5b5afb3bdcd87e9b4bc2727aebb12c0"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/kl-001.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "c082221fd173bb6d63844b2011e49baf3f073c2e3b8205e35f91dad16952549d"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/kl-002.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "789b99ec67d37d9e9d42264244ecdd2fb6096340ab65e12b3d1e115b7f43ad54"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/kl-003.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "f2c6e1b8d35d07fc255cb1b13a9d56bce7a773b7e33e0a060e09513decaf094c"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/kl-004.png",
+      "nodeId": "provided-image-5",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "73a46ed3f738676575bfb6f45065c9621434167e81754d2e3171c16398702d8b"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/kl-005.png",
+      "nodeId": "provided-image-6",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "e10310a06930e2ce8ae15740bf037b428a89f024d8f73e82bd161865ced8036b"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/kl-006.png",
+      "nodeId": "provided-image-7",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "65ce19533440e2c717b1ec98274d4aff7c5d3a98f02514b62333fe1275277db1"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/kl-007.png",
+      "nodeId": "provided-image-8",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "cba6e3f5d370b9b8b118073e31e1153d0cd471edbfcad000b1e2018fc0a2dd31"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/kl-008.png",
+      "nodeId": "provided-image-9",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "e9603b0d00b480f5ba4b93418361f729da10e33475acee7ba17c6488ff49b53f"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/studio-browsing.png",
+      "nodeId": "provided-image-10",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "864ad3efaecb8243ae075145fa126172f95c4fa864a4f6fcdda9e84fc1722e03"
+    }
+  ]
+}

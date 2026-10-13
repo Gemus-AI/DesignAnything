@@ -1,0 +1,30 @@
+NORTH WAVE 2027 | Independent music and digital art across three venues
+
+We are Morrow Arts Collective, commissioning the identity and campaign for NORTH WAVE 2027 in Bellwater on 12–13 November 2027. We need audiences to recognise one festival while choosing between independent music and digital art at three venues. The festival identity is open for exploration; our attached organiser mark remains the established credit. Print "NORTH WAVE 2027" on every direction board, selection board and final static artwork, and on the presentation cover. Print "Independent music + digital art" on festival masters and complete programme editions. Use the organiser mark on every final static artwork and on the selection board, preserving its icon, wording, proportions and supplied dark colour; uniform scaling and removal of its surrounding white field are allowed.
+
+The programme has six records. Signal Hall, 8 Relay Lane, is the music hall: Quiet Engines, independent live set, 12 November 2027, 18:00–19:00; Soft Circuit, electronic live set, 13 November 2027, 19:00–20:15. Foundry Yard, 21 Loom Street, is the factory courtyard: Afterimage Field, projection + live sound, 12 November 2027, 20:00–21:00; Borrowed Frequencies, audiovisual performance, 13 November 2027, 20:45–21:45. Tide Archive, 4 Quay Passage, is the archive venue: Recursive Garden, interactive digital installation, 12 November 2027, 14:00–17:00; Slow Signal Atlas, generative moving-image installation, 13 November 2027, 14:00–17:00. Times use the 24-hour venue-local clock; the two installation intervals are opening windows. Audiences will compare programmes on a handheld sheet, recognise venue posters from 2 m and consult phones between events after dark.
+
+Audience: festival visitors choosing programmes and venues, with the organiser and venue teams approving the campaign for release.
+
+Inputs (attached): 01-client-facts.en.md contains the festival identity, copy, venue and carrier facts. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-programme.md contains the six complete programme records. 04-organiser-mark.png supplies the fixed organiser identity. 05-carrier-geometry.png supplies the constraint drawings for print trim, bleed, safe areas and the mobile carrier. 06-foundry-yard-night.png supplies an atmosphere reference for the courtyard after dark.
+
+Deliverables:
+1. Three distinct festival visual direction boards, one per direction, each showing a festival title treatment and a sample Quiet Engines programme block
+2. One selection board naming the chosen direction, its graphic motif, primary colour code and organiser-credit placement
+3. One two-page copy and layout specification stating the final programme copy, information priorities, carrier assignments, trim dimensions, bleed, safe areas, grids, type families, weights, text sizes and colour codes
+4. Two festival master posters, one A1 portrait and one 900 × 600 mm landscape, each introducing the festival, dates, Bellwater and all three venue names
+5. Two complete programme editions, one single-sided A3 handheld sheet and one A1 poster, each containing all six records and the three venue addresses
+6. Six venue posters, one 600 × 900 mm portrait and one 900 × 600 mm landscape for each of Signal Hall, Foundry Yard and Tide Archive, each containing its venue address and two complete programme records
+7. Seven mobile announcements: one festival announcement with the title, descriptor, dates, Bellwater and three venue names, plus six individual programme cards, one per record with its title, type, date, interval, venue and address
+8. One 10-second mobile motion extension of the festival announcement, with the title and dates on the first frame and the title, descriptor, dates, three venue names and organiser mark on the final frame
+9. One presentation document of at least twelve pages, reusing the directions, selection, specification, both master layouts, both programme editions, all venue and mobile variants and motion frames, with a page identifying where the fixed programme and identity facts appear
+
+Acceptance:
+- Present the three direction boards first, record one choice on the selection board, and develop the specification and all final applications from that choice; name it again on the presentation cover.
+- Repeat the specification's festival title and descriptor on both masters and both programme editions; apply its primary colour, type families and carrier grids throughout the final artwork. Repeat its colour codes and the A1, A3, 600 × 900 mm and 900 × 600 mm trim dimensions in the presentation.
+- Carry all six complete records on each programme edition, each venue's two records on both of its posters, and one complete record on each individual mobile card; group each title, type, date, interval, venue and address together, with Tide Archive intervals identified as installation opening windows.
+- Carry the festival title and intact organiser mark on every final static artwork; include the mark on the selection board and the title on all direction boards and the presentation cover.
+- Set A1 artwork to 594 × 841 mm and the A3 sheet to 297 × 420 mm; use the stated portrait and landscape dimensions for the other posters. Give all print artwork 3 mm bleed and at least 5 mm internal safety, venue names at least 20 mm letter height on venue posters, and A3 programme text at least 10 pt. Apply the attached mobile safe area to all seven announcements; use at least 4.5:1 contrast for programme text and 3:1 for large headings and information-bearing graphics across final static artwork.
+- Derive the 10-second video's copy and graphic forms from the mobile festival announcement, with the specified first and final frames; reuse those frames and every completed application in the presentation's minimum twelve pages.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

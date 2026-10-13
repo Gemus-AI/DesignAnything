@@ -1,0 +1,657 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-landscape-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "courtyard-layout",
+      "label": "Final courtyard layout",
+      "description": "One dimensioned courtyard layout with retained trees, protection circles, circulation, seating, planting and viewpoint markers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "protection-seating-details",
+      "label": "Tree protection and seating detail sheet",
+      "description": "One sheet containing section A–A through T1 and T2, a path-edge protection junction and a bench-footing detail.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-planting-schedule",
+      "label": "Final materials and planting schedule",
+      "description": "One materials and planting schedule with fixed names, tree records, groundcover quantities, paving construction and seating dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "midday-stay-view",
+      "label": "V1 midday stay perspective",
+      "description": "One midday perspective from V1 showing a seated lunch break in Meeting Pocket beside Garden Walk.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dusk-conversation-view",
+      "label": "V1 dusk conversation perspective",
+      "description": "One dusk perspective from the same V1 camera position showing conversation within the completed courtyard.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entrance-circulation-view",
+      "label": "V2 entrance circulation perspective",
+      "description": "One daytime perspective from V2 at the west entrance showing the eastward route and its connection to Meeting Pocket.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "site-name",
+      "kind": "text-verbatim",
+      "text": "FIELD COURT",
+      "scope": {
+        "slots": [
+          "courtyard-layout",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "circulation-zone",
+      "kind": "text-verbatim",
+      "text": "Garden Walk",
+      "scope": {
+        "slots": [
+          "courtyard-layout",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "gathering-zone",
+      "kind": "text-verbatim",
+      "text": "Meeting Pocket",
+      "scope": {
+        "slots": [
+          "courtyard-layout",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "retained-tree-species",
+      "kind": "text-verbatim",
+      "text": "Acer campestre",
+      "scope": {
+        "slots": [
+          "courtyard-layout",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "groundcover-geranium",
+      "kind": "text-verbatim",
+      "text": "Geranium macrorrhizum",
+      "scope": {
+        "slots": [
+          "courtyard-layout",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "groundcover-luzula",
+      "kind": "text-verbatim",
+      "text": "Luzula sylvatica",
+      "scope": {
+        "slots": [
+          "courtyard-layout",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FIELD COURT",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-courtyard-system",
+      "slots": [
+        "courtyard-layout",
+        "protection-seating-details",
+        "midday-stay-view",
+        "dusk-conversation-view",
+        "entrance-circulation-view"
+      ],
+      "sourceSlots": [
+        "materials-planting-schedule"
+      ],
+      "items": [
+        {
+          "item": "The layout, details and perspectives depict one courtyard arrangement with matching retained trees, protected ground, paths, planting and seating wherever those elements are represented.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Paving, planting and bench construction agree with the written schedule and remain recognisable across drawing scales and lighting conditions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The two V1 views preserve the same camera position and arrangement, and V2 corresponds to the layout's west-entrance viewing direction and continuous eastward route.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FIELD COURT"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "courtyard-layout",
+      "protection-seating-details",
+      "midday-stay-view",
+      "dusk-conversation-view",
+      "entrance-circulation-view"
+    ],
+    "layoutExtras": false,
+    "naRules": "Do not apply photorealistic material-texture or lighting criteria to the diagrammatic layout, technical detail sheet or written schedule."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "courtyard-layout",
+        "protection-seating-details",
+        "midday-stay-view",
+        "dusk-conversation-view",
+        "entrance-circulation-view"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-courtyard-layout",
+      "requirementId": "R-format-courtyard-layout",
+      "method": "artifact-property",
+      "targetSlots": [
+        "courtyard-layout"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-protection-seating-details",
+      "requirementId": "R-format-protection-seating-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "protection-seating-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-planting-schedule",
+      "requirementId": "R-format-materials-planting-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-planting-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-midday-stay-view",
+      "requirementId": "R-format-midday-stay-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "midday-stay-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dusk-conversation-view",
+      "requirementId": "R-format-dusk-conversation-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dusk-conversation-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-circulation-view",
+      "requirementId": "R-format-entrance-circulation-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-circulation-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "site-geometry-route-and-levels",
+      "requirementId": "R-site-geometry-route-and-levels",
+      "method": "visual",
+      "targetSlots": [
+        "courtyard-layout",
+        "protection-seating-details"
+      ],
+      "criteria": "Read the layout dimensions and annotations and compare them with the drawn geometry. Require a 24 m east–west by 18 m north–south site, 432 m² area label, north arrow and usable scale bar. Using the southwest origin, both entrance openings occupy y = 0–2 m on their respective west and east boundaries, and the existing concrete strip spans x = 0–24 m, y = 0–2 m. Trace a continuous route between the entrances with 1800 mm unobstructed width, including at seating and planting edges. Both layout and section must communicate the uniform eastward fall of 240 mm over 24 m, equivalent to 1%, with west +240 mm and east 0 mm. Route shape may vary; missing dimensions, reversed levels, displaced entrances, removal of the retained strip or a pinched or disconnected route fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tree-locations-records-and-section",
+      "requirementId": "R-tree-locations-records-and-section",
+      "method": "visual",
+      "targetSlots": [
+        "courtyard-layout",
+        "protection-seating-details"
+      ],
+      "criteria": "Verify four distinct numbered trees against the schedule and fixed records: T1 at (6,6) m, diameter 0.40 m, protection radius 2.40 m; T2 at (18,6), 0.45 m, 2.70 m; T3 at (6,13), 0.35 m, 2.10 m; and T4 at (18,13), 0.40 m, 2.40 m. The layout must show each complete protection circle centred on its trunk. Require a full-width 24 m west-to-east A–A section at y = 6 m through T1 and T2, with trunk bases at +180 and +60 mm and protection intervals x = 3.60–8.40 and 15.30–20.70 m respectively. Drawing conventions may vary, but moved trees, incorrect records, truncated protection circles or a section through different locations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-planting-schedule"
+      ]
+    },
+    {
+      "id": "protection-and-enlarged-junctions",
+      "requirementId": "R-protection-and-enlarged-junctions",
+      "method": "visual",
+      "targetSlots": [
+        "courtyard-layout",
+        "protection-seating-details"
+      ],
+      "criteria": "Inspect every new path, planting bed, pavement edge and bench footing for intrusion into any protection circle. Circle interiors must retain their existing sloping ground and leaf-litter surface without new excavation, fill or construction. Require an enlarged path-edge junction beside a protection circle and an enlarged bench-footing detail; each enlargement must identify its adjacent protection boundary and dimension the shortest distance to the nearest new work, including buried components. No additional clearance minimum is prescribed, but an omitted or geometrically misleading clearance, intrusion or altered protected ground fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "schedule-copy-records-and-quantities",
+      "requirementId": "R-schedule-copy-records-and-quantities",
+      "method": "content",
+      "targetSlots": [
+        "materials-planting-schedule"
+      ],
+      "criteria": "Read the schedule and compare it with the layout. Both must associate P1 with Acer campestre, P2 with Geranium macrorrhizum and P3 with Luzula sylvatica, and identify the site and both zones with the required names. Require four retained tree records giving the exact coordinates, trunk diameters and protection radii: T1 (6,6)/0.40/2.40; T2 (18,6)/0.45/2.70; T3 (6,13)/0.35/2.10; T4 (18,13)/0.40/2.40, all in metres. Require quantities and spacing for both groundcovers, a paving area and construction build-up, and four benches specified as 1800 mm long, 500 mm deep and 450 mm seat height with timber slats and galvanised steel frames. Require two 900 × 1400 mm wheelchair spaces beside different benches, corroborated by the layout. Designer-selected planting quantities, spacing and paving area are allowed, but they must be reconcilable with the layout's areas, planting arrangement and counts; missing values, species-code swaps or conflicting dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "courtyard-layout"
+      ]
+    },
+    {
+      "id": "materials-and-construction-consistency",
+      "requirementId": "R-materials-and-construction-consistency",
+      "method": "visual",
+      "targetSlots": [
+        "courtyard-layout",
+        "protection-seating-details",
+        "midday-stay-view",
+        "dusk-conversation-view",
+        "entrance-circulation-view"
+      ],
+      "criteria": "Compare the proposed materials and planting across the drawings and visible portions of the perspectives using the schedule as evidence. Require permeable clay paving, timber slats on galvanised steel bench frames, the four retained Acer campestre trees and the two specified groundcovers without conflicting substitutions. The detail sheet must depict and identify the paving layers and a bench footing consistent with the schedule. Diagrammatic symbols, perspective occlusion and changes caused by daylight or dusk are allowed; incompatible paving, bench construction, planting or tree arrangements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-planting-schedule"
+      ]
+    },
+    {
+      "id": "viewpoints-and-circulation-continuity",
+      "requirementId": "R-viewpoints-and-circulation-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "courtyard-layout",
+        "midday-stay-view",
+        "dusk-conversation-view",
+        "entrance-circulation-view"
+      ],
+      "criteria": "Require two labelled viewpoint markers with direction indicators on the layout: V1 at the southern entrance to Meeting Pocket and V2 at the west entrance facing east. The midday and dusk views must be compatible with the same V1 camera position and layout, maintaining tree, paving and seating locations; people and illumination may change. The daytime V2 view must face along the west-to-east entrance connection, make the clear route and its connection to Meeting Pocket legible, and remain consistent with its dimensioned 1800 mm width. A relocated camera, rearranged courtyard or a route that visibly terminates or becomes obstructed fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "retained-enclosure",
+      "requirementId": "R-retained-enclosure",
+      "method": "visual",
+      "targetSlots": [
+        "courtyard-layout",
+        "protection-seating-details",
+        "midday-stay-view",
+        "dusk-conversation-view",
+        "entrance-circulation-view"
+      ],
+      "criteria": "Check the enclosure wherever visible or represented: the southern boundary remains a community-building frontage 6000 mm high, and the west, north and east boundaries retain weathered red-brown brick walls 1800 mm above local ground, interrupted by the specified entrances. The building frontage retains red-brown brick and six evenly spaced rectangular windows with dark painted frames. Perspective cropping and schematic plan notation are allowed; replacing the enclosure, moving it to different sides or visibly contradicting its height, fabric or window arrangement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "retained-crown-geometry",
+      "requirementId": "R-retained-crown-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "courtyard-layout",
+        "protection-seating-details",
+        "midday-stay-view",
+        "dusk-conversation-view",
+        "entrance-circulation-view"
+      ],
+      "criteria": "Use the fixed tree records to assess crown geometry: T1 plan radius 3.80 m, crown base 3.00 m and total height 9.00 m; T2 4.20/3.20/10.00 m; T3 3.40/2.80/8.50 m; T4 3.80/3.00/9.50 m. Heights are above each tree's local ground. The A–A section must represent the T1 and T2 crown envelopes centred on their trunk axes with the recorded horizontal and vertical extents. Other views must remain compatible where crowns are visible. Natural foliage irregularity, occlusion and perspective are allowed; materially resized, displaced or homogenised crown envelopes that contradict the records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "occupation-and-time-of-day",
+      "requirementId": "R-occupation-and-time-of-day",
+      "method": "visual",
+      "targetSlots": [
+        "midday-stay-view",
+        "dusk-conversation-view",
+        "entrance-circulation-view"
+      ],
+      "criteria": "Assess each role's required use and atmosphere: midday-stay-view must show a seated lunchtime pause in Meeting Pocket with adjoining Garden Walk visible; dusk-conversation-view must show informal conversation at dusk in the completed courtyard; entrance-circulation-view must depict daytime circulation and its connection to the gathering pocket. People, clothing and incidental activity may vary. Missing seated lunchtime use, an unoccupied conversation view, an incorrect time of day or an obscured required spatial connection fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-coherent-courtyard-system",
+      "requirementId": "R-set-coherent-courtyard-system",
+      "method": "visual",
+      "targetSlots": [
+        "courtyard-layout",
+        "protection-seating-details",
+        "midday-stay-view",
+        "dusk-conversation-view",
+        "entrance-circulation-view"
+      ],
+      "criteria": "The layout, details and perspectives depict one courtyard arrangement with matching retained trees, protected ground, paths, planting and seating wherever those elements are represented. Paving, planting and bench construction agree with the written schedule and remain recognisable across drawing scales and lighting conditions. The two V1 views preserve the same camera position and arrangement, and V2 corresponds to the layout's west-entrance viewing direction and continuous eastward route.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-01/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-planting-schedule"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "courtyard-spatial-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "courtyard-layout",
+      "subjectSlots": [
+        "protection-seating-details",
+        "midday-stay-view",
+        "dusk-conversation-view",
+        "entrance-circulation-view"
+      ],
+      "notes": "Across the courtyard layout, detail sheet and three perspectives, carry through the same permeable clay paving, timber-and-galvanised-steel benches, four retained trees and two groundcover species."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "schedule-quantities-to-layout",
+      "fromSlot": "materials-planting-schedule",
+      "toSlots": [
+        "courtyard-layout"
+      ],
+      "extract": [
+        "paving area",
+        "groundcover quantities and spacing",
+        "bench count and dimensions",
+        "wheelchair-space count and dimensions"
+      ],
+      "notes": "Match the schedule's paving area, groundcover quantities and spacing to the layout, and record all four 1800 × 500 × 450 mm benches and both 900 × 1400 mm wheelchair spaces."
+    },
+    {
+      "id": "schedule-materials-to-details",
+      "fromSlot": "materials-planting-schedule",
+      "toSlots": [
+        "protection-seating-details"
+      ],
+      "extract": [
+        "paving materials and build-up",
+        "bench materials"
+      ],
+      "notes": "Show the paving build-up and bench footing on the detail sheet using the schedule's materials."
+    }
+  ]
+}

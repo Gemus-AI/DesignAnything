@@ -1,0 +1,172 @@
+{
+  "id": "bench-da-infovis-material-02",
+  "title": "CHINA RESIDENCE ATLAS — Registration and residence across China's provinces, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GRAPHIC",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# CHINA RESIDENCE ATLAS\n\n## Publication\n- Publisher: Urban Ledger\n- Project name: CHINA RESIDENCE ATLAS\n- Subtitle: Registration and residence across China's provinces\n- Time label: Residents at 1 November 2020\n- Provincial-layer label: Selected-pair estimates\n- Language: English\n- Audience: general public and urban research readers\n\n## Statistical frame\n- Census reference date: 2020-11-01\n- Reference time: 00:00, China Standard Time\n- Measure: population stock at the census reference time\n- Cross-province population: 124,837,153 people\n- Within-province floating population: 250,979,606 people\n- Total floating population: 375,816,759 people\n- Cross-province share of total floating population: 33.22%\n- Provincial estimate scope: ten selected registration-to-residence pairs\n- Selected-pair estimate total: 24,300,000 people\n- Pair ranking universe: the ten supplied pairs\n- Provincial subtotal universe: the ten supplied pairs\n- Pair estimate compilation: Urban Ledger, 2026\n- Pair estimate rounding: nearest 100,000 people\n- National source: [National Bureau of Statistics, Seventh National Population Census Communiqué No. 7](https://www.stats.gov.cn/sj/pcsj/rkpc/7rp/zk/html/fu03g.pdf), released 2021-05-11\n\n## Visual identity\n| Element | Value |\n| --- | --- |\n| Background | #FFFFFF |\n| Text and rules | #000000 |\n| Cross-province figures and pair connections | #0072B2 |\n| Within-province figures | #E69F00 |\n| Context province tiles | #F2F2F2 |\n| Typography | Sans serif; bold headings; regular labels |\n| Category identification | Direct text labels alongside color |\n| Count unit | people |\n| Percentage unit | % |\n| Bar baseline | 0 |\n| Connection width | Proportional to estimate_people |\n| Connection direction | Registration province to residence province |\n| Map geometry | Fixed schematic grid of 31 mainland provincial-level units |\n| Unconnected tile meaning | Province outside the selected pair records |\n\n## Carrier geometry\n| Carrier | Geometry | Interior margin |\n| --- | --- | --- |\n| Landscape web panel | Logical canvas 900 by 600 | 30 logical units |\n| Portrait phone explainer | Logical canvas 360 by 640 | 20 logical units |\n| A4 summary | 210 mm by 297 mm | 12 mm |\n\n## Publication style sample records\n| Archive container | Count | Unit | Source credit |\n| --- | ---: | --- | --- |\n| Shelves | 18 | containers | Urban Ledger archive, 2019 |\n| Trays | 12 | containers | Urban Ledger archive, 2019 |\n| Boxes | 6 | containers | Urban Ledger archive, 2019 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# CHINA RESIDENCE ATLAS — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | data-brief | Data brief and chart inventory | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | visual-specification | Visual specification sheet | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | national-scale | National population scale chart | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | pair-overview | Ten-pair schematic overview | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | guangdong-pairs | Guangdong residence connection map | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | zhejiang-pairs | Zhejiang residence connection map | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | pair-ranking | Selected-pair ranking chart | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | registration-subtotals | Registration-province subtotal chart | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | residence-subtotals | Residence-province subtotal chart | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | phone-explainer | Portrait phone explainer | 14 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | a4-summary | A4 atlas summary | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n| 12 | scope-note | Census scope and reading note | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n| 13 | atlas-video | Ten-second atlas introduction | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | editorial-presentation | Atlas editorial presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-population-records.en.md",
+            "config": {
+              "text": "# Population records\n\n## Sources and scope\n| Layer | Source credit | Reference date | Record basis |\n| --- | --- | --- | --- |\n| National counts | National Bureau of Statistics, 2021 | 2020-11-01 | Seventh National Population Census Communiqué No. 7 |\n| Selected pairs | Urban Ledger estimates, 2026 | 2020-11-01 | Editorial estimates for ten selected province pairs, rounded to 100,000 people |\n| Selected-pair subtotals | Urban Ledger estimates, 2026 | 2020-11-01 | Sums of the ten selected pair records |\n\n- National source: [Seventh National Population Census Communiqué No. 7](https://www.stats.gov.cn/sj/pcsj/rkpc/7rp/zk/html/fu03g.pdf).\n- Census reference time: 2020-11-01 00:00, China Standard Time.\n- National geographical frame: 31 mainland provinces, autonomous regions and municipalities, together with active-service military personnel.\n- National population coverage: mainland population; Hong Kong, Macao and Taiwan residents and foreign nationals residing in the mainland are outside this population count.\n- Residence-registration separation: residence in a different township or subdistrict from household registration, with absence from the registration location for more than six months.\n- Floating population: residence-registration separation population after subtraction of separation within municipal districts of the same municipality or prefecture-level city.\n- Cross-province category: floating population with household registration and current residence in different provincial-level units.\n- Within-province category: floating population with household registration and current residence in the same provincial-level unit.\n- Pair estimate target: cross-province residents at the census reference time.\n- Pair selection universe: the ten records below.\n- Pair ranking: descending estimate_people within the selected records.\n- Provincial comparison universe: subtotals of the selected records.\n- Schematic link meaning: household-registration province paired with current-residence province.\n\n## National counts\n| record_id | category | people | source_credit |\n| --- | --- | ---: | --- |\n| N01 | Cross-province | 124837153 | National Bureau of Statistics, 2021 |\n| N02 | Within-province | 250979606 | National Bureau of Statistics, 2021 |\n| N03 | Total floating population | 375816759 | National Bureau of Statistics, 2021 |\n\n## National calculation\n| record_id | measure | numerator_people | denominator_people | multiplier | result_percent | rounding |\n| --- | --- | ---: | ---: | ---: | ---: | --- |\n| C01 | Cross-province share of total floating population | 124837153 | 375816759 | 100 | 33.22 | Two decimal places |\n\n## Selected province pairs — estimate\n| pair_id | selected_rank | registration_key | registration_province | residence_key | residence_province | estimate_people |\n| --- | ---: | --- | --- | --- | --- | ---: |\n| P01 | 1 | HN | Hunan | GD | Guangdong | 3800000 |\n| P02 | 2 | GX | Guangxi | GD | Guangdong | 3200000 |\n| P03 | 3 | AH | Anhui | ZJ | Zhejiang | 2800000 |\n| P04 | 4 | AH | Anhui | JS | Jiangsu | 2600000 |\n| P05 | 5 | HB | Hubei | GD | Guangdong | 2400000 |\n| P06 | 6 | HA | Henan | ZJ | Zhejiang | 2200000 |\n| P07 | 7 | HA | Henan | GD | Guangdong | 2000000 |\n| P08 | 8 | JX | Jiangxi | ZJ | Zhejiang | 1900000 |\n| P09 | 9 | SC | Sichuan | GD | Guangdong | 1800000 |\n| P10 | 10 | AH | Anhui | SH | Shanghai | 1600000 |\n\n## Registration-province subtotals — estimate\n| registration_key | registration_province | pair_ids | estimate_people |\n| --- | --- | --- | ---: |\n| AH | Anhui | P03, P04, P10 | 7000000 |\n| HA | Henan | P06, P07 | 4200000 |\n| HN | Hunan | P01 | 3800000 |\n| GX | Guangxi | P02 | 3200000 |\n| HB | Hubei | P05 | 2400000 |\n| JX | Jiangxi | P08 | 1900000 |\n| SC | Sichuan | P09 | 1800000 |\n\n## Residence-province subtotals — estimate\n| residence_key | residence_province | pair_ids | estimate_people |\n| --- | --- | --- | ---: |\n| GD | Guangdong | P01, P02, P05, P07, P09 | 13200000 |\n| ZJ | Zhejiang | P03, P06, P08 | 6900000 |\n| JS | Jiangsu | P04 | 2600000 |\n| SH | Shanghai | P10 | 1600000 |\n\n## Selection summaries\n| record_id | measure | value | unit |\n| --- | --- | ---: | --- |\n| S01 | Selected-pair total estimate | 24300000 | people |\n| S02 | Selected pairs | 10 | pairs |\n| S03 | Guangdong residence pairs | 5 | pairs |\n| S04 | Zhejiang residence pairs | 3 | pairs |\n| S05 | Registration provinces in selection | 7 | provinces |\n| S06 | Residence provinces in selection | 4 | provinces |\n| S07 | Province tiles in schematic | 31 | provinces |\n| S08 | Bar-chart baseline | 0 | people |\n\n## Field dictionary\n| Field | Meaning |\n| --- | --- |\n| pair_id | Unique selected-pair record identifier |\n| selected_rank | Rank within the ten selected estimates |\n| registration_key | Atlas join key for household-registration province |\n| registration_province | English display name of household-registration province |\n| residence_key | Atlas join key for current-residence province |\n| residence_province | English display name of current-residence province |\n| estimate_people | Estimated residents belonging to the named pair or selected-pair subtotal |\n| people | Census count in people |\n| source_credit | Printed institution and publication year |\n| pair_ids | Constituent records of a subtotal |\n\n## Calculation records\n| Calculation | Expression | Result_people |\n| --- | --- | ---: |\n| National floating population | N01 + N02 | 375816759 |\n| Selected-pair total | P01 + P02 + P03 + P04 + P05 + P06 + P07 + P08 + P09 + P10 | 24300000 |\n| Guangdong selected subtotal | P01 + P02 + P05 + P07 + P09 | 13200000 |\n| Zhejiang selected subtotal | P03 + P06 + P08 | 6900000 |\n| Anhui selected subtotal | P03 + P04 + P10 | 7000000 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 04-province-grid.en.md",
+            "config": {
+              "text": "# Province schematic records\n\n- Geometry owner: Urban Ledger.\n- Geometry basis: editorial arrangement by broad relative position.\n- Geographic representation: schematic province tiles.\n- Join-key system: atlas-specific two-letter keys.\n- Coordinate origin: upper left.\n- Column direction: west to east.\n- Row direction: north to south.\n- Spatial scale: ordinal grid positions.\n- Tile meaning: one mainland provincial-level unit.\n- Connection endpoint: center of the corresponding province tile.\n\n| atlas_key | province | column | row |\n| --- | --- | ---: | ---: |\n| BJ | Beijing | 6 | 3 |\n| TJ | Tianjin | 7 | 3 |\n| HE | Hebei | 6 | 4 |\n| SX | Shanxi | 5 | 4 |\n| NM | Inner Mongolia | 5 | 2 |\n| LN | Liaoning | 8 | 3 |\n| JL | Jilin | 8 | 2 |\n| HL | Heilongjiang | 8 | 1 |\n| SH | Shanghai | 8 | 5 |\n| JS | Jiangsu | 7 | 5 |\n| ZJ | Zhejiang | 7 | 6 |\n| AH | Anhui | 6 | 5 |\n| FJ | Fujian | 7 | 7 |\n| JX | Jiangxi | 6 | 6 |\n| SD | Shandong | 7 | 4 |\n| HA | Henan | 5 | 5 |\n| HB | Hubei | 4 | 5 |\n| HN | Hunan | 5 | 6 |\n| GD | Guangdong | 6 | 7 |\n| GX | Guangxi | 5 | 7 |\n| HI | Hainan | 5 | 8 |\n| CQ | Chongqing | 3 | 5 |\n| SC | Sichuan | 2 | 5 |\n| GZ | Guizhou | 3 | 6 |\n| YN | Yunnan | 2 | 6 |\n| XZ | Tibet | 1 | 5 |\n| SN | Shaanxi | 4 | 4 |\n| GS | Gansu | 3 | 3 |\n| QH | Qinghai | 2 | 4 |\n| NX | Ningxia | 4 | 3 |\n| XJ | Xinjiang | 1 | 2 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: layout-constraints.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: province-grid.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: publication-style.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: reader-desk.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "CHINA RESIDENCE ATLAS | Registration and residence across China's provinces\n\nUrban Ledger is commissioning an atlas for readers who want to understand the relationship between household registration and current residence in China. The national census figures at 2020-11-01 are 124,837,153 cross-province residents and 250,979,606 within-province residents. The provincial layer comprises our ten selected pair estimates, totaling 24,300,000 people, ranked within that selection. Present national figures and pair estimates as separate statistical layers, with provincial comparisons calculated from the selected pairs.\n\nOur publication style is fixed: white ground, black typography, blue #0072B2 for cross-province figures and orange #E69F00 for within-province figures, with direct labels supplementing color. Build the atlas on the attached 31-province schematic grid. Each connection runs from household-registration province to current-residence province and represents a relationship between those places. Print \"CHINA RESIDENCE ATLAS\" on the reader-facing pieces, \"Residents at 1 November 2020\" as their time label, and \"Selected-pair estimates\" beside the provincial layer. The release comprises landscape web panels, a portrait phone explainer and an A4 summary.\n\nAudience: the general public and urban research readers, with Urban Ledger's editorial team using the work to approve the atlas for publication.\n\nInputs (attached): 01-client-facts.en.md contains the publication identity, palette and statistical framing. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-population-records.en.md contains national figures, ten pair estimates, calculated subtotals, field definitions and source credits. 04-province-grid.en.md contains the 31 province names, atlas join keys and schematic positions. layout-constraints.png supplies the web, phone and A4 carrier geometry. province-grid.png supplies the fixed schematic placement of the provinces. publication-style.png supplies Urban Ledger's existing typography, rules and chart treatment. reader-desk.png supplies the atmosphere of a reader moving between a printed report and a phone.\n\nDeliverables:\n1. A one-page data brief and chart inventory recording each chart's fields, chart type, unit, carrier and printed wording, plus the two national counts, census date and source credits\n2. One visual specification sheet covering typography, category colors, direct labels, zero baselines, proportional connection widths and registration-to-residence direction\n3. One national scale chart comparing 124,837,153 cross-province residents with 250,979,606 within-province residents, with the cross-province share of 33.22%\n4. Three schematic connection maps: all ten selected pairs, the five pairs ending in Guangdong and the three pairs ending in Zhejiang\n5. One descending bar chart of all ten pair estimates, with both province names beside each bar\n6. Two descending provincial comparison charts: seven registration-province subtotals and four residence-province subtotals, each scoped to the ten selected pairs\n7. One portrait phone explainer combining the national comparison, ten-pair map and a reading annotation\n8. One A4 summary page combining the national comparison, ten-pair map and the four residence-province subtotals\n9. One public-facing scope note of two pages explaining the census population definition, date, national coverage, estimate layer, subtotal calculation and schematic links\n10. One 10-second video introducing the national comparison and then revealing the ten connections at their fixed endpoints\n11. One presentation document of at least eight pages reusing the data brief, specification, charts, maps, phone explainer, A4 summary and video stills\n\nAcceptance:\n- Establish the data brief and specification before the applications. Repeat the brief's census date and relevant source credit on every chart, map, phone explainer, A4 summary, scope note, video and presentation; repeat both national counts on the national chart, phone explainer, A4 summary, video and presentation.\n- Match every displayed population value and percentage in the charts, maps, phone explainer, A4 summary, scope note, video and presentation to 03-population-records.en.md. Show 124,837,153 divided by 375,816,759 times 100, rounded to 33.22%, in the national chart and scope note. Label the comparison-chart subtotals as belonging to the ten selected pairs.\n- Preserve the 31 atlas keys and grid positions on all three maps and their reused versions. Draw exactly ten, five and three connections on the overview, Guangdong and Zhejiang maps respectively; scale their widths by estimate_people and place the direction marker at the residence endpoint. Explain that each line connects registration and residence on every map and in the video.\n- Apply #0072B2 and #E69F00 with their fixed meanings across the specification and all subsequent visuals. Give every chart and map a title, people as its count unit, its source credit and a reading annotation; directly label categories and begin all bar-chart value axes at zero. Preserve those labels in grayscale.\n- Print the atlas name and time label specified above on every final file, and Selected-pair estimates wherever provincial estimates appear. Use the source-credit wording in 03-population-records.en.md beside the corresponding statistical layer, including in the phone explainer, A4 summary and video.\n- Deliver the video at 10 seconds and the presentation at eight pages or more. Use the presentation's opening page for the atlas name and census date, and later pages for the specification, national chart, three maps, three comparison charts, two reader formats and scope explanation.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/layout-constraints.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "6e4a7d1ce558dd9e09d682f54b0448b4ed44f4657d08a2b943229e7d392edfd8"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/province-grid.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "de1879af4e2135dab317ac4484df159fe1529b9c9c33c9383d8a7c633f6ede0d"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/publication-style.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "42d8437ea0a352b1f9acdbb2cd6e50d38a9a98f85689c978bd85d13d6be2a87c"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/reader-desk.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "f7fd6d9c6bff0b7de071844e5fbb6b7349f258e8ef98582b9a5499948e554422"
+    }
+  ]
+}

@@ -1,0 +1,1315 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ui-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "digital-product",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "flow-specification",
+      "label": "Flow specification",
+      "description": "A two-page flow specification covering page entries, item data, cash-status meanings and transitions from D0 through M5 and alternate branch W.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "component-specification",
+      "label": "Component and state specification",
+      "description": "One component specification with state-value tables for item rows, quantity controls, buttons, evidence fields, amount summaries and timelines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "item-selection",
+      "label": "Item selection",
+      "description": "One Item selection screen for DF-20418 with the three product identities and selected quantities.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "request-details",
+      "label": "Request details",
+      "description": "One Request details sheet with item problems, remedies, saved evidence and the empty-required-field disabled submission state.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "review-submission-recovery",
+      "label": "Review and submission recovery",
+      "description": "One Review and submission recovery sheet with the USD 35.00 calculation, S0 uncertainty and status-check confirmation of AF-7306.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "m1-case-overview",
+      "label": "M1 Case overview",
+      "description": "One M1 Case overview screen with all three item states, requested and received cash, and the lamp evidence deadline.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "more-evidence",
+      "label": "More evidence",
+      "description": "One More evidence sheet with retained lamp files, connection-loss failure, retry and successful resubmission on 12 August.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "m2-approved-remedies",
+      "label": "M2 Approved remedies",
+      "description": "One M2 Approved remedies screen with item-level approvals, cash stages and prepaid shared return RP-442.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "m3-return-tracking",
+      "label": "M3 Return tracking",
+      "description": "One M3 Return tracking screen with the shared sorting delay, expected carrier update, cash summary and shipment-detail or help action.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "m4-refund-exchange-tracking",
+      "label": "M4 Refund and exchange tracking",
+      "description": "One M4 Refund and exchange tracking screen separating USD 15.00 received, USD 20.00 sent and replacement shipment EX-912.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "m5-case-overview",
+      "label": "M5 Case overview",
+      "description": "One M5 Case overview screen with USD 35.00 received, USD 94.00 net cash paid and the lamp exchange still in transit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "alternate-withdrawal",
+      "label": "Alternate branch W withdrawal",
+      "description": "One alternate branch W sheet with lamp-only withdrawal confirmation, request retention and the resulting states of all three items.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "progress-video",
+      "label": "M4 to M5 progress video",
+      "description": "One 12-second progress video showing the dated M4-to-M5 transition from mug refund sent to received alongside the continuing lamp shipment.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "service-presentation",
+      "label": "Service experience presentation",
+      "description": "One 10-page presentation reusing the specifications, application and case sheets, withdrawal branch, refund calculation and video sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "merchant-name",
+      "kind": "text-verbatim",
+      "text": "DAYFRAME",
+      "scope": {
+        "slots": [
+          "item-selection",
+          "m1-case-overview",
+          "m5-case-overview",
+          "service-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "submission-action",
+      "kind": "text-verbatim",
+      "text": "Submit request",
+      "scope": {
+        "slots": [
+          "request-details",
+          "review-submission-recovery"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "recovery-action",
+      "kind": "text-verbatim",
+      "text": "Check status",
+      "scope": {
+        "slots": [
+          "review-submission-recovery"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "requested-label",
+      "kind": "text-verbatim",
+      "text": "Requested",
+      "scope": {
+        "slots": [
+          "review-submission-recovery",
+          "m1-case-overview",
+          "m2-approved-remedies",
+          "service-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "approved-label",
+      "kind": "text-verbatim",
+      "text": "Approved",
+      "scope": {
+        "slots": [
+          "review-submission-recovery",
+          "m2-approved-remedies",
+          "service-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "refund-sent-label",
+      "kind": "text-verbatim",
+      "text": "Refund sent",
+      "scope": {
+        "slots": [
+          "review-submission-recovery",
+          "m4-refund-exchange-tracking",
+          "service-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "refund-received-label",
+      "kind": "text-verbatim",
+      "text": "Refund received",
+      "scope": {
+        "slots": [
+          "review-submission-recovery",
+          "m3-return-tracking",
+          "m4-refund-exchange-tracking",
+          "m5-case-overview",
+          "service-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "DAYFRAME",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "specification-led-interface-system",
+      "slots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery",
+        "m1-case-overview",
+        "more-evidence",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "alternate-withdrawal"
+      ],
+      "sourceSlots": [
+        "flow-specification",
+        "component-specification"
+      ],
+      "items": [
+        {
+          "item": "All screens use the specified typography, color, spacing, navigation and component treatments, with variation justified by component state or page purpose.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Page names, state names, transitions and retained item data agree with the flow specification across the main path and alternate branch W.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The service uses calm, direct English connecting each item's current state with an appropriate next action, and pairs status colors with text or symbols.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Cash progress and exchange progress remain separately understandable throughout independent item review, shared return tracking and final cash receipt.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "DAYFRAME"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "item-selection",
+      "request-details",
+      "review-submission-recovery",
+      "m1-case-overview",
+      "more-evidence",
+      "m2-approved-remedies",
+      "m3-return-tracking",
+      "m4-refund-exchange-tracking",
+      "m5-case-overview",
+      "alternate-withdrawal"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge mobile interface communication and visual hierarchy, excluding product redesign, photorealistic material or lighting quality, exact raster dimensions and live backend behavior."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "flow-specification",
+        "component-specification",
+        "item-selection",
+        "request-details",
+        "review-submission-recovery",
+        "m1-case-overview",
+        "more-evidence",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "alternate-withdrawal",
+        "service-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery",
+        "m1-case-overview",
+        "more-evidence",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "alternate-withdrawal"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-flow-specification",
+      "requirementId": "R-format-flow-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "flow-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-component-specification",
+      "requirementId": "R-format-component-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "component-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-item-selection",
+      "requirementId": "R-format-item-selection",
+      "method": "artifact-property",
+      "targetSlots": [
+        "item-selection"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-request-details",
+      "requirementId": "R-format-request-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "request-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-review-submission-recovery",
+      "requirementId": "R-format-review-submission-recovery",
+      "method": "artifact-property",
+      "targetSlots": [
+        "review-submission-recovery"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-m1-case-overview",
+      "requirementId": "R-format-m1-case-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "m1-case-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-more-evidence",
+      "requirementId": "R-format-more-evidence",
+      "method": "artifact-property",
+      "targetSlots": [
+        "more-evidence"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-m2-approved-remedies",
+      "requirementId": "R-format-m2-approved-remedies",
+      "method": "artifact-property",
+      "targetSlots": [
+        "m2-approved-remedies"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-m3-return-tracking",
+      "requirementId": "R-format-m3-return-tracking",
+      "method": "artifact-property",
+      "targetSlots": [
+        "m3-return-tracking"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-m4-refund-exchange-tracking",
+      "requirementId": "R-format-m4-refund-exchange-tracking",
+      "method": "artifact-property",
+      "targetSlots": [
+        "m4-refund-exchange-tracking"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-m5-case-overview",
+      "requirementId": "R-format-m5-case-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "m5-case-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-alternate-withdrawal",
+      "requirementId": "R-format-alternate-withdrawal",
+      "method": "artifact-property",
+      "targetSlots": [
+        "alternate-withdrawal"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-progress-video",
+      "requirementId": "R-format-progress-video",
+      "method": "manual",
+      "targetSlots": [
+        "progress-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-service-presentation",
+      "requirementId": "R-format-service-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "service-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "flow-coverage-and-transitions",
+      "requirementId": "R-flow-coverage-and-transitions",
+      "method": "content",
+      "targetSlots": [
+        "flow-specification"
+      ],
+      "criteria": "The two pages contain a readable page-by-entry-by-data table and a connected transition account for D0, S0, every M1–M5 snapshot and W. Every page and state actually used in the ten image sheets is named. Include selected quantities 1 of 2, 1 of 1 and 1 of 1, requested cash USD 35.00 and accurate definitions of all four cash statuses. S0 resolves to one existing case; supplemental evidence precedes lamp approval; W branches from M1. Diagram style may vary; omitted states, unnamed delivered states or an incorrect branch connection fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "sourceSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery",
+        "m1-case-overview",
+        "more-evidence",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "alternate-withdrawal"
+      ]
+    },
+    {
+      "id": "flow-facts-on-case-sheets",
+      "requirementId": "R-flow-facts-on-case-sheets",
+      "method": "visual",
+      "targetSlots": [
+        "review-submission-recovery",
+        "m1-case-overview",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview"
+      ],
+      "criteria": "Review visibly repeats the selected unit counts, requested total and four cash-status meanings from the flow document. Relevant case views retain those quantities and request context while applying the definitions to their own snapshot. Explanations may be concise and positioned in summaries or timelines, but must distinguish review, authorization, transfer initiation and confirmed receipt. Missing repeated facts or a meaning changed between specification and screens fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "flow-specification"
+      ]
+    },
+    {
+      "id": "component-specification-content",
+      "requirementId": "R-component-specification-content",
+      "method": "content",
+      "targetSlots": [
+        "component-specification"
+      ],
+      "criteria": "Provide a readable component/state/value table covering all six named component families, with explicit color values, type sizes and contrast ratios. Demonstrate default, pressed, disabled and error states, including actionable controls distinguishable from status information. Body-text pairings must report at least 4.5:1 contrast and large-text and meaningful-icon pairings at least 3:1. Table organization may vary; missing families, states or concrete values, or ratios inconsistent with the stated colors, fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ]
+    },
+    {
+      "id": "screen-system-safe-areas-and-accessibility",
+      "requirementId": "R-screen-system-safe-areas-and-accessibility",
+      "method": "visual",
+      "targetSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery",
+        "m1-case-overview",
+        "more-evidence",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "alternate-withdrawal"
+      ],
+      "criteria": "Each depicted screen uses platform-neutral portrait geometry proportional to the specified logical viewport, with content respecting the relative top and bottom safe-area depths. Judge logical proportions and placement, not exported pixel counts. Typography, colors, spacing and component states agree with the specification; body text reaches 4.5:1 and large text and meaningful icons reach 3:1 using the specified color pairings. Status color is accompanied by text or a symbol. Sheet arrangement and export scale may vary; unsafe placement, inconsistent component values or inaccessible pairings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-specification"
+      ]
+    },
+    {
+      "id": "application-unit-remedy-allocation",
+      "requirementId": "R-application-unit-remedy-allocation",
+      "method": "visual",
+      "targetSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery"
+      ],
+      "criteria": "All three sheets associate the correct IDs and products with the selected/ordered quantities and item-level amounts. The selected Chalk mug is returned for USD 20.00, the Sage lamp receives a same-variant exchange with zero cash, and the Ink pouch is kept with USD 15.00 refunded. The other mug remains outside the request. Product imagery remains recognizable against the supplied identities; cropping and scale may vary. Swapped products, duplicated units, incorrect remedies or inconsistent amounts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "request-details-and-state-examples",
+      "requirementId": "R-request-details-and-state-examples",
+      "method": "visual",
+      "targetSlots": [
+        "request-details",
+        "more-evidence"
+      ],
+      "criteria": "Request details includes each selected item's problem, remedy and saved evidence, plus a clearly identifiable validation example with an empty required problem field and disabled Submit request. The completed saved problems are chipped rim, light flickers and zip sticks for L1–L3 respectively. More evidence depicts the specified network interruption using the component error treatment. Multiple states may share a sheet; enabling submission with the required field empty or substituting file invalidity for the connection-loss example fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-specification"
+      ]
+    },
+    {
+      "id": "uncertain-submission-recovery",
+      "requirementId": "R-uncertain-submission-recovery",
+      "method": "visual",
+      "targetSlots": [
+        "review-submission-recovery"
+      ],
+      "criteria": "The sheet visibly sequences review, submission, the uncertain S0 outcome and status-check confirmation of AF-7306. Uncertainty is a pending result, with Check status as recovery; repeated checking resolves to the same case. Selected products, unit counts, remedies and saved evidence remain intact. State panels or another legible sequence are acceptable; presenting uncertainty as a definitive failure, creating a second case or losing data fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "m1-evidence-action-and-retry",
+      "requirementId": "R-m1-evidence-action-and-retry",
+      "method": "visual",
+      "targetSlots": [
+        "m1-case-overview",
+        "more-evidence"
+      ],
+      "criteria": "M1 shows L1 and L3 submitted and under review, with L2 alone awaiting model-label evidence by the specified UTC deadline. More evidence preserves lamp-flicker.jpg and selected model-label.jpg across interruption and retry, then records successful resubmission at 12 August, 15:00 UTC before exchange approval. A visible retry action and retained files establish continuity. Layout may vary; evidence actions assigned to unaffected items, lost selections or approval preceding accepted supplementation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "lamp-only-withdrawal",
+      "requirementId": "R-lamp-only-withdrawal",
+      "method": "visual",
+      "targetSlots": [
+        "alternate-withdrawal"
+      ],
+      "criteria": "Show W as an alternate path from M1 before lamp approval or return. Confirmation identifies the Sage lamp, explains the consequence and offers an action to keep its existing request active. The confirmed outcome marks only L2 withdrawn and eligible to request again through 22 August 2026, 23:59 UTC. AF-7306 stays open with L1 and L3 submitted under review and USD 35.00 requested. Withdrawal issues no cash and does not create EX-912 on this branch. Wording may vary except required labels; cancellation of the whole case or either unaffected request fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "progress-ledger-and-shared-return",
+      "requirementId": "R-progress-ledger-and-shared-return",
+      "method": "visual",
+      "targetSlots": [
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview"
+      ],
+      "criteria": "M2 independently approves the mug return, Sage lamp exchange after evidence acceptance and pouch refund without return; cash is USD 35.00 requested and approved, USD 0.00 sent and received. Its prepaid ParcelWay RP-442 instructions include the selected mug and lamp only, zero customer shipping, the handover deadline and a label-download or handover action. M3 retains the same parcel and approvals during the sorting delay, offers shipment details or support and identifies the next update as expected by 16 August, 18:00 UTC; the pouch's USD 15.00 is received and the mug's USD 20.00 awaits return receipt and transfer initiation. M4 shows the returned items received on 17 August, the mug transfer initiated on 18 August at 10:00 with receipt pending, the pouch refund received and EX-912 shipped at 12:00. M5 completes both cash refunds, with USD 35.00 received, USD 0.00 pending and USD 94.00 net paid, while the lamp exchange remains open in transit. Presentation may vary; incorrect parcel allocation, extra parcels or charges, wrong amounts or premature completion fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "visible-cash-and-exchange-summaries",
+      "requirementId": "R-visible-cash-and-exchange-summaries",
+      "method": "visual",
+      "targetSlots": [
+        "m1-case-overview",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview"
+      ],
+      "criteria": "Each target provides an immediately readable cash summary with stage labels appropriate to its snapshot and an independently identifiable lamp-exchange status. Requested, approved, sent and received describe the same money progressing through stages, so values must not be added together as distinct refunds. M1 includes USD 35.00 requested and USD 0.00 approved and received; later summaries agree with the ledger. Placement may vary; an unlabeled total, missing exchange progress or a combined cash-and-exchange completion state fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "order-record-accuracy",
+      "requirementId": "R-order-record-accuracy",
+      "method": "visual",
+      "targetSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery",
+        "m1-case-overview",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "alternate-withdrawal"
+      ],
+      "criteria": "Item selection identifies DF-20418. Wherever order or customer records are displayed, they agree with Avery Lane, the 4 August 2026 order date, delivery on 8 August at 12:00 UTC, the 22 August 2026 at 23:59 UTC service deadline and Card ending 4242 as the refund destination. Dates may use an unambiguous equivalent format with shared year or timezone context. These metadata fields need not appear on every screen; contradictory records or a changed order identity fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "refund-calculation-and-payment-basis",
+      "requirementId": "R-refund-calculation-and-payment-basis",
+      "method": "visual",
+      "targetSlots": [
+        "review-submission-recovery",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview"
+      ],
+      "criteria": "Review visibly calculates USD 20.00 plus USD 0.00 plus USD 15.00 as USD 35.00 and identifies Card ending 4242 as the destination. Refunds use discounted paid unit amounts, not list prices or the whole two-mug line. Where the original-payment breakdown is shown, USD 146.00 less USD 23.00 yields USD 123.00 merchandise plus USD 6.00 retained outbound shipping, totaling USD 129.00. No separate tax, restocking charge or exchange fee is introduced. M5's net USD 94.00 follows USD 129.00 minus USD 35.00. Monetary displays use USD and two decimals; alternate layout is allowed, incorrect arithmetic or refunding the lamp's USD 68.00 fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "draft-and-interruption-continuity",
+      "requirementId": "R-draft-and-interruption-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery",
+        "more-evidence",
+        "alternate-withdrawal"
+      ],
+      "criteria": "Depicted transitions preserve selected units, item identity, remedies, evidence and the latest known state, except for explicitly edited fields or the confirmed L2 withdrawal. Draft controls allow quantity, problem and applicable item-specific remedy editing, with any illustrated amount change following paid selected-unit values. A selected unit is not offered as part of a second active request; W releases only the lamp unit. Action controls are distinguishable from informational statuses. Screen sequence and navigation styling may vary; silent resets, changes to unaffected items or duplicate active-unit allocation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "evidence-record-accuracy",
+      "requirementId": "R-evidence-record-accuracy",
+      "method": "visual",
+      "targetSlots": [
+        "request-details",
+        "more-evidence"
+      ],
+      "criteria": "Readable attachment records associate mug-chip.jpg, 2.4 MB JPEG with L1; lamp-flicker.jpg, 1.8 MB JPEG with L2; and pouch-zip.jpg, 1.2 MB JPEG with L3 as saved uploads. Supplementation uses model-label.jpg, 1.6 MB JPEG, with selected, interrupted, retry and successful states made clear. Evidence controls communicate JPEG or PNG support and a 5 MB per-file maximum. Attachment thumbnails need not literally reproduce unavailable evidence photos; filenames identify records. Wrong associations, substituted metadata or treating the valid supplemental JPEG as unsupported fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "snapshot-knowledge-and-estimates",
+      "requirementId": "R-snapshot-knowledge-and-estimates",
+      "method": "visual",
+      "targetSlots": [
+        "m1-case-overview",
+        "more-evidence",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview"
+      ],
+      "criteria": "Date-bearing states respect the supplied timeline and distinguish recorded events from forecasts. M3 knows the 13 August parcel acceptance and 15 August sorting delay, but not later receipt or shipment events as completed facts. M4 retains the 21–23 August estimated mug receipt and 20 August estimated lamp arrival while mug receipt remains pending. M5 records actual mug receipt on 19 August at 15:00 UTC, earlier than the former estimate, and retains the lamp's 20 August arrival as an estimate. Equivalent unambiguous date formatting is allowed; future-event leakage or an estimate presented as completion fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "cash-status-semantics",
+      "requirementId": "R-cash-status-semantics",
+      "method": "visual",
+      "targetSlots": [
+        "review-submission-recovery",
+        "m1-case-overview",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview"
+      ],
+      "criteria": "Labels and surrounding explanations distinguish receipt of an application for staff review, authorization subject to any required return, merchant transfer initiation with customer receipt pending, and customer receipt confirmed by a ledger event. Draft USD 35.00 is an estimate before submission. Each item's status remains independently meaningful, and the lamp's zero-cash exchange is not labeled as a received cash refund. Concise explanatory wording is allowed; collapsing sent into received or approval into payment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "progress-video-timeline",
+      "requirementId": "R-progress-video-timeline",
+      "method": "manual",
+      "targetSlots": [
+        "progress-video"
+      ],
+      "criteria": "Review the full video and verify a 12-second sequence moving from visibly dated M4, 18 August, to M5, 19 August. Initially the mug's USD 20.00 is sent with receipt pending and USD 15.00 has been received; later the mug receipt is actual at 19 August, 15:00 UTC and total received becomes USD 35.00. EX-912 remains in transit throughout, with 20 August explicitly an arrival estimate. Motion and transitions may vary; reversed chronology, premature cash receipt, an undated transition or a completed lamp delivery fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "m4-refund-exchange-tracking",
+        "m5-case-overview"
+      ]
+    },
+    {
+      "id": "presentation-facts-and-repetition",
+      "requirementId": "R-presentation-facts-and-repetition",
+      "method": "content",
+      "targetSlots": [
+        "service-presentation"
+      ],
+      "criteria": "The presentation has ten pages, places DAYFRAME on its cover and includes calculation and status pages repeating the selected quantities, USD 35.00 request and four correct cash-status meanings from the flow document. It explicitly repeats the component specification's primary-action color code and type sizes. Its video sequence preserves dated M4 pending mug receipt, actual receipt on 19 August at 15:00 UTC in M5 and the lamp's estimated 20 August arrival while in transit. Identify W as an alternate branch from M1 and keep its withdrawn lamp outcome separate from the main shipment timeline. Page ordering may vary; missing repeated values, changed state names or contradictory timeline facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "sourceSlots": [
+        "flow-specification",
+        "component-specification",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "alternate-withdrawal"
+      ]
+    },
+    {
+      "id": "presentation-visible-reuse",
+      "requirementId": "R-presentation-visible-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "service-presentation"
+      ],
+      "criteria": "Every listed source is visibly recognizable in the presentation through readable reproductions or substantive excerpts, using the same page and state names. The flow and component table must be shown, and application, evidence, all four progress stages and W must each be represented. Cropping, scaling, annotations and combining sources on a page are allowed if identifying content remains legible. Merely naming a source, using an unreadable thumbnail or substituting unrelated redesigned states fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "sourceSlots": [
+        "flow-specification",
+        "component-specification",
+        "item-selection",
+        "request-details",
+        "review-submission-recovery",
+        "m1-case-overview",
+        "more-evidence",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "alternate-withdrawal"
+      ]
+    },
+    {
+      "id": "set-specification-led-interface-system",
+      "requirementId": "R-set-specification-led-interface-system",
+      "method": "visual",
+      "targetSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery",
+        "m1-case-overview",
+        "more-evidence",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "alternate-withdrawal"
+      ],
+      "criteria": "All screens use the specified typography, color, spacing, navigation and component treatments, with variation justified by component state or page purpose. Page names, state names, transitions and retained item data agree with the flow specification across the main path and alternate branch W. The service uses calm, direct English connecting each item's current state with an appropriate next action, and pairs status colors with text or symbols. Cash progress and exchange progress remain separately understandable throughout independent item review, shared return tracking and final cash receipt.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/03-order-and-evidence.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/04-case-ledger.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "flow-specification",
+        "component-specification"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "chalk-mug-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "harbor-mug.png"
+      ],
+      "subjectSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery"
+      ],
+      "notes": "Their item images match the three identity attachments."
+    },
+    {
+      "id": "sage-lamp-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "orbit-desk-lamp.png"
+      ],
+      "subjectSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery"
+      ],
+      "notes": "Their item images match the three identity attachments."
+    },
+    {
+      "id": "ink-pouch-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "canvas-pouch.png"
+      ],
+      "subjectSlots": [
+        "item-selection",
+        "request-details",
+        "review-submission-recovery"
+      ],
+      "notes": "Their item images match the three identity attachments."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "flow-facts-repeated",
+      "fromSlot": "flow-specification",
+      "toSlots": [
+        "review-submission-recovery",
+        "m1-case-overview",
+        "m2-approved-remedies",
+        "m3-return-tracking",
+        "m4-refund-exchange-tracking",
+        "m5-case-overview",
+        "service-presentation"
+      ],
+      "extract": [
+        "selected quantities for L1, L2 and L3",
+        "USD 35.00 requested cash",
+        "the four cash-status labels and their meanings"
+      ],
+      "notes": "Repeat its selected quantities, USD 35.00 requested cash and four cash-status meanings on the Review and submission recovery sheet, the relevant case views and the presentation's calculation and status pages."
+    },
+    {
+      "id": "component-values-repeated",
+      "fromSlot": "component-specification",
+      "toSlots": [
+        "service-presentation"
+      ],
+      "extract": [
+        "chosen primary-action color code",
+        "chosen type sizes"
+      ],
+      "notes": "Repeat the chosen primary-action color code and type sizes in the presentation."
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "id": "bench-da-game-material-01",
+  "title": "COPPER HOP — A portrait mobile level for an existing robot hero, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GAME",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# COPPER HOP\n\n## Level\n- Level type: portrait mobile side-scrolling rooftop waterworks\n- Audience: short-session mobile players\n- Start: Dock Steps\n- Exit: Relay Gate\n- Playable envelope: 20 m long × 4 m high\n- Collectibles: three triangular sparks, numbered 1, 2 and 3 on the overview\n- Exit power requirement: three sparks\n- Spark 3 access: reachable from the gate waiting position before activation\n- Movement: automatic rightward travel; waiting at the unpowered gate\n- Player actions: jump; activate relay\n- Environment: pale plaster platforms, copper pipes, distant storage tanks\n\n## Pip\n- Height: 1 m\n- Body: ochre #C88A32\n- Face: navy #203342, one horizontal ivory eye slit\n- Boots: two, teal #267D80\n- Backpack: one, ivory #F4E9CF\n- Head, torso and legs: 30%, 40% and 30% of standing height\n- Arms: two short navy arms\n- Head silhouette: rounded rectangle\n- Backpack silhouette: shallow rectangular box\n- Poses: Idle; Jumping\n- Maximum jump rise: 0.6 m\n- Maximum horizontal crossing: 1.5 m\n\n## Relay\n- Height: 1.2 m\n- Width: 0.6 m\n- Depth: 0.4 m\n- Body: copper rectangular pedestal, two upright prongs\n- Face: one ivory indicator plate\n- Dormant indicator: amber #B87421, square\n- Powered indicator: teal #267D80, circle\n- State-dependent geometry: indicator shape\n\n## Asset counts\n| Asset | Count |\n| --- | ---: |\n| Platform module | 3 |\n| Copper-pipe foreground piece | 2 |\n| Distant-tank backdrop | 1 |\n| Triangular spark | 1 |\n\n## Screen geometry\n- Logical canvas: 402 × 874 pt\n- Coordinate origin: top left\n- Safe inset, top: 62 pt\n- Safe inset, bottom: 34 pt\n- Interface safe region: x=0–402 pt; y=62–840 pt\n- Right-thumb control region: x=202–378 pt; y=620–806 pt\n- Touch target range: 48–64 pt per side\n- Selected touch target: 56 × 56 pt\n- Jump centre: (346, 766) pt\n- Activate centre: (258, 766) pt\n- Minimum text size: 18 pt\n- Text and ordinary interface contrast: 4.5:1\n- Icon and unavailable-control contrast: 3:1\n- Platform-edge contrast against adjacent scenery: 3:1\n- Character and relay small depiction height: 32 pt each\n\n## Fixed screen copy and input mapping\n- Game title: COPPER HOP\n| Action label | Touch input | Controller input | Centre in pt |\n| --- | --- | --- | --- |\n| Jump | Tap Jump target | A | (346, 766) |\n| Activate | Tap Activate target | X | (258, 766) |\n\n## State records\n| Composition | Location text | Counter text | Relay state | Activate appearance |\n| --- | --- | --- | --- | --- |\n| Entry | Dock Steps | 0/3 | Dormant, outside entry camera | Unavailable, lock icon |\n| Relay Waiting | Relay Gate | 2/3 | Dormant, amber square | Unavailable, lock icon |\n| Relay Restored | Relay Gate | 3/3 | Powered, teal circle | Activated, check mark |\n\n## Reference responsibilities\n- screen-safe-area.png: logical canvas and safe boundaries\n- thumb-controls.png: control region, target sizes and positions\n- pip-model.png: existing character identity, proportions and movement envelope\n- relay-model.png: existing relay identity, geometry and states\n- commuter-reference.png: one-handed commuter play context\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# COPPER HOP — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | level-overview | Finished level overview | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | character-relay-sheet | Finished character and relay sheet | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | environment-assets | Finished environment asset sheet | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | entry-state | Entry touch and controller composition | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | relay-waiting-state | Relay Waiting touch and controller composition | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | relay-restored-state | Relay Restored touch and controller composition | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: screen-safe-area.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: thumb-controls.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: pip-model.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: relay-model.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: commuter-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "COPPER HOP | A portrait mobile level for an existing robot hero\n\nWe are commissioning one finished side-scrolling level for COPPER HOP, played in portrait orientation during short journeys. Our existing robot, Pip, travels from Dock Steps to Relay Gate, collecting three triangular sparks to power the exit. Build the scene as a disused rooftop waterworks: pale plaster platforms, copper pipes and distant storage tanks. The playable envelope is 20 m long and 4 m high. Pip moves automatically to the right and waits at the unpowered gate; the player's actions are jumping and activating the relay.\n\nPip is 1 m tall, with an ochre body #C88A32, a navy face #203342, one horizontal ivory eye slit, two teal boots and one ivory backpack. Preserve these features and the attached proportions. Maximum jump rise is 0.6 m and maximum horizontal crossing is 1.5 m. The existing relay is 1.2 m high and 0.6 m wide. Screens use a 402 × 874 pt logical canvas, with safe insets of 62 pt above and 34 pt below. Print \"COPPER HOP\" on every state screen; use \"Jump\" and \"Activate\" for the two controls.\n\nAudience: short-session mobile players, with the art and level teams using the work to approve the route, asset treatment and three playable states.\n\nInputs (attached): 01-client-facts.en.md contains the character, movement, interface and state records. 02-delivery-catalog.en.md lists every deliverable's proportion, format and stage. screen-safe-area.png supplies the portrait canvas and safe boundaries. thumb-controls.png supplies the control positions and touch dimensions. pip-model.png supplies Pip's existing views, proportions and jump envelope. relay-model.png supplies the existing relay's geometry and two states. commuter-reference.png supplies the one-handed play context.\n\nDeliverables:\n1. One finished level overview showing the 20 m × 4 m playable envelope, Dock Steps, Relay Gate, three numbered spark positions and dimensions for every required jump\n2. One finished character and relay sheet with front, side and rear views of each, Pip's idle and jumping poses, the relay's Dormant and Powered states, and close-up and 32 pt-high gameplay-scale depictions of both\n3. One finished environment asset sheet containing three platform modules, two copper-pipe foreground pieces, one distant-tank backdrop and the triangular spark\n4. Three paired state compositions, each containing a touch screen and its controller counterpart: Entry at Dock Steps with 0/3, Relay Waiting at Relay Gate with 2/3, and Relay Restored at Relay Gate with 3/3\n\nAcceptance:\n- The level overview dimensions every required crossing at 1.5 m or less and every upward jump at 0.6 m or less; all three sparks are reachable before Relay Gate, with the third reachable from the waiting position.\n- The character and relay sheet and all three state compositions preserve Pip's five identity features and 1 m height relative to the 1.2 m relay; the sheet supplies all six object views, four named poses or states, and both display scales.\n- The environment sheet supplies all seven listed assets; the overview and state compositions reuse their forms, separate platform edges from adjacent scenery by at least 3:1 contrast, and leave the playable route and sparks visible through foreground placement.\n- Each state composition contains two 402 × 874 pt logical screens. Interface content stays between y=62 and y=840; Jump and Activate occupy 56 × 56 pt targets centred at (346, 766) and (258, 766). Controller counterparts use A for Jump and X for Activate at those same positions.\n- All six screens print COPPER HOP, Jump and Activate, with the location and counter assigned above. Text is at least 18 pt with 4.5:1 contrast; icons and unavailable controls achieve 3:1. Entry and Relay Waiting show a lock on the unavailable Activate control.\n- Relay Waiting shows the relay's amber square Dormant indicator; Relay Restored shows its teal circular Powered indicator and an activated check mark on the Activate control. The character and relay sheet repeats both indicator shapes and colours.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/screen-safe-area.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "8e552f7577e9b8632060324f8093e6ef07d726ecd62b70be194c7f1100beae31"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/thumb-controls.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "cfc83ce540928415a9f4ba27535c2514dcbc34301a68fcae2a724921ed4df146"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/pip-model.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "564a6518a8a6520d3e0832870cd95b64816855a4a0e379f485301599a18913b6"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/relay-model.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "c8a32323218d09ee72bdc03336107e4ff0dd97e9eb767ee032a87292bfd45e7c"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-material-01/commuter-reference.png",
+      "nodeId": "provided-image-5",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "dbb9a1a23f7de26270cb1a5513ccbd244a79019445b0566cdce16e656c83690f"
+    }
+  ]
+}

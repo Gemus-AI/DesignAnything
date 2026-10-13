@@ -1,0 +1,592 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-interior-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "furnished-zoning-plan",
+      "label": "Furnished zoning plan",
+      "description": "A furnished plan with zone areas, equipment counts, clearances, turning circles and camera positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "combined-circulation-plan",
+      "label": "Customer and garment circulation plan",
+      "description": "A circulation plan with customer and garment sequences, three storage capacities and two operating-state occupancy diagrams.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "east-section-elevation",
+      "label": "East-facing counter and workshop section-elevation",
+      "description": "An east-facing section-elevation with counter, glazing, storage and ceiling heights and sewing visibility.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-lighting-application",
+      "label": "Material and lighting application sheet",
+      "description": "A material and lighting application sheet locating four finishes, three fixture layers and their counter switches.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-v1-saturday-handover",
+      "label": "V1 Saturday handover perspective",
+      "description": "An interior perspective from V1 showing Saturday browsing and handover with the counter name and sale label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-v2-daily-repair",
+      "label": "V2 Daily repair perspective",
+      "description": "An interior perspective from V2 showing daily repair, labelled garment storage and readable material callouts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-shop-name",
+      "kind": "text-verbatim",
+      "text": "SECOND SEAM",
+      "scope": {
+        "slots": [
+          "furnished-zoning-plan",
+          "view-v1-saturday-handover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "sale-store-label",
+      "kind": "text-verbatim",
+      "text": "For sale",
+      "scope": {
+        "slots": [
+          "combined-circulation-plan",
+          "view-v1-saturday-handover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "awaiting-repair-label",
+      "kind": "text-verbatim",
+      "text": "Awaiting repair",
+      "scope": {
+        "slots": [
+          "combined-circulation-plan",
+          "view-v2-daily-repair"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "ready-to-collect-label",
+      "kind": "text-verbatim",
+      "text": "Ready to collect",
+      "scope": {
+        "slots": [
+          "combined-circulation-plan",
+          "view-v2-daily-repair"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SECOND SEAM",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-coordinated-shop",
+      "slots": [
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "material-lighting-application",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair"
+      ],
+      "sourceSlots": [
+        "furnished-zoning-plan"
+      ],
+      "items": [
+        {
+          "item": "Plans, section and perspectives depict the same retained shell, fixed counter, furniture arrangement, fitting enclosure, workshop divider and three garment stores.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Material and lighting locations agree across the application sheet, section and visible perspective surfaces.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The depicted daily and Saturday scenes agree with their assigned occupancy states and preserve the public-side customer route.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "SECOND SEAM"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "furnished-zoning-plan",
+      "combined-circulation-plan",
+      "east-section-elevation",
+      "material-lighting-application",
+      "view-v1-saturday-handover",
+      "view-v2-daily-repair"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not impose a new logo, fashion-styling brief or cinematic production standard on this spatial fit-out commission."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "material-lighting-application",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-furnished-zoning-plan",
+      "requirementId": "R-format-furnished-zoning-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furnished-zoning-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-combined-circulation-plan",
+      "requirementId": "R-format-combined-circulation-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "combined-circulation-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-east-section-elevation",
+      "requirementId": "R-format-east-section-elevation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "east-section-elevation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-lighting-application",
+      "requirementId": "R-format-material-lighting-application",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-lighting-application"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-v1-saturday-handover",
+      "requirementId": "R-format-view-v1-saturday-handover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-v1-saturday-handover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-v2-daily-repair",
+      "requirementId": "R-format-view-v2-daily-repair",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-v2-daily-repair"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "fixed-opening-and-service-record",
+      "requirementId": "R-fixed-opening-and-service-record",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan",
+        "east-section-elevation"
+      ],
+      "criteria": "Read the drawings together using the southwest internal floor corner as origin, x east, y north and z upward. Verify D1 at south-wall x=0.8–2.0 m, 2.4 m high, west-hinged and outward opening; W1 at south-wall x=2.6–7.4 m with sill z=0.45 m and head z=2.7 m; full-height C1 at x=3.8–4.2, y=5.8–6.2 m; and full-height SH1 at x=7.4–8.0, y=9.4–10.0 m. E1 and E2 remain on the east wall at y=7.5 and 8.8 m, z=0.45 m; WP1 remains there at y=9.4 m, z=0.5 m. Annotations may establish positions and heights that a particular projection cannot show. Missing evidence of service retention, relocated elements or contradictory geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "retained-equipment-record",
+      "requirementId": "R-retained-equipment-record",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan"
+      ],
+      "criteria": "Identify four distinct sale rails with 1200 × 500 mm footprints and 1600 mm height, two sewing tables measuring 1200 × 600 × 750 mm, and one pressing table measuring 1200 × 600 × 900 mm. Rail allocations provide twelve garments per rail, forty-eight total. Labels or a keyed equipment record may establish heights and capacities. Sewing machines remain associated with the two sewing tables and pressing has its own table; substituted counts, incompatible footprints or missing retained equipment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "material-specification-record",
+      "requirementId": "R-material-specification-record",
+      "method": "content",
+      "targetSlots": [
+        "material-lighting-application"
+      ],
+      "criteria": "The application sheet explicitly associates FL-01 with the retained floor and honed matte terrazzo, WD-01 with reclaimed oak and clear matte varnish on counter facing and new joinery, PT-01 with opaque-wall limewash specified as #D8CCBA, and AC-01 with suspended wool felt of 25 mm thickness above both sewing stations. Keyed annotations or a legend are acceptable. A swatch without its material, treatment and location is insufficient; contradictory or omitted specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "six-shell-and-viewpoints",
+      "requirementId": "R-six-shell-and-viewpoints",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair"
+      ],
+      "criteria": "The projections describe one 8 m east–west by 10 m south–north room with 3.2 m clear height and the same fixed openings, column and shaft. H1 occupies x=7.4–8.0, y=1.8–3.6 m with its top at 0.9 m. The furnished plan marks V1 at (1.4,1.2) looking northeast and V2 at (6.7,5.0) looking north; the corresponding views plausibly follow those cameras at 1.6 m eye height. Cropping and occlusion are allowed, but visible architecture, counter placement or camera direction must not contradict the plans.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-plan-clearances",
+      "requirementId": "R-six-plan-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan"
+      ],
+      "criteria": "Readable dimensions identify the narrowest public passages as at least 1200 mm clear, an unobstructed 1500 mm diameter circle at D1 and another inside the single fitting room, and fitting-room internal clearance of 2000 × 2200 mm. Furniture footprints and door operation must support the claimed clearances. Zone areas and equipment counts are shown, with circulation included within zones and C1 and SH1 excluded from usable area. Sewing and pressing occupy y=5.0–10.0 m. Missing dimensions, obstructed turning spaces or inconsistent counts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-storage-and-sequences",
+      "requirementId": "R-six-storage-and-sequences",
+      "method": "visual",
+      "targetSlots": [
+        "combined-circulation-plan"
+      ],
+      "criteria": "Three separately allocated stores carry their respective labels and capacities: sale 48, awaiting repair 12, completed 8. Awaiting and completed storage have distinct units with individually identified positions. Distinguishable arrows trace D1 to browsing, optional fitting, H1 purchase and exit; repair visitors to H1 and exit; garments from H1 through waiting storage, sewing, pressing as needed, completed storage and H1 collection. Customers remain outside the workshop while staff can process garments. Alternative arrow styles are acceptable; merged stores, missing stages or customer routing through the workshop fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-states-and-workshop-section",
+      "requirementId": "R-six-states-and-workshop-section",
+      "method": "visual",
+      "targetSlots": [
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair"
+      ],
+      "criteria": "Two occupancy diagrams identify daily use as one browsing customer and one collecting customer, and Saturday use as three browsing, one fitting, one handing over repair and one collecting; each state has one sales assistant and two makers. V1 is captioned Saturday with six customers and three staff, and V2 daily with two customers and three staff; figures visible within each crop must be compatible with that state. The east-facing section cuts through H1 and the workshop, labels counter, glazing, storage and ceiling heights, and demonstrates sightlines from the customer side through upper glazing to both sewing working surfaces. Whole-shop occupants may be outside a perspective crop; contradictory captions or blocked sightlines fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-finish-and-lighting-coordination",
+      "requirementId": "R-six-finish-and-lighting-coordination",
+      "method": "visual",
+      "targetSlots": [
+        "material-lighting-application",
+        "east-section-elevation",
+        "view-v2-daily-repair"
+      ],
+      "criteria": "Application and section use matching material codes at matching locations, with suspended felt above S1 and S2. L1 is ceiling linear ambient lighting at 3000 K over sales and circulation; L2 is articulated 4000 K task lighting at each of S1, S2 and P1; L3 is adjustable 3000 K track lighting over R1–R4. Three separate layer-to-switch assignments locate controls on the staff side of H1. V2 contains legible material callouts tied to visible surfaces. Diagrammatic light symbols are allowed; missing layers, incorrect temperatures, misplaced panels, shared switching or conflicting code placement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-signage-placement",
+      "requirementId": "R-six-signage-placement",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair"
+      ],
+      "criteria": "The plan explicitly locates the shop name above D1. V1 places the name on the counter front and the sale label at a sale rail. V2 attaches each repair-state label to its corresponding storage unit. Typography and sign construction may vary, but text must remain readable at the required physical location; a detached legend or page title does not substitute.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-six-coordinated-shop",
+      "requirementId": "R-set-six-coordinated-shop",
+      "method": "visual",
+      "targetSlots": [
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "material-lighting-application",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair"
+      ],
+      "criteria": "Plans, section and perspectives depict the same retained shell, fixed counter, furniture arrangement, fitting enclosure, workshop divider and three garment stores. Material and lighting locations agree across the application sheet, section and visible perspective surfaces. The depicted daily and Saturday scenes agree with their assigned occupancy states and preserve the public-side customer route.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-zoning-plan"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "surveyed-shop-retention",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "existing-shop-survey.png"
+      ],
+      "subjectSlots": [
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair"
+      ],
+      "notes": "Retain the perimeter walls, openings, column, shaft and service points.",
+      "comparisonScope": "compare only the surveyed shell, the perimeter walls, the entrance and shop-window openings, the column, the service shaft and the power and water points in their recorded positions; the fit-out, lightweight partitions, furniture, finishes and lighting are the design work"
+    },
+    {
+      "id": "retained-equipment-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "retained-equipment.png"
+      ],
+      "subjectSlots": [
+        "furnished-zoning-plan",
+        "east-section-elevation",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair"
+      ],
+      "notes": "Retain four dark steel display rails, each 1200 × 500 × 1600 mm, carrying 12 sale garments each; two sewing tables, each 1200 × 600 × 750 mm; and one pressing table, 1200 × 600 × 900 mm."
+    }
+  ]
+}

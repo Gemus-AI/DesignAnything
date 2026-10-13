@@ -1,0 +1,586 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-graphic-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "street-loom-regular",
+      "label": "Loom Library regular-service street poster",
+      "description": "One A2 portrait street poster containing the complete L1 Loom Library record and shared campaign, offer and access information.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "street-depot-regular",
+      "label": "Depot Hall regular-service street poster",
+      "description": "One A2 portrait street poster containing the complete L2 Depot Hall record and shared campaign, offer and access information.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "street-canal-regular",
+      "label": "Canal Reading Room regular-service street poster",
+      "description": "One A2 portrait street poster containing the complete L3 Canal Reading Room record and shared campaign, offer and access information.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "community-directory",
+      "label": "Community venue directory",
+      "description": "One A4 portrait community directory containing all three complete venue records and shared campaign, offer and access information.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "mobile-directory",
+      "label": "Mobile venue directory",
+      "description": "One portrait mobile directory containing all three complete venue records and shared campaign, offer and access information.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "mobile-depot-change",
+      "label": "Depot Hall mobile change card",
+      "description": "One portrait mobile card foregrounding Depot Hall's 12:00–16:00 opening on 24 July 2027 for rehearsal within its complete venue record.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "program-name",
+      "kind": "text-verbatim",
+      "text": "COMMON COOL",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "campaign-line",
+      "kind": "text-verbatim",
+      "text": "Take a cooler pause.",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "regular-schedule-label",
+      "kind": "text-verbatim",
+      "text": "Regular hours",
+      "scope": {
+        "slots": [
+          "street-loom-regular",
+          "street-depot-regular",
+          "street-canal-regular",
+          "community-directory",
+          "mobile-directory",
+          "mobile-depot-change"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "temporary-schedule-label",
+      "kind": "text-verbatim",
+      "text": "Temporary change",
+      "scope": {
+        "slots": [
+          "street-loom-regular",
+          "street-depot-regular",
+          "street-canal-regular",
+          "community-directory",
+          "mobile-directory",
+          "mobile-depot-change"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON COOL",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-six-application-system",
+      "slots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "community-directory",
+        "mobile-directory",
+        "mobile-depot-change"
+      ],
+      "items": [
+        {
+          "item": "Street, community and mobile pieces form a coordinated public-information system through consistent typography, venue cues, schedule grouping and facility-symbol language while adapting to their different reading conditions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Repeated venue records and shared service terms agree across every occurrence, including regular schedules, dated exceptions and exception reasons.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON COOL"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "street-loom-regular",
+      "street-depot-regular",
+      "street-canal-regular",
+      "community-directory",
+      "mobile-directory",
+      "mobile-depot-change"
+    ],
+    "layoutExtras": true,
+    "naRules": "Judge public-information hierarchy, typography and carrier adaptation, excluding photorealistic materials, scene lighting and originality of the supplied wordmark."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "community-directory",
+        "mobile-directory",
+        "mobile-depot-change"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-street-loom-regular",
+      "requirementId": "R-format-street-loom-regular",
+      "method": "artifact-property",
+      "targetSlots": [
+        "street-loom-regular"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-street-depot-regular",
+      "requirementId": "R-format-street-depot-regular",
+      "method": "artifact-property",
+      "targetSlots": [
+        "street-depot-regular"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-street-canal-regular",
+      "requirementId": "R-format-street-canal-regular",
+      "method": "artifact-property",
+      "targetSlots": [
+        "street-canal-regular"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-community-directory",
+      "requirementId": "R-format-community-directory",
+      "method": "artifact-property",
+      "targetSlots": [
+        "community-directory"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-mobile-directory",
+      "requirementId": "R-format-mobile-directory",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mobile-directory"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-mobile-depot-change",
+      "requirementId": "R-format-mobile-depot-change",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mobile-depot-change"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "fixed-visual-direction",
+      "requirementId": "R-fixed-visual-direction",
+      "method": "visual",
+      "targetSlots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "community-directory",
+        "mobile-directory",
+        "mobile-depot-change"
+      ],
+      "criteria": "Each application uses the supplied wordmark, a white background and #143D45 as its primary color. Its language and presentation are calm, respectful and welcoming. Carrier-specific arrangement and scale may vary; a replacement identity, different primary palette or hostile or sensational presentation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "venue-record-completeness",
+      "requirementId": "R-venue-record-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "mobile-depot-change"
+      ],
+      "criteria": "Read the complete associated record on each piece. L1 is Loom Library, 14 Harbour Walk, daily 10:00–18:00, with cool indoor seating, drinking water and toilets, closed all day on 18 July 2027 for maintenance. L2 is Depot Hall, 6 Tram Square, daily 12:00–20:00, with cool indoor seating, drinking water and phone charging, open 12:00–16:00 on 24 July 2027 for rehearsal. L3 is Canal Reading Room, 22 Reed Street, daily 09:00–16:00, with cool indoor seating, drinking water, toilets and phone charging, closed 12:00–14:00 on 5 August 2027 for a workshop and open 09:00–12:00 and 14:00–16:00 that day. Regular hours must not override the dated exception. Use 24-hour times and dates with day, English month and year. Layout and sentence structure may vary; missing fields, extra unsupported facilities, incorrect venue associations or ambiguous exception openings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "complete-three-venue-overviews",
+      "requirementId": "R-complete-three-venue-overviews",
+      "method": "visual",
+      "targetSlots": [
+        "community-directory",
+        "mobile-directory"
+      ],
+      "criteria": "Each overview independently contains all three records: L1 Loom Library, 14 Harbour Walk, daily 10:00–18:00, seating, drinking water and toilets, closed 18 July 2027 for maintenance; L2 Depot Hall, 6 Tram Square, daily 12:00–20:00, seating, drinking water and phone charging, open 12:00–16:00 on 24 July 2027 for rehearsal; L3 Canal Reading Room, 22 Reed Street, daily 09:00–16:00, seating, drinking water, toilets and phone charging, closed 12:00–14:00 on 5 August 2027 for a workshop and open 09:00–12:00 and 14:00–16:00. Seating must be identified as cool indoor seating. Dates use day, English month and year; times use the 24-hour clock. Records must remain distinctly attributable and comparable. Reordering is allowed; omission, duplication, mixed fields or presenting a regular schedule as valid during its exception fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "schedule-and-facility-language",
+      "requirementId": "R-schedule-and-facility-language",
+      "method": "visual",
+      "targetSlots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "community-directory",
+        "mobile-directory",
+        "mobile-depot-change"
+      ],
+      "criteria": "Where schedules appear, normal hours and dated exceptions form clearly distinguished groups bearing their required labels. Every facility symbol has an unambiguous accompanying facility name; text-only facility listings are allowed. Wherever a venue name appears, its corresponding recurring identifier accompanies it: L1 Loom Library, L2 Depot Hall or L3 Canal Reading Room. Missing or swapped identifiers, unlabeled schedule groups, or symbols that require guessing fail. An access guide without schedules need not invent schedule content.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "information-priority",
+      "requirementId": "R-information-priority",
+      "method": "visual",
+      "targetSlots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "community-directory",
+        "mobile-directory",
+        "mobile-depot-change"
+      ],
+      "criteria": "Venue pieces make the place immediately identifiable; directories establish a clear directory heading and distinguish venues. Hours and exceptions are readily found before supporting address, facility and access details. Explicit change applications and the change digest may lead with their required dated changes while keeping venue associations clear. The access guide prioritizes its offer and access purpose without adding unrequested schedules. Carrier-specific compositions are allowed; decorative content or campaign branding that obscures essential service information fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "campaign-and-offer-6",
+      "requirementId": "R-campaign-and-offer-6",
+      "method": "visual",
+      "targetSlots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "community-directory",
+        "mobile-directory",
+        "mobile-depot-change"
+      ],
+      "criteria": "Each artwork visibly carries the supplied wordmark, program name, campaign line and service period 1 July–31 August 2027. It communicates cool indoor seating and drinking water free of charge, no booking, no purchase needed and welcome for everyone. These terms must be present on each artwork rather than supplied only by another file. Grouping and line breaks may vary; omitted terms, an altered period, a fee or an access restriction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "depot-change-emphasis-6",
+      "requirementId": "R-depot-change-emphasis-6",
+      "method": "visual",
+      "targetSlots": [
+        "mobile-depot-change"
+      ],
+      "criteria": "The Depot Hall change card gives immediate prominence to 24 July 2027 and the usable opening period 12:00–16:00, clearly associates them with L2 Depot Hall, and retains the rehearsal reason and complete supporting venue record. Either the date or opening period may occupy the first line; burying them beneath the regular schedule or implying an all-day closure fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "reading-requirements-6",
+      "requirementId": "R-reading-requirements-6",
+      "method": "visual",
+      "targetSlots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "community-directory",
+        "mobile-directory",
+        "mobile-depot-change"
+      ],
+      "criteria": "Evaluate physical proportions and typography against the supplied reading frames. Street posters use portrait A2 geometry, 3 mm bleed, at least 5 mm safe margins, leading venue capitals at least 20 mm and other copy at least 5 mm for reading at 2 m. The community directory uses portrait A4 geometry, 3 mm bleed, at least 5 mm safe margins and capitals at least 2 mm at 0.4 m. Mobile artwork uses a portrait logical area of 90 × 160 mm, capitals at least 1.8 mm and at least 5% inset on every edge at 0.4 m. General text must reach 4.5:1 contrast and large headings and meaningful graphics 3:1. Judge relative geometry at the stated physical scale, not exact raster dimensions. Undersized text, unsafe placement, insufficient bleed or inadequate contrast fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-coordinated-six-application-system",
+      "requirementId": "R-set-coordinated-six-application-system",
+      "method": "visual",
+      "targetSlots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "community-directory",
+        "mobile-directory",
+        "mobile-depot-change"
+      ],
+      "criteria": "Street, community and mobile pieces form a coordinated public-information system through consistent typography, venue cues, schedule grouping and facility-symbol language while adapting to their different reading conditions. Repeated venue records and shared service terms agree across every occurrence, including regular schedules, dated exceptions and exception reasons.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-b-n06/03-service-records.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "supplied-wordmark-retained",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "05-common-cool-wordmark.png"
+      ],
+      "subjectSlots": [
+        "street-loom-regular",
+        "street-depot-regular",
+        "street-canal-regular",
+        "community-directory",
+        "mobile-directory",
+        "mobile-depot-change"
+      ],
+      "notes": "05-common-cool-wordmark.png supplies the existing wordmark to retain across the campaign."
+    }
+  ]
+}

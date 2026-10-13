@@ -1,0 +1,561 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-photo-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "landscape-arrival",
+      "label": "Landscape exterior arrival photograph",
+      "description": "One landscape photograph connecting the south approach, signed entrance and three-window east facade.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "portrait-arrival",
+      "label": "Portrait crop of the exterior arrival photograph",
+      "description": "One portrait crop of the landscape arrival exposure retaining the entrance sign and nearest east window.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "interior-threshold",
+      "label": "Interior threshold photograph",
+      "description": "One interior photograph connecting the south entrance, arrival zone and east-side oak reading table.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "reading-room",
+      "label": "Reading-room spatial photograph",
+      "description": "One reading-room photograph showing the oak table beside the middle of three east windows.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "window-material-detail",
+      "label": "Window and floor material detail photograph",
+      "description": "One square detail photograph of an east-window reveal, charcoal frame and sunlit terrazzo floor.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "sequence-and-shooting-notes",
+      "label": "Final sequence and shooting notes",
+      "description": "One two-page document containing five sequenced thumbnails, captions, four mapped camera positions and four exposure records.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "library-name",
+      "kind": "text-verbatim",
+      "text": "ALDER COMMON LIBRARY",
+      "scope": {
+        "slots": [
+          "landscape-arrival",
+          "portrait-arrival",
+          "sequence-and-shooting-notes"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "sequence-heading",
+      "kind": "text-verbatim",
+      "text": "A place to begin the day",
+      "scope": {
+        "slots": [
+          "sequence-and-shooting-notes"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "ALDER COMMON LIBRARY",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "single-library-morning-journey",
+      "slots": [
+        "landscape-arrival",
+        "portrait-arrival",
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail"
+      ],
+      "items": [
+        {
+          "item": "The photographs describe one coherent route from the south approach through the entrance and arrival zone to the east-side reading table, with compatible building geometry across views.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Repeated brick, frames, plaster, terrazzo and oak retain the same material identity across wide views and the close detail despite natural lighting differences.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Sun direction, shadow behavior and daylight color treatment remain compatible with one shared morning session.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "ALDER COMMON LIBRARY",
+    "carryThrough": {
+      "none": "The document records and presents the photographs; no later deliverable must repeat facts extracted from an earlier written deliverable."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "landscape-arrival",
+      "portrait-arrival",
+      "interior-threshold",
+      "reading-room",
+      "window-material-detail"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge photographic communication of the supplied architecture, not architectural redesign, and do not infer exact dimensions, white balance or exposure settings solely from pixels."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "landscape-arrival",
+        "portrait-arrival",
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-landscape-arrival",
+      "requirementId": "R-format-landscape-arrival",
+      "method": "artifact-property",
+      "targetSlots": [
+        "landscape-arrival"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-portrait-arrival",
+      "requirementId": "R-format-portrait-arrival",
+      "method": "artifact-property",
+      "targetSlots": [
+        "portrait-arrival"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-interior-threshold",
+      "requirementId": "R-format-interior-threshold",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interior-threshold"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-reading-room",
+      "requirementId": "R-format-reading-room",
+      "method": "artifact-property",
+      "targetSlots": [
+        "reading-room"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-window-material-detail",
+      "requirementId": "R-format-window-material-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "window-material-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-sequence-and-shooting-notes",
+      "requirementId": "R-format-sequence-and-shooting-notes",
+      "method": "artifact-property",
+      "targetSlots": [
+        "sequence-and-shooting-notes"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "exterior-arrival-and-shared-exposure",
+      "requirementId": "R-exterior-arrival-and-shared-exposure",
+      "method": "visual",
+      "targetSlots": [
+        "landscape-arrival",
+        "portrait-arrival"
+      ],
+      "criteria": "The landscape view connects the paved south approach, signed south doorway and complete three-window east facade. Both views retain the central glazed double doorway at a plausible 1800 mm width, its readable sign and the east window nearest the entrance. The portrait must be obtainable by cropping the landscape exposure: overlapping architecture, perspective, shadows and scene details align after scaling and translation. A changed viewpoint or exposure fails. Check the supplied 3:2 landscape and 2:3 portrait proportions without requiring exact pixel dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "interior-spatial-connections",
+      "requirementId": "R-interior-spatial-connections",
+      "method": "visual",
+      "targetSlots": [
+        "interior-threshold",
+        "reading-room"
+      ],
+      "criteria": "Both interior views depict the same single oak table adjacent to the central east opening. The threshold composition makes the south doorway, full-width arrival strip and table spatially understandable within one continuous room; the strip's apparent depth must agree with the 2400 mm plan dimension. The reading-room composition includes all three equally sized east openings and their relationship to the table. Perspective may change their apparent sizes, but relocation, missing windows or an intervening enclosed room fails. Both photographs use the supplied 3:2 proportion.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "material-and-sill-fidelity",
+      "requirementId": "R-material-and-sill-fidelity",
+      "method": "visual",
+      "targetSlots": [
+        "landscape-arrival",
+        "portrait-arrival",
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail"
+      ],
+      "criteria": "Visible surfaces agree with the supplied facade and material reference: warm grey brick with flush joints, matte charcoal aluminium frames, individual charcoal uppercase sign letters, warm white plaster walls and reveals, pale terrazzo with fine grey aggregate, natural oak grain and light grey concrete paving. Natural changes caused by daylight and perspective are allowed; material substitutions are failures. Where a sill and floor are jointly visible, their relationship must remain consistent with a 600 mm sill elevation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "interior-sunlight-and-session-records",
+      "requirementId": "R-interior-sunlight-and-session-records",
+      "method": "visual",
+      "targetSlots": [
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail"
+      ],
+      "criteria": "Use the building orientation to verify that direct light enters through the east openings and travels toward west-northwest in all three interiors. Screen-left or screen-right alone is not sufficient evidence of compass direction. Read the shooting notes for an explicit common white balance of 5500 K and a time between 08:00 and 09:00 for each of the four exposures. Missing records, out-of-window times or contradictory sunlight directions fail; the numerical white balance is verified from the record rather than inferred from image color.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "sequence-and-shooting-notes"
+      ]
+    },
+    {
+      "id": "sequence-content-and-photograph-reuse",
+      "requirementId": "R-sequence-content-and-photograph-reuse",
+      "method": "manual",
+      "targetSlots": [
+        "sequence-and-shooting-notes"
+      ],
+      "criteria": "The two-page document visibly reproduces all five delivered photographs as recognizable numbered thumbnails with captions. Their sequence is 01 landscape arrival, 02 threshold, 03 reading room, 04 material detail and 05 portrait arrival; the fifth is explicitly described as the alternate opening crop. The library name and required heading appear as document text, with the latter functioning as a heading. Thumbnail scaling and page-layout choices are allowed; substituted imagery, an omitted photograph, incorrect ordering or an unmarked alternate fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "landscape-arrival",
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail",
+        "portrait-arrival"
+      ]
+    },
+    {
+      "id": "camera-map-and-exposure-records",
+      "requirementId": "R-camera-map-and-exposure-records",
+      "method": "content",
+      "targetSlots": [
+        "sequence-and-shooting-notes"
+      ],
+      "criteria": "Page two contains the supplied plan or a faithful rendering with four distinguishable camera locations and viewing directions, associated unambiguously with the photographs. Both arrival thumbnails share one location and exposure record. Each of the four records supplies time, focal length, aperture, shutter speed and ISO. Locations fall within the south approach, east paved strip or interior floor, and directions plausibly explain the delivered views. Camera and focal-length choices may vary within those limits. Missing fields, an extra arrival exposure, inaccessible positions or contradictory view directions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "landscape-arrival",
+        "portrait-arrival",
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail"
+      ]
+    },
+    {
+      "id": "building-geometry",
+      "requirementId": "R-building-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "landscape-arrival",
+        "portrait-arrival",
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail"
+      ],
+      "criteria": "Assess visible geometry against the measured plan and fact sheet as one building: a single-storey 18000 by 12000 mm rectangle, flat 3600 mm parapet and 3200 mm interior ceiling; a centred south glazed double door 1800 by 2400 mm with the sign centred above it at a 2900 mm baseline; and three east windows each 2400 by 2100 mm, centred 2000, 6000 and 10000 mm south of the northeast corner. South has only the entrance, and visible north or west walls have no openings. The single table is consistent with 900 mm east–west by 2400 mm north–south, 740 mm high, centred 14500 mm east of the west wall and 6000 mm south of the north wall. Visible exterior access agrees with the level 6000 mm south approach and 4000 mm east strip. Judge proportional and spatial agreement, allowing perspective and occlusion; do not demand exact measurement from pixels or visibility of hidden features. Added storeys, incompatible openings or materially displaced geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "common-morning-light",
+      "requirementId": "R-common-morning-light",
+      "method": "visual",
+      "targetSlots": [
+        "landscape-arrival",
+        "portrait-arrival",
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail"
+      ],
+      "criteria": "The photographs plausibly share one morning's daylight-only illumination, with low sunlight arriving from east-southeast at approximately the supplied 20-degree elevation and ground shadows consistent with a 285-degree bearing. Compare shadow direction, relative length, edges and surface response with the supplied orientation and morning light study. Viewpoint, crop and exposure differences are allowed. Contradictory sun positions, high overhead sunlight or visibly contributing artificial illumination fail; exact solar angles need not be recoverable from every photograph.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "window-material-detail",
+      "requirementId": "R-window-material-detail",
+      "method": "visual",
+      "targetSlots": [
+        "window-material-detail"
+      ],
+      "criteria": "A square composition presents an identifiable east-window reveal, charcoal frame and terrazzo floor together, with direct sunlight visibly reaching the floor. The framing must make their material junction and surface character readable as a detail photograph. The crop may vary, but omission of any named element or an entirely shaded floor fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-single-library-morning-journey",
+      "requirementId": "R-set-single-library-morning-journey",
+      "method": "visual",
+      "targetSlots": [
+        "landscape-arrival",
+        "portrait-arrival",
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail"
+      ],
+      "criteria": "The photographs describe one coherent route from the south approach through the entrance and arrival zone to the east-side reading table, with compatible building geometry across views. Repeated brick, frames, plaster, terrazzo and oak retain the same material identity across wide views and the close detail despite natural lighting differences. Sun direction, shadow behavior and daylight color treatment remain compatible with one shared morning session.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "supplied-library-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "library-plan-and-crops.png",
+        "library-facades-and-materials.png"
+      ],
+      "subjectSlots": [
+        "landscape-arrival",
+        "portrait-arrival",
+        "interior-threshold",
+        "reading-room",
+        "window-material-detail"
+      ],
+      "notes": "Across the exterior, threshold, reading-room and material detail photographs, match the identity reference's warm grey brick, charcoal frames, pale terrazzo and oak wherever those materials appear; retain the 600 mm window sill height in views that show the sill and floor together."
+    }
+  ]
+}

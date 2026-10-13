@@ -1,0 +1,144 @@
+{
+  "id": "bench-da-infovis-material-03",
+  "title": "HEAT THROUGH CLOUDS — Reading a satellite heat-island study, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GRAPHIC",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# HEAT THROUGH CLOUDS\n\n## Publication\n- Publisher: CIVIC CLIMATE DESK\n- Project name: HEAT THROUGH CLOUDS\n- Subtitle: Reading a satellite heat-island study\n- Temperature descriptor: Land surface temperature\n- Source credit: Macau University of Science and Technology; Yang et al., 2024\n- Audience: neighborhood representatives and city committee members\n- Discussion subject: measurement conditions and uncertainty in urban heat reports\n\n## Existing visual identity\n| Element | Fixed attribute |\n|---|---|\n| Masthead | CIVIC CLIMATE DESK, uppercase sans serif, black rule underneath |\n| Observation-based estimate | Circle; #D55E00 |\n| Reconstructed estimate | Diamond; #0072B2 |\n| 95% confidence interval | Black line with perpendicular end caps |\n| Text | #111111 |\n| Background | #FFFFFF |\n| Category identification | Direct text labels and distinct shapes |\n\n## Carrier geometry\n| Carrier | Geometry | Content inset |\n|---|---|---|\n| Meeting projection | 2400 mm × 1350 mm | 5% on each edge |\n| A4 takeaway | 210 mm × 297 mm | 12 mm on each edge |\n| Phone portrait | 9:16 | 5% on each edge |\n\n## Research record\n- Study: Satellite Clear-Sky Observations Overestimate Surface Urban Heat Islands in Humid Cities\n- Lead author: Qiquan Yang\n- Publication: Geophysical Research Letters\n- Publication date: 12 January 2024\n- DOI: 10.1029/2023GL106995\n- Numerical and methodological records: 03-study-records.en.md\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# HEAT THROUGH CLOUDS — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | method-diagram | Satellite comparison method diagram | 6 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | daytime-results | Daytime results and confidence intervals | 6 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | nighttime-results | Nighttime results and confidence intervals | 6 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | uncertainty-explainer | Daytime difference uncertainty explainer | 6 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | public-explainer | Public study findings explainer | 6 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | a4-takeaway | A4 illustrated study takeaway | 6 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-study-records.en.md",
+            "config": {
+              "text": "# Study records\n\n## Source register\n| Field | Record |\n|---|---|\n| Study | Satellite Clear-Sky Observations Overestimate Surface Urban Heat Islands in Humid Cities |\n| Authors | Qiquan Yang; Yi Xu; Dawei Wen; Ting Hu; TC Chakraborty; Yue Liu; Rui Yao; Shurui Chen; Changjiang Xiao; Jie Yang |\n| Journal | Geophysical Research Letters, volume 51, issue 2, e2023GL106995 |\n| Published | 12 January 2024 |\n| Article | https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL106995 |\n| DOI | https://doi.org/10.1029/2023GL106995 |\n| Numerical source | Section 3.1, global annual means and daytime difference |\n| Methods source | Sections 2.1, 2.2.1 and 4.2 |\n| Source credit | Macau University of Science and Technology; Yang et al., 2024 |\n\n## Measurement conditions\n| Field | Record |\n|---|---|\n| Period | 2014–2016 |\n| Spatial sample | 639 urban clusters worldwide |\n| Clear-sky input | Terra MODIS MOD11A2 land surface temperature retrievals |\n| All-sky input | Global Seamless and High-resolution Temperature Dataset, abbreviated GSHTD |\n| Spatial resolution | 1 km |\n| Aggregation | Global means of annual city-level surface urban heat-island intensities; daytime and nighttime separately |\n| Rural reference method | Modified Equal Area-Rural, abbreviated MEA-R |\n| Cloud handling | Native clear-sky retrieval availability; cloud-related gaps |\n| Additional quality screening | All available clear-sky pixels retained |\n| Temperature quantity | Land surface temperature |\n| Heat-island definition | Mean urban land surface temperature minus mean surrounding rural land surface temperature |\n| Interpretation of positive intensity | Urban surfaces warmer than the rural reference |\n\n## Results\n\nUnit: °C. The observation column contains published observation-based aggregate estimates. The inference column contains estimates using the reconstructed all-sky product or a derived comparison. Empty evidence cells are marked with an em dash.\n\n| Record | Period of day | Observations | Inference | Uncertainty interval | Reported 95% half-width | Interval lower | Interval upper |\n|---|---|---:|---:|---|---:|---:|---:|\n| Clear-sky intensity | Daytime | 1.23 | — | 95% confidence interval | 0.12 | 1.11 | 1.35 |\n| All-sky intensity | Daytime | — | 1.12 | 95% confidence interval | 0.12 | 1.00 | 1.24 |\n| Clear-sky intensity | Nighttime | 1.31 | — | 95% confidence interval | 0.05 | 1.26 | 1.36 |\n| All-sky intensity | Nighttime | — | 1.27 | 95% confidence interval | 0.05 | 1.22 | 1.32 |\n| Clear-sky minus all-sky intensity | Daytime | — | 0.11 | 95% confidence interval | 0.02 | 0.09 | 0.13 |\n\n## Arithmetic records\n| Quantity | Expression | Origin |\n|---|---|---|\n| Daytime difference, °C | 1.23 − 1.12 = 0.11 | Difference of the published rounded means; also reported in Section 3.1 |\n| Interval lower endpoint | Mean − reported half-width | Arithmetic expansion of the published mean ± interval notation |\n| Interval upper endpoint | Mean + reported half-width | Arithmetic expansion of the published mean ± interval notation |\n| Daytime difference interval, °C | 0.11 ± 0.02 = 0.09–0.13 | Authors' separately reported interval for the difference |\n\n## Interpretation records\n| Topic | Meaning |\n|---|---|\n| Observation-based estimate | Aggregate derived from available clear-sky satellite temperature retrievals |\n| Reconstructed estimate | Aggregate using the all-sky temperature reconstruction |\n| Interval meaning | Statistical uncertainty around the reported mean estimate |\n| Confidence level | 95% |\n| Interval explanation | Across repeated samples under the statistical assumptions, a 95% confidence-interval procedure covers the population mean in 95% of cases |\n| Additional uncertainty | Temperature retrieval and reconstruction errors; individual-pixel accuracy uncertainty remains outside the study's quantified uncertainty analysis |\n| Proposed mechanism | The authors propose cloud-related differences in missing observations as an explanation for the contrast between clear-sky and all-sky estimates |\n| Decision scope | Interpretation of satellite-based surface heat evidence |\n\n## Display scale records\n| Scale | Minimum, °C | Maximum, °C | Tick values, °C |\n|---|---:|---:|---|\n| Intensity comparison | 0.00 | 1.50 | 0.00; 0.50; 1.00; 1.50 |\n| Daytime difference detail | 0.00 | 0.15 | 0.00; 0.05; 0.10; 0.15 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: carrier-dimensions.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: publication-style.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: community-projection.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "HEAT THROUGH CLOUDS | Reading a satellite heat-island study\n\nOur CIVIC CLIMATE DESK publication needs six finished graphics for a community discussion about the evidence behind urban heat reports. Use Yang and colleagues' 2024 study, Satellite Clear-Sky Observations Overestimate Surface Urban Heat Islands in Humid Cities. Its comparison covers 639 urban clusters worldwide during 2014–2016. The attached records contain the published global annual results, their 95% confidence intervals and the measurement conditions.\n\nThe story is how the available view changes the estimate. Explain the route from clear-sky satellite retrievals to the reconstructed all-sky comparison, with surface heat-island intensity defined as urban minus rural land surface temperature. Our existing publication style uses #D55E00 circles for observation-based estimates, #0072B2 diamonds for reconstructed estimates and black capped lines for confidence intervals. Print \"HEAT THROUGH CLOUDS\" and \"Land surface temperature\" on every graphic. The meeting uses a 2400 mm × 1350 mm projection surface; the takeaway is A4, 210 mm × 297 mm; the two portrait explainers use the 9:16 phone carrier with a 5% inset on every edge.\n\nAudience: neighborhood representatives and city committee members, deciding which measurement conditions and uncertainty explanations to request in future local heat reports.\n\nInputs (attached): 01-client-facts.en.md contains the fixed publication identity, wording and carrier dimensions. 02-delivery-catalog.en.md contains the proportions, formats and stages for all six deliverables. 03-study-records.en.md contains the numerical results, methods, interval meanings and research sources. carrier-dimensions.png supplies the projection, A4 and phone carrier geometry. publication-style.png supplies our existing masthead, typography hierarchy and evidence symbols. community-projection.png supplies the meeting atmosphere and viewing context.\n\nDeliverables:\n1. One landscape method diagram connecting satellite retrieval, cloud-related gaps, all-sky reconstruction and urban-minus-rural comparison\n2. One landscape daytime results chart comparing the two global annual means and their confidence intervals\n3. One landscape nighttime results chart comparing the two global annual means and their confidence intervals\n4. One portrait uncertainty explainer using the daytime difference between estimates and its confidence interval\n5. One portrait public explainer combining the daytime and nighttime comparisons with the study's geographic and temporal scope\n6. One A4 single-page illustrated takeaway combining the method, four temperature estimates and the daytime difference\n\nAcceptance:\n- All six graphics carry the project name, the fixed temperature descriptor, the CIVIC CLIMATE DESK masthead and the source credit \"Macau University of Science and Technology; Yang et al., 2024\". Give each graphic its own descriptive title, an in-graphic °C unit and at least one annotation explaining how to read it.\n- The method diagram identifies Terra MODIS MOD11A2, GSHTD reconstruction, 1 km resolution, 2014–2016 and 639 urban clusters. Show cloud-related gaps in the retrieval branch and all available clear-sky pixels retained in the comparison. Express the heat-island calculation as urban minus rural land surface temperature.\n- The daytime chart, public explainer and A4 takeaway show 1.23 °C with interval 1.11–1.35 °C and 1.12 °C with interval 1.00–1.24 °C. The nighttime chart, public explainer and A4 takeaway show 1.31 °C with interval 1.26–1.36 °C and 1.27 °C with interval 1.22–1.32 °C. Use the attached table for every numerical data label and the same 0.00–1.50 °C comparison scale across these four deliverables.\n- The uncertainty explainer and A4 takeaway show the daytime calculation 1.23 − 1.12 = 0.11 °C and its separately reported 95% confidence interval, 0.09–0.13 °C. Explain the interval as uncertainty around a mean estimate, and identify temperature retrieval and reconstruction error as a separate uncertainty source.\n- All six graphics preserve the supplied masthead and symbol forms. Label observation-based circles and reconstructed diamonds directly wherever they occur; identify capped interval lines as 95% confidence intervals. In the public explainer and A4 takeaway, frame the cloud explanation as the authors' proposed mechanism and attach 639 urban clusters and 2014–2016 to the findings.\n- The method diagram and both results charts fit the projection carrier's 5% inset. The two portrait explainers follow the phone carrier, and the A4 takeaway respects its 12 mm margins. Retain shape differences and direct labels when the six graphics are viewed in grayscale.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/carrier-dimensions.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "fb8bffedcc094556c59b52355e6888e4900a3088d625182c1f2c9df5fcb50157"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/publication-style.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "b6c5503c3b67b2baa3978be6906b982013b574edef963358c5d018cb970650fd"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/community-projection.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "bf8d7d4d04c1e9d43092914efd0cb38a516b91c481292d47ffde46824fe7876b"
+    }
+  ]
+}

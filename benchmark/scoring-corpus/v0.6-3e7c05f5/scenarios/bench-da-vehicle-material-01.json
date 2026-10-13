@@ -1,0 +1,170 @@
+{
+  "id": "bench-da-vehicle-material-01",
+  "title": "PARCEL BAY — Delivery enclosure for an existing cargo tricycle, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# PARCEL BAY — frame evidence and client delivery records\n\n## Project\n- Project name: PARCEL BAY.\n- Exterior descriptor: Neighbourhood delivery.\n- Scope: complete delivery enclosure, interior organisation and removable mounting on the existing frame.\n- Operating context: short neighbourhood delivery rounds with frequent stops for small parcels.\n- Delivery set: six finished design boards.\n- Retained vehicle components: tricycle frame, wheels, steering hardware and rider position.\n\n## Existing frame and source records\n- Vehicle: Tricycle cargo bike B, version 1.0.\n- Authors: A. Pardo and D. Jaeger.\n- Organisation: Open Hardware Observatory (OHO).\n- Document date: 12 January 2021.\n- Source metadata: https://commons.wikimedia.org/wiki/File:OHO_Tricycle_cargo_bike.pdf\n- Original presentation document: https://upload.wikimedia.org/wikipedia/commons/e/e3/OHO_Tricycle_cargo_bike.pdf\n- Project: https://en.oho.wiki/wiki/Tricycle_cargo_bike\n- License: CC BY-SA 4.0.\n- License URL: https://creativecommons.org/licenses/by-sa/4.0/\n- Credit: A. Pardo / D. Jaeger, Open Hardware Observatory.\n- Commons copyright-holder permission record: VRT ticket 2021092110007077.\n- Original file SHA256: 25cfd5f647cb5f117c1026512a2a0fad0470a343b10f52deb8f75579d7adbfbd.\n- OHO role: source of the existing frame documentation.\n- Image provenance: three full-sheet raster exports from the original OHO Tricycle cargo bike presentation document, retaining drawing geometry, dimensions and title blocks.\n- Image-content transformation: conversion to PNG only.\n- Full-sheet exports and translated labels: CC BY-SA 4.0.\n- Frame credit location: frame-integration board.\n- Supplied records: three selected source sheets, complete client records and delivery catalog.\n\n| Image | Physical document page | Printed sheet | Drawing identification |\n|---|---|---|---|\n| frame-overview.png | 1 | 1/A1 | Complete vehicle overview |\n| frame-plan.png | 10 | 10 | Assembly 2 identified by filename; title-block part-code field blank |\n| cross-member.png | 14 | 19 | Part 2.11; printed sheet 14 concerns another member |\n\n## Published nominal geometry\n- Dimension unit: mm.\n- Geometry basis: nominal dimensions printed in the source drawings.\n- Vehicle arrangement: two front wheels around a front cargo frame, one rear wheel, existing rear saddle and handlebar arrangement.\n- Overall A1 dimensions: length 2131; width 826; height 1021.\n- Structural identity: original open cage, wheel placement and steering hardware; covered cage portions behind enclosure panels.\n- Front-frame outer base: 900 longitudinal by 800 transverse.\n- Inside the end members: 760.\n- Clear distance between inner longitudinal rails: 500.\n- Successive longitudinal clear spans: 270, 180, 370.\n- Part 2.11: central cross member, length 500, square outside section 20 by 20, wall thickness 2.\n- Part 2.11 source material label: A36.\n- Existing member status: retained source-frame components.\n- Bolt grades, loading ratings, steering angles and tolerances: unspecified in the supplied records.\n\n## Local datum and installation limits\n- Coordinate unit: mm.\n- x=0: front end at the left of frame-plan.png; positive x towards the handlebar at the right.\n- y=0: upper outer edge of frame-plan.png; positive y towards the lower edge.\n- z=0: top of the central bottom cross members; positive z upwards.\n- Adopted central bay: y=150..650.\n- Central bay derivation: symmetric interpretation of the printed 800/500 plan.\n- First central cross member: x=290..310, y=150..650, z=-20..0.\n- Second central cross member: x=490..510, y=150..650, z=-20..0.\n- Longitudinal dimension chain: 20 +270 +20 +180 +20 +370 +20=900.\n- Installation boundary ownership: original client design limits.\n- Complete closed enclosure limits, including grips, hinges, catches and panels: x=40..860, y=170..630, z=10..430.\n- Maximum closed envelope: 820 by 460 by 420.\n- Enclosure elements: complete bottom, weather-facing cover, closing and latching hardware, seal or drainage details.\n- Weather protection status: design intent.\n- Commissioned additions: delivery enclosure, partitions, cover, restraints and four removable clamps.\n\n| Clamp | Centre x | Centre y | Retained member | Plan allowance | Vertical allowance |\n|---|---:|---:|---|---|---|\n| C1 | 300 | 200 | First central cross member | 40 in x by 50 in y | z=-30..20 |\n| C2 | 300 | 600 | First central cross member | 40 in x by 50 in y | z=-30..20 |\n| C3 | 500 | 200 | Second central cross member | 40 in x by 50 in y | z=-30..20 |\n| C4 | 500 | 600 | Second central cross member | 40 in x by 50 in y | z=-30..20 |\n\n- Clamp allowance basis: client interface envelope centred on each listed point.\n- Clamp engagement: full 20-square member section; at most 50 of member length along y.\n- Clamp connection: removable attachment between retained member and enclosure base.\n- Clamp space: separate from package space.\n- Mounting details: member contact, fastener access and visible distinction between added parts and retained members.\n- Retained frame condition: original tubes and existing hole pattern intact.\n- Mounting interfaces: the two central cross members at C1/C2/C3/C4.\n- Clamp torque, weld strength and payload rating: unspecified.\n\n## Operation and clearance cases\n- Retained operating features: wheel lanes outside the central bay, handlebar, steering joints, cables and rider approach.\n- Spatial relationship: enclosure, moving cover and clamps clear of retained structural members and operating parts, apart from intended clamp contact.\n- Above-base keep-clear regions: rear strip x>=880; lateral regions y<150 and y>650.\n- Clearance-boundary basis: conservative client installation limits.\n- Numerical steering range: unspecified.\n- Enclosure-height context: existing handlebar and rider relationship.\n- Open and retrieval scene condition: tricycle stationary on level ground.\n- Cover operation: two hands permitted.\n- Cover retention: hardware integrated with the proposed enclosure.\n- Separate closed-vehicle contextual state: cover closed and latched.\n\n| Case | Starting contents | Action | Remaining contents | Cover condition |\n|---|---|---|---|---|\n| O1 | P1, P2, P3 in assigned positions | Opening from closed and latched through intermediate positions to fully open | P1, P2, P3 in assigned positions | Self-supported or intentionally parked with retention hardware |\n| R1 | P1, P2, P3 in assigned positions | Direct retrieval of P2 through the actual opening | P1 and P3 in assigned positions | Same supported open cover |\n| R2 | P1 and P3 in assigned positions after R1 | Retrieval of P1 through the actual opening | P3 in its original position | Same supported open cover |\n\n- O1 movement and parked-part limits: x=40..860, y=170..630, z<650.\n- Retrieval paths: continuous hand and parcel passage through the opening, clear of other parcels, frame rails and closed panels.\n- Retrieval operation: two hands permitted.\n- Retrieval structure: same open-cover support and new mounting structure in R1 and R2.\n- Force, reach distance and anthropometric figure: unspecified.\n- Parking-brake trial record: unspecified.\n\n## Original client parcel records\n\n| Parcel | L (mm) | W (mm) | H (mm) | Form | Orientation |\n|---|---:|---:|---:|---|---|\n| P1 | 300 | 200 | 180 | Rigid rectangular carton | Upright, H vertical |\n| P2 | 240 | 180 | 160 | Rigid rectangular carton | Upright, H vertical |\n| P3 | 180 | 140 | 100 | Rigid rectangular carton | Upright, H vertical |\n\n- Parcel record basis: original client package envelopes.\n- Loaded baseline: all three parcels, single layer, original dimensions.\n- Horizontal rotation: permitted with consistent labels.\n- Minimum clear distance between neighbouring parcel envelopes: 10 mm.\n- Minimum clear distance between each parcel and its enclosure interior boundary: 10 mm.\n- Clearance accounting: clear space remaining after partition and restraint thicknesses.\n- Interior evidence: chosen interior dimensions and section clearances.\n- Stable parcel labels: P1/P2/P3.\n- Stable clamp labels: C1/C2/C3/C4.\n- Partition layout and enclosure form: open design choices within the installation and operating limits.\n- Material and finish schedule: proposed families and assignments for enclosure, partitions, cover and clamps.\n- Load mass, delivery speed, impact rating, weather-test result, road-approval record and physical-trial result: unspecified.\n\n## Design language\n- Time reference: contemporary or slightly ahead of the 2026 market.\n- Added-part character: clean purposeful surfacing, considered lighting, modern materials and colours, restrained delivery identity.\n- Product basis: credible proportions, supplied hard points and everyday usability.\n- Existing-element role: retained geometry and interfaces.\n- Added-element role: current or near-future product design.\n\n## Additional image records\n- installation-boundaries.png: local-datum plan, section limits, four clamp envelopes and three parcel dimension diagrams.\n- neighbourhood-stop.png: street-side delivery atmosphere, stationary tricycle, level ground and a person handling a small parcel.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# PARCEL BAY — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | closed-enclosure | Closed enclosure and installed vehicle | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | loaded-interior | Loaded interior and material assignments | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | frame-integration | Frame integration and removable clamps | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | o1-opening | O1 cover opening sequence | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | r1-retrieval | R1 direct retrieval of P2 | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | r2-retrieval | R2 retrieval of P1 after P2 | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: frame-overview.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: frame-plan.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: cross-member.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: installation-boundaries.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: neighbourhood-stop.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "PARCEL BAY | Delivery enclosure for an existing cargo tricycle\n\nWe run short neighbourhood delivery rounds with frequent parcel stops. Design the enclosure, partitions and retrieval opening for our existing Tricycle cargo bike B, version 1.0, documented by A. Pardo and D. Jaeger for Open Hardware Observatory (OHO). Retain its open structural frame, three wheels, steering hardware and rider position. The published overall dimensions are 2131 mm long, 826 mm wide and 1021 mm high; the front-frame base is 900 mm longitudinally by 800 mm transversely. Give the added enclosure purposeful contemporary surfacing and explicit material and finish assignments. Print \"PARCEL BAY\" and \"Neighbourhood delivery\" on the enclosure exterior.\n\nUse the attached local datum: x increases towards the handlebar, y runs across the frame and z starts at the cross-member tops. The complete closed enclosure occupies x=40..860, y=170..630 and z=10..430 mm. Four removable clamps connect it to the two existing 20 by 20 mm cross members at C1 (300,200), C2 (300,600), C3 (500,200) and C4 (500,600). Above-base additions occupy x<880 and y=150..650 mm. During O1 opening, every moving or parked enclosure part stays inside x=40..860, y=170..630 and below z=650 mm. The load is three upright, single-layer cartons: P1, 300 by 200 by 180 mm; P2, 240 by 180 by 160 mm; P3, 180 by 140 by 100 mm, each stated as L by W by H. Provide at least 10 mm clear between parcels and around each parcel inside its compartment. R1 removes P2 with P1 and P3 in place; R2 then removes P1 with P3 in its original position. Opening and retrieval take place stationary on level ground.\n\nAudience: our delivery operations lead and fabrication partner, choosing the enclosure arrangement and preparing the prototype brief.\n\nInputs (attached): 01-client-facts.en.md contains the frame records, installation datum, parcel dimensions and operating cases. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. frame-overview.png is the identity reference for the complete existing tricycle. frame-plan.png is the identity reference for its front-frame geometry. cross-member.png is the identity reference for retained part 2.11. installation-boundaries.png is the constraint drawing of the installation limits, clamp positions and parcel envelopes. neighbourhood-stop.png is the atmosphere reference for a stationary street-side parcel stop.\n\nDeliverables:\n1. One closed-enclosure board with front, side and top orthographic views, an installed perspective, overall enclosure dimensions and the exterior wording\n2. One loaded-interior board with the P1/P2/P3 arrangement, dimensioned plan and sections, partitions, restraints, parcel clearances and enclosure, partition, cover and clamp material and finish assignments\n3. One frame-integration board with the adopted datum, four labelled clamp locations, a dimensioned clamp section, frame contact and fastener access, and the frame credit\n4. One O1 opening board with closed-and-latched, intermediate and supported fully open positions, movement envelopes, cover retention, latch and seal or drainage details\n5. One R1 retrieval board with P2 moving through the actual opening, P1 and P3 in place, hand and parcel paths, and the installed cover support and mounting structure\n6. One R2 retrieval board with P1 moving through the same opening after P2 removal, P3 in its original position, hand and parcel paths, and the installed cover support and mounting structure\n\nAcceptance:\n- On the closed-enclosure board, dimension the complete exterior within x=40..860, y=170..630 and z=10..430 mm, including handles and hardware; print PARCEL BAY and Neighbourhood delivery on the exterior. Preserve the source frame and wheel arrangement across all six boards, with the handlebar and rider relationship visible in the installed perspective.\n- On the loaded-interior board, dimension P1 at 300 by 200 by 180 mm, P2 at 240 by 180 by 160 mm and P3 at 180 by 140 by 100 mm, with H vertical and all three on one level. Label any horizontal rotation and actual clearances of at least 10 mm, measured clear of partitions and restraints; identify each material family and finish.\n- On the frame-integration board, place C1/C2/C3/C4 at their four stated centres. Dimension each clamp within a 40 by 50 mm plan allowance and z=-30..20 mm, enclosing the full 20 by 20 mm member section with at most 50 mm contact length along y. Show removable attachment, member contact, fastener access and separation from parcel space. Credit A. Pardo / D. Jaeger, Open Hardware Observatory, 12 January 2021, CC BY-SA 4.0.\n- On the O1 opening board, trace the cover from its latched position through an intermediate position to its supported open position, with all three parcels loaded. Dimension its movement and parked position within x=40..860, y=170..630 and below z=650 mm; show the retention hardware and closure details.\n- On the frame-integration, O1, R1 and R2 boards, identify the rear x>=880 mm strip and lateral y<150 or y>650 mm regions as clear, and show spatial separation from retained frame members, wheels and steering parts throughout the depicted movements.\n- On the R1 and R2 retrieval boards, label the cases and parcel paths in sequence: P2 out with P1/P3 in place, then P1 out with P3 in its original position. Show upright parcels passing through dimensioned openings, a person operating the stationary tricycle on level ground, and the same partitions, clamps and supported cover as on the interior, integration and O1 boards.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/frame-overview.png",
+      "nodeId": "provided-image-1",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "4e690ee2279b9117c6b4aaccb4aeee861eb8463671a61c2e3cebda35d859d742"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/frame-plan.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "6a822af987d0d4e06c6b3a5d8b1fed48204f4bb7baadb1fbb44be2b47dab7b05"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/cross-member.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "cc3e041b63edda9e684450dffa9255c15e6e3f209b9d75d16c6ac873767df485"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/installation-boundaries.png",
+      "nodeId": "provided-image-4",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "ee085627bb3976de62445dcc7ff34da94577f2299824292b2d4f0c639a0a6f91"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/neighbourhood-stop.png",
+      "nodeId": "provided-image-5",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "4f85f777f4dd8ba3cfe401a7ddacbeb1f5467525d8ee1183eb3bf9e05a90d62a"
+    }
+  ]
+}

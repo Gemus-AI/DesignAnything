@@ -1,0 +1,1212 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-fashion-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "materials-construction",
+      "label": "Materials and digital construction sheet",
+      "description": "A one-page record of textile references, digital materials, virtual construction, character dimensions and motion settings for the three looks.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "direction-one",
+      "label": "Collection direction one",
+      "description": "The first collection direction board with proposed silhouettes for PC-01, PC-02 and PC-03.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-two",
+      "label": "Collection direction two",
+      "description": "The second collection direction board with proposed silhouettes for PC-01, PC-02 and PC-03.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-three",
+      "label": "Collection direction three",
+      "description": "The third collection direction board with proposed silhouettes for PC-01, PC-02 and PC-03.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-selection",
+      "label": "Collection direction selection",
+      "description": "A one-page selection note naming the chosen direction, shared silhouette principle and outer-panel arrangement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "collection-front",
+      "label": "Three-look front flat-view sheet",
+      "description": "One front flat-view sheet of all three looks with core boundaries, outer panels, shoulder anchors, material codes and chest lettering.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "collection-back",
+      "label": "Three-look back flat-view sheet",
+      "description": "One back flat-view sheet of all three looks with core boundaries, outer panels, shoulder anchors and material codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "performance-scene",
+      "label": "Three-look performance scene",
+      "description": "One circular-stage scene with three instances of Aster wearing the collection and the two fixed project phrases.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "state-still",
+      "label": "Still movement sheet",
+      "description": "One Still sheet showing all three looks with neutral overlays, 0.35 outer-panel opacity and 0 mm displacement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "state-walk",
+      "label": "Walk movement sheet",
+      "description": "One Walk sheet showing all three looks with neutral overlays, 0.35 outer-panel opacity and 80 mm peak displacement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "state-leap",
+      "label": "Leap movement sheet",
+      "description": "One Leap sheet showing all three looks with neutral overlays, 0.55 outer-panel opacity and 180 mm peak displacement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-attachment-detail",
+      "label": "Material and shoulder attachment details",
+      "description": "One detail sheet with an enlarged material junction and both shoulder attachment positions for each look.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "performance-video",
+      "label": "Twelve-second performance video",
+      "description": "One 12-second collection video progressing through Still, Walk and Leap with all three looks and the fixed end-frame wording.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "collection-presentation",
+      "label": "Collection presentation",
+      "description": "A presentation of at least eight pages assembling the selected direction, material rules, collection views, movement studies, details and video stills.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "PHASE CHOIR",
+      "scope": {
+        "slots": [
+          "collection-front",
+          "state-still",
+          "performance-scene",
+          "performance-video",
+          "collection-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "performance-tagline",
+      "kind": "text-verbatim",
+      "text": "LIVE IN THREE STATES",
+      "scope": {
+        "slots": [
+          "performance-scene",
+          "performance-video",
+          "collection-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "still-label",
+      "kind": "text-verbatim",
+      "text": "Still",
+      "scope": {
+        "slots": [
+          "state-still",
+          "performance-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "walk-label",
+      "kind": "text-verbatim",
+      "text": "Walk",
+      "scope": {
+        "slots": [
+          "state-walk",
+          "performance-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "leap-label",
+      "kind": "text-verbatim",
+      "text": "Leap",
+      "scope": {
+        "slots": [
+          "state-leap",
+          "performance-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "PHASE CHOIR",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "selected-collection-system",
+      "slots": [
+        "collection-front",
+        "collection-back",
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail"
+      ],
+      "sourceSlots": [
+        "direction-selection",
+        "materials-construction"
+      ],
+      "items": [
+        {
+          "item": "All three looks develop the selected silhouette principle and panel arrangement consistently across flats, dressed views and construction details.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Each look remains identifiable between front, back, scene, movement and detail views; motion changes preserve its core boundaries and shoulder attachment locations relative to the rig.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Material assignments and identifiers agree with the materials record, with one opaque core and two translucent shoulder-attached panels per look.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The three movement states form a coherent progression from neutral panels to intermediate and maximum outward displacement while retaining the collection's established geometry.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "PHASE CHOIR"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "collection-front",
+      "collection-back",
+      "performance-scene",
+      "state-still",
+      "state-walk",
+      "state-leap",
+      "material-attachment-detail"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge physical garment manufacturability, textile certification, or photorealistic lighting and texture on diagrammatic flat-view sheets."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "materials-construction",
+        "direction-one",
+        "direction-two",
+        "direction-three",
+        "direction-selection",
+        "collection-front",
+        "collection-back",
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail",
+        "collection-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "direction-one",
+        "direction-two",
+        "direction-three",
+        "collection-front",
+        "collection-back",
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-materials-construction",
+      "requirementId": "R-format-materials-construction",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-construction"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-direction-one",
+      "requirementId": "R-format-direction-one",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-one"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-two",
+      "requirementId": "R-format-direction-two",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-two"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-three",
+      "requirementId": "R-format-direction-three",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-three"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-selection",
+      "requirementId": "R-format-direction-selection",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-selection"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-collection-front",
+      "requirementId": "R-format-collection-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-collection-back",
+      "requirementId": "R-format-collection-back",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-back"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-performance-scene",
+      "requirementId": "R-format-performance-scene",
+      "method": "artifact-property",
+      "targetSlots": [
+        "performance-scene"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-state-still",
+      "requirementId": "R-format-state-still",
+      "method": "artifact-property",
+      "targetSlots": [
+        "state-still"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-state-walk",
+      "requirementId": "R-format-state-walk",
+      "method": "artifact-property",
+      "targetSlots": [
+        "state-walk"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-state-leap",
+      "requirementId": "R-format-state-leap",
+      "method": "artifact-property",
+      "targetSlots": [
+        "state-leap"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-attachment-detail",
+      "requirementId": "R-format-material-attachment-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-attachment-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-performance-video",
+      "requirementId": "R-format-performance-video",
+      "method": "manual",
+      "targetSlots": [
+        "performance-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-collection-presentation",
+      "requirementId": "R-format-collection-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "materials-construction-record",
+      "requirementId": "R-materials-construction-record",
+      "method": "content",
+      "targetSlots": [
+        "materials-construction"
+      ],
+      "criteria": "Require one readable page covering both material records and all three look IDs. M01 must be 100% polyester, 180 g/m2, 1500 mm wide, matte interlock knit, #202532, opacity 1.00, with continuous virtual seam joins. M02 must be 100% polyester, 35 g/m2, 1400 mm wide, smooth uncoated plain-weave organza, #A8E6E1, with one fixed 20 mm circular connector per panel at the two shoulder joints. Record Still 0.35/0 mm, Walk 0.35/80 mm and Leap 0.55/180 mm. Record neutral height 1800 mm, head height 225 mm, shoulder spacing 440 mm, hip spacing 280 mm, upper arms 320 mm, forearms 280 mm, thighs and shins 450 mm each, and ankle-to-sole offset 100 mm. Equivalent unit notation and record layout are allowed; omissions, swapped material properties or contradictory values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "three-competing-directions",
+      "requirementId": "R-three-competing-directions",
+      "method": "visual",
+      "targetSlots": [
+        "direction-one",
+        "direction-two",
+        "direction-three"
+      ],
+      "criteria": "Each board must propose recognizable silhouettes for PC-01, PC-02 and PC-03. The three boards must offer distinguishable collection approaches through silhouette or panel arrangement; changing only a title or presentation background does not establish a competing direction. Garment shapes may vary freely within the fixed core-and-panel structure.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "selection-note",
+      "requirementId": "R-selection-note",
+      "method": "content",
+      "targetSlots": [
+        "direction-selection"
+      ],
+      "criteria": "Require one page identifying exactly one of the presented directions and stating a usable shared silhouette principle and two-panel arrangement for the collection. Naming multiple unresolved alternatives or omitting either design principle fails; wording and page layout are flexible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "direction-one",
+        "direction-two",
+        "direction-three"
+      ]
+    },
+    {
+      "id": "selected-direction-development",
+      "requirementId": "R-selected-direction-development",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail"
+      ],
+      "criteria": "Compare the developed collection with the direction explicitly selected in the note. All three look IDs must retain that direction's stated silhouette logic and panel arrangement across applicable views. Look-specific variation and movement deformation are allowed; mixing incompatible alternatives or abandoning the selected principles fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "direction-selection",
+        "direction-one",
+        "direction-two",
+        "direction-three"
+      ]
+    },
+    {
+      "id": "front-back-collection-coverage",
+      "requirementId": "R-front-back-collection-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back"
+      ],
+      "criteria": "Require a front flat view and a corresponding back flat view of each of PC-01, PC-02 and PC-03. Both sheets must make core outlines, the two panels, shoulder connections and material assignments readable. Front and back geometry must plausibly describe the same look. Diagrammatic rendering is allowed; missing looks, incompatible reverse views or concealed construction information fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "image-record-carry-through",
+      "requirementId": "R-image-record-carry-through",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "material-attachment-detail"
+      ],
+      "criteria": "Each sheet must visibly include M01, M02, PC-01, PC-02 and PC-03, with labels or a legend that associates codes with the correct materials and looks. Placement is flexible; omitted, substituted or misleadingly assigned identifiers fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "materials-construction"
+      ]
+    },
+    {
+      "id": "movement-neutral-height",
+      "requirementId": "R-movement-neutral-height",
+      "method": "visual",
+      "targetSlots": [
+        "state-still",
+        "state-walk",
+        "state-leap"
+      ],
+      "criteria": "Every movement sheet must state Aster's neutral standing height as 1800 mm. A shared annotation per sheet is sufficient. Do not interpret a bent or airborne pose's visible height as the neutral measurement; missing or conflicting neutral-height text fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "materials-construction"
+      ]
+    },
+    {
+      "id": "fixed-garment-structure",
+      "requirementId": "R-fixed-garment-structure",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap"
+      ],
+      "criteria": "For each depicted look, verify one opaque M01 core covering both torso and pelvis and exactly two translucent M02 outer panels connected at the shoulders. Pose-related overlap is allowed when panel count and attachment remain interpretable. Missing pelvic coverage, transparent cores, extra panels or relocated attachment sites fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "aster-dressed-identity",
+      "requirementId": "R-aster-dressed-identity",
+      "method": "visual",
+      "targetSlots": [
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap"
+      ],
+      "criteria": "Visible character features must match the supplied Aster reference: graphite-gray skin, close-cropped ivory hair with a straight hairline, amber eyes and circular amber temple inserts on both sides. Preserve the adult androgynous presentation and smooth body surface. Natural lighting changes and occlusion of the far eye or temple are allowed; altered identity features fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "movement-records-and-overlays",
+      "requirementId": "R-movement-records-and-overlays",
+      "method": "visual",
+      "targetSlots": [
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail"
+      ],
+      "criteria": "Each movement sheet must show all three looks, its correct state label and the matching M02 opacity/peak-displacement pair. Each look must have a small neutral silhouette overlay permitting comparison with its posed garment. Across the overlays and detail sheet, core boundaries and the two shoulder anchor locations must remain fixed relative to the same look and rig. Shared numeric legends are allowed if unambiguous; wrong pairs, missing overlays or unexplained boundary and anchor changes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "collection-front"
+      ]
+    },
+    {
+      "id": "rig-proportions-and-poses",
+      "requirementId": "R-rig-proportions-and-poses",
+      "method": "visual",
+      "targetSlots": [
+        "state-still",
+        "state-walk",
+        "state-leap"
+      ],
+      "criteria": "Compare with the supplied rig and pose reference, allowing ordinary illustration tolerance rather than demanding pixel-exact angle measurements. Preserve the 1800 mm neutral proportions and recorded segment lengths. Still must be frontal, arms down, both soles grounded. Walk must face image right in side view, with thighs 25 degrees forward/back, lead shin 5 degrees forward, trailing shin 45 degrees back, lead-side upper arm 20 degrees back with vertical forearm, and trailing-side upper arm 20 degrees forward with forearm 40 degrees forward; its lowest sole is grounded. Leap must use side view, thighs 55 degrees forward/back, shins 5 degrees forward/back, straight arm chains at 120 degrees forward/back, and lowest sole 350 mm above ground. Side-view torsos remain upright, with shoulders 500 mm above hips and crown/chin 800/575 mm above hips. Clearly substituted poses, changed limb proportions or incorrect ground relationships fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "attachment-detail-coverage",
+      "requirementId": "R-attachment-detail-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "material-attachment-detail"
+      ],
+      "criteria": "For each look, provide an enlarged readable M01/M02 junction and identify both shoulder connection positions. Show continuous virtual seam construction for the core and one circular virtual connector per outer panel, specified as 20 mm diameter. Shared construction legends are allowed if clearly applicable to all three looks. Missing junctions, omitted shoulders or incompatible attachment construction fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "materials-construction",
+        "collection-front",
+        "collection-back"
+      ]
+    },
+    {
+      "id": "stage-and-cast",
+      "requirementId": "R-stage-and-cast",
+      "method": "visual",
+      "targetSlots": [
+        "performance-scene"
+      ],
+      "criteria": "Show three instances of Aster, one wearing each collection look, on a circular platform consistent with the 6000 mm diameter stage and 1800 mm character scale. Require a matte charcoal platform, charcoal background, amber side lighting and restrained pale-cyan overhead fill consistent with empty-stage.png. Camera framing and cast arrangement may vary; duplicated or omitted looks, incompatible platform scale or a materially different stage atmosphere fail. A printed diameter annotation is not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "digital-material-appearance",
+      "requirementId": "R-digital-material-appearance",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail"
+      ],
+      "criteria": "M01 must read as a matte, opaque dark core consistent with #202532 and the heavier interlock reference; M02 must read as a light, translucent pale-cyan panel consistent with #A8E6E1 and organza. Diagrammatic flats may communicate properties through swatches, boundaries and labels. Lighting may shift rendered colors, but reversed material assignments, opaque organza panels or visibly glossy metallic cores fail. Do not demand proof of physical textile composition from an image.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "materials-construction"
+      ]
+    },
+    {
+      "id": "image-copy-placement",
+      "requirementId": "R-image-copy-placement",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "state-still",
+        "performance-scene"
+      ],
+      "criteria": "On the front and Still sheets, PHASE CHOIR must be legible on the upper-chest M01 panel of each of the three looks; a page heading cannot substitute for garment lettering. The performance scene must visibly carry PHASE CHOIR and LIVE IN THREE STATES and retain chest branding wherever the chest is exposed to view. Typography and scene-text placement may vary; missing words, incorrect placement on the required frontal looks or illegible required text fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "performance-video-sequence",
+      "requirementId": "R-performance-video-sequence",
+      "method": "manual",
+      "targetSlots": [
+        "performance-video"
+      ],
+      "criteria": "Review the entire 12-second timeline. Require Still at 0–4 seconds, Walk at 4–8 seconds and Leap at 8–12 seconds, correctly labeled, with all three looks shown within every section. Panel behavior must agree with the movement sheets' 0.35/0 mm, 0.35/80 mm and 0.55/180 mm settings, interpolating opacity and displacement continuously between states while preserving fixed shoulder anchors and core boundaries. Preserve Aster's identity and chest branding when visible. The end frame must legibly show both PHASE CHOIR and LIVE IN THREE STATES. Camera and editing choices may vary; missing looks or labels, incorrect timing, contradictory movement, abrupt state changes or missing end-frame copy fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail"
+      ]
+    },
+    {
+      "id": "presentation-content-and-cover",
+      "requirementId": "R-presentation-content-and-cover",
+      "method": "content",
+      "targetSlots": [
+        "collection-presentation"
+      ],
+      "criteria": "Require at least eight pages, with the selected direction explicitly named on page 1 and both fixed project phrases on the cover. The document must state #202532 and #A8E6E1 with correct material assignments and all three labeled opacity/displacement settings: Still 0.35/0 mm, Walk 0.35/80 mm and Leap 0.55/180 mm. Extra pages and flexible layouts are allowed; missing facts, a different selected direction or contradictory settings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "direction-selection",
+        "materials-construction"
+      ]
+    },
+    {
+      "id": "presentation-record-carry-through",
+      "requirementId": "R-presentation-record-carry-through",
+      "method": "content",
+      "targetSlots": [
+        "collection-presentation"
+      ],
+      "criteria": "The presentation must include both material codes, all three look IDs and Aster's 1800 mm neutral height, consistent with the materials record and client facts. Readable reused sheets or newly typeset text may supply the information. Missing identifiers, a missing neutral height or contradictory assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "materials-construction"
+      ]
+    },
+    {
+      "id": "presentation-reuses-deliverables",
+      "requirementId": "R-presentation-reuses-deliverables",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "collection-presentation"
+      ],
+      "criteria": "Require recognizable reuse of every listed source, including all three direction boards, both collection views, all three movement sheets and identifiable stills from the delivered video. Source documents may be reproduced as readable page excerpts preserving their substantive content. Resizing, cropping and combining sources on a page are allowed when identification and essential information survive. Category titles, placeholders or unrelated replacement artwork do not count as reuse.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "materials-construction",
+        "direction-one",
+        "direction-two",
+        "direction-three",
+        "direction-selection",
+        "collection-front",
+        "collection-back",
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail"
+      ]
+    },
+    {
+      "id": "panel-displacement-geometry",
+      "requirementId": "R-panel-displacement-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "state-still",
+        "state-walk",
+        "state-leap"
+      ],
+      "criteria": "Use neutral overlays and panel contours to assess outward deformation relative to each panel's neutral surface. Still must show no motion offset; Walk must show an intermediate offset; Leap must show the largest offset, with displacement tapering to zero at both shoulder connectors. Distinct neutral panel shapes are allowed for different looks. Rigid translation of the entire panel, detached shoulders, displacement caused only by moving the character or a reversed state progression fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "material-attachment-detail"
+      ]
+    },
+    {
+      "id": "set-selected-collection-system",
+      "requirementId": "R-set-selected-collection-system",
+      "method": "visual",
+      "targetSlots": [
+        "collection-front",
+        "collection-back",
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail"
+      ],
+      "criteria": "All three looks develop the selected silhouette principle and panel arrangement consistently across flats, dressed views and construction details. Each look remains identifiable between front, back, scene, movement and detail views; motion changes preserve its core boundaries and shoulder attachment locations relative to the rig. Material assignments and identifiers agree with the materials record, with one opaque core and two translucent shoulder-attached panels per look. The three movement states form a coherent progression from neutral panels to intermediate and maximum outward displacement while retaining the collection's established geometry.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "direction-selection",
+        "materials-construction"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "aster-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "aster-character.png",
+        "avatar-rig-and-poses.png"
+      ],
+      "subjectSlots": [
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap"
+      ],
+      "notes": "Preserve the character's graphite skin, ivory cropped hair, amber eyes and circular amber temple inserts throughout the dressed views."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "material-and-look-identifiers",
+      "fromSlot": "materials-construction",
+      "toSlots": [
+        "collection-front",
+        "collection-back",
+        "material-attachment-detail",
+        "collection-presentation"
+      ],
+      "extract": [
+        "material codes M01 and M02",
+        "look IDs PC-01, PC-02 and PC-03"
+      ],
+      "notes": "The materials and digital construction sheet records M01, M02, the three look IDs and Aster's 1800 mm height; the front and back sheets, detail sheet and presentation repeat the material codes and look IDs, and every movement sheet and the presentation repeat the 1800 mm neutral height."
+    },
+    {
+      "id": "neutral-height",
+      "fromSlot": "materials-construction",
+      "toSlots": [
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "collection-presentation"
+      ],
+      "extract": [
+        "Aster's 1800 mm neutral standing height"
+      ],
+      "notes": "The materials and digital construction sheet records M01, M02, the three look IDs and Aster's 1800 mm height; the front and back sheets, detail sheet and presentation repeat the material codes and look IDs, and every movement sheet and the presentation repeat the 1800 mm neutral height."
+    },
+    {
+      "id": "selected-design-principles",
+      "fromSlot": "direction-selection",
+      "toSlots": [
+        "collection-front",
+        "collection-back",
+        "performance-scene",
+        "state-still",
+        "state-walk",
+        "state-leap",
+        "material-attachment-detail"
+      ],
+      "extract": [
+        "chosen direction",
+        "shared silhouette principle",
+        "outer-panel arrangement"
+      ],
+      "notes": "The three direction boards each contain PC-01, PC-02 and PC-03; the selection note names one direction, and the flat-view sheets, performance scene, movement sheets and detail sheet develop its stated silhouette principle and panel arrangement."
+    },
+    {
+      "id": "presentation-selected-direction",
+      "fromSlot": "direction-selection",
+      "toSlots": [
+        "collection-presentation"
+      ],
+      "extract": [
+        "chosen direction name"
+      ],
+      "notes": "The presentation contains at least 8 pages, names the selected direction on page 1, repeats #202532, #A8E6E1 and all three motion settings, and reuses every earlier deliverable category; its cover carries PHASE CHOIR and LIVE IN THREE STATES."
+    },
+    {
+      "id": "presentation-material-motion-records",
+      "fromSlot": "materials-construction",
+      "toSlots": [
+        "collection-presentation"
+      ],
+      "extract": [
+        "M01 digital color #202532",
+        "M02 digital color #A8E6E1",
+        "Still, Walk and Leap opacity and peak displacement settings"
+      ],
+      "notes": "The presentation contains at least 8 pages, names the selected direction on page 1, repeats #202532, #A8E6E1 and all three motion settings, and reuses every earlier deliverable category; its cover carries PHASE CHOIR and LIVE IN THREE STATES."
+    }
+  ]
+}

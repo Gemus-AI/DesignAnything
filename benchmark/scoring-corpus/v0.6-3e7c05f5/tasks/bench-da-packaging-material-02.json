@@ -1,0 +1,654 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-packaging-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "label-artwork",
+      "label": "Four-formula label artwork sheet",
+      "description": "One finished artwork sheet containing the four flat labels with dimensioned front panels, text insets and reserved-copy areas.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "labelled-bottles",
+      "label": "Four-formula labelled-bottle sheet",
+      "description": "One sheet containing front and rear views of all four labelled bottles, eight views in total.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "carton-artwork",
+      "label": "Carton artwork and structure sheet",
+      "description": "One sheet containing the carton flat layout, printed faces, dimensions, cut and fold lines, closure and bottle-retention details.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "assembled-carton",
+      "label": "Closed and open carton sheet",
+      "description": "One sheet containing closed front, closed rear and open carton views with the four bottles and inserted recycling card.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "recycling-card",
+      "label": "Materials-and-recycling card artwork",
+      "description": "One artwork sheet containing the front and back of the 105 x 74 mm recycling card with its 4 mm text inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shelf-display",
+      "label": "Convenience-store shelf presentation",
+      "description": "One shelf image containing three closed four-packs and one opened four-pack with four exposed bottles and a visible recycling card.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-name",
+      "kind": "text-verbatim",
+      "text": "QUARTO",
+      "scope": {
+        "slots": [
+          "label-artwork",
+          "labelled-bottles",
+          "carton-artwork",
+          "assembled-carton",
+          "shelf-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "bottle-descriptor",
+      "kind": "text-verbatim",
+      "text": "60 mL concentrate",
+      "scope": {
+        "slots": [
+          "label-artwork",
+          "labelled-bottles",
+          "assembled-carton",
+          "shelf-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "reserved-copy-annotation",
+      "kind": "text-verbatim",
+      "text": "reserved for regulatory copy",
+      "scope": {
+        "slots": [
+          "label-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "carton-product-title",
+      "kind": "text-verbatim",
+      "text": "4 CONCENTRATE SHOTS",
+      "scope": {
+        "slots": [
+          "carton-artwork",
+          "assembled-carton",
+          "shelf-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "carton-quantity",
+      "kind": "text-verbatim",
+      "text": "4 x 60 mL",
+      "scope": {
+        "slots": [
+          "carton-artwork",
+          "assembled-carton",
+          "shelf-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "carton-range-line",
+      "kind": "text-verbatim",
+      "text": "FOCUS · HYDRATE · CALM · BOOST",
+      "scope": {
+        "slots": [
+          "carton-artwork",
+          "assembled-carton",
+          "shelf-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "QUARTO",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "finished-packaging-through-retail",
+      "slots": [
+        "labelled-bottles",
+        "assembled-carton",
+        "shelf-display"
+      ],
+      "sourceSlots": [
+        "label-artwork",
+        "carton-artwork",
+        "recycling-card"
+      ],
+      "items": [
+        {
+          "item": "Applied bottle labels preserve the finished artwork's typography, formula identities, accent mapping and front/rear copy placement across the bottle, assembled-carton and shelf views.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Assembled and shelf cartons reproduce the flat artwork's printed faces, opening, closure and bottle-retention construction.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The inserted and shelf-visible recycling cards reproduce the corresponding visible side of the finished card artwork.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Open packs preserve one upright bottle per formula in F1, F2, F3, F4 order, clear PET bodies with white caps and bands, paperboard cartons and open apertures.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "QUARTO"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "label-artwork",
+      "labelled-bottles",
+      "carton-artwork",
+      "assembled-carton",
+      "recycling-card",
+      "shelf-display"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design-quality judging must not reward redesigning the supplied mark or fixed bottle, inventing promotional claims, or changing prescribed dimensions, materials and copy."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "label-artwork",
+        "labelled-bottles",
+        "carton-artwork",
+        "assembled-carton",
+        "recycling-card",
+        "shelf-display"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-label-artwork",
+      "requirementId": "R-format-label-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "label-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-labelled-bottles",
+      "requirementId": "R-format-labelled-bottles",
+      "method": "artifact-property",
+      "targetSlots": [
+        "labelled-bottles"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-carton-artwork",
+      "requirementId": "R-format-carton-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "carton-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-assembled-carton",
+      "requirementId": "R-format-assembled-carton",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembled-carton"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-recycling-card",
+      "requirementId": "R-format-recycling-card",
+      "method": "artifact-property",
+      "targetSlots": [
+        "recycling-card"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shelf-display",
+      "requirementId": "R-format-shelf-display",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shelf-display"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "label-front-and-bottle-identity",
+      "requirementId": "R-label-front-and-bottle-identity",
+      "method": "visual",
+      "targetSlots": [
+        "label-artwork",
+        "labelled-bottles"
+      ],
+      "criteria": "Require four distinct flat labels and eight bottle views, comprising a front and rear for each formula. The mark retains the supplied letterforms, proportions and left-hand circular device with three filled quarters and an outlined upper-right quarter, using ink blue or reversed white. Dimensioned artwork must support a mark width of at least 20 mm, a central 45 mm front panel containing the complete front identity, and text clearance of at least 3 mm. Bottle geometry must agree with the specified 34 mm diameter, 100 mm closed height and 16 mm cap, preserving the clear body, white ribbed screw cap and tamper band. Read physical dimensions from annotations with units and assess depicted proportions; do not infer millimetres from image pixels. Missing views, altered identity features or conflicting geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "label-rear-records",
+      "requirementId": "R-label-rear-records",
+      "method": "visual",
+      "targetSlots": [
+        "label-artwork",
+        "labelled-bottles"
+      ],
+      "criteria": "Read each flat label and its corresponding bottle rear. F1 FOCUS must carry 'Green tea extract, L-theanine and natural caffeine.'; F2 HYDRATE, 'Sodium, potassium and magnesium electrolytes.'; F3 CALM, 'Chamomile, lemon balm and magnesium.'; and F4 BOOST, 'Ginger, vitamin C and B-vitamins.' Each ingredient line occurs once per label and is followed by 'Mix with 250 mL cold water or drink neat.' and 'Bottle and cap: PET. Recycle together.' Line wrapping may vary, but wording, punctuation and formula assignment must match. Each rear includes a blank 30 x 12 mm reserved area dimensioned on the artwork sheet, with its annotation outside the printable label. Additional microcopy is allowed only within the supplied product, ingredients, preparation and materials scope; internal naming contexts must not become unsupported printed claims. Missing or substituted copy, occupied reserved areas or printed external annotations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "carton-construction",
+      "requirementId": "R-carton-construction",
+      "method": "visual",
+      "targetSlots": [
+        "carton-artwork",
+        "assembled-carton"
+      ],
+      "criteria": "The structure sheet must show a dimensioned flat layout, every printed face, distinguishable cuts and folds, closure and bottle-retention details that plausibly produce the assembled carton. Require closed front, closed rear and open assembled views; the open view contains four upright bottles and the inserted card. Facing the carton front, bottle order is F1 FOCUS, F2 HYDRATE, F3 CALM, F4 BOOST, one each. Annotated closed width, depth and height must not exceed 160 mm, 46 mm and 112 mm respectively. A blank 40 x 20 mm barcode area belongs on the rear or base. Sleeve, tray, folding-carton, handle and aperture choices may vary, but construction must remain paperboard and any aperture must remain open. Conflicting panels, unexplained closure or retention, covered cut-outs, missing contents or an oversized envelope fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "carton-identification-and-copy",
+      "requirementId": "R-carton-identification-and-copy",
+      "method": "visual",
+      "targetSlots": [
+        "carton-artwork",
+        "assembled-carton",
+        "shelf-display"
+      ],
+      "criteria": "Verify that the carton design includes the intact supplied front mark at a physical width of at least 40 mm, supported by the artwork dimensions, plus F1 FOCUS, F2 HYDRATE, F3 CALM and F4 BOOST. Read the complete required wording: '4 CONCENTRATE SHOTS', '4 x 60 mL', 'FOCUS · HYDRATE · CALM · BOOST' and 'Carton: paperboard. Bottles and caps: PET.' Placement across printed faces may vary; assembled and shelf cartons must reproduce those faces wherever visible. Every closed carton must make all four formula names legible. Missing or altered wording, incorrect formula pairings, an undersized front mark or hidden names fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "recycling-card-record",
+      "requirementId": "R-recycling-card-record",
+      "method": "visual",
+      "targetSlots": [
+        "recycling-card"
+      ],
+      "criteria": "Require both sides of a flat 105 x 74 mm insert, with the 4 mm text inset marked using units. Read these front statements in order: 'Two materials, two streams.', 'Carton: paperboard. Flatten and recycle with paper.', 'Bottle and cap: PET only. Empty, cap on, recycle together.' and 'Local collection rules apply.' Preserve exact wording and punctuation, with all front text inside the inset. The back may use explanation, pictograms or both, but must assign the carton to paperboard recycling and the emptied bottle with cap on to PET recycling without contradicting local collection qualification. Missing statements, incorrect dimensions or inset, or conflicting material guidance fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "shelf-composition-and-reuse",
+      "requirementId": "R-shelf-composition-and-reuse",
+      "method": "visual",
+      "targetSlots": [
+        "shelf-display"
+      ],
+      "criteria": "In a recognizable convenience-store shelf setting, count exactly three closed QUARTO four-packs and one opened QUARTO four-pack containing four exposed bottles and a visible recycling card. The exposed bottles must read F1 FOCUS, F2 HYDRATE, F3 CALM and F4 BOOST from left to right. Compare visible packaging against the finished source sheets: label graphics, carton construction and printing, and card artwork must agree. Perspective, lighting and surrounding retail atmosphere may vary. Incorrect pack counts, missing card or bottles, unreadable or reordered exposed identities, or substituted packaging fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "label-artwork",
+        "labelled-bottles",
+        "carton-artwork",
+        "assembled-carton",
+        "recycling-card"
+      ]
+    },
+    {
+      "id": "label-wrap-geometry",
+      "requirementId": "R-label-wrap-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "label-artwork",
+        "labelled-bottles"
+      ],
+      "criteria": "Use dimensioned artwork to establish a physical label size of 100 mm wide by 40 mm high. Bottle views must show that label applied as a partial wrap in the straight body zone, with its lower edge 20 mm above the base and a rear gap consistent with the nominal 6 mm specification. Allow ordinary perspective and rendering tolerance around the nominal gap. Full wraps, displaced labels, contradictory dimensions or labels extending onto the shoulder or base fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "formula-accent-mapping",
+      "requirementId": "R-formula-accent-mapping",
+      "method": "visual",
+      "targetSlots": [
+        "label-artwork",
+        "labelled-bottles",
+        "carton-artwork",
+        "assembled-carton",
+        "shelf-display"
+      ],
+      "criteria": "Track the four formula identities wherever their accents appear: F1 FOCUS uses teal nominally #1F8A8A, F2 HYDRATE sea blue #2C6FD1, F3 CALM lavender #7B6BC2, and F4 BOOST amber #E08A1E. The accents must remain mutually distinguishable and distinct from the brand's ink blue #17307A. Supporting palette choices are open; lighting and print simulation need not reproduce exact pixel values. Bottle liquid may be clear or lightly tinted toward its assigned formula cue. Swapped identities, merged accent distinctions, conflicting liquid hues or opaque liquid fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "label-stock",
+      "requirementId": "R-label-stock",
+      "method": "visual",
+      "targetSlots": [
+        "label-artwork",
+        "labelled-bottles"
+      ],
+      "criteria": "Any material annotation or visibly specified label construction must agree with PET-compatible film. Film finish and opacity may vary because neither is fixed. Explicit paper stock or another incompatible label specification fails; do not require an additional printed stock declaration or infer polymer compatibility solely from rendered surface appearance.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-finished-packaging-through-retail",
+      "requirementId": "R-set-finished-packaging-through-retail",
+      "method": "visual",
+      "targetSlots": [
+        "labelled-bottles",
+        "assembled-carton",
+        "shelf-display"
+      ],
+      "criteria": "Applied bottle labels preserve the finished artwork's typography, formula identities, accent mapping and front/rear copy placement across the bottle, assembled-carton and shelf views. Assembled and shelf cartons reproduce the flat artwork's printed faces, opening, closure and bottle-retention construction. The inserted and shelf-visible recycling cards reproduce the corresponding visible side of the finished card artwork. Open packs preserve one upright bottle per formula in F1, F2, F3, F4 order, clear PET bodies with white caps and bands, paperboard cartons and open apertures.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-02/03-formulas.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "label-artwork",
+        "carton-artwork",
+        "recycling-card"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "supplied-mark",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "quarto-mark.png"
+      ],
+      "subjectSlots": [
+        "label-artwork",
+        "labelled-bottles",
+        "carton-artwork",
+        "assembled-carton",
+        "shelf-display"
+      ],
+      "notes": "The existing wordmark and four-quarter device stay together, in ink blue #17307A or reversed to white."
+    },
+    {
+      "id": "supplied-container",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "bottle-identity.png"
+      ],
+      "subjectSlots": [
+        "labelled-bottles",
+        "assembled-carton",
+        "shelf-display"
+      ],
+      "notes": "The clear PET bottle, white ribbed PET screw cap and tamper band are fixed: body diameter 34 mm, closed height 100 mm and cap height 16 mm."
+    }
+  ]
+}

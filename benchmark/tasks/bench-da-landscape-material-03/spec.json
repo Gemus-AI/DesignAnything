@@ -1,0 +1,1250 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-landscape-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "site-analysis",
+      "label": "Site analysis and specification",
+      "description": "A two-page site analysis with zone areas, materials, shade, occupancy, plant names and the route-level sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "masterplan",
+      "label": "Visitor and production route masterplan",
+      "description": "One masterplan of visitor movement, agricultural access, irrigation, plants and three observation nodes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "section-a",
+      "label": "Longitudinal section A–A",
+      "description": "One longitudinal section through the three node centers with existing terrain, proposed levels and stair dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "section-b",
+      "label": "Irrigation cross-section B–B",
+      "description": "One cross-section through Water Lookout and the irrigation channel with maintenance clearance and deck supports.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "lower-node",
+      "label": "Lower Lookout detail sheet",
+      "description": "One Lower Lookout detail sheet with a plan, section, six-person seating arrangement and removable textile shade.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "water-node",
+      "label": "Water Lookout detail sheet",
+      "description": "One Water Lookout detail sheet with a plan, section, six-person seating arrangement and removable textile shade.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "upper-node",
+      "label": "Upper Lookout detail sheet",
+      "description": "One Upper Lookout detail sheet with a plan, section, six-person seating arrangement and removable textile shade.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-plants",
+      "label": "Materials and planting schedule",
+      "description": "One materials and planting schedule with zone areas, plant names and codes, walking surfaces, deck boards and textile shade.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "interpretation",
+      "label": "Interpretation and wayfinding sheet",
+      "description": "One signage sheet containing an entrance panel, a water-management panel and three node markers with wording and locations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "approach-view",
+      "label": "Southern approach in irrigation season",
+      "description": "One walking perspective from the southern approach toward Lower Lookout during irrigation season.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "upper-irrigation",
+      "label": "Upper Lookout in irrigation season",
+      "description": "One irrigation-season perspective from Upper Lookout across the working terraces.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "upper-harvest",
+      "label": "Upper Lookout in harvest season",
+      "description": "One harvest-season perspective matching the camera and built geometry of the Upper Lookout irrigation view.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "route-video",
+      "label": "Ten-second route video",
+      "description": "One 10-second video tracing the visitor route from the southern entrance through three nodes to the northern end.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Cooperative presentation",
+      "description": "One presentation of at least 10 pages reusing the specification, drawings, schedule, signage and seasonal views.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "site-name",
+      "kind": "text-verbatim",
+      "text": "FIELDSTEP",
+      "scope": {
+        "slots": [
+          "masterplan",
+          "materials-plants",
+          "interpretation",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "entrance-phrase",
+      "kind": "text-verbatim",
+      "text": "Fields at work",
+      "scope": {
+        "slots": [
+          "interpretation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "working-zone-name",
+      "kind": "text-verbatim",
+      "text": "Working Terraces",
+      "scope": {
+        "slots": [
+          "site-analysis",
+          "masterplan",
+          "materials-plants",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "visitor-zone-name",
+      "kind": "text-verbatim",
+      "text": "Visitor Edge",
+      "scope": {
+        "slots": [
+          "site-analysis",
+          "masterplan",
+          "materials-plants",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "lower-node-name",
+      "kind": "text-verbatim",
+      "text": "Lower Lookout",
+      "scope": {
+        "slots": [
+          "masterplan",
+          "lower-node",
+          "interpretation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "water-node-name",
+      "kind": "text-verbatim",
+      "text": "Water Lookout",
+      "scope": {
+        "slots": [
+          "masterplan",
+          "water-node",
+          "interpretation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "upper-node-name",
+      "kind": "text-verbatim",
+      "text": "Upper Lookout",
+      "scope": {
+        "slots": [
+          "masterplan",
+          "upper-node",
+          "interpretation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FIELDSTEP",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-site-geometry",
+      "slots": [
+        "section-a",
+        "section-b",
+        "lower-node",
+        "water-node",
+        "upper-node",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ],
+      "sourceSlots": [
+        "masterplan"
+      ],
+      "items": [
+        {
+          "item": "Sections, node details and perspectives describe the same terrace arrangement, irrigation infrastructure, visitor route and observation-node geometry as the masterplan.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Recorded node centers, section cuts, terrace elevations and camera relationships remain compatible across the drawings and views.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The two Upper Lookout seasonal views preserve the same built space and framing while changing the agricultural seasonal state.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "coordinated-node-materials",
+      "slots": [
+        "masterplan",
+        "section-a",
+        "section-b",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ],
+      "sourceSlots": [
+        "lower-node",
+        "water-node",
+        "upper-node",
+        "materials-plants"
+      ],
+      "items": [
+        {
+          "item": "Visible node decks and shade structures agree with the corresponding node details and material schedule across plans, sections and perspectives.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Level paths use compacted crushed stone, decks use textured timber and each node has removable textile shade.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FIELDSTEP"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "masterplan",
+      "section-a",
+      "section-b",
+      "lower-node",
+      "water-node",
+      "upper-node",
+      "interpretation",
+      "approach-view",
+      "upper-irrigation",
+      "upper-harvest"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not score photorealistic lighting or material rendering on technical plans, sections, schedules or signage sheets."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "site-analysis",
+        "masterplan",
+        "section-a",
+        "section-b",
+        "lower-node",
+        "water-node",
+        "upper-node",
+        "materials-plants",
+        "interpretation",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "section-a",
+        "section-b",
+        "lower-node",
+        "water-node",
+        "upper-node",
+        "interpretation",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-site-analysis",
+      "requirementId": "R-format-site-analysis",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-analysis"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-masterplan",
+      "requirementId": "R-format-masterplan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-section-a",
+      "requirementId": "R-format-section-a",
+      "method": "artifact-property",
+      "targetSlots": [
+        "section-a"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-section-b",
+      "requirementId": "R-format-section-b",
+      "method": "artifact-property",
+      "targetSlots": [
+        "section-b"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-lower-node",
+      "requirementId": "R-format-lower-node",
+      "method": "artifact-property",
+      "targetSlots": [
+        "lower-node"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-water-node",
+      "requirementId": "R-format-water-node",
+      "method": "artifact-property",
+      "targetSlots": [
+        "water-node"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-upper-node",
+      "requirementId": "R-format-upper-node",
+      "method": "artifact-property",
+      "targetSlots": [
+        "upper-node"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-plants",
+      "requirementId": "R-format-materials-plants",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-plants"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-interpretation",
+      "requirementId": "R-format-interpretation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interpretation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-approach-view",
+      "requirementId": "R-format-approach-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "approach-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-upper-irrigation",
+      "requirementId": "R-format-upper-irrigation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "upper-irrigation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-upper-harvest",
+      "requirementId": "R-format-upper-harvest",
+      "method": "artifact-property",
+      "targetSlots": [
+        "upper-harvest"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-route-video",
+      "requirementId": "R-format-route-video",
+      "method": "manual",
+      "targetSlots": [
+        "route-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "site-analysis-specification",
+      "requirementId": "R-site-analysis-specification",
+      "method": "content",
+      "targetSlots": [
+        "site-analysis"
+      ],
+      "criteria": "Require two pages containing a two-zone table: Working Terraces, 8,640 m², existing rice soil, stone-faced risers and compacted-stone production lane, open agricultural ground and 12 farmers; Visitor Edge, 960 m², compacted crushed-stone level paths, textured timber decks, one removable textile shade structure per node and 18 visitors across three six-person nodes. Include all three specified plant names. Explain the eastern out-and-back route from the southern entrance at 100.00 m through terrace levels 102.00 and 104.00 m to 106.00 m and the northern turnaround. Table styling and prose organization may vary; missing categories or contradictory quantities fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "masterplan-repeated-record",
+      "requirementId": "R-masterplan-repeated-record",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "Read the plan's labels or legend and compare them with the analysis. Require Working Terraces paired with 8,640 m² and Visitor Edge with 960 m², plus Oryza sativa–OS, Juncus effusus–JE and Persicaria hydropiper–PH. Placement may vary; omission, swapped associations, or agreement with an incorrect source value fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "site-analysis"
+      ]
+    },
+    {
+      "id": "documents-repeated-record",
+      "requirementId": "R-documents-repeated-record",
+      "method": "content",
+      "targetSlots": [
+        "materials-plants",
+        "presentation"
+      ],
+      "criteria": "Each document must repeat the analysis's zone and plant facts with the fixed correct associations: Working Terraces 8,640 m²; Visitor Edge 960 m²; OS Oryza sativa; JE Juncus effusus; PH Persicaria hydropiper. A readable reused table or drawing is acceptable. Missing entries, incorrect values or mismatched plant codes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "site-analysis"
+      ]
+    },
+    {
+      "id": "masterplan-site-records",
+      "requirementId": "R-masterplan-site-records",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "Read dimensions, labels and spatial relationships against the southwest-origin coordinate system. Require the 120 m east–west by 80 m south–north boundary, Working Terraces at x 0–108 and the 12 m Visitor Edge at x 108–120. Preserve the production corridor x 0–8, clear lane x 2–6, maintenance corridor x 102–107 and channel x 104–105. D1, D2 and D3 occupy y 18–20, 38–40 and 58–60 respectively. Fields R1–R4 occupy x 8–102 at y 0–18, 20–38, 40–58 and 60–80. The visitor route connects the entrance (111,0), three recorded nodes and turnaround (111,80) within Visitor Edge and supports out-and-back use. Drawing style may vary; relocation, encroachment, omitted infrastructure or contradictory dimensions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "masterplan-information-and-plants",
+      "requirementId": "R-masterplan-information-and-plants",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "Require distinguishable visitor and production movement, R1–R4, all three node envelopes, irrigation features, north arrow and scale bar. Mark A–A along x 116 from y 0 to 80 and B–B along y 30 from x 8 to 120. Locate the approach camera at (111,2) toward (116,10), and Upper Lookout camera at (116,70) toward (55,30). Plant coding must place OS in R1–R4, JE on the east channel margin x 105–105.5 and PH on the west margin x 103.5–104, with margin patches at y 8–14, 28–34, 48–54 and 68–74. Symbols and legend conventions may vary if unambiguous; missing annotations, reversed banks or displaced cuts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "sections-recorded-geometry",
+      "requirementId": "R-sections-recorded-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "section-a",
+        "section-b"
+      ],
+      "criteria": "A–A must run south to north at x 116 through all three node centers, showing existing and proposed levels and connected walking surfaces. Existing ground is 100.00 m at y 0–18, 102.00 m at 20–38, 104.00 m at 40–58 and 106.00 m at 60–80, with rises over the intervening two-metre intervals. Every proposed stair flight needs readable dimensions sufficient to assess its rise and run. B–B must run west to east at y 30 from x 8 to 120 through R2, the channel and Water Lookout, with a 1,000 mm channel width, 400 mm depth and unobstructed 5,000 mm maintenance corridor including the channel. Water Lookout supports must remain within x 114–118 and its recorded envelope. Graphic conventions may vary; incorrect cuts, altered existing levels, undimensioned stairs or corridor intrusion fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan"
+      ]
+    },
+    {
+      "id": "node-centers-envelopes-capacity",
+      "requirementId": "R-node-centers-envelopes-capacity",
+      "method": "visual",
+      "targetSlots": [
+        "lower-node",
+        "water-node",
+        "upper-node"
+      ],
+      "criteria": "Verify Lower Lookout at (116,10), adjacent level 100.00 m and extent x 114–118/y 8–12; Water Lookout at (116,30), level 102.00 m and extent x 114–118/y 28–32; Upper Lookout at (116,70), level 106.00 m and extent x 114–118/y 68–72. Each design must fit its 4,000 × 4,000 mm envelope and demonstrate accommodation for six visitors through its dimensioned layout or occupancy arrangement. Furniture arrangements may differ; shifted centers, oversized structures or unsupported capacity claims fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan"
+      ]
+    },
+    {
+      "id": "node-detail-completeness",
+      "requirementId": "R-node-detail-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "lower-node",
+        "water-node",
+        "upper-node"
+      ],
+      "criteria": "Each sheet must identify its corresponding node and include a mutually coherent plan and section, a six-person seating arrangement and removable textile shade. Removability may be communicated by annotations or connection details. Layout and furniture form may vary; an absent view, absent seating, permanent substitute canopy or incompatible plan and section fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "surface-material-palette",
+      "requirementId": "R-surface-material-palette",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "section-a",
+        "section-b",
+        "lower-node",
+        "water-node",
+        "upper-node",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ],
+      "criteria": "Where a specified element is represented, drawings must identify and perspectives must depict compacted crushed-stone level paths, textured timber decks and textile node shade consistent with removal. Labels and hatching are acceptable evidence in technical drawings; perspectives should distinguish the visible materials. Color and detailing may vary within the palette. A substituted path, deck or canopy material fails; an element outside the view need not be visible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "materials-and-planting-specification",
+      "requirementId": "R-materials-and-planting-specification",
+      "method": "content",
+      "targetSlots": [
+        "materials-plants"
+      ],
+      "criteria": "Require FIELDSTEP, both zone records and all three correctly paired botanical names and codes. Specify compacted crushed stone for level paths, textured timber boards for node decks and removable textile shade at each node. The specifications must agree with the materials and shade shown in the three node details. Document organization and unspecified technical choices may vary; incomplete material assignments or conflicting specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "lower-node",
+        "water-node",
+        "upper-node"
+      ]
+    },
+    {
+      "id": "interpretation-content-and-locations",
+      "requirementId": "R-interpretation-content-and-locations",
+      "method": "visual",
+      "targetSlots": [
+        "interpretation"
+      ],
+      "criteria": "Require an entrance panel located at the southern entrance that explains route orientation and active farming and names the three lookouts; a water-management panel at Water Lookout explaining descending irrigation through D1–D3 and R1–R4; and one correctly named marker at each corresponding node with onward direction. Locations and intended printed copy must be readable. Explanatory wording and sign design may vary; missing panels, missing markers, misplaced content or incorrect water-flow explanation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "printed-name-placement",
+      "requirementId": "R-printed-name-placement",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "interpretation",
+        "lower-node",
+        "water-node",
+        "upper-node"
+      ],
+      "criteria": "Verify FIELDSTEP on the masterplan and specifically within the entrance panel, with Fields at work on that same panel. The masterplan must label all three lookouts, each detail sheet must use its corresponding node name, and each marker must identify its own node. Typography and placement within the correct component may vary; wording appearing only elsewhere on the signage sheet, swapped node labels or missing labels fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "perspective-cameras-and-seasonal-match",
+      "requirementId": "R-perspective-cameras-and-seasonal-match",
+      "method": "visual",
+      "targetSlots": [
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ],
+      "criteria": "Assess visible sightlines, height and landmark relationships against the camera records: approach eye (111,2,101.60) aimed at (116,10,100.80); both Upper Lookout eyes (116,70,107.60) aimed at (55,30,102.00). The upper pair must preserve camera, crop, built geometry and landscape alignment. Seasonal vegetation, water, farming activity and lighting may change. A relocated or reversed viewpoint, materially different eye height, changed framing or redesigned node between seasons fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan"
+      ]
+    },
+    {
+      "id": "irrigation-season-content",
+      "requirementId": "R-irrigation-season-content",
+      "method": "visual",
+      "targetSlots": [
+        "approach-view",
+        "upper-irrigation"
+      ],
+      "criteria": "Each irrigation-season view must visibly communicate flooded cultivation through shallow standing water and young rice, with farmers engaged in tending water distribution where visible in the scene. Figure placement and lighting may vary; dry harvest conditions, mature golden crops dominating the fields or absent irrigation-season evidence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "harvest-season-content",
+      "requirementId": "R-harvest-season-content",
+      "method": "visual",
+      "targetSlots": [
+        "upper-harvest"
+      ],
+      "criteria": "Require mature golden rice, visibly harvested patches and farmers carrying crop bundles within the Upper Lookout scene. Exact patch shapes and figure positions are flexible. A young flooded-rice scene, missing cut areas or no evidence of bundle carrying fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "working-landscape-retention",
+      "requirementId": "R-working-landscape-retention",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "section-a",
+        "section-b",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ],
+      "criteria": "The drawings and views must preserve a functioning agricultural landscape with cultivated terraces, irregular gray stone risers, stone-lined irrigation structures and usable western production access. The plan must retain the lane's graded connections through centerline points (4,0,100), (4,20,102), (4,40,104), (4,60,106) and (4,80,106), and lateral agricultural connections at y 0,20,40,60 through x 6–8. Visitor work must not block irrigation, maintenance or farm access. Seasonal crop changes are allowed; demolition, obstruction or conversion of working fields to visitor grounds fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "route-video-sequence",
+      "requirementId": "R-route-video-sequence",
+      "method": "manual",
+      "targetSlots": [
+        "route-video"
+      ],
+      "criteria": "Review the entire video and its duration. Require a 10-second route traversal that begins at the southern entrance, visits Lower Lookout, Water Lookout and Upper Lookout in that order, and finishes at the northern end. Camera motion and transitions may vary if progression remains legible. Wrong duration, skipped or reordered stops, or an incorrect start or finish fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "presentation-reuses-deliverables",
+      "requirementId": "R-presentation-reuses-deliverables",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Find recognizable, readable reuse of every listed source, including both sections, all three node sheets, the schedule, signage and all three perspectives. Cropping, scaling and page composition may vary while retaining identifiable source content. Both Upper Lookout seasons must appear. A source merely mentioned in text, omitted, or replaced by an inconsistent redesign fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "site-analysis",
+        "masterplan",
+        "section-a",
+        "section-b",
+        "lower-node",
+        "water-node",
+        "upper-node",
+        "materials-plants",
+        "interpretation",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ]
+    },
+    {
+      "id": "presentation-length-cover-and-materials",
+      "requirementId": "R-presentation-length-cover-and-materials",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Require FIELDSTEP on the cover itself. The presentation must contain at least 10 pages and retain the textured timber decks and removable textile shade established in the node details, whether through readable reused drawings, specifications or perspectives. Page design may vary; a title appearing only on an interior page, insufficient pages or contradictory node materials fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "lower-node",
+        "water-node",
+        "upper-node"
+      ]
+    },
+    {
+      "id": "node-material-carry-through",
+      "requirementId": "R-node-material-carry-through",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ],
+      "criteria": "Compare represented nodes with their corresponding details and the schedule. The masterplan and walking views must carry forward the textured timber deck and removable textile shade design wherever the node is visible. Technical notation is acceptable on the plan, while perspectives must show the relevant material and structure. View-dependent occlusion and seasonal lighting are allowed; omitted shade, material substitution or incompatible canopy and deck forms fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "lower-node",
+        "water-node",
+        "upper-node",
+        "materials-plants"
+      ]
+    },
+    {
+      "id": "set-coordinated-site-geometry",
+      "requirementId": "R-set-coordinated-site-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "section-a",
+        "section-b",
+        "lower-node",
+        "water-node",
+        "upper-node",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ],
+      "criteria": "Sections, node details and perspectives describe the same terrace arrangement, irrigation infrastructure, visitor route and observation-node geometry as the masterplan. Recorded node centers, section cuts, terrace elevations and camera relationships remain compatible across the drawings and views. The two Upper Lookout seasonal views preserve the same built space and framing while changing the agricultural seasonal state.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan"
+      ]
+    },
+    {
+      "id": "set-coordinated-node-materials",
+      "requirementId": "R-set-coordinated-node-materials",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "section-a",
+        "section-b",
+        "approach-view",
+        "upper-irrigation",
+        "upper-harvest"
+      ],
+      "criteria": "Visible node decks and shade structures agree with the corresponding node details and material schedule across plans, sections and perspectives. Level paths use compacted crushed stone, decks use textured timber and each node has removable textile shade.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-material-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "lower-node",
+        "water-node",
+        "upper-node",
+        "materials-plants"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "upper-lookout-seasonal-space",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "upper-irrigation",
+      "subjectSlots": [
+        "upper-harvest"
+      ],
+      "notes": "Use the recorded cameras for the three walking perspectives, with the two Upper Lookout views sharing geometry and framing across irrigation and harvest seasons."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "site-analysis-zone-and-plant-facts",
+      "fromSlot": "site-analysis",
+      "toSlots": [
+        "masterplan",
+        "materials-plants",
+        "presentation"
+      ],
+      "extract": [
+        "the zone names Working Terraces and Visitor Edge with their respective areas",
+        "the three plant names Oryza sativa, Juncus effusus and Persicaria hydropiper"
+      ],
+      "notes": "Repeat Working Terraces, 8,640 m², Visitor Edge and 960 m² from the site analysis on the masterplan, materials and planting schedule and presentation; repeat Oryza sativa, Juncus effusus and Persicaria hydropiper with codes OS, JE and PH on those same deliverables."
+    }
+  ]
+}

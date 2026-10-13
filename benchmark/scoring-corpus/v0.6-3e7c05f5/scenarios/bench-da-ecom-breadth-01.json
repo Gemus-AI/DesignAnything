@@ -1,0 +1,170 @@
+{
+  "id": "bench-da-ecom-breadth-01",
+  "title": "ROOMLEAF — Indoor plants, from choosing a spot to opening the box, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "ECOMMERCE",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# ROOMLEAF\n\n## Collection\n- Sales channel: own online shop\n- Purchase unit: one plant\n- Collection wording: ROOMLEAF\n- Purchase wording: Choose one plant\n- Inventory heading: Included with your plant\n- Accessory heading: Sold separately\n\n## Product records\n| SKU | Name | Price | Overall height | Crown width | Leaf appearance |\n|---|---|---|---|---|---|\n| RL-01 | Golden Pothos | EUR 16 | 200–300 mm | 180–260 mm | Green heart-shaped leaves with irregular golden-yellow streaks |\n| RL-02 | Marble Queen Pothos | EUR 24 | 220–320 mm | 200–280 mm | Green heart-shaped leaves with irregular cream marbling |\n\n## Measurements\n- Overall height: nursery-pot base to highest leaf\n- Crown width: widest leaf-to-leaf span\n- Reference bar length: 100 mm\n- Nursery pot: outer rim diameter 120 mm; height 110 mm\n- Saucer: outer diameter 140 mm; height 20 mm\n- Ceramic cover pot: outer diameter 150 mm; height 140 mm\n\n## Materials and colours\n- Nursery pot and saucer: Charcoal #343434 plastic\n- Optional cover pot: Chalk #E8E3D9 ceramic\n- Plant sleeve: unprinted brown paper\n- Care card: white card\n- Plant passport: paper document in a clear sleeve\n\n## Packing inventory per purchase\n| Entry | Quantity | State |\n|---|---|---|\n| Rooted plant | 1 | Selected SKU, rooted in nursery pot |\n| Nursery pot | 1 | Holding the plant and compost |\n| Saucer | 1 | Packed beneath the pot |\n| Paper plant sleeve | 1 | Wrapped around the foliage |\n| Care card | 1 | Packed beside the pot |\n| Plant passport | 1 | In a clear sleeve beside the care card |\n\n## Separate accessory\n- Item: ceramic cover pot\n- Price: EUR 12\n- Purchase relationship: sold separately\n\n## Plant display states\n- Arrival: rooted plant, upright stems, leaves loosely gathered inside paper sleeve\n- Unpacked: same plant, paper sleeve removed, leaves released\n- Identity images: unpacked arrival-day state\n\n## Placement conditions\n- Location: shelf 1000 mm behind a sheer-curtained window\n- Light: bright indirect light\n- Room temperature: 18–26 C\n\n## Care copy\nUnpack on arrival. Remove the paper sleeve. Check the top 20 mm of compost; water when dry. Empty the saucer after watering.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# ROOMLEAF — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | collection-main | Collection main image | 6 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | golden-specification | Golden Pothos specification card | 6 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | marble-specification | Marble Queen Pothos specification card | 6 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | purchase-contents | Purchase contents and separate accessory | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | placement-conditions | Placement conditions for both plants | 6 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | arrival-care | Arrival states and care | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plant-dimensions.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: shop-image-layout.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: window-shelf-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: golden-pothos.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: marble-queen-pothos.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "ROOMLEAF | Indoor plants, from choosing a spot to opening the box\n\nWe sell indoor plants through our own online shop. Build six finished shopping images that help a first-time buyer choose between two plants and prepare a suitable place at home. The collection name is \"ROOMLEAF\"; print it on every image. Print \"Choose one plant\" on the collection main image, both specification cards and the placement image. Each purchase is one plant. RL-01 Golden Pothos costs EUR 16, with an overall height of 200–300 mm and a crown width of 180–260 mm. RL-02 Marble Queen Pothos costs EUR 24, with an overall height of 220–320 mm and a crown width of 200–280 mm. Height is measured from the nursery-pot base to the highest leaf; crown width is the widest leaf-to-leaf span.\n\nBoth plants arrive rooted in a Charcoal #343434 nursery pot, 120 mm in outer rim diameter and 110 mm high. Each order also contains one matching saucer, 140 mm in outer diameter and 20 mm high, one paper plant sleeve, one care card and one plant passport. The optional Chalk #E8E3D9 ceramic cover pot costs EUR 12 separately and measures 150 mm in outer diameter and 140 mm high. Separate the purchase contents from this accessory using the printed labels \"Included with your plant\" and \"Sold separately\". Our placement setting is a shelf 1000 mm behind a sheer-curtained window, with bright indirect light and a room temperature of 18–26 C. The care copy is fixed: \"Unpack on arrival. Remove the paper sleeve. Check the top 20 mm of compost; water when dry. Empty the saucer after watering.\" Arrival views show the current rooted plants, upright stems and loosely gathered leaves inside their sleeves; unpacked views use the same plants with their leaves released.\n\nAudience: Adults buying their first indoor plant, deciding which plant to order, what arrives with it and whether their intended shelf meets the stated conditions.\n\nInputs (attached): 01-client-facts.en.md contains the product records, prices, packing quantities and fixed care copy. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. plant-dimensions.png defines the measurement endpoints, pot geometry and packing quantities. shop-image-layout.png defines the main-image product area, copy band and text margins. golden-pothos.png records the existing RL-01 plant, leaf markings and nursery pot. marble-queen-pothos.png records the existing RL-02 plant, leaf markings and nursery pot. window-shelf-reference.png provides the domestic light and shelf atmosphere.\n\nDeliverables:\n1. One square collection main image comparing both plants, with their SKU codes, names, prices and individual-purchase wording\n2. Two square specification cards, one per SKU, with height and crown ranges, measurement endpoints, nursery-pot dimensions, price and a dimensioned 100 mm reference bar\n3. One landscape contents image with a shared packing inventory for either SKU and a separate ceramic cover-pot accessory panel\n4. One vertical placement image with one shelf scene per SKU, the window-to-shelf distance, light and temperature conditions, SKU names, codes and prices\n5. One portrait arrival-and-care image with a sleeved and an unpacked view of each SKU, its packing items and the complete fixed care copy\n\nAcceptance:\n- The collection main image identifies RL-01 Golden Pothos at EUR 16 and RL-02 Marble Queen Pothos at EUR 24. Its combined plant-and-pot group occupies 85–90% of the canvas width within the upper 80% product area; its copy occupies the bottom 20% band.\n- The two specification cards give RL-01 as 200–300 mm high and 180–260 mm wide, and RL-02 as 220–320 mm high and 200–280 mm wide. Each card shows the 120 mm nursery-pot rim diameter, 110 mm pot height and 100 mm reference bar, with height measured from the pot base and width across the crown.\n- The contents image assigns one rooted plant in one nursery pot, one saucer, one paper sleeve, one care card and one plant passport to each purchase under \"Included with your plant\". Its \"Sold separately\" panel gives the ceramic cover pot as EUR 12, 150 mm in outer diameter and 140 mm high; the included saucer is labelled 140 mm in outer diameter and 20 mm high.\n- The placement image shows each SKU on a shelf 1000 mm behind a sheer-curtained window, with labels for bright indirect light and 18–26 C. Both scenes retain the plant sizes and nursery pots shown on the corresponding specification cards, and identify each SKU and its price.\n- The arrival-and-care image shows two views per SKU: one with loosely gathered leaves inside the paper sleeve and one with the sleeve removed. Each SKU's packing group matches the six inventory entries in the contents image, and the image prints the complete care copy beginning \"Unpack on arrival.\" and ending \"Empty the saucer after watering.\"\n- All six images print \"ROOMLEAF\", use the leaf markings of the corresponding identity attachment and retain Charcoal #343434 nursery pots. The collection main image, both specification cards and placement image print \"Choose one plant\"; text on every image stays within a 5% inset from each canvas edge.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/plant-dimensions.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "ad81d198df914453126bd1632c281ef5dfd9fd8499e2a7b5850979ffb5c6c0af"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/shop-image-layout.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "30a2d31cb7cdbdd925297a4ab929bd1b4b5ec823f1bbed46819b31e324529816"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/window-shelf-reference.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "7e690ff8556fa4941551c94c6a04dfba09ee1636c6bfc54cc88406f49b952096"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/golden-pothos.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "4324e3e895e493d50343ac643c7e24cdb61fb23944c2555e12bd5baef7f00bfb"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-01/marble-queen-pothos.png",
+      "nodeId": "provided-image-5",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "6c498f109bf9c39ca2ad2816321efa45305b24cc67dad5e4dc1e3a2d182a305e"
+    }
+  ]
+}

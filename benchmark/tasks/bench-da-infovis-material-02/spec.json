@@ -1,0 +1,1216 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-infovis-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "data",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "data-brief",
+      "label": "Data brief and chart inventory",
+      "description": "A one-page data brief and chart inventory with fields, chart types, units, carriers, printed wording, national counts, census date and source credits.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "visual-specification",
+      "label": "Visual specification sheet",
+      "description": "One visual specification sheet covering typography, category colors, direct labels, zero baselines, connection widths and endpoint direction.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "national-scale",
+      "label": "National population scale chart",
+      "description": "One national comparison chart with both census counts and the 33.22% cross-province share.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pair-overview",
+      "label": "Ten-pair schematic overview",
+      "description": "One schematic map of all ten selected registration-to-residence pairs on the fixed 31-province grid.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "guangdong-pairs",
+      "label": "Guangdong residence connection map",
+      "description": "One schematic map of the five selected pairs with Guangdong as the residence province.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "zhejiang-pairs",
+      "label": "Zhejiang residence connection map",
+      "description": "One schematic map of the three selected pairs with Zhejiang as the residence province.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pair-ranking",
+      "label": "Selected-pair ranking chart",
+      "description": "One descending bar chart of ten pair estimates with both province names and exact counts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "registration-subtotals",
+      "label": "Registration-province subtotal chart",
+      "description": "One descending comparison chart of seven registration-province subtotals from the ten selected pairs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "residence-subtotals",
+      "label": "Residence-province subtotal chart",
+      "description": "One descending comparison chart of four residence-province subtotals from the ten selected pairs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "phone-explainer",
+      "label": "Portrait phone explainer",
+      "description": "One portrait phone explainer combining the national comparison, ten-pair map and a reading annotation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "a4-summary",
+      "label": "A4 atlas summary",
+      "description": "One A4 summary page with the national comparison, ten-pair map and four residence-province subtotals.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "scope-note",
+      "label": "Census scope and reading note",
+      "description": "A two-page public scope note covering population definitions, date, coverage, estimates, subtotal arithmetic and schematic link meaning.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "atlas-video",
+      "label": "Ten-second atlas introduction",
+      "description": "One 10-second video introducing the national comparison and revealing the ten province connections at fixed endpoints.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "editorial-presentation",
+      "label": "Atlas editorial presentation",
+      "description": "One presentation of at least eight pages reusing the brief, specification, atlas visuals, reader formats, scope explanation and video stills.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "atlas-name",
+      "kind": "text-verbatim",
+      "text": "CHINA RESIDENCE ATLAS",
+      "scope": {
+        "slots": [
+          "national-scale",
+          "pair-overview",
+          "guangdong-pairs",
+          "zhejiang-pairs",
+          "pair-ranking",
+          "registration-subtotals",
+          "residence-subtotals",
+          "phone-explainer",
+          "a4-summary",
+          "scope-note",
+          "atlas-video",
+          "editorial-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "time-label",
+      "kind": "text-verbatim",
+      "text": "Residents at 1 November 2020",
+      "scope": {
+        "slots": [
+          "national-scale",
+          "pair-overview",
+          "guangdong-pairs",
+          "zhejiang-pairs",
+          "pair-ranking",
+          "registration-subtotals",
+          "residence-subtotals",
+          "phone-explainer",
+          "a4-summary",
+          "scope-note",
+          "atlas-video",
+          "editorial-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "estimate-layer-label",
+      "kind": "text-verbatim",
+      "text": "Selected-pair estimates",
+      "scope": {
+        "slots": [
+          "pair-overview",
+          "guangdong-pairs",
+          "zhejiang-pairs",
+          "pair-ranking",
+          "registration-subtotals",
+          "residence-subtotals",
+          "phone-explainer",
+          "a4-summary",
+          "scope-note",
+          "atlas-video",
+          "editorial-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CHINA RESIDENCE ATLAS",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "publication-visual-system",
+      "slots": [
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer"
+      ],
+      "sourceSlots": [
+        "visual-specification"
+      ],
+      "items": [
+        {
+          "item": "Applications follow the specification's typography, heading hierarchy, rules, chart treatment and direct-label conventions, allowing reflow for the phone carrier.",
+          "kind": "consistency"
+        },
+        {
+          "item": "White grounds, black typography and rules, blue #0072B2 cross-province figures and pair links, orange #E69F00 within-province figures, and light-gray context tiles retain their assigned meanings throughout.",
+          "kind": "compliance"
+        },
+        {
+          "item": "National census counts and selected-pair estimates remain visibly distinct statistical layers, with provincial comparisons explicitly limited to the selected records.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "schematic-map-family",
+      "slots": [
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "phone-explainer"
+      ],
+      "sourceSlots": [
+        "pair-overview"
+      ],
+      "items": [
+        {
+          "item": "All map instances preserve the overview's province-key assignments and fixed relative tile positions while allowing overall resizing and layout adaptation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Destination subsets and the reused phone overview preserve their corresponding pair endpoints, proportional-width encoding, residence-end direction convention and explanation of link meaning.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The commission requires a consistent editorial and chart system and a fixed schematic grid, rather than a logo, product, character or physical space tracked between images."
+    },
+    "brandToken": "CHINA RESIDENCE ATLAS"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "national-scale",
+      "pair-overview",
+      "guangdong-pairs",
+      "zhejiang-pairs",
+      "pair-ranking",
+      "registration-subtotals",
+      "residence-subtotals",
+      "phone-explainer"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge editorial information design and readability, excluding photorealistic materials, lighting, geographic realism of the prescribed schematic and exact canvas pixel dimensions."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "data-brief",
+        "visual-specification",
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer",
+        "a4-summary",
+        "scope-note",
+        "editorial-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "visual-specification",
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-data-brief",
+      "requirementId": "R-format-data-brief",
+      "method": "artifact-property",
+      "targetSlots": [
+        "data-brief"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-visual-specification",
+      "requirementId": "R-format-visual-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "visual-specification"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-national-scale",
+      "requirementId": "R-format-national-scale",
+      "method": "artifact-property",
+      "targetSlots": [
+        "national-scale"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pair-overview",
+      "requirementId": "R-format-pair-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pair-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-guangdong-pairs",
+      "requirementId": "R-format-guangdong-pairs",
+      "method": "artifact-property",
+      "targetSlots": [
+        "guangdong-pairs"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-zhejiang-pairs",
+      "requirementId": "R-format-zhejiang-pairs",
+      "method": "artifact-property",
+      "targetSlots": [
+        "zhejiang-pairs"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pair-ranking",
+      "requirementId": "R-format-pair-ranking",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pair-ranking"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-registration-subtotals",
+      "requirementId": "R-format-registration-subtotals",
+      "method": "artifact-property",
+      "targetSlots": [
+        "registration-subtotals"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-residence-subtotals",
+      "requirementId": "R-format-residence-subtotals",
+      "method": "artifact-property",
+      "targetSlots": [
+        "residence-subtotals"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-phone-explainer",
+      "requirementId": "R-format-phone-explainer",
+      "method": "artifact-property",
+      "targetSlots": [
+        "phone-explainer"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-a4-summary",
+      "requirementId": "R-format-a4-summary",
+      "method": "artifact-property",
+      "targetSlots": [
+        "a4-summary"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-scope-note",
+      "requirementId": "R-format-scope-note",
+      "method": "artifact-property",
+      "targetSlots": [
+        "scope-note"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-atlas-video",
+      "requirementId": "R-format-atlas-video",
+      "method": "manual",
+      "targetSlots": [
+        "atlas-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-editorial-presentation",
+      "requirementId": "R-format-editorial-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "editorial-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "brief-inventory",
+      "requirementId": "R-brief-inventory",
+      "method": "content",
+      "targetSlots": [
+        "data-brief"
+      ],
+      "criteria": "The brief occupies one page and inventories every commissioned chart and map with its data fields, visualization type, measurement unit, intended carrier and planned printed text. It records Cross-province as 124,837,153 people, Within-province as 250,979,606 people, the census reference date of 2020-11-01, and the appropriate national and estimate source credits. Organization may vary; missing inventory fields, omitted visualizations or incorrect baseline facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ]
+    },
+    {
+      "id": "visual-specification-content",
+      "requirementId": "R-visual-specification-content",
+      "method": "content",
+      "targetSlots": [
+        "visual-specification"
+      ],
+      "criteria": "The sheet specifies sans-serif typography with bold headings and regular labels, white backgrounds, black text and rules, blue #0072B2 for cross-province figures and connections, orange #E69F00 for within-province figures, and #F2F2F2 context tiles. It defines textual category identification, people and percentage units, zero bar baselines, widths proportional to estimate_people and direction markers at residence endpoints. Written specifications or clearly labeled demonstrations count; omission or reversal of a required convention fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ]
+    },
+    {
+      "id": "process-foundations",
+      "requirementId": "R-process-foundations",
+      "method": "diagnostic",
+      "targetSlots": [
+        "data-brief",
+        "visual-specification"
+      ],
+      "criteria": "Treat the brief as the factual foundation and the specification as the visual foundation for downstream evaluation. Exported files alone do not establish creation chronology; this diagnostic identifies the intended source roles without inventing a timestamp or production-log requirement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ]
+    },
+    {
+      "id": "image-population-records",
+      "requirementId": "R-image-population-records",
+      "method": "visual",
+      "targetSlots": [
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer"
+      ],
+      "criteria": "Read every population and percentage label against attachment 03. National categories must retain 124,837,153 and 250,979,606 people; the national chart must show the numerator 124,837,153, denominator 375,816,759, multiplication by 100 and rounded result 33.22%. Pair values must match their named registration and residence records, and subtotal charts must explicitly identify their ten-pair scope. The selection total, wherever shown, is 24,300,000. Equivalent mathematical notation and unambiguous numeric grouping are allowed; changed values, incorrect category associations, missing calculation steps or presenting selected-pair estimates as national census totals fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "document-population-records",
+      "requirementId": "R-document-population-records",
+      "method": "content",
+      "targetSlots": [
+        "a4-summary",
+        "scope-note",
+        "editorial-presentation"
+      ],
+      "criteria": "Read prose, tables and embedded chart labels against attachment 03, including each pair's province association and each subtotal's constituents. The A4 summary and presentation must contain both national counts. The scope note must state the calculation using 124,837,153 over 375,816,759, multiplied by 100 and rounded to 33.22%. National counts and editorial estimates must remain distinct, and provincial comparisons must describe the selected ten-pair universe. Numeric punctuation and equivalent mathematical notation may vary; conflicting numbers, omitted required counts or a broader implied subtotal universe fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ]
+    },
+    {
+      "id": "map-grid-and-connections",
+      "requirementId": "R-map-grid-and-connections",
+      "method": "visual",
+      "targetSlots": [
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "phone-explainer"
+      ],
+      "criteria": "Every map, including the phone's reused overview, preserves all 31 key-to-province assignments and ordinal positions from attachment 04, with endpoints at tile centers. The overview contains P01–P10; Guangdong contains P01, P02, P05, P07 and P09; Zhejiang contains P03, P06 and P08. Width ratios follow estimate_people, and direction markers terminate at the residence tile. Each map explains the household-registration-to-current-residence relationship. Scaling and connection routing may adapt to the carrier while preserving positions and endpoints; missing tiles, swapped keys, extra or missing links, reversed arrows or arbitrary widths fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "chart-and-map-reading-conventions",
+      "requirementId": "R-chart-and-map-reading-conventions",
+      "method": "visual",
+      "targetSlots": [
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer"
+      ],
+      "criteria": "Inspect each standalone and embedded chart or map for a title, a people count unit, the corresponding source credit and an explanatory reading annotation. Cross-province marks and pair links use blue, while within-province marks use orange, following the specified colors. Category names remain identifiable from direct text labels when color is removed. Every bar value axis starts at zero. Wording and label placement may adapt to available space; color-only identification, missing reading aids, reversed meanings or truncated bar baselines fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "visual-specification"
+      ]
+    },
+    {
+      "id": "image-layer-labels-and-credits",
+      "requirementId": "R-image-layer-labels-and-credits",
+      "method": "visual",
+      "targetSlots": [
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer"
+      ],
+      "criteria": "The atlas name and prescribed time label are visibly readable on each final image. Provincial estimates carry their prescribed layer label adjacent to the relevant material. National material is credited as National Bureau of Statistics, 2021; pair estimates and their subtotals are credited as Urban Ledger estimates, 2026. A clearly associated shared credit may serve a single coherent layer; a remote or ambiguous credit, missing layer label or credit attached to the wrong statistical layer fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "pair-ranking-completeness",
+      "requirementId": "R-pair-ranking-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "pair-ranking"
+      ],
+      "criteria": "Ten bars descend in this order: Hunan→Guangdong 3,800,000; Guangxi→Guangdong 3,200,000; Anhui→Zhejiang 2,800,000; Anhui→Jiangsu 2,600,000; Hubei→Guangdong 2,400,000; Henan→Zhejiang 2,200,000; Henan→Guangdong 2,000,000; Jiangxi→Zhejiang 1,900,000; Sichuan→Guangdong 1,800,000; Anhui→Shanghai 1,600,000. Both full province names sit beside each corresponding bar with registration and residence distinguishable. Bar orientation may vary; omitted or duplicated pairs, incorrect order or ambiguous endpoint labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "provincial-subtotal-comparisons",
+      "requirementId": "R-provincial-subtotal-comparisons",
+      "method": "visual",
+      "targetSlots": [
+        "registration-subtotals",
+        "residence-subtotals"
+      ],
+      "criteria": "The registration chart descends through Anhui 7,000,000; Henan 4,200,000; Hunan 3,800,000; Guangxi 3,200,000; Hubei 2,400,000; Jiangxi 1,900,000; Sichuan 1,800,000. The residence chart descends through Guangdong 13,200,000; Zhejiang 6,900,000; Jiangsu 2,600,000; Shanghai 1,600,000. Labels distinguish the two grouping fields and state the selected-pair scope. Layout may vary; missing provinces, reversed grouping, non-descending order or interpreting these as complete provincial totals fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "phone-composition",
+      "requirementId": "R-phone-composition",
+      "method": "visual",
+      "targetSlots": [
+        "phone-explainer"
+      ],
+      "criteria": "A portrait composition combines a readable national comparison, the complete ten-pair schematic and an annotation that helps the reader interpret the information. Both national categories and counts survive adaptation, and the map retains its full grid and selected relationships. Reflow and resizing are allowed; substituting a partial map, omitting a component or reducing essential labels to unreadability fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "national-scale",
+        "pair-overview"
+      ]
+    },
+    {
+      "id": "summary-composition-and-map-reuse",
+      "requirementId": "R-summary-composition-and-map-reuse",
+      "method": "content",
+      "targetSlots": [
+        "a4-summary"
+      ],
+      "criteria": "One summary page combines both national categories and counts, the complete overview map and all four residence-province subtotals. Read the embedded map against attachment 04 and the source overview: all 31 key positions, ten correct tile-center connections, proportional widths and residence-end direction markers remain intact. Component arrangement may change for the page; omitted sections, missing map information or altered statistical scope fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "sourceSlots": [
+        "national-scale",
+        "pair-overview",
+        "residence-subtotals"
+      ]
+    },
+    {
+      "id": "scope-explanation",
+      "requirementId": "R-scope-explanation",
+      "method": "content",
+      "targetSlots": [
+        "scope-note"
+      ],
+      "criteria": "Two pages explain in accessible English the reference time of 2020-11-01 at 00:00 China Standard Time; residence-registration separation across townships or subdistricts with absence exceeding six months; and floating population after excluding separation within municipal districts of the same municipality or prefecture-level city. Explain cross- versus within-province classification, the 31-mainland-unit frame plus active-service military personnel, and exclusion of Hong Kong, Macao and Taiwan residents and foreign nationals residing in the mainland. Identify the ten pairs as Urban Ledger estimates compiled in 2026 for census-time residents, rounded to 100,000 people; explain ranking within that selection and subtotal sums of its records. Describe links as schematic registration–residence relationships rather than travel routes. Paraphrase is allowed; omitted topics or contradictory definitions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ]
+    },
+    {
+      "id": "video-complete-review",
+      "requirementId": "R-video-complete-review",
+      "method": "manual",
+      "targetSlots": [
+        "atlas-video"
+      ],
+      "criteria": "Review the whole video and its duration: it runs for 10 seconds, begins with the national comparison and both exact national counts, then reveals all ten supplied connections. Check displayed values and percentages against attachment 03. The map retains the 31 keys and positions from attachment 04, tile-center endpoints, estimate-proportional widths and residence-end direction markers. It explains registration-to-residence link meaning, distinguishes census counts from selected-pair estimates, and visibly includes the required atlas name, time label, estimate label and correctly associated source-credit wording. Chart and map titles, people units, annotations and direct labels remain readable; bar axes, if present, begin at zero. Verify blue and orange retain their meanings and that category labels survive grayscale. Animation style may vary; wrong sequencing, duration, facts, endpoints, encodings or missing required text fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "data-brief",
+        "visual-specification",
+        "national-scale",
+        "pair-overview"
+      ]
+    },
+    {
+      "id": "presentation-structure",
+      "requirementId": "R-presentation-structure",
+      "method": "content",
+      "targetSlots": [
+        "editorial-presentation"
+      ],
+      "criteria": "The presentation has at least eight pages. Its opening page visibly states the atlas name and census date. Later pages cover the visual specification, national comparison, overview and both destination maps, pair ranking and both provincial subtotal charts, phone and summary applications, and scope explanation. Several related components may share a page if readable; insufficient pages or a missing required topic fails. Video duration is evaluated in the dedicated manual check.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ]
+    },
+    {
+      "id": "presentation-reuse",
+      "requirementId": "R-presentation-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "editorial-presentation"
+      ],
+      "criteria": "Find recognizable visible reuse from every listed source, including readable brief material and stills corresponding to the delivered video. Scaling, framing and page arrangement may change while preserving identifying content and required chart information. A textual mention alone, an unrelated replacement, or omission of any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "sourceSlots": [
+        "data-brief",
+        "visual-specification",
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer",
+        "a4-summary"
+      ]
+    },
+    {
+      "id": "carrier-orientation",
+      "requirementId": "R-carrier-orientation",
+      "method": "visual",
+      "targetSlots": [
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer"
+      ],
+      "criteria": "The standalone web charts and maps use landscape compositions, and the phone explainer uses a portrait composition. Judge orientation and whether required content fits its carrier without clipping; do not test exact pixel dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "document-labels-and-embedded-conventions",
+      "requirementId": "R-document-labels-and-embedded-conventions",
+      "method": "content",
+      "targetSlots": [
+        "a4-summary",
+        "scope-note",
+        "editorial-presentation"
+      ],
+      "criteria": "Each document visibly contains the required atlas name and time label. Provincial estimate material carries the prescribed estimate label; national material uses National Bureau of Statistics, 2021 and estimate material uses Urban Ledger estimates, 2026 beside the corresponding layer. Inspect embedded charts and maps for titles, people units, reading annotations, direct labels, zero bar baselines and the prescribed category colors. Reused maps retain all 31 grid keys and positions, their appropriate ten-, five- or three-link selection, proportional widths, residence-end markers and link-meaning explanation. Reflow is allowed; detached credits, lost labels, color-only categories or changed map geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "sourceSlots": [
+        "visual-specification",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs"
+      ]
+    },
+    {
+      "id": "set-publication-visual-system",
+      "requirementId": "R-set-publication-visual-system",
+      "method": "visual",
+      "targetSlots": [
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer"
+      ],
+      "criteria": "Applications follow the specification's typography, heading hierarchy, rules, chart treatment and direct-label conventions, allowing reflow for the phone carrier. White grounds, black typography and rules, blue #0072B2 cross-province figures and pair links, orange #E69F00 within-province figures, and light-gray context tiles retain their assigned meanings throughout. National census counts and selected-pair estimates remain visibly distinct statistical layers, with provincial comparisons explicitly limited to the selected records.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "visual-specification"
+      ]
+    },
+    {
+      "id": "set-schematic-map-family",
+      "requirementId": "R-set-schematic-map-family",
+      "method": "visual",
+      "targetSlots": [
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "phone-explainer"
+      ],
+      "criteria": "All map instances preserve the overview's province-key assignments and fixed relative tile positions while allowing overall resizing and layout adaptation. Destination subsets and the reused phone overview preserve their corresponding pair endpoints, proportional-width encoding, residence-end direction convention and explanation of link meaning.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/03-population-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-02/04-province-grid.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "pair-overview"
+      ]
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "brief-date-and-sources",
+      "fromSlot": "data-brief",
+      "toSlots": [
+        "national-scale",
+        "pair-overview",
+        "guangdong-pairs",
+        "zhejiang-pairs",
+        "pair-ranking",
+        "registration-subtotals",
+        "residence-subtotals",
+        "phone-explainer",
+        "a4-summary",
+        "scope-note",
+        "atlas-video",
+        "editorial-presentation"
+      ],
+      "extract": [
+        "census reference date",
+        "national-count source-credit wording",
+        "selected-pair and subtotal source-credit wording"
+      ],
+      "notes": "Repeat the brief's census date and relevant source credit on every chart, map, phone explainer, A4 summary, scope note, video and presentation; repeat both national counts on the national chart, phone explainer, A4 summary, video and presentation."
+    },
+    {
+      "id": "brief-national-counts",
+      "fromSlot": "data-brief",
+      "toSlots": [
+        "national-scale",
+        "phone-explainer",
+        "a4-summary",
+        "atlas-video",
+        "editorial-presentation"
+      ],
+      "extract": [
+        "cross-province national count",
+        "within-province national count"
+      ],
+      "notes": "Repeat the brief's census date and relevant source credit on every chart, map, phone explainer, A4 summary, scope note, video and presentation; repeat both national counts on the national chart, phone explainer, A4 summary, video and presentation."
+    }
+  ]
+}

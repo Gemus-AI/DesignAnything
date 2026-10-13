@@ -1,0 +1,154 @@
+{
+  "id": "bench-da-ui-material-02",
+  "title": "RIDGE MINI — Cycling computer screens for riding, navigation and pause, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "UIUX",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# RIDGE Mini\n\n## Product\n- Product name: RIDGE Mini\n- Project heading: RIDGE MINI\n- Product type: three-button cycling computer\n- Primary audience: cyclists reading a handlebar-mounted device during brief glances\n- Interface pages: DASHBOARD; NAVIGATION\n- Recording modes: RECORDING; PAUSED\n- Operating reference heading: Button-and-state quick reference\n\n## Hardware\n- Body width: 64 mm\n- Body height: 90 mm\n- Active display width: 48 mm\n- Active display height: 64 mm\n- Display offset from body left edge: 8 mm\n- Display offset from body top edge: 8 mm\n- Display orientation: portrait\n- Addressable display: 240 × 320 pixels\n- Display input: physical buttons\n- Screen palette: opaque #000000; opaque #FFFFFF\n- Available button event: short press\n- P: left edge; center y=45 mm; PAGE\n- R: right edge; center y=30 mm; RECORD\n- B: right edge; center y=60 mm; LIGHT\n- Coordinate origin: top-left of upright device body\n\n## State facts\n- P effect: DASHBOARD/NAVIGATION toggle; recording, data and alerts preserved\n- R effect: RECORDING/PAUSED toggle; current page preserved\n- B effect: backlight on/off toggle; page, recording and alerts preserved\n- Recording legend: P PAGE; R PAUSE; B LIGHT\n- Paused legend: P PAGE; R RESUME; B LIGHT\n- Paused recorded values: trip distance and ride time frozen\n- GPS-unavailable measurements: speed -- km/h; turn distance -- m\n- GPS-unavailable trip label: LAST FIX\n- GPS recovery: automatic restoration of live navigation; recording mode preserved\n- Low-battery threshold: 10% or below\n- Low-battery snapshot: 8%\n- Simultaneous alerts: GPS-unavailable navigation data with both GPS LOST and LOW BATTERY communicated\n\n## Snapshot index\n| Snapshot | Page | Recording | Speed | Trip | Ride time | Battery | GPS |\n|---|---|---|---|---|---|---|---|\n| Riding dashboard | DASHBOARD | RECORDING | 26.2 km/h | TRIP 18.4 km | 00:42:16 | 68% | GPS OK |\n| Turn navigation | NAVIGATION | RECORDING | 26.2 km/h | — | — | 68% | GPS OK |\n| Paused dashboard | DASHBOARD | PAUSED | 0.0 km/h | TRIP 18.4 km | 00:42:16 | 68% | GPS OK |\n| GPS-lost navigation | NAVIGATION | RECORDING | -- km/h | LAST FIX 18.4 km | 00:42:31 | 67% | GPS LOST |\n| Low-battery dashboard | DASHBOARD | RECORDING | 25.1 km/h | TRIP 68.6 km | 02:42:45 | 8% | GPS OK |\n\n- Table em dash: field outside that snapshot's visible field set\n- Turn navigation: left-turn arrow; TURN LEFT; 120 m; Willow Lane; REMAINING 6.2 km\n- GPS-lost navigation: Position unavailable; Turn guidance paused; -- m\n- Low-battery dashboard alert: LOW BATTERY\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# RIDGE MINI — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | riding-dashboard | Riding dashboard | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | turn-navigation | Turn navigation | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | paused-dashboard | Paused dashboard | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | gps-lost-navigation | GPS-lost navigation | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | low-battery-dashboard | Low-battery dashboard | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | button-state-reference | Button-and-state quick reference | 6 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: hardware-and-controls.en.md",
+            "config": {
+              "text": "# RIDGE Mini: hardware and fixed control contract\n\n## Display and body\n| Property | Value |\n|---|---|\n| Display orientation | Portrait |\n| Display technology | Non-touch |\n| Addressable display | Exactly 240 by 320 pixels |\n| Native screen artwork | 240 by 320 pixels |\n| Screen artwork count and format | Five PNGs |\n| Active display area | 48 by 64 mm |\n| Screen pixel values | Opaque black #000000; opaque white #FFFFFF |\n| Screen opacity | 100% |\n| Edge rendering | Binary black/white pixel edges |\n| Background options | Black or white |\n| Status differentiation | Explicit words or distinct shapes |\n| Companion sheet palette | Wider palette available |\n| Upright front-view body | 64 mm wide by 90 mm high |\n| Display left offset | 8 mm from body left edge |\n| Display top offset | 8 mm from body top edge |\n| Coordinate origin | Body top-left |\n| P center | Left edge; y=45 mm |\n| R center | Right edge; y=30 mm |\n| B center | Right edge; y=60 mm |\n| Button geometry scope | Key identity and center positions |\n| Interaction inventory | Three physical keys; short press |\n\n## Three fixed buttons\n| Key | Fixed meaning | Result | Preserved state |\n|---|---|---|---|\n| P | PAGE | Current page toggles between DASHBOARD and NAVIGATION | Recording mode, data and alerts; PAUSED remains PAUSED |\n| R | RECORD | RECORDING toggles to PAUSED; PAUSED toggles to RECORDING | Current page and alert conditions |\n| B | LIGHT | Display backlight toggles on/off | Page, recording mode and alerts |\n\n| Recording mode | On-screen three-key legend |\n|---|---|\n| RECORDING | P PAGE; R PAUSE; B LIGHT |\n| PAUSED | P PAGE; R RESUME; B LIGHT |\n\n- Legend association: physical key letters\n- R PAUSE and R RESUME: opposite directions of the same RECORD toggle\n- Backlight state icon: optional\n- B meaning with either icon treatment: LIGHT\n- Alert clearance mechanism: corresponding condition recovery\n- Session scope: ongoing ride with recording pause/resume\n\n## Data semantics\n| Field | Meaning | Unit or representation |\n|---|---|---|\n| Speed | Current measured speed | km/h |\n| Trip distance | Accumulated recorded distance | km |\n| Ride time | Accumulated recording time | HH:MM:SS |\n| Battery | Remaining battery percentage | % |\n| GPS | Position availability | Available or unavailable |\n| Maneuver direction | Live direction when position is available | Turn arrow and direction wording |\n| Turn distance | Distance to maneuver when position is available | m |\n| Street | Maneuver street when position is available | Street name |\n| Remaining route distance | Live remaining route distance when position is available | km |\n\n## Recording and GPS state combinations\n| Recording | GPS | Speed | Recorded trip distance | Ride time | Guidance |\n|---|---|---|---|---|---|\n| RECORDING | Available | Current measurement updates | Accumulates | Accumulates | Live maneuver direction and distance |\n| PAUSED | Available | Current measurement; supplied snapshot 0.0 km/h | Frozen until R resumes | Frozen until R resumes | Position-based guidance remains available |\n| RECORDING | Unavailable | -- km/h | Last recorded distance, labeled LAST FIX | Continues accumulating | -- m; Position unavailable; Turn guidance paused |\n| PAUSED | Unavailable | -- km/h | Frozen last recorded distance, labeled LAST FIX | Frozen until R resumes | -- m; Position unavailable; Turn guidance paused |\n\n- Paused snapshot speed 0.0 km/h: available measured value\n- GPS loss and recovery: recording mode preserved\n- GPS-unavailable live turn arrow: hidden\n- GPS-unavailable street: hidden\n- GPS-unavailable route-distance estimate: hidden\n- GPS-lost snapshot last-known route distance: hidden\n- GPS return: live navigation direction and distance restored automatically\n- GPS return button action: automatic transition\n- Recovery representation: companion-sheet state description\n\n## Battery states\n| Battery condition | Visible status | Recording and navigation effect | Clearance |\n|---|---|---|---|\n| Above 10% | Actual battery percentage | Current recording and navigation state preserved | Normal battery state |\n| 10% or below | LOW BATTERY and actual percentage | Current recording and navigation state preserved | Battery level rises above 10% |\n\n- Supplied low-battery snapshot: 8%\n- Simultaneous GPS loss and low battery: GPS-unavailable data rules with both alerts visible\n- Combined-alert representation: companion-sheet state description\n- Recording/GPS/battery combinations: 2 × 2 × 2 = 8\n\n## Final companion sheet content\n- Title: Button-and-state quick reference\n- Product name: RIDGE Mini\n- Purpose: final operating aid\n- Front-view geometry: proportional body and active display\n- Geometry labels: body 64 × 90 mm; display 48 × 64 mm; left/top offsets 8 mm; P y=45 mm; R y=30 mm; B y=60 mm\n- Button orientation: P left; R upper-right; B lower-right\n- Button behavior: three fixed short-press meanings; R pause/resume with current page preserved\n- State table axes: RECORDING/PAUSED; GPS available/lost; normal/low battery\n- State table content: updating values; frozen values; unavailable values; automatic condition clearance; combined GPS-loss/low-battery behavior\n- Page control: P changes only page\n- Backlight control: B changes only backlight\n- Screen thumbnails: five finished screens with role labels and state associations\n- Thumbnail text: reduced-size reproduction\n- Reference annotations: readable at sheet viewing size\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: state-snapshots.en.md",
+            "config": {
+              "text": "# Five required screen snapshots\n\n## Snapshot relationship\n- Snapshot count: 5\n- Relationship: independent snapshots from one ride\n- Chronology: individual sampled states\n- Visible copy basis: exact words, capitalization, numeric precision and units in the records below\n- Label wrapping: available\n- Unit placement: beside or immediately below the associated number\n- Interface copy source: visible-field records\n- Attachment headings and snapshot names: reference labels\n- Metric inventory: fields listed for each snapshot\n\n## Riding dashboard\n| Field | Visible value |\n|---|---|\n| Status | RECORDING |\n| Page | DASHBOARD |\n| Speed | 26.2 km/h |\n| Trip distance | 18.4 km |\n| Trip label | TRIP |\n| Ride time | 00:42:16 |\n| Ride time label | RIDE TIME |\n| Battery | 68% |\n| GPS state | GPS OK |\n| Key legend | P PAGE; R PAUSE; B LIGHT |\n\n- Primary reading: speed\n- Secondary readings: trip distance and ride time\n- Page content: dashboard readings and status\n\n## Turn navigation\n| Field | Visible value |\n|---|---|\n| Status | RECORDING |\n| Page | NAVIGATION |\n| Maneuver symbol | Left-turn arrow |\n| Maneuver text | TURN LEFT |\n| Turn distance | 120 m |\n| Street | Willow Lane |\n| Route distance remaining | 6.2 km |\n| Remaining route label | REMAINING |\n| Speed | 26.2 km/h |\n| Battery | 68% |\n| GPS state | GPS OK |\n| Key legend | P PAGE; R PAUSE; B LIGHT |\n\n- Primary information: left turn and 120 m\n- Secondary reading: speed\n- 120 m meaning: distance to next maneuver\n- 6.2 km meaning: full remaining route distance\n- Navigation representation: arrow and supplied text\n- Optional map content scope: supplied maneuver facts\n\n## Paused dashboard\n| Field | Visible value |\n|---|---|\n| Status | PAUSED |\n| Page | DASHBOARD |\n| Speed | 0.0 km/h |\n| Trip distance | 18.4 km |\n| Trip label | TRIP |\n| Ride time | 00:42:16 |\n| Ride time label | RIDE TIME |\n| Battery | 68% |\n| GPS state | GPS OK |\n| Key legend | P PAGE; R RESUME; B LIGHT |\n\n- Status hierarchy: prominent PAUSED\n- Field identities: consistent with Riding dashboard\n- Frozen recorded trip distance: 18.4 km\n- Frozen ride time: 00:42:16\n- Speed interpretation: available current measurement of 0.0 km/h\n- Available actions: page toggle; recording resume; backlight toggle\n\n## GPS-lost navigation\n| Field | Visible value |\n|---|---|\n| Status | RECORDING |\n| Page | NAVIGATION |\n| Alert | GPS LOST |\n| Explanation | Position unavailable |\n| Guidance state | Turn guidance paused |\n| Turn distance | -- m |\n| Speed | -- km/h |\n| Last recorded trip distance | 18.4 km |\n| Last recorded trip label | LAST FIX |\n| Ride time | 00:42:31 |\n| Ride time label | RIDE TIME |\n| Battery | 67% |\n| Key legend | P PAGE; R PAUSE; B LIGHT |\n\n- Live turn arrow visibility: hidden\n- Willow Lane visibility: hidden\n- Remaining-route distance visibility: hidden\n- Recording status: RECORDING remains visible\n- Guidance status: paused because positioning is unavailable\n- Unavailable measurement marker: --\n- Alert clearance: positioning returns automatically\n- R function during GPS loss: recording toggle\n\n## Low-battery dashboard\n| Field | Visible value |\n|---|---|\n| Status | RECORDING |\n| Page | DASHBOARD |\n| Speed | 25.1 km/h |\n| Trip distance | 68.6 km |\n| Trip label | TRIP |\n| Ride time | 02:42:45 |\n| Ride time label | RIDE TIME |\n| Battery alert | LOW BATTERY |\n| Battery | 8% |\n| GPS state | GPS OK |\n| Key legend | P PAGE; R PAUSE; B LIGHT |\n\n- Reading hierarchy: speed, trip distance and ride time readable alongside the reminder\n- Recording mode: RECORDING\n- GPS availability: available\n- Available actions: page toggle; recording pause; backlight toggle\n\n## Cross-screen reading contract\n- Shared vocabulary: field names, units and key identities\n- Shared status language: recognizable treatments across all five screens\n- Layout flexibility: navigation and alerts can change space allocation\n- Native reading size: 240 by 320 pixels\n- Text visibility: legible, fully within the display, with clear separation\n- State differentiation: explicit words or distinct shapes\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: device-front-geometry.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: device-identity.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: handlebar-daylight-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "RIDGE MINI | Cycling computer screens for riding, navigation and pause\n\nWe need five finished interface screens and a final operating reference for RIDGE Mini, our three-button cycling computer. Riders need to pick out speed, the next turn and recording status during a brief glance at the handlebars. The portrait display has an active area of 48 × 64 mm inside a 64 × 90 mm body, starting 8 mm from the left and top edges. The screen uses opaque black #000000 and opaque white #FFFFFF; interaction is through short presses of P, R and B.\n\nP changes between DASHBOARD and NAVIGATION, R toggles RECORDING and PAUSED, and B toggles the backlight. These meanings carry through every page and alert. The five supplied snapshots set the exact readings and wording. Print \"RIDGE Mini\" and the heading \"Button-and-state quick reference\" on the operating reference.\n\nAudience: cyclists who need quick readings, and our product and interface teams choosing the screen layouts and operating reference for release.\n\nInputs (attached): 01-client-facts.en.md contains the product facts and snapshot index. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. hardware-and-controls.en.md contains display geometry, button positions and state behavior. state-snapshots.en.md contains every required screen field and reading. device-front-geometry.png fixes the body, display and button geometry. device-identity.png supplies the recognizable housing and physical key arrangement. handlebar-daylight-reference.png supplies the outdoor viewing context.\n\nDeliverables:\n1. One Riding dashboard screen: RECORDING, DASHBOARD, primary speed 26.2 km/h, TRIP 18.4 km, RIDE TIME 00:42:16, battery 68%, GPS OK, and P PAGE / R PAUSE / B LIGHT\n2. One Turn navigation screen: RECORDING, NAVIGATION, a primary left-turn arrow with TURN LEFT and 120 m, Willow Lane, REMAINING 6.2 km, secondary speed 26.2 km/h, battery 68%, GPS OK, and P PAGE / R PAUSE / B LIGHT\n3. One Paused dashboard screen: prominent PAUSED, DASHBOARD, speed 0.0 km/h, TRIP 18.4 km, RIDE TIME 00:42:16, battery 68%, GPS OK, and P PAGE / R RESUME / B LIGHT\n4. One GPS-lost navigation screen: RECORDING, NAVIGATION, GPS LOST, Position unavailable, Turn guidance paused, turn distance -- m, speed -- km/h, LAST FIX 18.4 km, RIDE TIME 00:42:31, battery 67%, and P PAGE / R PAUSE / B LIGHT\n5. One Low-battery dashboard screen: RECORDING, DASHBOARD, speed 25.1 km/h, TRIP 68.6 km, RIDE TIME 02:42:45, LOW BATTERY, 8%, GPS OK, and P PAGE / R PAUSE / B LIGHT\n6. One single-page Button-and-state quick reference with a dimensioned device front, all three button functions, an eight-combination recording/GPS/battery state table, and five labeled thumbnails of the finished screens\n\nAcceptance:\n- All five screens fit the portrait 48 × 64 mm active display, use opaque #000000 and #FFFFFF, and retain legible, uncropped text at the native display size stated in hardware-and-controls.en.md. Status differences use explicit words or distinct shapes.\n- The five screens reproduce their listed fields, spelling, precision and units. Riding dashboard gives speed the largest numeric treatment; Turn navigation gives the left arrow and 120 m the strongest hierarchy; Paused dashboard retains the dashboard field identities and the frozen 18.4 km and 00:42:16 readings.\n- All five screens carry P PAGE and B LIGHT. Riding dashboard, Turn navigation, GPS-lost navigation and Low-battery dashboard carry R PAUSE; Paused dashboard carries R RESUME. The quick reference maps P to page only, R to recording only and B to backlight only.\n- GPS-lost navigation shows -- for unavailable speed and turn distance, LAST FIX for 18.4 km, and RECORDING alongside Turn guidance paused. Its guidance area contains the supplied unavailable-state text. Low-battery dashboard keeps RECORDING, GPS OK and all three ride readings visible beside LOW BATTERY and 8%.\n- The quick reference prints RIDGE Mini and Button-and-state quick reference, labels the 64 × 90 mm body, 48 × 64 mm display and 8 mm offsets, and places P left at y=45 mm, R right at y=30 mm and B right at y=60 mm.\n- The quick reference links all five finished thumbnails to their states. Its eight-combination table covers RECORDING/PAUSED, GPS available/unavailable and battery above 10%/at or below 10%, including updating and frozen values, unavailable measurements, automatic GPS recovery, the battery threshold and simultaneous GPS loss with low battery.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-02/device-front-geometry.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "45b946dfd41f11975609d57807324ef7de2a368bf9614da5529ecef0d64fc033"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-02/device-identity.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "1335256b7e80c6b1421917f5db3fd6eac3aa09e8dabca352d84c33c0daf8a81f"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-02/handlebar-daylight-reference.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "3465a4ba3509ea0b42225793c52c2d3076966497e768a2aab1f9a375d81560c9"
+    }
+  ]
+}

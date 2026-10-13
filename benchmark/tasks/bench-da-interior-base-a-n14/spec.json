@@ -1,0 +1,1100 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-interior-base-a-n14",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "functional-schedule",
+      "label": "Functional and furniture schedule",
+      "description": "One functional and furniture schedule recording five zones, areas, capacities, quantities and dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "direction-one",
+      "label": "Layout direction one",
+      "description": "One first layout direction board comparing runner circulation, cafe circulation and quiet seating.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-two",
+      "label": "Layout direction two",
+      "description": "One second layout direction board comparing runner circulation, cafe circulation and quiet seating.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-three",
+      "label": "Layout direction three",
+      "description": "One third layout direction board comparing runner circulation, cafe circulation and quiet seating.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "selection-record",
+      "label": "Selected layout record",
+      "description": "One selection record naming the chosen direction and its circulation, seating and service decisions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "furnished-plan",
+      "label": "Developed furnished plan",
+      "description": "One furnished plan with zone areas, visitor routes, furniture, equipment, service connections, clearances and cameras.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "counter-section",
+      "label": "Counter and quiet-seat section elevation",
+      "description": "One counter and quiet-seat section elevation with heights, material codes, acoustic baffles and lighting locations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "c1-peak",
+      "label": "C1 return-peak perspective",
+      "description": "One occupied C1 perspective of the return peak with the counter wordmark and meeting sign readable.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "c2-afternoon",
+      "label": "C2 weekday-afternoon perspective",
+      "description": "One occupied C2 perspective of weekday afternoon cafe use with four quiet seats.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "c1-afternoon",
+      "label": "C1 weekday-afternoon perspective",
+      "description": "One occupied C1 perspective of weekday afternoon use in the same developed layout.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-service",
+      "label": "Storage and service detail sheet",
+      "description": "One coordinated detail sheet covering 12 lockers, two changing booths, ordering, pickup and drinking water.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "whole-interior-materials",
+      "label": "Whole-interior materials, furniture and lighting board",
+      "description": "One whole-interior board of coded finishes, furniture dimensions and quantities, acoustic locations and three lighting controls.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "circulation-video",
+      "label": "Selected-interior circulation walkthrough",
+      "description": "One 10-second walkthrough following the entrance, meeting zone, lockers and pickup in the selected interior.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Interior decision and fit-out presentation",
+      "description": "One presentation reusing the earlier work, with at least eight pages for tier 14 and at least 12 pages for tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "counter-name",
+      "kind": "text-verbatim",
+      "text": "HALFTONE",
+      "scope": {
+        "slots": [
+          "c1-peak",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "meeting-sign",
+      "kind": "text-verbatim",
+      "text": "Run meeting",
+      "scope": {
+        "slots": [
+          "c1-peak",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "HALFTONE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "selected-layout-14",
+      "slots": [
+        "furnished-plan",
+        "counter-section",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon",
+        "storage-service"
+      ],
+      "sourceSlots": [
+        "selection-record",
+        "functional-schedule"
+      ],
+      "items": [
+        {
+          "item": "The developed images implement the chosen direction's circulation, seating and service decisions and the functional schedule.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Peak and afternoon views preserve the same shell, furniture positions, four quiet seats and unobstructed ordering route.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "material-system-14",
+      "slots": [
+        "counter-section",
+        "storage-service",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon"
+      ],
+      "sourceSlots": [
+        "whole-interior-materials"
+      ],
+      "items": [
+        {
+          "item": "The section, details and perspectives use the board's material assignments, acoustic placement and three lighting layers consistently.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The wordmark retains its supplied form and dark green wherever visible, and the two installed signs occupy their required locations.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "HALFTONE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "furnished-plan",
+      "counter-section",
+      "c1-peak",
+      "c2-afternoon",
+      "c1-afternoon",
+      "storage-service",
+      "whole-interior-materials"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not re-score exact text, quantities, dimensions, shell retention or specification compliance, or require photographic realism from plans, sections, schedules and material boards."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "functional-schedule",
+        "direction-one",
+        "direction-two",
+        "direction-three",
+        "selection-record",
+        "furnished-plan",
+        "counter-section",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon",
+        "storage-service",
+        "whole-interior-materials",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "direction-one",
+        "direction-two",
+        "direction-three",
+        "furnished-plan",
+        "counter-section",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon",
+        "storage-service",
+        "whole-interior-materials"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-functional-schedule",
+      "requirementId": "R-format-functional-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "functional-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-direction-one",
+      "requirementId": "R-format-direction-one",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-one"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-two",
+      "requirementId": "R-format-direction-two",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-two"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-three",
+      "requirementId": "R-format-direction-three",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-three"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-selection-record",
+      "requirementId": "R-format-selection-record",
+      "method": "artifact-property",
+      "targetSlots": [
+        "selection-record"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-furnished-plan",
+      "requirementId": "R-format-furnished-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-counter-section",
+      "requirementId": "R-format-counter-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "counter-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-c1-peak",
+      "requirementId": "R-format-c1-peak",
+      "method": "artifact-property",
+      "targetSlots": [
+        "c1-peak"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-c2-afternoon",
+      "requirementId": "R-format-c2-afternoon",
+      "method": "artifact-property",
+      "targetSlots": [
+        "c2-afternoon"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-c1-afternoon",
+      "requirementId": "R-format-c1-afternoon",
+      "method": "artifact-property",
+      "targetSlots": [
+        "c1-afternoon"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-service",
+      "requirementId": "R-format-storage-service",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-service"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-whole-interior-materials",
+      "requirementId": "R-format-whole-interior-materials",
+      "method": "artifact-property",
+      "targetSlots": [
+        "whole-interior-materials"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-circulation-video",
+      "requirementId": "R-format-circulation-video",
+      "method": "manual",
+      "targetSlots": [
+        "circulation-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "service-connections",
+      "requirementId": "R-service-connections",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "storage-service"
+      ],
+      "criteria": "The plan and service detail locate the coffee-equipment, sink and drinking-water connections together beside the retained service door. Equipment arrangement may vary within that service area; dispersed connections or relocation of the existing door fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "direction-comparison",
+      "requirementId": "R-direction-comparison",
+      "method": "visual",
+      "targetSlots": [
+        "direction-one",
+        "direction-two",
+        "direction-three"
+      ],
+      "criteria": "The three boards must offer spatially distinct alternatives and make runner circulation, cafe circulation and quiet seating comparable. Differences must affect access, zoning, furniture or service arrangement rather than merely colours, labels or rendering style. Alternatives may organise new lightweight storage and changing partitions differently while respecting the fixed shell.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "process-and-selection-14",
+      "requirementId": "R-process-and-selection-14",
+      "method": "content",
+      "targetSlots": [
+        "functional-schedule",
+        "selection-record",
+        "presentation"
+      ],
+      "criteria": "The records must show a programme-led comparison followed by a single identifiable selection. The selection explains circulation, seating and service decisions and names an alternative actually represented by a direction board. The presentation's first page must identify that same alternative. Judge documented development order and dependencies; do not infer hidden creation timestamps.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "direction-one",
+        "direction-two",
+        "direction-three"
+      ]
+    },
+    {
+      "id": "schedule-record-14",
+      "requirementId": "R-schedule-record-14",
+      "method": "content",
+      "targetSlots": [
+        "functional-schedule"
+      ],
+      "criteria": "The schedule must accurately record the five named programme zones, their respective 12, 18, 16, 12 and 14 m² areas and capacities, with 48 m² remaining for circulation and retained elements. It must specify 12 standing meeting places, 12 social-rest seats, eight cafe seats including four quiet seats, two changing users and two staff. Furniture and equipment quantities and dimensions must agree with the client-facts tables, including bench and table sizes and heights, chair footprints, the six-column/two-tier locker bank, booth clear floors and doorways, counter and four coffee-equipment footprints. Any operating-state records must retain the supplied days, times and population counts.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "plan-programme-carry-14",
+      "requirementId": "R-plan-programme-carry-14",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "The plan must identify the selected direction and repeat the schedule's five zone names with the correct area-to-name mapping, plus the specified locker, booth, bench and chair totals. Count drawn furniture against the labels and schedule. The meeting zone must retain its 3000 × 4000 mm clear gathering footprint and the seating must provide the stated capacities. A correctly copied total attached to an incompatible layout fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "functional-schedule",
+        "selection-record"
+      ]
+    },
+    {
+      "id": "presentation-programme-carry-14",
+      "requirementId": "R-presentation-programme-carry-14",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation must contain readable zone-name and area pairs and the four specified inventory totals, agreeing with the functional schedule and client facts. These may appear in reused drawings or a schedule; merely stating that the design meets the brief is insufficient.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "shell-and-clearances-14",
+      "requirementId": "R-shell-and-clearances-14",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "counter-section",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon"
+      ],
+      "criteria": "The plan, section and three perspectives must preserve the dimensioned footprint, 120 m² shell, 3.6 m clear height, both columns, north and west glazing and original openings. Check recorded glazing and service-door heights, wall thickness and mullion spacing where represented. The plan must dimension an actually clear continuous main route at least 1200 mm wide and an unobstructed 1500 mm entrance turning circle. The authored plan governs geometry; synthetic-view surface detail and atmosphere may vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "occupied-states-14",
+      "requirementId": "R-occupied-states-14",
+      "method": "visual",
+      "targetSlots": [
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon"
+      ],
+      "criteria": "C1 peak must visibly account for 12 runners, eight cafe guests and two staff. Each afternoon view must account for eight guests and two staff. All three views must preserve the developed furniture arrangement, four quiet seats and a cafe ordering route outside the gathering footprint and quiet area. The peak should support seated post-run conversation and drinking water; afternoon activity should support quiet cafe use. Any state labels must agree with the supplied return-peak and weekday-afternoon times.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "storage-details-14",
+      "requirementId": "R-storage-details-14",
+      "method": "visual",
+      "targetSlots": [
+        "storage-service"
+      ],
+      "criteria": "The detail must agree with the scheduled and planned storage arrangement: 12 compartments with 300 × 450 × 450 mm clear interiors in six columns and two tiers, plus two booths each with 1200 × 1500 mm clear floor, a 900 mm clear doorway and curtain closure. Show one ordering point, a separate pickup point and one water point on the social-rest approach. Cabinet external dimensions and partition build-ups may be developed around the fixed clear dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "functional-schedule",
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "material-coordination-14",
+      "requirementId": "R-material-coordination-14",
+      "method": "visual",
+      "targetSlots": [
+        "whole-interior-materials",
+        "counter-section",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon"
+      ],
+      "criteria": "The board and section must each carry all six finish and lighting codes with the client-facts assignments. Views must show wool-felt AC-03 over the four quiet seats wherever that area is visible, and must agree with the matte terrazzo floor and clear-sealed ash counter and locker fronts. A code used for a different material or baffles moved away from quiet seating fails; ordinary rendering and illumination differences are allowed.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "presentation-content-14",
+      "requirementId": "R-presentation-content-14",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The document must have at least eight pages, readable HALFTONE and Run meeting signage, and the supplied dark-green wordmark. It must also repeat FL-01, WD-02, AC-03 and LT-01 through LT-03 with meanings consistent with the material board and section. Signs and codes may be readable within reused artwork; indistinct thumbnails do not count.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "whole-interior-materials",
+        "counter-section"
+      ]
+    },
+    {
+      "id": "presentation-reuse-14",
+      "requirementId": "R-presentation-reuse-14",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Across at least eight pages, visibly reuse identifiable material from every listed source. Scaling, cropping and presentation layout changes are allowed when the underlying source remains recognisable and readable. Category labels or replacement illustrations without visible source reuse fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "direction-one",
+        "direction-two",
+        "direction-three",
+        "selection-record",
+        "furnished-plan",
+        "counter-section",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon",
+        "storage-service",
+        "whole-interior-materials"
+      ]
+    },
+    {
+      "id": "walkthrough-14",
+      "requirementId": "R-walkthrough-14",
+      "method": "manual",
+      "targetSlots": [
+        "circulation-video"
+      ],
+      "criteria": "Review the full 10-second video for a spatially coherent progression through the entrance, meeting zone, lockers and pickup. It must retain the selected layout, 120 m² shell, 3.6 m clear height, columns, glazing and openings. HALFTONE at the counter and Run meeting at the gathering zone must persist in their correct locations and be readable when encountered; the wordmark retains its supplied form and dark green. Camera motion may vary, but discontinuous room substitutions, missing route destinations or disappearing signs fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "furnished-plan",
+        "counter-section",
+        "c1-peak"
+      ]
+    },
+    {
+      "id": "plan-information-14",
+      "requirementId": "R-plan-information-14",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "The plan must distinguish runner and cafe circulation, count and locate furniture and equipment, and identify service connections and clearances. Camera notation must use the stated southwest origin and metre-based east/north/up axes: C1 [11.1, 0.9, 1.6] towards [4.4, 7.0, 1.55] and C2 [0.8, 8.5, 1.6] towards [8.6, 4.6, 1.55]. Locate C3 behind the counter at 1.6 m eye height towards pickup and lockers. The named perspectives must be compatible with these positions and viewing directions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon"
+      ]
+    },
+    {
+      "id": "section-heights-14",
+      "requirementId": "R-section-heights-14",
+      "method": "visual",
+      "targetSlots": [
+        "counter-section"
+      ],
+      "criteria": "Show a readable section through the counter and quiet seating with floor datum, 900 mm counter worktop, selected baffle suspension height and 3.6 m clear ceiling. The baffle height may be designed, but it must be specified and compatible with the seating below.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "board-records-14",
+      "requirementId": "R-board-records-14",
+      "method": "visual",
+      "targetSlots": [
+        "whole-interior-materials"
+      ],
+      "criteria": "The board must provide readable finish assignments and furniture quantities and dimensions matching the schedule and client records. Locate AC-03 over the four quiet cafe seats. Distinguish LT-01 linear public-zone ambient luminaires on an ambient dimmer, LT-02 linear luminaires beneath the counter equipment shelf on a task switch, and LT-03 track accents for both signs on an accent dimmer. A generic mood board without these specification records, or a single shared control for all three layers, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "c1-signage",
+      "requirementId": "R-c1-signage",
+      "method": "visual",
+      "targetSlots": [
+        "c1-peak"
+      ],
+      "criteria": "Both signs must be readable in the C1 peak view and attached to their respective counter and meeting-zone locations. HALFTONE must use the supplied wordmark and dark green #2F4F3E, allowing normal scene-lighting effects. A caption outside the depicted interior does not substitute for installed signage.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-selected-layout-14",
+      "requirementId": "R-set-selected-layout-14",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "counter-section",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon",
+        "storage-service"
+      ],
+      "criteria": "The developed images implement the chosen direction's circulation, seating and service decisions and the functional schedule. Peak and afternoon views preserve the same shell, furniture positions, four quiet seats and unobstructed ordering route.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "selection-record",
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "set-material-system-14",
+      "requirementId": "R-set-material-system-14",
+      "method": "visual",
+      "targetSlots": [
+        "counter-section",
+        "storage-service",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon"
+      ],
+      "criteria": "The section, details and perspectives use the board's material assignments, acoustic placement and three lighting layers consistently. The wordmark retains its supplied form and dark green wherever visible, and the two installed signs occupy their required locations.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "whole-interior-materials"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "retained-shell",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "plan-with-cameras.png",
+        "view-c1.png",
+        "view-c2.png"
+      ],
+      "subjectSlots": [
+        "furnished-plan",
+        "counter-section",
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon"
+      ],
+      "notes": "Retain its north and west glazing, two columns, entrance and service door in their drawn positions, with the 3.6 m clear height.",
+      "comparisonScope": "compare only the retained shell, the north and west glazing, the two columns, the entrance and service door in their recorded positions and the recorded clear height; the fit-out, furniture, new partitions, finishes, signage and lighting are the design work"
+    },
+    {
+      "id": "fixed-wordmark",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "logo.png"
+      ],
+      "subjectSlots": [
+        "c1-peak",
+        "c2-afternoon",
+        "c1-afternoon"
+      ],
+      "notes": "Preserve the attached HALFTONE wordmark and its dark green #2F4F3E."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "functional-programme",
+      "fromSlot": "functional-schedule",
+      "toSlots": [
+        "furnished-plan",
+        "presentation"
+      ],
+      "extract": [
+        "five zone names and their respective areas",
+        "locker and changing-booth quantities",
+        "runner-bench and cafe-chair quantities"
+      ],
+      "notes": "Repeat the functional schedule's five zone names, areas of 12, 18, 16, 12 and 14 m², 12 lockers, two booths, four runner benches and eight cafe chairs on all three plans and in the presentation; repeat the materials schedule's FL-01, WD-02, AC-03 and LT-01 through LT-03 on both material boards, both sections and in the presentation."
+    },
+    {
+      "id": "selected-direction",
+      "fromSlot": "selection-record",
+      "toSlots": [
+        "furnished-plan",
+        "presentation"
+      ],
+      "extract": [
+        "chosen layout direction name or identifier",
+        "selected circulation, seating and service decisions"
+      ],
+      "notes": "Establish both written schedules first, compare three directions, then name one in the selection record; identify it on all three furnished plans and the presentation's first page."
+    }
+  ]
+}

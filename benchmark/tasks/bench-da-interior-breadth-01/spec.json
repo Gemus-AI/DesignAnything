@@ -1,0 +1,656 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-interior-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "furnished-plan",
+      "label": "Furnished room and circulation plan",
+      "description": "One furnished plan showing four seats, three belongings spots, individual visual buffers, dimensioned clear circulation and the two visitor camera positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entrance-section",
+      "label": "Entrance and acoustic treatment sectional elevation",
+      "description": "One south-facing sectional elevation showing entrance geometry, vertical dimensions, acoustic construction, seating heights, the brightness control and both room signs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "lighting-plan",
+      "label": "Reflected ceiling and lighting plan",
+      "description": "One reflected ceiling and lighting plan identifying three independently controlled lighting layers, fixture positions and directions, visitor controls and W1 daylight and shading.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-furniture",
+      "label": "Material and furniture specification sheet",
+      "description": "One material and furniture sheet specifying four seats, three belongings spots, finishes, contact-surface cleaning, acoustic and shade details and shared material and luminaire IDs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "visitor-view-a",
+      "label": "Individual pause perspective from camera A",
+      "description": "One furnished perspective from camera A showing a visitor at S1, the W1 wall, C1, individual visual buffering and a readable acoustic-material callout.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "visitor-view-b",
+      "label": "Full occupancy and return perspective from camera B",
+      "description": "One furnished perspective from camera B showing four seated visitors, D1, C1, the clear return route, the visitor brightness control and both entrance signs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "INTERVAL CINEMA",
+      "scope": {
+        "slots": [
+          "furnished-plan",
+          "entrance-section",
+          "lighting-plan",
+          "materials-furniture"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "room-sign",
+      "kind": "text-verbatim",
+      "text": "Quiet pause",
+      "scope": {
+        "slots": [
+          "entrance-section",
+          "visitor-view-b"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "return-sign",
+      "kind": "text-verbatim",
+      "text": "Cinema corridor",
+      "scope": {
+        "slots": [
+          "entrance-section",
+          "visitor-view-b"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "INTERVAL CINEMA",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-room-arrangement",
+      "slots": [
+        "entrance-section",
+        "lighting-plan",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "sourceSlots": [
+        "furnished-plan"
+      ],
+      "items": [
+        {
+          "item": "The drawings and perspectives describe one room arrangement with matching retained landmarks, furniture, partitions, belongings provision and circulation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Changes in camera direction and occupancy preserve the same individual-place buffers and open access.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "specified-fit-out-system",
+      "slots": [
+        "furnished-plan",
+        "entrance-section",
+        "lighting-plan",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "sourceSlots": [
+        "materials-furniture"
+      ],
+      "items": [
+        {
+          "item": "Depicted furniture, finishes, acoustic treatment, shading and luminaires agree with the specification sheet and its shared identifiers wherever represented.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The selected interior maintains restrained pattern contrast while allowing designer-selected colors, materials and style.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "INTERVAL CINEMA"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "furnished-plan",
+      "entrance-section",
+      "lighting-plan",
+      "materials-furniture",
+      "visitor-view-a",
+      "visitor-view-b"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not require the supplied empty-room palette or grid, exact raster dimensions, photorealism, or measured acoustic and lighting performance beyond the requested qualitative design evidence."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "entrance-section",
+        "lighting-plan",
+        "materials-furniture",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-furnished-plan",
+      "requirementId": "R-format-furnished-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-section",
+      "requirementId": "R-format-entrance-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-lighting-plan",
+      "requirementId": "R-format-lighting-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "lighting-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-furniture",
+      "requirementId": "R-format-materials-furniture",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-furniture"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-visitor-view-a",
+      "requirementId": "R-format-visitor-view-a",
+      "method": "artifact-property",
+      "targetSlots": [
+        "visitor-view-a"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-visitor-view-b",
+      "requirementId": "R-format-visitor-view-b",
+      "method": "artifact-property",
+      "targetSlots": [
+        "visitor-view-b"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "fixed-room-geometry",
+      "requirementId": "R-fixed-room-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "entrance-section",
+        "lighting-plan",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "criteria": "Read dimensions and compare projected landmark relationships using the southwest inside floor corner as origin, x east, y north and z up. The interior spans x=0–8, y=0–6 and z=0–3. D1 lies on the south wall at x=1.2–2.4 and z=0–2.2; W1 lies on the north wall at x=5.2–7.2 and z=1.0–2.5; C1 occupies x=3.8–4.2, y=3.3–3.7 and z=0–3. Fail moved, resized or missing retained features, added wall openings, or a closed D1. New nonstructural partitions, finishes and adjustable interior shading are allowed. Judge features appropriate to each projection; concealed retained features may use outlines or callouts. Numeric records and the supplied plan control dimensions, while supplied perspectives provide spatial context.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "capacity-belongings-and-clearance",
+      "requirementId": "R-capacity-belongings-and-clearance",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Verify two individually labeled one-seat resting places and a labeled two-seat conversation place. Each place must have an adjacent reachable belongings spot, with room for two bags at P1. Trace an uninterrupted route from the open entrance to every place and back, checking dimensions at actual bottlenecks and a connected dimensioned turning circle. Minimum clear widths are 1.2 m and minimum circle diameter is 1.5 m. Furniture, column, buffers and stored-bag footprints must not intrude; dimension labels alone do not excuse visibly obstructed circulation. Furniture form and layout may vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "buffers-occupancy-and-layout",
+      "requirementId": "R-buffers-occupancy-and-layout",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "criteria": "Compare seat and partition locations across the plan and both views. Each individual resting place must reduce direct visual exposure to both the entrance and conversation place while remaining openly accessible. Turned seats, screens, low partitions or another legible spatial arrangement are acceptable. A must show exactly one seated visitor at S1; B must show one at S1, one at S2 and two at P1. Fail inconsistent layouts, missing buffers, enclosed or blocked individual places, or incorrect occupancy. Belongings provision must be legible in A and the return route in B.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "sensory-treatment-and-lighting",
+      "requirementId": "R-sensory-treatment-and-lighting",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-section",
+        "lighting-plan",
+        "materials-furniture",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "criteria": "Cross-check visible treatments and annotations for an acoustic response near the active south corridor boundary, an adjustable interior shade at W1 and a consistently located visitor brightness control. The reflected ceiling plan must identify fixture types, positions and directions, distinguish W1 daylight from electric light, and show independently controlled ambient, local reading and entrance-cue layers. Drawings and specifications must communicate diffuse, steady illumination with shielding or indirect directions away from seated eyes; static images need not prove measured acoustic performance or temporal light stability. B must make the visitor control legible. Fail contradictory treatment locations, missing layer controls, absent shading adjustment or exposed light directions conflicting with the stated intent.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "shared-specification-identifiers",
+      "requirementId": "R-shared-specification-identifiers",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "entrance-section",
+        "lighting-plan",
+        "visitor-view-a"
+      ],
+      "criteria": "Use the specification sheet as the identifier key. Relevant material and luminaire references on the three drawings must resolve to the same specified items, finishes and applications. A must contain a readable callout whose acoustic-material ID resolves to the acoustic treatment in that key. Different identifier naming conventions are acceptable if unambiguous. Fail missing relevant references, undefined or conflicting IDs, an unreadable acoustic callout, or omitted contact-surface cleaning information.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-furniture"
+      ]
+    },
+    {
+      "id": "project-identification-and-wayfinding",
+      "requirementId": "R-project-identification-and-wayfinding",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "entrance-section",
+        "lighting-plan",
+        "materials-furniture",
+        "visitor-view-b"
+      ],
+      "criteria": "Verify readable project identification on all four sheets and both required signs at D1 in the entrance section and B. The corridor cue must direct a visitor through the actual open entrance, with placement and direction agreeing between the section and perspective. Typography and sign construction may vary. Fail missing or illegible identification, misplaced signs or a return cue directing visitors elsewhere.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "section-construction-and-heights",
+      "requirementId": "R-section-construction-and-heights",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-section"
+      ],
+      "criteria": "The section must face south and cut or explain the entrance-side treatment. Require identifiable D1, annotated floor and ceiling levels, seat and armrest heights, and an intelligible acoustic construction detail or assembly description. The visitor brightness control and both signs must be located in this drawing. Seat and armrest dimensions are designer-selected; missing dimensions or treatment construction information fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "specified-camera-views",
+      "requirementId": "R-specified-camera-views",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "criteria": "Check that the plan marks both camera positions and aiming arrows at the prescribed coordinates and that the perspectives plausibly follow their eye heights and viewing directions. A must expose the W1 wall and C1; B must expose D1 and C1. Fail swapped cameras, materially incompatible viewpoints or missing required landmarks. Framing and rendering style may vary while retaining the specified camera relationships; matching the source images' neutral finishes or grid is unnecessary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "furniture-and-maintenance-specifications",
+      "requirementId": "R-furniture-and-maintenance-specifications",
+      "method": "content",
+      "targetSlots": [
+        "materials-furniture"
+      ],
+      "criteria": "Read the sheet for specifications covering all four seats and all three belongings spots, including the two-bag capacity beside P1. Repeated seat models are allowed if their quantities and assignments are clear. Require named finishes with applications, cleaning methods for contact surfaces, acoustic construction and intended function, adjustable-shade details and intended function, and a shared key identifying materials and luminaires. Fail missing seat coverage, unresolved belongings capacities, generic finish descriptions without applications, or absent maintenance and treatment information.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ]
+    },
+    {
+      "id": "set-coherent-room-arrangement",
+      "requirementId": "R-set-coherent-room-arrangement",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-section",
+        "lighting-plan",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "criteria": "The drawings and perspectives describe one room arrangement with matching retained landmarks, furniture, partitions, belongings provision and circulation. Changes in camera direction and occupancy preserve the same individual-place buffers and open access.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "set-specified-fit-out-system",
+      "requirementId": "R-set-specified-fit-out-system",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "entrance-section",
+        "lighting-plan",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "criteria": "Depicted furniture, finishes, acoustic treatment, shading and luminaires agree with the specification sheet and its shared identifiers wherever represented. The selected interior maintains restrained pattern contrast while allowing designer-selected colors, materials and style.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/existing-room.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-01/users-and-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-furniture"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "retained-room",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "existing-plan.png",
+        "existing-view-a.png",
+        "existing-view-b.png"
+      ],
+      "subjectSlots": [
+        "furnished-plan",
+        "entrance-section",
+        "lighting-plan",
+        "visitor-view-a",
+        "visitor-view-b"
+      ],
+      "notes": "The furnished plan, sectional elevation, lighting plan and both perspectives retain the 8.0 m by 6.0 m envelope, 3.0 m ceiling and the recorded positions and dimensions of D1, W1 and C1; D1 remains an open entrance.",
+      "comparisonScope": "compare only the retained room, its envelope proportions, its ceiling height and the recorded positions and sizes of the open entrance, the window and the square column; the furniture, new partitions, shading, finishes, signage and lighting are the design work"
+    }
+  ]
+}

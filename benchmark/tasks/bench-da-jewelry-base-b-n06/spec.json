@@ -1,0 +1,565 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-jewelry-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "charm-c1",
+      "label": "C1 charm design sheet",
+      "description": "A C1 design sheet with front, reverse and side views, FIRST LIGHT and 08.06.2019 engraving, dimensions and silver finishes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "charm-c2",
+      "label": "C2 charm design sheet",
+      "description": "A C2 design sheet with front, reverse and side views, MIRA + NOAH and 14.09.2022 engraving, dimensions and silver finishes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "charm-c3",
+      "label": "C3 charm design sheet",
+      "description": "A C3 design sheet with front, reverse and side views, HOMEWARD and 03.04.2025 engraving, dimensions and silver finishes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "host-chains",
+      "label": "N and B host-chain design sheet",
+      "description": "A joint flat front design sheet for N and B with clasps, chain construction, lengths and labelled R1–R2–R3 station spacing.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "connection-detail",
+      "label": "K/R/L connection detail",
+      "description": "A dimensioned K/R/L detail sheet showing the closed attachment, open release and access to the connector gate.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "wearing-wb1",
+      "label": "WB1 shirt-cuff wearing board",
+      "description": "A labelled WB1 wearing board on a nominal 170 mm adult left wrist with B at 190 mm, relaxed hand, shirt cuff and connection and engraving inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-collection-name",
+      "kind": "text-verbatim",
+      "text": "KEEPSAKE",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "KEEPSAKE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-source-to-wrist",
+      "slots": [
+        "wearing-wb1"
+      ],
+      "sourceSlots": [
+        "charm-c1",
+        "charm-c2",
+        "charm-c3",
+        "host-chains",
+        "connection-detail"
+      ],
+      "items": [
+        {
+          "item": "WB1 repeats the designed C2 and C3 silhouettes, inscriptions, surface allocation, B construction and K/R/L attachment geometry.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The worn bracelet retains B at 190 mm with R1 C2, R2 empty with R alone and R3 C3 on the specified adult left wrist.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "KEEPSAKE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "charm-c1",
+      "charm-c2",
+      "charm-c3",
+      "host-chains",
+      "connection-detail",
+      "wearing-wb1"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge manufacturing certification, tested hinge or lock internals, or clothing fashion quality beyond the specified wearing context."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "charm-c1",
+        "charm-c2",
+        "charm-c3",
+        "host-chains",
+        "connection-detail",
+        "wearing-wb1"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-charm-c1",
+      "requirementId": "R-format-charm-c1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "charm-c1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-charm-c2",
+      "requirementId": "R-format-charm-c2",
+      "method": "artifact-property",
+      "targetSlots": [
+        "charm-c2"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-charm-c3",
+      "requirementId": "R-format-charm-c3",
+      "method": "artifact-property",
+      "targetSlots": [
+        "charm-c3"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-host-chains",
+      "requirementId": "R-format-host-chains",
+      "method": "artifact-property",
+      "targetSlots": [
+        "host-chains"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-connection-detail",
+      "requirementId": "R-format-connection-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "connection-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-wearing-wb1",
+      "requirementId": "R-format-wearing-wb1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wearing-wb1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "complete-interface-and-release",
+      "requirementId": "R-complete-interface-and-release",
+      "method": "visual",
+      "targetSlots": [
+        "connection-detail"
+      ],
+      "criteria": "Show and dimension K with a 6.0 mm closed outer diameter, 1.0 mm circular wire and 2.5 mm clear open gap; R with a 4.0 mm outer diameter, 1.0 mm wire and 2.0 mm bore; and L with a 4.0 mm outer diameter, 2.0 mm bore and 1.0 mm axial thickness. Include a closed attachment with exactly one K passing through one R and one L, plus an open release view with accessible gate. R and L must remain closed and retain their geometry during release. Any omitted or conflicting dimension, extra connecting part, or release that opens R or L fails. Gate internals may remain conceptual.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "silver-material-and-surfaces",
+      "requirementId": "R-silver-material-and-surfaces",
+      "method": "visual",
+      "targetSlots": [
+        "charm-c1",
+        "charm-c2",
+        "charm-c3",
+        "host-chains",
+        "connection-detail",
+        "wearing-wb1"
+      ],
+      "criteria": "Material annotations and rendered components must support 925 silver throughout charms, chains, clasps and visible K/R/L parts. Chosen polished, satin/brushed or oxidized treatments must remain assigned to the same surfaces across repeated views. Any subset or combination of these silver finishes is allowed, including dark oxidized engraving recesses; a conflicting material specification or unexplained change in a component’s finish fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "name-on-final-images",
+      "requirementId": "R-name-on-final-images",
+      "method": "visual",
+      "targetSlots": [
+        "charm-c1",
+        "charm-c2",
+        "charm-c3",
+        "host-chains",
+        "connection-detail",
+        "wearing-wb1"
+      ],
+      "criteria": "Each final image must visibly print the uppercase collection name KEEPSAKE as readable sheet or board text. Placement and typography may vary; omission or misspelling on any image fails. Video-title and presentation-cover placement are evaluated in their respective checks.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-charm-designs",
+      "requirementId": "R-tier6-charm-designs",
+      "method": "visual",
+      "targetSlots": [
+        "charm-c1",
+        "charm-c2",
+        "charm-c3"
+      ],
+      "criteria": "Provide front, reverse and side views for each of three related but distinguishable charm bodies. Each sheet must state its own height, width and depth, including integral L, no greater than 22, 18 and 3 mm respectively, and identify 925 silver with located finish annotations. Read the actual outward decorated faces: C1 must show FIRST LIGHT above 08.06.2019, C2 MIRA + NOAH above 14.09.2022, and C3 HOMEWARD above 03.04.2025. First-line wrapping is allowed; every date must remain a single readable line. Missing views or dimensions, duplicate silhouettes, oversized complete charms, substituted characters or inscriptions appearing only as detached captions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-host-definition",
+      "requirementId": "R-tier6-host-definition",
+      "method": "visual",
+      "targetSlots": [
+        "host-chains",
+        "wearing-wb1"
+      ],
+      "criteria": "The host sheet must show labelled flat front views of necklace N and bracelet B, their clasps and chain construction, and exactly three receiving rings identified R1–R2–R3 on each host with chosen spacing recorded. Lengths must be N 460 mm and B 190 mm measured along the closed chain including the clasp and excluding hanging charms. WB1 must use the defined B construction and retain its length and station identities as it bends around the wrist. Flexible posing may change projected spacing or apparent order; an altered chain specification, missing station, unrecorded spacing or reassigned station identity fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-wb1-wearing",
+      "requirementId": "R-tier6-wb1-wearing",
+      "method": "visual",
+      "targetSlots": [
+        "wearing-wb1"
+      ],
+      "criteria": "Show the complete bracelet on an adult left wrist specified as nominally 170 mm, with a relaxed hand and shirt cuff. Read labels WB1, B 190 mm and all three assignments: R1 C2, R2 empty, R3 C3. Match the source charm silhouettes, actual inscriptions and surface treatments; each occupied station must use one K through its R and charm L, while R2 has R alone. A readable inset must show the connection and actual engraved jewellery faces. Camera and clothing colour may vary; wrong anatomy or setting, cropped configuration, contradictory scale, changed charms, extra hardware at R2 or missing labels/inset fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "charm-c2",
+        "charm-c3",
+        "host-chains",
+        "connection-detail"
+      ]
+    },
+    {
+      "id": "flexible-chain-projection",
+      "requirementId": "R-flexible-chain-projection",
+      "method": "diagnostic",
+      "targetSlots": [
+        "charm-c1",
+        "charm-c2",
+        "charm-c3",
+        "host-chains",
+        "connection-detail",
+        "wearing-wb1"
+      ],
+      "criteria": "Interpret R1, R2 and R3 as persistent attachment locations on a flexible chain. A camera reversal or chain bend can reverse their screen order without changing station identity; this permitted projection change is not itself a failure.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ]
+    },
+    {
+      "id": "reference-boundary",
+      "requirementId": "R-reference-boundary",
+      "method": "diagnostic",
+      "targetSlots": [
+        "connection-detail"
+      ],
+      "criteria": "Treat the supplied interface image as evidence for fixed local K/R/L geometry, not as a finished charm body, host design or tested mechanism. Hinge and lock internals remain open choices. The listed usable asset does not include keepsake-connector.png, so comparison against that separate identity image requires its actual availability and must not be invented.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ]
+    },
+    {
+      "id": "set-tier6-source-to-wrist",
+      "requirementId": "R-set-tier6-source-to-wrist",
+      "method": "visual",
+      "targetSlots": [
+        "wearing-wb1"
+      ],
+      "criteria": "WB1 repeats the designed C2 and C3 silhouettes, inscriptions, surface allocation, B construction and K/R/L attachment geometry. The worn bracelet retains B at 190 mm with R1 C2, R2 empty with R alone and R3 C3 on the specified adult left wrist.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/03-inscriptions.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-base-b-n06/04-combinations.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "charm-c1",
+        "charm-c2",
+        "charm-c3",
+        "host-chains",
+        "connection-detail"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "fixed-interface-geometry",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "attachment-interfaces.png"
+      ],
+      "subjectSlots": [
+        "charm-c1",
+        "charm-c2",
+        "charm-c3",
+        "host-chains",
+        "connection-detail",
+        "wearing-wb1"
+      ],
+      "notes": "The supplied K/R/L interface is fixed."
+    },
+    {
+      "id": "connector-across-configurations",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "connection-detail",
+      "subjectSlots": [
+        "wearing-wb1"
+      ],
+      "notes": "Retain the existing connector’s recognisable circular form and gate placement."
+    }
+  ]
+}

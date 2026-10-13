@@ -1,0 +1,1166 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ecom-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "information-hierarchy",
+      "label": "Selling-point and information-hierarchy sheet",
+      "description": "A one-page hierarchy sheet recording message priorities, placements and minimum type sizes for the product facts and four licence plans.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "image-schedule",
+      "label": "Specimen and image schedule",
+      "description": "A one-page schedule assigning roles, frames and required content to the ten final still images.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "product-hero",
+      "label": "Square product hero",
+      "description": "A square RASTER FOLD hero featuring both weights, the descriptor and the 47-character count.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "regular-specimen",
+      "label": "Regular 400 specimen",
+      "description": "A Regular 400 specimen sheet with the uppercase alphabet, ten digits and PAPER HOURS headline.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "bold-specimen",
+      "label": "Bold 700 specimen",
+      "description": "A Bold 700 specimen sheet with the uppercase alphabet, ten digits and PAPER HOURS headline.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "character-coverage",
+      "label": "Complete character-coverage sheet",
+      "description": "A coverage sheet containing all 47 characters in both weights with Unicode labels and a labelled space cell.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "print-application",
+      "label": "PAPER HOURS poster application",
+      "description": "An application view of the A3 PAPER HOURS poster with its weight labels and APPLICATION STUDY identification.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "web-application",
+      "label": "TYPE AT WORK website application",
+      "description": "A TYPE AT WORK website masthead specimen with its weight labels and APPLICATION STUDY identification.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "brand-application",
+      "label": "FOLD CLUB stationery application",
+      "description": "A FOLD CLUB stationery composition with its weight labels and APPLICATION STUDY identification.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "licence-comparison",
+      "label": "Licence and price comparison panel",
+      "description": "A comparison panel containing the four licence records, prices, allowances, payment terms and usage scopes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "complete-product-page",
+      "label": "Complete product-page composition",
+      "description": "A complete storefront page composition joining product specimens, four purchase options and a licence selection area.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "vertical-promotion",
+      "label": "Vertical product promotion",
+      "description": "A vertical promotion featuring both weights, RASTER FOLD, the descriptor and the 47-character count.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "specimen-video",
+      "label": "Ten-second specimen video",
+      "description": "A 10-second video connecting the two weights and three application subjects with a product-name and descriptor end frame.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "launch-presentation",
+      "label": "Storefront launch presentation",
+      "description": "A presentation of at least eight pages reusing the process sheets and final work with a fact-to-image index.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "RASTER FOLD",
+      "scope": {
+        "slots": [
+          "product-hero",
+          "vertical-promotion",
+          "complete-product-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "product-descriptor",
+      "kind": "text-verbatim",
+      "text": "Two weights. One grid.",
+      "scope": {
+        "slots": [
+          "product-hero",
+          "vertical-promotion",
+          "complete-product-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "character-count-label",
+      "kind": "text-verbatim",
+      "text": "47 characters",
+      "scope": {
+        "slots": [
+          "product-hero",
+          "vertical-promotion",
+          "complete-product-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "application-identification",
+      "kind": "text-verbatim",
+      "text": "APPLICATION STUDY",
+      "scope": {
+        "slots": [
+          "print-application",
+          "web-application",
+          "brand-application"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "paper-hours-heading",
+      "kind": "text-verbatim",
+      "text": "PAPER HOURS",
+      "scope": {
+        "slots": [
+          "regular-specimen",
+          "bold-specimen",
+          "print-application"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "website-heading",
+      "kind": "text-verbatim",
+      "text": "TYPE AT WORK",
+      "scope": {
+        "slots": [
+          "web-application"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "stationery-heading",
+      "kind": "text-verbatim",
+      "text": "FOLD CLUB",
+      "scope": {
+        "slots": [
+          "brand-application"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "RASTER FOLD",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "planned-storefront-system",
+      "slots": [
+        "product-hero",
+        "regular-specimen",
+        "bold-specimen",
+        "character-coverage",
+        "print-application",
+        "web-application",
+        "brand-application",
+        "licence-comparison",
+        "complete-product-page",
+        "vertical-promotion"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "image-schedule"
+      ],
+      "items": [
+        {
+          "item": "The ten still images perform the roles and carry the required content assigned by the image schedule, with frame-specific composition allowed.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The final images implement the hierarchy sheet's two-weight direction and message priorities without contradictory product facts.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The hero, vertical promotion and complete product page each retain the specified product name, descriptor and 47-character count.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "RASTER FOLD"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "product-hero",
+      "regular-specimen",
+      "bold-specimen",
+      "character-coverage",
+      "print-application",
+      "web-application",
+      "brand-application",
+      "licence-comparison",
+      "complete-product-page",
+      "vertical-promotion"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not reward redesigning the fixed glyph masters or rescore exact copy, purchase-record accuracy and safe-area compliance."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "information-hierarchy",
+        "image-schedule",
+        "product-hero",
+        "regular-specimen",
+        "bold-specimen",
+        "character-coverage",
+        "print-application",
+        "web-application",
+        "brand-application",
+        "licence-comparison",
+        "complete-product-page",
+        "vertical-promotion",
+        "launch-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "product-hero",
+        "regular-specimen",
+        "bold-specimen",
+        "character-coverage",
+        "print-application",
+        "web-application",
+        "brand-application",
+        "licence-comparison",
+        "complete-product-page",
+        "vertical-promotion"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-information-hierarchy",
+      "requirementId": "R-format-information-hierarchy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-image-schedule",
+      "requirementId": "R-format-image-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "image-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-product-hero",
+      "requirementId": "R-format-product-hero",
+      "method": "artifact-property",
+      "targetSlots": [
+        "product-hero"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-regular-specimen",
+      "requirementId": "R-format-regular-specimen",
+      "method": "artifact-property",
+      "targetSlots": [
+        "regular-specimen"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-bold-specimen",
+      "requirementId": "R-format-bold-specimen",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bold-specimen"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-character-coverage",
+      "requirementId": "R-format-character-coverage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "character-coverage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-print-application",
+      "requirementId": "R-format-print-application",
+      "method": "artifact-property",
+      "targetSlots": [
+        "print-application"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-web-application",
+      "requirementId": "R-format-web-application",
+      "method": "artifact-property",
+      "targetSlots": [
+        "web-application"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-brand-application",
+      "requirementId": "R-format-brand-application",
+      "method": "artifact-property",
+      "targetSlots": [
+        "brand-application"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-licence-comparison",
+      "requirementId": "R-format-licence-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "licence-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-complete-product-page",
+      "requirementId": "R-format-complete-product-page",
+      "method": "artifact-property",
+      "targetSlots": [
+        "complete-product-page"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-vertical-promotion",
+      "requirementId": "R-format-vertical-promotion",
+      "method": "artifact-property",
+      "targetSlots": [
+        "vertical-promotion"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-specimen-video",
+      "requirementId": "R-format-specimen-video",
+      "method": "manual",
+      "targetSlots": [
+        "specimen-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-launch-presentation",
+      "requirementId": "R-format-launch-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "launch-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "hierarchy-specification",
+      "requirementId": "R-hierarchy-specification",
+      "method": "content",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "One page specifies message priority, intended placement and minimum type sizes for RASTER FOLD, its descriptor, Regular 400, Bold 700, the 47-character count and all four licence plans. The organization and chosen sizes may vary; missing categories, missing sizing guidance or facts contradicting the supplied records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ]
+    },
+    {
+      "id": "ten-image-schedule",
+      "requirementId": "R-ten-image-schedule",
+      "method": "content",
+      "targetSlots": [
+        "image-schedule"
+      ],
+      "criteria": "One page accounts individually for the hero, both weight sheets, coverage sheet, three applications, licence comparison, complete product page and vertical promotion. Each entry states its communication role, frame and required content. Equivalent names and any clear tabular or prose organization are acceptable; omitted images or unspecified assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ]
+    },
+    {
+      "id": "planned-facts-carried-into-store",
+      "requirementId": "R-planned-facts-carried-into-store",
+      "method": "visual",
+      "targetSlots": [
+        "product-hero",
+        "vertical-promotion",
+        "complete-product-page"
+      ],
+      "criteria": "The process documents define the supplied two-weight direction, and each target visibly carries the specified product name, descriptor and character count in the communication role assigned to it. Compare message priorities, placements and stated minimum sizes where the export provides a usable scale. Adaptation to each frame is allowed; missing facts or a final composition that contradicts its documented assignment fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "information-hierarchy",
+        "image-schedule"
+      ]
+    },
+    {
+      "id": "weight-difference-in-use",
+      "requirementId": "R-weight-difference-in-use",
+      "method": "visual",
+      "targetSlots": [
+        "product-hero",
+        "vertical-promotion",
+        "complete-product-page",
+        "print-application",
+        "web-application",
+        "brand-application"
+      ],
+      "criteria": "The hero and vertical promotion each visibly feature both supplied weights, and the storefront and applications collectively demonstrate their different visual effects in use. Side-by-side comparisons, contrasting typographic roles or other clear demonstrations are acceptable. Merely listing two weight names without showing their difference, or substituting an invented weight, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "paired-weight-specimens",
+      "requirementId": "R-paired-weight-specimens",
+      "method": "visual",
+      "targetSlots": [
+        "regular-specimen",
+        "bold-specimen"
+      ],
+      "criteria": "The Regular sheet identifies and demonstrates Regular 400; the Bold sheet identifies and demonstrates Bold 700. Each contains A–Z, 0–9 and PAPER HOURS in its assigned master weight. Arrangement and scale may differ; missing characters, an incorrect weight assignment or differing headline text fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "still-specimen-master-construction",
+      "requirementId": "R-still-specimen-master-construction",
+      "method": "visual",
+      "targetSlots": [
+        "regular-specimen",
+        "bold-specimen",
+        "character-coverage",
+        "print-application",
+        "web-application",
+        "brand-application"
+      ],
+      "criteria": "Compare specimen glyphs against the occupied cells encoded in 03-font-master-data.en.md, reading its seven base-32 rows with the most significant bit at the left. Both weights preserve identical occupancy on a 5-column, 7-row grid, a 4-unit pitch and a 24-unit character and space advance; filled squares measure 2 units for Regular and 3 for Bold. Multiline specimen settings preserve the recorded 36-unit line advance. Uniform scaling and scene perspective are allowed, and supporting copy may use another readable face. Altered glyph occupancy, rounded or connected replacement modules, distorted construction ratios or substituted specimen lettering fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "complete-labelled-coverage",
+      "requirementId": "R-complete-labelled-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "character-coverage"
+      ],
+      "criteria": "Both Regular 400 and Bold 700 contain 26 uppercase letters, 10 digits, the 10 punctuation glyphs .,:!?-/&() and one space, totaling 47 characters per weight. Every character has the correct Unicode association from the supplied records, and each weight includes an explicitly labelled blank U+0020 cell. Shared labels are acceptable when their association with both weights is unambiguous. Missing or duplicated entries, incorrect labels or a visible mark substituted for the space fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "application-subjects-and-identification",
+      "requirementId": "R-application-subjects-and-identification",
+      "method": "visual",
+      "targetSlots": [
+        "print-application",
+        "web-application",
+        "brand-application"
+      ],
+      "criteria": "The three images respectively depict a PAPER HOURS print poster, a TYPE AT WORK website masthead and a FOLD CLUB stationery composition. Each displays APPLICATION STUDY and labels the weight or weights actually used. The poster is presented as A3, 297 by 420 mm, with compatible page proportions and an explicit size indication or dimensioned presentation establishing the physical size. Scene styling, viewing angle and stationery sizes may vary; swapped subjects, missing identifiers, inaccurate weight labels or evidence of a different poster size fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "product-page-application-reuse",
+      "requirementId": "R-product-page-application-reuse",
+      "method": "visual",
+      "targetSlots": [
+        "complete-product-page"
+      ],
+      "criteria": "The product page visibly incorporates recognizable versions of all three delivered application designs. Resizing, cropping and placement within the page are allowed if each subject and its design remain identifiable. A missing application or a newly invented substitute fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "print-application",
+        "web-application",
+        "brand-application"
+      ]
+    },
+    {
+      "id": "complete-purchase-records",
+      "requirementId": "R-complete-purchase-records",
+      "method": "visual",
+      "targetSlots": [
+        "licence-comparison",
+        "complete-product-page"
+      ],
+      "criteria": "Each target independently presents all four correctly associated plan names, codes, total USD prices, counting units, allowances and usage scopes. Desktop is RF-D, USD 60, installation for 2 named users with printed work and static exports including logos and brand artwork. Web is RF-W, USD 90, 1 domain including subdomains and 50,000 pageviews per calendar month, permitting embedding on that domain and its subdomains. App is RF-A, USD 150, 1 app across mobile and desktop editions and 10,000 monthly active users, permitting embedding within that app. Ads is RF-AD, USD 120, 1 campaign and 1,000,000 total lifetime impressions, covering static, animated and embedded-font advertising within that campaign. Shared terms establish one-time payment, ongoing use within the purchased scope, both Regular 400 and Bold 700 in every plan, and separate purchases for separate scopes. Definitions preserve pageviews as page loads using the embedded family, active users as distinct users opening the app during a calendar month, and impressions as individual displays of advertisements using the family. A shared terms block and equivalent unambiguous wording are allowed; omissions, mismatched records, recurring-payment claims or changed scopes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "store-frame-safe-areas",
+      "requirementId": "R-store-frame-safe-areas",
+      "method": "visual",
+      "targetSlots": [
+        "product-hero",
+        "vertical-promotion",
+        "regular-specimen",
+        "bold-specimen",
+        "character-coverage",
+        "print-application",
+        "web-application",
+        "brand-application",
+        "licence-comparison"
+      ],
+      "criteria": "Use the supplied storefront frame diagram to assess the square hero, 9:16 vertical promotion and 3:2 landscape detail panels. Essential lettering, labels and prices remain inside 8% left and right margins; square and landscape frames also retain 8% top and bottom margins, while the vertical frame retains 12%. Decorative backgrounds may extend beyond the safe areas. Incorrect frame proportions or essential content crossing a required inset fail; evaluate relative geometry rather than exact pixel dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "complete-storefront-composition",
+      "requirementId": "R-complete-storefront-composition",
+      "method": "visual",
+      "targetSlots": [
+        "complete-product-page"
+      ],
+      "criteria": "The image reads as one complete product page containing type specimens, the Desktop, Web, App and Ads purchase options, and an identifiable area for choosing a licence. Section order and selection-control styling may vary. A collection of disconnected panels, absent specimens, a missing purchase option or no discernible licence selection area fails; interactive functionality is not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "video-sequence-duration-and-ending",
+      "requirementId": "R-video-sequence-duration-and-ending",
+      "method": "manual",
+      "targetSlots": [
+        "specimen-video"
+      ],
+      "criteria": "Review the entire video and its runtime. It lasts 10 seconds, demonstrates Regular 400 and Bold 700, moves through PAPER HOURS, TYPE AT WORK and FOLD CLUB, and finishes with readable RASTER FOLD and Two weights. One grid. Sequence order and transition technique may vary. An incorrect runtime, an omitted weight or application subject, or missing or incorrect end-frame copy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "video-master-fidelity",
+      "requirementId": "R-video-master-fidelity",
+      "method": "manual",
+      "targetSlots": [
+        "specimen-video"
+      ],
+      "criteria": "Inspect the video's identifiable specimen settings against the supplied glyph records. Regular and Bold preserve the recorded occupied cells, 5-by-7 grid, 4-unit pitch, 24-unit advance and respective 2-unit and 3-unit filled-square modules; multiline settings follow the recorded 36-unit line advance. Motion, scaling and transitional interpolation are allowed between faithful weight presentations. Stable substituted glyphs, incorrect construction or failure to present either authentic weight fails; supporting copy may use a separate readable typeface.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "presentation-length-and-index",
+      "requirementId": "R-presentation-length-and-index",
+      "method": "content",
+      "targetSlots": [
+        "launch-presentation"
+      ],
+      "criteria": "The presentation contains at least eight pages and an index mapping both named weights, complete 47-character coverage, each of the four purchase records, each application subject, RASTER FOLD and Two weights. One grid. to identifiable earlier deliverables. Role names, filenames or unambiguous thumbnail references are acceptable. Missing index categories, references to evidence that does not contain the claimed fact or fewer than eight pages fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "sourceSlots": [
+        "product-hero",
+        "regular-specimen",
+        "bold-specimen",
+        "character-coverage",
+        "print-application",
+        "web-application",
+        "brand-application",
+        "licence-comparison",
+        "complete-product-page",
+        "vertical-promotion"
+      ]
+    },
+    {
+      "id": "presentation-reuses-process-and-final-work",
+      "requirementId": "R-presentation-reuses-process-and-final-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "launch-presentation"
+      ],
+      "criteria": "The presentation visibly reuses the two process sheets, both weight specimens, character coverage, all three delivered application designs, the licence comparison, the complete product page and stills identifiable as frames from the delivered video. Scaling, excerpting and presentation annotations are acceptable when source identity remains clear. Text-only mentions, replacement designs or an unrepresented source fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "image-schedule",
+        "regular-specimen",
+        "bold-specimen",
+        "character-coverage",
+        "print-application",
+        "web-application",
+        "brand-application",
+        "licence-comparison",
+        "complete-product-page"
+      ]
+    },
+    {
+      "id": "set-planned-storefront-system",
+      "requirementId": "R-set-planned-storefront-system",
+      "method": "visual",
+      "targetSlots": [
+        "product-hero",
+        "regular-specimen",
+        "bold-specimen",
+        "character-coverage",
+        "print-application",
+        "web-application",
+        "brand-application",
+        "licence-comparison",
+        "complete-product-page",
+        "vertical-promotion"
+      ],
+      "criteria": "The ten still images perform the roles and carry the required content assigned by the image schedule, with frame-specific composition allowed. The final images implement the hierarchy sheet's two-weight direction and message priorities without contradictory product facts. The hero, vertical promotion and complete product page each retain the specified product name, descriptor and 47-character count.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/03-font-master-data.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-breadth-03/04-licence-plans.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "information-hierarchy",
+        "image-schedule"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "fixed-type-family",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "regular-master.png",
+        "bold-master.png",
+        "character-master.png"
+      ],
+      "subjectSlots": [
+        "product-hero",
+        "regular-specimen",
+        "bold-specimen",
+        "character-coverage",
+        "print-application",
+        "web-application",
+        "brand-application",
+        "complete-product-page",
+        "vertical-promotion"
+      ],
+      "notes": "Set specimen lettering from those masters; supporting store copy can use a separate readable typeface."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "hierarchy-product-facts",
+      "fromSlot": "information-hierarchy",
+      "toSlots": [
+        "product-hero",
+        "vertical-promotion",
+        "complete-product-page"
+      ],
+      "extract": [
+        "product name",
+        "descriptor",
+        "character-count label"
+      ],
+      "notes": "The hierarchy sheet and image schedule establish the given two-weight direction before the final work; the hero, vertical promotion and product page repeat RASTER FOLD, Two weights. One grid. and 47 characters from the hierarchy sheet, in the roles assigned by the schedule."
+    }
+  ]
+}

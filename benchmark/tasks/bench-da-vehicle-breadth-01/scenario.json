@@ -1,0 +1,144 @@
+{
+  "id": "bench-da-vehicle-breadth-01",
+  "title": "CAMPUS LOOP — A complete campus parcel vehicle, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# CAMPUS LOOP — complete client records\n\n## Commission\n\n- Product name: CAMPUS LOOP.\n- Product: one complete low-speed campus parcel vehicle.\n- Users: students, staff, loading operators and maintenance operators.\n- Final design boards: 6.\n- Design language: contemporary or near-future; clean purposeful surfaces, integrated lighting and considered colour.\n- Design scope: whole-body form, wheel treatment, compartment arrangement, access mechanisms, material expression and integrated communication.\n- Chassis covers: powder-coated aluminium.\n- Body and door panels: glass-fibre composite.\n- Perimeter bumpers: thermoplastic polyurethane.\n- Vehicle-side wording: CAMPUS LOOP, on both sides.\n\n## Coordinate frame and closed envelope\n\n- Dimensions: mm.\n- Local datum: x = 0 rear; x = 1000 front; y = 0 left; y = 640 right; z = 0 ground.\n- Closed overall envelope, including wheels, covers, indicators and sensors: 1000 L x 640 W x 900 H.\n\n## Six-wheel platform\n\n| Wheel | Position | Hub x | Hub y | Hub z | Diameter | Width |\n| --- | --- | ---: | ---: | ---: | ---: | ---: |\n| W1 | Rear left | 150 | 70 | 80 | 160 | 50 |\n| W2 | Middle left | 500 | 70 | 80 | 160 | 50 |\n| W3 | Front left | 850 | 70 | 80 | 160 | 50 |\n| W4 | Rear right | 150 | 570 | 80 | 160 | 50 |\n| W5 | Middle right | 500 | 570 | 80 | 160 | 50 |\n| W6 | Front right | 850 | 570 | 80 | 160 | 50 |\n\n- Wheel axes: horizontal, along y.\n- Wheel ground contact: exposed.\n- Full wheel envelopes: clear of bodywork and door travel.\n- Chassis/electronics module: x 100–900; y 100–540; z 80–250.\n- Module contents: supplied propulsion, control and power assembly, one fixed module.\n- Parcel and door volumes: outside the chassis module.\n\n## Sensor envelopes\n\n| Sensor | Geometry | Position | Clear region |\n| --- | --- | --- | --- |\n| S-T | Cylinder, diameter 90, height 50 | Plan centre x 500 / y 320; bottom z 800; top z 850 | Entire circular perimeter band z 810–840 exposed in every state and throughout door movement; support connection below |\n| S-F | Rectangular window, 80 W along y x 60 H along z | Exterior face x 1000; centre y 320 / z 400; outward toward +x | Outward opening and inward allowance x 950–1000 / y 280–360 / z 370–430 |\n| S-R | Rectangular window, 80 W along y x 60 H along z | Exterior face x 0; centre y 320 / z 400; outward toward -x | Outward opening and inward allowance x 0–50 / y 280–360 / z 370–430 |\n\n- S-T perimeter band: clear of opaque covers, parcel doors and styling parts.\n- S-F and S-R inward allowances: clear of parcels, door movement and the chassis module.\n- Sensor surrounds and roof integration: part of the vehicle design.\n\n## Parcels and independent compartments\n\n| Parcel | Form | Envelope | Compartment | Access |\n| --- | --- | --- | --- | --- |\n| P-A | Upright rigid carton | 180 L x 140 W x 100 H | A | Independent right-side door |\n| P-B | Upright rigid carton | 240 L x 180 W x 160 H | B | Independent right-side door |\n| P-C | Upright rigid carton | 160 L x 120 W x 80 H | C | Independent right-side door |\n\n- Parcel orientation: H vertical; horizontal rotation available.\n- Packing: one parcel per compartment; parcels alongside one another.\n- Minimum clearance: 10 from every complete parcel envelope to each compartment wall and its closed door.\n- Compartments, dividers and doors: clear of chassis volume and all three sensor allowances.\n- Initial load: all three complete cartons present; A/B/C closed and locked.\n- B extraction: complete P-B through B's actual right-side opening; P-A/P-C remain in place with A/C locked.\n- Retrieval depiction: schematic hands or one or two hands handling P-B.\n- Door paths: clear of wheels and adjacent compartments.\n- Persistent geometry: identical compartments, wheel locations and sensor locations throughout all states.\n- Door labels: A, B, C.\n- Parcel labels: P-A, P-B, P-C.\n\n## Status area and pickup panel\n\n- Main communication: one integrated physical vehicle status area, visible in the relevant view.\n- State expression: exact English message plus a distinct icon or shape.\n- Palette and symbol styling: open design choices.\n- Pickup panel: small physical panel on the right, with code entry and requested compartment state.\n- Accepted B pickup code: 2476.\n\n| State | Vehicle condition | Door and cargo condition | Exact message | Symbol |\n| --- | --- | --- | --- | --- |\n| TRAVEL | Proceeding along assigned campus path | A/B/C loaded, closed and locked | DELIVERING | Forward motion |\n| YIELD | Stopped for a pedestrian | A/B/C loaded, closed and locked | I'M WAITING | Pause or wait |\n| PICKUP READY | Stationary in pickup bay; right pickup panel available | A/B/C loaded, closed and locked | ENTER CODE | Code or key |\n| AUTH B | Stationary after acceptance of code 2476 | B unlocked and open for P-B retrieval; A/C loaded, closed and locked | COLLECT B | B-box |\n| LOADING | Stationary with an operator at the right-side compartments | All three doors available open for placement of the three full cartons | LOADING | Service |\n| OUT OF SERVICE | Stationary | All three doors closed and locked | OUT OF SERVICE | Unavailable |\n\n- Post-collection state: complete P-B removed; B empty, closed and locked; A/C loaded and locked; vehicle stationary; message ENTER CODE with code or key symbol.\n- YIELD communication meaning: vehicle waiting for the pedestrian.\n- Initial loading access: operator access to all three right-side compartments.\n- Recipient access after code 2476: compartment B only.\n\n## Pickup bay and scenes\n\n| Element | Geometry or placement |\n| --- | --- |\n| Pickup bay | Level ground; 1600 L x 1400 W; context x 0–1600 / y 0–1400 |\n| Pedestrian strip | Width 1200; immediately along the right bay edge; context y 1400–2600 |\n| Vehicle datum origin | Context x 300 / y 350; front toward increasing x |\n| Maximum closed vehicle footprint | Context x 300–1300 / y 350–990 |\n| Open doors and temporary vehicle hardware | Entirely inside the pickup bay |\n| Recipient | Inside the bay beside B; visible hand and parcel extraction path |\n| Passing pedestrians | On the separate pedestrian strip |\n\n- Collection placement: identical for PICKUP READY, AUTH B and the subsequent B-closed state.\n- Collection context representation: dimensioned plan inset.\n- Campus atmosphere: neutral buildings, planting and paving.\n- YIELD setting: a separate simple campus path, with the same vehicle and communication system.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# CAMPUS LOOP — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | complete-vehicle | Complete vehicle views and materials | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | loading-cargo | Loading access and compartment geometry | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | travel | TRAVEL campus scene | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | yield | YIELD pedestrian encounter | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | collection | B collection sequence and bay plan | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | out-of-service | OUT OF SERVICE vehicle state | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: client-hardpoints.en.md",
+            "config": {
+              "text": "# CAMPUS LOOP — original platform, sensor and context inputs\n\n- Dimensions: mm.\n- Coordinate frame: x increases from rear to front; y increases from vehicle left to right; z increases upward from ground.\n- Body form and compartment arrangement: open design variables.\n\n## Six-wheel hardpoints\n\n| Element | Value |\n| --- | --- |\n| Overall envelope | 1000 L x 640 W x 900 H |\n| Wheel hubs | x = 150 / 500 / 850; left y = 70; right y = 570; all z = 80 |\n| Every wheel | Diameter 160 x width 50; axle along y |\n| Chassis keep-out | x 100 .. 900; y 100 .. 540; z 80 .. 250 |\n\n## Isolated sensors\n\n| Sensor | Value |\n| --- | --- |\n| S-T top sensor | Diameter 90 x height 50; plan centre x 500 / y 320; base z 800 / top z 850; full perimeter band z 810 .. 840 exposed in every state; support from below |\n| S-F / S-R front and rear sensors | 80 W x 60 H; centre y 320 / z 400; faces at front x 1000 and rear x 0; 50 deep inward clear allowance behind each window; faces outward |\n\n## Upright parcel envelopes\n\n| Parcel | Envelope (mm) |\n| --- | --- |\n| P-A | 180 L x 140 W x 100 H |\n| P-B | 240 L x 180 W x 160 H |\n| P-C | 160 L x 120 W x 80 H |\n\n- Compartments: separate A / B / C, with independent right-side access.\n- Parcel orientation: H vertical; horizontal rotation available.\n- Packing: parcels alongside one another, each in its own compartment.\n- Minimum parcel clearance to each compartment boundary: 10.\n\n## Pickup bay plan\n\n| Element | Value |\n| --- | --- |\n| Bay | 1600 x 1400; vehicle origin x 300 / y 350; front toward +x; maximum vehicle footprint inside the bay |\n| Pedestrian strip | Width 1200, alongside the bay; open doors inside the bay; pedestrian strip clear |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: platform-and-bay.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: parcel-inventory.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: campus-path-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "CAMPUS LOOP | A complete campus parcel vehicle\n\nWe run a campus parcel service and need one complete low-speed delivery vehicle for students, staff and our loading team. The name \"CAMPUS LOOP\" belongs on both vehicle sides. Develop contemporary bodywork, wheel covers, compartment doors and an integrated status area around the supplied six-wheel platform. The closed vehicle fits within 1000 L x 640 W x 900 H mm. Each wheel is 160 mm in diameter and 50 mm wide; hub positions and the chassis module are fixed in client-hardpoints.en.md. Use powder-coated aluminium for chassis covers, glass-fibre composite for body and door panels, and thermoplastic polyurethane for perimeter bumpers. The roof sensor's full perimeter band at z 810–840 mm stays exposed through every door movement; the front and rear sensor windows each retain their 80 W x 60 H mm opening and 50 mm inward clearance.\n\nThree upright parcels travel together: P-A, 180 L x 140 W x 100 H mm; P-B, 240 L x 180 W x 160 H mm; and P-C, 160 L x 120 W x 80 H mm. Each has a separate locked compartment, labelled A, B or C, with independent right-side access and at least 10 mm clearance to every wall and the closed door. Arrange them alongside one another, with their height vertical. A small physical pickup panel on the right accepts code 2476 and releases B alone. The main status area pairs each exact message with a distinct symbol: TRAVEL uses \"DELIVERING\", YIELD uses \"I'M WAITING\", PICKUP READY uses \"ENTER CODE\", AUTH B uses \"COLLECT B\", LOADING uses \"LOADING\", and OUT OF SERVICE uses \"OUT OF SERVICE\". After P-B is removed and B closes and locks, the message returns to ENTER CODE. Collection takes place in a 1600 x 1400 mm bay beside a separate 1200 mm pedestrian strip; the vehicle origin stays at bay coordinates x 300 / y 350 mm, facing +x, throughout collection. Door travel stays inside the bay.\n\nAudience: students and staff collecting parcels, and operators loading and maintaining the fleet, for the vehicle design decision and review of cargo access and public communication.\n\nInputs (attached): 01-client-facts.en.md contains the vehicle, parcel, state and collection records. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. client-hardpoints.en.md contains the fixed coordinates, sensor allowances, parcel dimensions and bay geometry. platform-and-bay.png maps the platform, sensor envelopes and collection footprint. parcel-inventory.png identifies the three existing parcel forms that the compartments accommodate. campus-path-reference.png provides the campus setting and pedestrian atmosphere.\n\nDeliverables:\n1. One complete-vehicle board with front, right-side and top orthographic views, a rear three-quarter perspective, overall dimensions and material callouts, with all three compartments loaded and locked\n2. One loading and cargo board with a stationary operator, all three right-side doors open, the three full parcels, a dimensioned compartment section and door movement paths\n3. One TRAVEL board with the complete vehicle moving along a campus path, closed doors and the DELIVERING message with a forward-motion symbol\n4. One YIELD board with the complete vehicle stopped for a pedestrian, closed doors and the I'M WAITING message with a pause or wait symbol\n5. One collection sequence board with PICKUP READY, code 2476 entry, AUTH B, full P-B extraction and the subsequent empty B compartment closed and locked, plus a dimensioned bay plan inset\n6. One OUT OF SERVICE board with the complete stationary vehicle, closed and locked doors, the OUT OF SERVICE message and an unavailable symbol\n\nAcceptance:\n- The complete-vehicle board contains three orthographic views and one perspective, dimensions the 1000 L x 640 W x 900 H mm maximum envelope, and identifies the aluminium covers, glass-fibre composite panels and thermoplastic polyurethane bumpers. All six boards use that same body, compartment arrangement and material allocation, with CAMPUS LOOP visible on the vehicle.\n- The complete-vehicle, loading and collection boards preserve all six 160 mm diameter x 50 mm wide wheels at x 150 / 500 / 850 mm, y 70 / 570 mm and z 80 mm. Their sections and movement paths leave the chassis volume x 100–900 / y 100–540 / z 80–250 mm clear of parcels and doors.\n- All six boards retain S-T at x 500 / y 320 mm, from z 800 to 850 mm, with its 90 mm diameter and exposed perimeter band z 810–840 mm. The complete-vehicle, loading and collection boards show S-F and S-R at x 1000 and x 0 mm, centred at y 320 / z 400 mm, with their 80 W x 60 H mm openings and 50 mm inward allowances clear throughout door travel.\n- The loading and collection boards label A/B/C and P-A/P-B/P-C, dimension all three upright parcels at their stated sizes and show at least 10 mm closed-compartment clearance on every side. Loading shows access to all three compartments; collection shows the complete P-B passing through B's opening while P-A and P-C remain loaded behind locked doors.\n- The TRAVEL, YIELD, loading, collection and OUT OF SERVICE boards pair the six messages with their specified symbols in the same physical status area. The collection board shows code 2476 on the right pickup panel, COLLECT B during B access and ENTER CODE after B closes and locks; TRAVEL, YIELD and OUT OF SERVICE show all three doors closed and locked.\n- The collection board's plan dimensions the 1600 x 1400 mm bay and adjacent 1200 mm pedestrian strip, places the vehicle origin at x 300 / y 350 mm facing +x in every collection panel, and shows the recipient, hand path, full P-B extraction and open doors inside the bay, with passing pedestrians on the separate strip.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/platform-and-bay.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "06977e39b33f7873710e9c25a83b46d5387a1ab91c5a5adda6803b43ff27b49f"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/parcel-inventory.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "97c012ee36f12bac698a596da53a7dcb85024d490af9bd10847e35e41ecdc34b"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/campus-path-reference.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "484966b3d6faf7d6aefe6247408e3a8457d911a6adeb015f617a58c66e0e5bfb"
+    }
+  ]
+}

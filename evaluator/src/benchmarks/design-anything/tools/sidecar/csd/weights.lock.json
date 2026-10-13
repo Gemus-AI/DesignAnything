@@ -1,0 +1,10 @@
+{
+  "model": "csd-vit-l",
+  "description": "CSD (Contrastive Style Descriptors) ViT-L/14 style encoder. Frozen benchmark evaluator weights (#3374): the sha256 below is the only accepted checkpoint; the sidecar refuses to load anything else.",
+  "source": "https://huggingface.co/tomg-group-umd/CSD-ViT-L/resolve/main/pytorch_model.bin",
+  "sha256": "40e92fad63a361b8136100cd234c42d401ef9b34ff1748234318929ebcc7e7a1",
+  "bytes": 2438228893,
+  "license": "CC-BY-4.0 (weights, per the Hugging Face model card); MIT (upstream code, github.com/learn2phoenix/CSD)",
+  "paper": "Somepalli et al., Measuring Style Similarity in Diffusion Models, arXiv:2404.01292",
+  "checkpointLayout": "training checkpoint dict; state dict under `model_state_dict` with a DataParallel `module.` prefix; 297 tensors, 304,752,640 fp32 parameters; contains the full ViT-L/14 visual tower (no `backbone.proj`), `last_layer_style` (1024x768) and `last_layer_content` (1024x768, unused here)"
+}

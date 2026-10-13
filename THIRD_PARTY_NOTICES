@@ -1,0 +1,108 @@
+THIRD-PARTY NOTICES
+
+The evaluator source in `evaluator/src/` is licensed under the Apache License
+2.0 (see `LICENSE`), except for the third-party portions listed below, which
+remain under their own licenses. Each entry names the files concerned, the
+upstream source, its license and the notice it requires.
+
+-------------------------------------------------------------------------------
+1. OpenAI CLIP
+-------------------------------------------------------------------------------
+Files:    evaluator/src/benchmarks/design-anything/tools/sidecar/csd/csd_embed.py
+          (the ViT vision-tower definition, transcribed from CLIP's model.py)
+          evaluator/src/benchmarks/design-anything/tools/sidecar/csd/golden/reference_upstream.py
+          (a one-off script that calls the upstream CLIP package)
+Source:   https://github.com/openai/CLIP
+          (license checked at commit d05afc436d78f1c48dc0dbf8e5980a9d471f35f6)
+License:  MIT
+
+MIT License
+
+Copyright (c) 2021 OpenAI
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+-------------------------------------------------------------------------------
+2. CSD: Measuring Style Similarity in Diffusion Models
+-------------------------------------------------------------------------------
+Files:    evaluator/src/benchmarks/design-anything/tools/sidecar/csd/csd_embed.py
+          (style projection and loading logic follow the upstream CSD_CLIP model)
+          evaluator/src/benchmarks/design-anything/tools/sidecar/csd/golden/reference_upstream.py
+          (a one-off script that runs the upstream implementation)
+Source:   https://github.com/learn2phoenix/CSD
+          (license checked at commit 3a9df32605b869eceb704897839be80977a9f1ea)
+          Somepalli et al., "Measuring Style Similarity in Diffusion Models",
+          arXiv:2404.01292
+License:  MIT (code). The model weights the sidecar loads are not included in
+          this repository; their source and license are recorded in
+          evaluator/src/benchmarks/design-anything/tools/sidecar/csd/weights.lock.json.
+
+MIT License
+
+Copyright (c) 2024 learn2phoenix
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-------------------------------------------------------------------------------
+3. Qwen-Image-Bench
+-------------------------------------------------------------------------------
+Files:    evaluator/src/benchmarks/design-anything/tools/evaluator/dqChecklist.ts
+          (the checklist item wording of the Quality, Aesthetics, Text Rendering
+          and Design Applications groups is copied verbatim from checklists.py)
+Source:   https://github.com/QwenLM/Qwen-Image-Bench , file checklists.py
+          (license checked at commit 8ab1fb47df2fba7b0cb046770a87f6323b98ecfc)
+          Qwen-Image-Bench, arXiv:2605.28091
+License:  Apache License 2.0. The full license text is in `LICENSE` at the root
+          of this repository. The upstream repository has no NOTICE file. The
+          items are reproduced unmodified.
+
+-------------------------------------------------------------------------------
+4. AesEval-Bench
+-------------------------------------------------------------------------------
+Files:    evaluator/src/benchmarks/design-anything/tools/evaluator/dqChecklist.ts
+          (the definitions of the four Layout criteria, Balance, Layering,
+          Whitespace and Alignment, are quoted verbatim)
+Source:   A. An, S. Sun, D. Huang, M. Cheng, Y. Gao, J. Li, Y. Qiao, J. Bian,
+          "Can Vision Language Models Assess Graphic Design Aesthetics? A
+          Benchmark, Evaluation, and Dataset Perspective", arXiv:2603.01083.
+          https://arxiv.org/abs/2603.01083
+License:  The paper is distributed under the Creative Commons Attribution 4.0
+          International License (https://creativecommons.org/licenses/by/4.0/).
+          The quoted definitions are unmodified.
+
+Note: the design-quality checklist in dqChecklist.ts was not used for the
+per-task evaluation records behind the paper's main table (their designQuality
+field reads "not-run"); see protocol/PROTOCOL.md.

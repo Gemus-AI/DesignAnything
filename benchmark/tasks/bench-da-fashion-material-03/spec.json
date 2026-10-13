@@ -1,0 +1,1230 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-fashion-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "materials-craft",
+      "label": "Materials and craft sheet",
+      "description": "One materials and craft sheet covering F01, construction, hardware and the A/B/C dimensions for COMMON SHIFT J01 and T01.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "outfit-front",
+      "label": "B outfit front flat",
+      "description": "One dimensioned front flat of the complete B outfit with a back-neck label inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "outfit-back",
+      "label": "B outfit back flat",
+      "description": "One dimensioned back flat of the complete B outfit with a back-neck label inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "standing-a",
+      "label": "Profile A standing outfit",
+      "description": "One standing view of profile A wearing J01 and T01 with the A body measurements.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "standing-b",
+      "label": "Profile B standing outfit",
+      "description": "One standing view of profile B wearing J01 and T01 with the B body measurements.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "standing-c",
+      "label": "Profile C standing outfit",
+      "description": "One standing view of profile C wearing J01 and T01 with the C body measurements.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "reach-a",
+      "label": "Profile A upward reach",
+      "description": "One working view of profile A in the standing-view outfit with 150-degree shoulder elevation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "seated-b",
+      "label": "Profile B seated assembly",
+      "description": "One working view of profile B in the standing-view outfit with 90-degree hip and knee flexion.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "squat-c",
+      "label": "Profile C low-level assembly",
+      "description": "One working view of profile C in the standing-view outfit with 110-degree knee flexion.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fastening-details",
+      "label": "Three-profile fastening details",
+      "description": "One A/B/C comparison board of jacket zips, trouser flies and pull loops in open and closed states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pocket-panel-details",
+      "label": "Pocket and joint-panel comparison",
+      "description": "One A/B/C comparison board of four-pocket layouts, pocket dimensions and elbow and knee seam locations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "identity-colour",
+      "label": "Identification and colour sheet",
+      "description": "One front-and-back identification sheet locating the neck label, badge, three reflective bands and two panel colours.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "movement-video",
+      "label": "Three-profile movement video",
+      "description": "One 12-second video of A reaching, B sitting and C squatting in consecutive 4-second sections.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "range-presentation",
+      "label": "Uniform sampling presentation",
+      "description": "One 10-page presentation combining the materials sheet, flats, six wearer views, detail boards, size comparison and sampling summary.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "common-shift-name",
+      "kind": "text-verbatim",
+      "text": "COMMON SHIFT",
+      "scope": {
+        "slots": [
+          "materials-craft",
+          "outfit-front",
+          "outfit-back",
+          "fastening-details",
+          "identity-colour",
+          "range-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "badge-wording",
+      "kind": "text-verbatim",
+      "text": "WORKSHOP 04",
+      "scope": {
+        "slots": [
+          "outfit-front",
+          "outfit-back",
+          "identity-colour"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON SHIFT",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "technical-sheet-system",
+      "slots": [
+        "outfit-front",
+        "outfit-back",
+        "fastening-details",
+        "pocket-panel-details",
+        "identity-colour"
+      ],
+      "sourceSlots": [
+        "materials-craft"
+      ],
+      "items": [
+        {
+          "item": "The flats and detail sheets describe compatible J01 and T01 construction, materials, hardware and profile-specific dimensions established in the materials sheet.",
+          "kind": "consistency"
+        },
+        {
+          "item": "B garment geometry, fastening placement, pocket layout, joint seams and identification agree wherever repeated across the technical images.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The technical images preserve the fixed main and joint-panel colours, four-pocket arrangement and three reflective-band arrangement wherever those features are depicted.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "wearer-range-system",
+      "slots": [
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c"
+      ],
+      "sourceSlots": [
+        "materials-craft",
+        "outfit-front",
+        "outfit-back",
+        "fastening-details",
+        "pocket-panel-details",
+        "identity-colour"
+      ],
+      "items": [
+        {
+          "item": "All six wearer views implement the shared uniform construction and identification established by the technical sheets while preserving the recorded differences among A, B and C.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Each standing-to-working pair preserves its own fastening lengths, pocket placement, panel seams and badge position through pose changes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Profile labels, body proportions and garment fit remain compatible with the separate body and finished-garment records; the three profiles are not interchangeable copies.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON SHIFT"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "outfit-front",
+      "outfit-back",
+      "standing-a",
+      "standing-b",
+      "standing-c",
+      "reach-a",
+      "seated-b",
+      "squat-c",
+      "fastening-details",
+      "pocket-panel-details",
+      "identity-colour"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not reward redesign of the fixed block or identification, or infer exact garment measurements and textile composition from rendered appearance."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "materials-craft",
+        "outfit-front",
+        "outfit-back",
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c",
+        "fastening-details",
+        "pocket-panel-details",
+        "identity-colour",
+        "range-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "outfit-front",
+        "outfit-back",
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c",
+        "fastening-details",
+        "pocket-panel-details",
+        "identity-colour"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-materials-craft",
+      "requirementId": "R-format-materials-craft",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-outfit-front",
+      "requirementId": "R-format-outfit-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "outfit-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-outfit-back",
+      "requirementId": "R-format-outfit-back",
+      "method": "artifact-property",
+      "targetSlots": [
+        "outfit-back"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-standing-a",
+      "requirementId": "R-format-standing-a",
+      "method": "artifact-property",
+      "targetSlots": [
+        "standing-a"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-standing-b",
+      "requirementId": "R-format-standing-b",
+      "method": "artifact-property",
+      "targetSlots": [
+        "standing-b"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-standing-c",
+      "requirementId": "R-format-standing-c",
+      "method": "artifact-property",
+      "targetSlots": [
+        "standing-c"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-reach-a",
+      "requirementId": "R-format-reach-a",
+      "method": "artifact-property",
+      "targetSlots": [
+        "reach-a"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-seated-b",
+      "requirementId": "R-format-seated-b",
+      "method": "artifact-property",
+      "targetSlots": [
+        "seated-b"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-squat-c",
+      "requirementId": "R-format-squat-c",
+      "method": "artifact-property",
+      "targetSlots": [
+        "squat-c"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fastening-details",
+      "requirementId": "R-format-fastening-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fastening-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pocket-panel-details",
+      "requirementId": "R-format-pocket-panel-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pocket-panel-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-identity-colour",
+      "requirementId": "R-format-identity-colour",
+      "method": "artifact-property",
+      "targetSlots": [
+        "identity-colour"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-movement-video",
+      "requirementId": "R-format-movement-video",
+      "method": "manual",
+      "targetSlots": [
+        "movement-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-range-presentation",
+      "requirementId": "R-format-range-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "range-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "materials-craft-record",
+      "requirementId": "R-materials-craft-record",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "The sheet identifies COMMON SHIFT, jacket J01, trousers T01 and F01. It states 65% polyester/35% cotton, 245 g/m², 1500 mm usable width, 2/1 twill and preshrunk finish. Construction specifies 10 mm seam allowance, lockstitched and overlocked main seams, two topstitch rows 6 mm apart and 20 mm pocket-opening corner bartacks. Hardware specifies size 5 separating coil jacket zips, size 5 closed-end coil fly zips, fabric pull loops with 30 × 15 mm clear openings, 40 mm waistband elastic and R01 silver glass-bead tape on polyester backing, 50 mm wide. Finished dimensions are mapped distinctly to A/B/C: jacket chest 1120/1200/1480, hem 1180/1160/1500, sleeve 560/640/590 and back length 680/740/730 mm; trouser relaxed waist 840/920/1160, extended waist 1000/1080/1320, hip 1180/1160/1500, outseam 950/1090/1000 and inseam 680/810/700 mm. Jacket zips are 540/600/590 mm and fly zips 160/180/200 mm. Tables or labelled diagrams are acceptable; missing specifications, swapped profiles or confusion between body and finished measurements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ]
+    },
+    {
+      "id": "flat-and-fastening-identifiers",
+      "requirementId": "R-flat-and-fastening-identifiers",
+      "method": "visual",
+      "targetSlots": [
+        "outfit-front",
+        "outfit-back",
+        "fastening-details"
+      ],
+      "criteria": "Each image legibly identifies the range as COMMON SHIFT, the jacket as J01, the trousers as T01 and the fabric as F01. Titles, legends or garment callouts may supply these identifiers. Omission, misspelling or assignment to the wrong garment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "zip-length-repetition",
+      "requirementId": "R-zip-length-repetition",
+      "method": "content",
+      "targetSlots": [
+        "fastening-details",
+        "range-presentation"
+      ],
+      "criteria": "Both targets explicitly associate A with a 540 mm jacket zip, B with 600 mm and C with 590 mm, agreeing with the materials sheet. The presentation also identifies COMMON SHIFT, J01, T01 and F01. Equivalent tabular or diagrammatic statements are allowed; absent values, profile swaps or propagation of an incorrect source value fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "sourceSlots": [
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "retained-block-construction",
+      "requirementId": "R-retained-block-construction",
+      "method": "visual",
+      "targetSlots": [
+        "outfit-front",
+        "outfit-back",
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c"
+      ],
+      "criteria": "Where visible, J01 retains its stand collar, set-in sleeves, centre-front separating zip and straight hem; T01 retains straight legs, an elasticated waistband and a centre-front zipped fly. Elbow and knee panels remain in their specified joint zones. Pose-related folds and perspective are acceptable; replacement of these construction features or relocation of joint panels away from the joints fails. A feature hidden by the specified view is not treated as absent.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "dimensioned-b-flats",
+      "requirementId": "R-dimensioned-b-flats",
+      "method": "visual",
+      "targetSlots": [
+        "outfit-front",
+        "outfit-back"
+      ],
+      "criteria": "The pair depicts the complete B jacket and trousers from opposite sides, with compatible seams, pockets, tape and dimension callouts; each includes a back-neck label inset. Finished B dimensions agree with jacket chest 1200, hem 1160, sleeve 640 and back length 740 mm, and trouser waist 920 relaxed/1080 extended, hip 1160, outseam 1090 and inseam 810 mm. Block geometry agrees with shoulder span 460, chest flat width 600, hem flat width 580, neckline width 140, collar height 40, sleeve upper-edge length 640, cuff flat width 130, relaxed trouser waist flat width 460, hip flat width 580, crotch level 280 below waistband and leg-opening flat width 150 mm per leg. Callouts may be distributed across the pair; full circumferences must not be mistaken for flat widths. Missing garment components, incompatible views or contradictory dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "wearer-profile-records",
+      "requirementId": "R-wearer-profile-records",
+      "method": "visual",
+      "targetSlots": [
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c"
+      ],
+      "criteria": "Each view carries its own correct profile and clearly mapped stature/chest/waist/hip values: A 1580/960/840/1060, B 1780/1040/920/1040 or C 1660/1280/1160/1340 mm. The garment fit and any stated dimensions agree with that profile's finished record: jacket chest/hem/sleeve/back length A 1120/1180/560/680, B 1200/1160/640/740, C 1480/1500/590/730; trousers relaxed waist/extended waist/hip/outseam/inseam A 840/1000/1180/950/680, B 920/1080/1160/1090/810, C 1160/1320/1500/1000/700 mm. Use stated values and visible proportions rather than claiming exact circumference measurement from an image. Layout and pose may vary; missing body labels, profile substitutions, conflicting dimensions or visibly incompatible fit fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "pocket-and-joint-placement",
+      "requirementId": "R-pocket-and-joint-placement",
+      "method": "visual",
+      "targetSlots": [
+        "pocket-panel-details",
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c"
+      ],
+      "criteria": "The board compares A, B and C and explicitly documents four patch pockets per outfit: two lower jacket-front pockets and two outer-thigh pockets centred on the outer seams. Each opening is horizontal and 180 mm wide, with 220 mm usable depth. For A/B/C respectively, jacket openings are 390/440/410 mm below the high shoulder point and their inner edges 70/80/90 mm from centre front; thigh-pocket tops are 220/260/240 mm below the waistband. Elbow panel centre seams are 330/380/350 mm from the shoulder seam along the upper sleeve; knee panel centre seams are 560/640/580 mm below the waistband along the outseam. Wearer views preserve their assigned layouts wherever visible; perspective and natural occlusion are allowed without requiring repeated dimension labels on every wearer. Missing board dimensions, extra or missing pockets, swapped coordinates or visibly displaced seams fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "fastening-comparison",
+      "requirementId": "R-fastening-comparison",
+      "method": "visual",
+      "targetSlots": [
+        "fastening-details"
+      ],
+      "criteria": "The board distinguishes A, B and C and shows each profile's jacket zip and trouser fly in open and closed states. Jacket lengths are A 540, B 600 and C 590 mm; fly zip lengths are A 160, B 180 and C 200 mm. Jacket zips are size 5 separating coil and fly zips size 5 closed-end coil. Fabric pull-loop dimensions refer to the unobstructed 30 × 15 mm opening, not the external loop size. Jacket upper stops are 60 mm below the centre-front neck seam and fly upper stops 40 mm below the waistband top. Shared detail callouts are acceptable when their applicability is explicit; omitted profiles or states, incorrect dimensions or incompatible fastening construction fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "identification-and-colour-layout",
+      "requirementId": "R-identification-and-colour-layout",
+      "method": "visual",
+      "targetSlots": [
+        "outfit-front",
+        "outfit-back",
+        "identity-colour"
+      ],
+      "criteria": "Each target shows the landscape 90 × 45 mm WORKSHOP 04 badge with three ascending steps, an inside back-neck COMMON SHIFT label, dark #263C46 main panels and light #B8C3BD elbow and knee panels. The identification sheet supplies front and back placement views. Insets or supplementary diagrams may expose identification hidden in a main back view. Colour codes or swatches establish the specified colours, with ordinary rendering and lighting variation allowed. Omitted identification, reversed panel colours, a different emblem or an incorrectly located label fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "reflective-band-arrangement",
+      "requirementId": "R-reflective-band-arrangement",
+      "method": "visual",
+      "targetSlots": [
+        "identity-colour",
+        "outfit-front",
+        "outfit-back",
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c"
+      ],
+      "criteria": "The identification sheet dimensions three silver reflective bands, each 50 mm wide: one jacket circuit with its upper edge 100 mm above the finished hem and a centre-front zip interruption, plus one circuit per trouser leg with its upper edge 200 mm above the finished hem. The flats and wearer views show compatible placement on visible surfaces. Front/back depiction may establish a circuit, and folds may distort its projected shape. Wrong counts, offsets measured from the wrong tape edge, missing identification-sheet dimensions or visibly inconsistent band placement fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "badge-colours-and-coordinates",
+      "requirementId": "R-badge-colours-and-coordinates",
+      "method": "visual",
+      "targetSlots": [
+        "identity-colour",
+        "outfit-front",
+        "outfit-back",
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c"
+      ],
+      "criteria": "Where the badge is visible or diagrammed, it occupies the wearer's left chest, uses a #263C46 field with #B8C3BD emblem, lettering and border, and preserves the supplied badge design. Its inner edge is 45 mm from centre front; its upper edge is A 160, B 180 or C 170 mm below the high shoulder point. B coordinates apply to the flats; other diagrams must agree with the profile they identify. Perspective, lighting and garment folds are allowed. Mirroring the badge onto the wearer's right, changing its design or showing incompatible placement fails; a hidden badge need not be exposed in a working pose.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "a-reaching-task",
+      "requirementId": "R-a-reaching-task",
+      "method": "visual",
+      "targetSlots": [
+        "reach-a"
+      ],
+      "criteria": "A is returning a light component toward an upper shelf, with both shoulders elevated to the specified 150° from arms-down and elbows extended. The component tray agrees with the recorded 240 × 160 × 40 mm proportions and any stated dimensions. Judge the anatomical pose using the supplied angle convention and task reference, allowing camera projection. A merely raised hand, bent-elbow substitute, incompatible shoulder position or contradictory tray dimensions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "b-seated-task",
+      "requirementId": "R-b-seated-task",
+      "method": "visual",
+      "targetSlots": [
+        "seated-b"
+      ],
+      "criteria": "B performs bracket fitting at a bench while seated, with 90° hip and knee flexion and supported feet. Seat and bench depiction is compatible with the recorded 460 mm and 740 mm heights, and any annotations use those values. Perspective is allowed; standing, unsupported feet, materially different joint positions or conflicting surface-height labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "c-squatting-task",
+      "requirementId": "R-c-squatting-task",
+      "method": "visual",
+      "targetSlots": [
+        "squat-c"
+      ],
+      "criteria": "C squats with feet on the floor and reaches a low assembly joint, using 110° knee flexion measured from a straight leg. The joint position is compatible with a centre 350 mm above the floor, and any dimension label agrees. Camera projection is allowed; interpreting 110° as the internal knee angle, substituting kneeling or sitting, or locating the task at bench height fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "movement-sequence-and-outfit-retention",
+      "requirementId": "R-movement-sequence-and-outfit-retention",
+      "method": "manual",
+      "targetSlots": [
+        "movement-video"
+      ],
+      "criteria": "Review the full timeline for 12 seconds of movement in A/B/C order, with four seconds allocated to each profile. A reaches with both shoulders at 150° elevation and extended elbows; B sits with 90° hip and knee flexion and supported feet; C squats with 110° knee flexion and feet on the floor. The segments reproduce the corresponding recorded tasks and outfits. Compare against the stills for retained jacket and fly lengths, four-pocket placement, elbow and knee seams, badge location, colours and reflective bands throughout motion. Natural deformation and transitions into the assigned pose are acceptable; wrong order or timing, a substituted pose, still-only sections or garment features changing during movement fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c"
+      ]
+    },
+    {
+      "id": "presentation-fact-carry-forward",
+      "requirementId": "R-presentation-fact-carry-forward",
+      "method": "content",
+      "targetSlots": [
+        "range-presentation"
+      ],
+      "criteria": "The presentation has ten pages and represents A, B and C. It repeats F01 with 65% polyester/35% cotton, 245 g/m², 1500 mm usable width, 2/1 twill and preshrunk finish. It carries forward jacket zip lengths A/B/C 540/600/590 mm, fly zip lengths 160/180/200 mm and the 30 × 15 mm clear pull-loop opening. Its front/back identification agrees with the earlier sheet for inside neck label, left-chest badge and three reflective bands, including any stated dimensions and offsets. Facts may appear in captions, tables or legible reused sheets; omissions, incorrect page count or contradictory downstream facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "sourceSlots": [
+        "materials-craft",
+        "fastening-details",
+        "identity-colour"
+      ]
+    },
+    {
+      "id": "presentation-visible-reuse",
+      "requirementId": "R-presentation-visible-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "range-presentation"
+      ],
+      "criteria": "Every listed source is recognizably and visibly reused in the presentation. Resizing, cropping and rearrangement are acceptable when the source remains identifiable and its relevant content remains readable. Both flats, all six distinct wearer views and each detail or identification board must be represented. Text-only mentions, substituted outfits or omission of any source fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "sourceSlots": [
+        "materials-craft",
+        "outfit-front",
+        "outfit-back",
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c",
+        "fastening-details",
+        "pocket-panel-details",
+        "identity-colour"
+      ]
+    },
+    {
+      "id": "presentation-comparison-and-sampling",
+      "requirementId": "R-presentation-comparison-and-sampling",
+      "method": "content",
+      "targetSlots": [
+        "range-presentation"
+      ],
+      "criteria": "The presentation contains an explicit comparison of A, B and C sizes that distinguishes body measurements from finished garment dimensions, and an identifiable summary of the uniform and fits to take into sampling. A table, annotated comparison or concise narrative may satisfy these functions. Any repeated values must agree with the records and materials sheet. A gallery without a size comparison, a missing sampling summary or contradictory sizing information fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "sourceSlots": [
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "f01-throughout-outfits",
+      "requirementId": "R-f01-throughout-outfits",
+      "method": "visual",
+      "targetSlots": [
+        "outfit-front",
+        "outfit-back",
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c",
+        "fastening-details",
+        "pocket-panel-details",
+        "identity-colour"
+      ],
+      "criteria": "Depicted garment fabric and any material annotations remain compatible with F01 across main, elbow and knee panels. Flat illustration need not simulate a visible weave, and colour changes do not imply a fabric change. Specified zips, elastic, labels, badges and reflective tape remain separate trims. An explicitly substituted panel fabric or a clearly incompatible material depiction fails; fibre percentages, weight and usable width are assessed from written specifications rather than inferred from appearance.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "set-technical-sheet-system",
+      "requirementId": "R-set-technical-sheet-system",
+      "method": "visual",
+      "targetSlots": [
+        "outfit-front",
+        "outfit-back",
+        "fastening-details",
+        "pocket-panel-details",
+        "identity-colour"
+      ],
+      "criteria": "The flats and detail sheets describe compatible J01 and T01 construction, materials, hardware and profile-specific dimensions established in the materials sheet. B garment geometry, fastening placement, pocket layout, joint seams and identification agree wherever repeated across the technical images. The technical images preserve the fixed main and joint-panel colours, four-pocket arrangement and three reflective-band arrangement wherever those features are depicted.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "set-wearer-range-system",
+      "requirementId": "R-set-wearer-range-system",
+      "method": "visual",
+      "targetSlots": [
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c"
+      ],
+      "criteria": "All six wearer views implement the shared uniform construction and identification established by the technical sheets while preserving the recorded differences among A, B and C. Each standing-to-working pair preserves its own fastening lengths, pocket placement, panel seams and badge position through pose changes. Profile labels, body proportions and garment fit remain compatible with the separate body and finished-garment records; the three profiles are not interchangeable copies.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-03/03-fit-and-task-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-craft",
+        "outfit-front",
+        "outfit-back",
+        "fastening-details",
+        "pocket-panel-details",
+        "identity-colour"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "profile-a-outfit",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "standing-a",
+      "subjectSlots": [
+        "reach-a"
+      ],
+      "notes": "The three working views and 12-second video use the assigned 150°, 90° and 110° poses; each profile keeps its standing view's fastening length, pocket placement, panel seams and badge position throughout its movement."
+    },
+    {
+      "id": "profile-b-outfit",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "standing-b",
+      "subjectSlots": [
+        "seated-b"
+      ],
+      "notes": "The three working views and 12-second video use the assigned 150°, 90° and 110° poses; each profile keeps its standing view's fastening length, pocket placement, panel seams and badge position throughout its movement."
+    },
+    {
+      "id": "profile-c-outfit",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "standing-c",
+      "subjectSlots": [
+        "squat-c"
+      ],
+      "notes": "The three working views and 12-second video use the assigned 150°, 90° and 110° poses; each profile keeps its standing view's fastening length, pocket placement, panel seams and badge position throughout its movement."
+    },
+    {
+      "id": "existing-badge",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "workshop-badge.png"
+      ],
+      "subjectSlots": [
+        "outfit-front",
+        "outfit-back",
+        "identity-colour",
+        "standing-a",
+        "standing-b",
+        "standing-c",
+        "reach-a",
+        "seated-b",
+        "squat-c"
+      ],
+      "notes": "Print \"COMMON SHIFT\" on the inside back-neck label and \"WORKSHOP 04\" on the existing 90 × 45 mm left-chest badge, preserving its three-step emblem."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "jacket-zip-lengths",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "fastening-details",
+        "range-presentation"
+      ],
+      "extract": [
+        "A/B/C jacket zip lengths"
+      ],
+      "notes": "The materials and craft sheet, both flat-lay drawings, fastening detail board and presentation identify COMMON SHIFT, J01, T01 and F01; the fastening board and presentation repeat jacket zip lengths of A 540 mm, B 600 mm and C 590 mm from the materials sheet."
+    },
+    {
+      "id": "presentation-material-and-fastening-facts",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "range-presentation"
+      ],
+      "extract": [
+        "F01 code, composition, weight, usable width, weave and finish",
+        "A/B/C jacket and trouser fastening dimensions"
+      ],
+      "notes": "The 10-page presentation includes all three fit profiles, repeats F01 and its five material facts, and carries forward the A/B/C fastening dimensions and front/back identification arrangement from the earlier sheets."
+    }
+  ]
+}

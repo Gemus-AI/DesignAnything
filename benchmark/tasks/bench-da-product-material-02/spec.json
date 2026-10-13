@@ -1,0 +1,626 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-product-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "closed-appliance",
+      "label": "Closed appliance views and kitchen placement",
+      "description": "One closed-appliance board with three orthographic views, a three-quarter view, overall dimensions and a dimensioned kitchen placement scene.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "loading-state",
+      "label": "Open lid and food loading",
+      "description": "One loading-state board with the open lid, seated B1, stowed grip, 1.0 L example batch and Idle-to-Start interface detail.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "bucket-removal",
+      "label": "Bucket removal and operation clearances",
+      "description": "One Ready-state bucket-removal board with upright extraction, grip and hand clearance, emptying and registered kitchen operation overlays.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "maintenance-state",
+      "label": "Bucket cleaning and filter replacement",
+      "description": "One Unplugged maintenance board with separate bucket washing and drying, removable gasket and complete F1 withdrawal through its service door.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "technical-exploded",
+      "label": "Component integration and technical exploded view",
+      "description": "One technical exploded board with B1, C1, D1, F1 and E1, dimensioned installed envelopes, assembly interfaces, access panels and distinct exhaust and cooling paths.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "controls-materials",
+      "label": "Operating controls and material finishes",
+      "description": "One controls and materials board with six operating snapshots, Start, Unplugged, the MAX 2.0 L detail and three material allocations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "CIRCA",
+      "scope": {
+        "slots": [
+          "closed-appliance",
+          "loading-state",
+          "bucket-removal",
+          "maintenance-state"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "bucket-fill-mark",
+      "kind": "text-verbatim",
+      "text": "MAX 2.0 L",
+      "scope": {
+        "slots": [
+          "loading-state",
+          "controls-materials"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "start-control",
+      "kind": "text-verbatim",
+      "text": "Start",
+      "scope": {
+        "slots": [
+          "loading-state",
+          "controls-materials"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "maintenance-condition",
+      "kind": "text-verbatim",
+      "text": "Unplugged",
+      "scope": {
+        "slots": [
+          "maintenance-state",
+          "controls-materials"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CIRCA",
+      "maxEditDistance": 1,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "complete-appliance-system",
+      "slots": [
+        "loading-state",
+        "bucket-removal",
+        "maintenance-state",
+        "technical-exploded"
+      ],
+      "sourceSlots": [
+        "closed-appliance",
+        "controls-materials"
+      ],
+      "items": [
+        {
+          "item": "The operating and exploded views preserve the closed proposal's enclosure, lid mechanism, openings, grip, interface placement and service access, allowing only the depicted operational movement or disassembly.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Visible enclosure, bucket and gasket materials follow the controls and materials board across the complete proposal.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Brand placement and interface design remain consistent wherever they are shown, and the closed and operating kitchen placements retain the same product dimensions and position.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "CIRCA"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "closed-appliance",
+      "loading-state",
+      "bucket-removal",
+      "maintenance-state",
+      "technical-exploded",
+      "controls-materials"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not rescore numerical fit, operating-state correctness or clearance compliance, which belong to the explicit acceptance checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "closed-appliance",
+        "loading-state",
+        "bucket-removal",
+        "maintenance-state",
+        "technical-exploded",
+        "controls-materials"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-closed-appliance",
+      "requirementId": "R-format-closed-appliance",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closed-appliance"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-loading-state",
+      "requirementId": "R-format-loading-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "loading-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-bucket-removal",
+      "requirementId": "R-format-bucket-removal",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bucket-removal"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-maintenance-state",
+      "requirementId": "R-format-maintenance-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "maintenance-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-technical-exploded",
+      "requirementId": "R-format-technical-exploded",
+      "method": "artifact-property",
+      "targetSlots": [
+        "technical-exploded"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-controls-materials",
+      "requirementId": "R-format-controls-materials",
+      "method": "artifact-property",
+      "targetSlots": [
+        "controls-materials"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "machine-envelopes-and-assembly",
+      "requirementId": "R-machine-envelopes-and-assembly",
+      "method": "visual",
+      "targetSlots": [
+        "closed-appliance",
+        "technical-exploded"
+      ],
+      "criteria": "Read dimension annotations and compare the assembled geometry with the exploded assembly. The selected overall width, depth and height must be stated, agree between boards and remain within 300 × 350 × 360 mm including feet and the closed lid. The exploded board must identify exactly one each of B1, C1, D1, F1 and E1 and dimension their installed envelopes: B1 body Ø180 × 170 H and removal/stowed-grip envelope Ø190 × 180 H; C1 Ø210 × 200 H; D1 90 W × 100 D × 70 H; F1 60 W × 70 D × 120 H; E1 80 × 55 × 20 mm. Assembly evidence must establish B1 nesting inside C1, upright C1 and D1 on a common vertical axis, D1 immediately below C1 with a 6 mm external-envelope gap, upright F1 and at least 10 mm between E1 and C1. Show the enclosure, access panels and bucket-to-drive coupling. Exploded drawing spacing may differ from installed spacing when the installed relationships are explicitly demonstrated. F1's vertical-axis rotation and rigid E1 rotation are allowed; missing dimensions, altered component sizes, contradictory assemblies or unexplained solid-volume collisions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "kitchen-placement-and-operating-clearances",
+      "requirementId": "R-kitchen-placement-and-operating-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "closed-appliance",
+        "bucket-removal"
+      ],
+      "criteria": "Dimensioned placement and operating overlays must register the same appliance size and position in a level 600 × 600 mm countertop bay, with the counter 900 mm above the floor and the rear wall at its back edge. Require at least 50 mm at each side, 80 mm behind and 60 mm in front; the 40 mm cord-bend zone must fit inside the rear margin. Cabinet geometry must show a 330 mm projection, a front edge 270 mm behind the counter front and an underside 620 mm above the counter. Trace the designed lid's actual swept path, an upright bucket lift of at least 200 mm with grip and hand space, and at least 140 mm of straight filter withdrawal beyond its access face. All paths must clear the fixed surroundings. Viewpoint and kitchen decoration may vary, but relocating or resizing the machine between overlays, missing required dimensions or depicting obstructed paths fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "use-state-and-maintenance-continuity",
+      "requirementId": "R-use-state-and-maintenance-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "loading-state",
+        "bucket-removal",
+        "maintenance-state",
+        "controls-materials"
+      ],
+      "criteria": "Compare the opening shapes, grip construction and interface placement across the four boards; movement between stowed and deployed positions is allowed, but geometry must remain mechanically consistent. Loading must identify Idle with the bucket seated and the 1.0 L batch below the interior fill mark. Removal must identify Ready after cooling. Maintenance must establish cooling before Unplugged, show B1 being hand washed separately from the appliance, then dried before reseating, and show the removable silicone lid gasket. B1's mixing feature must stay attached during removal, emptying and cleaning. The appliance body, C1, D1, F1 and E1 must remain dry, with drive and electronics protected behind their technician-only panel. Missing sequence evidence, a changed grip or opening, washing the assembled machine or detaching the supplied mixing feature fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "filter-service-and-air-path",
+      "requirementId": "R-filter-service-and-air-path",
+      "method": "visual",
+      "targetSlots": [
+        "technical-exploded",
+        "maintenance-state"
+      ],
+      "criteria": "Both boards must establish the same dedicated filter door on the front or either side and a straight withdrawal direction with at least 140 mm beyond the access face; maintenance must depict the door open and F1 completely withdrawn. The exploded board must show two opposing, centered Ø25 ports on F1's 60 × 120 mm faces and a continuous Ø25-clear exhaust route from an upper-side C1 takeoff through F1 to an exterior outlet. Identify a separate visible cooling intake and technician-only access protecting D1 and E1. The duct must avoid the B1, D1 and E1 volumes. Filter side, takeoff clocking and duct shape are open choices. Rear-only routine access, a bent extraction path, incomplete withdrawal, missing port geometry, an interrupted or obstructed exhaust route, or routine exposure of the drive/electronics fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "operating-snapshot-record",
+      "requirementId": "R-operating-snapshot-record",
+      "method": "visual",
+      "targetSlots": [
+        "controls-materials"
+      ],
+      "criteria": "Read the six-snapshot interface record and require the exact labels Idle, Running, Cooling, Ready, Close lid and Install bucket, each paired with its own distinct symbol. Require a Start control and a separate Unplugged maintenance annotation. Idle must have B1 seated with heater and drive off, with Start enabled only after lid closure. Running must retain B1 behind a locked lid while heating and mixing operate. Cooling must retain the locked lid and bucket, stop heating and drive, and activate cooling. Ready must show a stopped, cool appliance with normal opening and removal available. Close lid must represent an attempted but blocked start with seated B1 and an open lid; Install bucket must represent an attempted but blocked start with absent B1 and a closed lid. Both blocked conditions must leave heater and drive off. Control form and symbol design may vary; missing or misspelled records, duplicated symbols, color-only differentiation or contradictory state behavior fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "branding-fill-mark-and-material-allocation",
+      "requirementId": "R-branding-fill-mark-and-material-allocation",
+      "method": "visual",
+      "targetSlots": [
+        "closed-appliance",
+        "loading-state",
+        "bucket-removal",
+        "maintenance-state",
+        "technical-exploded",
+        "controls-materials"
+      ],
+      "criteria": "The four appliance-use boards must display CIRCA at the same physical body location. Loading and the controls detail must place MAX 2.0 L on B1's interior below its rim; the precise mark height is a design choice. Read controls-board callouts assigning finely textured PC/ABS with color specification #D8D1C5 to the outer enclosure, brushed 304 stainless steel to B1 and removable silicone to the lid gasket. Compare visible parts across the other five boards for the same allocation. Original typography and lighting-dependent appearance are allowed; photometric color matching is unnecessary. Relocated branding, an exterior-only fill mark, incorrect material specifications or conflicting material assignments fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "closed-product-view-coverage",
+      "requirementId": "R-closed-product-view-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "closed-appliance"
+      ],
+      "criteria": "Require identifiable front, right and top orthographic views, a three-quarter view, readable actual overall dimensions and a kitchen placement scene. Together these must communicate a complete appliance with enclosure, closed loading lid, controls, service-door boundaries, feet and ventilation, and locate the rear cord and body margins. Board layout and rendering style may vary. Missing requested views, perspective views substituted for the orthographic set, or an incomplete appliance presentation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "loading-action-and-start-transition",
+      "requirementId": "R-loading-action-and-start-transition",
+      "method": "visual",
+      "targetSlots": [
+        "loading-state"
+      ],
+      "criteria": "Show a hand loading a batch identified as 1.0 L of drained vegetable peelings and cut fruit scraps into the seated B1 through the open lid. The designed grip must be stowed within the Ø190 × 180 H mm removal envelope and permit loading. Show an enlarged Idle interface and an explicit transition making Start available after closure, with heating and drive off during loading. Illustrative batch composition may vary within the specified plant scraps; free liquid, oil, hard bones, shells, cutlery or other non-food objects must not be presented as selected feed. An absent hand, deployed loading grip, unclear batch quantity or Start enabled with the lid open fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "bucket-handling-and-emptying",
+      "requirementId": "R-bucket-handling-and-emptying",
+      "method": "visual",
+      "targetSlots": [
+        "bucket-removal"
+      ],
+      "criteria": "Show Ready, a deployed lifting grip, usable hand space and an annotated upright extraction of at least 200 mm above the seated position. Show the same B1 emptying its processed contents into a separate generic receptacle outside the appliance, with its mixing feature still attached. Include dimensioned closed-position and full-operation overlays registered to the same product placement. Grip mechanism and receptacle form are open choices. Tilting substituted for the required vertical lift, insufficient hand space, a branded or internal receiving vessel, a substitute residue vessel or missing overlays fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-complete-appliance-system",
+      "requirementId": "R-set-complete-appliance-system",
+      "method": "visual",
+      "targetSlots": [
+        "loading-state",
+        "bucket-removal",
+        "maintenance-state",
+        "technical-exploded"
+      ],
+      "criteria": "The operating and exploded views preserve the closed proposal's enclosure, lid mechanism, openings, grip, interface placement and service access, allowing only the depicted operational movement or disassembly. Visible enclosure, bucket and gasket materials follow the controls and materials board across the complete proposal. Brand placement and interface design remain consistent wherever they are shown, and the closed and operating kitchen placements retain the same product dimensions and position.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-envelope.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "closed-appliance",
+        "controls-materials"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "assembled-and-exploded-product",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "closed-appliance",
+      "subjectSlots": [
+        "technical-exploded"
+      ],
+      "notes": "The closed-appliance and technical exploded boards describe the same machine within 300 W × 350 D × 360 H mm."
+    },
+    {
+      "id": "supplied-bucket-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "bucket-identity.png"
+      ],
+      "subjectSlots": [
+        "loading-state",
+        "bucket-removal",
+        "maintenance-state",
+        "technical-exploded",
+        "controls-materials"
+      ],
+      "notes": "Retain its circular rim, flat base, bottom coupling and attached mixing feature."
+    }
+  ]
+}

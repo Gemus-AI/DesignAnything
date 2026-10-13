@@ -1,0 +1,684 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-packaging-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "ac45-flat-artwork",
+      "label": "AC45 front and back artwork",
+      "description": "One Apple & Cinnamon artwork board with complete front and back faces, fixed packaging copy and a separate dimension-guide key.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cb45-flat-artwork",
+      "label": "CB45 front and back artwork",
+      "description": "One Cocoa & Banana artwork board with complete front and back faces, fixed packaging copy and a separate dimension-guide key.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "bv45-flat-artwork",
+      "label": "BV45 front and back artwork",
+      "description": "One Blueberry & Vanilla artwork board with complete front and back faces, fixed packaging copy and a separate dimension-guide key.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "opening-preparation",
+      "label": "AC45 opening and preparation illustration",
+      "description": "One four-step AC45 opening and preparation illustration with the fixed numbered instructions and caution sentence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shelf-display",
+      "label": "Three-flavour shelf display",
+      "description": "One nine-pouch shelf display in a plain retaining tray with a half-width comparison strip of all three flavour fronts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ac45-pouch-display",
+      "label": "AC45 single-pouch display",
+      "description": "One filled AC45 pouch display with a front three-quarter view and an upright rear-view inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-name",
+      "kind": "text-verbatim",
+      "text": "DAYFOLD",
+      "scope": {
+        "slots": [
+          "ac45-flat-artwork",
+          "cb45-flat-artwork",
+          "bv45-flat-artwork",
+          "shelf-display",
+          "ac45-pouch-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "front-tagline",
+      "kind": "text-verbatim",
+      "text": "ONE POUCH. ONE BREAKFAST.",
+      "scope": {
+        "slots": [
+          "ac45-flat-artwork",
+          "cb45-flat-artwork",
+          "bv45-flat-artwork",
+          "shelf-display",
+          "ac45-pouch-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "breakfast-descriptor",
+      "kind": "text-verbatim",
+      "text": "INSTANT OAT BREAKFAST",
+      "scope": {
+        "slots": [
+          "ac45-flat-artwork",
+          "cb45-flat-artwork",
+          "bv45-flat-artwork",
+          "shelf-display",
+          "ac45-pouch-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "apple-cinnamon-name",
+      "kind": "text-verbatim",
+      "text": "APPLE & CINNAMON",
+      "scope": {
+        "slots": [
+          "ac45-flat-artwork",
+          "shelf-display",
+          "ac45-pouch-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "cocoa-banana-name",
+      "kind": "text-verbatim",
+      "text": "COCOA & BANANA",
+      "scope": {
+        "slots": [
+          "cb45-flat-artwork",
+          "shelf-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "blueberry-vanilla-name",
+      "kind": "text-verbatim",
+      "text": "BLUEBERRY & VANILLA",
+      "scope": {
+        "slots": [
+          "bv45-flat-artwork",
+          "shelf-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "DAYFOLD",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "sku-artwork-through-displays",
+      "slots": [
+        "opening-preparation",
+        "shelf-display",
+        "ac45-pouch-display"
+      ],
+      "sourceSlots": [
+        "ac45-flat-artwork",
+        "cb45-flat-artwork",
+        "bv45-flat-artwork"
+      ],
+      "items": [
+        {
+          "item": "Shelf pouches and comparison-strip fronts preserve the corresponding flat board's wordmark, flavour artwork and information layout for each SKU.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The AC45 single-pouch front and rear reproduce their respective flat faces, and the opening sequence preserves recognisable AC45 identity through its changing physical state.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Filled and opened representations agree with the specified sachet construction and notch-led removal of the upper strip.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "DAYFOLD"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "ac45-flat-artwork",
+      "cb45-flat-artwork",
+      "bv45-flat-artwork",
+      "opening-preparation",
+      "shelf-display",
+      "ac45-pouch-display"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality should assess packaging communication and visual execution without requiring photorealistic materials or lighting in flat artwork, dimension guides or preparation illustrations."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "ac45-flat-artwork",
+        "cb45-flat-artwork",
+        "bv45-flat-artwork",
+        "opening-preparation",
+        "shelf-display",
+        "ac45-pouch-display"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-ac45-flat-artwork",
+      "requirementId": "R-format-ac45-flat-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ac45-flat-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cb45-flat-artwork",
+      "requirementId": "R-format-cb45-flat-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cb45-flat-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-bv45-flat-artwork",
+      "requirementId": "R-format-bv45-flat-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bv45-flat-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-opening-preparation",
+      "requirementId": "R-format-opening-preparation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "opening-preparation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shelf-display",
+      "requirementId": "R-format-shelf-display",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shelf-display"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ac45-pouch-display",
+      "requirementId": "R-format-ac45-pouch-display",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ac45-pouch-display"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "complete-sku-copy-and-alignment",
+      "requirementId": "R-complete-sku-copy-and-alignment",
+      "method": "visual",
+      "targetSlots": [
+        "ac45-flat-artwork",
+        "cb45-flat-artwork",
+        "bv45-flat-artwork"
+      ],
+      "criteria": "Read each board against its corresponding client-copy.en.md records. Require every FRONT, BACK and COMMON BACK COPY entry, including the correct ingredients, allergen statement, back product code, numbered instructions, caution, storage wording and concept-pack notice. Require the matching product code additionally on the front. Compare equivalent face coordinates: the brand, flavour and net-weight labels must occupy matching positions. Typographic wrapping may vary without changing wording or reading order; omissions, substitutions, SKU mismatches or shifted required anchors fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "flat-face-geometry-and-copy-safety",
+      "requirementId": "R-flat-face-geometry-and-copy-safety",
+      "method": "visual",
+      "targetSlots": [
+        "ac45-flat-artwork",
+        "cb45-flat-artwork",
+        "bv45-flat-artwork"
+      ],
+      "criteria": "Each board must depict two equal upright outside faces side by side, with a separate dimension-guide key and geometry consistent with pouch-geometry.en.md. Check the stated physical dimensions, proportional seal widths, opposed V cuts centred at y = 20 mm, and a tear reference joining them. The notch vertices must correspond to (0,18), (3,20), (0,22) on the left and (140,18), (137,20), (140,22) on the right. The guide must identify the specified safe bounds, and mandatory packaging copy plus its immediate label backgrounds must remain inside them on both faces. Decorative backgrounds may extend through seal bands. Export scale may vary; conflicting dimensions, missing structural features, mirrored backs or unsafe copy fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "retained-artwork-and-ingredient-accuracy",
+      "requirementId": "R-retained-artwork-and-ingredient-accuracy",
+      "method": "visual",
+      "targetSlots": [
+        "ac45-flat-artwork",
+        "cb45-flat-artwork",
+        "bv45-flat-artwork",
+        "shelf-display",
+        "ac45-pouch-display"
+      ],
+      "criteria": "Compare each displayed SKU with its flat board for unchanged wordmark, flavour graphics, colours and information placement. Perspective, lighting, curvature and physically justified occlusion may vary; redesigned or swapped artwork fails. Compare the wordmark with dayfold-wordmark.png if that referenced attachment is available; agreement between exports alone does not establish fidelity to an unavailable original. Ingredient imagery is optional, but any identifiable ingredient must belong to that SKU's ingredient statement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "opening-and-preparation-sequence",
+      "requirementId": "R-opening-and-preparation-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "opening-preparation"
+      ],
+      "criteria": "Require four clearly ordered stages showing a notch-led tear that detaches the upper strip while leaving one continuous lower pouch, the entire dry portion emptied into a bowl, 120 ml hot water added to the bowl followed by stirring, and a 3-minute wait followed by another stir. Read the four numbered sentences and complete caution against COMMON BACK COPY verbatim. Preserve recognisable AC45 artwork wherever the pouch appears. Illustration style and utensils may vary; missing actions, wrong amounts, water added to the pouch, incorrect wording or an inconsistent pouch identity fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "ac45-flat-artwork"
+      ]
+    },
+    {
+      "id": "shelf-quantities-and-comparison-strip",
+      "requirementId": "R-shelf-quantities-and-comparison-strip",
+      "method": "visual",
+      "targetSlots": [
+        "shelf-display"
+      ],
+      "criteria": "Count exactly nine filled shelf pouches, with three identifiable instances of each SKU, supported upright by a plain retaining tray. Separately require a comparison strip containing one uncropped front per SKU, represented at half the original 140 mm face width, with readable flavour names and product codes. Use physical scale information or a clear relative-scale presentation to establish 70 mm intent, not raster pixel counts. Arrangement may vary; incorrect counts, substituted SKUs, missing support, cropped strip fronts, unsupported reduction or unreadable strip identifiers fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "ac45-flat-artwork",
+        "cb45-flat-artwork",
+        "bv45-flat-artwork"
+      ]
+    },
+    {
+      "id": "filled-construction-and-ac45-face-match",
+      "requirementId": "R-filled-construction-and-ac45-face-match",
+      "method": "visual",
+      "targetSlots": [
+        "ac45-pouch-display",
+        "shelf-display"
+      ],
+      "criteria": "Filled pouches must read as four-edge heat-sealed sachets with modest central swelling, flat full-height side seals, straight top and bottom seals and paired side notches. Thickness may vary within that construction, and perspective or tray occlusion may hide portions without implying a different pack structure. Compare both AC45 faces in the single-pouch display to the flat artwork, allowing surface deformation but no copy or graphic changes. Missing structural features, an incompatible pouch construction or mismatched AC45 faces fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "ac45-flat-artwork"
+      ]
+    },
+    {
+      "id": "front-and-back-reading-hierarchy",
+      "requirementId": "R-front-and-back-reading-hierarchy",
+      "method": "visual",
+      "targetSlots": [
+        "ac45-flat-artwork",
+        "cb45-flat-artwork",
+        "bv45-flat-artwork"
+      ],
+      "criteria": "Evaluate visual hierarchy on each face: the front should introduce DAYFOLD, then the flavour, then the single-portion information; the back should guide the reader through ingredients and allergens before preparation and storage. Typeface, colour and layout choices may vary. Competing emphasis or grouping that reverses or obscures these reading sequences fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "single-pouch-view-composition",
+      "requirementId": "R-single-pouch-view-composition",
+      "method": "visual",
+      "targetSlots": [
+        "ac45-pouch-display"
+      ],
+      "criteria": "Require an identifiable filled AC45 pouch as the main front three-quarter view and a distinct rear-view inset whose back artwork reads upright. Camera angle and inset placement may vary while preserving those views. A front-only composition, flat main view, absent rear inset, inverted back or different SKU fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-sku-artwork-through-displays",
+      "requirementId": "R-set-sku-artwork-through-displays",
+      "method": "visual",
+      "targetSlots": [
+        "opening-preparation",
+        "shelf-display",
+        "ac45-pouch-display"
+      ],
+      "criteria": "Shelf pouches and comparison-strip fronts preserve the corresponding flat board's wordmark, flavour artwork and information layout for each SKU. The AC45 single-pouch front and rear reproduce their respective flat faces, and the opening sequence preserves recognisable AC45 identity through its changing physical state. Filled and opened representations agree with the specified sachet construction and notch-led removal of the upper strip.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/client-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-01/pouch-geometry.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "ac45-flat-artwork",
+        "cb45-flat-artwork",
+        "bv45-flat-artwork"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "range-wordmark-consistency",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorSlot": "ac45-flat-artwork",
+      "subjectSlots": [
+        "cb45-flat-artwork",
+        "bv45-flat-artwork",
+        "shelf-display",
+        "ac45-pouch-display"
+      ],
+      "notes": "The flat artwork boards, shelf display and single-pouch display retain the attached DAYFOLD wordmark and repeat the same artwork for each SKU."
+    },
+    {
+      "id": "ac45-artwork-consistency",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "ac45-flat-artwork",
+      "subjectSlots": [
+        "shelf-display",
+        "ac45-pouch-display"
+      ],
+      "notes": "The flat artwork boards, shelf display and single-pouch display retain the attached DAYFOLD wordmark and repeat the same artwork for each SKU."
+    },
+    {
+      "id": "cb45-artwork-consistency",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "cb45-flat-artwork",
+      "subjectSlots": [
+        "shelf-display"
+      ],
+      "notes": "The flat artwork boards, shelf display and single-pouch display retain the attached DAYFOLD wordmark and repeat the same artwork for each SKU."
+    },
+    {
+      "id": "bv45-artwork-consistency",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "bv45-flat-artwork",
+      "subjectSlots": [
+        "shelf-display"
+      ],
+      "notes": "The flat artwork boards, shelf display and single-pouch display retain the attached DAYFOLD wordmark and repeat the same artwork for each SKU."
+    },
+    {
+      "id": "ac45-opening-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "ac45-flat-artwork",
+      "subjectSlots": [
+        "opening-preparation"
+      ],
+      "notes": "Its printed steps and caution match client-copy.en.md, and AC45 remains recognisable through the opening sequence."
+    }
+  ]
+}

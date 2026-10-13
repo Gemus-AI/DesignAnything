@@ -1,0 +1,25 @@
+SKYWARD COMMON | A floating city learns to find its course
+
+We are developing SKYWARD COMMON, an original science fiction animation concept short for teenage and adult audiences who enjoy exploration and character growth. Its 48 seconds contain 12 shots, S01–S12, lasting 4 seconds each. Departure occupies 0–16 seconds, Disorientation 16–32 seconds and New Course 32–48 seconds. Mira, an 18-year-old navigator, takes a floating city away from its mooring, loses the departure beacon in cloud and chooses a lower air current after reading the market's wind ribbons. Her decision brings the whole city into a sunlit passage. The attached story records fix the synopsis, events and dialogue; the visual language, camera positions within the supplied areas and performance remain open.
+
+Mira has an amber patch on her left cuff, a navy coat with a split rear hem and a triangular hair clip above her right temple. Our existing brass course finder has an 80 mm circular case, a 20 mm case depth, a top suspension loop and a red triangular needle tip. Its dial carries "TRUE COURSE" beneath the centre. The instrument appears in S03 and S10. The city is 240000 mm long and 120000 mm wide: its stern berth, central market and bow wheelhouse occupy the three positions in the attached geometry. Travel follows +X; exterior movement reads left to right, with cameras on the south side of that axis. The wheelhouse remains above the market and the berth remains at the stern. Both 16:9 and 9:16 compositions use action margins of 3.5% and graphic margins of 5% on every edge. Print "SKYWARD COMMON" in S12 and as the heading of the shot table; Mira's final line is "We steer together."
+
+Audience: our director, animation lead and producer will use the work to choose the film's visual approach and approve its next development stage for teenage and adult viewers.
+
+Inputs (attached): 01-client-facts.en.md contains the project facts, identity anchors and continuity coordinates. 02-delivery-catalog.en.md lists each delivery file, its proportion, format and stage. 03-story-records.en.md contains the fixed synopsis, shot events, timings and dialogue. landscape-safe-areas.png supplies the 16:9 margins and annotation positions. portrait-safe-areas.png supplies the equivalent 9:16 margins and annotation positions. city-plan-section.png fixes the city's three zones, relative levels, travel axis and available camera areas. course-finder-front.png records the existing instrument's face, engraving and needle. course-finder-side.png records the same instrument's case depth, loop and side profile. dawn-sea-light.png supplies low morning sunlight and layered cloud as atmosphere reference.
+
+Deliverables:
+1. One finished Mira and city identity sheet, with front, side and back character views, three expressions and a city silhouette locating the wheelhouse, market and stern berth
+2. One continuous storyboard document containing 12 landscape panels for S01–S12 and two separately composed portrait panels for S03 and S10
+3. Two finished landscape keyframes, one for the departure instrument shot S03 and one for the recovered-course instrument shot S10
+4. One shot table containing 12 rows with shot ID, shot size, duration, characters, action, dialogue and dialogue timing
+5. One colour script containing 12 landscape thumbnails, labelled S01–S12
+
+Acceptance:
+- The storyboard and shot table cover S01–S12 in order, total 48 seconds and match the events and dialogue in 03-story-records.en.md. Every storyboard panel prints its shot ID, one size label from WS, MS or CU, duration in seconds and character entry Mira or None; those four entries match the shot table.
+- The identity sheet contains all three Mira views, three expressions and the three city landmarks. The storyboard, both keyframes and colour script preserve Mira's left-cuff patch, split coat hem and right-side hair clip wherever visible, together with the instrument's 80 mm case, 20 mm depth, top loop, red needle tip and TRUE COURSE engraving. Both keyframes show the engraving legibly.
+- The storyboard and colour script preserve the wheelhouse above the market, the berth at the stern and left-to-right exterior travel. Their camera positions follow the south-side areas in city-plan-section.png; all 12 colour thumbnails correspond to the same numbered storyboard shots.
+- The storyboard's S03 and S10 portrait panels recompose the same actions for 9:16. These panels, the landscape panels and both keyframes place principal action inside the 3.5% margins and graphics inside the 5% margins. Dialogue panels contain centred lower subtitle placeholders, at most two lines, with each cue lasting between 5/6 second and 7 seconds.
+- The storyboard prints SKYWARD COMMON in S12 and We steer together. in S11; the shot table carries SKYWARD COMMON as its heading and reproduces all three dialogue lines and their timings from 03-story-records.en.md.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

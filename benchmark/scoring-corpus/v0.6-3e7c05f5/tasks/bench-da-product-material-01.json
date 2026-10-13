@@ -1,0 +1,582 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-product-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "complete-product",
+      "label": "Complete product views",
+      "description": "One finished board with front, right and top orthographic views, a rear three-quarter view, overall dimensions, material callouts and the DAYREST name.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "assembly-light-path",
+      "label": "Assembly and light path",
+      "description": "One finished board with the seven-module exploded assembly, custom parts, dimensions, connection routes and a light-path and speaker-outlet section.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "physical-operation",
+      "label": "Manual light and setting actions",
+      "description": "One finished board with E1, S-CANCEL and S-COMMIT sequences, physical control details, hand actions, spoken-value captions and confirmation cues.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "alarm-modes",
+      "label": "Three alarm modes",
+      "description": "One finished board with OFF, LIGHT and LIGHT + TONE panels showing physical switch positions and wake-time light and sound states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "morning-sequence",
+      "label": "Morning wake and snooze sequence",
+      "description": "One finished board with the six W morning states from 06:40 to 07:12 and the next daily ramp at 06:40 on Wednesday 2026-09-16.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "bedside-use",
+      "label": "Evening and morning bedside use",
+      "description": "One finished board with evening E1 and morning W bedside scenes and a dimensioned inset of placement, hand approach and rear cable routing.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "DAYREST",
+      "scope": {
+        "slots": [
+          "complete-product",
+          "bedside-use"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "light-legend",
+      "kind": "text-verbatim",
+      "text": "LIGHT",
+      "scope": {
+        "slots": [
+          "complete-product",
+          "alarm-modes"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "light-tone-legend",
+      "kind": "text-verbatim",
+      "text": "LIGHT + TONE",
+      "scope": {
+        "slots": [
+          "complete-product",
+          "alarm-modes"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "DAYREST",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "resolved-lamp-across-boards",
+      "slots": [
+        "assembly-light-path",
+        "physical-operation",
+        "alarm-modes",
+        "morning-sequence",
+        "bedside-use"
+      ],
+      "sourceSlots": [
+        "complete-product"
+      ],
+      "items": [
+        {
+          "item": "Every depiction preserves the selected lamp's diffuser geometry, control locations, openings, seams, material assignments and support arrangement; exploded and sectional views remain mechanically reconcilable with its exterior.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The control identities, M01 direction mapping and labeled light and sound states agree across boards wherever the same operating condition is represented.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The evening scene corresponds to E1 at manual level 4, the morning scene corresponds to W immediately after the 07:02 snooze press, and neither adopts the independent S-COMMIT branch's 08:10 wake time.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "DAYREST"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "complete-product",
+      "assembly-light-path",
+      "physical-operation",
+      "alarm-modes",
+      "morning-sequence",
+      "bedside-use"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not prescribe a particular enclosure silhouette, control-cap style or confirmation-light expression, or judge photometric performance beyond the specified shielding and relative operating states."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "complete-product",
+        "assembly-light-path",
+        "physical-operation",
+        "alarm-modes",
+        "morning-sequence",
+        "bedside-use"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-complete-product",
+      "requirementId": "R-format-complete-product",
+      "method": "artifact-property",
+      "targetSlots": [
+        "complete-product"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-assembly-light-path",
+      "requirementId": "R-format-assembly-light-path",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembly-light-path"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-physical-operation",
+      "requirementId": "R-format-physical-operation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "physical-operation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-alarm-modes",
+      "requirementId": "R-format-alarm-modes",
+      "method": "artifact-property",
+      "targetSlots": [
+        "alarm-modes"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-morning-sequence",
+      "requirementId": "R-format-morning-sequence",
+      "method": "artifact-property",
+      "targetSlots": [
+        "morning-sequence"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-bedside-use",
+      "requirementId": "R-format-bedside-use",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bedside-use"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "complete-product-definition",
+      "requirementId": "R-complete-product-definition",
+      "method": "visual",
+      "targetSlots": [
+        "complete-product"
+      ],
+      "criteria": "Require front, right and top orthographic views plus a rear three-quarter view of a single resolved lamp. Actual overall width, depth and height must be labeled and no greater than 180, 150 and 210 mm respectively, including feet, diffuser and exposed controls; merely repeating the maximum envelope is insufficient. The name must be legible on the product. Callouts and appearance must identify frosted PC at the diffuser, woven polyester at the speaker covering and fine-textured matte PC/ABS at the housing. Enclosure form, support and actual dimensions may vary within these limits. Contradictory geometry between views, missing views or incorrect material assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "assembly-modules-and-paths",
+      "requirementId": "R-assembly-modules-and-paths",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-light-path"
+      ],
+      "criteria": "The exploded assembly must account for exactly one of each fixed module and visibly fit the resolved enclosure. Require dimension labels for L01 diameter 60 × thickness 6; A01 diameter 30 × depth 12; C01 52 × 36 × 9; P01 24 × 18 × 5; E01 body 16 × 16 × 12 with perpendicular diameter 6 × 14 shaft and total projection 26; B01 12 × 12 × 6 with 1 mm actuation travel; and M01 20 × 8 × 8 with 10 mm total travel across three detents, all in mm. Rigid mounting rotation is allowed; resizing, deformation, omission and duplication fail. Functional routes must connect P01 to C01 and C01 to each of L01, A01, E01, B01 and M01. The section must establish a diffused or indirect path from the LED emitting face, an unobstructed speaker path to the exterior and physical rear access to P01's short-edge USB-C connector. Housing, diffuser, feet, caps and fasteners used in the design must be distinguished from supplied modules.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "complete-product"
+      ]
+    },
+    {
+      "id": "controls-and-manual-sequence",
+      "requirementId": "R-controls-and-manual-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "physical-operation"
+      ],
+      "criteria": "A dimensioned usable B01 contact surface must measure at least 28 mm in its shortest direction, rather than only across an enclosing decorative feature. B01 and the grippable rotary-push E01 cap must differ in both shape and placement. Read the E1 panels as an ordered action record: Monday 2026-09-14, 21:30, initially off with level 3 remembered; E01 short press produces level 3; one clockwise detent produces level 4; another short press turns the manual light off while retaining level 4. Stored wake stays 07:00 and M01 stays LIGHT + TONE. Require visible hand actions or contact diagrams and labeled relative light levels. Control-cap styling may vary; ambiguous control identity, wrong actions, changed wake settings or lost level memory fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "independent-setting-branches",
+      "requirementId": "R-independent-setting-branches",
+      "method": "visual",
+      "targetSlots": [
+        "physical-operation"
+      ],
+      "criteria": "Require separately identifiable S-CANCEL and S-COMMIT alternatives, each initialized from stored 07:00 rather than chained together. Each must show E01 held for 3 seconds to enter hour editing, one clockwise detent to hour 08, a short press to minute editing, and two clockwise detents through minute 05 to 10. Cancellation uses a 3-second hold and retains 07:00; commitment uses a short press and stores 08:10. Readable speech captions with a speaker symbol must convey edited hour and minute values and the complete retained or confirmed time. A restrained, distinct physical light confirmation cue must be visible beside the outcome captions; its particular expression is open. Missing intermediate minute values, swapped endings, absent speech representation or treating one branch's result as the other's starting value fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "mode-positions-and-feedback",
+      "requirementId": "R-mode-positions-and-feedback",
+      "method": "visual",
+      "targetSlots": [
+        "alarm-modes",
+        "physical-operation"
+      ],
+      "criteria": "The alarm board must contain three labeled panels whose physical M01 positions and exterior legends map left to OFF, center to LIGHT and right to LIGHT + TONE. Require deliberate tactile distinctions through form or tactile features, with English explanatory legends. At 07:00, OFF must be disarmed, LIGHT armed with target illumination and no alarm tone, and LIGHT + TONE armed with the same target illumination and active tone. The operation board must explicitly distinguish requested setting speech from the alarm tone and show that setting speech remains available in LIGHT. Symbols and captions may communicate sound states; reversed positions, absent tactile distinction, inappropriate tone or suppression of requested speech in LIGHT fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "morning-timeline",
+      "requirementId": "R-morning-timeline",
+      "method": "visual",
+      "targetSlots": [
+        "morning-sequence"
+      ],
+      "criteria": "Read six ordered W panels dated Tuesday 2026-09-15: 06:40 begins the light ramp with tone silent; 06:50 remains in the ramp with tone silent; 07:00 reaches target light and starts tone; a short B01 press at 07:02 extinguishes both for a 9-minute snooze; 07:11 immediately restores target light and tone without another ramp; a 2-second B01 hold at 07:12 extinguishes both and dismisses only that occurrence. Require M01 LIGHT + TONE, unchanged stored wake 07:00, continued daily arming and next ramp Wednesday 2026-09-16 at 06:40. Relative brightness may be illustrated without a specified photometric curve. Wrong dates, timings, actions, state transitions, a new ramp at snooze end or propagation of the separate 08:10 setting example fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "bedside-placement-and-scenes",
+      "requirementId": "R-bedside-placement-and-scenes",
+      "method": "visual",
+      "targetSlots": [
+        "bedside-use"
+      ],
+      "criteria": "Require evening E1 and morning W scenes plus a dimensioned placement inset. Read coordinates from the left/front origin on a 400 × 300 mm cabinet top, 520 mm above the floor, with rear wall at y=300 and bed to the right at x>400. The entire lamp footprint must fit x=180..380, y=60..240; x=20..130, y=70..210 must remain available for glass/book use. Trace an accessible rear USB cable into y=240..300 without obstructing the right/front hand approach. Both scenes must retain the selected lamp, supports and control caps, with M01 LIGHT + TONE and stored wake 07:00. Evening light is manually on at level 4. Morning is immediately after the 07:02 snooze press, with B01 contact and light and tone off until 07:11. A restrained hand or annotated contact diagram is acceptable. Require bed-level emitter shielding; footprint overflow, reserved-area obstruction, inaccessible controls, wrong scene states or direct exposure of the bare LED fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "complete-product"
+      ]
+    },
+    {
+      "id": "screen-free-self-contained-operation",
+      "requirementId": "R-screen-free-self-contained-operation",
+      "method": "visual",
+      "targetSlots": [
+        "complete-product",
+        "assembly-light-path",
+        "physical-operation",
+        "alarm-modes",
+        "morning-sequence",
+        "bedside-use"
+      ],
+      "criteria": "The depicted product must operate through its physical inputs, local controller and clock, light cues and requested speech, with external USB power available throughout the demonstrations. Board captions are explanatory annotations and do not count as product screens. A required phone, app, product display or unsolicited idle speech fails. Any additionally depicted behavior must respect the supplied interaction record: manual levels use 0–5 with endpoint clamping, counterclockwise rotation lowers the level and rotation while off changes nothing; hour editing wraps across 24 hours and minute editing uses five-minute increments; setting entry is inactive during ramp or wake; OFF stops an active ramp or alarm; short B01 presses during ramp or idle do nothing; a 2-second B01 hold during ramp or wake dismisses only the current occurrence. Additional demonstration panels are not required, but contradictory behavior is a failure.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-resolved-lamp-across-boards",
+      "requirementId": "R-set-resolved-lamp-across-boards",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-light-path",
+        "physical-operation",
+        "alarm-modes",
+        "morning-sequence",
+        "bedside-use"
+      ],
+      "criteria": "Every depiction preserves the selected lamp's diffuser geometry, control locations, openings, seams, material assignments and support arrangement; exploded and sectional views remain mechanically reconcilable with its exterior. The control identities, M01 direction mapping and labeled light and sound states agree across boards wherever the same operating condition is represented. The evening scene corresponds to E1 at manual level 4, the morning scene corresponds to W immediately after the 07:02 snooze press, and neither adopts the independent S-COMMIT branch's 08:10 wake time.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/components.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-plan.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "complete-product"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-complete-lamp",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "complete-product",
+      "subjectSlots": [
+        "assembly-light-path",
+        "physical-operation",
+        "alarm-modes",
+        "morning-sequence",
+        "bedside-use"
+      ],
+      "notes": "The other five boards retain its diffuser, control locations, openings, seams and support arrangement."
+    }
+  ]
+}

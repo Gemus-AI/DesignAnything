@@ -1,0 +1,30 @@
+WORK / ARCHIVE | An independent magazine of industrial photographs
+
+We publish WORK / ARCHIVE for readers interested in photography and local industrial history. Build Issue 01 around the six supplied Alfred T. Palmer photographs: two records from December 1941 and four from February 1942, covering workbenches, furnaces, material storage and a factory exterior in Akron and Toledo, Ohio. The front cover must print "WORK / ARCHIVE", "Issue 01" and "Ohio, 1941–42". Let the sequence connect materials, operations and people through visual relationships; identify the sequencing rationale as editorial interpretation.
+
+The issue is a 20-page editorial sample, including covers, at 200 × 300 mm, saddle stitched with a 0 mm spine panel and a 0 mm bleed allowance. The edition is 300 copies, digitally printed in four colours on 120 gsm uncoated inside stock and 200 gsm uncoated cover stock. Page 1 is the front cover; 2–3 contents; 4–15 six photographic spreads; 16–17 the caption register; 18–19 the author/source spread; and 20 the back cover. Each photographic spread occupies an even-left/odd-right pair. Start from a six-column grid per page, with 15 mm margins and 4 mm gutters. Give the cover a typographic emphasis and carry publication identification on the front and back panels. The six supplied photographs constitute the photographic content throughout; retain their orientation, proportions, people, equipment and original colour. Rectangular crops may tighten the framing while retaining each record's working person and named industrial subject.
+
+Audience: photography and local culture readers receiving the issue through independent magazine shops and photography fairs, with the publisher choosing the edition's sequence and production layout.
+
+Inputs (attached): 01-client-facts.en.md contains the publication facts, six archive records, captions and source credits. 02-delivery-catalog.en.md lists every deliverable's proportion, format and stage. magazine-geometry.png is the constraint drawing for the trim, facing pages and folded binding. p64.jpg is the identity photograph of self-sealing fuel-tank manufacture. p65.jpg is the identity photograph of an electronics technician. p77.jpg is the identity photograph of a glass furnace from the side. p78.jpg is the identity photograph of a gas-fired glass furnace. p79.jpg is the identity photograph of batch-house storage bins. p82.jpg is the identity photograph of the factory exterior. empty-display-table.png is an atmosphere reference for the magazine's photography-fair setting.
+
+Deliverables:
+1. A one-page layout specification recording the trim, page count, binding, paper stocks, six-column grid, margins, gutters, type sizes, actual font names and caption field order
+2. One flat outer-cover layout pairing back cover 20 with front cover 1, with the three fixed front-cover strings and publisher identification
+3. One front-cover thumbnail showing the finished title, issue number and subtitle at reduced size
+4. One contents spread for pages 2–3, listing all six photographic features and the caption and author/source sections with their page numbers
+5. Six photographic spreads for pages 4–15, one principal archive image per spread, each with its photo ID, photographer, company, city, month/year, collection and a source-based caption
+6. One caption-register spread for pages 16–17, collecting all six photo IDs, record IDs, captions, dates, places, companies and credits in reading order
+7. One author/source spread for pages 18–19, listing Alfred T. Palmer, the archive collection, all six record IDs and primary source URLs, separate photography and magazine-design credits, the public-domain status statement and publication details
+8. One 10-second magazine video showing the folded cover in three dimensions and the six photographic spreads in their final reading order
+9. One presentation document of at least eight pages, reusing the specification, cover states, contents, six photographic spreads, caption register and author/source spread, with the sequencing rationale
+
+Acceptance:
+- The layout specification records 200 × 300 mm, 20 pages, a 0 mm spine panel, six columns per page, 15 mm margins and 4 mm gutters; the presentation repeats these six values, and the author/source spread repeats the trim, page count and binding.
+- The flat outer cover places page 20 on the left and page 1 on the right. Its front panel, the thumbnail and the video's folded-cover view all carry WORK / ARCHIVE, Issue 01 and Ohio, 1941–42; these three strings remain readable in the thumbnail.
+- The six photographic spreads use p64, p65, p77, p78, p79 and p82 once each as their principal image across pages 4–15. Their contents entries, caption-register entries and video appearances follow that same order; the presentation explains at least two adjacent-image relationships as editorial interpretation.
+- Every photographic spread and its caption-register entry carries the matching photo ID, Alfred T. Palmer, company, city, month/year and FSA/OWI Collection from the archive records. Each photographic spread retains its source's orientation, proportions, original colour and named industrial subject, together with the working person where present.
+- The author/source spread lists all six LC-DIG record IDs and their six primary source URLs, credits Library of Congress, Prints and Photographs Division, FSA/OWI Collection, states that the photographs are U.S. public-domain government works, and separates Alfred T. Palmer's photography from present-day magazine design. The caption register and author/source spread use the specification's caption field order and type sizes.
+- The presentation contains at least eight pages and reproduces all six finished photographic spreads, both cover states and the three supporting editorial spreads; the 10-second video uses the same cover and photographic layouts.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

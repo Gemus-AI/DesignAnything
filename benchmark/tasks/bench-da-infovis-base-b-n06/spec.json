@@ -1,0 +1,614 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-infovis-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "data",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "overview-2026",
+      "label": "2026 annual overview",
+      "description": "A 2026 overview chart with all four sector volumes and Total 315.1.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "total-trend",
+      "label": "Annual Total trend",
+      "description": "An annual Total trend chart with all five labelled totals for 2022–2026.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shares-2026",
+      "label": "2026 sector shares",
+      "description": "A 2026 sector-share diagram with four percentages, the calculation and the 99.9% rounding note.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "resident-summary-2026",
+      "label": "2026 A4 resident summary",
+      "description": "A one-page A4 resident summary of 2026 sector volumes and the annual Total trend, with the 2026 hot-season chart in tiers 14 and 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "social-total",
+      "label": "Annual Total social card",
+      "description": "A portrait social card with the five-year Total trend and 2026 Residential 160.8 in million m³/year.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "exhibition-board",
+      "label": "A3 community exhibition board",
+      "description": "A one-page A3 landscape exhibition board combining the 2026 overview and shares with the Total trend in tier 6, the 2026 hot-season chart in tier 14 and both hot-season charts in tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-name",
+      "kind": "text-verbatim",
+      "text": "CLEARWATER",
+      "scope": {
+        "slots": [
+          "overview-2026",
+          "total-trend",
+          "shares-2026",
+          "resident-summary-2026",
+          "social-total",
+          "exhibition-board"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "printed-season-phrase",
+      "kind": "text-verbatim",
+      "text": "Water through the hot season",
+      "scope": {
+        "slots": [
+          "overview-2026",
+          "resident-summary-2026",
+          "social-total",
+          "exhibition-board"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "printed-source-credit",
+      "kind": "text-verbatim",
+      "text": "Source: CLEARWATER, 2026",
+      "scope": {
+        "slots": [
+          "overview-2026",
+          "total-trend",
+          "shares-2026",
+          "resident-summary-2026",
+          "social-total",
+          "exhibition-board"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CLEARWATER",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-sector-system",
+      "slots": [
+        "overview-2026",
+        "total-trend",
+        "shares-2026",
+        "social-total"
+      ],
+      "items": [
+        {
+          "item": "Repeated sectors preserve their assigned colours, marker shapes and direct names across the images, while Total remains distinct from any individual sector.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The standalone and social Total trends preserve the same five year-value pairs and annual unit despite changes in composition.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The authority mark remains recognisably the supplied blue identity across all four images.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "CLEARWATER",
+    "carryThrough": {
+      "none": "Every declared carry-through of the family reads from or writes to roles that tier 6 does not commission."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "overview-2026",
+      "total-trend",
+      "shares-2026",
+      "social-total"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge information hierarchy, chart readability and publication composition, but do not judge photorealistic materials, lighting or service-centre staging."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "overview-2026",
+        "total-trend",
+        "shares-2026",
+        "social-total"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-overview-2026",
+      "requirementId": "R-format-overview-2026",
+      "method": "artifact-property",
+      "targetSlots": [
+        "overview-2026"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-total-trend",
+      "requirementId": "R-format-total-trend",
+      "method": "artifact-property",
+      "targetSlots": [
+        "total-trend"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shares-2026",
+      "requirementId": "R-format-shares-2026",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shares-2026"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-resident-summary-2026",
+      "requirementId": "R-format-resident-summary-2026",
+      "method": "artifact-property",
+      "targetSlots": [
+        "resident-summary-2026"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-social-total",
+      "requirementId": "R-format-social-total",
+      "method": "artifact-property",
+      "targetSlots": [
+        "social-total"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-exhibition-board",
+      "requirementId": "R-format-exhibition-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exhibition-board"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "separate-volume-and-share-scales",
+      "requirementId": "R-separate-volume-and-share-scales",
+      "method": "visual",
+      "targetSlots": [
+        "overview-2026",
+        "total-trend",
+        "shares-2026",
+        "social-total"
+      ],
+      "criteria": "Every volume axis starts at 0. Share graphics express magnitude on a percentage scale, including labelled parts of a whole where no axis is appropriate. Chart form may vary; truncated volume axes or shares plotted as annual volumes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-overview-and-social-values",
+      "requirementId": "R-six-overview-and-social-values",
+      "method": "visual",
+      "targetSlots": [
+        "overview-2026",
+        "social-total"
+      ],
+      "criteria": "The overview visibly associates 2026 with Residential 160.8, Industrial 78.6, Public 42.5, Ecological 33.2 and Total 315.1. The card includes 2026 Total 315.1 and Residential 160.8. Both identify the figures as million m³/year. Placement may vary; missing, swapped or altered records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-total-series",
+      "requirementId": "R-six-total-series",
+      "method": "visual",
+      "targetSlots": [
+        "total-trend",
+        "social-total"
+      ],
+      "criteria": "Both images show all five year-value pairs: 2022→304.0, 2023→307.1, 2024→309.8, 2025→313.0 and 2026→315.1. Each value is readable and associated with its year; a partial series or mismatched pair fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-share-record",
+      "requirementId": "R-six-share-record",
+      "method": "visual",
+      "targetSlots": [
+        "shares-2026"
+      ],
+      "criteria": "The diagram identifies 2026 and pairs Residential, Industrial, Public and Ecological with 51.0%, 24.9%, 13.5% and 10.5%, respectively. It states division of each sector value by 315.1 followed by multiplication by 100 and attributes the displayed sum of 99.9% to rounding. Equivalent mathematical notation is acceptable; a missing denominator or unexplained discrepancy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-chart-completeness",
+      "requirementId": "R-six-chart-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "overview-2026",
+        "total-trend",
+        "shares-2026",
+        "social-total"
+      ],
+      "criteria": "Inspect each chart separately, including the card's chart. Require an informative title, a visible annual-volume or percentage unit, Source: CLEARWATER, 2026, and a short interpretation supported by the plotted data. Displayed volume and share values use one decimal place; years need no decimal. Missing chart metadata, unsupported annotations or altered source values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-authority-and-sector-encoding",
+      "requirementId": "R-six-authority-and-sector-encoding",
+      "method": "visual",
+      "targetSlots": [
+        "overview-2026",
+        "total-trend",
+        "shares-2026",
+        "social-total"
+      ],
+      "criteria": "Require the supplied authority mark in authority blue #1B6CA8. Wherever sectors occur, use Residential #0072B2 with a circle, Industrial #E69F00 with a square, Public #009E73 with a triangle, and Ecological #CC79A7 with a diamond, accompanied by direct names. Neutral supporting elements are allowed. Grayscale viewing must preserve sector identification through shape and text; invented marks, reassigned encodings or colour-only identification fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-image-wording-and-orientation",
+      "requirementId": "R-six-image-wording-and-orientation",
+      "method": "visual",
+      "targetSlots": [
+        "overview-2026",
+        "total-trend",
+        "shares-2026",
+        "social-total"
+      ],
+      "criteria": "Every image visibly prints CLEARWATER. The overview and social card additionally carry Water through the hot season, and the card is taller than it is wide. Typography and placement may vary; omitted wording or a nonportrait card fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-document-data-and-composition",
+      "requirementId": "R-six-document-data-and-composition",
+      "method": "content",
+      "targetSlots": [
+        "resident-summary-2026",
+        "exhibition-board"
+      ],
+      "criteria": "Read each complete page. The summary contains a 2026 overview and five-year Total trend; the board contains those plus 2026 sector shares. Both show Residential 160.8, Industrial 78.6, Public 42.5, Ecological 33.2 and Total 315.1 with the year and million m³/year. Both trends label 2022→304.0, 2023→307.1, 2024→309.8, 2025→313.0 and 2026→315.1. The board labels sector shares 51.0%, 24.9%, 13.5% and 10.5% in that sector order, states sector value ÷ 315.1 × 100, and explains the 99.9% rounded sum. Recomposition is allowed; absent components or incorrect records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ]
+    },
+    {
+      "id": "six-document-publication-compliance",
+      "requirementId": "R-six-document-publication-compliance",
+      "method": "content",
+      "targetSlots": [
+        "resident-summary-2026",
+        "exhibition-board"
+      ],
+      "criteria": "The summary is one A4 portrait page, 210 × 297 mm; the board is one A3 landscape page, 420 × 297 mm. Check 15 mm clear margins on every edge using physical page geometry. Both retain the authority mark in #1B6CA8 and print CLEARWATER and Water through the hot season. Each embedded chart has its own title, appropriate unit, Source: CLEARWATER, 2026 and short accurate reading annotation. Volume and percentage values retain one decimal place; volume axes start at zero and shares use percentages. Sector occurrences use Residential #0072B2/circle, Industrial #E69F00/square, Public #009E73/triangle and Ecological #CC79A7/diamond with direct names identifiable in grayscale. Layout may vary within these limits; missing content, margin intrusion or inconsistent encoding fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ]
+    },
+    {
+      "id": "set-six-sector-system",
+      "requirementId": "R-set-six-sector-system",
+      "method": "visual",
+      "targetSlots": [
+        "overview-2026",
+        "total-trend",
+        "shares-2026",
+        "social-total"
+      ],
+      "criteria": "Repeated sectors preserve their assigned colours, marker shapes and direct names across the images, while Total remains distinct from any individual sector. The standalone and social Total trends preserve the same five year-value pairs and annual unit despite changes in composition. The authority mark remains recognisably the supplied blue identity across all four images.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-2022-2026.csv",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/water-use-README.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-base-b-n06/03-resource-tables.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-authority-mark",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "authority-logo.png"
+      ],
+      "subjectSlots": [
+        "overview-2026",
+        "total-trend",
+        "shares-2026",
+        "social-total"
+      ],
+      "notes": "The visual direction is fixed around the existing authority mark in #1B6CA8."
+    }
+  ]
+}

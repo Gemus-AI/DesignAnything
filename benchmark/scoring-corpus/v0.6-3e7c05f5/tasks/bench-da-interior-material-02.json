@@ -1,0 +1,1218 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-interior-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "function-furniture-schedule",
+      "label": "Function and furniture schedule",
+      "description": "A one-page schedule of five zones, areas, occupancy, furniture, equipment and three material IDs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "furnished-plan",
+      "label": "Furnished studio plan",
+      "description": "A furnished plan with zone areas, equipment IDs, route widths, a turning circle and three viewpoints.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "north-elevation",
+      "label": "North-facing interior elevation",
+      "description": "A north-facing interior elevation with heights, window, curtain, teaching backdrop and material IDs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "bench-detail",
+      "label": "Craft bench equipment detail",
+      "description": "A dimensioned detail of B1 with E1, E2, power connections and microphone provision.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-detail",
+      "label": "Materials and finished-product storage detail",
+      "description": "A dimensioned storage detail for 24 material bins and 12 finished-product trays with the fixed storage label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "sound-lighting-diagram",
+      "label": "Sound and lighting arrangement",
+      "description": "A diagram of the sound source, absorption, curtain, microphone, teaching sightline, retrieval route and three lighting layers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-fitting-sheet",
+      "label": "Material and fitting sheet",
+      "description": "A sheet of three material samples and applications with L1, L2 and L3 fitting types, mounting positions and controls.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "view-v1-making",
+      "label": "V1 making perspective",
+      "description": "An interior perspective from V1 during making with a readable AC-01 callout.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-v2-teaching",
+      "label": "V2 teaching camera perspective",
+      "description": "A teaching camera perspective from V2 with the creator, retained bench and LOOMFIELD STUDIO backdrop.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-v3-products",
+      "label": "V3 product table perspective",
+      "description": "An interior perspective from V3 showing T1 and finished-product storage with its readable fixed label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "making-state-plan",
+      "label": "Making and photography operating plan",
+      "description": "An operating plan for 09:00–12:00 with sewing, product photography, two people and their routes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "recording-state-plan",
+      "label": "Recording and retrieval operating plan",
+      "description": "An operating plan for 14:00–16:00 with spoken teaching, E1 switched off and the assistant's material route.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "studio-transition-video",
+      "label": "Studio operating transition video",
+      "description": "A 10-second video moving from V1 to V2 through the making and spoken-recording states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "studio-presentation",
+      "label": "Studio fit-out presentation",
+      "description": "A presentation of at least eight pages reusing the schedule, drawings, details, material sheet and three perspectives.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "studio-name",
+      "kind": "text-verbatim",
+      "text": "LOOMFIELD STUDIO",
+      "scope": {
+        "slots": [
+          "north-elevation",
+          "view-v2-teaching",
+          "studio-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "finished-storage-label",
+      "kind": "text-verbatim",
+      "text": "Ready to photograph",
+      "scope": {
+        "slots": [
+          "storage-detail",
+          "view-v3-products"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "absorption-callout",
+      "kind": "text-verbatim",
+      "text": "AC-01",
+      "scope": {
+        "slots": [
+          "view-v1-making"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "LOOMFIELD STUDIO",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-room-and-operating-layout",
+      "slots": [
+        "north-elevation",
+        "making-state-plan",
+        "recording-state-plan",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "sourceSlots": [
+        "furnished-plan"
+      ],
+      "items": [
+        {
+          "item": "All representations describe the same surveyed room, openings and full-height obstructions, allowing viewpoint-dependent occlusion.",
+          "kind": "consistency"
+        },
+        {
+          "item": "B1, E1, E2 and T1 retain their established positions through making and recording, with E1 and E2 on B1.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The two operating periods support the specified simultaneous activities, and afternoon material retrieval stays outside the teaching camera field.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "furniture-storage-and-area-records",
+      "slots": [
+        "furnished-plan",
+        "bench-detail",
+        "storage-detail",
+        "view-v3-products"
+      ],
+      "sourceSlots": [
+        "function-furniture-schedule"
+      ],
+      "items": [
+        {
+          "item": "Plan zone names and areas agree with the schedule and account for 29.6 m² without double-counting circulation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Retained equipment quantities and dimensions agree between the schedule, drawings and visible furniture.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Storage geometry supports 24 individually retrievable material bins and 12 finished-product trays, with the finished-product label retained in V3.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "materials-acoustics-and-lighting",
+      "slots": [
+        "north-elevation",
+        "storage-detail",
+        "sound-lighting-diagram",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "sourceSlots": [
+        "function-furniture-schedule",
+        "material-fitting-sheet"
+      ],
+      "items": [
+        {
+          "item": "Specified material identities and applications remain consistent from written records through drawings and perspectives.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Curtain, recording-area absorption, microphone and lighting fittings occupy compatible locations across the diagram and views.",
+          "kind": "consistency"
+        },
+        {
+          "item": "L1, L2 and L3 remain separately controlled layers, with L3 permitted to move between the bench and product table.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "LOOMFIELD STUDIO"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "furnished-plan",
+      "north-elevation",
+      "bench-detail",
+      "storage-detail",
+      "sound-lighting-diagram",
+      "view-v1-making",
+      "view-v2-teaching",
+      "view-v3-products",
+      "making-state-plan",
+      "recording-state-plan"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge exact survey measurements, record accuracy, equipment counts, fixed wording or demonstrated acoustic performance; these belong to explicit compliance checks or are not requested."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "function-furniture-schedule",
+        "furnished-plan",
+        "north-elevation",
+        "bench-detail",
+        "storage-detail",
+        "sound-lighting-diagram",
+        "material-fitting-sheet",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products",
+        "making-state-plan",
+        "recording-state-plan",
+        "studio-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "north-elevation",
+        "bench-detail",
+        "storage-detail",
+        "sound-lighting-diagram",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products",
+        "making-state-plan",
+        "recording-state-plan"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-function-furniture-schedule",
+      "requirementId": "R-format-function-furniture-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "function-furniture-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-furnished-plan",
+      "requirementId": "R-format-furnished-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-north-elevation",
+      "requirementId": "R-format-north-elevation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "north-elevation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-bench-detail",
+      "requirementId": "R-format-bench-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bench-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-detail",
+      "requirementId": "R-format-storage-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-sound-lighting-diagram",
+      "requirementId": "R-format-sound-lighting-diagram",
+      "method": "artifact-property",
+      "targetSlots": [
+        "sound-lighting-diagram"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-fitting-sheet",
+      "requirementId": "R-format-material-fitting-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-fitting-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-view-v1-making",
+      "requirementId": "R-format-view-v1-making",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-v1-making"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-v2-teaching",
+      "requirementId": "R-format-view-v2-teaching",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-v2-teaching"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-v3-products",
+      "requirementId": "R-format-view-v3-products",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-v3-products"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-making-state-plan",
+      "requirementId": "R-format-making-state-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "making-state-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-recording-state-plan",
+      "requirementId": "R-format-recording-state-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "recording-state-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-studio-transition-video",
+      "requirementId": "R-format-studio-transition-video",
+      "method": "manual",
+      "targetSlots": [
+        "studio-transition-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-studio-presentation",
+      "requirementId": "R-format-studio-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "studio-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "schedule-completeness",
+      "requirementId": "R-schedule-completeness",
+      "method": "content",
+      "targetSlots": [
+        "function-furniture-schedule"
+      ],
+      "criteria": "One page records Making, Recording, Materials, Finished work and Circulation with separately chosen areas totaling 29.6 m² and occupancy consistent with one creator and one assistant. Include quantities and dimensions for B1: one, 1800 × 800 × 900 mm; E1: one, 450 × 220 × 350 mm; E2: one, 300 × 400 × 500 mm operating envelope; T1: one, 1200 × 700 × 750 mm; stools: two, each 400 × 400 × 650 mm. Also record CAM1: one, 700 mm floor envelope and 1500 mm lens height; MIC1: one, maximum 600 mm arm reach; L3: one, 600 × 600 mm face, 600 mm base diameter and maximum 2100 mm height; 24 bins, each 400 × 300 × 200 mm; and 12 trays, each 300 × 250 × 100 mm. Include all three specified material IDs. Equivalent units are acceptable; missing records, altered retained dimensions or incorrect totals fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "plan-zones-and-clearances",
+      "requirementId": "R-plan-zones-and-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Show equipment IDs and five non-overlapping labeled floor zones whose areas match the schedule and total 29.6 m² after excluding P1 and R1. Count circulation only in Circulation. Dimension the narrowest part of a continuous clear route at no less than 900 mm and draw an unobstructed 1500 mm diameter turning circle. Furniture, storage and equipment envelopes must support the claimed clearances. Locate V1, V2 and V3 with viewing directions consistent with the fixed coordinate records. Zone shapes and area allocations are designer choices; overlaps, missing viewpoints or obstructed clearances fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "function-furniture-schedule"
+      ]
+    },
+    {
+      "id": "presentation-zone-and-count-repetition",
+      "requirementId": "R-presentation-zone-and-count-repetition",
+      "method": "content",
+      "targetSlots": [
+        "studio-presentation"
+      ],
+      "criteria": "The presentation visibly states all five zone names with exactly the areas chosen in the schedule, totaling 29.6 m², and repeats every retained furniture and equipment count. A readable reproduction of the schedule qualifies. Missing entries or conflicting numbers fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "function-furniture-schedule"
+      ]
+    },
+    {
+      "id": "surveyed-shell",
+      "requirementId": "R-surveyed-shell",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "north-elevation",
+        "making-state-plan",
+        "recording-state-plan",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "criteria": "Use the southwest floor corner as origin, x east, y north and z upward. Drawings establish a 6.0 × 5.0 m room with 3.0 m clear height. D1 is on the south wall at x 0.3–1.3 m, 2.1 m high, with an outward swing on its west hinge. WN1 is on the north wall at x 0.6–3.0 m, with sill 1.1 m and head 2.5 m. Full-height P1 occupies x 5.6–6.0 m, y 4.6–5.0 m; full-height R1 occupies x 5.6–6.0 m, y 0–0.6 m, accessed from the east corridor. Perspectives must agree wherever these elements are visible; natural cropping is allowed, but relocation, resizing or removal fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fixed-socket-retention",
+      "requirementId": "R-fixed-socket-retention",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "bench-detail",
+        "sound-lighting-diagram"
+      ],
+      "criteria": "The drawings collectively identify three retained twin sockets: SK1 at (0, 1.2, 0.3) m, SK2 at (0, 3.6, 0.3) m and SK3 at (6.0, 2.5, 0.3) m. Any depicted power connections must use a layout compatible with those fixed locations. Not every drawing must show every socket, but an unaccounted socket or a contradictory location fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "permitted-fit-out",
+      "requirementId": "R-permitted-fit-out",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "north-elevation",
+        "bench-detail",
+        "storage-detail",
+        "sound-lighting-diagram",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "criteria": "New interventions are furniture, freestanding screens, curtains or surface-mounted fittings and absorption. Existing perimeter walls, floor, ceiling and structural obstructions remain. Designer-selected furniture arrangements and surface finishes are acceptable; proposed shell alterations or construction outside the stated fit-out scope fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "equipment-counts-and-stable-positions",
+      "requirementId": "R-equipment-counts-and-stable-positions",
+      "method": "visual",
+      "targetSlots": [
+        "bench-detail",
+        "furnished-plan",
+        "making-state-plan",
+        "recording-state-plan",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "criteria": "Establish one retained bench, sewing machine, manual press and photography table, plus two stools, with no duplicates or substituted designs. E1 and E2 remain on B1, and the room positions of B1 and T1 and tabletop positions of E1 and E2 agree across both operating periods. Preserve the recorded appearances: honey-colored timber and dark-green steel B1; cream E1 with teal handwheel and black pedal; red E2 with black lever and round metal die; white-topped T1 with pale timber legs; timber-seated stools with dark-green steel legs. Detail crops and perspective occlusion are allowed; they must not imply missing equipment or changed layouts.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "function-furniture-schedule"
+      ]
+    },
+    {
+      "id": "bench-construction-and-connections",
+      "requirementId": "R-bench-construction-and-connections",
+      "method": "visual",
+      "targetSlots": [
+        "bench-detail"
+      ],
+      "criteria": "Provide a dimensioned bench detail retaining B1 at 1800 × 800 × 900 mm, its timber top, steel frame and open lower shelf. Show the 450 × 220 × 350 mm E1 and the 300 × 400 × 500 mm E2 operating envelope on the bench in plan-consistent positions. Identify E1 plug-in power and pedal provision, E2 manual operation, and the black MIC1 clamp arm at B1 with reach no greater than 600 mm and a battery recorder. Dimensions and connection annotations must make the arrangement buildable; incompatible envelopes or absent power or microphone provision fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "storage-capacity-and-label",
+      "requirementId": "R-storage-capacity-and-label",
+      "method": "visual",
+      "targetSlots": [
+        "storage-detail",
+        "view-v3-products"
+      ],
+      "criteria": "The dimensioned storage drawing provides individually retrievable positions for 24 clear rectangular material bins and 12 shallow natural-card finished-product trays at the specified dimensions. Compartment geometry must substantiate the capacity rather than merely claim it in a label. The finished-product section bears the exact storage wording, which is readable on the corresponding storage in V3. Shelf arrangement may vary; undersized compartments, incorrect capacity, blocked retrieval or an unreadable label fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "north-elevation-information",
+      "requirementId": "R-north-elevation-information",
+      "method": "visual",
+      "targetSlots": [
+        "north-elevation"
+      ],
+      "criteria": "A north-facing elevation corresponds to the plan and dimensions visible furniture heights, WN1 and the curtain extents. Show the teaching backdrop with LOOMFIELD STUDIO and identify the specified materials at their applications. Curtain dimensions are a design choice compatible with WN1 and recording use; missing height information, an inconsistent projection or absent backdrop fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "sound-lighting-diagram-completeness",
+      "requirementId": "R-sound-lighting-diagram-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "sound-lighting-diagram"
+      ],
+      "criteria": "Locate conversation noise along the east corridor, north daylight through WN1, a curtain at WN1, AC-01 in the recording area and MIC1 clamped at B1. Locate CAM1 at V2 with its teaching field of view and draw the assistant's material-retrieval route outside that field. Distinguish independently controlled L1 ambient, L2 bench task and L3 photographic lighting. Annotations or diagram symbols may establish relationships; missing components, shared-only control or conflicting locations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "two-operating-periods",
+      "requirementId": "R-two-operating-periods",
+      "method": "visual",
+      "targetSlots": [
+        "sound-lighting-diagram",
+        "making-state-plan",
+        "recording-state-plan"
+      ],
+      "criteria": "Each operating plan identifies its time period, depicts exactly two people, and shows their activities, travel routes and relevant equipment status. In the morning the creator sews using E1 at B1 while the assistant photographs at T1. In the afternoon the creator speaks while hand-stitching at B1, E1 is explicitly off, MIC1 is at B1 and the assistant retrieves materials. Both the recording plan and diagram establish the afternoon microphone and off state and keep the entire retrieval route outside the V2 camera field. Graphic notation may vary; ambiguous operating status, conflicting activities or a route crossing the teaching frame fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "material-and-fitting-specification",
+      "requirementId": "R-material-and-fitting-specification",
+      "method": "content",
+      "targetSlots": [
+        "material-fitting-sheet"
+      ],
+      "criteria": "Include visible samples and stated applications for clear-varnished birch plywood WD-01 on new storage and backdrop joinery, matte warm-white PT-01 on interior walls, and wool-felt AC-01 surface-mounted in the recording area. Specify L1 surface-mounted ambient fittings, L2 bench-directed task fittings and the existing movable L3 softbox at B1 or T1, with mounting positions and independent controls for each layer. L3 remains a plug-in unit with black housing and white diffuser, a 600 × 600 mm face, 600 mm base diameter and maximum 2100 mm height. Product choices may vary within these records; substitutions or missing samples, applications or controls fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "material-application-and-elevation-repetition",
+      "requirementId": "R-material-application-and-elevation-repetition",
+      "method": "visual",
+      "targetSlots": [
+        "north-elevation",
+        "storage-detail",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "criteria": "The north elevation repeats WD-01, PT-01 and AC-01 from the schedule with application leaders or equivalent clear identification. New storage and backdrop joinery read as clear-coated birch plywood, walls as matte warm white and recording-area absorption as wool felt, consistent with the material sheet. Preserve the different recorded finishes of retained equipment. Lighting-dependent color variation is acceptable; changed material identity or contradictory applications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "function-furniture-schedule",
+        "material-fitting-sheet"
+      ]
+    },
+    {
+      "id": "lighting-and-absorption-in-perspectives",
+      "requirementId": "R-lighting-and-absorption-in-perspectives",
+      "method": "visual",
+      "targetSlots": [
+        "sound-lighting-diagram",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "criteria": "Trace the diagram's absorption and three lighting layers into corresponding visible panels and fittings in the perspectives. Fitting types and fixed mounting locations agree with the sheet; L3 may move between B1 and T1 as permitted, and elements outside a view may be cropped. V1 contains a readable AC-01 callout identifying an absorption panel. Contradictory fittings, an unrepresented lighting layer across the views or a callout pointing to the wrong material fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "material-fitting-sheet"
+      ]
+    },
+    {
+      "id": "fixed-perspective-geometry-and-content",
+      "requirementId": "R-fixed-perspective-geometry-and-content",
+      "method": "visual",
+      "targetSlots": [
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "criteria": "Perspective direction, height and visible spatial relationships support V1 eye (1.5, 0.7, 1.6) m toward (4.0, 3.5, 1.0) m; V2 eye (3.0, 1.3, 1.5) m toward (3.0, 4.0, 1.0) m; and V3 eye (5.0, 3.5, 1.6) m toward (2.5, 3.5, 1.0) m. V1 is a making-period overview; V2 frames the creator teaching at B1 with LOOMFIELD STUDIO readable on the backdrop; V3 depicts the making-period photography table and finished-product storage. Lens width is unspecified and may vary, but an incompatible viewpoint, wrong operating state or missing required subject fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "studio-video-review",
+      "requirementId": "R-studio-video-review",
+      "method": "manual",
+      "targetSlots": [
+        "studio-transition-video"
+      ],
+      "criteria": "Review the complete video and timeline for a 10-second progression beginning at V1 and ending at V2. It shows morning sewing at B1 with simultaneous product photography at T1, followed by afternoon spoken hand-stitching at B1 with E1 off, MIC1 present and the assistant retrieving materials outside the teaching field. Preserve the surveyed shell, D1, WN1, P1 and R1 throughout, and keep B1, E1, E2 and T1 in their established positions. Transition style may vary; omitted periods, wrong endpoints, changed room geometry or equipment relocation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "furnished-plan",
+        "view-v1-making",
+        "view-v2-teaching"
+      ]
+    },
+    {
+      "id": "presentation-source-reuse",
+      "requirementId": "R-presentation-source-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "studio-presentation"
+      ],
+      "criteria": "The presentation has at least eight pages and visibly reproduces identifiable content from every listed source, including both details and each of the three perspectives. Scaling, page composition and explanatory annotations may vary while preserving legibility and source identity. Merely naming an earlier deliverable, substituting a different design or omitting a source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "function-furniture-schedule",
+        "furnished-plan",
+        "north-elevation",
+        "bench-detail",
+        "storage-detail",
+        "sound-lighting-diagram",
+        "material-fitting-sheet",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ]
+    },
+    {
+      "id": "written-material-id-repetition",
+      "requirementId": "R-written-material-id-repetition",
+      "method": "content",
+      "targetSlots": [
+        "material-fitting-sheet",
+        "studio-presentation"
+      ],
+      "criteria": "Both documents visibly repeat all three scheduled material IDs and preserve their material meanings. A readable reproduced schedule or specification qualifies in the presentation. Missing IDs, misspellings or reassignment to different materials fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "function-furniture-schedule"
+      ]
+    },
+    {
+      "id": "presentation-cover-wording",
+      "requirementId": "R-presentation-cover-wording",
+      "method": "content",
+      "targetSlots": [
+        "studio-presentation"
+      ],
+      "criteria": "The cover itself displays the exact project name LOOMFIELD STUDIO legibly. Typography and placement may vary; wording appearing only on an interior page or solely within an unreadable thumbnail fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-coherent-room-and-operating-layout",
+      "requirementId": "R-set-coherent-room-and-operating-layout",
+      "method": "visual",
+      "targetSlots": [
+        "north-elevation",
+        "making-state-plan",
+        "recording-state-plan",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "criteria": "All representations describe the same surveyed room, openings and full-height obstructions, allowing viewpoint-dependent occlusion. B1, E1, E2 and T1 retain their established positions through making and recording, with E1 and E2 on B1. The two operating periods support the specified simultaneous activities, and afternoon material retrieval stays outside the teaching camera field.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "set-furniture-storage-and-area-records",
+      "requirementId": "R-set-furniture-storage-and-area-records",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "bench-detail",
+        "storage-detail",
+        "view-v3-products"
+      ],
+      "criteria": "Plan zone names and areas agree with the schedule and account for 29.6 m² without double-counting circulation. Retained equipment quantities and dimensions agree between the schedule, drawings and visible furniture. Storage geometry supports 24 individually retrievable material bins and 12 finished-product trays, with the finished-product label retained in V3.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "function-furniture-schedule"
+      ]
+    },
+    {
+      "id": "set-materials-acoustics-and-lighting",
+      "requirementId": "R-set-materials-acoustics-and-lighting",
+      "method": "visual",
+      "targetSlots": [
+        "north-elevation",
+        "storage-detail",
+        "sound-lighting-diagram",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "criteria": "Specified material identities and applications remain consistent from written records through drawings and perspectives. Curtain, recording-area absorption, microphone and lighting fittings occupy compatible locations across the diagram and views. L1, L2 and L3 remain separately controlled layers, with L3 permitted to move between the bench and product table.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "function-furniture-schedule",
+        "material-fitting-sheet"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "retained-room",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "furnished-plan",
+      "subjectSlots": [
+        "north-elevation",
+        "making-state-plan",
+        "recording-state-plan",
+        "view-v1-making",
+        "view-v2-teaching",
+        "view-v3-products"
+      ],
+      "notes": "The furnished plan, elevation, operating-state plans, perspectives and video preserve the 6.0 × 5.0 × 3.0 m shell, D1, WN1, P1 and R1."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "scheduled-zone-and-equipment-records",
+      "fromSlot": "function-furniture-schedule",
+      "toSlots": [
+        "furnished-plan",
+        "studio-presentation"
+      ],
+      "extract": [
+        "five zone names and their chosen areas",
+        "retained furniture and equipment counts"
+      ],
+      "notes": "The function and furniture schedule and furnished plan account for 29.6 m² across Making, Recording, Materials, Finished work and Circulation; the presentation repeats those five names, their chosen areas and all retained furniture and equipment counts."
+    },
+    {
+      "id": "scheduled-material-records",
+      "fromSlot": "function-furniture-schedule",
+      "toSlots": [
+        "material-fitting-sheet",
+        "north-elevation",
+        "studio-presentation"
+      ],
+      "extract": [
+        "WD-01",
+        "PT-01",
+        "AC-01"
+      ],
+      "notes": "The material and fitting sheet, north elevation and presentation repeat WD-01, PT-01 and AC-01 from the schedule."
+    }
+  ]
+}

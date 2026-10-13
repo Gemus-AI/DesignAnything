@@ -1,0 +1,571 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-story-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "dual-format-storyboard",
+      "label": "Landscape and portrait storyboard",
+      "description": "One finished storyboard document with six landscape panels and six corresponding portrait panels, annotated with shot ID, scale, duration and subject.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "paper-transformations",
+      "label": "Paper states and transition relationships",
+      "description": "One paper transformation sheet with six states, five connecting transition studies and three views of the folded volume.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "volume-keyframe",
+      "label": "Landscape volume keyframe at 11 seconds",
+      "description": "One finished landscape keyframe of the S04 paper volume at 11 seconds.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "landscape-end-frame",
+      "label": "Landscape title end frame",
+      "description": "One finished landscape end frame at 16 seconds with FOLD INTO SCIENCE and Science takes shape.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "portrait-end-frame",
+      "label": "Portrait title end frame",
+      "description": "One finished portrait end frame at 16 seconds with the paper arrangement, programme name and tagline recomposed for portrait viewing.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "final-shot-table",
+      "label": "Final timing and camera table",
+      "description": "One six-row shot table recording timing, scale, subject, paper action, transition mechanism, camera movement and screen copy entrances.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "programme-name",
+      "kind": "text-verbatim",
+      "text": "FOLD INTO SCIENCE",
+      "scope": {
+        "slots": [
+          "dual-format-storyboard",
+          "landscape-end-frame",
+          "portrait-end-frame",
+          "final-shot-table"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "programme-tagline",
+      "kind": "text-verbatim",
+      "text": "Science takes shape",
+      "scope": {
+        "slots": [
+          "dual-format-storyboard",
+          "landscape-end-frame",
+          "portrait-end-frame",
+          "final-shot-table"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FOLD INTO SCIENCE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "paper-transformation-system",
+      "slots": [
+        "paper-transformations",
+        "volume-keyframe",
+        "landscape-end-frame",
+        "portrait-end-frame"
+      ],
+      "sourceSlots": [
+        "dual-format-storyboard"
+      ],
+      "items": [
+        {
+          "item": "The transformation studies, storyboard and finished keyframes describe the same paper object and compatible fold mechanisms, with consistent ivory material, visible identity features and light direction.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The S04 keyframe follows the storyboard's 11-second volume, and both end frames preserve the paper arrangement developed through S05 and held during S06.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The two end frames present the same complete programme name and tagline, with placement and scale adapted to their respective safe margins and title areas.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FOLD INTO SCIENCE",
+    "carryThrough": {
+      "none": "The documents record client-specified facts and corresponding design decisions, but the letter does not require later files to repeat facts extracted from an earlier authored document."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Storyboard Creation",
+    "slots": [
+      "paper-transformations",
+      "volume-keyframe",
+      "landscape-end-frame",
+      "portrait-end-frame"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge rendered animation, audio production or physically measured paper weight from these storyboard, specification and still-image deliverables."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "paper-transformations",
+        "volume-keyframe",
+        "landscape-end-frame",
+        "portrait-end-frame"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-dual-format-storyboard",
+      "requirementId": "R-format-dual-format-storyboard",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dual-format-storyboard"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-paper-transformations",
+      "requirementId": "R-format-paper-transformations",
+      "method": "artifact-property",
+      "targetSlots": [
+        "paper-transformations"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-volume-keyframe",
+      "requirementId": "R-format-volume-keyframe",
+      "method": "artifact-property",
+      "targetSlots": [
+        "volume-keyframe"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-landscape-end-frame",
+      "requirementId": "R-format-landscape-end-frame",
+      "method": "artifact-property",
+      "targetSlots": [
+        "landscape-end-frame"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-portrait-end-frame",
+      "requirementId": "R-format-portrait-end-frame",
+      "method": "artifact-property",
+      "targetSlots": [
+        "portrait-end-frame"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-final-shot-table",
+      "requirementId": "R-format-final-shot-table",
+      "method": "artifact-property",
+      "targetSlots": [
+        "final-shot-table"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "sequence-records-and-panel-annotations",
+      "requirementId": "R-sequence-records-and-panel-annotations",
+      "method": "content",
+      "targetSlots": [
+        "dual-format-storyboard",
+        "final-shot-table"
+      ],
+      "criteria": "Read both storyboard sequences and the table as records. Each must list S01 through S06 once in chronological order, with three-second durations and scales CU, CU, MS, MS, MS, WS respectively. The table must cover contiguous intervals 0–3, 3–6, 6–9, 9–12, 12–15 and 15–18 seconds. Every storyboard panel must print its shot ID, scale, duration in seconds and subject Paper inside the panel. Missing annotations, reordered shots, inconsistent scales or timing gaps fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ]
+    },
+    {
+      "id": "transformation-mechanisms",
+      "requirementId": "R-transformation-mechanisms",
+      "method": "visual",
+      "targetSlots": [
+        "paper-transformations"
+      ],
+      "criteria": "The sheet must visibly progress from a compact point through an extending line, an opening plane, a folded volume, a reopening title arrangement and its hold. Five connecting studies must explain how adjacent states connect, retaining a recognizable edge or fold. Compare these mechanisms with the storyboard panels. Silhouettes and folding solutions may vary by designer; disconnected replacement objects, missing links or mechanisms that contradict the storyboard fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "dual-format-storyboard"
+      ]
+    },
+    {
+      "id": "paper-material-and-light",
+      "requirementId": "R-paper-material-and-light",
+      "method": "visual",
+      "targetSlots": [
+        "paper-transformations",
+        "volume-keyframe",
+        "landscape-end-frame",
+        "portrait-end-frame"
+      ],
+      "criteria": "Across the images and in comparison with the storyboard, the material must read as warm ivory, uncoated fibrous paper, retaining its diagonal crease and torn edge whenever the relevant surfaces are visible. Lighting must originate at the upper left and produce soft shadows towards the lower right on a background visually matching #263542. Folding, perspective and occlusion may change feature visibility. A different material, smooth replacement edges on exposed surfaces, reversed lighting or inconsistent backgrounds fail. Judge visual plausibility of the specified paper stock; do not infer an exact physical weight from pixels.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "dual-format-storyboard"
+      ]
+    },
+    {
+      "id": "screen-copy-and-entrance-timing",
+      "requirementId": "R-screen-copy-and-entrance-timing",
+      "method": "content",
+      "targetSlots": [
+        "dual-format-storyboard",
+        "final-shot-table"
+      ],
+      "criteria": "The written timing records must identify the programme-name entrance at 12 seconds, full readability by 14 seconds, tagline entrance at 15 seconds and complete-title hold through 18 seconds. S01–S04 have no screen copy; S05 introduces only the programme name; S06 contains both exact strings. Storyboard title states must agree with these records and with the complete compositions in the supplied end frames. Timing may use equivalent notation, but early copy, a late reveal, missing hold or contradictory end-frame copy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "sourceSlots": [
+        "landscape-end-frame",
+        "portrait-end-frame"
+      ]
+    },
+    {
+      "id": "keyframe-safe-areas-and-title-placement",
+      "requirementId": "R-keyframe-safe-areas-and-title-placement",
+      "method": "visual",
+      "targetSlots": [
+        "volume-keyframe",
+        "landscape-end-frame",
+        "portrait-end-frame"
+      ],
+      "criteria": "The volume and landscape end frames must use landscape 16:9 compositions, and the portrait end frame must use a portrait 9:16 composition. Paper must remain inside a 3.5% inset on every edge, and text inside a 5% inset. Measured from the top left, the full name-and-tagline group must fit within x=20–80%, y=58–82% in the landscape end frame and x=10–90%, y=55–78% in the portrait end frame. Layout choices within these regions are free; crossing the required boundaries or using the wrong orientation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "portrait-adaptation-and-keyframe-continuity",
+      "requirementId": "R-portrait-adaptation-and-keyframe-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "volume-keyframe",
+        "landscape-end-frame",
+        "portrait-end-frame"
+      ],
+      "criteria": "Compare the S04 keyframe with the storyboard's 11-second folded-volume state, and both 16-second end frames with the arrangement developed during S05 and held in S06. The portrait end frame must adapt placement and scale to its title area while preserving the recognizable paper arrangement and complete copy. Reframing and proportionate rescaling are allowed; a different volume, a newly substituted end arrangement, an incomplete title reveal or a crop that loses required content fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "dual-format-storyboard",
+        "paper-transformations"
+      ]
+    },
+    {
+      "id": "transformation-sheet-completeness",
+      "requirementId": "R-transformation-sheet-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "paper-transformations"
+      ],
+      "criteria": "The sheet must contain six identifiable shot states, five connecting transition studies, and front, side and back views of the same S04 volume. Arrows must trace both the crease and a torn edge across every transition. Sheet layout and annotation style may vary; absent views, incompatible volume geometry or arrows that do not establish feature continuity fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "shot-table-field-and-action-coverage",
+      "requirementId": "R-shot-table-field-and-action-coverage",
+      "method": "content",
+      "targetSlots": [
+        "final-shot-table"
+      ],
+      "criteria": "Each of the six shot records must provide every requested field. Actions must follow the supplied sequence: point extending, line opening laterally, plane exposing its crease and folding upward, volume becoming legible and reopening, reopening supporting the name, and final arrangement holding. Transition descriptions must agree with the sheet and storyboard. Camera movement is designer-defined, and an explicitly static camera is valid. Explicit none or equivalent is valid for absent copy and entrance timing in S01–S04; omitted fields or contradictory actions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "sourceSlots": [
+        "dual-format-storyboard",
+        "paper-transformations"
+      ]
+    },
+    {
+      "id": "dual-format-storyboard-completeness",
+      "requirementId": "R-dual-format-storyboard-completeness",
+      "method": "content",
+      "targetSlots": [
+        "dual-format-storyboard"
+      ],
+      "criteria": "Inspect the document as an illustrated production specification: it must contain six landscape 16:9 panels and six corresponding portrait 9:16 panels with the required in-panel records. Both sequences must communicate the same six actions and connected transformations. Portrait panels must reposition and rescale the paper and, where present, title for the narrower frame. In every panel, paper must fit within 3.5% action insets and text within 5% graphic insets; final title compositions must respect the specified orientation-specific title areas. Exposed paper must retain the ivory fibrous material, diagonal crease, torn edge and specified directional lighting against #263542. Missing panels, unchanged landscape layouts merely cropped into portrait, broken continuity or contradictory visual specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ]
+    },
+    {
+      "id": "set-paper-transformation-system",
+      "requirementId": "R-set-paper-transformation-system",
+      "method": "visual",
+      "targetSlots": [
+        "paper-transformations",
+        "volume-keyframe",
+        "landscape-end-frame",
+        "portrait-end-frame"
+      ],
+      "criteria": "The transformation studies, storyboard and finished keyframes describe the same paper object and compatible fold mechanisms, with consistent ivory material, visible identity features and light direction. The S04 keyframe follows the storyboard's 11-second volume, and both end frames preserve the paper arrangement developed through S05 and held during S06. The two end frames present the same complete programme name and tagline, with placement and scale adapted to their respective safe margins and title areas.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-breadth-01/03-sequence-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "dual-format-storyboard"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-paper-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "ivory-paper-identity.png"
+      ],
+      "subjectSlots": [
+        "paper-transformations",
+        "volume-keyframe",
+        "landscape-end-frame",
+        "portrait-end-frame"
+      ],
+      "notes": "Carry these features through the transformations against a background of #263542."
+    }
+  ]
+}

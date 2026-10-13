@@ -1,0 +1,31 @@
+NEXT DOOR | Two-player puzzles in familiar neighbourhood objects
+
+We are developing NEXT DOOR for pairs who enjoy short, relaxed cooperative games. Two neighbours, Bea and Kit, repair shared spaces by operating familiar objects together. Bea holds a mailbox flap while Kit turns a utility cabinet wheel; 3 seconds of overlapping operation completes the link. A break in overlap resets that progress. The first puzzle is Mail Court. The expanded range adds Wash Passage, Stair Landing and Roof Garden, using the same interaction. The world and rendering style are open for comparison; the attached mailbox and cabinet are the existing objects around which the art develops.
+
+Bea is 1600 mm tall and carries the circle ownership symbol in #1F4E5F; Kit is 1750 mm tall and carries the triangle in #B35C1E. The mailbox measures 400 × 300 × 600 mm and the cabinet 600 × 250 × 800 mm, in width × depth × height order. Each playable space occupies an 8000 × 6000 mm grid with 1000 mm cells, operating points 3000 mm apart and a 1000 mm interaction radius. The interface uses a 1920 × 1080 logical canvas, divided into two 960 × 1080 views, with a 48-unit inset inside each view. Default text character height is at least 26 logical units. Print "NEXT DOOR" on every interface sheet and use "Hold flap" and "Turn wheel" as the interaction prompts. Object labels are Mailbox and Utility Cabinet; the puzzle indicators are Idle, Ready, Linked and Completed, with counters 0/2, 1/2, 2/2 and 2/2 respectively, and a 3 s duration label.
+
+Audience: the art director and gameplay team, choosing a visual world and preparing a playable slice for people who enjoy light cooperation.
+
+Inputs (attached): 01-client-facts.en.md contains the fixed project facts. 02-delivery-catalog.en.md contains the deliverable proportions, formats and stages. 03-game-records.en.md contains character, object, location, state and control records. screen-constraint.png supplies the logical canvas, split and safe areas. interaction-grid.png supplies the playable footprint, operating points and reach circles. mailbox-identity.png records the existing mailbox silhouette and fittings. cabinet-identity.png records the existing cabinet silhouette and fittings. sofa-reference.png provides the shared living-room play context.
+
+Deliverables:
+1. Three world and art direction boards, each showing a distinct treatment of Bea, Kit and the Mail Court interaction around the existing mailbox and cabinet
+2. One one-page selection note naming the chosen direction and explaining its character silhouettes, object readability and cooperation cues
+3. One one-page art style rule sheet recording the selected direction, three world palette codes, the two ownership colours, line and brush rules, a three-material list and light direction
+4. One character and object inventory recording C01, C02 and P01–P04, their dimensions, states, clothing colours, accessory counts and visible features
+5. Four character sheets: Bea C01 and Kit C02 with front, side and back views, two states, dimensions, close-ups and map icons, plus one additional action sheet per character showing three views of Holding or Turning
+6. Four object sheets for Mailbox P01, Utility Cabinet P02, Mailbox P03 and Utility Cabinet P04, each with front, side and back views, Rest and Engaged states, dimensions, a close-up and a map icon
+7. Four puzzle scene sheets for Mail Court S01, Wash Passage S02, Stair Landing S03 and Roof Garden S04, each showing operating positions, the connection route and four puzzle state treatments
+8. Four interface sheets, one per location, each comparing controller, touch and keyboard-and-mouse layouts with both prompts, object labels, counters and four puzzle states
+9. One 12-second visual preview of Bea and Kit completing the Mail Court interaction
+10. One presentation document of at least 12 pages, reusing the three directions, selection, rules, expanded inventory, four character sheets, four object sheets, four scenes, four interfaces and preview frames
+
+Acceptance:
+- The three direction boards precede the selection note; the rule sheet, inventory and every subsequent deliverable develop its named direction, repeated on presentation page 1. The presentation reuses all four locations and all four object IDs.
+- The rule sheet's three world palette codes and light direction recur in captions on all character, object and scene sheets and in the presentation, and govern their artwork. The inventory's C01, C02 and P01–P04 IDs, dimensions and state names recur on the corresponding sheets and in the presentation.
+- The four character sheets retain Bea's 1600 mm height, Kit's 1750 mm height and their recorded clothing colours and accessory counts across all scenes, interfaces and the preview. The four object sheets retain the recorded dimensions and fittings; P03 follows P01's mailbox geometry with a cream body, and P04 follows P02's cabinet geometry with a blue-grey body. Each base character sheet and each object sheet provides three views, two states, a close-up and a map icon.
+- The four scene sheets retain the 8000 × 6000 mm footprint, 3000 mm operating-point separation and 1000 mm reach circles, with object pairs S01 P01/P02, S02 P03/P04, S03 P01/P04 and S04 P03/P02. The 12-second Mail Court preview shows an interrupted link, progress reset, then 3 continuous seconds of Linked 2/2 before Completed 2/2.
+- Each interface sheet prints NEXT DOOR, its location name, Mailbox, Utility Cabinet, Hold flap, Turn wheel and 3 s, plus Idle 0/2, Ready 1/2, Linked 2/2 and Completed 2/2; its three input versions follow 03-game-records.en.md, preserving prompt meanings and bottom-centre positions in the corresponding player views.
+- Every interface layout and the preview use the 1920 × 1080 logical canvas, two 960 × 1080 views, 48-unit internal safe margins and character heights of at least 26 logical units. Text reaches 4.5:1 contrast; icons and unavailable controls reach 3:1, with lock icons for unavailable controls. Scenes, interfaces and the preview use Bea's #1F4E5F circle, Kit's #B35C1E triangle and the hollow-circle, half-circle, chain and check-mark state symbols.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

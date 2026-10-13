@@ -1,0 +1,32 @@
+COMMON TABLE | Neighbourhood fresh market and shared dining hall
+
+We are bringing 18 independent traders and a 64-seat community dining room together on a single-storey site. Develop three architectural arrangements, then select one for the complete scheme. Print "COMMON TABLE" and "Fresh food, shared meals" on the south entrance sign and presentation cover. Two existing produce carts, with cream canvas shades, rounded steel front rails and left-hand weighing scales, will move into stalls P01 and P02.
+
+The rectangular plot measures 48000 mm east–west by 36000 mm north–south. The public street is south; the service lane is east. Minimum setbacks are 6000 mm north and south and 3000 mm east and west. Ground floor and adjoining pavement share datum ±0.000 m; maximum roof level is +6.500 m. Use a 12000 mm principal structural span and at least 4200 mm clear height. Exposed steel roof trusses, brick external walls and aluminium-framed glazing are fixed construction choices. The programme totals 840 m² net, divided equally between public space and stalls with support rooms. Each stall measures 3000 mm × 3000 mm; public aisles have 2400 mm minimum clear width. Four hot-food stalls occupy an east-facing external wall within the exhaust band shown in the site attachment. Receiving and waste collection use separate east-side gates. The shared kitchen has separate meal-service and dish-return openings.
+
+Audience: neighbourhood shoppers and diners, independent traders and delivery and waste operators, for agreement on the building layout and daily operating arrangements.
+
+Inputs (attached): 01-client-facts.en.md records the site, capacity, construction and retained carts. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. 03-programme.en.md records room codes, net areas, clear heights and adjacencies. 04-operations.en.md records stall allocations, operating times and movement sequences. site-controls.png supplies the site geometry, access positions and dimensional envelopes. existing-produce-cart.png records the carts and shades moving into P01 and P02. neighbourhood-day.png provides the atmosphere of morning shopping and lunchtime street life.
+
+Deliverables:
+1. Three architectural direction boards, one each for a linear hall, a courtyard arrangement and a clustered hall, with programme zoning and public and service access
+2. One two-page selection and programme document naming the chosen direction and tabulating every room's code, name, net area, clear height, adjacency and floor level
+3. One dimensioned site plan with zoning, setbacks, south pedestrian frontage, east receiving and waste gates, and the exhaust band
+4. One dimensioned ground-floor plan with all room names and codes, net areas, 18 numbered stalls, 64 dining seats, aisles, kitchen openings and structural grid
+5. One section sheet with two sections through the market, kitchen and dining room, including the 12000 mm span, clear heights, floor and roof levels and exposed steel trusses
+6. One elevation sheet with south and east elevations, entrance lettering, materials, openings and hot-food exhaust positions
+7. One circulation sheet with 05:30 and 12:30 plan overlays tracing shoppers, incoming goods, preparation, meal service, dish returns and waste, with collection times
+8. One stall detail sheet with a dimensioned plan, section and axonometric of P01, its retained cart and shade, and the adjoining public aisle
+9. Two eye-level perspectives, one of receiving and stall stocking at 05:30 and one of shared dining and the adjoining market at 12:30
+10. One 10-second video moving from morning receiving to lunchtime dining through the selected building
+11. One presentation document of at least 8 pages reusing the directions, selection, programme, drawings, circulation overlays and perspectives
+
+Acceptance:
+- The three direction boards compare the linear, courtyard and clustered arrangements. The selection and programme document names one choice; the site plan, floor plan, sections, elevations, circulation sheet, stall detail, perspectives, video and presentation develop that choice. The presentation's first page names it.
+- The selection and programme document, ground-floor plan and presentation repeat the room codes, English names, net areas and ±0.000 m floor level from 03-programme.en.md. Their totals are 420 m² public space and 420 m² stalls and support. The floor plan contains 8 produce, 4 pantry, 2 fish and 4 hot-food stalls, each 3000 mm × 3000 mm, and 64 dining seats.
+- The site plan and ground-floor plan dimension the 48000 mm × 36000 mm plot, four setbacks and gate positions, with a north arrow and metric scale bar. The floor plan and sections identify the 12000 mm principal span; the floor plan dimensions public aisles at least 2400 mm clear. The sections label ±0.000 m, actual roof levels at or below +6.500 m and clear heights of at least 4200 mm.
+- The circulation sheet traces all six movement sequences in 04-operations.en.md and labels deliveries 05:00–06:30 and waste collection 14:30–15:00. Its routes and the ground-floor plan connect receiving and waste to their respective east gates, distinguish the kitchen's meal-service and dish-return openings, and separate service movement from the public aisles. The two perspectives depict their specified 05:30 and 12:30 activities.
+- The stall detail dimensions the retained cart at 1800 mm × 750 mm with a 900 mm counter height and preserves its shade, front rail and left-hand scale. The floor plan locates matching carts at P01 and P02. The sections show exposed steel roof trusses; the elevations identify brick and aluminium-framed glazing. Both perspectives and the video match the drawings' columns, openings, roof profile and material locations.
+- The south elevation and presentation cover print COMMON TABLE and Fresh food, shared meals. The east elevation places all four hot-food exhausts within the y = 12000–24000 mm band. The video lasts 10 seconds; the presentation contains at least 8 pages and reuses all the earlier work named in its deliverable.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

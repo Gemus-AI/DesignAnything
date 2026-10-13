@@ -1,0 +1,569 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-graphic-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "exhibition-poster",
+      "label": "A1 exhibition poster",
+      "description": "One A1 portrait poster with exhibition information, selected glyphs from both archives and the short source credit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "archive-a-label",
+      "label": "Archive A specimen label",
+      "description": "One 150 × 100 mm Archive A label with C and g, the exhibition title, scan and group references, a feature explanation and the full source credit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "archive-b-label",
+      "label": "Archive B specimen label",
+      "description": "One 150 × 100 mm Archive B label with uppercase Greek theta and omega, the exhibition title, scan and group references, a feature explanation and the full source credit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "foldout-outside",
+      "label": "Three-panel foldout outside",
+      "description": "One 297 × 210 mm foldout outside layout with exhibition information, selected glyphs from both archives and the full source credit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "foldout-inside",
+      "label": "Three-panel foldout inside",
+      "description": "One 297 × 210 mm foldout inside layout with the exhibition title, all four selected glyphs, archive references, group headings, feature explanations and the short source credit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "foyer-screen",
+      "label": "Portrait foyer screen",
+      "description": "One portrait foyer screen composition with exhibition information, selected glyphs from both archives and the short source credit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exhibition-title",
+      "kind": "text-verbatim",
+      "text": "LETTER / FORM",
+      "scope": {
+        "slots": [
+          "exhibition-poster",
+          "archive-a-label",
+          "archive-b-label",
+          "foldout-outside",
+          "foldout-inside",
+          "foyer-screen"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "exhibition-subtitle",
+      "kind": "text-verbatim",
+      "text": "Looking closely at a 1785 type specimen",
+      "scope": {
+        "slots": [
+          "exhibition-poster",
+          "foldout-outside",
+          "foyer-screen"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "LETTER / FORM",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-exhibition-typography",
+      "slots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "items": [
+        {
+          "item": "All six pieces use one supporting type family, allowing changes in size, weight and style appropriate to each reading situation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The exhibition title has greater typographic prominence than the source credit on every piece.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "LETTER / FORM"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "exhibition-poster",
+      "archive-a-label",
+      "archive-b-label",
+      "foldout-outside",
+      "foldout-inside",
+      "foyer-screen"
+    ],
+    "layoutExtras": true,
+    "naRules": "Do not judge simulated gallery lighting, material realism or reproduction of the source pages' paper colour and layout."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-exhibition-poster",
+      "requirementId": "R-format-exhibition-poster",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exhibition-poster"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-archive-a-label",
+      "requirementId": "R-format-archive-a-label",
+      "method": "artifact-property",
+      "targetSlots": [
+        "archive-a-label"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-archive-b-label",
+      "requirementId": "R-format-archive-b-label",
+      "method": "artifact-property",
+      "targetSlots": [
+        "archive-b-label"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-foldout-outside",
+      "requirementId": "R-format-foldout-outside",
+      "method": "artifact-property",
+      "targetSlots": [
+        "foldout-outside"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-foldout-inside",
+      "requirementId": "R-format-foldout-inside",
+      "method": "artifact-property",
+      "targetSlots": [
+        "foldout-inside"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-foyer-screen",
+      "requirementId": "R-format-foyer-screen",
+      "method": "artifact-property",
+      "targetSlots": [
+        "foyer-screen"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "exhibition-information",
+      "requirementId": "R-exhibition-information",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "criteria": "Read the exhibition information on each surface. The poster, outside foldout and screen must include the exact title and subtitle, identify Marlow Print Room, state the date range 6–28 November 2027, opening days Tuesday–Sunday, hours 11:00–18:00 and admission Free entry. The two labels and inside foldout must include the exhibition title. Flexible line breaks and unambiguous date typography are allowed; missing, incorrect or unreadable required information fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "selected-glyph-allocation-and-fidelity",
+      "requirementId": "R-selected-glyph-allocation-and-fidelity",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "criteria": "Compare required letterforms with the supplied scans: Archive A selections are C and g in the top Five-Line Pica group of scan 13; Archive B selections are uppercase Greek theta and omega in the third row of the top Two-Line Pica group of scan 17. Each poster, outside foldout and screen needs at least one selection from each archive; each label needs both selections from its own archive; the inside foldout needs all four. Direct crops and faithful tracings may be proportionally enlarged, isolated, recoloured or have paper backgrounds removed. Missing forms, substituted font glyphs that differ from the source, cropped contours, distorted proportions, altered openings or connections, and changed orientation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "archive-records-and-explanations",
+      "requirementId": "R-archive-records-and-explanations",
+      "method": "visual",
+      "targetSlots": [
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-inside"
+      ],
+      "criteria": "Read each label's archive identifier, scan number, historical group heading and explanation, checking that they refer to its displayed specimens. Archive A must be associated with scan 13 and Five-Line Pica; Archive B with scan 17 and Two-Line Pica. Each label needs a concise English explanation of at least one supplied feature belonging to its archive. The inside foldout needs both record pairs and at least one feature explanation per archive. Accurate paraphrases are allowed; crossed archive assignments, incorrect features, absent explanations or descriptions unrelated to the displayed forms fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "source-credit-allocation",
+      "requirementId": "R-source-credit-allocation",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "criteria": "Read the complete credit on each surface. Both labels and the outside foldout must print: William Caslon (1754–1833), A specimen of printing types, 1785. University of California Libraries / Internet Archive. Public-domain scan. The poster, inside foldout and screen must print: Source: A specimen of printing types, 1785. Line wrapping may vary while preserving wording, punctuation and clear association with the specimens. Missing words, substituted attribution, the wrong credit version or ambiguous specimen association fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "physical-layout-and-clearances",
+      "requirementId": "R-physical-layout-and-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "criteria": "Evaluate physical geometry using the intended trim dimensions rather than an exact raster pixel count: poster 594 × 841 mm in portrait orientation, labels 150 × 100 mm, and each foldout side 297 × 210 mm. Each foldout must support three equal concertina panels closing to 99 × 210 mm, with folds at 99 and 198 mm from its left trim edge. Verify a 3 mm bleed region and text at least 5 mm inside trim on every print surface; foldout text must also clear both folds by at least 5 mm. The screen must be portrait with all text inside a 5% inset on every edge. Different raster resolutions are allowed; incompatible proportions, panel geometry or insufficient clearances fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "reading-scale-and-shared-typography",
+      "requirementId": "R-reading-scale-and-shared-typography",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "criteria": "Assess text scale against each surface's specified physical trim size: poster title capitals must reach 25 mm, label explanation and credit text must be at least 11 pt, and foldout body and credit text must be at least 10 pt. Compare contemporary supporting typography across all six pieces for one shared family; weights, sizes and styles within that family may vary. Historical specimen glyphs are exempt from the supporting-font comparison. Each surface must make the exhibition title more prominent than its source credit. Undersized required text, incompatible supporting families or credits that equal or dominate the title's hierarchy fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "optional-source-decoration",
+      "requirementId": "R-optional-source-decoration",
+      "method": "diagnostic",
+      "targetSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "criteria": "Decorative fragments and secondary letters from the supplied pages are permitted additions. Their presence or absence is not a failure, and they do not replace the complete selected glyphs required by the allocation check.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "gallery-reference-role",
+      "requirementId": "R-gallery-reference-role",
+      "method": "diagnostic",
+      "targetSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "criteria": "Treat the gallery reference as contextual guidance for viewing conditions. It does not require the exported compositions to reproduce a gallery scene, lighting setup or visitors.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-shared-exhibition-typography",
+      "requirementId": "R-set-shared-exhibition-typography",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "criteria": "All six pieces use one supporting type family, allowing changes in size, weight and style appropriate to each reading situation. The exhibition title has greater typographic prominence than the source credit on every piece.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "archive-a-letterforms",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "archive-a.jpg"
+      ],
+      "subjectSlots": [
+        "exhibition-poster",
+        "archive-a-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "notes": "Every required glyph retains its source contour, openings, connections and orientation."
+    },
+    {
+      "id": "archive-b-letterforms",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "archive-b.jpg"
+      ],
+      "subjectSlots": [
+        "exhibition-poster",
+        "archive-b-label",
+        "foldout-outside",
+        "foldout-inside",
+        "foyer-screen"
+      ],
+      "notes": "Every required glyph retains its source contour, openings, connections and orientation."
+    }
+  ]
+}

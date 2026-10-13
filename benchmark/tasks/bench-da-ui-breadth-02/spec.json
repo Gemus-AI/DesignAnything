@@ -1,0 +1,1140 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ui-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "digital-product",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "architecture-spec",
+      "label": "Information architecture and behavior specification",
+      "description": "A one-page page-entry-data table and behavior specification for source, instance, track and export relationships.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "component-states",
+      "label": "Component and state value table",
+      "description": "A one-page component-state-value table with colors, contrast ratios and Default, Pressed, Disabled and Error states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "source-library",
+      "label": "Sources library and source preview",
+      "description": "A Sources screen containing four source records, their waveforms and a distinct source-preview context.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "workspace-r01",
+      "label": "Initial Workspace at r01",
+      "description": "A Workspace screen at r01 with three tracks, five instances and the H01 source and I02 instance inspectors.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "trim-r02",
+      "label": "Trim result and invalid-input state",
+      "description": "An r02 trim-result board with the Voice-track gap and an r01 invalid SourceOut input inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "mute-r03",
+      "label": "Percussion track muted at r03",
+      "description": "An r03 editing-state board with P muted at -18 dB and I05 retaining ten plays and its source waveform.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "repeats-r04",
+      "label": "I05 repeat edit at r04",
+      "description": "An r04 editing-state board with muted I05 repeating eight times and ending at 10.000 s.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "undo-r05",
+      "label": "Undo result and pending Redo at r05",
+      "description": "An r05 Undo-result board with I05 restored to ten plays, P still muted and the next Redo identified.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "export-settings-e2",
+      "label": "Export settings at E2",
+      "description": "An E2 Export settings screen for V02 at r03 with the fixed export range and audio settings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "export-rendering-e3",
+      "label": "Rendering snapshot at E3",
+      "description": "An E3 Export screen with current r04, V02 snapshot r03, Rendering at 60% and disabled Download.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "export-ready-e4",
+      "label": "Completed outdated export at E4",
+      "description": "An E4 Export screen with V02 Ready from r03, Outdated against r04 and available for Download.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "version-history-e5",
+      "label": "Version history at E5",
+      "description": "An E5 Versions screen listing V01, V02 and V03 with filenames, snapshot revisions, statuses, durations and currency labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "editing-demo",
+      "label": "Twelve-second editing demonstration",
+      "description": "A 12-second interaction video following trimming, track mute, repeat editing and Undo through r01–r05.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "design-presentation",
+      "label": "Interface and behavior presentation",
+      "description": "A presentation of at least eight pages reusing the specifications and screens to explain editing behavior and export revision relationships.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "CUTLINE",
+      "scope": {
+        "slots": [
+          "design-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "SMALL SIGNALS",
+      "scope": {
+        "slots": [
+          "design-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "trim-action-label",
+      "kind": "text-verbatim",
+      "text": "Apply trim",
+      "scope": {
+        "slots": [
+          "trim-r02"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "download-action-label",
+      "kind": "text-verbatim",
+      "text": "Download",
+      "scope": {
+        "slots": [
+          "export-rendering-e3",
+          "export-ready-e4"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CUTLINE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "specified-interface-system",
+      "slots": [
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05",
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5"
+      ],
+      "sourceSlots": [
+        "architecture-spec",
+        "component-states"
+      ],
+      "items": [
+        {
+          "item": "Navigation, typography, controls, numeric fields and status treatments form one desktop interface system derived from the specification and component table.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Page names, track gains, background #182128 and accent #82D9C6 agree with the fixed records wherever used.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Source identity, instance selection, project time, source time, revision identity and export status retain consistent visual meanings across relevant views.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The required continuity concerns an interface system and source waveform envelopes, which are covered by sets and visual checks rather than an anchor for a logo, product object, character or space."
+    },
+    "brandToken": "CUTLINE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "source-library",
+      "workspace-r01",
+      "trim-r02",
+      "mute-r03",
+      "repeats-r04",
+      "undo-r05",
+      "export-settings-e2",
+      "export-rendering-e3",
+      "export-ready-e4",
+      "version-history-e5"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge audio fidelity, executable editing behavior, photorealistic material or lighting, or exact raster pixel dimensions."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "architecture-spec",
+        "component-states",
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05",
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5",
+        "design-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05",
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-architecture-spec",
+      "requirementId": "R-format-architecture-spec",
+      "method": "artifact-property",
+      "targetSlots": [
+        "architecture-spec"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-component-states",
+      "requirementId": "R-format-component-states",
+      "method": "artifact-property",
+      "targetSlots": [
+        "component-states"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-source-library",
+      "requirementId": "R-format-source-library",
+      "method": "artifact-property",
+      "targetSlots": [
+        "source-library"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-workspace-r01",
+      "requirementId": "R-format-workspace-r01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "workspace-r01"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-trim-r02",
+      "requirementId": "R-format-trim-r02",
+      "method": "artifact-property",
+      "targetSlots": [
+        "trim-r02"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-mute-r03",
+      "requirementId": "R-format-mute-r03",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mute-r03"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-repeats-r04",
+      "requirementId": "R-format-repeats-r04",
+      "method": "artifact-property",
+      "targetSlots": [
+        "repeats-r04"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-undo-r05",
+      "requirementId": "R-format-undo-r05",
+      "method": "artifact-property",
+      "targetSlots": [
+        "undo-r05"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-export-settings-e2",
+      "requirementId": "R-format-export-settings-e2",
+      "method": "artifact-property",
+      "targetSlots": [
+        "export-settings-e2"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-export-rendering-e3",
+      "requirementId": "R-format-export-rendering-e3",
+      "method": "artifact-property",
+      "targetSlots": [
+        "export-rendering-e3"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-export-ready-e4",
+      "requirementId": "R-format-export-ready-e4",
+      "method": "artifact-property",
+      "targetSlots": [
+        "export-ready-e4"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-version-history-e5",
+      "requirementId": "R-format-version-history-e5",
+      "method": "artifact-property",
+      "targetSlots": [
+        "version-history-e5"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-editing-demo",
+      "requirementId": "R-format-editing-demo",
+      "method": "manual",
+      "targetSlots": [
+        "editing-demo"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-design-presentation",
+      "requirementId": "R-format-design-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "design-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "architecture-and-behavior",
+      "requirementId": "R-architecture-and-behavior",
+      "method": "content",
+      "targetSlots": [
+        "architecture-spec"
+      ],
+      "criteria": "Require one page containing a legible table connecting each of the four named pages to its entry points and data. Explain original sources, independently editable instances, track-wide gain and separate mute, and exports captured from a project revision. State V / Voice at 0 dB, M / Music at -12 dB, P / Percussion at -18 dB, background #182128, accent #82D9C6, and the minimum landscape application window of 1440 × 900 logical units. Cover source preview versus project transport, instance controls, history controls and export availability. Table composition and optional keyboard shortcuts may vary; missing relationships or contradictory behavior fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ]
+    },
+    {
+      "id": "component-specification",
+      "requirementId": "R-component-specification",
+      "method": "content",
+      "targetSlots": [
+        "component-states"
+      ],
+      "criteria": "Require one page mapping relevant components to Default, Pressed, Disabled and Error states with actual values and contrast ratios. Include numeric inputs, action buttons, mute indicators and export status labels; establish the four page names, three track gains and fixed background and accent colors consistently with the architecture specification. Specify three-decimal seconds, body-text contrast of at least 4.5:1 and large-text and icon contrast of at least 3:1. State indicators must include text or icons. Component styling may vary; a state-name list without component behavior and values is insufficient.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "sourceSlots": [
+        "architecture-spec"
+      ]
+    },
+    {
+      "id": "screen-system-and-logical-window",
+      "requirementId": "R-screen-system-and-logical-window",
+      "method": "visual",
+      "targetSlots": [
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05",
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5"
+      ],
+      "criteria": "Compare the screens with both specification pages. Page names, displayed gains, background and accent must retain their defined meanings and values wherever used. Each application view, including the invalid-input inset, must depict the prescribed landscape logical desktop window; scaled depictions are allowed and raster pixel dimensions are not assessed. Typography, track order and control shapes may vary within the chosen system. Conflicting names, altered gains, replacement theme colors or an inset depicting a different application-window convention fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "architecture-spec",
+        "component-states"
+      ]
+    },
+    {
+      "id": "source-library-and-original-records",
+      "requirementId": "R-source-library-and-original-records",
+      "method": "visual",
+      "targetSlots": [
+        "source-library",
+        "workspace-r01"
+      ],
+      "criteria": "Both views must make the four original source identities and full durations readable: H01 / Host introduction and R01 / Street response are each 10.000 s; J01 / Three-note jingle is 2.000 s; P01 / Two-hit percussion is 1.000 s. The library contains four distinct records and a source-preview context whose position belongs to the selected original recording. Displayed metadata and type labels must agree with 03-source-records.en.md, including Synthetic speech for H01 and R01 and Original synthesis for J01 and P01. Record arrangement may vary; missing or duplicated sources, invented metadata or conflation of preview position with the project playhead fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "initial-instance-arrangement",
+      "requirementId": "R-initial-instance-arrangement",
+      "method": "visual",
+      "targetSlots": [
+        "workspace-r01"
+      ],
+      "criteria": "Require current revision r01, three initially unmuted tracks and five identifiable instances. I01 uses J01 on M over [0.000, 2.000); I02 uses H01 on V over [2.000, 12.000); I03 uses R01 on V over [12.000, 22.000); I04 uses J01 on M over [22.000, 24.000); I05 uses P01 on P for ten plays over [2.000, 12.000). I02 is selected, with H01's 10.000 s original duration, source interval [0.000, 10.000) and timeline placement readable in distinct source and instance contexts. I01 and I04 must be independent placements of the same source, and I05 one repeated instance. Track order may vary; altered references, placements, selection or instance counts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "waveform-fidelity",
+      "requirementId": "R-waveform-fidelity",
+      "method": "visual",
+      "targetSlots": [
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05"
+      ],
+      "criteria": "Compare displayed envelopes with source-waveforms.png and the source-time records in 03-source-records.en.md. Preserve recognizable speech structure and silence, J01's three attacks at source times 0.000, 0.500 and 1.000, and P01's two attacks at 0.000 and 0.500. H01's removed boundary intervals must be silent. Trimming crops the source envelope; repetition repeats it at speed 1.000; muting retains it with a mute indicator. Ten P01 plays therefore retain twenty attacks and eight plays retain sixteen. Scale and drawing simplification may vary, but invented event structure, erased muted audio or confusion between independent source axes and project time fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "trim-and-invalid-input",
+      "requirementId": "R-trim-and-invalid-input",
+      "method": "visual",
+      "targetSlots": [
+        "trim-r02"
+      ],
+      "criteria": "The main panel must identify r02 and show I02 trimmed to source In 0.500 and Out 9.500, one play at speed 1.000, duration 9.000 s and unchanged start 2.000. I03 remains at 12.000, leaving a 1.000 s Voice gap, while I05 remains unmuted through 12.000 and other instances retain r01 values. H01 remains a 10.000 s original source. A separately labeled r01 inset must show pending SourceOut 10.500 against the 10.000 source limit, the error text Outside source range and disabled Apply trim while retaining the r01 arrangement. Panel placement may vary; ripple movement, destructive source shortening or treating the invalid value as a committed edit fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "accessible-screen-states",
+      "requirementId": "R-accessible-screen-states",
+      "method": "visual",
+      "targetSlots": [
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05",
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5"
+      ],
+      "criteria": "Evaluate rendered text and meaningful icons against their local backgrounds, using the component table's declared color pairs as supporting evidence. Body text must meet 4.5:1 and large text and icons 3:1, including inset content. Every displayed mute, error, processing and currency state needs a readable text or icon cue in addition to any color treatment. Different accessible treatments are allowed; insufficient contrast or color-only status communication fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-states"
+      ]
+    },
+    {
+      "id": "mute-repeat-and-undo-states",
+      "requirementId": "R-mute-repeat-and-undo-states",
+      "method": "visual",
+      "targetSlots": [
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05"
+      ],
+      "criteria": "Require separate readable revision labels. Across all three boards P stays at -18 dB and muted, V and M remain unmuted, and I02 retains its r02 trim. At r03 I05 has ten plays ending 12.000; at r04 only its total Repeats changes to eight, ending 10.000; at r05 ten plays and the 12.000 endpoint return. I05 retains P01, source [0.000, 1.000), start 2.000 and speed 1.000 throughout. The Undo board presents r05 as current and Set I05 Repeats to 8 as the pending next Redo. Layout may vary; changed gain, lost trim or mute, shifted starts or an already-executed Redo fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "trim-r02"
+      ]
+    },
+    {
+      "id": "interaction-video",
+      "requirementId": "R-interaction-video",
+      "method": "manual",
+      "targetSlots": [
+        "editing-demo"
+      ],
+      "criteria": "Review the entire video for a 12-second sequence beginning at r01 and visibly performing Apply trim, Mute P, Set I05 Repeats to 8 and Undo in that order, producing r02, r03, r04 and r05. Labels and pressed feedback must be readable. Verify the non-ripple I02 trim, unchanged -18 dB P gain, retained mute, I05's ten-to-eight-to-ten play sequence and corresponding endpoints. Each application frame must preserve the specified logical desktop window and accessible state indicators. Timing within the sequence may vary; skipped operations, incorrect state transitions, unreadable feedback or incorrect total duration fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "architecture-spec",
+        "component-states",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05"
+      ]
+    },
+    {
+      "id": "export-settings",
+      "requirementId": "R-export-settings",
+      "method": "visual",
+      "targetSlots": [
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5"
+      ],
+      "criteria": "E2 must identify current r03 and V02's proposed r03 snapshot before rendering, with WAV container, PCM 16-bit encoding, Mono, 22050 Hz, range [0.000, 24.000) s and duration 24.000 s. V01 remains Ready and Outdated. Later export views must retain the same range and settings wherever displayed, with no evidence of a changed export configuration. Settings may be summarized outside E2; contradictory values, a range shortened to the occupied audio or capture from the wrong revision fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "export-lifecycle-and-version-records",
+      "requirementId": "R-export-lifecycle-and-version-records",
+      "method": "visual",
+      "targetSlots": [
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5"
+      ],
+      "criteria": "E3 must separately display current project r04, V02 snapshot r03, Rendering at 60% and disabled Download with Available when Ready. E4 retains current r04 and snapshot r03 while changing V02 to Ready and Outdated with enabled Download; V01 remains Ready and Outdated wherever represented. E5 identifies current r05 and lists all three records exactly as specified in the fact sheet, including each recorded filename and 24.000 s duration: V01/r02 and V02/r03 are Ready and Outdated; V03/r05 is Ready and Current. Any snapshot-content depiction of V02 retains r03's ten I05 plays and P mute. Field placement may vary, but processing status, snapshot revision and currency must remain distinct. Missing records, automatic retargeting of V02 to r04 or r05, or treating equivalent content as Current fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "revision-and-snapshot-semantics",
+      "requirementId": "R-revision-and-snapshot-semantics",
+      "method": "content",
+      "targetSlots": [
+        "architecture-spec"
+      ],
+      "criteria": "Explain that committed edits produce the recorded r01–r05 history, Undo creates the new immutable revision r05 with r03-equivalent content, and r04 remains historical. Selection, hover and dialog opening do not create revisions. An export captures arrangement, gains and mute at its snapshot revision; later project edits do not rewrite that snapshot. Currency depends on exact revision-ID equality, so V02/r03 remains Outdated at r05 despite equivalent content. Ready permits downloading and Rendering does not. Wording may vary; mutable historical IDs, content-based currency or loss of captured state fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ]
+    },
+    {
+      "id": "interval-and-repeat-calculations",
+      "requirementId": "R-interval-and-repeat-calculations",
+      "method": "content",
+      "targetSlots": [
+        "architecture-spec"
+      ],
+      "criteria": "State the half-open source and timeline interval convention, with touching endpoints treated as non-overlapping. Define Repeats as total plays including the first, duration as (SourceOut - SourceIn) multiplied by Repeats, and timeline end as Start plus duration, with speed fixed at 1.000. Original source duration remains independent of trimming and repetition. Equivalent mathematical notation is allowed; inclusive endpoints, extra-first-play counting or altered source duration fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ]
+    },
+    {
+      "id": "numeric-display-rules",
+      "requirementId": "R-numeric-display-rules",
+      "method": "visual",
+      "targetSlots": [
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05",
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5"
+      ],
+      "criteria": "Editable seconds and displayed record intervals and durations must use the required three-decimal precision, including pending invalid values and inset fields. Whole-second timeline ruler labels are permitted. Repeats, gains, percentages and revision IDs retain their own appropriate units and notation. Failure is inconsistent seconds precision in factual or edit fields, ambiguous source-versus-timeline values or formatting that changes a recorded value.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "presentation-content",
+      "requirementId": "R-presentation-content",
+      "method": "content",
+      "targetSlots": [
+        "design-presentation"
+      ],
+      "criteria": "Require at least eight pages and both exact names on page one. Beside the relevant reused editing and export views, explicitly communicate V at 0 dB, M at -12 dB, P at -18 dB, three-decimal seconds and the captured-snapshot versus current-revision rule. Page names, fixed color values and behavior claims must agree with the specifications wherever used. Embedded application views preserve the prescribed logical window when scaled. Page order and prose may vary; facts confined to an unrelated opening page, missing explanatory rules or contradictions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "sourceSlots": [
+        "architecture-spec",
+        "component-states"
+      ]
+    },
+    {
+      "id": "presentation-reuses-deliverables",
+      "requirementId": "R-presentation-reuses-deliverables",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "design-presentation"
+      ],
+      "criteria": "Find recognizable visible reuse of every listed source deliverable within the presentation. Scaling, annotations and crops are allowed when identifying content and the relevant behavior remain legible. Text-only references, substituted mock screens or omission of any specification, editing board or export stage fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "sourceSlots": [
+        "architecture-spec",
+        "component-states",
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05",
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5"
+      ]
+    },
+    {
+      "id": "source-input-role",
+      "requirementId": "R-source-input-role",
+      "method": "diagnostic",
+      "targetSlots": [
+        "architecture-spec",
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05"
+      ],
+      "criteria": "Treat 03-source-records.en.md as the source of recording names, durations, timestamps, content and metadata, and source-waveforms.png as envelope evidence. These inputs establish audio facts without requiring attached audio recordings or reproduction of the reference image's chart styling. This diagnostic records the inputs' role and never fails a deliverable.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ]
+    },
+    {
+      "id": "set-specified-interface-system",
+      "requirementId": "R-set-specified-interface-system",
+      "method": "visual",
+      "targetSlots": [
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05",
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5"
+      ],
+      "criteria": "Navigation, typography, controls, numeric fields and status treatments form one desktop interface system derived from the specification and component table. Page names, track gains, background #182128 and accent #82D9C6 agree with the fixed records wherever used. Source identity, instance selection, project time, source time, revision identity and export status retain consistent visual meanings across relevant views.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/03-source-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "architecture-spec",
+        "component-states"
+      ]
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specification-values-in-applications",
+      "fromSlot": "architecture-spec",
+      "toSlots": [
+        "source-library",
+        "workspace-r01",
+        "trim-r02",
+        "mute-r03",
+        "repeats-r04",
+        "undo-r05",
+        "export-settings-e2",
+        "export-rendering-e3",
+        "export-ready-e4",
+        "version-history-e5",
+        "design-presentation"
+      ],
+      "extract": [
+        "four page names",
+        "three track names and gains",
+        "background color",
+        "accent color"
+      ],
+      "notes": "The specification and component table establish the four page names, track gains, #182128 background and #82D9C6 accent; the library, workspace, editing boards, export screens and presentation repeat those names and values wherever used."
+    },
+    {
+      "id": "presentation-behavior-facts",
+      "fromSlot": "architecture-spec",
+      "toSlots": [
+        "design-presentation"
+      ],
+      "extract": [
+        "three track gains",
+        "seconds to three decimal places rule",
+        "export snapshot and project revision rule"
+      ],
+      "notes": "The presentation has at least eight pages and repeats the specification's three track gains, three-decimal seconds rule and snapshot-revision rule beside the reused editing and export screens; its first page prints CUTLINE and SMALL SIGNALS."
+    }
+  ]
+}

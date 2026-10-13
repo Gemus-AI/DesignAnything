@@ -1,0 +1,554 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-vehicle-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "closed-enclosure",
+      "label": "Closed enclosure and installed vehicle",
+      "description": "One finished board of the closed enclosure with three orthographic views, an installed perspective, exterior dimensions and printed identity.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "loaded-interior",
+      "label": "Loaded interior and material assignments",
+      "description": "One finished board of the loaded P1/P2/P3 interior with dimensioned plans and sections, clearances, partitions, restraints and material and finish assignments.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "frame-integration",
+      "label": "Frame integration and removable clamps",
+      "description": "One finished frame-integration board with the adopted datum, C1/C2/C3/C4 interfaces, a clamp section, access details, clearance regions and source credit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "o1-opening",
+      "label": "O1 cover opening sequence",
+      "description": "One finished O1 board with closed, intermediate and supported open cover positions, dimensioned movement envelopes and retention and closure details.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "r1-retrieval",
+      "label": "R1 direct retrieval of P2",
+      "description": "One finished R1 board of a stationary retrieval scene with P2 and hand paths through the opening, P1/P3 retained and the installed support and clamps.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "r2-retrieval",
+      "label": "R2 retrieval of P1 after P2",
+      "description": "One finished R2 board of a stationary retrieval scene with P1 and hand paths after P2 removal, P3 retained and the same support and clamps.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "PARCEL BAY",
+      "scope": {
+        "slots": [
+          "closed-enclosure"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "exterior-descriptor",
+      "kind": "text-verbatim",
+      "text": "Neighbourhood delivery",
+      "scope": {
+        "slots": [
+          "closed-enclosure"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "PARCEL BAY",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "one-installed-enclosure-system",
+      "slots": [
+        "closed-enclosure",
+        "o1-opening",
+        "r1-retrieval",
+        "r2-retrieval"
+      ],
+      "sourceSlots": [
+        "loaded-interior",
+        "frame-integration"
+      ],
+      "items": [
+        {
+          "item": "Enclosure geometry, opening, partitions, restraints, material assignments and four clamp interfaces describe the same installed design across the boards.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The supported cover and its retention hardware established in O1 remain installed in both retrieval scenes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Parcel positions follow the specified sequence: all three remain during O1, P2 leaves during R1, and P1 leaves during R2 while P3 stays in its original position.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "PARCEL BAY"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "closed-enclosure",
+      "loaded-interior",
+      "frame-integration",
+      "o1-opening",
+      "r1-retrieval",
+      "r2-retrieval"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge the inherited tricycle's styling or require structural ratings, certification, weather-test results or physical trials that the commission does not specify."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "closed-enclosure",
+        "loaded-interior",
+        "frame-integration",
+        "o1-opening",
+        "r1-retrieval",
+        "r2-retrieval"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-closed-enclosure",
+      "requirementId": "R-format-closed-enclosure",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closed-enclosure"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-loaded-interior",
+      "requirementId": "R-format-loaded-interior",
+      "method": "artifact-property",
+      "targetSlots": [
+        "loaded-interior"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-frame-integration",
+      "requirementId": "R-format-frame-integration",
+      "method": "artifact-property",
+      "targetSlots": [
+        "frame-integration"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-o1-opening",
+      "requirementId": "R-format-o1-opening",
+      "method": "artifact-property",
+      "targetSlots": [
+        "o1-opening"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-r1-retrieval",
+      "requirementId": "R-format-r1-retrieval",
+      "method": "artifact-property",
+      "targetSlots": [
+        "r1-retrieval"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-r2-retrieval",
+      "requirementId": "R-format-r2-retrieval",
+      "method": "artifact-property",
+      "targetSlots": [
+        "r2-retrieval"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "closed-envelope-and-retained-vehicle",
+      "requirementId": "R-closed-envelope-and-retained-vehicle",
+      "method": "visual",
+      "targetSlots": [
+        "closed-enclosure",
+        "loaded-interior",
+        "frame-integration",
+        "o1-opening",
+        "r1-retrieval",
+        "r2-retrieval"
+      ],
+      "criteria": "The closed board provides dimensions locating the entire closed enclosure, including protruding hardware, inside the stated coordinate bounds; smaller envelopes are permitted. Both required phrases appear on the enclosure surface rather than only in board captions. Its installed perspective establishes the enclosure's relationship to the existing handlebar and rider position. Across the set, the open source frame, two front wheels, rear wheel and steering arrangement remain consistent; panels may obscure retained members, but replacement or relocation of those components fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "loaded-interior-record-and-clearances",
+      "requirementId": "R-loaded-interior-record-and-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "loaded-interior"
+      ],
+      "criteria": "A dimensioned plan and sections show exactly three rigid cartons with stable P1/P2/P3 labels and the specified L/W/H values. Heights remain vertical and the cartons occupy a single layer. Horizontal rotation is allowed when labelled consistently. Interior dimensions, partition and restraint thicknesses, and actual gaps establish at least 10 mm clear between neighbouring parcels and around each parcel within its compartment. Nominal spacing that is consumed by partitions or restraints fails. A readable schedule assigns a material family and finish to the enclosure, partitions, cover and clamps.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "clamp-interfaces-datum-and-credit",
+      "requirementId": "R-clamp-interfaces-datum-and-credit",
+      "method": "visual",
+      "targetSlots": [
+        "frame-integration"
+      ],
+      "criteria": "The adopted datum identifies x increasing from the front towards the handlebar, y across the frame in the supplied plan direction, and z=0 at the cross-member tops. Dimensioned centres place C1 at (300,200), C2 at (300,600), C3 at (500,200), and C4 at (500,600), using the two retained cross members. A dimensioned section and applicable plan details establish that every clamp fits its centred 40 mm x-direction by 50 mm y-direction allowance and z=-30..20 mm range, engages the full 20 by 20 mm tube section, and contacts no more than 50 mm along y. Shared details are acceptable if explicitly applicable to all four clamps. Contact surfaces, removable fasteners, tool access and separation from parcel space are visible; original tubes and hole patterns remain intact. The credit record includes both authors, the organisation, date and licence specified in the commission.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "o1-cover-motion-and-closure",
+      "requirementId": "R-o1-cover-motion-and-closure",
+      "method": "visual",
+      "targetSlots": [
+        "o1-opening"
+      ],
+      "criteria": "The O1 sequence depicts closed-and-latched, intermediate and fully open states with P1/P2/P3 retained in their assigned positions. Traces and dimensions establish the swept and parked envelopes of every moving or parked enclosure part within the permitted x/y bounds and strictly below z=650 mm, including hardware. The final state has integrated support or intentional parking with retention hardware. Details explain the latch and seal or drainage provision of the weather-facing cover. A floating unsupported cover, an untraced transition or an out-of-bounds intermediate state fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "operating-keep-clear-regions",
+      "requirementId": "R-operating-keep-clear-regions",
+      "method": "visual",
+      "targetSlots": [
+        "frame-integration",
+        "o1-opening",
+        "r1-retrieval",
+        "r2-retrieval"
+      ],
+      "criteria": "Each board explicitly marks the rear and lateral exclusion regions using the stated coordinate boundaries. Dimensions or spatially legible views establish that above-base additions avoid those regions and that the enclosure, cover, mounting hardware and depicted movements clear retained rails, wheels and steering components. Intended clamp contact with the two mounting members is allowed. Boundary labels alone do not compensate for visible intrusion or an unresolved collision.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "sequential-retrieval-and-installed-consistency",
+      "requirementId": "R-sequential-retrieval-and-installed-consistency",
+      "method": "visual",
+      "targetSlots": [
+        "r1-retrieval",
+        "r2-retrieval"
+      ],
+      "criteria": "R1 visibly traces P2 from its loaded position through the actual opening while P1 and P3 remain fixed. R2 begins after P2 removal and traces P1 through that same opening while P3 retains its original position. Opening dimensions and continuous hand and parcel paths demonstrate clearance past remaining cartons, partitions, restraints, rails and panels with the extracted carton upright. Both scenes include a person using the stationary tricycle on level ground; two-handed operation is permitted. Installed partitions, clamps, mounting structure and supported cover agree with the source boards. Hidden removal of obstacles, parcel tilting, relocation of retained parcels or a changed opening fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "loaded-interior",
+        "frame-integration",
+        "o1-opening"
+      ]
+    },
+    {
+      "id": "published-frame-geometry",
+      "requirementId": "R-published-frame-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "closed-enclosure",
+        "frame-integration"
+      ],
+      "criteria": "The installed vehicle and integration geometry are compatible with a 2131 mm long, 826 mm wide, 1021 mm high source tricycle and a 900 by 800 mm front-frame base. Perspective foreshortening and drawing scale may vary. Stated dimensions or orthographic proportions that enlarge, shrink or reshape the retained vehicle to accommodate the enclosure fail; repeating every source dimension as a label is not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "closed-board-view-coverage",
+      "requirementId": "R-closed-board-view-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "closed-enclosure"
+      ],
+      "criteria": "The board contains distinguishable front, side and top orthographic views plus a perspective showing the enclosure installed on the tricycle. These views describe one coherent closed enclosure and provide readable overall dimensions and exterior identity. Board layout and view scale may vary, but an omitted orthographic direction, a perspective substituted for an orthographic view, or contradictory geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "added-part-design-and-finish",
+      "requirementId": "R-added-part-design-and-finish",
+      "method": "visual",
+      "targetSlots": [
+        "closed-enclosure",
+        "loaded-interior"
+      ],
+      "criteria": "The proposed enclosure has resolved, purposeful contemporary surfaces, edges and hardware treatment, with a complete bottom and weather-facing cover. Visible material and finish treatment corresponds to the interior board's assignments. Enclosure form, partition layout, material families and colours remain design choices within the stated limits. Unresolved generic volumes or finishes that contradict the stated assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-one-installed-enclosure-system",
+      "requirementId": "R-set-one-installed-enclosure-system",
+      "method": "visual",
+      "targetSlots": [
+        "closed-enclosure",
+        "o1-opening",
+        "r1-retrieval",
+        "r2-retrieval"
+      ],
+      "criteria": "Enclosure geometry, opening, partitions, restraints, material assignments and four clamp interfaces describe the same installed design across the boards. The supported cover and its retention hardware established in O1 remain installed in both retrieval scenes. Parcel positions follow the specified sequence: all three remain during O1, P2 leaves during R1, and P1 leaves during R2 while P3 stays in its original position.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "loaded-interior",
+        "frame-integration"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "retained-tricycle",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "frame-overview.png",
+        "frame-plan.png",
+        "cross-member.png"
+      ],
+      "subjectSlots": [
+        "closed-enclosure",
+        "loaded-interior",
+        "frame-integration",
+        "o1-opening",
+        "r1-retrieval",
+        "r2-retrieval"
+      ],
+      "notes": "Preserve the source frame and wheel arrangement across all six boards, with the handlebar and rider relationship visible in the installed perspective."
+    }
+  ]
+}

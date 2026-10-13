@@ -1,0 +1,1181 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-interior-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "functional-schedule",
+      "label": "Functional and furniture schedule",
+      "description": "One functional and furniture schedule covering three zone areas, occupancy, inventory dimensions and six material codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "furnished-plan",
+      "label": "Furnished room plan",
+      "description": "One furnished plan with zone areas, retained furniture, support equipment, clearances and camera positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "south-elevation",
+      "label": "South internal elevation",
+      "description": "One dimensioned south elevation showing D1, the support rail, call button, acoustic panel and finish codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "east-elevation",
+      "label": "East internal elevation",
+      "description": "One dimensioned east elevation showing D2, furniture relationships, applicable room signs and finish codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "route-dock-detail",
+      "label": "Route and walker dock detail",
+      "description": "One enlarged route detail with occupied clearances, the walker dock, support rail and call button.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "assisted-seat-detail",
+      "label": "Armchair and assistance detail",
+      "description": "One armchair detail with seat and arm heights and an adjacent 800 × 900 mm assistance space.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "table-access-detail",
+      "label": "Activity table access detail",
+      "description": "One activity table detail with the wheelchair approach, turning circle and dimensioned knee clearance.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-recognition",
+      "label": "Materials and recognition board",
+      "description": "One board containing six coded finishes and the Rest and Together signs with lettering and mounting dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "lighting-acoustics",
+      "label": "Lighting and acoustic plan",
+      "description": "One lighting and acoustic plan with L1–L3 fixtures, three controls and the AC-01 panel location.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "afternoon-perspective",
+      "label": "Afternoon conversation perspective",
+      "description": "One occupied perspective from camera A showing the five-person 14:00 conversation and card-sorting routine.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "activity-perspective",
+      "label": "Shared activity perspective",
+      "description": "One occupied perspective from camera B showing the 16:00 puzzle activity alongside David's rest.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "evening-perspective",
+      "label": "Evening rest perspective",
+      "description": "One occupied perspective from camera C showing Ben and David at 19:00 with the recorded evening lighting state.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "room-walkthrough",
+      "label": "Ten-second room walkthrough",
+      "description": "One 10-second walkthrough from D1 to the activity table with a final view of H1 and H2.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "household-presentation",
+      "label": "Household decision presentation",
+      "description": "One presentation of at least eight pages combining the schedule, drawings, occupied scenes and installation sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-project-name",
+      "kind": "text-verbatim",
+      "text": "ALDER HOUSE",
+      "scope": {
+        "slots": [
+          "furnished-plan",
+          "household-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "rest-sign-wording",
+      "kind": "text-verbatim",
+      "text": "Rest",
+      "scope": {
+        "slots": [
+          "materials-recognition"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "together-sign-wording",
+      "kind": "text-verbatim",
+      "text": "Together",
+      "scope": {
+        "slots": [
+          "materials-recognition"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "ALDER HOUSE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-room-arrangement",
+      "slots": [
+        "south-elevation",
+        "east-elevation",
+        "route-dock-detail",
+        "assisted-seat-detail",
+        "table-access-detail",
+        "lighting-acoustics",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "sourceSlots": [
+        "furnished-plan"
+      ],
+      "items": [
+        {
+          "item": "Views and details describe the same furniture arrangement, equipment locations and spatial relationships as the furnished plan, allowing normal projection and occlusion differences.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Occupied seating, wheelchair approach, walker parking and assistance space preserve the specified circulation and support relationships.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "coordinated-finishes-and-recognition",
+      "slots": [
+        "furnished-plan",
+        "south-elevation",
+        "east-elevation",
+        "lighting-acoustics",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "materials-recognition"
+      ],
+      "items": [
+        {
+          "item": "Finish assignments, oak furniture treatment, upholstery and room signs agree with the scheduled codes and material board throughout the drawings and occupied scenes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Matte surfaces, visible furniture edges and readable Rest and Together signs preserve the recorded recognition requirements under the depicted lighting.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "ALDER HOUSE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "furnished-plan",
+      "south-elevation",
+      "east-elevation",
+      "route-dock-detail",
+      "assisted-seat-detail",
+      "table-access-detail",
+      "materials-recognition",
+      "lighting-acoustics",
+      "afternoon-perspective",
+      "activity-perspective",
+      "evening-perspective"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not rescore surveyed dimensions, inventory, accessibility measurements, record repetition or runtime, which belong to the explicit factual checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "functional-schedule",
+        "furnished-plan",
+        "south-elevation",
+        "east-elevation",
+        "route-dock-detail",
+        "assisted-seat-detail",
+        "table-access-detail",
+        "materials-recognition",
+        "lighting-acoustics",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective",
+        "household-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "south-elevation",
+        "east-elevation",
+        "route-dock-detail",
+        "assisted-seat-detail",
+        "table-access-detail",
+        "materials-recognition",
+        "lighting-acoustics",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-functional-schedule",
+      "requirementId": "R-format-functional-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "functional-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-furnished-plan",
+      "requirementId": "R-format-furnished-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-south-elevation",
+      "requirementId": "R-format-south-elevation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "south-elevation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-east-elevation",
+      "requirementId": "R-format-east-elevation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "east-elevation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-route-dock-detail",
+      "requirementId": "R-format-route-dock-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "route-dock-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-assisted-seat-detail",
+      "requirementId": "R-format-assisted-seat-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assisted-seat-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-table-access-detail",
+      "requirementId": "R-format-table-access-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "table-access-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-recognition",
+      "requirementId": "R-format-materials-recognition",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-recognition"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-lighting-acoustics",
+      "requirementId": "R-format-lighting-acoustics",
+      "method": "artifact-property",
+      "targetSlots": [
+        "lighting-acoustics"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-afternoon-perspective",
+      "requirementId": "R-format-afternoon-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "afternoon-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-activity-perspective",
+      "requirementId": "R-format-activity-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "activity-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-evening-perspective",
+      "requirementId": "R-format-evening-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "evening-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-room-walkthrough",
+      "requirementId": "R-format-room-walkthrough",
+      "method": "manual",
+      "targetSlots": [
+        "room-walkthrough"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-household-presentation",
+      "requirementId": "R-format-household-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "household-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "shell-and-installed-layout",
+      "requirementId": "R-shell-and-installed-layout",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "south-elevation",
+        "east-elevation",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "criteria": "Use dimensions and corresponding visible landmarks to establish an open 7.20 m east–west by 6.00 m north–south room with floor z = 0 and ceiling z = 2.70 m. D1 is on the south wall at x = 0.60–1.80 m and D2 on the east wall at y = 0.60–1.80 m; both openings are 1.20 m wide and 2.10 m high. D1 hinges at its west jamb and swings south; D2 hinges at its south jamb and swings east. W1 spans north-wall x = 0.80–3.20 m and W2 x = 4.00–6.40 m, both with sill z = 0.75 m and head z = 2.25 m. Thresholds remain level, with no partitions, columns or service shafts added. Furniture and installed equipment must correspond spatially between views. Perspective distortion and occlusion are allowed; altered openings, shell geometry or conflicting object locations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "schedule-record",
+      "requirementId": "R-schedule-record",
+      "method": "content",
+      "targetSlots": [
+        "functional-schedule"
+      ],
+      "criteria": "The schedule assigns individual areas to Rest, Together and Arrival, including circulation within those areas, and their sum is 43.20 m². Allocation between zones is a design choice. It records a maximum of five occupants, two F1 seats in Rest and Ada's wheelchair plus three F4 chairs in Together. Inventory is two F1, one F2, one F3, three F4 and one each of H1, H2 and H3. Furniture dimensions in mm are F1 720 W × 760 D × 900 H, seat 460 and arms 660; F2 1600 L × 900 W × 740 H with knee space 800 W × 600 D × 700 H; F3 1400 W × 450 D × 800 H; F4 560 W × 600 D × 850 H, seat 460 and arms 660. Equipment dimensions are H1 length 1200, grip diameter 40 and clear wall gap 50; H2 80 W × 80 H × 20 D; H3 600 W × 700 D × 850 H with a 700 × 800 dock; Ada's occupied wheelchair envelope is 700 W × 1200 D. All six specified material codes appear. Equivalent units and table organization are allowed; missing or contradictory records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ]
+    },
+    {
+      "id": "plan-repeats-schedule",
+      "requirementId": "R-plan-repeats-schedule",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "Read the plan's zone labels, area records and depicted inventory against the schedule. All three named zones carry the same individual areas as the schedule and total 43.20 m². Count two F1 armchairs, one F2 table, one F3 sideboard, three F4 chairs and one each of H1–H3. Annotation style may vary; omitted areas, inconsistent allocations or incorrect inventory fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "plan-annotations-and-cameras",
+      "requirementId": "R-plan-annotations-and-cameras",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan"
+      ],
+      "criteria": "The plan makes both outward door swings, route bottlenecks, turning circle, assistance space and support-equipment positions readable. It identifies camera A at (1.00, 1.60, 1.50 m) toward (4.20, 4.40, 1.10 m), B at (6.30, 4.90, 1.50 m) toward (2.80, 2.10, 1.10 m), and C at (6.10, 1.00, 1.50 m) toward (2.00, 4.30, 1.10 m). Camera heights and targets may be supplied in an associated legend on the plan. Missing markers, directions or required dimensional information fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "dimensioned-elevations",
+      "requirementId": "R-dimensioned-elevations",
+      "method": "visual",
+      "targetSlots": [
+        "south-elevation",
+        "east-elevation"
+      ],
+      "criteria": "The pair clearly identifies the south and east walls, floor at 0.00 m, ceiling at 2.70 m and their respective dimensioned door openings. The south view includes H1, H2 and the acoustic panel; signs and finish codes appear on the views where their designed locations apply. Sign mounting is consistent with a 1200 mm centerline. Door sizes, wall assignments, vertical levels and applicable annotations must be readable. An object outside an elevation's wall or sightline need not be duplicated; omission from its applicable view or conflicting dimensions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "occupied-access-clearances",
+      "requirementId": "R-occupied-access-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "route-dock-detail",
+        "assisted-seat-detail",
+        "table-access-detail"
+      ],
+      "criteria": "The plan establishes a continuous unobstructed route of at least 1200 mm between D1, D2 and all occupied zones, accounting for occupied seating. The route detail dimensions the limiting passage and a 700 × 800 mm H3 dock in Arrival near seating. The assisted-seat detail dimensions an 800 × 900 mm assistance space beside one F1, with seat height 460 mm and arm height 660 mm. The table detail shows a short-end wheelchair approach, a 700 × 1200 mm occupied wheelchair envelope, a 1500 mm turning circle beside F2 and knee clearance 800 mm wide, 600 mm deep and 700 mm high. The plan and relevant details must agree and collectively document all specified dimensions; each detail need only cover its subject. Extra unobstructed circulation is allowed; nominal clearance labels over visibly obstructed spaces fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "support-location-and-visibility",
+      "requirementId": "R-support-location-and-visibility",
+      "method": "visual",
+      "targetSlots": [
+        "south-elevation",
+        "route-dock-detail",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "criteria": "The south elevation and route/support detail document H1 extending along south-wall x = 2.20–3.40 m with its grip centerline 800 mm above the floor, and H2 at x = 3.40 m with centerline 900 mm. H2's cable route leads toward D1. The rail has a round 40 mm grip, 50 mm wall clearance, two returned brackets and matte dark-brown finish; the button has a warm-white square plate and dark-brown circular button. The walker has a graphite frame, four black wheels, two handles and a fabric basket. Across the three perspectives, H1, H2 and H3 must each be identifiable at least once and agree with the plan; all three need not appear in every scene. Relocated, substituted or collectively absent equipment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "finish-records-and-recognition",
+      "requirementId": "R-finish-records-and-recognition",
+      "method": "visual",
+      "targetSlots": [
+        "materials-recognition",
+        "furnished-plan",
+        "south-elevation",
+        "east-elevation",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "criteria": "Both board and furnished plan print FL-01, WL-01, WD-01, UP-01, AC-01 and SG-01. The board records each finish's treatment and location: continuous matte warm-beige sheet linoleum with flush welded seams; scrubbable warm-white matte wall and ceiling paint; natural oak with clear matte lacquer on retained furniture and matching F4 frames; deep-olive tightly woven F1/F4 upholstery with removable seat covers; taupe wool felt acoustic panel on concealed backing; and matte aluminum zone signs with dark-brown lettering on warm white. Reference colors are respectively #B8AA92, #EEE8DC, natural oak, #4F5B43, #9B8C79 and #4A382B on #EEE8DC; lighting-related visual shifts are allowed without requiring printed hex values. Elevations and perspectives apply the corresponding finishes, with clear seat/furniture edges against the floor. The board shows both Rest and Together signs and dimensions each at 25 mm capital height and 1200 mm mounting centerline. Each sign is legible somewhere across the perspective set. Missing codes, swapped finish locations, glossy substitutions or missing sign evidence fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "lighting-and-acoustics-record",
+      "requirementId": "R-lighting-and-acoustics-record",
+      "method": "visual",
+      "targetSlots": [
+        "lighting-acoustics"
+      ],
+      "criteria": "Locate four L1 diffused surface ceiling lights over occupied zones and the connecting route, one L2 diffused linear pendant centered over F2 with underside at 1900 mm, and one L3 shielded linear wall light above F3. The specification identifies 3000 K sources for all layers and three independently assigned dimmers near D1 at 1000 mm centerline height. Locate AC-01 on south-wall x = 4.20–6.00 m, with lower edge 1.20 m, upper edge 2.10 m and dimensions 1800 W × 900 H × 25 D mm. L1 distribution can vary within its stated allocation; fixtures tied to F2/F3 must match their plan locations. Missing layers, combined controls, incorrect mounting records or a displaced panel fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "occupied-scenes-and-viewpoints",
+      "requirementId": "R-occupied-scenes-and-viewpoints",
+      "method": "visual",
+      "targetSlots": [
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "criteria": "Identify residents through their specified roles and activities; no invented facial likeness is required. At 14:00, Clara and David converse in the two F1 chairs while Ada in her wheelchair and Ben sort picture cards at F2, with Erin seated with them. At 16:00, David rests in one F1 while Ada, Ben and Clara work on a puzzle with Erin seated at F2. At 19:00, only Ben and David are present, resting in the two F1 chairs; F2 is unoccupied with a clear top, L1 is dimmed, L2 is off and L3 is on. H3 remains docked, and H1/H2 remain accessible in the daytime scenes. David can see the shared activity, and Erin can reach the sideboard and assistance area. Views follow the plan's A, B and C camera positions and targets, respectively, with visible perspective consistent with the stated 1.50 m eye height. Lens choice and natural pose variations are allowed; wrong participants, activities, lighting states, view direction or moved furniture fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "presentation-repeated-zone-and-inventory-records",
+      "requirementId": "R-presentation-repeated-zone-and-inventory-records",
+      "method": "content",
+      "targetSlots": [
+        "household-presentation"
+      ],
+      "criteria": "Read the presentation for Rest, Together and Arrival, each with the same allocated area as the schedule and plan, totaling 43.20 m². It repeats quantities of two F1, one F2, one F3, three F4 and one each of H1–H3. The cover prints ALDER HOUSE. Legible reused drawings or tables count as the repeated record; missing information or discrepancies fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "presentation-support-record",
+      "requirementId": "R-presentation-support-record",
+      "method": "content",
+      "targetSlots": [
+        "household-presentation"
+      ],
+      "criteria": "The presentation includes readable installation information placing the support rail along south-wall x = 2.20–3.40 m at 800 mm centerline and the call button at x = 3.40 m at 900 mm centerline. Reused annotated drawings or equivalent written records count. Relative placement without the required coordinates and heights, or disagreement with the source drawings, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "sourceSlots": [
+        "south-elevation",
+        "route-dock-detail"
+      ]
+    },
+    {
+      "id": "presentation-material-and-lighting-records",
+      "requirementId": "R-presentation-material-and-lighting-records",
+      "method": "content",
+      "targetSlots": [
+        "household-presentation"
+      ],
+      "criteria": "The presentation repeats all six scheduled material codes and includes readable evidence locating L1 ambient lights, L2 over the activity table, L3 above the sideboard, their three separate controls near D1 and the 1800 × 900 mm AC-01 panel at its specified south-wall position. Records must agree with the material board and lighting plan. Legible reuse is sufficient; missing codes, unlocated equipment or conflicting specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "materials-recognition",
+        "lighting-acoustics"
+      ]
+    },
+    {
+      "id": "presentation-scenes-pages-and-installation",
+      "requirementId": "R-presentation-scenes-pages-and-installation",
+      "method": "content",
+      "targetSlots": [
+        "household-presentation"
+      ],
+      "criteria": "The presentation has at least eight pages and pairs each of the three occupied scenes with its correct time and a resident need relevant to that scene, such as wheelchair participation, visual recognition, walker-supported rest or resting within sight of company. It also gives an installation sequence covering the proposed furniture arrangement, finishes and installation priorities. Page design and sequence organization are discretionary. Missing scene/time/need pairings, fewer than eight pages or no installation sequence fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "sourceSlots": [
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ]
+    },
+    {
+      "id": "presentation-reuses-earlier-work",
+      "requirementId": "R-presentation-reuses-earlier-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "household-presentation"
+      ],
+      "criteria": "Every listed source is visibly reused in the presentation, collectively covering the seven required categories. Resizing, page composition and selective cropping are allowed when the source remains recognizable and its relevant information readable. Merely naming a source, replacing it with an unrelated drawing or omitting either elevation, any detail or any occupied scene fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "furnished-plan",
+        "south-elevation",
+        "east-elevation",
+        "route-dock-detail",
+        "assisted-seat-detail",
+        "table-access-detail",
+        "materials-recognition",
+        "lighting-acoustics",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ]
+    },
+    {
+      "id": "walkthrough-route-duration-and-continuity",
+      "requirementId": "R-walkthrough-route-duration-and-continuity",
+      "method": "manual",
+      "targetSlots": [
+        "room-walkthrough"
+      ],
+      "criteria": "Review the complete video and its runtime. It lasts 10 seconds, begins at D1, travels along the planned route to F2 and concludes with both H1 and H2 visible. The shell, recorded doors and windows, furniture and installed equipment remain consistent with the drawings and perspectives throughout. Camera movement and pacing are discretionary. Wrong duration, an omitted route segment, obstructed final equipment visibility or spatial changes during the walkthrough fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "furnished-plan",
+        "south-elevation",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ]
+    },
+    {
+      "id": "set-coordinated-room-arrangement",
+      "requirementId": "R-set-coordinated-room-arrangement",
+      "method": "visual",
+      "targetSlots": [
+        "south-elevation",
+        "east-elevation",
+        "route-dock-detail",
+        "assisted-seat-detail",
+        "table-access-detail",
+        "lighting-acoustics",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "criteria": "Views and details describe the same furniture arrangement, equipment locations and spatial relationships as the furnished plan, allowing normal projection and occlusion differences. Occupied seating, wheelchair approach, walker parking and assistance space preserve the specified circulation and support relationships.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-plan"
+      ]
+    },
+    {
+      "id": "set-coordinated-finishes-and-recognition",
+      "requirementId": "R-set-coordinated-finishes-and-recognition",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-plan",
+        "south-elevation",
+        "east-elevation",
+        "lighting-acoustics",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "criteria": "Finish assignments, oak furniture treatment, upholstery and room signs agree with the scheduled codes and material board throughout the drawings and occupied scenes. Matte surfaces, visible furniture edges and readable Rest and Together signs preserve the recorded recognition requirements under the depicted lighting.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-03/03-resident-routines.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "functional-schedule",
+        "materials-recognition"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "retained-room",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "existing-room-survey.png"
+      ],
+      "subjectSlots": [
+        "furnished-plan",
+        "south-elevation",
+        "east-elevation",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "notes": "Retain this shell, its level thresholds and its open room arrangement.",
+      "comparisonScope": "compare only the retained shell, the room proportions, the two door openings, the two north windows and the level thresholds in their surveyed positions; the furniture arrangement, support equipment, finishes, signs and lighting are the design work"
+    },
+    {
+      "id": "retained-oak-furniture",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "retained-furniture.png"
+      ],
+      "subjectSlots": [
+        "furnished-plan",
+        "south-elevation",
+        "east-elevation",
+        "assisted-seat-detail",
+        "table-access-detail",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "notes": "The oak armchairs, activity table and sideboard belong to the household and will remain in use."
+    },
+    {
+      "id": "selected-support-equipment",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "selected-support-equipment.png"
+      ],
+      "subjectSlots": [
+        "furnished-plan",
+        "south-elevation",
+        "route-dock-detail",
+        "afternoon-perspective",
+        "activity-perspective",
+        "evening-perspective"
+      ],
+      "notes": "Retain the selected support rail, call button and walker."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "scheduled-zones-and-inventory",
+      "fromSlot": "functional-schedule",
+      "toSlots": [
+        "furnished-plan",
+        "household-presentation"
+      ],
+      "extract": [
+        "the three zone names and their individual allocated areas",
+        "the total allocated area",
+        "F1–F4 and H1–H3 item identities and quantities"
+      ],
+      "notes": "The schedule, furnished plan and presentation repeat Rest, Together and Arrival, the same three areas totaling 43.20 m², two F1 armchairs, one F2 table, one F3 sideboard, three F4 chairs and one each of H1, H2 and H3."
+    },
+    {
+      "id": "scheduled-material-codes",
+      "fromSlot": "functional-schedule",
+      "toSlots": [
+        "materials-recognition",
+        "furnished-plan",
+        "household-presentation"
+      ],
+      "extract": [
+        "the six material codes FL-01, WL-01, WD-01, UP-01, AC-01 and SG-01"
+      ],
+      "notes": "The material board, furnished plan and presentation repeat all six material codes from the schedule."
+    }
+  ]
+}

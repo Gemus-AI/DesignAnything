@@ -1,0 +1,1142 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ecom-base-a-n14",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "direction-condition",
+      "label": "Condition-first direction board",
+      "description": "One direction board comparing both units through a condition-first information hierarchy.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-bundle",
+      "label": "Bundle-first direction board",
+      "description": "One direction board comparing both units through a bundle-first information hierarchy.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-record",
+      "label": "Unit-record direction board",
+      "description": "One direction board comparing both units through a structured unit-record layout.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-selection",
+      "label": "Selected direction note",
+      "description": "One selection note identifying the chosen direction and its continuing information arrangement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "information-hierarchy",
+      "label": "Selling points and information hierarchy",
+      "description": "One page of selling points, information priorities, placements and minimum text heights.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "shot-inventory",
+      "label": "Shot and image inventory",
+      "description": "One page listing image roles, proportions, required content and assigned product views.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "pearl-product-front",
+      "label": "PA-101 front-led product card",
+      "description": "One square PA-101 front-led product card with identity, grade, storage, price and bundle summary.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "graphite-product-front",
+      "label": "PA-102 front-led product card",
+      "description": "One square PA-102 front-led product card with identity, grade, storage, price and bundle summary.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pearl-condition-bundle",
+      "label": "PA-101 condition and accessory panel",
+      "description": "One landscape PA-101 panel with front, rear and port views, hairline detail, accessories and dimension comparison.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "graphite-condition-bundle",
+      "label": "PA-102 condition and accessory panel",
+      "description": "One landscape PA-102 panel with front, rear and port views, three wear details, accessories and dimension comparison.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "unit-comparison",
+      "label": "Two-unit condition and price comparison",
+      "description": "One two-row comparison panel covering both units' names, IDs, grades, wear, storage, prices and accessory counts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "portrait-both",
+      "label": "Two-unit portrait shopping panel",
+      "description": "One portrait shopping panel presenting both units with identity, grade, storage, price, wear and included accessories.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "product-video",
+      "label": "Ten-second unit explanation video",
+      "description": "One ten-second product explanation video with five seconds per unit showing identity, grade, price, wear and accessories.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "listing-presentation",
+      "label": "Listing system presentation",
+      "description": "One presentation reusing the process and final work with a fact-placement map, at least eight pages for tier 14 and ten pages for tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "store-name",
+      "kind": "text-verbatim",
+      "text": "LOOP AGAIN",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "product-family",
+      "kind": "text-verbatim",
+      "text": "Pocket P1",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "listing-phrase",
+      "kind": "text-verbatim",
+      "text": "See the wear. Know the bundle.",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "unit-label",
+      "kind": "text-verbatim",
+      "text": "Unit",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "condition-label",
+      "kind": "text-verbatim",
+      "text": "Condition",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "included-label",
+      "kind": "text-verbatim",
+      "text": "Included",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "price-label",
+      "kind": "text-verbatim",
+      "text": "Price",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "LOOP AGAIN",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "selected-listing-system",
+      "slots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "sourceSlots": [
+        "direction-selection",
+        "information-hierarchy",
+        "shot-inventory"
+      ],
+      "items": [
+        {
+          "item": "All final image categories follow the selected information arrangement and planned hierarchy while adapting placement to their designated frames.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Unit facts, required copy, accessory counts and visible condition agree across all final layouts and with the planning records.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Front, rear, port and bundle views appear in the final layouts assigned by the shot inventory.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "LOOP AGAIN"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "pearl-product-front",
+      "graphite-product-front",
+      "pearl-condition-bundle",
+      "graphite-condition-bundle",
+      "unit-comparison",
+      "portrait-both"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge redesign of the fixed handheld hardware or penalize its required wear; factual accuracy, required copy, frame geometry and text-height compliance belong to the explicit checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "direction-condition",
+        "direction-bundle",
+        "direction-record",
+        "direction-selection",
+        "information-hierarchy",
+        "shot-inventory",
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both",
+        "listing-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "direction-condition",
+        "direction-bundle",
+        "direction-record",
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-direction-condition",
+      "requirementId": "R-format-direction-condition",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-condition"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-bundle",
+      "requirementId": "R-format-direction-bundle",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-bundle"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-record",
+      "requirementId": "R-format-direction-record",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-record"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-selection",
+      "requirementId": "R-format-direction-selection",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-selection"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-information-hierarchy",
+      "requirementId": "R-format-information-hierarchy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-shot-inventory",
+      "requirementId": "R-format-shot-inventory",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shot-inventory"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-pearl-product-front",
+      "requirementId": "R-format-pearl-product-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pearl-product-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-graphite-product-front",
+      "requirementId": "R-format-graphite-product-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "graphite-product-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pearl-condition-bundle",
+      "requirementId": "R-format-pearl-condition-bundle",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pearl-condition-bundle"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-graphite-condition-bundle",
+      "requirementId": "R-format-graphite-condition-bundle",
+      "method": "artifact-property",
+      "targetSlots": [
+        "graphite-condition-bundle"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-unit-comparison",
+      "requirementId": "R-format-unit-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "unit-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-portrait-both",
+      "requirementId": "R-format-portrait-both",
+      "method": "artifact-property",
+      "targetSlots": [
+        "portrait-both"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-product-video",
+      "requirementId": "R-format-product-video",
+      "method": "manual",
+      "targetSlots": [
+        "product-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-listing-presentation",
+      "requirementId": "R-format-listing-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "listing-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "unit-records-and-layout-content",
+      "requirementId": "R-unit-records-and-layout-content",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "Read the purchase information for every unit presented. PA-101 must be identified as Pocket P1 Pearl, Grade A, 64 GB, USD 99, with one USB-C cable and one zip case; PA-102 must be identified as Pocket P1 Graphite, Grade B, 64 GB, USD 79, with one USB-C cable and no zip case. The four fixed purchase labels must organize the corresponding information without swapping records. Each single-unit role must feature its designated unit; both-unit roles must present both. Front-led product cards show the front, and rear-led cards show the rear. Portrait panels identify their unit or units and their included accessories. Wording and layout may vary except for required verbatim text; missing information, mismatched associations or extra included accessories fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "physical-identity-and-visible-condition",
+      "requirementId": "R-physical-identity-and-visible-condition",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "Each depicted handheld must retain its reference identity: Pearl #E8E5DE or Graphite #343A40 shell, rounded horizontal housing with the recorded proportions, centered landscape black screen, left cross-shaped directional pad, four right face buttons, two lower oval buttons, rear recess and corner screws, and centered top USB-C port with the power button to its left. PA-101 retains clear glass, matte buttons and port rim, and a 6 mm horizontal upper-right rear hairline. PA-102 retains clear glass, a 12 mm upper-right rear scratch descending rightward, the polished lower-right face button and the 3 mm pale scuff on the port's right lip. Judge locations in the relevant surface's viewing orientation. Changes in camera angle, crop and lighting are allowed, but visible surfaces must not be cleaned up, mirrored, recolored or assigned another unit's wear. Depicted included accessories must match the black USB-C-to-USB-C cable and charcoal fabric zip case identities.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "purchase-text-height",
+      "requirementId": "R-purchase-text-height",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "Measure visible purchase lettering relative to each image's shorter edge. Unit identification, condition, included-item and price information must have text height of at least 2.5% of that edge and remain readable. Typeface and line arrangement may vary; undersized purchase text fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "storefront-regions-14",
+      "requirementId": "R-storefront-regions-14",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "portrait-both"
+      ],
+      "criteria": "Each product-card handheld spans 85–90% of canvas width within the white upper 75% product region, followed by the 5% spacing band and lower 20% caption region. The portrait uses its lower 30% for text, and condition panels use their rightmost 30%. Typography and composition may vary within these allocations; wrong product scale or displaced text regions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "condition-evidence-14",
+      "requirementId": "R-condition-evidence-14",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-condition-bundle",
+        "graphite-condition-bundle"
+      ],
+      "criteria": "Both panels contain front, rear and port views, annotated wear, all included accessories and a dimension comparison. Assign the horizontal upper-right rear hairline to PA-101 and the descending diagonal upper-right rear scratch, lower-right polished button and right-port-lip scuff to PA-102, with the recorded 6 mm, 12 mm and 3 mm extents. Show a plain card beside each handheld at credible relative scale and label their dimensions 85 × 54 mm and 160 × 76 × 18 mm respectively. Different arrangements are acceptable; missing views or inventories, wrong wear attribution or incorrect dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "comparison-records-14",
+      "requirementId": "R-comparison-records-14",
+      "method": "visual",
+      "targetSlots": [
+        "unit-comparison"
+      ],
+      "criteria": "Provide one row per unit, including its product name, ID, grade, recorded wear, 64 GB, price and accessory counts under the required purchase labels. PA-101 has cable count 1 and case count 1 at USD 99; PA-102 has cable count 1 and an explicit case count 0 at USD 79. The grade explanation must associate A with the light rear hairline and matte controls, and B with the rear scratch, polished button and port scuff. Equivalent explanatory prose is allowed; a missing unit, incorrect record or grade without its wear basis fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "three-distinct-directions",
+      "requirementId": "R-three-distinct-directions",
+      "method": "visual",
+      "targetSlots": [
+        "direction-condition",
+        "direction-bundle",
+        "direction-record"
+      ],
+      "criteria": "All three boards compare PA-101 and PA-102 using their correct records. Across the boards, information priority, image treatment and the presentation of grade explanations must form three distinguishable approaches: condition-first, bundle-first and structured unit records. Different aesthetic solutions are allowed; recoloring an otherwise identical arrangement or omitting a unit does not constitute the requested comparison.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "direction-selection",
+      "requirementId": "R-direction-selection",
+      "method": "content",
+      "targetSlots": [
+        "direction-selection"
+      ],
+      "criteria": "The note unambiguously selects one of the three supplied boards and states the continuing information order and arrangement. Its choice must be traceable to an actual board, with the alternatives established before the selection in the available process narrative. Any of the three may be chosen; an unnamed hybrid, multiple unresolved choices or no description of the retained arrangement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "sourceSlots": [
+        "direction-condition",
+        "direction-bundle",
+        "direction-record"
+      ]
+    },
+    {
+      "id": "planning-sheets-14",
+      "requirementId": "R-planning-sheets-14",
+      "method": "content",
+      "targetSlots": [
+        "information-hierarchy",
+        "shot-inventory"
+      ],
+      "criteria": "Each planning sheet is one page and develops the selected arrangement. The hierarchy table states selling points, information priorities, final placements and minimum text heights, including LOOP AGAIN, See the wear. Know the bundle. and 64 GB, with purchase text minimums consistent with the 2.5% requirement. The inventory specifies each planned image's role, proportion and required content and explicitly assigns front, rear, port and bundle views to named final layouts. Table styling may vary; missing fields, unassigned required views or plans that contradict the selection fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "sourceSlots": [
+        "direction-selection"
+      ]
+    },
+    {
+      "id": "selected-arrangement-in-final-images",
+      "requirementId": "R-selected-arrangement-in-final-images",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "The final images visibly implement the selected information priorities and the hierarchy sheet's placements, with recurring treatment of unit identity, grade, wear, included items and price. Adaptation to square, portrait, comparison and detail layouts is allowed; a final category that switches to an unrelated information arrangement or contradicts the selected hierarchy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "direction-selection",
+        "information-hierarchy"
+      ]
+    },
+    {
+      "id": "written-facts-repeated-14",
+      "requirementId": "R-written-facts-repeated-14",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "Read the store name, listing phrase and storage entry from the hierarchy table and locate all three on every final image. They must match LOOP AGAIN, See the wear. Know the bundle. and 64 GB. Position and line wrapping may vary without changing wording; an absent or altered fact fails. Video and presentation repetition are assessed by their dedicated checks.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "information-hierarchy"
+      ]
+    },
+    {
+      "id": "video-sequence-and-content",
+      "requirementId": "R-video-sequence-and-content",
+      "method": "manual",
+      "targetSlots": [
+        "product-video"
+      ],
+      "criteria": "Review the complete video and timeline. It lasts ten seconds, allocating 0–5 seconds to PA-101 and 5–10 seconds to PA-102. Each segment visibly communicates the correct identity, grade, price, recorded wear and complete accessory inventory, with no swapped or extra items. Across the video, LOOP AGAIN, See the wear. Know the bundle. and 64 GB must be visibly repeated from the hierarchy. The selected information arrangement and reference shell colors, controls and visible marks must persist. Editing and camera treatment may vary; unequal unit allocations, reversed sequence, missing required facts or condition evidence, or contradictory product depictions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "direction-selection",
+        "information-hierarchy",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle"
+      ]
+    },
+    {
+      "id": "presentation-content-14",
+      "requirementId": "R-presentation-content-14",
+      "method": "content",
+      "targetSlots": [
+        "listing-presentation"
+      ],
+      "criteria": "The document has at least eight pages and identifies the same chosen direction as the selection note on its first page. It develops that direction and visibly includes LOOP AGAIN, See the wear. Know the bundle. and 64 GB. Its placement map explicitly traces the listing phrase, storage, USD 99, USD 79, the Pearl hairline, Graphite rear scratch, polished button, port scuff and both complete accessory inventories to named final layouts and appropriate video time ranges. Organizing the map as a table or annotated pages is acceptable; generic destinations, missing observations, wrong time assignments or a contradictory selection fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "sourceSlots": [
+        "direction-selection",
+        "information-hierarchy",
+        "shot-inventory"
+      ]
+    },
+    {
+      "id": "presentation-reuse-14",
+      "requirementId": "R-presentation-reuse-14",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "listing-presentation"
+      ],
+      "criteria": "Locate recognizable reuse of each direction board, the selection note, both planning sheets, all six final layouts and frames from the delivered video. Scaling and page composition may change, and written pages may be reproduced as readable excerpts preserving the relevant content. A filename-only reference, unrelated recreation, unreadable thumbnail or omitted source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "sourceSlots": [
+        "direction-condition",
+        "direction-bundle",
+        "direction-record",
+        "direction-selection",
+        "information-hierarchy",
+        "shot-inventory",
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ]
+    },
+    {
+      "id": "set-selected-listing-system",
+      "requirementId": "R-set-selected-listing-system",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "All final image categories follow the selected information arrangement and planned hierarchy while adapting placement to their designated frames. Unit facts, required copy, accessory counts and visible condition agree across all final layouts and with the planning records. Front, rear, port and bundle views appear in the final layouts assigned by the shot inventory.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n14/03-unit-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "direction-selection",
+        "information-hierarchy",
+        "shot-inventory"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "pearl-unit-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "05-pearl-front.png",
+        "06-pearl-rear.png",
+        "07-pearl-port.png"
+      ],
+      "subjectSlots": [
+        "pearl-product-front",
+        "pearl-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "notes": "These marks remain visible at their recorded locations whenever those surfaces appear."
+    },
+    {
+      "id": "graphite-unit-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "08-graphite-front.png",
+        "09-graphite-rear.png",
+        "10-graphite-port.png"
+      ],
+      "subjectSlots": [
+        "graphite-product-front",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "notes": "These marks remain visible at their recorded locations whenever those surfaces appear."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "hierarchy-required-copy",
+      "fromSlot": "information-hierarchy",
+      "toSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both",
+        "product-video",
+        "listing-presentation"
+      ],
+      "extract": [
+        "store name LOOP AGAIN",
+        "listing phrase See the wear. Know the bundle.",
+        "storage specification 64 GB"
+      ],
+      "notes": "The hierarchy table records LOOP AGAIN, See the wear. Know the bundle. and 64 GB; all final image categories, the video and presentation repeat all three."
+    }
+  ]
+}

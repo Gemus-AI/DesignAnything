@@ -1,0 +1,562 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-vehicle-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "exterior-a-overview",
+      "label": "Colourway A exterior overview",
+      "description": "One A/R1 exterior sheet with front, right-side and rear orthographic views and a front-right perspective.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "layout-n8-f6",
+      "label": "N8 and F6 passenger layouts",
+      "description": "One dimensioned sheet of N8 and F6 passenger plans with seat and passenger envelopes and paired door-and-bridge states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "facilities-a",
+      "label": "Colourway A installed passenger facilities",
+      "description": "One A facilities sheet with an interior perspective, installed door and bay sections, physical STOP buttons, supports, route information and material callouts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "case-e1",
+      "label": "E1 older-passenger boarding",
+      "description": "One numbered E1 sequence sheet of older-passenger boarding at S1 in N8 and movement to a deployed tip-up seat.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "case-e2",
+      "label": "E2 caregiver and stroller boarding",
+      "description": "One numbered E2 sequence sheet of caregiver and stroller entry, turning and parking at S1 in F6.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "case-e3",
+      "label": "E3 alighting and outside waiting",
+      "description": "One numbered E3 sequence sheet of alighting at S1 in N8 with another passenger waiting beyond the bridge path.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "operator-name",
+      "kind": "text-verbatim",
+      "text": "NEARLINK",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "door-priority-phrase",
+      "kind": "text-verbatim",
+      "text": "LET PASSENGERS EXIT FIRST",
+      "scope": {
+        "slots": [
+          "facilities-a"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "flexible-bay-phrase",
+      "kind": "text-verbatim",
+      "text": "FOLD BOTH SEATS BEFORE STROLLER PARKING",
+      "scope": {
+        "slots": [
+          "facilities-a"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "physical-request-button-label",
+      "kind": "text-verbatim",
+      "text": "STOP",
+      "scope": {
+        "slots": [
+          "facilities-a"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "NEARLINK",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-coordinated-shuttle",
+      "slots": [
+        "exterior-a-overview",
+        "layout-n8-f6",
+        "facilities-a",
+        "case-e1",
+        "case-e2",
+        "case-e3"
+      ],
+      "items": [
+        {
+          "item": "Exterior, plans, installed facilities and passenger sequences describe the same vehicle, with corresponding doorway, landing, bridge, seating and support positions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The complete sheet family uses NEARLINK identification, the default A/R1 records and N8/F6 states appropriate to each named case.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "NEARLINK"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "exterior-a-overview",
+      "layout-n8-f6",
+      "facilities-a",
+      "case-e1",
+      "case-e2",
+      "case-e3"
+    ],
+    "layoutExtras": false,
+    "naRules": "Do not judge photorealistic lighting or material texture on technical line drawings, or treat the forecourt atmosphere reference as a required architectural design."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "exterior-a-overview",
+        "layout-n8-f6",
+        "facilities-a",
+        "case-e1",
+        "case-e2",
+        "case-e3"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-exterior-a-overview",
+      "requirementId": "R-format-exterior-a-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exterior-a-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-layout-n8-f6",
+      "requirementId": "R-format-layout-n8-f6",
+      "method": "artifact-property",
+      "targetSlots": [
+        "layout-n8-f6"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-facilities-a",
+      "requirementId": "R-format-facilities-a",
+      "method": "artifact-property",
+      "targetSlots": [
+        "facilities-a"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-case-e1",
+      "requirementId": "R-format-case-e1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "case-e1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-case-e2",
+      "requirementId": "R-format-case-e2",
+      "method": "artifact-property",
+      "targetSlots": [
+        "case-e2"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-case-e3",
+      "requirementId": "R-format-case-e3",
+      "method": "artifact-property",
+      "targetSlots": [
+        "case-e3"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "chassis-and-occupied-volume-records",
+      "requirementId": "R-chassis-and-occupied-volume-records",
+      "method": "visual",
+      "targetSlots": [
+        "exterior-a-overview",
+        "layout-n8-f6",
+        "facilities-a"
+      ],
+      "criteria": "Use the coordinate convention x=0 at the front, positive y toward the boarding side and z=0 at the road. Drawings must respect body sides y=±1100; axle centres x=1400 and 5400; four wheel centres at y=±850, z=325; interior width y=-1000 to 1000; passenger floor x=1800–6500 at z=320; and ceiling z=2700. Preserve the driver-control zone x=250–1750, y=-1000 to 0 and its existing controls. Treat wheelhouses at x=1050–1750 and 5050–5750, side bands y=-1000 to -650 and 650–1000, z=320–700, and the rear service volume x=6500–6850, y=-1000 to 1000, z=320–850 as solid. The main aisle remains x=1800–6500, y=-250 to 500. Locate the landing at x=1900–3100, y=-250 to 1000 and provide doorway height 2100 above the passenger floor. The bridge spans x=1950–3050, deploys from y=1100, z=320 to y=1800, z=300, and fits its stow allowance x=1950–3050, y=350–1100, z=100–300. Door leaves and motion may be designed freely within these constraints. Paired state drawings must show a usable open/deployed arrangement and a credible closed/stowed arrangement. Dimension labels, sections and consistent drawing geometry count as evidence; conflicting geometry or intrusion into required clear regions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "technical-drawing-colour-exception",
+      "requirementId": "R-technical-drawing-colour-exception",
+      "method": "diagnostic",
+      "targetSlots": [
+        "exterior-a-overview",
+        "layout-n8-f6",
+        "facilities-a",
+        "case-e1",
+        "case-e2",
+        "case-e3"
+      ],
+      "criteria": "Neutral technical plans, elevations and sections are permitted when their intended colourway is identified; they do not need rendered palette fills. This exception does not replace the palette requirements for coloured renderings or swatches.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "tier6-exterior-and-layout-dimensions",
+      "requirementId": "R-tier6-exterior-and-layout-dimensions",
+      "method": "visual",
+      "targetSlots": [
+        "exterior-a-overview",
+        "layout-n8-f6"
+      ],
+      "criteria": "Both sheets must state the overall length, width and height as 7000, 2200 and 3000 mm, wheelbase as 4000 mm, wheel diameter as 650 mm and passenger doorway position as x=1900–3100. A dimensioned inset or section may provide values not expressible in a plan alone. The right-side exterior opening, inside landing and bridge must occupy corresponding positions across views and follow the supplied plan and elevation constraints. Missing dimensions, relocated hard points or mismatched boarding interfaces fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-seating-and-flexible-layout",
+      "requirementId": "R-tier6-seating-and-flexible-layout",
+      "method": "visual",
+      "targetSlots": [
+        "layout-n8-f6"
+      ],
+      "criteria": "Provide separately labelled N8 and F6 plans with six fixed passenger seats, three per side, and individually labelled T1/T2. N8 has both tip-ups deployed and eight available passenger seats; F6 has both folded and six. Exclude the driver from these totals. Each side has two complete fixed-seat use envelopes within x=3500–5000 and one within x=5800–6500, in the left y=-1000 to -500 or right y=500–1000 band; each envelope is at least 700 by 450 mm. Each deployed tip-up has a separate 600 by 750 mm envelope wholly inside F at x=1800–3500, y=-1000 to -250. Show dimensioned 750 mm aisle, 1200 by 1250 mm landing, longitudinal 1000 by 600 mm stroller space, separate 500 by 500 mm caregiver space and folded projections no greater than 120 mm. Both parked F6 envelopes must fit within F without overlapping each other, folded seats or the aisle. Exact seat form and mounting may vary within these limits; incorrect counts, overlapping use envelopes or blocked clear spaces fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-installed-facilities",
+      "requirementId": "R-tier6-installed-facilities",
+      "method": "visual",
+      "targetSlots": [
+        "facilities-a"
+      ],
+      "criteria": "Include a passenger-interior perspective and door and flexible-bay sections that locate tangible STOP-labelled request buttons, doorway and interior grasp points, and bay support/retention equipment. Use placement dimensions or anchored callouts to identify installed positions. Dimension rail diameter 35 mm and adjacent-surface clearance 38 mm; explicitly specify a support-to-background LRV difference of at least 30 points. Label seat upholstery as recycled PET fabric and flooring as nonslip rubber. Install the exit-priority phrase at the door and the folding instruction at the flexible bay; a detached legend alone is insufficient. Supports may meet seat or bay boundaries but must preserve aisle, doorway, turning and passenger envelopes. Missing sections, touchscreen-only request controls, unlocated equipment or an unstated contrast target fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-passenger-cases-and-sequence",
+      "requirementId": "R-tier6-passenger-cases-and-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "case-e1",
+        "case-e2",
+        "case-e3"
+      ],
+      "criteria": "Read case labels and numbered frames against the records: all three take place at S1, Library forecourt, on R1; E1/E3 use N8 and E2 uses F6. Show the stationary service order as waiting outside, door opening, bridge deployment, exiting passengers clearing, boarding, bridge stowage after passage clears and door closure. E1 follows visible support points to a deployed near-door tip-up. E2 begins with T1/T2 folded and shows entry, turning and final stroller parking with a separate caregiver position and clear aisle. E3 shows an alighting passenger and another waiting outside the bridge path. A walking stick and a stroller occupant are optional. Reordered boarding priority, missing case-specific actions, vehicle movement or a waiting passenger obstructing the bridge fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-boarding-interface-and-continuity",
+      "requirementId": "R-tier6-boarding-interface-and-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "case-e1",
+        "case-e2",
+        "case-e3"
+      ],
+      "criteria": "Each case sheet must dimension floor height 320 mm, curb height 300 mm, vehicle-side gap 100 mm, and deployed bridge width/reach 1100 by 700 mm. The bridge descends 20 mm over its 700 mm reach, corresponding to nominal slope 1:35. Place the right-side curb edge at y=1200 and preserve the stop landing rectangle x=1700–3500, y=1200–3000. Compare the depicted door, seats and supports with the submitted layout and facilities: changes in viewpoint and temporary passenger passage are allowed, but relocated components, parked obstructions or inconsistent bridge geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "layout-n8-f6",
+        "facilities-a"
+      ]
+    },
+    {
+      "id": "tier6-identification-information-and-palette",
+      "requirementId": "R-tier6-identification-information-and-palette",
+      "method": "visual",
+      "targetSlots": [
+        "exterior-a-overview",
+        "layout-n8-f6",
+        "facilities-a",
+        "case-e1",
+        "case-e2",
+        "case-e3"
+      ],
+      "criteria": "Every sheet title must contain NEARLINK. The exterior front and boarding side must each carry that name beside three open circles stacked vertically and linked by a straight vertical spine. Read exterior route information as R1 / MARKET and installed interior information as NEXT STOP / POOL plus the complete ordered strip Library → Pool → Market. Coloured vehicle depictions must use warm-white #E8E6DD with teal #1A655E. Lighting and shading may alter apparent pixel colours, and accent placement is open; a substituted accent family, incomplete route strip, wrong destination or misplaced/missing identification fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-exterior-view-coverage",
+      "requirementId": "R-tier6-exterior-view-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "exterior-a-overview"
+      ],
+      "criteria": "The sheet must contain identifiable front, right-side and rear orthographic views plus a front-right perspective of the same A/R1 vehicle. Develop finished body surfaces, glazing and lamps with contemporary, purposeful treatment and credible everyday proportions within the fixed envelope. Page arrangement and graphic presentation may vary; a missing required view, perspective substituted for an orthographic view, or only an undeveloped chassis diagram fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-tier6-coordinated-shuttle",
+      "requirementId": "R-set-tier6-coordinated-shuttle",
+      "method": "visual",
+      "targetSlots": [
+        "exterior-a-overview",
+        "layout-n8-f6",
+        "facilities-a",
+        "case-e1",
+        "case-e2",
+        "case-e3"
+      ],
+      "criteria": "Exterior, plans, installed facilities and passenger sequences describe the same vehicle, with corresponding doorway, landing, bridge, seating and support positions. The complete sheet family uses NEARLINK identification, the default A/R1 records and N8/F6 states appropriate to each named case.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-shuttle-exterior",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "exterior-a-overview",
+      "subjectSlots": [
+        "case-e1",
+        "case-e2",
+        "case-e3"
+      ],
+      "notes": "We run NEARLINK between neighbourhood service points and need one coordinated exterior and passenger interior."
+    }
+  ]
+}

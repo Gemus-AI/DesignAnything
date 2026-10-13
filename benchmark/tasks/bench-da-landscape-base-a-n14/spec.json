@@ -1,0 +1,1083 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-landscape-base-a-n14",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "direction-grove",
+      "label": "Grove-led direction board",
+      "description": "One landscape direction board organized around a dense grove.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-shelter",
+      "label": "Shelter-led direction board",
+      "description": "One landscape direction board organized around built shelters.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-clearings",
+      "label": "Connected clearings direction board",
+      "description": "One landscape direction board organized around connected activity clearings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "selection-record",
+      "label": "Direction selection record",
+      "description": "One selection record naming the chosen direction and three reasons.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "site-analysis",
+      "label": "Site analysis and zone schedule",
+      "description": "One two-page site analysis and zone schedule with areas, capacities, surfaces, shade methods and botanical names.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "masterplan",
+      "label": "Park masterplan and activity zoning",
+      "description": "One park masterplan with four zones, boundary dimensions, retained features, planting labels, paths and lighting.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shade-planting",
+      "label": "Shade and planting sheet",
+      "description": "One shade and planting sheet with cover areas, three planting layers and a plant and material schedule.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "section-loop",
+      "label": "Walking loop and N2 section",
+      "description": "One dimensioned section through the walking loop and N2 permeable paving.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "node-caregiver",
+      "label": "N1 caregiver seating sheet",
+      "description": "One N1 node sheet with a plan, seating dimensions and a perspective toward N2.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "node-shared",
+      "label": "N2 shared activity sheet",
+      "description": "One N2 node sheet with a plan, paving and loop dimensions, and an activity perspective.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shared-day",
+      "label": "N2 summer daytime perspective",
+      "description": "One N2 perspective showing shared activity at 12:00 in summer.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shared-night",
+      "label": "N2 summer nighttime perspective",
+      "description": "One N2 perspective at 21:00 in summer from the daytime camera position.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "park-video",
+      "label": "Park activity sequence",
+      "description": "One 10-second park sequence connecting the developed nodes and summer daytime and evening activity.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Park design presentation",
+      "description": "One park presentation reusing the selected direction and developed work, with at least eight pages for tier 14 and twelve pages for tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "MAPLE COURT",
+      "scope": {
+        "slots": [
+          "masterplan",
+          "shade-planting",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "project-phrase",
+      "kind": "text-verbatim",
+      "text": "Room for every day",
+      "scope": {
+        "slots": [
+          "masterplan",
+          "shade-planting",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "MAPLE COURT",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "fourteen-selected-development",
+      "slots": [
+        "masterplan",
+        "shade-planting",
+        "section-loop",
+        "node-caregiver",
+        "node-shared"
+      ],
+      "sourceSlots": [
+        "selection-record",
+        "site-analysis",
+        "direction-grove",
+        "direction-shelter",
+        "direction-clearings"
+      ],
+      "items": [
+        {
+          "item": "Developed drawings follow the direction named in the selection record; the three alternative direction boards are not required to match one another.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Zone records, planting, shade footprints, loop construction and node relationships agree across the developed drawings and the selected site analysis.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "fourteen-scene-continuity",
+      "slots": [
+        "shared-day",
+        "shared-night"
+      ],
+      "sourceSlots": [
+        "masterplan",
+        "node-caregiver",
+        "node-shared"
+      ],
+      "items": [
+        {
+          "item": "The N2 scenes depict the developed node and surrounding park from one camera, retaining fixed elements between time states.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The N1 perspective and N2 scenes preserve the mapped relationship between caregiver seating and shared activity.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Summer daytime and nighttime scenes use the masterplan's lighting locations.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "MAPLE COURT"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "masterplan",
+      "shade-planting",
+      "section-loop",
+      "node-caregiver",
+      "node-shared",
+      "shared-day",
+      "shared-night"
+    ],
+    "layoutExtras": false,
+    "naRules": "Diagrammatic plans, sections and schedules do not require photorealistic lighting or material rendering."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "direction-grove",
+        "direction-shelter",
+        "direction-clearings",
+        "selection-record",
+        "site-analysis",
+        "masterplan",
+        "shade-planting",
+        "section-loop",
+        "node-caregiver",
+        "node-shared",
+        "shared-day",
+        "shared-night",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "direction-grove",
+        "direction-shelter",
+        "direction-clearings",
+        "masterplan",
+        "shade-planting",
+        "section-loop",
+        "node-caregiver",
+        "node-shared",
+        "shared-day",
+        "shared-night"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-direction-grove",
+      "requirementId": "R-format-direction-grove",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-grove"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-shelter",
+      "requirementId": "R-format-direction-shelter",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-shelter"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-clearings",
+      "requirementId": "R-format-direction-clearings",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-clearings"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-selection-record",
+      "requirementId": "R-format-selection-record",
+      "method": "artifact-property",
+      "targetSlots": [
+        "selection-record"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-site-analysis",
+      "requirementId": "R-format-site-analysis",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-analysis"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-masterplan",
+      "requirementId": "R-format-masterplan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shade-planting",
+      "requirementId": "R-format-shade-planting",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shade-planting"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-section-loop",
+      "requirementId": "R-format-section-loop",
+      "method": "artifact-property",
+      "targetSlots": [
+        "section-loop"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-node-caregiver",
+      "requirementId": "R-format-node-caregiver",
+      "method": "artifact-property",
+      "targetSlots": [
+        "node-caregiver"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-node-shared",
+      "requirementId": "R-format-node-shared",
+      "method": "artifact-property",
+      "targetSlots": [
+        "node-shared"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shared-day",
+      "requirementId": "R-format-shared-day",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shared-day"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shared-night",
+      "requirementId": "R-format-shared-night",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shared-night"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-park-video",
+      "requirementId": "R-format-park-video",
+      "method": "manual",
+      "targetSlots": [
+        "park-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "site-reference-fidelity",
+      "requirementId": "R-site-reference-fidelity",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "Compare recognizable site context with site-overhead.png and boundary geometry, north and scale with site-plan.png. The plan must include a north arrow and scale bar consistent with the supplied existing-site plan. Drawing style and abstraction may vary, but relocation, mirroring or replacement of the real surroundings fails. The supplied aerial defines existing appearance; proposed park work may change the interior as commissioned.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "continuous-loop",
+      "requirementId": "R-continuous-loop",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "section-loop"
+      ],
+      "criteria": "The plan must show an unbroken walking circuit, a concentrated tree grove and an identifiable open lawn. The section must describe the same loop with a 1.5 m clear width and proposed 1% crossfall. Route shape may vary within the site; disconnected path fragments or conflicting loop specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "zone-program",
+      "requirementId": "R-zone-program",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "shade-planting"
+      ],
+      "criteria": "Read the zoning and material records together. The four allocations must total 4,882 m² with paths included rather than added as a fifth area. Grove Walk and Quiet Garden use compacted crushed stone; Play Commons combines broom-finished concrete with its permeable area; Open Lawn combines grass with a compacted crushed-stone path. Shade must correspond to a dense grove, canopies and shelters, canopies, and edge canopies respectively. Zone shapes may vary; missing zones, changed allocations or incompatible surface assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-directions",
+      "requirementId": "R-fourteen-directions",
+      "method": "visual",
+      "targetSlots": [
+        "direction-grove",
+        "direction-shelter",
+        "direction-clearings"
+      ],
+      "criteria": "The boards must visibly offer different spatial organizations led respectively by dense grove planting, built shelter coverage and linked activity clearings. All must respect the supplied A–D site boundary. Rendering treatment may differ; three cosmetic variants of one arrangement or a proposal outside the site fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-selection-and-analysis",
+      "requirementId": "R-fourteen-selection-and-analysis",
+      "method": "content",
+      "targetSlots": [
+        "selection-record",
+        "site-analysis",
+        "presentation"
+      ],
+      "criteria": "The selection record must name one offered approach and give three reasons addressing shade, through-walking and the N2–N3 relationship. The two-page analysis must explicitly develop that choice, and the presentation opening page must identify it. Stated stage order or document cross-references must establish selection before analysis; do not infer chronology from file timestamps. Ambiguous selection, missing reasons or a different developed direction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "sourceSlots": [
+        "direction-grove",
+        "direction-shelter",
+        "direction-clearings"
+      ]
+    },
+    {
+      "id": "fourteen-selected-masterplan",
+      "requirementId": "R-fourteen-selected-masterplan",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "The masterplan must name the recorded selection and develop its defining spatial organization. Design refinement is allowed; an unnamed choice or a layout that abandons the chosen approach fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "selection-record",
+        "direction-grove",
+        "direction-shelter",
+        "direction-clearings"
+      ]
+    },
+    {
+      "id": "fourteen-image-records",
+      "requirementId": "R-fourteen-image-records",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "shade-planting"
+      ],
+      "criteria": "Both images must print the project name and phrase, all four exact zone-name/area pairs and AR—Acer rubrum, QR—Quercus rubra, CO—Celtis occidentalis, CS—Cornus sericea and CP—Carex pensylvanica. Compare entries with the site analysis and fact sheet. Ordering may vary; omissions, misspellings, swapped codes or changed areas fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "site-analysis"
+      ]
+    },
+    {
+      "id": "fourteen-document-records",
+      "requirementId": "R-fourteen-document-records",
+      "method": "content",
+      "targetSlots": [
+        "site-analysis",
+        "presentation"
+      ],
+      "criteria": "Both documents must state the four exact zone-name/area pairs and all five correct botanical-name/code pairs. The analysis must additionally schedule capacities of 30, 40, 20 and 35 people in zone order, with the fact sheet's principal surfaces and shade methods. The presentation must contain the project name and phrase. Entries may be distributed across pages; missing or contradictory facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ]
+    },
+    {
+      "id": "fourteen-masterplan-records",
+      "requirementId": "R-fourteen-masterplan-records",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "Read AB 64.1 m, BC 76.3 m, CD 64.2 m and DA 75.9 m on the appropriate edges and verify approximately 4,882 m² within the existing outline. Compare retained objects with supplied site records. Require mapped lights, the four correctly assigned activity nodes, an explicit planted separation dimension of at least 8 m, and zone capacities matching the analysis in the stated order. Symbol style may vary; relocation, missing records or conflicting values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "site-analysis"
+      ]
+    },
+    {
+      "id": "fourteen-shade-and-planting",
+      "requirementId": "R-fourteen-shade-and-planting",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "shade-planting"
+      ],
+      "criteria": "Mapped grove, lawn and paving locations must match. Identify distinct canopy and shelter footprints covering walking and sitting surfaces, totaling 900 m² without double counting; locate the 120 m² permeable area in Play Commons. The schedule must distinguish three planting layers and list six AR, six QR and six CO at 60 mm trunk caliper, 36 CS at 600 mm height and 240 CP at 90 mm pot diameter. Require the fact sheet's path, paving, timber-and-galvanized-steel seating and shelter specifications and steel planting edges. Different diagram styles are allowed; changed locations, amounts or specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-sections-and-nodes",
+      "requirementId": "R-fourteen-sections-and-nodes",
+      "method": "visual",
+      "targetSlots": [
+        "section-loop",
+        "node-shared",
+        "node-caregiver"
+      ],
+      "criteria": "Both the N2 section and node sheet must dimension the loop width, transverse slope, resulting fall and the two paving-layer thicknesses, with concrete above aggregate. Each node sheet must include a plan, relevant dimensions and a perspective consistent with its masterplan location. N1 seating must face N2. View orientation may vary; missing dimensions, contradictory construction or caregiver seating facing away fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan"
+      ]
+    },
+    {
+      "id": "fourteen-time-pair",
+      "requirementId": "R-fourteen-time-pair",
+      "method": "visual",
+      "targetSlots": [
+        "shared-day",
+        "shared-night"
+      ],
+      "criteria": "The images must identify the two specified summer times and keep camera position, orientation, framing and fixed furnishings unchanged. Trees, paving and shelters must represent the same developed N2, with evening lights corresponding to the masterplan. Changes in people and illumination are allowed; changed viewpoints or redesigned fixed elements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan",
+        "node-shared"
+      ]
+    },
+    {
+      "id": "fourteen-video",
+      "requirementId": "R-fourteen-video",
+      "method": "manual",
+      "targetSlots": [
+        "park-video"
+      ],
+      "criteria": "Review the complete video and its duration. It must run for 10 seconds, follow the mapped loop from N1 to N2, show daytime activity and include an evening N2 view. Route geometry and node designs must correspond to the supplied developed files. Editing and camera motion may vary; an incorrect route, missing time state or substituted node design fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "masterplan",
+        "node-caregiver",
+        "node-shared",
+        "shared-day",
+        "shared-night"
+      ]
+    },
+    {
+      "id": "fourteen-presentation-reuse",
+      "requirementId": "R-fourteen-presentation-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Require at least eight pages and identifiable reuse of every listed source, including both summer time states. Written records may be reformatted and images may be scaled or cropped if their relevant information remains legible. Generic replacements, omitted sources or reused drawings that contradict the selected scheme fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "sourceSlots": [
+        "direction-grove",
+        "direction-shelter",
+        "direction-clearings",
+        "selection-record",
+        "site-analysis",
+        "masterplan",
+        "shade-planting",
+        "section-loop",
+        "node-caregiver",
+        "node-shared",
+        "shared-day",
+        "shared-night"
+      ]
+    },
+    {
+      "id": "set-fourteen-selected-development",
+      "requirementId": "R-set-fourteen-selected-development",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "shade-planting",
+        "section-loop",
+        "node-caregiver",
+        "node-shared"
+      ],
+      "criteria": "Developed drawings follow the direction named in the selection record; the three alternative direction boards are not required to match one another. Zone records, planting, shade footprints, loop construction and node relationships agree across the developed drawings and the selected site analysis.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "selection-record",
+        "site-analysis",
+        "direction-grove",
+        "direction-shelter",
+        "direction-clearings"
+      ]
+    },
+    {
+      "id": "set-fourteen-scene-continuity",
+      "requirementId": "R-set-fourteen-scene-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "shared-day",
+        "shared-night"
+      ],
+      "criteria": "The N2 scenes depict the developed node and surrounding park from one camera, retaining fixed elements between time states. The N1 perspective and N2 scenes preserve the mapped relationship between caregiver seating and shared activity. Summer daytime and nighttime scenes use the masterplan's lighting locations.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-base-a-n14/source-status.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan",
+        "node-caregiver",
+        "node-shared"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "real-site-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "site-overhead.png"
+      ],
+      "subjectSlots": [
+        "masterplan",
+        "node-caregiver",
+        "node-shared",
+        "shared-day",
+        "shared-night"
+      ],
+      "notes": "The aerial supplies the site's recognizable surroundings.",
+      "comparisonScope": "compare only the existing site, its boundary and proportions, the retained trees and features, the orientation and the surrounding streets and buildings; the new paths, planting, shelters, paving and lighting placed inside the boundary are the design work"
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "chosen-direction",
+      "fromSlot": "selection-record",
+      "toSlots": [
+        "masterplan",
+        "presentation"
+      ],
+      "extract": [
+        "chosen landscape direction"
+      ],
+      "notes": "The three direction boards explore the three named approaches within the A–D boundary; the selection record chooses one before the site analysis, and the masterplan and presentation opening page identify that same direction."
+    },
+    {
+      "id": "zone-schedule",
+      "fromSlot": "site-analysis",
+      "toSlots": [
+        "masterplan",
+        "shade-planting",
+        "presentation"
+      ],
+      "extract": [
+        "four zone names and their corresponding areas"
+      ],
+      "notes": "The written schedules, masterplan, shade and planting sheet and presentation repeat the four zone names and areas: Grove Walk 1,482 m², Play Commons 1,200 m², Quiet Garden 1,000 m² and Open Lawn 1,200 m²."
+    },
+    {
+      "id": "zone-capacities",
+      "fromSlot": "site-analysis",
+      "toSlots": [
+        "masterplan"
+      ],
+      "extract": [
+        "simultaneous user capacity for each of the four zones"
+      ],
+      "notes": "The masterplan labels the four boundary lengths, preserves recorded trees and retained features, identifies N1–N4 and lighting positions, and dimensions at least 8 m of planting between N2 and N3; its zone capacities match the site analysis: 30, 40, 20 and 35 people respectively."
+    }
+  ]
+}

@@ -1,0 +1,603 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-jewelry-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "complete-watch",
+      "label": "Board 1 — Complete watch and closed strap",
+      "description": "One complete-watch board showing the PineTime with both FIELDWEAVE strap pieces fitted and the closure secured.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-closure-specification",
+      "label": "Board 2 — Material and closure specification",
+      "description": "One final specification board recording FIELDWEAVE materials, surface treatments, segment lengths and closure travel for the 150–200 mm wrist range.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "mounting-connection",
+      "label": "Board 3 — Strap connection detail",
+      "description": "One mounting-detail board showing assembled and separated views of the 20 mm nominal terminal, original spring bar and recessed retention.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "closure-adjustment",
+      "label": "Board 4 — Closure and length adjustment",
+      "description": "One closure-detail board showing open and secured states, adjustment and free-end retention at the W160 and W190 settings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "wearing-w160",
+      "label": "Board 5 — W160 wearing view",
+      "description": "One FIELDWEAVE wearing board for W160 / 160 mm showing a relaxed adult left wrist with a shirt cuff and an underside closure inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "wearing-w190",
+      "label": "Board 6 — W190 wearing view",
+      "description": "One FIELDWEAVE wearing board for W190 / 190 mm showing a gently flexed adult left wrist with casual short sleeves and an underside closure inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "FIELDWEAVE",
+      "scope": {
+        "slots": [
+          "complete-watch",
+          "material-closure-specification",
+          "wearing-w160",
+          "wearing-w190"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "wrist-range",
+      "kind": "text-verbatim",
+      "text": "Wrist range 150–200 mm",
+      "scope": {
+        "slots": [
+          "material-closure-specification"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "terminal-width",
+      "kind": "text-verbatim",
+      "text": "20 mm nominal",
+      "scope": {
+        "slots": [
+          "mounting-connection"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "w160-label",
+      "kind": "text-verbatim",
+      "text": "W160 / 160 mm",
+      "scope": {
+        "slots": [
+          "wearing-w160"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "w190-label",
+      "kind": "text-verbatim",
+      "text": "W190 / 190 mm",
+      "scope": {
+        "slots": [
+          "wearing-w190"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FIELDWEAVE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "one-resolved-strap-system",
+      "slots": [
+        "complete-watch",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "sourceSlots": [
+        "material-closure-specification",
+        "mounting-connection",
+        "closure-adjustment"
+      ],
+      "items": [
+        {
+          "item": "The assembled and worn straps follow the specification board's chosen weave, colourway, edge treatment, stitching and steel finish.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The fitted terminals and closure agree with their detail boards, including the profile-specific closure settings shown in the wearing insets.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Both wrist profiles use one unchanged pair of textile pieces and one closure, with fit changes supplied by closure adjustment.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FIELDWEAVE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "complete-watch",
+      "material-closure-specification",
+      "mounting-connection",
+      "closure-adjustment",
+      "wearing-w160",
+      "wearing-w190"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the proposed strap and its communication without requiring durability testing, electronics changes, production tolerances, a watch-back pattern or screen interface design."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "complete-watch",
+        "material-closure-specification",
+        "mounting-connection",
+        "closure-adjustment",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-complete-watch",
+      "requirementId": "R-format-complete-watch",
+      "method": "artifact-property",
+      "targetSlots": [
+        "complete-watch"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-closure-specification",
+      "requirementId": "R-format-material-closure-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-closure-specification"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-mounting-connection",
+      "requirementId": "R-format-mounting-connection",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mounting-connection"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-closure-adjustment",
+      "requirementId": "R-format-closure-adjustment",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closure-adjustment"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-wearing-w160",
+      "requirementId": "R-format-wearing-w160",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wearing-w160"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-wearing-w190",
+      "requirementId": "R-format-wearing-w190",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wearing-w190"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "watch-identity-and-complete-assembly",
+      "requirementId": "R-watch-identity-and-complete-assembly",
+      "method": "visual",
+      "targetSlots": [
+        "complete-watch",
+        "mounting-connection",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "The complete-watch board presents the entire watch with two separate replacement textile pieces fitted at the original opposite mounting positions and the closure secured. Across the targets, visible watch features match the supplied photograph: black rounded rectangular case, narrow reflective bezel edge, rectangular display opening and one button in its original position. Perspective and natural occlusion may vary; a redesigned case, relocated button, retained original strap or missing replacement piece fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "material-specification-and-application",
+      "requirementId": "R-material-specification-and-application",
+      "method": "visual",
+      "targetSlots": [
+        "material-closure-specification",
+        "complete-watch",
+        "mounting-connection",
+        "closure-adjustment",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "Read the specification board for woven polyester body material, polyester stitching, stainless steel closure and rigid hardware, chosen weave, one colourway, edge treatment, steel finish, nominal lengths of both pieces and closure adjustment travel. It must carry the required range line, and its lengths and adjustment scheme must support the stated 150–200 mm range using one pair of pieces and one closure. Compare the other boards with these decisions. Designer-selected treatments and lighting differences are allowed; missing specifications, contradictory settings, substituted materials or inconsistent colourways and finishes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "mounting-construction",
+      "requirementId": "R-mounting-construction",
+      "method": "visual",
+      "targetSlots": [
+        "mounting-connection",
+        "complete-watch",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "The detail board includes distinguishable assembled and separated views of one original mounting position, showing the spring bar, retention recessed in the lug and the required label associated with the textile terminal. Both ends of the fitted strap use this construction wherever visible. View angle and detail magnification may differ; a different attachment mechanism, inconsistent terminals or an omitted required view fails. Do not demand numerical spring-bar or recess dimensions absent from the supplied record.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "closure-settings-and-wearing-insets",
+      "requirementId": "R-closure-settings-and-wearing-insets",
+      "method": "visual",
+      "targetSlots": [
+        "closure-adjustment",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "The closure board makes the open and secured states, length-adjustment path and free-end retention understandable, and identifies distinct settings for the two wrist profiles. The wearing insets show the corresponding secured setting and stored free end. Changes in overlap or exposed length are allowed through adjustment; changing the piece lengths, replacing the closure between profiles, mismatching an inset setting or omitting an operating state fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "wearing-profiles-and-framing",
+      "requirementId": "R-wearing-profiles-and-framing",
+      "method": "visual",
+      "targetSlots": [
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "The W160 board carries its required label and depicts an adult left wrist with a relaxed hand and shirt cuff. The W190 board carries its required label and depicts an adult left wrist gently flexed with casual short sleeves. Each includes the full case, visible strap-to-case transition, closed strap and exactly one underside closure inset. Camera angle, clothing colour, skin tone, arm hair and cropping outside the required features may vary. Swapped profiles, wrong wearing side, missing required features or incorrect clothing or posture fail; do not infer exact wrist circumference from image scale.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "project-name-spelling",
+      "requirementId": "R-project-name-spelling",
+      "method": "visual",
+      "targetSlots": [
+        "complete-watch",
+        "material-closure-specification",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "Each target visibly prints FIELDWEAVE with the same uppercase spelling. Typography, placement and size may vary; omission, misspelling or illegible lettering fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "retained-watch-and-back-functions",
+      "requirementId": "R-retained-watch-and-back-functions",
+      "method": "visual",
+      "targetSlots": [
+        "complete-watch",
+        "material-closure-specification",
+        "mounting-connection",
+        "closure-adjustment",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "Any depicted watch body preserves the specified existing features. Where the back is shown, the proposal retains the original back and does not visibly remove or obstruct its sensor and charging functions. A new back diagram or hidden-feature view is not required. A depicted replacement back, removed function or incompatible strap obstruction fails; assess only visible or explicitly stated evidence.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "published-case-envelope",
+      "requirementId": "R-published-case-envelope",
+      "method": "visual",
+      "targetSlots": [
+        "complete-watch",
+        "material-closure-specification",
+        "mounting-connection",
+        "closure-adjustment",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "Treat 37.5 × 40 × 11 mm as the fixed physical case envelope. Any stated case dimensions must agree, and depicted geometry must not clearly imply a resized or reshaped watch. Perspective and schematic enlargement are allowed. Printing these dimensions is not required, and exact physical measurements must not be inferred from image pixels.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "manual-closure-operation",
+      "requirementId": "R-manual-closure-operation",
+      "method": "visual",
+      "targetSlots": [
+        "closure-adjustment"
+      ],
+      "criteria": "The depicted mechanism provides an understandable way to release and secure the closure by hand, makes the selected length setting visible and positively retains the loose end. Arrows or explanatory annotations may establish operation without showing hands. A mechanism requiring a tool, a concealed setting or an unsecured free end fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-one-resolved-strap-system",
+      "requirementId": "R-set-one-resolved-strap-system",
+      "method": "visual",
+      "targetSlots": [
+        "complete-watch",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "criteria": "The assembled and worn straps follow the specification board's chosen weave, colourway, edge treatment, stitching and steel finish. The fitted terminals and closure agree with their detail boards, including the profile-specific closure settings shown in the wearing insets. Both wrist profiles use one unchanged pair of textile pieces and one closure, with fit changes supplied by closure adjustment.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "material-closure-specification",
+        "mounting-connection",
+        "closure-adjustment"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-pinetime-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "watch-front.jpg"
+      ],
+      "subjectSlots": [
+        "complete-watch",
+        "mounting-connection",
+        "wearing-w160",
+        "wearing-w190"
+      ],
+      "notes": "Board 1 shows both textile pieces attached to the PineTime in watch-front.jpg; boards 3, 5 and 6 preserve that case, bezel edge, display opening and side-button position wherever visible."
+    }
+  ]
+}

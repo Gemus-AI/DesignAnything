@@ -1,0 +1,556 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-fashion-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "front-lineup",
+      "label": "Three-style front flat-lay lineup",
+      "description": "A front flat-lay lineup of CW01, CW02 and CW03 with enlarged inside-label views.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "back-lineup",
+      "label": "Three-style back flat-lay lineup",
+      "description": "A back flat-lay lineup of CW01, CW02 and CW03 with annotated shell lengths and sleeve extension.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cycling-m",
+      "label": "Size M cycling outfit",
+      "description": "A size M worn cycling image with all three garments and forward handlebar reach.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "trail-m",
+      "label": "Size M trail outfit",
+      "description": "A size M trail-walking image with CW01 open over CW02 and CW03 worn beneath a small daypack.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "construction-details",
+      "label": "Storage and construction details",
+      "description": "A construction plate with three loaded pockets, reflective components, shell dimensions, shared hardware and knee articulation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-closeups",
+      "label": "Three-garment material close-ups",
+      "description": "A plate of three finished garment fabric-and-color crops with style, fabric and color codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "inside-label-brand",
+      "kind": "text-verbatim",
+      "text": "COMMON WEATHER",
+      "scope": {
+        "slots": [
+          "front-lineup"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "inside-label-phrase",
+      "kind": "text-verbatim",
+      "text": "Ride out. Walk on.",
+      "scope": {
+        "slots": [
+          "front-lineup"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON WEATHER",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-finished-wardrobe",
+      "slots": [
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "construction-details",
+        "material-closeups"
+      ],
+      "items": [
+        {
+          "item": "Each style retains its panel layout, pocket locations, closures and shared hardware across flats, worn views and enlarged details, allowing pose and occlusion.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Finished material crops and worn outfits agree on the CW01/F01, CW02/F02 and CW03/F01 assignments and dominant Moss color placement.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The complete wardrobe supports cycling reach and trail walking with the vest beneath the shell and articulated, ankle-adjustable overtrousers.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON WEATHER"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "front-lineup",
+      "back-lineup",
+      "cycling-m",
+      "trail-m",
+      "construction-details",
+      "material-closeups"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not infer waterproof performance, hidden fiber composition or exact physical fit from rendered garment images."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "construction-details",
+        "material-closeups"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-front-lineup",
+      "requirementId": "R-format-front-lineup",
+      "method": "artifact-property",
+      "targetSlots": [
+        "front-lineup"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-back-lineup",
+      "requirementId": "R-format-back-lineup",
+      "method": "artifact-property",
+      "targetSlots": [
+        "back-lineup"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cycling-m",
+      "requirementId": "R-format-cycling-m",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cycling-m"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-trail-m",
+      "requirementId": "R-format-trail-m",
+      "method": "artifact-property",
+      "targetSlots": [
+        "trail-m"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-construction-details",
+      "requirementId": "R-format-construction-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-closeups",
+      "requirementId": "R-format-material-closeups",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-closeups"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "shared-hardware-form",
+      "requirementId": "R-shared-hardware-form",
+      "method": "visual",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "The enlarged hardware depicts the supplied matte-charcoal forms: a flat rounded-rectangle R1 pull with proportions corresponding to 24 × 8 mm, 2 mm corner radii, an upper centered 12 × 3 mm attachment slot and centered R1 engraving below it; and a rectangular three-bar ladder-lock buckle corresponding to 35 × 30 mm for 25 mm webbing. Perspective and rendering style may vary. A different pull outline, missing slot or engraving, or a different buckle mechanism fails; physical dimensions need not be inferred precisely from pixels.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "layering-and-trouser-construction",
+      "requirementId": "R-layering-and-trouser-construction",
+      "method": "visual",
+      "targetSlots": [
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "construction-details"
+      ],
+      "criteria": "The views collectively establish a vest that fits beneath the shell and overtrousers with shaped knee articulation and separate left and right ankle buckle adjustments. Visible garment records also agree with the fixed hood and center-front shell zipper, sleeveless center-front zipped vest and elastic trouser waistband. Hidden features need not be visible in every pose; a contradictory construction or absent required feature across the evidence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-garment-continuity",
+      "requirementId": "R-six-garment-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m"
+      ],
+      "criteria": "Both lineups show all three distinct styles from their stated sides. Track each style into both activity images: seam topology, pocket placement, fastening arrangement and visible hardware remain identifiable. Pose, folds, perspective and legitimate occlusion may change; substituted garments, missing styles or redesigned construction fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-shell-dimensions",
+      "requirementId": "R-six-shell-dimensions",
+      "method": "visual",
+      "targetSlots": [
+        "back-lineup",
+        "construction-details"
+      ],
+      "criteria": "Each image independently provides readable size M CW01 annotations for front 720 mm, back 800 mm, collar 80 mm and sleeve 690 mm, plus back drop 80 mm and extension 30 mm over the 660 mm reference sleeve. Length leaders or captions identify the correct garment regions; sleeve length runs shoulder point to cuff and body lengths run high shoulder point to hem. Annotation layout may vary, but missing, conflicting or misassigned values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-storage-and-reflectors",
+      "requirementId": "R-six-storage-and-reflectors",
+      "method": "visual",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "Readable details associate a 170 × 85 × 12 mm phone with the chest pocket, 220 × 110 × 40 mm packed gloves with the wearer's right hand pocket and a 180 × 100 × 30 mm packed cap with the left. Each pocket has a zipper and credible storage around its item; cutaways or exploded views are acceptable. Dimension two outer-cuff tabs at 60 × 10 mm each and one horizontal center-back strip at 120 × 10 mm, with its lower edge 100 mm above the back hem. Missing depth values, swapped storage locations, wrong counts or an ambiguous hem offset fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-labels-and-ankle-hardware",
+      "requirementId": "R-six-labels-and-ankle-hardware",
+      "method": "visual",
+      "targetSlots": [
+        "front-lineup",
+        "construction-details"
+      ],
+      "criteria": "The front lineup links an enlarged label to each style. Every label contains COMMON WEATHER and Ride out. Walk on., located at the inside back neck for CW01 and CW02 and inside back waistband for CW03. The detail plate makes R1 legible on the pull and establishes a matching buckle at each trouser ankle. Enlargement and callout arrangement are flexible; a label standing for only one garment or only one ankle adjustment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-fabric-and-color",
+      "requirementId": "R-six-fabric-and-color",
+      "method": "visual",
+      "targetSlots": [
+        "material-closeups",
+        "cycling-m",
+        "trail-m"
+      ],
+      "criteria": "The plate contains three finished garment crops, each associated with its style and fabric code: CW01/F01, CW02/F02 and CW03/F01. Identify Moss #465B57 as dominant and preserve its garment-by-garment placement in both worn views; Clay #B86E50 is optional for panels and trims. F01 reads as a matte laminate face and F02 as smooth outside with brushing on any exposed inner face. Lighting may alter apparent color, and hidden composition is not inferred from pixels. Incorrect assignments, unrelated swatches, dominant replacement colors or reversed shell/vest layering fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-cycling-use",
+      "requirementId": "R-six-cycling-use",
+      "method": "visual",
+      "targetSlots": [
+        "cycling-m"
+      ],
+      "criteria": "An adult size M outfit includes the closed shell over the vest and the overtrousers in a weekday cycling context. The rider reaches actual handlebars with a forward torso inclination consistent with the 35-degree riding reference. Pose and street composition may vary; an upright standing pose, missing trousers, absent handlebar reach or contradictory layering fails. The covered vest may be established through visible edges and the matching wardrobe.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-trail-use",
+      "requirementId": "R-six-trail-use",
+      "method": "visual",
+      "targetSlots": [
+        "trail-m"
+      ],
+      "criteria": "An adult wears the size M shell, vest and overtrousers while walking in a local-trail setting with a small daypack. The open shell visibly exposes the vest. Natural trail lighting and composition may vary; a closed shell hiding the vest, omitted garment, missing daypack or unrelated activity fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-six-finished-wardrobe",
+      "requirementId": "R-set-six-finished-wardrobe",
+      "method": "visual",
+      "targetSlots": [
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "construction-details",
+        "material-closeups"
+      ],
+      "criteria": "Each style retains its panel layout, pocket locations, closures and shared hardware across flats, worn views and enlarged details, allowing pose and occlusion. Finished material crops and worn outfits agree on the CW01/F01, CW02/F02 and CW03/F01 assignments and dominant Moss color placement. The complete wardrobe supports cycling reach and trail walking with the vest beneath the shell and articulated, ankle-adjustable overtrousers.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "shared-hardware-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "shared-hardware.png"
+      ],
+      "subjectSlots": [
+        "front-lineup",
+        "back-lineup",
+        "construction-details",
+        "cycling-m",
+        "trail-m"
+      ],
+      "notes": "Our existing R1 zipper pull and webbing buckle are the shared hardware identity."
+    },
+    {
+      "id": "garment-identity-across-views",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "front-lineup",
+      "subjectSlots": [
+        "back-lineup",
+        "construction-details",
+        "material-closeups",
+        "cycling-m",
+        "trail-m"
+      ],
+      "notes": "The flat-lay and worn images retain matching panel seams, pockets and closures for each style and size."
+    }
+  ]
+}

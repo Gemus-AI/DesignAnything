@@ -1,0 +1,581 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-jewelry-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "assembled-system",
+      "label": "Assembled system and dimensions",
+      "description": "One assembled system board with front, rear and side views of C, H and K, final body dimensions and the selected adjustable chain-length range.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "connection-details",
+      "label": "Fixing and chain connection details",
+      "description": "One connection detail board with padded contact sections, adjustment and release positions, both chain closures and a numbered removal sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "final-materials",
+      "label": "Final materials and contact details",
+      "description": "One final materials board recording titanium finishes and thicknesses, silicone pad forms and dimensions, optional acrylic colour and four prototype priorities.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "standalone-components",
+      "label": "Independent clip and cuff product views",
+      "description": "One standalone product board with front and rear views of independently wearable C and H and a separate K with both end closures open.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "e1-wearing",
+      "label": "E1 attached-lobe wearing board",
+      "description": "One E1 left-ear wearing board with the linked system, full attached-lobe contour, rear contact inset, selected chain length and lobe-bottom offset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "e2-wearing",
+      "label": "E2 free-lobe wearing board",
+      "description": "One E2 left-ear wearing board with the same linked system, full free-lobe contour, rear contact inset, selected chain length and lobe-bottom offset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-brand-name",
+      "kind": "text-verbatim",
+      "text": "ARCLET",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "printed-wearing-side",
+      "kind": "text-verbatim",
+      "text": "LEFT",
+      "scope": {
+        "slots": [
+          "e1-wearing",
+          "e2-wearing"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "ARCLET",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "one-adjustable-product-system",
+      "slots": [
+        "connection-details",
+        "standalone-components",
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "sourceSlots": [
+        "assembled-system"
+      ],
+      "items": [
+        {
+          "item": "Across applicable views, C, H and K retain the assembled design's decorative geometry, construction and closures; changes in viewpoint, open/closed state and adjustable settings are allowed.",
+          "kind": "consistency"
+        },
+        {
+          "item": "E1 and E2 use the same decorative bodies at consistent physical scale, adapting through closure and chain settings rather than replacement bodies.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "material-specification-consistency",
+      "slots": [
+        "assembled-system",
+        "connection-details",
+        "standalone-components",
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "sourceSlots": [
+        "final-materials"
+      ],
+      "items": [
+        {
+          "item": "Visible metal finishes, silicone pad forms and optional acrylic accents agree with the final materials board wherever those features are depicted, allowing normal lighting and rendering variation.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "ARCLET"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "assembled-system",
+      "connection-details",
+      "final-materials",
+      "standalone-components",
+      "e1-wearing",
+      "e2-wearing"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge wearer attractiveness, wardrobe styling or clinically proven comfort and retention."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "assembled-system",
+        "connection-details",
+        "final-materials",
+        "standalone-components",
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-assembled-system",
+      "requirementId": "R-format-assembled-system",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembled-system"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-connection-details",
+      "requirementId": "R-format-connection-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "connection-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-final-materials",
+      "requirementId": "R-format-final-materials",
+      "method": "artifact-property",
+      "targetSlots": [
+        "final-materials"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-standalone-components",
+      "requirementId": "R-format-standalone-components",
+      "method": "artifact-property",
+      "targetSlots": [
+        "standalone-components"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-e1-wearing",
+      "requirementId": "R-format-e1-wearing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "e1-wearing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-e2-wearing",
+      "requirementId": "R-format-e2-wearing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "e2-wearing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "component-count-and-envelopes",
+      "requirementId": "R-component-count-and-envelopes",
+      "method": "visual",
+      "targetSlots": [
+        "assembled-system",
+        "standalone-components"
+      ],
+      "criteria": "Identify one designed lobe clip C, one helix cuff H and one detachable chain K on each board; repeated views of those components are allowed, but extra components or alternative designs fail. Read the assembled board's selected three-dimensional body measurements: C must fit within 20 × 20 × 8 mm and H within 25 × 15 × 8 mm. Pads and chain may extend beyond those limits; missing final measurements or oversized decorative bodies fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "closures-adjustment-and-removal",
+      "requirementId": "R-closures-adjustment-and-removal",
+      "method": "visual",
+      "targetSlots": [
+        "connection-details",
+        "standalone-components"
+      ],
+      "criteria": "The detail board must show sections through both fixings, visibly opposed silicone contact pads, mechanical adjustment positions, and opening or release positions suitable for non-pierced attachment. It must explain the chain construction and both end closures sufficiently to show how each detaches without tools. A numbered removal sequence must detach K before either ear fixing opens. Compare the standalone views for matching closure structures; missing sections, unexplained release, tool-dependent connections, inconsistent closures or reversed removal order fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "wearing-fixtures-and-contact-placement",
+      "requirementId": "R-wearing-fixtures-and-contact-placement",
+      "method": "visual",
+      "targetSlots": [
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "criteria": "Both boards must show the complete linked system and full adult left-ear contour. E1 must have an attached lobe with geometry consistent with 60 mm ear height, 30 mm maximum width and 16 mm lobe height; E2 must have a free lobe consistent with 70, 35 and 20 mm respectively. Rear/contact insets must represent the respective 5 mm and 7 mm lobe thicknesses. Compare C and H with the assembled design at the stated ear scales: their decorative geometry and size stay the same while closure settings may adjust. C contacts must remain within the 10 mm lower-lobe-edge region L, H contacts within the 12 mm upper-outer-rim region H, and neither may obstruct the canal. Contradictory proportions, contact locations, body substitutions or missing fitting evidence fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "assembled-system"
+      ]
+    },
+    {
+      "id": "adjustable-chain-range-and-drape",
+      "requirementId": "R-adjustable-chain-range-and-drape",
+      "method": "visual",
+      "targetSlots": [
+        "assembled-system",
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "criteria": "Read a selected adjustable interval whose lower and upper bounds both lie within 65–95 mm and permit actual length adjustment. Each wearing board must label its chosen length within that declared interval and identify the vertical distance from the lobe bottom to K's lowest point as no more than 30 mm downward. The depicted chain must visibly hang with slack and agree with its length and offset annotations at the ear's scale. Different settings for E1 and E2 are allowed; absent records, out-of-range settings, excessive drop or a taut chain fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "material-records-and-recurrence",
+      "requirementId": "R-material-records-and-recurrence",
+      "method": "visual",
+      "targetSlots": [
+        "final-materials",
+        "assembled-system",
+        "connection-details",
+        "standalone-components",
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "criteria": "Read the materials board for uncoated titanium structural parts, chain and chain closures; selected brushed or polished finishes; actual metal thicknesses and chain construction/section dimensions; and silicone pad forms with actual dimensions. Acrylic may be omitted; if used, it must be translucent and its chosen colour recorded. Prototype priorities must explicitly address fit, skin contact, edge finish and retention. Compare other boards against these selections, allowing lighting and rendering differences but failing conflicting materials, coatings, finishes, pad geometry or accent colours, and missing required records.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "identity-and-wearing-labels",
+      "requirementId": "R-identity-and-wearing-labels",
+      "method": "visual",
+      "targetSlots": [
+        "assembled-system",
+        "connection-details",
+        "final-materials",
+        "standalone-components",
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "criteria": "Every board must visibly include the project name and the existing emblem: two nested charcoal arcs opening right, with rounded terminals and equal stroke weight. Uniform emblem scaling is allowed; redrawing its identity or omitting it fails. The wearing boards must identify E1 and E2 respectively and state LEFT. Each rear/contact inset must depict the same left ear, profile and fixing arrangement as its main view; swapped profile labels, mirrored anatomy or inconsistent contact placement fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "assembled-view-coverage",
+      "requirementId": "R-assembled-view-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "assembled-system"
+      ],
+      "criteria": "The board must provide readable front, rear and side views of the assembled three-component system, exposing the decorative bodies, ear-facing structures and chain connections sufficiently to understand their spatial relationship. View arrangement and rendering style may vary. Missing orientations, incompatible geometry between views or absent final body and chain-range annotations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "independent-wear-and-open-chain",
+      "requirementId": "R-independent-wear-and-open-chain",
+      "method": "visual",
+      "targetSlots": [
+        "standalone-components"
+      ],
+      "criteria": "Show front and rear views of both C and H with their own complete retention mechanisms and no dependence on K for wear. Lay out K separately so both end closures are visibly open and inspectable. Layout and viewing scale may vary; missing reverse views, incomplete independent fixings, an attached chain or a closed or hidden chain end fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-one-adjustable-product-system",
+      "requirementId": "R-set-one-adjustable-product-system",
+      "method": "visual",
+      "targetSlots": [
+        "connection-details",
+        "standalone-components",
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "criteria": "Across applicable views, C, H and K retain the assembled design's decorative geometry, construction and closures; changes in viewpoint, open/closed state and adjustable settings are allowed. E1 and E2 use the same decorative bodies at consistent physical scale, adapting through closure and chain settings rather than replacement bodies.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "assembled-system"
+      ]
+    },
+    {
+      "id": "set-material-specification-consistency",
+      "requirementId": "R-set-material-specification-consistency",
+      "method": "visual",
+      "targetSlots": [
+        "assembled-system",
+        "connection-details",
+        "standalone-components",
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "criteria": "Visible metal finishes, silicone pad forms and optional acrylic accents agree with the final materials board wherever those features are depicted, allowing normal lighting and rendering variation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "final-materials"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "supplied-emblem-identity",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "arclet-emblem.png"
+      ],
+      "subjectSlots": [
+        "assembled-system",
+        "connection-details",
+        "final-materials",
+        "standalone-components",
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "notes": "All six boards carry ARCLET and the supplied twin-arc emblem."
+    },
+    {
+      "id": "decorative-body-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "assembled-system",
+      "subjectSlots": [
+        "e1-wearing",
+        "e2-wearing"
+      ],
+      "notes": "The same decorative parts serve both profiles through adjustment."
+    }
+  ]
+}

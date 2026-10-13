@@ -1,0 +1,567 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-photo-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "plate-overhead",
+      "label": "Complete plate overhead",
+      "description": "One overhead photograph of the complete Lemon Chicken Plate with all ingredient counts visible.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "plate-three-quarter",
+      "label": "Complete plate three-quarter view",
+      "description": "One three-quarter photograph of the complete serving showing chicken thickness and the stoneware plate profile.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "chicken-detail",
+      "label": "Chicken and lemon detail",
+      "description": "One close-detail photograph of the three plated chicken slices, lemon wedge and jus.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dining-scene",
+      "label": "Dining-table scene",
+      "description": "One dining-table photograph of the complete serving with one fork, one knife and one empty water glass.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dining-scene-square",
+      "label": "Square dining-table crop",
+      "description": "One square crop of the dining-table photograph retaining the complete plate and serving.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "menu-page",
+      "label": "Finished lunch menu page",
+      "description": "One finished menu page with the overhead photograph, existing sprig emblem, restaurant name, dish name and serving label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "restaurant-name",
+      "kind": "text-verbatim",
+      "text": "ALDER TABLE",
+      "scope": {
+        "slots": [
+          "menu-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "dish-name",
+      "kind": "text-verbatim",
+      "text": "Lemon Chicken Plate",
+      "scope": {
+        "slots": [
+          "menu-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "serving-label",
+      "kind": "text-verbatim",
+      "text": "One serving",
+      "scope": {
+        "slots": [
+          "menu-page"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "ALDER TABLE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-dish-photography",
+      "slots": [
+        "plate-three-quarter",
+        "chicken-detail",
+        "dining-scene",
+        "dining-scene-square",
+        "menu-page"
+      ],
+      "sourceSlots": [
+        "plate-overhead"
+      ],
+      "items": [
+        {
+          "item": "The visible serving maintains the overhead photograph's ingredient identity, portion proportions, chicken overlaps and plating relationships across changes of view and crop.",
+          "kind": "consistency"
+        },
+        {
+          "item": "All photographs share the specified ivory charcoal-rimmed plate, matte warm grey tabletop and diffuse west light with east fill, including the photograph placed on the menu.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "ALDER TABLE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "plate-overhead",
+      "plate-three-quarter",
+      "chicken-detail",
+      "dining-scene",
+      "dining-scene-square",
+      "menu-page"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge photographic communication and menu composition without treating food styling as permission to alter the fixed recipe, plate, emblem or geometry, or claiming that images prove actual weights or capture time."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "plate-overhead",
+        "plate-three-quarter",
+        "chicken-detail",
+        "dining-scene",
+        "dining-scene-square",
+        "menu-page"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-plate-overhead",
+      "requirementId": "R-format-plate-overhead",
+      "method": "artifact-property",
+      "targetSlots": [
+        "plate-overhead"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-plate-three-quarter",
+      "requirementId": "R-format-plate-three-quarter",
+      "method": "artifact-property",
+      "targetSlots": [
+        "plate-three-quarter"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-chicken-detail",
+      "requirementId": "R-format-chicken-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "chicken-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dining-scene",
+      "requirementId": "R-format-dining-scene",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dining-scene"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dining-scene-square",
+      "requirementId": "R-format-dining-scene-square",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dining-scene-square"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-menu-page",
+      "requirementId": "R-format-menu-page",
+      "method": "artifact-property",
+      "targetSlots": [
+        "menu-page"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "serving-counts-and-proportions",
+      "requirementId": "R-serving-counts-and-proportions",
+      "method": "visual",
+      "targetSlots": [
+        "plate-overhead",
+        "plate-three-quarter",
+        "dining-scene",
+        "dining-scene-square",
+        "menu-page"
+      ],
+      "criteria": "Each complete serving must allow a viewer to distinguish three chicken slices, four skin-on potato halves with cut faces upward, three carrot lengths and one lemon wedge with peel and exposed flesh. Require an ivory plate with a continuous charcoal rim. Compare apparent portion proportions with the supplied dish reference and the recipe record of 150 g chicken, 120 g potatoes, 80 g carrots and 20 g jus. Perspective and natural food variation are allowed; missing, added, uncountable or materially disproportionate portions fail. Photographs establish visual compatibility with the recipe, not measured food weights.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "plating-relationships",
+      "requirementId": "R-plating-relationships",
+      "method": "visual",
+      "targetSlots": [
+        "plate-overhead",
+        "plate-three-quarter",
+        "chicken-detail",
+        "menu-page"
+      ],
+      "criteria": "Use the supplied dish identity to assess the central overlapping chicken, upper-left potatoes, right-side carrots and lower lemon, accounting for camera perspective. The jus must read as a shallow amber pool under the chicken. In the detail view, compare the visible slice overlaps and lemon relationship with the complete views; ingredients outside its crop need not appear. Relocated ingredients, altered overlap relationships or jus presented as a separate portion fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "room-light-and-food-surfaces",
+      "requirementId": "R-room-light-and-food-surfaces",
+      "method": "visual",
+      "targetSlots": [
+        "plate-overhead",
+        "plate-three-quarter",
+        "chicken-detail",
+        "dining-scene",
+        "dining-scene-square",
+        "menu-page"
+      ],
+      "criteria": "Compare the photographs with the supplied room image and light plan. Visible table surfaces must read as matte warm grey corresponding to #ECE7DE, with soft west-window illumination and weaker east-side reflected fill. Allow plausible exposure and perspective differences while preserving the room's afternoon atmosphere. Browned chicken edges, meat detail, potato skins and carrot surfaces must remain legible wherever shown. A conflicting tabletop, reversed or hard main light, or smoothed-away food texture fails. Images need not show the reflector or a clock; they cannot establish the actual capture time.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "plate-framing-and-scene-crop",
+      "requirementId": "R-plate-framing-and-scene-crop",
+      "method": "visual",
+      "targetSlots": [
+        "plate-overhead",
+        "dining-scene",
+        "dining-scene-square"
+      ],
+      "criteria": "In the overhead and square images, the plate's outer horizontal span must occupy 80–90% of image width without cutting its rim or any serving component. Register the square image against the dining scene: a single crop and uniform resizing must explain the retained food, tableware, shadows and object positions. The square image must retain the source exposure. Objects outside the retained area may disappear, but moving objects, changing the camera view, regenerating the serving or changing exposure fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "menu-layout-and-reuse",
+      "requirementId": "R-menu-layout-and-reuse",
+      "method": "visual",
+      "targetSlots": [
+        "menu-page"
+      ],
+      "criteria": "Assess the page against the supplied geometry: a 180 × 270 mm trim layout, 3 mm bleed on each side and a 150 × 100 mm image window whose upper-left corner is 15 mm right and 40 mm down from the trim origin. Use relative geometry rather than an exact pixel count. The placed photograph must visibly match the delivered overhead image, allowing proportional resizing and window fitting that preserve the complete serving. Require the three fixed strings beside an emblem recognisably matching sprig-emblem.png: one charcoal #343A36 stem with three solid oval leaves. A substituted photograph, distorted serving, materially displaced window, missing wording or redesigned emblem fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "plate-overhead"
+      ]
+    },
+    {
+      "id": "three-quarter-view",
+      "requirementId": "R-three-quarter-view",
+      "method": "visual",
+      "targetSlots": [
+        "plate-three-quarter"
+      ],
+      "criteria": "Require an oblique view that shows the entire plate and makes the chicken's thickness, slice overlaps and stoneware side profile visible. The precise camera elevation may vary within a recognisable three-quarter view. An overhead substitute, edge-on view, cropped plate or hidden chicken thickness fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "chicken-detail-view",
+      "requirementId": "R-chicken-detail-view",
+      "method": "visual",
+      "targetSlots": [
+        "chicken-detail"
+      ],
+      "criteria": "Require a close framing in which all three chicken slices, the lemon wedge and visible jus can be identified, with enough detail to inspect browned edges and meat texture. The plate rim and other vegetables may fall outside the frame. A distant complete-serving view, missing slice or lemon, absent jus, or insufficient surface detail fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "dining-scene-contents",
+      "requirementId": "R-dining-scene-contents",
+      "method": "visual",
+      "targetSlots": [
+        "dining-scene"
+      ],
+      "criteria": "Require one complete plated serving accompanied by exactly one fork, one knife and one visibly empty water glass on the supplied dining-room tabletop. Arrangement may vary where the letter does not fix it. Visible furniture scale should be compatible with the recorded 900 × 700 mm table and 750 mm height; hidden dimensions need not be exposed or inferred. A second serving, missing or duplicate specified tableware, filled glass or incomplete serving fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "plate-form",
+      "requirementId": "R-plate-form",
+      "method": "visual",
+      "targetSlots": [
+        "plate-overhead",
+        "plate-three-quarter",
+        "chicken-detail",
+        "dining-scene",
+        "dining-scene-square",
+        "menu-page"
+      ],
+      "criteria": "Compare visible plate geometry with plate-and-menu-geometry.png. Require one consistent shallow stoneware form, an inner-well-to-outside-diameter ratio near 200:260, and a profile compatible with 24 mm height relative to 260 mm diameter wherever the side is visible. Allow perspective, food occlusion and the detail crop. A materially different well, deep bowl, inconsistent plate shape or incompatible profile fails; absolute physical dimensions cannot be measured from an uncalibrated photograph.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-coherent-dish-photography",
+      "requirementId": "R-set-coherent-dish-photography",
+      "method": "visual",
+      "targetSlots": [
+        "plate-three-quarter",
+        "chicken-detail",
+        "dining-scene",
+        "dining-scene-square",
+        "menu-page"
+      ],
+      "criteria": "The visible serving maintains the overhead photograph's ingredient identity, portion proportions, chicken overlaps and plating relationships across changes of view and crop. All photographs share the specified ivory charcoal-rimmed plate, matte warm grey tabletop and diffuse west light with east fill, including the photograph placed on the menu.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "plate-overhead"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "dish-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "lemon-chicken-identity.png"
+      ],
+      "subjectSlots": [
+        "plate-overhead",
+        "plate-three-quarter",
+        "chicken-detail",
+        "dining-scene",
+        "dining-scene-square",
+        "menu-page"
+      ],
+      "notes": "These ingredients and their positions define the dish throughout the set."
+    }
+  ]
+}

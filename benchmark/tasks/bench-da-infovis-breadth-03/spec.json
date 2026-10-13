@@ -1,0 +1,1244 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-infovis-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "data",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "data-summary",
+      "label": "Data summary and chart inventory",
+      "description": "A two-page data summary and chart inventory covering archive fields, counting rules, category encoding and chart specifications.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "image-index",
+      "label": "Landscape collection image index",
+      "description": "A landscape archive index pairing all eight photographs with their piece IDs and five browsing facets.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "vessel-classification",
+      "label": "Vessel form classification",
+      "description": "A vessel form classification sheet with four category counts and matching piece thumbnails.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "glaze-classification",
+      "label": "Glaze category classification",
+      "description": "A glaze classification sheet showing recorded label memberships, distinct-piece counts and the missing-glaze piece.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "batch-distribution",
+      "label": "Firing batch and status distribution",
+      "description": "A firing batch distribution sheet with Finished, Second and Missing status counts for each batch group.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "annual-distribution",
+      "label": "Annual piece distribution",
+      "description": "An annual distribution sheet showing three, three and two pieces by record year.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "form-glaze-relationships",
+      "label": "Vessel form and glaze relationships",
+      "description": "A vessel-form-to-glaze relationship sheet with intersection counts and contributing piece IDs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "record-completeness",
+      "label": "Record completeness",
+      "description": "A record-completeness sheet showing the 62.5% calculation and missing fields for three pieces.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "detail-kl-002",
+      "label": "KL-002 sample detail",
+      "description": "A KL-002 detail page with its photograph, seven core fields and shared-category or batch links.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "detail-kl-007",
+      "label": "KL-007 sample detail",
+      "description": "A KL-007 detail page with its photograph, seven core fields and shared-category links.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "portrait-browsing",
+      "label": "Portrait archive browsing example",
+      "description": "A portrait browsing example following Ash to KL-002, B24-01 and KL-001.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "collection-summary",
+      "label": "A4 collection summary",
+      "description": "A one-page A4 collection summary with annual counts, glaze memberships and record completeness.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "archive-walkthrough",
+      "label": "Archive walkthrough video",
+      "description": "A 10-second archive walkthrough following the portrait browsing sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "archive-presentation",
+      "label": "Archive presentation",
+      "description": "A presentation of at least eight pages reusing the archive specification, index, charts, detail pages and browsing sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "archive-name",
+      "kind": "text-verbatim",
+      "text": "KILN LEDGER",
+      "scope": {
+        "slots": [
+          "image-index",
+          "detail-kl-002",
+          "detail-kl-007",
+          "portrait-browsing",
+          "collection-summary",
+          "archive-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "missing-label",
+      "kind": "text-verbatim",
+      "text": "Missing",
+      "scope": {
+        "slots": [
+          "glaze-classification",
+          "batch-distribution",
+          "detail-kl-007"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "KILN LEDGER",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-archive-encoding",
+      "slots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "batch-distribution",
+        "annual-distribution",
+        "form-glaze-relationships",
+        "record-completeness",
+        "detail-kl-002",
+        "detail-kl-007",
+        "portrait-browsing"
+      ],
+      "sourceSlots": [
+        "data-summary"
+      ],
+      "items": [
+        {
+          "item": "Where category encoding appears, its colour assignments and direct labels agree across the image files and with the opening data summary.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The archive views preserve permanent piece IDs and consistently distinguish distinct pieces, recorded glaze memberships and absent record values.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "KILN LEDGER"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "image-index",
+      "vessel-classification",
+      "glaze-classification",
+      "batch-distribution",
+      "annual-distribution",
+      "form-glaze-relationships",
+      "record-completeness",
+      "detail-kl-002",
+      "detail-kl-007",
+      "portrait-browsing"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge archive information design and readability, not the craftsmanship of the photographed pottery or the lighting and material quality of supplied photographs."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "data-summary",
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "batch-distribution",
+        "annual-distribution",
+        "form-glaze-relationships",
+        "record-completeness",
+        "detail-kl-002",
+        "detail-kl-007",
+        "portrait-browsing",
+        "collection-summary",
+        "archive-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "batch-distribution",
+        "annual-distribution",
+        "form-glaze-relationships",
+        "record-completeness",
+        "detail-kl-002",
+        "detail-kl-007",
+        "portrait-browsing"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-data-summary",
+      "requirementId": "R-format-data-summary",
+      "method": "artifact-property",
+      "targetSlots": [
+        "data-summary"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-image-index",
+      "requirementId": "R-format-image-index",
+      "method": "artifact-property",
+      "targetSlots": [
+        "image-index"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-vessel-classification",
+      "requirementId": "R-format-vessel-classification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "vessel-classification"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-glaze-classification",
+      "requirementId": "R-format-glaze-classification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "glaze-classification"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-batch-distribution",
+      "requirementId": "R-format-batch-distribution",
+      "method": "artifact-property",
+      "targetSlots": [
+        "batch-distribution"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-annual-distribution",
+      "requirementId": "R-format-annual-distribution",
+      "method": "artifact-property",
+      "targetSlots": [
+        "annual-distribution"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-form-glaze-relationships",
+      "requirementId": "R-format-form-glaze-relationships",
+      "method": "artifact-property",
+      "targetSlots": [
+        "form-glaze-relationships"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-record-completeness",
+      "requirementId": "R-format-record-completeness",
+      "method": "artifact-property",
+      "targetSlots": [
+        "record-completeness"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-detail-kl-002",
+      "requirementId": "R-format-detail-kl-002",
+      "method": "artifact-property",
+      "targetSlots": [
+        "detail-kl-002"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-detail-kl-007",
+      "requirementId": "R-format-detail-kl-007",
+      "method": "artifact-property",
+      "targetSlots": [
+        "detail-kl-007"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-portrait-browsing",
+      "requirementId": "R-format-portrait-browsing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "portrait-browsing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-collection-summary",
+      "requirementId": "R-format-collection-summary",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-summary"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-archive-walkthrough",
+      "requirementId": "R-format-archive-walkthrough",
+      "method": "manual",
+      "targetSlots": [
+        "archive-walkthrough"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-archive-presentation",
+      "requirementId": "R-format-archive-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "archive-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "summary-and-chart-inventory",
+      "requirementId": "R-summary-and-chart-inventory",
+      "method": "content",
+      "targetSlots": [
+        "data-summary"
+      ],
+      "criteria": "The document has two pages and defines Piece ID, Photograph, Vessel form, Glaze category, Firing batch, Finished status and Record date according to the supplied definitions. It explains permanent IDs KL-001 through KL-008, distinct-piece counting, multiple glaze labels, missing values, completeness and grouping years by record date. The inventory specifies data columns, chart type, units, display or print carrier and printed wording for each proposed chart. Organisation and chart choices may vary; missing definitions or inventory components fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ]
+    },
+    {
+      "id": "document-headline-facts-and-provenance",
+      "requirementId": "R-document-headline-facts-and-provenance",
+      "method": "content",
+      "targetSlots": [
+        "data-summary",
+        "collection-summary",
+        "archive-presentation"
+      ],
+      "criteria": "Each document explicitly states a collection of 8 pieces, 62.5% complete records and the exact credit Source: KILN LEDGER studio records, 2024-2026. Each chart actually included has its own title, appropriate unit, that credit and at least one supported reading annotation. All plotted quantities must agree with the supplied records or aggregate tables; unsupported values, omitted credits or ambiguous percentages fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ]
+    },
+    {
+      "id": "image-headline-facts-and-chart-provenance",
+      "requirementId": "R-image-headline-facts-and-chart-provenance",
+      "method": "visual",
+      "targetSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "batch-distribution",
+        "annual-distribution",
+        "form-glaze-relationships",
+        "record-completeness",
+        "detail-kl-002",
+        "detail-kl-007",
+        "portrait-browsing"
+      ],
+      "criteria": "The image index and portrait browsing example each visibly state 8 pieces, 62.5% complete records and Source: KILN LEDGER studio records, 2024-2026. Wherever a chart appears, it has a readable title, the exact source credit, an appropriate unit and at least one annotation explaining a supported observation. Use pieces for distinct-piece counts, glaze memberships for associations and % for completeness percentages. Check every plotted value against 03-piece-records.en.md; layout may vary, but unsupported quantities or missing chart information fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "index-and-classification-photo-assignment",
+      "requirementId": "R-index-and-classification-photo-assignment",
+      "method": "visual",
+      "targetSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification"
+      ],
+      "criteria": "The index includes all eight supplied piece photographs with their correct permanent IDs and exposes vessel form, glaze category, firing batch, finished status and record date as the five browsing facets. Classification thumbnails retain the same photograph-to-ID mapping and appear in the correct categories. KL-002 belongs to Ash and Iron; KL-005 belongs to Ash and Clear; KL-006 belongs to Missing glaze. Cropping or scaling may vary if identity remains clear; substituted pots, swapped IDs, omitted pieces or incorrect memberships fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "sample-detail-records-and-links",
+      "requirementId": "R-sample-detail-records-and-links",
+      "method": "visual",
+      "targetSlots": [
+        "detail-kl-002",
+        "detail-kl-007"
+      ],
+      "criteria": "Each page includes the assigned photograph and all seven core fields. KL-002 reads Cup; Ash and Iron; B24-01; Finished; 2024-03-18. KL-007 reads Vase; Iron; Missing firing batch; Second; 2026-02-09. Piece ID and Photograph are also represented. Each page provides identifiable related-piece links justified by a shared recorded category or batch. Labels and field order may vary; incorrect dates or statuses, lost glaze labels, invented batch information or unrelated links fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "image-index"
+      ]
+    },
+    {
+      "id": "portrait-retrieval-sequence",
+      "requirementId": "R-portrait-retrieval-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "portrait-browsing"
+      ],
+      "criteria": "The portrait example makes the ordered route Ash → KL-002 → B24-01 → KL-001 legible, showing how category selection reaches the cup and its recorded batch reaches the other piece. The KL-002 and KL-001 images match their assigned photographs. Panels, arrows or interface states may convey the route; skipped stages, reversed relationships or a different destination fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "image-index",
+        "detail-kl-002"
+      ]
+    },
+    {
+      "id": "walkthrough-duration-and-route",
+      "requirementId": "R-walkthrough-duration-and-route",
+      "method": "manual",
+      "targetSlots": [
+        "archive-walkthrough"
+      ],
+      "criteria": "Review the whole video and its playback duration. It lasts 10 seconds and follows Ash → KL-002 → B24-01 → KL-001 in that order, using the same assigned photographs and a sequence consistent with the portrait example. Transitions and pacing may vary; an incorrect duration, missing stage, substituted photograph or different retrieval path fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "portrait-browsing",
+        "image-index"
+      ]
+    },
+    {
+      "id": "vessel-and-annual-counts",
+      "requirementId": "R-vessel-and-annual-counts",
+      "method": "visual",
+      "targetSlots": [
+        "vessel-classification",
+        "annual-distribution"
+      ],
+      "criteria": "The vessel sheet assigns 2 pieces each to Bowl, Cup, Vase and Plate. The annual sheet assigns 3 to 2024, 3 to 2025 and 2 to 2026 using record dates. Each distribution accounts for 8 distinct pieces. Category order and chart type may vary; omitted groups, incorrect labels, mismatched marks or incorrect counts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "batch-outcome-distributions",
+      "requirementId": "R-batch-outcome-distributions",
+      "method": "visual",
+      "targetSlots": [
+        "batch-distribution"
+      ],
+      "criteria": "The sheet communicates recorded status distributions, with Finished/Second/Missing counts of 2/0/0 for B24-01, 0/1/0 for B24-02, 3/0/0 for B25-01, 0/0/1 for B26-01 and 0/1/0 for Missing batch. Batch totals are respectively 2, 1, 3, 1 and 1. Zero counts may be conveyed by an unambiguous chart convention. Missing batch and missing finished status remain distinguishable. Incorrect breakdowns or claims that the data establish causal firing performance fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "glaze-membership-totals",
+      "requirementId": "R-glaze-membership-totals",
+      "method": "visual",
+      "targetSlots": [
+        "glaze-classification",
+        "form-glaze-relationships"
+      ],
+      "criteria": "Each sheet communicates Ash 3, Iron 3 and Clear 3, totalling 9 recorded glaze memberships among 7 distinct pieces, plus 1 piece with Missing glaze and 8 distinct archive pieces overall. Multiple memberships are visibly distinguished from the archive count. Layout may vary; treating 9 memberships as 9 pots, counting Missing as a recorded glaze membership or omitting a required total fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "collection-summary-data",
+      "requirementId": "R-collection-summary-data",
+      "method": "content",
+      "targetSlots": [
+        "collection-summary"
+      ],
+      "criteria": "The summary states annual counts 2024: 3, 2025: 3 and 2026: 2; glaze counts Ash: 3, Iron: 3 and Clear: 3; 9 recorded glaze memberships across 7 pieces; 1 piece with Missing glaze; and an archive total of 8 distinct pieces. It visibly includes 5 ÷ 8 × 100 = 62.5% as the complete-record calculation. Chart or table presentation may vary; omitted quantities, conflated units or a missing calculation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ]
+    },
+    {
+      "id": "completeness-calculation-and-missing-fields",
+      "requirementId": "R-completeness-calculation-and-missing-fields",
+      "method": "visual",
+      "targetSlots": [
+        "record-completeness"
+      ],
+      "criteria": "The sheet displays 5 ÷ 8 × 100 = 62.5%, identifies five complete records out of eight using all seven populated core fields as the criterion, and lists KL-006 with absent glaze category, KL-007 with absent firing batch and KL-008 with absent finished status. Any additional completeness figures agree with the supplied table, including 3 incomplete records and 37.5% if shown. Arrangement may vary; wrong record-field associations or an unsupported completeness definition fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "form-glaze-intersections",
+      "requirementId": "R-form-glaze-intersections",
+      "method": "visual",
+      "targetSlots": [
+        "form-glaze-relationships"
+      ],
+      "criteria": "The sheet labels associations as glaze membership and makes intersection counts and contributing IDs readable. Nonzero intersections are Bowl–Ash: 2, KL-001 and KL-005; Bowl–Clear: 1, KL-005; Cup–Ash: 1, KL-002; Cup–Iron: 1, KL-002; Cup–Missing: 1, KL-006; Vase–Iron: 2, KL-003 and KL-007; Plate–Clear: 2, KL-004 and KL-008. All other intersections are zero, shown explicitly or by a clear empty-intersection convention. Matrix or network form may vary; incorrect connections, counts or missing contributing IDs fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "document-category-encoding",
+      "requirementId": "R-document-category-encoding",
+      "method": "content",
+      "targetSlots": [
+        "data-summary",
+        "collection-summary",
+        "archive-presentation"
+      ],
+      "criteria": "The data summary specifies and the presentation applies Ash #0072B2, Iron #E69F00, Clear #CC79A7 and Missing #666666. Any category colour encoding in the collection summary follows the same mapping. Charts in these documents identify categories directly and start every quantitative axis at zero; charts without quantitative axes need no added axis. Named colours must not be swapped, direct labels must not be replaced by colour-only interpretation, and truncated quantitative axes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ]
+    },
+    {
+      "id": "image-category-encoding-and-axes",
+      "requirementId": "R-image-category-encoding-and-axes",
+      "method": "visual",
+      "targetSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "batch-distribution",
+        "annual-distribution",
+        "form-glaze-relationships",
+        "record-completeness",
+        "detail-kl-002",
+        "detail-kl-007",
+        "portrait-browsing"
+      ],
+      "criteria": "The glaze classification and relationship sheets use the specified category mapping, and any category encoding elsewhere preserves Ash blue #0072B2, Iron orange #E69F00, Clear purple #CC79A7 and Missing grey #666666. Every chart directly names its categories with labels that remain readable in grayscale. Every quantitative axis visibly starts at zero; axis-free charts are allowed. Minor rendering differences are acceptable, but category swaps, colour-only decoding, unreadable labels or truncated quantitative axes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "document-geometry-and-presentation-structure",
+      "requirementId": "R-document-geometry-and-presentation-structure",
+      "method": "content",
+      "targetSlots": [
+        "collection-summary",
+        "archive-presentation"
+      ],
+      "criteria": "The collection summary occupies one A4 portrait page with 12 mm margins on every side, assessed from page geometry rather than image pixel dimensions. The presentation has at least eight pages and repeats the opening summary's seven-field structure and 5 ÷ 8 × 100 = 62.5% calculation. Layout and page ordering may vary; incorrect page geometry, encroaching content, insufficient presentation pages or missing repeated information fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "sourceSlots": [
+        "data-summary"
+      ]
+    },
+    {
+      "id": "tablet-surface-fit",
+      "requirementId": "R-tablet-surface-fit",
+      "method": "visual",
+      "targetSlots": [
+        "image-index",
+        "portrait-browsing"
+      ],
+      "criteria": "The index fits a landscape viewing area proportioned 240 × 135 mm, and the browsing example fits a portrait area proportioned 135 × 240 mm, consistent with archive-surfaces.png. Required content remains within the usable view and legible at the intended tablet scale. Do not require exact pixel dimensions; wrong orientation, materially incompatible proportions or clipped required content fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "presentation-reuses-delivered-work",
+      "requirementId": "R-presentation-reuses-delivered-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "archive-presentation"
+      ],
+      "criteria": "The presentation visibly incorporates identifiable material from every listed source, including the opening data summary and coding rules, index, all six chart sheets, both detail pages and portrait retrieval sequence. Scaling, cropping and page composition may change if the source content remains recognisable and readable. Merely mentioning a source, replacing it with unrelated work or omitting any listed source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "sourceSlots": [
+        "data-summary",
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "batch-distribution",
+        "annual-distribution",
+        "form-glaze-relationships",
+        "record-completeness",
+        "detail-kl-002",
+        "detail-kl-007",
+        "portrait-browsing"
+      ]
+    },
+    {
+      "id": "absent-record-values",
+      "requirementId": "R-absent-record-values",
+      "method": "visual",
+      "targetSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "batch-distribution",
+        "annual-distribution",
+        "form-glaze-relationships",
+        "record-completeness",
+        "detail-kl-002",
+        "detail-kl-007",
+        "portrait-browsing"
+      ],
+      "criteria": "Whenever an absent record value or its category is displayed, it uses the literal token Missing. In particular, KL-006's glaze, KL-007's firing batch and KL-008's finished status must not be inferred from appearance or replaced with invented values. A file need not introduce a field it otherwise does not show; blanks, dashes or alternative tokens used in place of a displayed absent value fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "distinct-piece-and-multilabel-counting",
+      "requirementId": "R-distinct-piece-and-multilabel-counting",
+      "method": "visual",
+      "targetSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "batch-distribution",
+        "annual-distribution",
+        "form-glaze-relationships",
+        "record-completeness",
+        "detail-kl-002",
+        "detail-kl-007",
+        "portrait-browsing"
+      ],
+      "criteria": "Any displayed selection or category total counts unique piece IDs, while explicitly labelled glaze-membership totals may count the same piece once per recorded glaze label. KL-002 retains Ash and Iron memberships, and KL-005 retains Ash and Clear memberships wherever their glaze record is shown. Chart form may vary; dropping a recorded label or summing overlapping categories into an inflated distinct-piece total fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-shared-archive-encoding",
+      "requirementId": "R-set-shared-archive-encoding",
+      "method": "visual",
+      "targetSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "batch-distribution",
+        "annual-distribution",
+        "form-glaze-relationships",
+        "record-completeness",
+        "detail-kl-002",
+        "detail-kl-007",
+        "portrait-browsing"
+      ],
+      "criteria": "Where category encoding appears, its colour assignments and direct labels agree across the image files and with the opening data summary. The archive views preserve permanent piece IDs and consistently distinguish distinct pieces, recorded glaze memberships and absent record values.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-03/03-piece-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "data-summary"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "piece-kl-001",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "kl-001.png"
+      ],
+      "subjectSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "portrait-browsing"
+      ],
+      "notes": "The image index and classification sheets pair each thumbnail with the ID assigned to its photograph."
+    },
+    {
+      "id": "piece-kl-002",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "kl-002.png"
+      ],
+      "subjectSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "detail-kl-002",
+        "portrait-browsing"
+      ],
+      "notes": "The KL-002 and KL-007 detail pages reproduce their respective records, and the browsing example and video follow Ash → KL-002 → B24-01 → KL-001 using those same photographs."
+    },
+    {
+      "id": "piece-kl-003",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "kl-003.png"
+      ],
+      "subjectSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification"
+      ],
+      "notes": "The image index and classification sheets pair each thumbnail with the ID assigned to its photograph."
+    },
+    {
+      "id": "piece-kl-004",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "kl-004.png"
+      ],
+      "subjectSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification"
+      ],
+      "notes": "The image index and classification sheets pair each thumbnail with the ID assigned to its photograph."
+    },
+    {
+      "id": "piece-kl-005",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "kl-005.png"
+      ],
+      "subjectSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification"
+      ],
+      "notes": "The image index and classification sheets pair each thumbnail with the ID assigned to its photograph."
+    },
+    {
+      "id": "piece-kl-006",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "kl-006.png"
+      ],
+      "subjectSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification"
+      ],
+      "notes": "The image index and classification sheets pair each thumbnail with the ID assigned to its photograph."
+    },
+    {
+      "id": "piece-kl-007",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "kl-007.png"
+      ],
+      "subjectSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification",
+        "detail-kl-007"
+      ],
+      "notes": "The KL-002 and KL-007 detail pages reproduce their respective records, and the browsing example and video follow Ash → KL-002 → B24-01 → KL-001 using those same photographs."
+    },
+    {
+      "id": "piece-kl-008",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "kl-008.png"
+      ],
+      "subjectSlots": [
+        "image-index",
+        "vessel-classification",
+        "glaze-classification"
+      ],
+      "notes": "The image index and classification sheets pair each thumbnail with the ID assigned to its photograph."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "opening-summary-facts",
+      "fromSlot": "data-summary",
+      "toSlots": [
+        "image-index",
+        "portrait-browsing",
+        "collection-summary",
+        "archive-presentation"
+      ],
+      "extract": [
+        "collection size of 8 distinct pieces",
+        "complete-record percentage of 62.5%",
+        "source credit: Source: KILN LEDGER studio records, 2024-2026"
+      ],
+      "notes": "Repeat all three on the landscape image index, portrait browsing example, A4 summary and presentation; every chart carries that source credit, a title, its unit and one reading annotation."
+    },
+    {
+      "id": "presentation-record-structure",
+      "fromSlot": "data-summary",
+      "toSlots": [
+        "archive-presentation"
+      ],
+      "extract": [
+        "seven core fields and their definitions",
+        "complete-record calculation"
+      ],
+      "notes": "The presentation contains at least 8 pages and repeats the seven-field structure and complete-record calculation from the opening data summary."
+    }
+  ]
+}

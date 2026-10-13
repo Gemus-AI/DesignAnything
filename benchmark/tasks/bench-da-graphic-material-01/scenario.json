@@ -1,0 +1,134 @@
+{
+  "id": "bench-da-graphic-material-01",
+  "title": "LANTERN TRANSIT — Overnight rail closure and replacement bus notices, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GRAPHIC",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# Lantern Transit — operations and artwork facts\n\n## Identity and normal network\n- Operator: Lantern Transit\n- Rail line: L1\n- Line colour name: Indigo\n- Line colour: #2856A3\n- Normal station order: West Dock — Alder Gate — Civic Hall — Foundry — East Market — Garden End\n- Adjacent-station rail connections: both directions\n- Supplied network extent: six stations on L1\n- Existing network image: 03-existing-network.png\n- Existing diagram function: normal-service topology\n- Diagram spacing: schematic\n\n## Track renewal\n| Record | Value |\n| --- | --- |\n| Work | Track renewal |\n| Affected section | Alder Gate–East Market |\n| Closure direction | Both directions |\n| Closure start | 17 October 2027 at 22:00 |\n| Closure end | 18 October 2027 at 05:00 |\n| Interval | One overnight closure |\n| Clock | 24-hour, local time |\n| Affected rail service | No L1 trains between Alder Gate and East Market during the interval |\n| Operating western section | West Dock–Alder Gate, both directions |\n| Operating eastern section | East Market–Garden End, both directions |\n| Stations without rail service | Civic Hall; Foundry |\n| Planned rail resumption | 18 October 2027 at 05:00 |\n\n## Replacement bus B1\n| Record | Value |\n| --- | --- |\n| Route | B1 |\n| Service description | free replacement bus |\n| Service endpoints | Alder Gate; East Market |\n| Service period | 17 October 2027 at 22:00 to 18 October 2027 at 05:00 |\n| Planned service frequency | every 12 minutes |\n| Frequency meaning | Planned interval between buses |\n| Stopping pattern | All four stops, both directions |\n| B1 fare | Free |\n| Operating rail-section fares | Normal rail fares |\n| Planned vehicle provision | Low-floor buses |\n| Optional vehicle wording | low-floor buses are planned |\n\n## Directional stop records\n| Order toward East Market | Order toward Alder Gate | Station | Boarding stop |\n| --- | --- | --- | --- |\n| 1 | 4 | Alder Gate | Exit 2, Stop A |\n| 2 | 3 | Civic Hall | South Stop C |\n| 3 | 2 | Foundry | East Stop F |\n| 4 | 1 | East Market | Exit 1, Stop E |\n\n## Terminal boarding records\n| Boarding station | Exit | Stop | B1 destination |\n| --- | --- | --- | --- |\n| Alder Gate | Exit 2 | Stop A | East Market |\n| East Market | Exit 1 | Stop E | Alder Gate |\n\n## Artwork wording and information\n- Shared printed strings: Lantern Transit; L1; B1; free replacement bus; every 12 minutes\n- Shared closure information: complete overnight interval; Alder Gate–East Market; no L1 trains; both directions\n- Shared boarding information: named stop and destination for the artwork's direction\n- Station-notice rail information: both operating rail sections; Civic Hall and Foundry without rail service\n- Route-sheet information: six-station rail network; all four B1 stop records in directional order; both-direction bus operation; normal fares on operating rail sections; planned rail resumption\n- Mobile boarding information: corresponding terminal exit, stop and destination\n- Date rendering: unambiguous English date format\n- Text rendering: typographic capitalization and line breaks may vary\n- Highest two text levels: closure interval; boarding destination\n- L1 colour role: Indigo, #2856A3\n- B1 visual role: distinguishable from L1\n- Closure and direction cues: words, route labels and directional arrows alongside colour\n- Body-text contrast: at least 4.5:1\n- Large-text and essential-route-graphic contrast: at least 3:1\n\n## Reading and carrier dimensions\n| Artwork | Location or use | Trim dimensions | Reading distance | Minimum visible letter height |\n| --- | --- | --- | --- | --- |\n| Alder Gate station notice | Ticket gate | A3 portrait, 297 × 420 mm | 1000 mm | 4 mm |\n| East Market station notice | Platform column | A1 portrait, 594 × 841 mm | 2000 mm | 8 mm |\n| East Market-bound route sheet | Close reading | A4 portrait, 210 × 297 mm | 400 mm | 2.5 mm |\n| Alder Gate-bound route sheet | Close reading | A4 portrait, 210 × 297 mm | 400 mm | 2.5 mm |\n| Alder Gate mobile notification | Phone reading | Portrait | 400 mm | Text size: 16 logical units |\n| East Market mobile notification | Phone reading | Portrait | 400 mm | Text size: 16 logical units |\n\n- Print bleed: 3 mm on all four print artworks\n- Print internal safe margin: at least 5 mm\n- Mobile internal safe margin: 24 logical units\n- Mobile reference canvas: 360 × 640 logical units\n- Commuter reading context: movement through ticket gates, divided attention, short decision time\n- Constraint drawing: 04-reading-positions.png\n- Atmosphere reference: 05-morning-concourse.png\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# LANTERN TRANSIT — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | alder-gate-notice | Alder Gate ticket-gate notice | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | east-market-notice | East Market platform-column notice | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | route-toward-east-market | Replacement-route sheet toward East Market | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | route-toward-alder-gate | Replacement-route sheet toward Alder Gate | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | alder-gate-mobile | Alder Gate mobile notification | 6 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | east-market-mobile | East Market mobile notification | 6 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 03-existing-network.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 04-reading-positions.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 05-morning-concourse.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "LANTERN TRANSIT | Overnight rail closure and replacement bus notices\n\nWe need six finished artworks to help Lantern Transit passengers change routes during track renewal. L1 is Indigo, #2856A3, with the normal station order West Dock — Alder Gate — Civic Hall — Foundry — East Market — Garden End. From 17 October 2027 at 22:00 until 18 October 2027 at 05:00, L1 has no trains between Alder Gate and East Market in either direction. Trains continue between West Dock and Alder Gate and between East Market and Garden End, both ways; Civic Hall and Foundry have no rail service. This is one overnight closure, with rail service planned to resume on 18 October 2027 at 05:00. All times are local and use the 24-hour clock.\n\nB1 runs throughout that interval, serving Alder Gate — Exit 2, Stop A; Civic Hall — South Stop C; Foundry — East Stop F; and East Market — Exit 1, Stop E, in that order toward East Market and the reverse order toward Alder Gate. It serves all four stops in both directions, with Alder Gate and East Market as its endpoints. Print \"Lantern Transit\", \"free replacement bus\" and \"every 12 minutes\" on every artwork, alongside L1 and B1. The 12 minutes is the planned bus frequency. Normal rail fares apply on the operating rail sections. Passengers at Alder Gate use Exit 2 and Stop A toward East Market; passengers at East Market use Exit 1 and Stop E toward Alder Gate. The notices meet passengers at a ticket gate and a platform column, the route sheets support close reading, and the mobile versions support a quick decision while approaching the station.\n\nAudience: commuters changing their usual route, deciding where rail service ends and which B1 stop and direction to use.\n\nInputs (attached): 01-client-facts.en.md contains the network, closure, bus operations, fixed wording and reading conditions. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. 03-existing-network.png is the identity input for the existing six-station order and Indigo L1 treatment. 04-reading-positions.png is the constraint drawing for the ticket-gate notice, platform-column notice, route sheets and mobile reading conditions. 05-morning-concourse.png is an atmosphere reference for passenger movement and divided attention at a busy ticket gate.\n\nDeliverables:\n1. Two station notices: an A3 portrait ticket-gate notice at Alder Gate directing passengers through Exit 2 to Stop A toward East Market, and an A1 portrait platform-column notice at East Market directing passengers through Exit 1 to Stop E toward Alder Gate; each with the closure interval, affected section, both operating rail sections and B1 service information\n2. Two A4 portrait replacement-route sheets, one toward East Market and one toward Alder Gate, each showing the six-station network, the closed rail section, both operating rail sections and all four named B1 stops in its travel order\n3. Two mobile notification layouts, one for boarding at Alder Gate via Exit 2, Stop A toward East Market and one for boarding at East Market via Exit 1, Stop E toward Alder Gate, each with the closure interval, affected section and B1 service information\n\nAcceptance:\n- All six artworks print Lantern Transit, L1, B1, free replacement bus and every 12 minutes; show the complete interval from 17 October 2027 at 22:00 to 18 October 2027 at 05:00; and state that L1 has no trains between Alder Gate and East Market in both directions. Give the closure interval and boarding destination the two largest text levels, and identify every 12 minutes as the planned B1 frequency.\n- Both station notices and both replacement-route sheets identify West Dock–Alder Gate and East Market–Garden End as operating rail sections in both directions, and Civic Hall and Foundry as having no rail service. Both route sheets also state that normal rail fares apply on the operating sections and that rail service is planned to resume on 18 October 2027 at 05:00.\n- The East Market-bound route sheet shows Alder Gate — Exit 2, Stop A; Civic Hall — South Stop C; Foundry — East Stop F; East Market — Exit 1, Stop E in that order. The Alder Gate-bound sheet reverses those four records. Both sheets identify B1 as serving all four stops in both directions between Alder Gate and East Market, using the fixed six-station rail order from West Dock to Garden End.\n- The Alder Gate station notice and mobile notification pair Exit 2, Stop A with the destination East Market. The East Market station notice and mobile notification pair Exit 1, Stop E with the destination Alder Gate. Their arrows agree with their written B1 destinations.\n- All six artworks retain #2856A3 for L1, use a distinguishable treatment for B1, and combine colour with route labels, directional arrows and written rail-closure status. Body text has contrast of at least 4.5:1 against its background; large text and essential route graphics have contrast of at least 3:1.\n- The A3 notice is 297 × 420 mm with minimum visible letter height 4 mm for reading at 1000 mm; the A1 notice is 594 × 841 mm with minimum letter height 8 mm at 2000 mm. Both A4 sheets are 210 × 297 mm with minimum letter height 2.5 mm at 400 mm. These four print artworks have 3 mm bleed and at least 5 mm internal safe margins. Both mobile notifications use text of at least 16 logical units and internal safe margins of 24 logical units for reading at 400 mm.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/03-existing-network.png",
+      "nodeId": "provided-image-1",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "9e49bde4ca259445852aeddec24867613c0f04db9cc0ac6f4590c40e639b6b90"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/04-reading-positions.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "caf92f12d98e64a603917b62e01799966871c7a1e54f0ff1140a424b899750c5"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/05-morning-concourse.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "1b24530b594ab11f770d4030a6f62e6497394d28ed6e2984abe796c79ec79ef0"
+    }
+  ]
+}

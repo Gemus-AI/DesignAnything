@@ -1,0 +1,613 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-fashion-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "dress-front",
+      "label": "Finished dress front flat",
+      "description": "One finished front flat of the dress with seams, sleeve windows and numbered lace areas.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dress-back",
+      "label": "Finished dress back flat",
+      "description": "One finished back flat of the dress with fastening, upper-back window and numbered lace areas.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "lace-allocation",
+      "label": "Dimensioned archive lace allocation",
+      "description": "One dimensioned allocation drawing of all numbered lace pieces and cutting allowances within the available rectangle.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "construction-details",
+      "label": "Lace and coverage construction details",
+      "description": "One construction detail sheet with the motif, three coverage assemblies and inside neck label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ceremony-standing",
+      "label": "Standing ceremony look",
+      "description": "One full-length standing view of the wearer in the finished dress at a family ceremony.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ceremony-walking",
+      "label": "Walking ceremony look",
+      "description": "One full-length walking view of the same wearer and finished dress in the same family room.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "neck-label-project",
+      "kind": "text-verbatim",
+      "text": "HEIRLOOM HOUR",
+      "scope": {
+        "slots": [
+          "construction-details"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "neck-label-material",
+      "kind": "text-verbatim",
+      "text": "Archive lace 01",
+      "scope": {
+        "slots": [
+          "construction-details"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "HEIRLOOM HOUR",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "one-buildable-dress",
+      "slots": [
+        "dress-front",
+        "dress-back",
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "sourceSlots": [
+        "construction-details",
+        "lace-allocation"
+      ],
+      "items": [
+        {
+          "item": "The garment views agree with the construction assemblies and numbered lace allocation on the dress's structure, lace boundaries and transparency zones.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The archive motif, ivory material appearance and repeat system remain recognisable across technical drawings and worn fabric.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The completed dress maintains elbow-length sleeves, the specified below-knee hem and exactly the three prescribed transparency windows.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "continuous-family-occasion",
+      "slots": [
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "items": [
+        {
+          "item": "The wearer, dress and dining room remain the same between standing and walking, allowing changes in pose, camera position and natural drape.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "HEIRLOOM HOUR"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "dress-front",
+      "dress-back",
+      "lace-allocation",
+      "construction-details",
+      "ceremony-standing",
+      "ceremony-walking"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge image-only evidence as proof of actual fibre composition, fabric weight, physical fit or tested wearer comfort."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "dress-front",
+        "dress-back",
+        "lace-allocation",
+        "construction-details",
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-dress-front",
+      "requirementId": "R-format-dress-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dress-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dress-back",
+      "requirementId": "R-format-dress-back",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dress-back"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-lace-allocation",
+      "requirementId": "R-format-lace-allocation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "lace-allocation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-construction-details",
+      "requirementId": "R-format-construction-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ceremony-standing",
+      "requirementId": "R-format-ceremony-standing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ceremony-standing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ceremony-walking",
+      "requirementId": "R-format-ceremony-walking",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ceremony-walking"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "motif-structure-and-repeat",
+      "requirementId": "R-motif-structure-and-repeat",
+      "method": "visual",
+      "targetSlots": [
+        "dress-front",
+        "dress-back",
+        "lace-allocation",
+        "construction-details",
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "criteria": "Visible lace retains the supplied motif's round centre, six oval petals, descending stem and one pointed leaf on either side, arranged in aligned rows and columns. The allocation and enlarged motif detail explicitly distinguish a 60 mm width repeat from an 80 mm length repeat. Perspective and fabric drape may alter apparent spacing in worn views; changed motif anatomy, inverted motifs or a different underlying repeat fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "window-dimensions-and-opacity",
+      "requirementId": "R-window-dimensions-and-opacity",
+      "method": "visual",
+      "targetSlots": [
+        "dress-front",
+        "dress-back",
+        "construction-details",
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "criteria": "The front flat dimensions both front upper-sleeve openings at 100 × 120 mm; the back flat dimensions a centred 120 × 80 mm opening with its top edge 40 mm below the back neckline. Enlarged construction views document those dimensions and distinguish lace over organza, unbacked lace, and opaque backing. Worn views show semi-sheer sleeve openings, a sheer back opening wherever visible, and opacity everywhere else from neckline to hem. Natural occlusion is allowed; extra transparent areas, misplaced openings, incorrect dimensions or reversed assemblies fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "complete-feasible-lace-allocation",
+      "requirementId": "R-complete-feasible-lace-allocation",
+      "method": "visual",
+      "targetSlots": [
+        "dress-front",
+        "dress-back",
+        "lace-allocation"
+      ],
+      "criteria": "Every lace-covered garment area has a piece identifier traceable to a corresponding cutting piece, including both members of any pair. The drawing dimensions one usable rectangle as 900 mm wide and 2400 mm long, and places every required piece with its cutting allowance inside it without overlapping cutting footprints. Piece shapes and quantities plausibly supply the areas shown in the flats, with upright motifs and consistent repeat alignment. Any feasible arrangement is allowed; missing pieces, unexplained duplicate use of material, omitted allowances, overflow or rotated motifs fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "garment-agreement-and-worn-coverage",
+      "requirementId": "R-garment-agreement-and-worn-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "dress-front",
+        "dress-back",
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "criteria": "The flats and full-length worn views describe one calf-length dress with compatible seam paths, fastening construction and lace boundaries. Sleeves reach the elbows, and the standing image includes a readable 100 mm knee-to-hem annotation. The walking view shows the same adult wearer and preserves the intended garment coverage. Neckline, volume, fastening design and lace distribution over opaque areas may vary by design choice, but must agree across views; incompatible construction, changed wearer, cropped full-length evidence or exposed areas created during walking fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "readable-inside-neck-label",
+      "requirementId": "R-readable-inside-neck-label",
+      "method": "visual",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "An enlarged, readable label is identified or depicted at the inside neck, with HEIRLOOM HOUR on the first line and Archive lace 01 on the second. Label styling is open. Text appearing only as a sheet heading, an exterior label, reversed line order or illegible label lettering fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "archive-material-record",
+      "requirementId": "R-archive-material-record",
+      "method": "content",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "The material information identifies the archive lace as ivory, 70% cotton and 30% polyamide, warp-knitted, with a weight of 100 g/m². The enlarged lace depiction retains the supplied ivory thread and mesh appearance. Equivalent unit notation is acceptable; a substituted fibre mixture, construction, weight or colour fails, and appearance alone cannot establish composition or weight.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "backing-and-organza-materials",
+      "requirementId": "R-backing-and-organza-materials",
+      "method": "content",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "The assembly information assigns ivory 100% cupro plain weave at 90 g/m² to opaque backing and ivory 100% silk organza, plain weave, at 24 g/m² to the sleeve underlayers. Enlarged assembly views distinguish these layers from the archive lace. Equivalent technical notation is allowed; swapped materials, different specifications or organza assigned as backing to the sheer back window fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "domestic-ceremony-setting",
+      "requirementId": "R-domestic-ceremony-setting",
+      "method": "visual",
+      "targetSlots": [
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "criteria": "Both worn images depict an intimate family occasion in the same ordinary dining room, using soft window daylight and the supplied reference's domestic atmosphere. The setting includes a timber table, linen tablecloth and a small arrangement of garden flowers. Camera position and incidental family activity may differ; a studio, runway, unrelated room or conspicuously different lighting environment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "practical-anniversary-wear",
+      "requirementId": "R-practical-anniversary-wear",
+      "method": "visual",
+      "targetSlots": [
+        "dress-front",
+        "dress-back",
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "criteria": "The adult ceremony dress visibly accommodates ordinary seated dining, standing conversation and indoor walking through plausible ease and mobility. The walking image provides evidence of a natural stride and a composed silhouette. No seated image or particular neckline, volume or fastening is required; obvious restriction of ordinary movement or a silhouette that visibly obstructs dining fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-one-buildable-dress",
+      "requirementId": "R-set-one-buildable-dress",
+      "method": "visual",
+      "targetSlots": [
+        "dress-front",
+        "dress-back",
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "criteria": "The garment views agree with the construction assemblies and numbered lace allocation on the dress's structure, lace boundaries and transparency zones. The archive motif, ivory material appearance and repeat system remain recognisable across technical drawings and worn fabric. The completed dress maintains elbow-length sleeves, the specified below-knee hem and exactly the three prescribed transparency windows.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "construction-details",
+        "lace-allocation"
+      ]
+    },
+    {
+      "id": "set-continuous-family-occasion",
+      "requirementId": "R-set-continuous-family-occasion",
+      "method": "visual",
+      "targetSlots": [
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "criteria": "The wearer, dress and dining room remain the same between standing and walking, allowing changes in pose, camera position and natural drape.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "finished-dress-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "dress-front",
+      "subjectSlots": [
+        "dress-back",
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "notes": "Match the silhouette, seams, fastening and lace placement across both flat views and both worn images; show elbow-length sleeves and mark the hem 100 mm below the knee in the standing image, with the same coverage maintained during walking."
+    },
+    {
+      "id": "archive-lace-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "archive-lace-detail.png"
+      ],
+      "subjectSlots": [
+        "dress-front",
+        "dress-back",
+        "lace-allocation",
+        "construction-details",
+        "ceremony-standing",
+        "ceremony-walking"
+      ],
+      "notes": "Preserve that motif, its orientation and repeat spacing throughout."
+    },
+    {
+      "id": "same-wearer",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "ceremony-standing",
+      "subjectSlots": [
+        "ceremony-walking"
+      ],
+      "notes": "One full-length walking image of the same wearer and dress in the same room"
+    },
+    {
+      "id": "same-family-room",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "ceremony-standing",
+      "subjectSlots": [
+        "ceremony-walking"
+      ],
+      "notes": "One full-length walking image of the same wearer and dress in the same room"
+    }
+  ]
+}

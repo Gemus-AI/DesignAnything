@@ -1,0 +1,27 @@
+MORROW HOUSE | A collectible character pop-up with a story to enter
+
+We are bringing Morrow, our small collector of overlooked objects, into a temporary exhibition shop at Alder Court Mall from 6–22 November 2026, open daily 10:00–21:00. Adult collectors should be able to meet the character, contribute to its collection, take a photograph and browse three merchandise lines within a 12-minute visit. Print "MORROW HOUSE" and "Leave a little wonder" at the entrance. Morrow's ivory body, notched left ear, two black eyes and orange square satchel are the existing character identity; the exhibition layout and fixtures are open for exploration.
+
+The atrium is 40 × 32 m. Our footprint is 6000 × 8000 mm, with a maximum installation height of 3200 mm and a 1500 mm clear circulation strip around it. Within the footprint, the south entrance and exit are each 1500 mm wide. The north stockroom is 6000 × 1500 mm; the east service bay is 1500 × 2000 mm; the southeast queue bay is 3000 × 3000 mm for six adults. Main visitor routes have 1500 mm clear width. Plan for 12 visitors inside and three staff. The experience has three physical exhibits, MH-01–MH-03, one mechanical token activity and three retail SKUs. The experience uses physical objects and printed interpretation. The activity is free, with a direct route from participation to the exit as well as an optional shop branch.
+
+The reusable kit contains 12 aluminium frames and eight birch plywood plinths. Its parts are 24 uprights, 24 rails, 48 hand-knob corner blocks, 12 fabric skins, 48 plywood panels and 96 quarter-turn cams. The largest dismantled part is 2000 × 1000 × 100 mm; the kit travels in four cases. Plinth tops are 900 mm high and exhibit label centres are 1400 mm above the floor. Give each retail SKU 600 mm of display frontage and the checkout 1500 mm of counter length. The stockroom, queue and service reservations stay in the positions recorded in the operating-zones drawing.
+
+Audience: our character studio, mall operations team and exhibition fabricator, for the spatial concept decision, merchandise layout and installation brief.
+
+Inputs (attached): 01-client-facts.en.md contains the character, site, operating and fixture facts. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-object-records.en.md contains the exhibit records, exact label copy, activity sequence and merchandise data. plan-with-cameras.png records the atrium, allocated footprint and camera positions C1 and C2. operating-zones.png records the entrance, exit, clear circulation strip and reserved operating areas. morrow-character.png supplies the existing character's front, side and rear appearance. morrow-figure.png supplies the existing collectible figure's shape, finish and satchel detail. view-c1.png supplies the occupied mall atmosphere from C1 around the empty allocated area. view-c2.png supplies the occupied mall atmosphere from C2 around the same empty area.
+
+Deliverables:
+1. One dimensioned floor and visitor-flow plan, with the three exhibit records, activity, three retail SKUs, entrance, exit, stockroom, service bay and six-person queue
+2. One coordinated elevation and section sheet, with story labels, token activity, merchandise shelving, checkout, installation heights and the reusable kit's parts and packing schedule
+3. Two visitor perspectives of the complete exhibition shop, one from C1 and one from C2
+4. Two operating-state sheets, one open and one closed, with the same floor plan and supporting spatial details
+
+Acceptance:
+- The floor plan dimensions the 6000 × 8000 mm footprint, 1500 mm entrance, exit and clear routes, 6000 × 1500 mm stockroom, 1500 × 2000 mm service bay and 3000 × 3000 mm queue bay in the positions in operating-zones.png; its activity route reaches the exit and branches to the shop.
+- The floor plan and elevation and section sheet pair MH-01–MH-03 with their names, 2026 dates and zones from 03-object-records.en.md; the elevation and section sheet prints all three label bodies and the three activity steps exactly as recorded there.
+- The elevation and section sheet labels the 3200 mm height limit, 900 mm plinth tops, 1400 mm label centres, 600 mm frontage for each of the three SKUs and 1500 mm checkout length; its kit schedule accounts for all six component counts, the two connection methods, the 2000 × 1000 × 100 mm largest part and four cases.
+- The C1 and C2 perspectives use the floor plan's exhibit, activity and retail positions, preserve Morrow's ivory body, notched left ear, black eyes and orange square satchel, and show "MORROW HOUSE" and "Leave a little wonder" at the entrance.
+- The open-state sheet locates 12 visitors, three staff and six queue positions, with the six waiting visitors outside the count of 12; its activity detail shows the token tray, choice mechanism and reset position.
+- The closed-state sheet shows the same fixture positions as the open-state sheet, with exhibits covered, merchandise and tokens locked in the north stockroom, the checkout closed and entrance and exit closure barriers inside the footprint.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

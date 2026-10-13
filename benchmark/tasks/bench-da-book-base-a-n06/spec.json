@@ -1,0 +1,639 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-book-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "publication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "cover-flat",
+      "label": "Cover flat",
+      "description": "The cover flat with back cover, 12 mm spine and front cover including bleed.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "opener-chapter-1",
+      "label": "Chapter 1 opener",
+      "description": "The chapter opener page for Coloured Constellation Cards.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "spread-plate-03",
+      "label": "Plate spread, plate-03",
+      "description": "The plate spread for plate-03, accession number 46447i, with its four caption fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "spread-plate-10",
+      "label": "Plate spread, plate-10",
+      "description": "The plate spread for plate-10, accession number 46168i, with its four caption fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "spread-plate-18",
+      "label": "Plate spread, plate-18",
+      "description": "The plate spread for plate-18, accession number 46180i, with its four caption fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "index-by-accession",
+      "label": "Index spread by accession number",
+      "description": "The index spread listing all nineteen plates by accession number under the five chapter names.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "book-title",
+      "kind": "text-verbatim",
+      "text": "THE ENGRAVED SKY",
+      "scope": {
+        "slots": [
+          "cover-flat"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "cover-descriptor",
+      "kind": "text-verbatim",
+      "text": "Nineteen Plates of the Historical Sky",
+      "scope": {
+        "slots": [
+          "cover-flat"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "imprint-name",
+      "kind": "text-verbatim",
+      "text": "Meridian Sheet Press",
+      "scope": {
+        "slots": [
+          "cover-flat"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true
+    },
+    {
+      "id": "isbn-digits",
+      "kind": "text-verbatim",
+      "text": "978-1-7396-4412-8",
+      "scope": {
+        "slots": [
+          "cover-flat"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true
+    },
+    {
+      "id": "source-credit",
+      "kind": "text-verbatim",
+      "text": "Wellcome Collection",
+      "scope": {
+        "slots": [
+          "spread-plate-03",
+          "spread-plate-10",
+          "spread-plate-18"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "rights-label",
+      "kind": "text-verbatim",
+      "text": "Public Domain Mark",
+      "scope": {
+        "slots": [
+          "spread-plate-03",
+          "spread-plate-10",
+          "spread-plate-18"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true
+    },
+    {
+      "id": "no-date-string",
+      "kind": "text-verbatim",
+      "text": "No date recorded",
+      "scope": {
+        "slots": [
+          "spread-plate-03",
+          "spread-plate-10"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true
+    },
+    {
+      "id": "no-maker-string",
+      "kind": "text-verbatim",
+      "text": "No maker recorded",
+      "scope": {
+        "slots": [
+          "spread-plate-10",
+          "spread-plate-18"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "THE ENGRAVED SKY",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "page-system-6",
+      "slots": [
+        "spread-plate-03",
+        "spread-plate-10",
+        "spread-plate-18",
+        "opener-chapter-1",
+        "index-by-accession"
+      ],
+      "items": [
+        {
+          "item": "The five pages read as one book: one column structure, one margin set, one caption band at the foot, one folio and running-head treatment.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The designer's structural ink is the same dark navy on all pages while the reproduced plates keep their own colour.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "cover-to-interior-6",
+      "slots": [
+        "cover-flat",
+        "opener-chapter-1",
+        "spread-plate-03"
+      ],
+      "items": [
+        {
+          "item": "Cover typography and ink belong to the same system as the interior pages.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "THE ENGRAVED SKY",
+    "identityAnchors": {
+      "none": "Every declared identity rule of the family targets roles that tier 6 does not commission."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "cover-flat",
+      "opener-chapter-1",
+      "spread-plate-03",
+      "spread-plate-10",
+      "spread-plate-18",
+      "index-by-accession"
+    ],
+    "layoutExtras": false,
+    "naRules": "Do not judge material texture or lighting on the flat page files (cover flat, direction boards, openers, plate spreads and index spreads, which are print-plane layouts) and do not judge the engraving quality, colour or condition of the nineteen supplied historical plates, which are given artwork; only cover-object is judged as a lit physical object."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "cover-flat",
+        "opener-chapter-1",
+        "spread-plate-03",
+        "spread-plate-10",
+        "spread-plate-18",
+        "index-by-accession"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-cover-flat",
+      "requirementId": "R-format-cover-flat",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cover-flat"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-opener-chapter-1",
+      "requirementId": "R-format-opener-chapter-1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "opener-chapter-1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-spread-plate-03",
+      "requirementId": "R-format-spread-plate-03",
+      "method": "artifact-property",
+      "targetSlots": [
+        "spread-plate-03"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-spread-plate-10",
+      "requirementId": "R-format-spread-plate-10",
+      "method": "artifact-property",
+      "targetSlots": [
+        "spread-plate-10"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-spread-plate-18",
+      "requirementId": "R-format-spread-plate-18",
+      "method": "artifact-property",
+      "targetSlots": [
+        "spread-plate-18"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-index-by-accession",
+      "requirementId": "R-format-index-by-accession",
+      "method": "artifact-property",
+      "targetSlots": [
+        "index-by-accession"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "cover-flat-copy-and-barcode",
+      "requirementId": "R-cover-flat-copy-and-barcode",
+      "method": "visual",
+      "targetSlots": [
+        "cover-flat"
+      ],
+      "criteria": "On the flat, read the three panels separately. The front panel must carry both the title and the descriptor line. The spine panel must carry the imprint with its letters running so the words are read from the head down to the foot when the book stands upright; bottom-to-top or horizontally stacked letters fail. The back panel must hold a machine-style barcode block with the ISBN digits, placed in its lower right quadrant and clearly wider than tall in roughly a 40:25 ratio; a barcode centred, on the front, or square/portrait in proportion fails. Exact millimetre measurement is not expected — position and proportion are the evidence.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "caption-fields-order-and-record",
+      "requirementId": "R-caption-fields-order-and-record",
+      "method": "visual",
+      "targetSlots": [
+        "spread-plate-03",
+        "spread-plate-10",
+        "spread-plate-18"
+      ],
+      "criteria": "In each spread's caption block the four items must be readable in the stated sequence, top to bottom or left to right, with the credit last. The wording of the collection title, the accession number and the date-and-maker text must agree with the record for that plate (plate-03 = 46447i, plate-10 = 46168i, plate-18 = 46180i). Failure: a field missing, two fields swapped, an accession number belonging to a different plate, a shortened or paraphrased collection title, or a date or maker not in the record. Typographic styling of the fields (weight, italic, small caps, line breaks, separating rules) is free.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "absent-record-strings",
+      "requirementId": "R-absent-record-strings",
+      "method": "visual",
+      "targetSlots": [
+        "spread-plate-03",
+        "spread-plate-10",
+        "spread-plate-18"
+      ],
+      "criteria": "Where the record has no year or no maker, the caption must show the standing placeholder wording rather than an empty slot, a dash, 'unknown', 'n.d.', 'anon.' or a guessed date. The plate-03 caption needs the date placeholder and the maker names from the record; the plate-10 caption needs both placeholders; the plate-18 caption needs the maker placeholder and its bracketed place. Inventing a year or an engraver for any of these is a failure.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "credit-and-rights-close",
+      "requirementId": "R-credit-and-rights-close",
+      "method": "visual",
+      "targetSlots": [
+        "spread-plate-03",
+        "spread-plate-10",
+        "spread-plate-18"
+      ],
+      "criteria": "Each caption must end with the source name and the rights wording together, as the last of the four items. Either one alone, a different rights phrase (CC0, 'copyright free', 'public domain' in other words), or the credit floated away from the caption into a folio or margin is a failure. A separator between the two (dash, bullet, slash, new line) is allowed.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "grid-and-caption-zone",
+      "requirementId": "R-grid-and-caption-zone",
+      "method": "visual",
+      "targetSlots": [
+        "spread-plate-03",
+        "spread-plate-10",
+        "spread-plate-18",
+        "opener-chapter-1",
+        "index-by-accession"
+      ],
+      "criteria": "Compare the pages as a group. Plate images, headings, thumbnails and caption text must start and stop on a repeating vertical structure that reads as six equal columns with narrow gutters; elements may span several columns but must not cut a column in half differently on each page. The outer margin must read narrower than the foot margin, and those margins must be the same width on every page in the set. Every caption block must sit as a band at the bottom of the type area, occupying roughly the lowest eighth of it and never rising into the middle of the page or dropping below the foot margin. Failure: one page on a visibly different column count or margin set, or a caption floated beside or above the plate.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "chapter-one-opener-thumbnails",
+      "requirementId": "R-chapter-one-opener-thumbnails",
+      "method": "visual",
+      "targetSlots": [
+        "opener-chapter-1"
+      ],
+      "criteria": "The opener must name the chapter and show exactly nine distinct small reproductions, each recognisably one of the coloured constellation cards supplied for that chapter, with no card shown twice and none replaced by a plate from a later chapter. Ornamental or invented star drawings standing in for a card fail. Thumbnail size, arrangement and grid position are the designer's call as long as all nine read as the same family of reproductions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "index-spread-accession-labels",
+      "requirementId": "R-index-spread-accession-labels",
+      "method": "visual",
+      "targetSlots": [
+        "index-by-accession"
+      ],
+      "criteria": "Count the thumbnails: ten, one per plate from the later four chapters, grouped under those four chapter headings with the right plates beneath each heading. Each thumbnail must carry a readable accession number, and those numbers must match the record for the plate shown. Failure: a missing or repeated plate, a plate filed under the wrong chapter, an unlabelled thumbnail, or a number that belongs to another plate. Chapter 1 cards may not appear here.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "primary-ink-throughout",
+      "requirementId": "R-primary-ink-throughout",
+      "method": "visual",
+      "targetSlots": [
+        "cover-flat",
+        "opener-chapter-1",
+        "spread-plate-03",
+        "spread-plate-10",
+        "spread-plate-18",
+        "index-by-accession"
+      ],
+      "criteria": "Across the delivered pages, the designer's own ink — rules, headings, folios, caption type, panels, cover ground — must read as one dark desaturated navy of the same hue on every file. The reproduced historical plates keep their own colour and are not judged. Failure: a page whose structural ink drifts to black, mid blue, warm brown or another accent hue, or a set where the navy is visibly a different colour from file to file.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-page-system-6",
+      "requirementId": "R-set-page-system-6",
+      "method": "visual",
+      "targetSlots": [
+        "spread-plate-03",
+        "spread-plate-10",
+        "spread-plate-18",
+        "opener-chapter-1",
+        "index-by-accession"
+      ],
+      "criteria": "The five pages read as one book: one column structure, one margin set, one caption band at the foot, one folio and running-head treatment. The designer's structural ink is the same dark navy on all pages while the reproduced plates keep their own colour.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-cover-to-interior-6",
+      "requirementId": "R-set-cover-to-interior-6",
+      "method": "visual",
+      "targetSlots": [
+        "cover-flat",
+        "opener-chapter-1",
+        "spread-plate-03"
+      ],
+      "criteria": "Cover typography and ink belong to the same system as the interior pages.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/03-plate-records.md"
+      ],
+      "visualScope": "set"
+    }
+  ]
+}

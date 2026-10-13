@@ -1,0 +1,1299 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-game-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "character-world",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "art-style-sheet",
+      "label": "Art style sheet",
+      "description": "A one-page record of the palette, silhouette rules, brushwork, materials and world lighting.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "character-prop-inventory",
+      "label": "Character and prop inventory",
+      "description": "A two-page inventory of R01, V01 and B01 with dimensions, identity features, states and icon treatments.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "glider-sheet",
+      "label": "V01 glider design sheet",
+      "description": "One V01 sheet with front, side, rear and dimensioned top views, two sail states and a map icon.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "rider-sheet",
+      "label": "R01 rider design sheet",
+      "description": "One R01 sheet with front, side and rear views, Idle and Lean states, a full-height portrait and a map icon.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "circuit-overview",
+      "label": "Circuit overview",
+      "description": "One circuit map with four gates, route corridor, obstacles, landmarks and both camera anchors.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dawn-shelf-environment",
+      "label": "Dawn Shelf environment",
+      "description": "One Dawn Shelf environment painting with the southern straight, arch, rock tooth and gate placements.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "needle-reach-environment",
+      "label": "Needle Reach environment",
+      "description": "One Needle Reach environment painting with the eastern route, spire, rock tooth and gate placements.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "checkpoint-sheet",
+      "label": "B01 checkpoint design sheet",
+      "description": "One B01 sheet with three views, a close detail, map icons and Upcoming, Active and Cleared signal treatments.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "controller-race-interface",
+      "label": "Controller race interface",
+      "description": "One C1 race interface composition with six HUD fields, a minimap and RT and Y control prompts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "touch-race-interface",
+      "label": "Touch race interface",
+      "description": "One C1 race interface composition with six HUD fields, a minimap and matching touch controls.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dawn-shelf-keyframe",
+      "label": "C1 Dawn Shelf race keyframe",
+      "description": "One finished east-facing C1 chase view at Dawn Shelf with R01, V01 and the controller race interface.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "needle-reach-keyframe",
+      "label": "C2 Needle Reach race keyframe",
+      "description": "One finished north-facing C2 chase view at Needle Reach with R01, V01 and the controller race interface.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "race-video",
+      "label": "Ten-second race video",
+      "description": "One 10-second video combining the C1 and C2 race views with a closing game-name and tagline frame.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "art-presentation",
+      "label": "Circuit art presentation",
+      "description": "One presentation of at least 10 pages reusing the earlier work and comparing both race views with their map anchors.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-game-name",
+      "kind": "text-verbatim",
+      "text": "SKYWAKE",
+      "scope": {
+        "slots": [
+          "art-presentation",
+          "race-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "printed-tagline",
+      "kind": "text-verbatim",
+      "text": "Ride the high line",
+      "scope": {
+        "slots": [
+          "art-presentation",
+          "race-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "trim-control-wording",
+      "kind": "text-verbatim",
+      "text": "Trim sail",
+      "scope": {
+        "slots": [
+          "controller-race-interface",
+          "touch-race-interface",
+          "dawn-shelf-keyframe",
+          "needle-reach-keyframe",
+          "race-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "reset-control-wording",
+      "kind": "text-verbatim",
+      "text": "Reset to last gate",
+      "scope": {
+        "slots": [
+          "controller-race-interface",
+          "touch-race-interface",
+          "dawn-shelf-keyframe",
+          "needle-reach-keyframe",
+          "race-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SKYWAKE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-world-and-asset-language",
+      "slots": [
+        "glider-sheet",
+        "rider-sheet",
+        "checkpoint-sheet",
+        "circuit-overview",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "sourceSlots": [
+        "art-style-sheet",
+        "character-prop-inventory"
+      ],
+      "items": [
+        {
+          "item": "Asset proportions, silhouettes, material assignments and full-view-to-icon treatments agree with the style sheet and inventory wherever the assets appear.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Painted clouds, crisp sails, ivory fabric, navy enamel and copper fittings form a coherent visual world, with scene lighting consistent in world coordinates.",
+          "kind": "consistency"
+        },
+        {
+          "item": "R01 retains the ivory helmet, anatomical right amber sleeve and two copper belt pouches; V01 retains twin ivory sail tips and one copper mast; B01 retains its forked crown and existing rear emblem.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "one-measured-circuit",
+      "slots": [
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "sourceSlots": [
+        "circuit-overview"
+      ],
+      "items": [
+        {
+          "item": "Environment views, minimaps and race views describe the same gate locations, ordered route, obstacle footprints and landmark anchors as the circuit overview.",
+          "kind": "consistency"
+        },
+        {
+          "item": "C1 looks east with the arch ahead-left and G2 ahead; C2 looks north with the spire ahead-right and G3 ahead; interface minimaps remain north-up.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "shared-race-interface-language",
+      "slots": [
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "sourceSlots": [
+        "checkpoint-sheet",
+        "art-style-sheet"
+      ],
+      "items": [
+        {
+          "item": "Both input variants and both race HUDs share a recognizable layout, typography and signal system while allowing controller-specific and touch-specific control graphics.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Upcoming, Active and Cleared graphics agree with the checkpoint sheet, and both action prompts retain their prescribed wording and common logical anchors.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The C1 and C2 interfaces preserve their distinct recorded HUD values and gate states within the common safe-area and contrast rules.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "SKYWAKE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Game Design",
+    "slots": [
+      "glider-sheet",
+      "rider-sheet",
+      "circuit-overview",
+      "dawn-shelf-environment",
+      "needle-reach-environment",
+      "checkpoint-sheet",
+      "controller-race-interface",
+      "touch-race-interface",
+      "dawn-shelf-keyframe",
+      "needle-reach-keyframe"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge runtime implementation, playable physics or exact export pixel dimensions; assess the commissioned visual world and production communication."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "art-style-sheet",
+        "character-prop-inventory",
+        "glider-sheet",
+        "rider-sheet",
+        "circuit-overview",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "checkpoint-sheet",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe",
+        "art-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "glider-sheet",
+        "rider-sheet",
+        "circuit-overview",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "checkpoint-sheet",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-art-style-sheet",
+      "requirementId": "R-format-art-style-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "art-style-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-character-prop-inventory",
+      "requirementId": "R-format-character-prop-inventory",
+      "method": "artifact-property",
+      "targetSlots": [
+        "character-prop-inventory"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-glider-sheet",
+      "requirementId": "R-format-glider-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "glider-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-rider-sheet",
+      "requirementId": "R-format-rider-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "rider-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-circuit-overview",
+      "requirementId": "R-format-circuit-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "circuit-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dawn-shelf-environment",
+      "requirementId": "R-format-dawn-shelf-environment",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dawn-shelf-environment"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-needle-reach-environment",
+      "requirementId": "R-format-needle-reach-environment",
+      "method": "artifact-property",
+      "targetSlots": [
+        "needle-reach-environment"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-checkpoint-sheet",
+      "requirementId": "R-format-checkpoint-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "checkpoint-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-controller-race-interface",
+      "requirementId": "R-format-controller-race-interface",
+      "method": "artifact-property",
+      "targetSlots": [
+        "controller-race-interface"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-touch-race-interface",
+      "requirementId": "R-format-touch-race-interface",
+      "method": "artifact-property",
+      "targetSlots": [
+        "touch-race-interface"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dawn-shelf-keyframe",
+      "requirementId": "R-format-dawn-shelf-keyframe",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dawn-shelf-keyframe"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-needle-reach-keyframe",
+      "requirementId": "R-format-needle-reach-keyframe",
+      "method": "artifact-property",
+      "targetSlots": [
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-race-video",
+      "requirementId": "R-format-race-video",
+      "method": "manual",
+      "targetSlots": [
+        "race-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-art-presentation",
+      "requirementId": "R-format-art-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "art-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "style-sheet-record",
+      "requirementId": "R-style-sheet-record",
+      "method": "content",
+      "targetSlots": [
+        "art-style-sheet"
+      ],
+      "criteria": "The document has one page and states navy enamel #132C46, active amber #F3B544, ivory fabric #F4EBDD, copper fittings #B76E45 and cloud shadow #8095AB. It specifies broad painted cloud strokes, sharply cut sail silhouettes, crisp vehicle edges, exposed copper fittings and sunlight from world northwest, azimuth 315 degrees, at 35 degrees elevation. Organization and explanatory wording may vary; missing or contradictory specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ]
+    },
+    {
+      "id": "inventory-record",
+      "requirementId": "R-inventory-record",
+      "method": "content",
+      "targetSlots": [
+        "character-prop-inventory"
+      ],
+      "criteria": "The two-page inventory covers all three assets and describes their full-view and map-icon treatments. R01 is 1700 mm tall, has Idle and Lean states, an ivory helmet, amber right sleeve, navy suit and two copper belt pouches. V01 measures 4200 mm long, 6000 mm across its sails, 3000 mm high and 1200 mm across its hull, has Cruise and Trimmed states, two ivory sail tips, a navy hull and one copper mast. B01 measures 2000 by 800 by 800 mm, has Upcoming, Active and Cleared states, a navy body, copper forked crown, ivory circular face and rear event emblem. Equivalent unit notation is allowed; absent, swapped or conflicting records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ]
+    },
+    {
+      "id": "glider-views-and-geometry",
+      "requirementId": "R-glider-views-and-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "glider-sheet"
+      ],
+      "criteria": "Identify front, side, rear and dimensioned top views, both named sail states and a readable map icon of the same V01. Geometry agrees across views and stays inside the 4200 mm longitudinal, 6000 mm transverse and 3000 mm vertical envelope in both states; hull width is 1200 mm. Collision geometry is a rounded 4200 by 1800 mm footprint extruded to 1600 mm, with 900 mm end radii and 2400 mm between end centres; the visual sail span is not treated as collision width. Twin ivory sail tips, navy hull and one copper mast remain identifiable. Sheet arrangement may vary; omitted views, contradictory dimensions or incompatible geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "rider-views-and-states",
+      "requirementId": "R-rider-views-and-states",
+      "method": "visual",
+      "targetSlots": [
+        "rider-sheet"
+      ],
+      "criteria": "The sheet contains identifiable front, side and rear views, a full-height portrait, Idle and Lean treatments and a map icon for one coherent 1700 mm rider. The helmet is ivory, the suit navy, the rider's anatomical right sleeve amber, and two copper belt pouches are present. Lean visibly differs from Idle. Simplification at icon scale is allowed while identity remains readable; missing treatments, mirrored sleeve identity or inconsistent anatomy fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "checkpoint-views-and-existing-design",
+      "requirementId": "R-checkpoint-views-and-existing-design",
+      "method": "visual",
+      "targetSlots": [
+        "checkpoint-sheet"
+      ],
+      "criteria": "The sheet shows front, side and rear views, a close detail, map icons and all three named states of the same 2000 mm high, 800 mm wide and 800 mm deep buoy. Preserve its navy body, copper forked crown, ivory circular face and rear emblem of three ascending amber tapered bars above an upward-open navy arc. State changes may alter the signal treatment while preserving the buoy structure. Any depicted gate assembly uses two buoys with centres 24000 mm apart and a 23200 mm clear opening, 12000 mm high above route altitude; a separate assembly diagram is not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "asset-record-repetition",
+      "requirementId": "R-asset-record-repetition",
+      "method": "content",
+      "targetSlots": [
+        "character-prop-inventory",
+        "glider-sheet",
+        "rider-sheet",
+        "checkpoint-sheet",
+        "art-presentation"
+      ],
+      "criteria": "Read the annotations as asset specifications. Each dedicated sheet prints its corresponding identifier, recorded dimensions and complete state names; the inventory and presentation include all three assets. Required records are R01: standing height 1700 mm, Idle and Lean; V01: length 4200 mm, sail span 6000 mm, total height 3000 mm, hull width 1200 mm, Cruise and Trimmed; B01: height 2000 mm, width 800 mm, depth 800 mm, Upcoming, Active and Cleared. Legible reused annotations count in the presentation. Equivalent units are acceptable; omission, reassignment or contradictory values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ]
+    },
+    {
+      "id": "palette-code-repetition",
+      "requirementId": "R-palette-code-repetition",
+      "method": "content",
+      "targetSlots": [
+        "glider-sheet",
+        "checkpoint-sheet",
+        "art-presentation"
+      ],
+      "criteria": "Each target contains legible annotations giving both #132C46 for navy and #F3B544 for active amber, agreeing with the style sheet and fixed client values. Swatches alone without the printed codes are insufficient. Annotation placement may vary, and readable reused sheet annotations count in the presentation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "sourceSlots": [
+        "art-style-sheet"
+      ]
+    },
+    {
+      "id": "painted-materials-and-world-light",
+      "requirementId": "R-painted-materials-and-world-light",
+      "method": "visual",
+      "targetSlots": [
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "The paintings and race views visibly apply broad painted clouds, crisp sail silhouettes, ivory fabric, navy enamel and exposed copper wherever those materials occur. Illumination and shadows are compatible with world northwest sunlight at 35 degrees, interpreted through each view's heading rather than fixed screen-side lighting. Painted shading and atmospheric colour variation are allowed; reversed world lighting or material substitutions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "art-style-sheet",
+        "circuit-overview"
+      ]
+    },
+    {
+      "id": "measured-circuit-overview",
+      "requirementId": "R-measured-circuit-overview",
+      "method": "visual",
+      "targetSlots": [
+        "circuit-overview"
+      ],
+      "criteria": "Read positions using a southwest origin, eastward x and northward y within an 800 by 600 m boundary. Gates are G1 (100,100), G2 (700,100), G3 (700,500) and G4 (100,500), all at z 100, with successive distances 600, 400, 600 and 400 m. Arrows follow the client's recorded G1→G2→G3→G4→G1 order. The corridor extends 60 m each side with round joins. O1 and O2 are radius-20 m circles at (400,130) and (730,300). L1 is centred at (400,180), footprint 60 m east–west by 30 m north–south; L2 is centred at (780,300), radius 15 m. Show C1 camera (240,100,104), facing east toward rider (250,100,100), and C2 camera (700,240,104), facing north toward rider (700,250,100). Labels and graphic style may vary, but spatial relationships, scale and anchors must remain recoverable.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "environment-recorded-placements",
+      "requirementId": "R-environment-recorded-placements",
+      "method": "visual",
+      "targetSlots": [
+        "dawn-shelf-environment",
+        "needle-reach-environment"
+      ],
+      "criteria": "Dawn Shelf depicts the southern straight between G1 and G2, with the arch at (400,180) and southern rock tooth at (400,130). Needle Reach depicts the eastern route between G2 and G3, with the spire at (780,300) and eastern rock tooth at (730,300). Preserve the recorded footprints and heights: arch z 20–180 m, spire z 0–220 m and both obstacles z 40–145 m, relative to route z 100 and cloud surface z 0. Composition, perspective and cloud decoration may vary; moving the fixed features to incompatible sides or making their scale incompatible with the records fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "circuit-overview"
+      ]
+    },
+    {
+      "id": "topology-through-race-images",
+      "requirementId": "R-topology-through-race-images",
+      "method": "visual",
+      "targetSlots": [
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Compare all visible route segments and minimaps with the measured overview and fixed gate records. Preserve G1→G2→G3→G4→G1 and both radius-20 m obstacle footprints at O1 (400,130) and O2 (730,300). Minimap north stays up and both obstacles remain represented. Perspective scenes may crop distant course features; visible geometry must still support the same circuit. Reordered gates, mirrored topology, missing minimap obstacles or shifted obstacle footprints fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "circuit-overview"
+      ]
+    },
+    {
+      "id": "signal-grammar-and-contrast",
+      "requirementId": "R-signal-grammar-and-contrast",
+      "method": "visual",
+      "targetSlots": [
+        "glider-sheet",
+        "rider-sheet",
+        "circuit-overview",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "checkpoint-sheet",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Where checkpoint signals appear, Upcoming is an ivory hollow circle, Active an amber double chevron, and Cleared a white check on a navy panel. Visible route ribbons have paired ivory edge lines, and obstacle silhouettes carry dark diagonal bands. For rendered interfaces, evaluate foreground contrast against the immediate background: at least 4.5:1 for ordinary text and indicators, or 3:1 for icons and text at least 52 logical units high. Backplates are allowed. Shape substitutions, state-colour swaps, missing prescribed markings or insufficient contrast fail; an image without a relevant element has no obligation to add it.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "interface-safe-area-and-controls",
+      "requirementId": "R-interface-safe-area-and-controls",
+      "method": "visual",
+      "targetSlots": [
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Interpret interface placement proportionally in the supplied 1920 by 1080 logical coordinate system, independently of export pixel count. Essential HUD and control content stays within x 96–1824 and y 54–1026, and text is at least 26 logical units high. Control centres are (1530,880) for Trim sail and (1530,980) for Reset to last gate in both input variants and the keyframes. Controller interfaces pair these actions with RT hold and Y press; touch uses a sail icon with hold and a circular arrow with tap. Visual control styling may differ by input, while anchor placement and wording remain fixed. Out-of-bounds content, undersized text, swapped bindings or displaced controls fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "snapshot-hud-and-states",
+      "requirementId": "R-snapshot-hud-and-states",
+      "method": "visual",
+      "targetSlots": [
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Both interface compositions and the Dawn Shelf keyframe show C1: Dawn Shelf, Lap 1/2, Position 2/6, Checkpoint 2/4, 00:38.40 and 144 km/h; their minimaps mark G1 Cleared, G2 Active and G3/G4 Upcoming. The Needle Reach keyframe shows C2: Needle Reach, Lap 1/2, Position 2/6, Checkpoint 3/4, 00:52.10 and 144 km/h; G1/G2 are Cleared, G3 Active and G4 Upcoming. All are Racing snapshots with a north-up minimap; depicted R01 and V01 use Lean and Trimmed. Typography may vary, but omitted fields, altered record values or mismatched gate and asset states fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "recorded-chase-keyframes",
+      "requirementId": "R-recorded-chase-keyframes",
+      "method": "visual",
+      "targetSlots": [
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Both views show coherent rider-and-glider racing action with the controller HUD. C1 places the rider at (250,100,100) and camera at (240,100,104), looking east with the Dawn Shelf arch ahead-left and G2 ahead. C2 places the rider at (700,250,100) and camera at (700,240,104), looking north with the Needle Reach spire ahead-right and G3 ahead. Framing is compatible with a chase offset of 10 m behind and 4 m above route altitude, pitch 10 degrees below horizontal, horizontal field of view 70 degrees and zero roll. Painted interpretation is allowed; reversed landmark sides, incompatible perspective or a different camera setup fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "circuit-overview",
+        "glider-sheet",
+        "rider-sheet",
+        "controller-race-interface"
+      ]
+    },
+    {
+      "id": "complete-video-review",
+      "requirementId": "R-complete-video-review",
+      "method": "manual",
+      "targetSlots": [
+        "race-video"
+      ],
+      "criteria": "Review the full timeline: duration is 10 seconds, C1 occupies seconds 0–4, C2 seconds 4–8, and SKYWAKE plus Ride the high line occupies seconds 8–10, including the closing frame. The race sections preserve their recorded camera headings, chase settings, landmark sides, circuit order and obstacle footprints. C1 and C2 use their respective six HUD values and gate states, Lean rider and Trimmed glider, controller prompts, north-up minimap, logical safe area, control anchors and minimum text size. Ordinary interface text and indicators reach 4.5:1 contrast; icons and text at least 52 logical units high reach 3:1. Preserve asset identity, checkpoint symbols, paired ivory route edges, dark diagonal obstacle bands, specified materials and northwest light at 35 degrees. Motion and transitions may vary within the assigned sections without replacing the required snapshots. Any depicted race mechanics must respect six racers, two laps, ordered gate passage by the hull collision centre, lap completion at G1 after G4, and race completion after the second lap. If reset is depicted, it returns 20 m before the last passed gate along its incoming segment and adds three seconds; held trim pairs Trimmed with Lean, and released trim pairs Cruise with Idle. Additional phase or reset demonstrations are not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "art-style-sheet",
+        "glider-sheet",
+        "rider-sheet",
+        "checkpoint-sheet",
+        "circuit-overview",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ]
+    },
+    {
+      "id": "presentation-cover-and-map-comparison",
+      "requirementId": "R-presentation-cover-and-map-comparison",
+      "method": "content",
+      "targetSlots": [
+        "art-presentation"
+      ],
+      "criteria": "The presentation contains at least 10 pages and prints SKYWAKE and Ride the high line on its cover. A comparison page visibly pairs each of the two keyframes with its corresponding map anchor and makes their viewing directions and landmark relationships assessable: C1 east with the arch to the rider's left, C2 north with the spire to the rider's right. Page layout and explanatory wording may vary; a missing pairing, swapped anchor or cover text appearing only on an interior page fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "sourceSlots": [
+        "circuit-overview",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ]
+    },
+    {
+      "id": "presentation-reuses-nine-groups",
+      "requirementId": "R-presentation-reuses-nine-groups",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "art-presentation"
+      ],
+      "criteria": "Find recognizable, legible reuse of every source file across the nine requested groups: style, inventory, glider, rider, circuit, environments, checkpoint states, interfaces and keyframes. Both environments, both input compositions and both keyframes must be represented, and the checkpoint reuse must expose all three states. Scaling, cropping and page rearrangement are allowed when the source remains identifiable and its relevant content readable. Merely naming an earlier deliverable or substituting unrelated new imagery fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "sourceSlots": [
+        "art-style-sheet",
+        "character-prop-inventory",
+        "glider-sheet",
+        "rider-sheet",
+        "circuit-overview",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "checkpoint-sheet",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ]
+    },
+    {
+      "id": "set-shared-world-and-asset-language",
+      "requirementId": "R-set-shared-world-and-asset-language",
+      "method": "visual",
+      "targetSlots": [
+        "glider-sheet",
+        "rider-sheet",
+        "checkpoint-sheet",
+        "circuit-overview",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Asset proportions, silhouettes, material assignments and full-view-to-icon treatments agree with the style sheet and inventory wherever the assets appear. Painted clouds, crisp sails, ivory fabric, navy enamel and copper fittings form a coherent visual world, with scene lighting consistent in world coordinates. R01 retains the ivory helmet, anatomical right amber sleeve and two copper belt pouches; V01 retains twin ivory sail tips and one copper mast; B01 retains its forked crown and existing rear emblem.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "art-style-sheet",
+        "character-prop-inventory"
+      ]
+    },
+    {
+      "id": "set-one-measured-circuit",
+      "requirementId": "R-set-one-measured-circuit",
+      "method": "visual",
+      "targetSlots": [
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Environment views, minimaps and race views describe the same gate locations, ordered route, obstacle footprints and landmark anchors as the circuit overview. C1 looks east with the arch ahead-left and G2 ahead; C2 looks north with the spire ahead-right and G3 ahead; interface minimaps remain north-up.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "circuit-overview"
+      ]
+    },
+    {
+      "id": "set-shared-race-interface-language",
+      "requirementId": "R-set-shared-race-interface-language",
+      "method": "visual",
+      "targetSlots": [
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "criteria": "Both input variants and both race HUDs share a recognizable layout, typography and signal system while allowing controller-specific and touch-specific control graphics. Upcoming, Active and Cleared graphics agree with the checkpoint sheet, and both action prompts retain their prescribed wording and common logical anchors. The C1 and C2 interfaces preserve their distinct recorded HUD values and gate states within the common safe-area and contrast rules.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-02/03-race-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "checkpoint-sheet",
+        "art-style-sheet"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-event-emblem",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "event-emblem-and-buoy.png"
+      ],
+      "subjectSlots": [
+        "checkpoint-sheet",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "notes": "The existing event emblem and checkpoint buoy carry through the work."
+    },
+    {
+      "id": "existing-checkpoint-buoy",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "event-emblem-and-buoy.png"
+      ],
+      "subjectSlots": [
+        "checkpoint-sheet",
+        "circuit-overview",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "notes": "The existing event emblem and checkpoint buoy carry through the work."
+    },
+    {
+      "id": "glider-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "glider-sheet",
+      "subjectSlots": [
+        "circuit-overview",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "notes": "The rider's ivory helmet, amber right sleeve and two belt pouches, the glider's twin sail tips, and the buoy's forked crown and event emblem remain recognisable in detailed views, map icons, environments, keyframes and video wherever those assets appear."
+    },
+    {
+      "id": "rider-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "rider-sheet",
+      "subjectSlots": [
+        "circuit-overview",
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "controller-race-interface",
+        "touch-race-interface",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe"
+      ],
+      "notes": "The rider's ivory helmet, amber right sleeve and two belt pouches, the glider's twin sail tips, and the buoy's forked crown and event emblem remain recognisable in detailed views, map icons, environments, keyframes and video wherever those assets appear."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "recorded-palette-annotations",
+      "fromSlot": "art-style-sheet",
+      "toSlots": [
+        "glider-sheet",
+        "checkpoint-sheet",
+        "art-presentation"
+      ],
+      "extract": [
+        "navy palette code",
+        "active race signal palette code"
+      ],
+      "notes": "The art style sheet records #132C46, #F3B544 and northwest light at 35 degrees; the glider sheet, checkpoint sheet and presentation repeat both codes in their annotations, and the environment paintings, keyframes and video use the recorded materials and world lighting."
+    },
+    {
+      "id": "recorded-materials-and-light",
+      "fromSlot": "art-style-sheet",
+      "toSlots": [
+        "dawn-shelf-environment",
+        "needle-reach-environment",
+        "dawn-shelf-keyframe",
+        "needle-reach-keyframe",
+        "race-video"
+      ],
+      "extract": [
+        "material assignments",
+        "world sunlight direction",
+        "sunlight elevation"
+      ],
+      "notes": "The art style sheet records #132C46, #F3B544 and northwest light at 35 degrees; the glider sheet, checkpoint sheet and presentation repeat both codes in their annotations, and the environment paintings, keyframes and video use the recorded materials and world lighting."
+    }
+  ]
+}

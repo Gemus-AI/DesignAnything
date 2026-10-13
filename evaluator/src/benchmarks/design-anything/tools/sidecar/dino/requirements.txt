@@ -1,0 +1,13 @@
+# Grounding DINO 主体检测侧车（#3469）—— 复现用的版本记录，不是安装清单。
+#
+# 与 CSD 侧车同一条纪律：走系统 `python`，不建 venv。换机器复现时按这里的版本装；
+# 版本会进每份读数的 `runtime` 字段，跨版本的框不可同图。
+#
+# 与 `../csd/requirements.txt` 的差别只有 transformers 一项 —— 检测器直接用上游实现
+# （理由见 detect.py 模块头「为什么这次直接用 transformers」），它带 tokenizers /
+# safetensors / huggingface-hub 一串传递依赖，pip 会自己装。
+torch==2.7.1
+torchvision==0.22.1
+Pillow==11.2.1
+numpy>=2,<3
+transformers==5.16.1

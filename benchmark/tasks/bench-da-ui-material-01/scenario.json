@@ -1,0 +1,152 @@
+{
+  "id": "bench-da-ui-material-01",
+  "title": "RIVERROOM MUSEUM — Self-service tickets and a first route through the museum, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "UIUX",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# RIVERROOM MUSEUM — device, ticket and visitor facts\n\n## Identity and interface\n\n- Museum name: RIVERROOM MUSEUM.\n- Interface language: English.\n- Audience: first-time museum visitors.\n- Existing identity: museum-mark.png; complete icon, lettering and relative arrangement.\n- Identity applications: Welcome, Ticket types, Ticket confirmed and presentation cover.\n- Identity transformations: uniform scaling; complete lockup in its supplied colours or recoloured white.\n- Existing facility source: visitor-plan.png.\n- Interface typography, spacing and hierarchy: original design development.\n- Primary interface colour: #164D59.\n- Minimum touch target: 64 × 64 logical units.\n- Minimum gap between adjacent touch targets: 16 logical units.\n- Body-text contrast: at least 4.5:1.\n- Large-text and meaningful-icon contrast: at least 3:1.\n- State identification: text or symbols alongside colour.\n- Component states: default, pressed, disabled, error.\n- Welcome action labels: Buy tickets; Museum guide.\n- P1 action label: Check payment status.\n- B0 return label: Back to basket.\n\n## Device and controls\n\n| Property | Value |\n| --- | --- |\n| Active touchscreen | Landscape, 1920 × 1080 pixels |\n| Logical canvas | 1920 × 1080 units |\n| Active surface | 480 × 270 mm |\n| Active surface lower edge | 850 mm above floor |\n| Active surface upper edge | 1120 mm above floor |\n| Touch reach band | 380–1220 mm above floor |\n| Wheelchair forward-reach upper limit | 1120 mm above floor |\n| Navigation input | On-screen touch controls |\n| Payment method | Contactless card |\n| Card reader | Below display, visitor's left |\n| Ticket outlet | Below display, visitor's right |\n| Reader and outlet centre height | 750 mm above floor |\n| Complete screen content | Visible within the screen canvas |\n\n## Visit and prices\n\n- Visit date: 12 September 2026.\n- Museum hours today: 10:00–18:00.\n- Last admission: 17:00.\n- Purchase time: 14:00.\n- Currency: USD; two decimal places.\n- Price basis: tax included; listed line items constitute the complete total.\n\n| Ticket | Eligibility | Unit price | Included access |\n| --- | --- | ---: | --- |\n| Adult | Age 18 and over | USD 16.00 | G1 River Stories and G2 Object Lab, today |\n| Young visitor | Ages 6–17 | USD 8.00 | G1 and G2, today |\n| Under six | Ages 0–5 | USD 0.00 | G1 and G2, today; counted admission ticket |\n| Light & Water workshop add-on | Age 6 and over; admission ticket also required | USD 5.00 | W only, 14:30–15:00 today |\n\n## Basket and workshop allocation\n\n| Visitors | Admission quantity | Admission calculation | Workshop quantity | Workshop calculation |\n| --- | ---: | --- | ---: | --- |\n| Two adults | 2 | 2 × USD 16.00 = USD 32.00 | 2 | 2 × USD 5.00 = USD 10.00 |\n| Nine-year-old Young visitor | 1 | 1 × USD 8.00 = USD 8.00 | 0 | USD 0.00 |\n| Four-year-old Under six visitor | 1 | 1 × USD 0.00 = USD 0.00 | 0 | USD 0.00 |\n| Total | 4 | USD 40.00 | 2 | USD 10.00 |\n\n- Group size: four visitors.\n- Admission entitlements: four tickets, including the free Under six ticket.\n- Workshop availability at 14:00: exactly two places.\n- Workshop allocation: one place for each adult; zero for the nine-year-old; four-year-old ineligible.\n- Basket total: USD 40.00 + USD 10.00 = USD 50.00.\n- Quantity editing: available before payment, subject to workshop availability and age eligibility.\n- Delivered transaction snapshots: the basket recorded above.\n\n## Areas and opening status\n\n| Area ID | Visitor label | Access and current status |\n| --- | --- | --- |\n| F | Foyer | Open, free; visitor entrance and kiosk K are here |\n| I | Information desk | Open, free; inside F; assistance for tickets or print failure |\n| C | Shared visitor corridor | Open, free; connects the listed rooms |\n| T | Toilets | Open, free; reached from C |\n| G1 | River Stories | Open, admission ticket required; exhibition about river work and everyday objects |\n| G2 | Object Lab | Open, admission ticket required; displays how everyday objects are made and used |\n| W | Light & Water | Workshop room; valid 14:30 workshop add-on plus admission required |\n| G3 | Archive Study | Closed for maintenance today; entry closed; ticket unavailable |\n\n## Facility relationships\n\n- Visitor-plan source: visitor-plan.png; schematic, not to scale.\n- Visitor floors: one.\n- Kiosk K and information desk I: inside foyer F.\n- Open connections: F–C; C–T; C–G1; C–G2; C–W.\n- G3 connection: closed.\n- Open passages: step-free.\n- Destination: G2 Object Lab.\n- Route: K through F, east along C, then north into G2.\n- North indication: as supplied in visitor-plan.png.\n- Map adaptation: simplified shapes or rotation with area labels, connectivity and north indication preserved.\n- Alternative to closed G3: open G2, admission ticket required.\n\n## Payment and return states\n\n| ID | State | Basket and payment | Screen information and available continuation |\n| --- | --- | --- | --- |\n| P0 | Ready, unpaid | Four admission tickets, two adult workshop places, USD 50.00 unpaid | Basket review precedes the instruction for the left reader; museum information and return retain the basket and workshop allocation |\n| P1 | Unknown | Same basket; existing card interaction has an unconfirmed result | Pending result; Check payment status queries the existing attempt; later confirmation belongs to P2 |\n| P2 | Paid, collection ready | USD 50.00 paid once; RM-0912-084 | Four admission tickets and two 14:30 workshop places for 12 September 2026; tickets ready at the outlet on the visitor's right |\n| P3 | Paid, print failed | Same single USD 50.00 payment, RM-0912-084 and valid entitlements | Tickets unproduced; route/help action to information desk I in F, carrying RM-0912-084; assistance is the next step |\n| B0 | Browse and back | Starts at unpaid P0; four admission tickets, two adult workshop places and USD 50.00 remain unchanged and unpaid | Basket review → Museum overview → Basket review; branch annotations outside the comparison-board interfaces |\n\n- P1 retry meaning: status check for the existing payment attempt.\n- Payment confirmation: P2 or P3 retains one completed payment and its reference.\n- Print failure outcome: valid payment and ticket entitlements; information-desk assistance.\n- B0 branch origin and return: unpaid P0.\n\n## Screen names\n\n- Welcome.\n- Ticket types.\n- Workshop.\n- Basket review.\n- Card payment.\n- Payment unknown.\n- Ticket confirmed.\n- Print failed.\n- Museum overview.\n- Object Lab route.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# RIVERROOM MUSEUM — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | interface-specification | Interface flow and component specification | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | welcome | Welcome screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | ticket-types | Ticket types screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | workshop | Workshop selection screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | basket-review | Unpaid basket review screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | card-payment | Card payment screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | payment-unknown | Unknown payment result screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | ticket-confirmed | Ticket confirmation screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | print-failed | Paid printing failure screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | museum-overview | Museum overview screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | object-lab-route | Object Lab route screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | browse-return-comparison | B0 browse and return comparison | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | browse-return-video | B0 interaction video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | handoff-presentation | Visitor kiosk handoff presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: museum-mark.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: visitor-plan.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kiosk-reach.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: foyer-arrival.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "RIVERROOM MUSEUM | Self-service tickets and a first route through the museum\n\nWe need an English touchscreen journey that helps first-time visitors buy tickets and find their first gallery. Use the existing identity for \"RIVERROOM MUSEUM\" and the attached visitor plan. The landscape screen has a logical canvas of 1920 × 1080 units and an active surface of 480 × 270 mm, mounted between 850 and 1120 mm above the floor. The reach diagram records a 380–1220 mm touch range and a 1120 mm upper limit for a wheelchair forward reach. Navigation is entirely on screen; the card reader is below the screen on the visitor's left and the ticket outlet on the right. Build the specification first, then develop its applications. Use #164D59 as the primary interface colour, touch targets at least 64 × 64 logical units and gaps of at least 16 logical units. Body text contrast is at least 4.5:1; large text and meaningful icons reach 3:1, with words or symbols identifying states.\n\nThe visit is on 12 September 2026 at 14:00; opening hours are 10:00–18:00, with last admission at 17:00. Adult admission costs USD 16.00, Young visitor admission USD 8.00 and Under six admission USD 0.00. Our basket contains two adults, one nine-year-old and one four-year-old: four admission tickets costing USD 40.00. The two adults take the two remaining Light & Water workshop places at USD 5.00 each for 14:30–15:00, making USD 50.00 total, with tax included. Admission covers G1 River Stories and G2 Object Lab; W requires the workshop add-on as well. G3 Archive Study is closed for maintenance. The guide destination is G2, reached from K through F and east along C, then north into G2. Payment states are P0 unpaid, P1 unknown, P2 paid and ready to collect, and P3 paid with printing failed. P2 and P3 retain reference RM-0912-084 and one USD 50.00 payment. P3 sends visitors to information desk I inside F. The B0 information detour starts and ends at unpaid P0 with the basket intact.\n\nAudience: first-time museum visitors using the kiosk, and the visitor-services and product teams deciding the purchase journey and implementation handoff.\n\nInputs (attached): 01-client-facts.en.md contains the device, ticket, area and transaction records. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. museum-mark.png is the identity attachment, supplying the complete existing icon and wordmark. visitor-plan.png is a constraint attachment fixing the areas, connections and north direction. kiosk-reach.png is a constraint attachment fixing the display dimensions, mounting heights and reader and outlet positions. foyer-arrival.png is an atmosphere reference for visitors arriving and waiting in the entrance hall.\n\nDeliverables:\n1. One written interface specification containing a page × entry × data flow table and a component × state × value table, covering default, pressed, disabled and error states, colour values, contrast ratios, touch dimensions and navigation\n2. Eight purchase screens: Welcome with Buy tickets and Museum guide entries; Ticket types with all four admission quantities, age bands and prices; Workshop with two adult places selected and the four-year-old's option disabled; Basket review with itemised USD 50.00 total; Card payment pointing left; Payment unknown with an existing-attempt status check; Ticket confirmed with the paid reference and right-hand collection instruction; Print failed with the same paid reference and information-desk help\n3. Two information screens: Museum overview with all eight area records, opening hours and G2 as the alternative to closed G3; Object Lab route with the north indication and K–F–C–G2 path\n4. One B0 comparison board containing three screen panels—unpaid Basket review, Museum overview and returned unpaid Basket review—with branch and basket annotations outside the interfaces\n5. One 10-second video of B0, showing the Museum guide button's pressed state, the overview and the return to the preserved basket\n6. One presentation document of at least eight pages, reusing the specification, ten screens, B0 comparison and video stills, with a cover bearing the complete museum mark and a specification recap stating #164D59, 64 × 64 logical-unit touch targets and 16 logical-unit gaps\n\nAcceptance:\n- The interface specification lists the ten delivered screen names and their entry paths, including P0–P3 and B0. All ten screens and the B0 board panels use its 1920 × 1080 logical canvas, #164D59 primary colour, minimum 64 × 64 touch targets and minimum 16-unit gaps; the presentation repeats these values. All required screen content is visible within each canvas.\n- The interface specification records default, pressed, disabled and error component values and the 4.5:1 body-text and 3:1 large-text/icon contrast thresholds. The screens follow those values: Welcome shows default actions, Workshop shows the disabled four-year-old option, Print failed shows an error with text or a symbol, and the video shows the pressed Museum guide action. Screen controls sit within the display's 850–1120 mm mounting band shown in kiosk-reach.png.\n- Ticket types, Workshop, Basket review, Ticket confirmed and Print failed preserve four visitors, four admission tickets and two adult workshop places. Ticket types shows the 18-and-over, 6–17 and 0–5 bands with USD 16.00, USD 8.00 and USD 0.00 prices; Workshop shows age 6-and-over eligibility, admission required, the two-place availability at 14:00 and the 14:30–15:00 session. Basket review itemises USD 40.00 admission plus USD 10.00 workshop, totalling USD 50.00.\n- Card payment follows unpaid Basket review and points to the left reader. Payment unknown labels P1 as pending and offers \"Check payment status\" for the existing attempt. Ticket confirmed shows USD 50.00 paid, RM-0912-084, four admission tickets, two 14:30 workshop places for 12 September 2026 and collection on the right. Print failed preserves that payment and those entitlements and offers help at I in F using the same reference.\n- Museum overview carries F, I, C, T, G1, G2, W and G3 with their recorded access and status, plus 10:00–18:00 hours and 17:00 last admission. Object Lab route preserves the supplied north direction and K–F–C–G2 connections. The B0 comparison and video return through \"Back to basket\" to four admission tickets, two adult workshop places and an unpaid USD 50.00 total.\n- Welcome, Ticket types, Ticket confirmed and the presentation cover use the complete museum-mark.png lockup with its icon, lettering and arrangement preserved; scaling is uniform and any recolouring changes the whole lockup to white. Welcome prints \"Buy tickets\" and \"Museum guide\" exactly, and the complete museum name appears in those four marked deliverables.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/museum-mark.png",
+      "nodeId": "provided-image-1",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "810d5570c59eb125930375f25d5e077ab4f6dd3443ad4836017aae651c0df266"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/visitor-plan.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "efecc5a8d58b73507a4e01d45ecdbfa369beb0b3eb609f95cdc16b867a9b56b8"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/kiosk-reach.png",
+      "nodeId": "provided-image-3",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "35949d9040cc01344e126c4e3da1e7a8f13cf78a67f73c1ae38b515f49ef6571"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/foyer-arrival.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "66eb22bb6fc58231c2ab4dffe1514848eb099b2ed60a90404adfc347b909f154"
+    }
+  ]
+}

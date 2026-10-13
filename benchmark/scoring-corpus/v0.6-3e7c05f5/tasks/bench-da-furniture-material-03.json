@@ -1,0 +1,556 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-furniture-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "stool-views",
+      "label": "Resolved stool views",
+      "description": "One sheet of front, side, plan, underside and three-quarter stool views with finished dimensions, the usable seat square and the OFFCUT THREE name.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cutting-stock-account",
+      "label": "Final cutting and stock account",
+      "description": "One final document tracing all allocated blanks into dimensioned parts for A, B and C, kerfs, waste, numbered offcuts and hardware and felt balances.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "assembly-connections",
+      "label": "Assembly and connection sheet",
+      "description": "One exploded assembly and connection sheet with part IDs, quantities, joint dimensions, bolt paths, tools, dismantled part dimensions and contact treatments.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "stack-geometry",
+      "label": "Three-stool stack and clearance section",
+      "description": "One sheet of complete stools A, B and C in their nested stack with envelope dimensions, vertical increment, bearing contacts and a controlling clearance section.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "retrieval-return",
+      "label": "Retrieval and return sequence",
+      "description": "One sequence sheet showing complete A lifting, carrying and returning above supported B and C, with grip positions, movement paths and the label Lift A first.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "studio-use-storage",
+      "label": "Studio use and storage scenes",
+      "description": "One paired scene sheet of three adults using the stools around the existing worktable and the same stools stored together, with a dimensioned connecting route plan.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "OFFCUT THREE",
+      "scope": {
+        "slots": [
+          "stool-views",
+          "cutting-stock-account"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "retrieval-label",
+      "kind": "text-verbatim",
+      "text": "Lift A first",
+      "scope": {
+        "slots": [
+          "retrieval-return"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "OFFCUT THREE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-stool-build-and-use",
+      "slots": [
+        "stool-views",
+        "assembly-connections",
+        "stack-geometry",
+        "retrieval-return",
+        "studio-use-storage"
+      ],
+      "sourceSlots": [
+        "cutting-stock-account"
+      ],
+      "items": [
+        {
+          "item": "All representations describe the same three identical stools, with consistent timber geometry, connector systems, dimensions and part identities wherever shown.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Visible parts and connection details agree with the account's finished-part dimensions, quantities and material allocations.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Stacking, handling and studio storage preserve complete stools, with A removed first from above the supported B and C.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "OFFCUT THREE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "stool-views",
+      "assembly-connections",
+      "stack-geometry",
+      "retrieval-return",
+      "studio-use-storage"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not infer certified structural strength or a load rating from drawings of timber whose species and structural grade are unknown."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "stool-views",
+        "assembly-connections",
+        "stack-geometry",
+        "retrieval-return",
+        "studio-use-storage"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-stool-views",
+      "requirementId": "R-format-stool-views",
+      "method": "artifact-property",
+      "targetSlots": [
+        "stool-views"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cutting-stock-account",
+      "requirementId": "R-format-cutting-stock-account",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cutting-stock-account"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-assembly-connections",
+      "requirementId": "R-format-assembly-connections",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembly-connections"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-stack-geometry",
+      "requirementId": "R-format-stack-geometry",
+      "method": "artifact-property",
+      "targetSlots": [
+        "stack-geometry"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-retrieval-return",
+      "requirementId": "R-format-retrieval-return",
+      "method": "artifact-property",
+      "targetSlots": [
+        "retrieval-return"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-studio-use-storage",
+      "requirementId": "R-format-studio-use-storage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "studio-use-storage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "shared-design-and-seat-envelope",
+      "requirementId": "R-shared-design-and-seat-envelope",
+      "method": "visual",
+      "targetSlots": [
+        "stool-views",
+        "assembly-connections"
+      ],
+      "criteria": "The assembled and exploded representations must resolve to the same freestanding stool, with matching timber geometry and connector systems for all three units. Readable dimensions must put the seat top 440–470 mm above the floor and both footprint dimensions at or below 550 mm. A horizontal 300 by 300 mm overlay must fit entirely within unobstructed seating space. Every floor contact and the clear water-based treatment must be identified; rendered finished timber must retain visible grain. Form and joint choices may vary within these limits, but conflicting geometry, obstructed seating space or an opaque finish fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "cutting-yield-and-waste-account",
+      "requirementId": "R-cutting-yield-and-waste-account",
+      "method": "content",
+      "targetSlots": [
+        "cutting-stock-account"
+      ],
+      "criteria": "Trace every P1–P3 panel and B01–B12 billet into at least one finished stool part, with destination A, B or C and dimensioned layouts. Original origins and physical axes must remain traceable through rotation; piece grain must inherit panel X or billet L direction. Retained panel geometry must exclude the closed X 360..400, Y 330..400 corner through the thickness, and retained billet geometry must stay within L 0..500. Show a dimensioned 3 mm strip for every separating cut, including adjacent-part and end-removal cuts, without overlapping retained parts or exceeding stock. Separately account for corner waste, billet defects, precautionary buffers, other machining waste, kerf loss and numbered sound remainders linked to their source blanks. Cutting orientation and sound-offcut lamination are allowed; any laminate must identify its source pieces and resulting thickness. Missing contributors, reused material, unaccounted losses or retained excluded wood fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "assembly-account-agreement",
+      "requirementId": "R-assembly-account-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-connections"
+      ],
+      "criteria": "Compare the assembly callouts with the written account: timber IDs, quantities, dimensions, joints and hardware allocations must reconcile for the complete three-stool batch. Bolts must be M6 with nominal length 60 mm; totals may be below but cannot exceed 36 bolts, 36 nuts, 72 washers, twelve steel blanks and twelve felt squares, each blank or square 80 by 80 by 3 mm. The account must state available, used and remaining quantities and trace cut steel and felt pieces and remainders to parent blanks. The assembly must identify required tools and dimension the largest dismantled part. Unused allowance is permitted; missing balances, incompatible joints or quantities exceeding the allowance fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "cutting-stock-account"
+      ]
+    },
+    {
+      "id": "complete-stack-and-clearances",
+      "requirementId": "R-complete-stack-and-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "stack-geometry"
+      ],
+      "criteria": "Match all three stacked units to the reference views and assembly, including part IDs and attached connectors and felt. Require an upright nested arrangement ordered A, B, C from top to bottom and dimensioned total width, depth and height no greater than 600, 600 and 1050 mm. The controlling section must show the repeated vertical offset, distinguish occupied timber, hardware and felt boundaries, and identify how each upper stool bears on the next. Every non-bearing close approach must have at least 5 mm separation; designed bearing surfaces may touch. Hidden members may be explained by sections or cutaways, but omitted components, interpenetration, unsupported stools or an unverified controlling gap fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "stool-views",
+        "assembly-connections"
+      ]
+    },
+    {
+      "id": "retrieval-and-return-motion",
+      "requirementId": "R-retrieval-and-return-motion",
+      "method": "visual",
+      "targetSlots": [
+        "retrieval-return"
+      ],
+      "criteria": "Require the exact retrieval label and a legible sequence showing the complete A lifted free, held in a carrying position and returned. Geometry must match the stack reference throughout. Mark grips and schematic hands outside stack bearing contacts, and draw paths with sufficient evidence that A clears the complete, supported B and C. Returning in the original orientation or through an explicitly illustrated feasible rotation is allowed. Missing carrying or return stages, component removal, intersecting movement or hands occupying bearing contacts fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "stack-geometry"
+      ]
+    },
+    {
+      "id": "studio-use-storage-and-name",
+      "requirementId": "R-studio-use-storage-and-name",
+      "method": "visual",
+      "targetSlots": [
+        "studio-use-storage"
+      ],
+      "criteria": "Require matched use and storage scenes containing the same complete A, B and C shown in the source sheets. The use scene must place one adult on each stool at three distinct positions around one table, with dimensions establishing a 1800 by 800 mm top, 740 mm top height and 710 mm clear underside. A dimensioned connecting plan must demonstrate an uninterrupted route at least 750 mm wide to a 600 by 600 mm storage footprint containing the three-stool stack. Exact placement and neutral studio scenery may vary. Verify that both the stool-view source and account print the project name exactly. Missing occupants, substituted stool geometry, an obstructed or undersized route, incompatible fixture dimensions or missing name text fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "stool-views",
+        "stack-geometry",
+        "cutting-stock-account"
+      ]
+    },
+    {
+      "id": "resolved-view-coverage",
+      "requirementId": "R-resolved-view-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "stool-views"
+      ],
+      "criteria": "The sheet must provide recognisable front, side, plan, underside and three-quarter representations of the resolved design, with readable finished dimensions, a 300 by 300 mm usable-seat overlay and the exact project name. Arrangement and drawing style may vary; omission of any required view or an unresolved contradiction between views fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "assembly-information-and-contact-treatments",
+      "requirementId": "R-assembly-information-and-contact-treatments",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-connections"
+      ],
+      "criteria": "Require an exploded representation that identifies timber parts and quantities and makes their assembly relationships understandable. Joint sizes, connector locations and bolt trajectories must be dimensioned or explicitly drawn, with named assembly tools and dimensions of the largest dismantled component. Identify the treatments at both feet and stack contacts. Detail placement and connector design may vary within the allowance; missing locations, ambiguous bolt paths or untreated contact locations in the record fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "original-timber-inventory",
+      "requirementId": "R-original-timber-inventory",
+      "method": "content",
+      "targetSlots": [
+        "cutting-stock-account"
+      ],
+      "criteria": "The account must start from exactly three original 400 by 400 by 20 mm hardwood panels identified P1–P3 and twelve original 30 by 30 by 560 mm hardwood billets identified B01–B12. Distinguish original stock from usable material and finished part sizes. Rearrangement and subdivision are allowed, but enlarged blanks, additional timber supply, substituted inventory or treating the usable billet length as its original length fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-coherent-stool-build-and-use",
+      "requirementId": "R-set-coherent-stool-build-and-use",
+      "method": "visual",
+      "targetSlots": [
+        "stool-views",
+        "assembly-connections",
+        "stack-geometry",
+        "retrieval-return",
+        "studio-use-storage"
+      ],
+      "criteria": "All representations describe the same three identical stools, with consistent timber geometry, connector systems, dimensions and part identities wherever shown. Visible parts and connection details agree with the account's finished-part dimensions, quantities and material allocations. Stacking, handling and studio storage preserve complete stools, with A removed first from above the supported B and C.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "cutting-stock-account"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-stool-throughout",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "stool-views",
+      "subjectSlots": [
+        "assembly-connections",
+        "stack-geometry",
+        "retrieval-return",
+        "studio-use-storage"
+      ],
+      "notes": "The stool views and assembly sheet describe one freestanding design with identical timber part types, dimensions and connector systems for A, B and C."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "stock-account-to-assembly",
+      "fromSlot": "cutting-stock-account",
+      "toSlots": [
+        "assembly-connections"
+      ],
+      "extract": [
+        "finished timber part IDs, dimensions and quantities allocated to A, B and C",
+        "joint dimensions",
+        "used hardware and felt quantities and their parent blank allocations"
+      ],
+      "notes": "The assembly sheet and stock account agree on part IDs and quantities, joint dimensions and the allocation of up to 36 M6 bolts of nominal 60 mm length, 36 nuts, 72 washers, twelve 80 by 80 by 3 mm steel blanks and twelve 80 by 80 by 3 mm felt squares."
+    }
+  ]
+}

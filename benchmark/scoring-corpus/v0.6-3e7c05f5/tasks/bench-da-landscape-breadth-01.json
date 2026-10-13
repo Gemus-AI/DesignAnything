@@ -1,0 +1,656 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-landscape-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "roof-masterplan",
+      "label": "Dimensioned roof masterplan",
+      "description": "One roof masterplan with fixed services, load zones, six planted containers, four seats and connected maintenance access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "roof-section",
+      "label": "Container, route and parapet section",
+      "description": "One dimensioned section through a planting container, access route and parapet with substrate, weight and protective support details.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "maintenance-details",
+      "label": "Container and maintenance detail sheet",
+      "description": "One detail sheet covering the container assembly, watering route, hose reel, tool cabinet and six-pair care board.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-planting-schedule",
+      "label": "Materials and planting schedule",
+      "description": "One schedule listing planting quantities by container and the materials for paving, containers, protection, storage and seating.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "spring-perspective",
+      "label": "Spring planting perspective",
+      "description": "One spring perspective from the stair arrival with two residents planting and the watering and storage connections visible.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "summer-perspective",
+      "label": "Summer evening perspective",
+      "description": "One summer evening perspective from the opposite end of the garden with four seated residents and the same planting and maintenance layout.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "site-name",
+      "kind": "text-verbatim",
+      "text": "COMMON HARVEST",
+      "scope": {
+        "slots": [
+          "roof-masterplan",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "growing-area-name",
+      "kind": "text-verbatim",
+      "text": "Growing Table",
+      "scope": {
+        "slots": [
+          "roof-masterplan",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "seating-area-name",
+      "kind": "text-verbatim",
+      "text": "Evening Bench",
+      "scope": {
+        "slots": [
+          "roof-masterplan",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "maintenance-phrase",
+      "kind": "text-verbatim",
+      "text": "Grow together, take a turn",
+      "scope": {
+        "slots": [
+          "maintenance-details",
+          "spring-perspective",
+          "summer-perspective"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "thyme-name",
+      "kind": "text-verbatim",
+      "text": "Thymus vulgaris",
+      "scope": {
+        "slots": [
+          "roof-masterplan",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "oregano-name",
+      "kind": "text-verbatim",
+      "text": "Origanum vulgare",
+      "scope": {
+        "slots": [
+          "roof-masterplan",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "lettuce-name",
+      "kind": "text-verbatim",
+      "text": "Lactuca sativa",
+      "scope": {
+        "slots": [
+          "roof-masterplan",
+          "materials-planting-schedule"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON HARVEST",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-rooftop-layout",
+      "slots": [
+        "roof-section",
+        "maintenance-details",
+        "spring-perspective",
+        "summer-perspective"
+      ],
+      "sourceSlots": [
+        "roof-masterplan"
+      ],
+      "items": [
+        {
+          "item": "The drawings and seasonal scenes describe the same garden, including container identities and positions, cabinet, seating, fixed services and maintenance access.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Container proportions, substrate depth and protective support agree wherever the same assembly is represented.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "scheduled-materials-and-planting",
+      "slots": [
+        "roof-masterplan",
+        "roof-section",
+        "maintenance-details",
+        "spring-perspective",
+        "summer-perspective"
+      ],
+      "sourceSlots": [
+        "materials-planting-schedule"
+      ],
+      "items": [
+        {
+          "item": "Visible planting assignments and specified construction materials agree with the schedule, allowing seasonal growth, viewpoint occlusion and lighting changes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The garden retains the client's concrete paving, teal stair door and galvanized equipment plinth throughout the image set.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON HARVEST",
+    "carryThrough": {
+      "none": "The schedule and images share client-supplied facts, but the letter does not require later files to repeat facts extracted from an earlier delivered document."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "roof-masterplan",
+      "roof-section",
+      "maintenance-details",
+      "spring-perspective",
+      "summer-perspective"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not rescore exact wording, numerical records or coordinate compliance, or treat these drawings as structural or waterproofing certification."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "roof-masterplan",
+        "roof-section",
+        "maintenance-details",
+        "spring-perspective",
+        "summer-perspective"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-roof-masterplan",
+      "requirementId": "R-format-roof-masterplan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "roof-masterplan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-roof-section",
+      "requirementId": "R-format-roof-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "roof-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-maintenance-details",
+      "requirementId": "R-format-maintenance-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "maintenance-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-planting-schedule",
+      "requirementId": "R-format-materials-planting-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-planting-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-spring-perspective",
+      "requirementId": "R-format-spring-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "spring-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-summer-perspective",
+      "requirementId": "R-format-summer-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "summer-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "fixed-roof-geometry-and-access",
+      "requirementId": "R-fixed-roof-geometry-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "roof-masterplan",
+        "roof-section"
+      ],
+      "criteria": "Read dimensions and locations using the southwest origin, x east and y north. The plan must preserve the 12000 × 8000 mm roof; the section must show the 1100 mm parapet and remain consistent with that geometry. The stair occupies x 0–3000, y 0–2000, with an inward-opening east-wall door at x 3000, y 500–1700. Equipment occupies x 9000–11000, y 500–1500; W1 is at (1000,4000), D1 at (5500,500), and D2 at (11500,7500). Relevant elevations must respect 2400 mm stair headroom, 300 mm plinth height and 900 mm tap outlet height. Trace a continuous route at least 1200 mm clear from the door to planting, water, storage and seating. Require dimensioned 500 mm perimeter access except at the existing stair footprint, plus 500 mm clearance from equipment edges and drain centres. Alternative garden layouts are allowed; displaced fixed elements, obstructed access or conflicting dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "container-envelope-and-load-placement",
+      "requirementId": "R-container-envelope-and-load-placement",
+      "method": "visual",
+      "targetSlots": [
+        "roof-masterplan",
+        "roof-section",
+        "maintenance-details"
+      ],
+      "criteria": "Verify six containers C1–C6, each with its entire 1200 × 600 mm footprint inside x 6000–11000 and y 2000–6500. The zone is 22.5 m² with a 300 kg/m² additional permanent load allowance; the remaining terrace allowance is 150 kg/m². Each sheet must identify the common 350 mm body height, 180 mm substrate depth and 144 kg saturated assembly weight, using a shared typical-container note where appropriate. Weight includes the container, substrate, plants, retained water and mat; full-footprint bearing is 0.72 m² and yields 200 kg/m². Section and assembly details must depict continuous footprint support and protective mats. A typical section may represent all six containers through explicit identification. Different arrangements are allowed; containers outside the zone, contradictory load records, missing required labels or concentrated support inconsistent with the specified bearing fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "planting-records-and-identification",
+      "requirementId": "R-planting-records-and-identification",
+      "method": "content",
+      "targetSlots": [
+        "roof-masterplan",
+        "materials-planting-schedule"
+      ],
+      "criteria": "Read each file's planting records and confirm the site and both activity-area names, with allocations covering C1–C6 exactly once. Sum assignments to 12 Thymus vulgaris, 12 Origanum vulgare and 18 Lactuca sativa. TV, OV and LS may abbreviate individual assignments when a legend gives the corresponding full names. Distribution among containers is open to design choice; missing containers, incorrect totals, incorrect full names or disagreement between the plan and schedule fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "roof-masterplan"
+      ]
+    },
+    {
+      "id": "watering-storage-and-care-board",
+      "requirementId": "R-watering-storage-and-care-board",
+      "method": "visual",
+      "targetSlots": [
+        "maintenance-details"
+      ],
+      "criteria": "Require a readable watering diagram connecting fixed W1 to every container using one 15 m hose with its reel at W1; the represented travel path must be reachable with that hose. Show a tool cabinet dimensioned 1200 mm wide, 500 mm deep and 900 mm high. Read the care board: the maintenance phrase sits above rows Pair 1 through Pair 6 and columns Water, Weed and Harvest. Maintenance information must account for 12 residents in six pairs, one pair per week on a repeating six-week rotation, 20-minute routine sessions and summer morning watering checks. Include provision for two 5 L watering cans, four trowels and two hand forks. Diagram and board styling may vary; missing connections, incorrect equipment or dimensions, omitted rows or columns, and conflicting care records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "roof-masterplan"
+      ]
+    },
+    {
+      "id": "schedule-material-records",
+      "requirementId": "R-schedule-material-records",
+      "method": "content",
+      "targetSlots": [
+        "materials-planting-schedule"
+      ],
+      "criteria": "The schedule must identify retained pale grey concrete paving with a 500 × 500 mm module, the existing teal stair door specified as #2F6F73 and the galvanized equipment plinth. Require powder-coated aluminium containers, recycled HDPE seating slats on freestanding aluminium frames, 20 mm rubber protection mats, and entries covering storage and seating. Record all six containers and seating capacity for four. Finishes not fixed by the client may vary; substitutions for specified materials, omitted component categories or conflicting quantities fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "perspective-existing-materials",
+      "requirementId": "R-perspective-existing-materials",
+      "method": "visual",
+      "targetSlots": [
+        "spring-perspective",
+        "summer-perspective"
+      ],
+      "criteria": "Both scenes must preserve recognizable pale grey concrete pavers, a teal stair door corresponding to #2F6F73 and a galvanized equipment plinth. Perspective, partial occlusion and seasonal lighting may change their appearance, so do not require rendered pixels to equal the specified hexadecimal color. Replacement surfaces, a materially different door color or an altered equipment-plinth material fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "seasonal-views-and-spatial-continuity",
+      "requirementId": "R-seasonal-views-and-spatial-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "spring-perspective",
+        "summer-perspective"
+      ],
+      "criteria": "Compare both scenes with the plan's six-container arrangement, cabinet and seating positions, allowing perspective occlusion and seasonal plant growth. Spring must look from the stair arrival and show two residents planting and watering, with the tap, cabinet and Growing Table relationship apparent; its seasonal and lighting cues must be compatible with April at 10:00. Summer must look from the opposite end and show four seated residents after care, the same six-container garden and access to Evening Bench, with cues compatible with July at 19:00 and the recorded evening building shade. Read the complete maintenance phrase in each view. Dates and times need not be printed. Relocated components, incompatible viewpoints or activities, incorrect participant counts, obstructed bench access or unreadable wording fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "roof-masterplan"
+      ]
+    },
+    {
+      "id": "masterplan-drawing-completeness",
+      "requirementId": "R-masterplan-drawing-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "roof-masterplan"
+      ],
+      "criteria": "Require a legible north arrow, scale bar and dimensional information sufficient to interpret the 96 m² roof layout. Represent the supporting beam centre lines at x 3000, 6000 and 9000 and y 2000 and 6000, with six 300 × 300 mm columns at their intersections. Distinguish both load-allowance areas and clearly locate C1–C6, planting assignments, four seating places, storage and the connected maintenance route. Assess activity-area placement against the recorded Growing Table sunlight of six hours daily from May through August and Evening Bench building shade after 18:00 from June through August; explicit contradictions fail, without requiring an additional sun-study deliverable. Graphic conventions and seating configuration may vary if all required information remains unambiguous.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "freestanding-waterproofing-protection",
+      "requirementId": "R-freestanding-waterproofing-protection",
+      "method": "visual",
+      "targetSlots": [
+        "roof-masterplan",
+        "roof-section",
+        "maintenance-details",
+        "spring-perspective",
+        "summer-perspective"
+      ],
+      "criteria": "Use section and construction details to verify that added containers, storage and seating use freestanding spreader bases over 20 mm rubber protection mats, with no new waterproofing penetrations anywhere inside the roof rectangle. Container body height is measured above the mat. Plan and perspective depictions must not contradict this interface. Hidden mats may be established by the technical drawings; visible roof fixings, unprotected bearing or conflicting base details fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-coherent-rooftop-layout",
+      "requirementId": "R-set-coherent-rooftop-layout",
+      "method": "visual",
+      "targetSlots": [
+        "roof-section",
+        "maintenance-details",
+        "spring-perspective",
+        "summer-perspective"
+      ],
+      "criteria": "The drawings and seasonal scenes describe the same garden, including container identities and positions, cabinet, seating, fixed services and maintenance access. Container proportions, substrate depth and protective support agree wherever the same assembly is represented.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "roof-masterplan"
+      ]
+    },
+    {
+      "id": "set-scheduled-materials-and-planting",
+      "requirementId": "R-set-scheduled-materials-and-planting",
+      "method": "visual",
+      "targetSlots": [
+        "roof-masterplan",
+        "roof-section",
+        "maintenance-details",
+        "spring-perspective",
+        "summer-perspective"
+      ],
+      "criteria": "Visible planting assignments and specified construction materials agree with the schedule, allowing seasonal growth, viewpoint occlusion and lighting changes. The garden retains the client's concrete paving, teal stair door and galvanized equipment plinth throughout the image set.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-planting-schedule"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-rooftop-garden",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "roof-masterplan",
+      "subjectSlots": [
+        "spring-perspective",
+        "summer-perspective"
+      ],
+      "notes": "The spring and summer perspectives match the masterplan's container, cabinet and seating positions, show the two specified viewpoints and activities, and keep the maintenance-station phrase readable in both views."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+CLICKFRAME 61 | Assembly animation artwork for a first keyboard build
+
+We sell CLICKFRAME 61 as a first-build mechanical keyboard kit. We need finished artwork and storyboards for the assembly animation that customers open beside their workbench. The sequence contains 8 shots, S01–S08, each lasting 5 seconds, for a total of 40 seconds. Use an object-only treatment: parts move into position, and arrows explain the direction of each movement.
+
+The keyboard has a fixed 61-key ANSI layout in a 300 × 110 × 20 mm base. Its identity is the deep teal base, #243D4A, a centred front-edge notch, a rear-left USB-C opening and ivory keycaps with one orange Escape key at the upper left. The complete assembly inventory is one base assembly with its circuit board already installed, one snap-fit plate, five complete plate-mounted stabiliser assemblies, 61 switches and 61 keycaps. The stabilisers fit Backspace, Enter, Left Shift, Right Shift and Spacebar. Assembly proceeds from stabilisers to plate, switches and keycaps. Print "CLICKFRAME 61" on the parts-identification image and the opening shot; print "Assembly complete" in the closing shot. The attached step captions are the exact on-screen wording.
+
+Audience: first-time keyboard builders aged 16 and above watching the assembly guide on a phone beside the kit, and our support and animation teams approving the sequence for production.
+
+Inputs (attached): 01-client-facts.en.md contains the product identity, dimensions and timing facts. 02-delivery-catalog.en.md lists the deliverables, proportions and delivery stages. 03-kit-records.en.md contains the complete parts inventory, key layout and stabiliser positions. 04-step-copy.en.md contains the eight timed actions and their fixed captions. kit-assembly-geometry.png supplies the dimensioned component arrangement and assembly order. frame-safe-areas.png supplies the horizontal and vertical safety margins and annotation zones. kit-front-identity.png records the existing keyboard from directly above. kit-angle-identity.png records its front and side appearance. workbench-light-reference.png supplies the work surface and lighting atmosphere.
+
+Deliverables:
+1. One finished parts-identification image, with all five inventory IDs, component names, quantities and the assembled keyboard
+2. Two finished assembly keyframes, one for S03 showing the five stabiliser positions and one for S06 showing switch-pin alignment and downward insertion
+3. Two consecutive storyboard sheets of four panels each, covering S01–S04 and S05–S08 with movement arrows, caption boxes and shot annotations
+4. One final shot table of eight rows, containing shot ID, framing, duration, visible part IDs, cast, action, caption and start/end times
+
+Acceptance:
+- The parts-identification image names B01 Base assembly × 1, P01 Plate × 1, T01 Stabiliser assembly × 5, W01 Switch × 61 and K01 Keycap × 61. Its assembled view, both keyframes and both storyboard sheets retain the 61-key layout, #243D4A base, front-centre notch, rear-left port and orange upper-left Escape key wherever those features are visible.
+- The S03 keyframe and S03 storyboard panel locate four 2u stabiliser assemblies at Backspace, Enter, Left Shift and Right Shift, and one 6.25u assembly at Spacebar. The S06 keyframe and S06 panel align the switch pins with the board sockets and trace insertion through the seated plate; each moving component is labelled with its inventory ID.
+- The two storyboard sheets and shot table contain S01–S08 once each, in order, with 5 seconds per shot and a 40-second total. Their actions follow the attached eight-step sequence, with all five stabilisers installed before the plate is seated, all 61 switches installed before the keycaps, and all 61 keycaps present at S08.
+- Every storyboard panel prints its shot ID, framing chosen from WS, MS and CU, duration, visible part IDs and "Cast: None". The shot table repeats those values and the corresponding action. Each panel and table row reproduces its caption from 04-step-copy.en.md exactly; each caption occupies at most two lines, centred at the bottom, for the full 5 seconds of its shot.
+- The parts-identification image uses a 9:16 composition; both keyframes and all eight storyboard panels use 16:9 compositions. Each composition places assembly actions inside margins inset 3.5% from every edge and text inside margins inset 5%. In the storyboard panels, shot annotations occupy the upper band and captions the lower band shown in frame-safe-areas.png.
+- The parts-identification image and S01 panel print CLICKFRAME 61; the S08 panel prints Assembly complete. Both keyframes match their corresponding storyboard panels in component position, assembly state and lighting, with the keyboard's front edge towards the bottom of the image.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

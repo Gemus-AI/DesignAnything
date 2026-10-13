@@ -1,0 +1,152 @@
+{
+  "id": "bench-da-furniture-breadth-01",
+  "title": "FOLD FIELD — A reconfigurable textile screen for shared homes, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# FOLD FIELD\n\n- Product: reconfigurable freestanding textile screen\n- Users: adults sharing a living room\n- Uses: video-call background; short seated retreat\n- States: extended; corner; stored\n- Printed project name: FOLD FIELD\n- Domestic scene caption: Room to yourself\n\n## Room geometry\n\n- Internal dimensions: 4200 × 3600 mm\n- Ceiling height: 2500 mm\n- Coordinate origin: northwest internal corner\n- Positive x direction: east\n- Positive y direction: south\n- Coordinate and footprint units: mm\n- Clear route from entrance to desk in extended and corner states: minimum 900 mm\n\n| Element | Position | Dimensions or extent |\n| --- | --- | --- |\n| Entrance | South wall; west hinge at x = 0, y = 3600 | Opening x = 0–900; inward swing through 90 degrees |\n| Window | North wall | x = 600–2400; sill height 900; head height 2200 |\n| Desk | Northwest footprint corner x = 2700, y = 0 | 1200 wide × 600 deep × 740 high |\n| Sofa | Northwest footprint corner x = 0, y = 700 | 850 east–west × 1800 north–south × 800 high |\n| Storage envelope | Northwest footprint corner x = 3500, y = 3200 | 700 wide × 400 deep × 1850 high |\n\n## Screen construction\n\n- Frame quantity: 3\n- Individual frame outer dimensions: 600 mm wide × 1800 mm high\n- Frame material: solid ash\n- Frame finish: clear water-based lacquer\n- Assembly and state changes: tool-free\n- Corner connection angle: 90 degrees\n- Textile panels: removable\n- Inventory across states: same frames, supports, connectors and textile panels\n- Stored contents: complete screen inventory, including loose parts\n\n## Existing textiles\n\n| Code | Color | Composition | Weight | Supply width | Visual property | Care |\n| --- | --- | --- | --- | --- | --- | --- |\n| A | Oat | 70% cotton, 30% linen | 320 g/m² | 1400 mm | Opaque | Machine wash at 30°C |\n| B | Rust | 100% polyester | 120 g/m² | 1500 mm | Translucent | Machine wash at 30°C |\n\n## Use context\n\n- Video call: seated desk user with an opaque textile background\n- Reading retreat: seated adult with a translucent textile layer at the boundary\n- Material character: visible weave, textile tension, finished edges and overlapping layers\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# FOLD FIELD — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | assembly-drawing | Dimensioned assembly and connection drawing | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | extended-state | Extended screen configuration | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | corner-state | Corner screen configuration | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | stored-state | Complete screen in storage | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | textile-construction | Textile panels and removable attachments | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | domestic-scenes | Video-call and reading scenes | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: room-and-storage.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: existing-fabric-samples.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: shared-room-call.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: shared-room-pause.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "FOLD FIELD | A reconfigurable textile screen for shared homes\n\nWe are commissioning a freestanding textile screen for adults who share a living room and need a video-call background or a place to sit alone for a while. The room measures 4200 × 3600 mm, with a ceiling height of 2500 mm. The attached plan fixes the entrance, window, desk, sofa and storage position. The complete screen must fit within a storage envelope 700 mm wide × 400 mm deep × 1850 mm high and leave a clear route at least 900 mm wide from the entrance to the desk in both occupied configurations.\n\nDevelop three connected frames, each 600 mm wide × 1800 mm high, using solid ash with clear water-based lacquer. Frame sections, supports, connectors and textile attachments are yours to resolve; assembly and changes between extended, corner and stored states must be tool-free. Our existing fabrics are A, an opaque oat-colored weave of 70% cotton and 30% linen, 320 g/m², supplied at 1400 mm width; and B, a translucent rust-colored weave of 100% polyester, 120 g/m², supplied at 1500 mm width. Both are machine washable at 30°C. Use both fabrics, with removable panels, and carry the same frame, support, connector and textile inventory through all three states. Any loose parts belong within the storage envelope. Material expression should come from the contrast between opaque and translucent cloth, its tension, edges and overlaps. Print \"FOLD FIELD\" on all six sheets and \"Room to yourself\" as the caption on the domestic scene sheet.\n\nAudience: our furniture development team and sample workshop, for choosing the screen configuration and preparing the first prototype.\n\nInputs (attached): 01-client-facts.en.md records the room geometry, frame dimensions, storage allowance and fabric properties. 02-delivery-catalog.en.md lists the proportions, formats and stages of the six deliverables. room-and-storage.png supplies the fixed room layout and storage envelope. existing-fabric-samples.png identifies the two existing textiles and their visible weave character. shared-room-call.png provides the lived-in context of a video call beside a shared living area. shared-room-pause.png provides the atmosphere of a short private reading break.\n\nDeliverables:\n1. One dimensioned assembly drawing with front, side and exploded views, a numbered parts inventory with quantities, connector details and the tool-free assembly sequence\n2. One extended-state sheet with a room plan, perspective and overall dimensions, showing the screen behind the desk user and the 900 mm clear route\n3. One corner-state sheet with a room plan, perspective and overall dimensions, showing a seated retreat, a 90-degree connection and the 900 mm clear route\n4. One stored-state sheet with front, side and plan views, overall dimensions and the locations of all three frames, textiles, supports and connectors within the storage envelope\n5. One textile construction sheet with the A and B panel arrangement, both fabric records, edge and overlap details, attachment close-ups and the removal sequence for washing\n6. One domestic scene sheet containing two views of the same design: an extended video-call background and a corner reading retreat\n\nAcceptance:\n- The assembly drawing and the extended, corner and stored sheets use three 600 × 1800 mm frames in solid ash with clear water-based lacquer; their numbered parts and quantities match across all four sheets.\n- The extended and corner sheets place the furniture within the attached 4200 × 3600 mm room layout, retain the entrance, window, desk and sofa positions, and dimension a continuous clear route of at least 900 mm from entrance to desk.\n- The assembly drawing details the connector and support arrangement for each state; the corner sheet shows a 90-degree connection, and the stored sheet dimensions the complete inventory within 700 × 400 × 1850 mm, including loose parts.\n- The textile construction sheet records A as 70% cotton and 30% linen, 320 g/m², 1400 mm width, and B as 100% polyester, 120 g/m², 1500 mm width, with 30°C machine washing for both; its attachment and removal details support the tool-free assembly sequence on the assembly drawing.\n- The domestic scene sheet repeats the frame geometry and A/B panel arrangement from the extended, corner and textile construction sheets, with an opaque background behind the caller and a translucent layer at the reading retreat's edge.\n- All six sheets carry \"FOLD FIELD\"; the domestic scene sheet also carries \"Room to yourself\".\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/room-and-storage.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "12e16650e447a2a0c6677f5c634dd2d37a6262fbb2b9ba137373223eaf9c128e"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/existing-fabric-samples.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "ca7a66302b67606420418400e4c0114918440b383c440cf1f81adc079fb182ff"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/shared-room-call.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "4bc9d1ba6a5c0bac8424dea17efada4d52e170f7bb7c31e4be11b18e0da027f0"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/shared-room-pause.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "bbc89672b45cded76cfb8d452c53219ad7c0d1a9c3d0e692ba87ec08f402abd0"
+    }
+  ]
+}

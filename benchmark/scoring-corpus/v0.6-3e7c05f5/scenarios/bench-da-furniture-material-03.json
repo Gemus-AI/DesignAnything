@@ -1,0 +1,134 @@
+{
+  "id": "bench-da-furniture-material-03",
+  "title": "OFFCUT THREE — Stackable visitor stools from allocated timber, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# OFFCUT THREE — client stock and use record\n\n## Commission\n\n- Product: three identical, stackable visitor stools for an adult shared design studio.\n- Batch: three complete stools, identified as A, B and C.\n- Timber inventory identifiers: P1, P2, P3 and B01 through B12.\n- Inventory basis: original nominal client conditions represented in allocated-stock.png.\n- Dimension unit: mm throughout.\n- Timber: dry, planed hardwood; exact species and structural grade unknown.\n- Grain marks: direction indicators.\n- Selected surface treatment: clear water-based finish with visible existing grain.\n- Printed project name: \"OFFCUT THREE\".\n- Printed retrieval label: \"Lift A first\".\n\n## Finite timber inventory\n\n| IDs | Quantity | Each original blank | Grain direction | Unusable region |\n| --- | --- | --- | --- | --- |\n| P1, P2, P3 | 3 | 400 X by 400 Y by 20 Z | Along X | Closed corner region X 360..400, Y 330..400, through all 20 thickness |\n| B01 through B12 | 12 | 30 by 30 cross section; length 560 along L | Along L | All material with L greater than 500, comprising defect at L 515..560 and a 15-long precautionary buffer |\n\n- Coordinate origins: marked zero corner or end of each original blank.\n- Coordinate axes: attached to the corresponding physical blank through cutting and rotation.\n- Retained panel region: X < 360 or Y < 330; the excluded corner boundary belongs to waste.\n- Billet usable nominal interval: L 0..500.\n- Billet buffer location: between usable stock ending at L 500 and defect beginning at L 515.\n- End-removal cuts: 3 mm kerf per separating cut.\n- Defect inventory: the panel corner exclusions and billet end exclusions listed above.\n- Batch timber contribution: all three panels and all twelve billets.\n- Part yield per blank: one or more parts according to the cutting layout.\n- Sound remainder identity: numbered offcut linked to its original blank.\n- Defective pieces and precautionary buffers: waste.\n- Finished stool relationship: identical part types and dimensions across A, B and C.\n- Allocation variables: source blank and cut orientation within the stock geometry.\n- Part grain direction: inherited from its source piece.\n\n## Processing\n\n- Separating saw kerf: 3 mm for every cut, including cuts between adjacent retained parts.\n- Available timber operations: straight, angled and curved cutting; drilling; routing; sanding; lamination of sound offcuts.\n- Small timber spacers and connectors: sound offcuts from the same inventory.\n- Increased timber thickness: laminated source pieces with an accounted finished thickness.\n- Available steel operations: cutting, drilling and bending.\n- Available felt operation: cutting within the allocated squares.\n- Timber supply: the listed panels, billets and their accounted offcuts.\n- Material account categories: finished parts, sound offcuts, defect waste, other machining waste and kerf loss.\n\n## Additional materials for the complete batch\n\n| Material | Available quantity | Dimensions or description |\n| --- | --- | --- |\n| M6 bolts | 36 | Nominal length 60 |\n| Matching nuts | 36 | Matching the M6 bolts |\n| Washers | 72 | For the bolt connections |\n| Mild-steel connector blanks | 12 | Each 80 by 80 by 3 |\n| Felt squares | 12 | Each 80 by 80 by 3 |\n| Wood adhesive | Available | Quantity unspecified |\n| Water-based finish | Available | Clear treatment selected |\n\n- Hardware and felt accounting fields: available, used and remaining quantities.\n- Cut steel and felt accounting: source blank, retained pieces and remainder.\n- Non-timber allowance usage: any quantity within each listed total.\n- Joint record fields: connection type, component quantities, dimensions, bolt paths, assembly tools and largest dismantled part dimensions.\n\n## One stool and the batch\n\n| Property | Value |\n| --- | --- |\n| Seat top above floor | 440–470 |\n| Unobstructed horizontal usable seat square | 300 by 300 |\n| Maximum overall footprint | 550 by 550 |\n| Finished batch quantity | 3 |\n\n- Stool configuration: complete freestanding seat with supports, connectors, finished edges and distinct floor contacts.\n- Usable seat square: geometric overlay identifying clear seating area.\n- Shared design: the same timber part geometry and connector system for A, B and C.\n- Visible material identity: existing grain under clear water-based finish.\n- Surface treatment locations: feet and stack contacts, identified in the connection record.\n\n## Stacking, retrieval and storage\n\n| Property | Value |\n| --- | --- |\n| Stored arrangement | One upright nested stack of three complete stools |\n| Stack order, top to bottom | A, B, C |\n| Storage allowance, width by depth by height | 600 by 600 by 1050 |\n| Minimum clearance at non-bearing close approaches | 5 |\n| First stool removed | A |\n| Remaining supported pair | B and C |\n\n- Stored stool composition: all timber, connectors and felt retained on their respective stools.\n- Stack support: identifiable designed bearing contacts between each upper stool and the stool below.\n- Bearing contact clearance: contact surfaces exempt from the 5 mm separation.\n- Other close approaches: separate occupied volumes for seats, supports, hardware and felt.\n- Stack dimension fields: complete width, depth, height and repeated vertical increment.\n- Concealed geometry record: section or dimensioned detail through the controlling approach.\n- Part identities: consistent across complete top, middle and bottom stools; hidden members represented in section or cutaway.\n- Retrieval: whole A lifted and carried while complete B and C remain supported.\n- Grip: identified on A, with schematic hand positions outside load-bearing stack contacts.\n- Return: reverse movement using the original orientation or an explicitly drawn permissible rotation.\n- Human activity: floor-based handling and seated use.\n\n## Shared studio context\n\n| Existing fixture or space | Dimensions |\n| --- | --- |\n| Worktable top, length by depth | 1800 by 800 |\n| Worktable top above floor | 740 |\n| Worktable unobstructed underside above floor | 710 |\n| Continuous route from work area to storage, minimum width | 750 |\n| Storage footprint | 600 by 600 |\n\n- Worktable status: existing context fixture.\n- Working arrangement: three stools at three distinct sides or positions around the same table.\n- Occupancy: one adult per stool.\n- Scene variables: exact stool placement and neutral studio background.\n- Spatial basis: nominal fixture and clearance dimensions.\n- Working and stored furniture: the same complete A, B and C.\n- Unused hardware and discarded timber: stock account entries.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# OFFCUT THREE — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | stool-views | Resolved stool views | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | cutting-stock-account | Final cutting and stock account | 6 | Format: presentation document; at least eight actual pages. Stage: final. |\n| 3 | assembly-connections | Assembly and connection sheet | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | stack-geometry | Three-stool stack and clearance section | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | retrieval-return | Retrieval and return sequence | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | studio-use-storage | Studio use and storage scenes | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: allocated-stock.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: allocated-timber-identity.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: studio-after-session.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "OFFCUT THREE | Stackable visitor stools from allocated timber\n\nWe need three identical visitor stools for our shared design studio, identified as A, B and C. The complete batch comes from three dry, planed hardwood panels P1, P2 and P3, each 400 by 400 by 20 mm, and twelve hardwood billets B01 through B12, each 30 by 30 by 560 mm. The species and structural grade are unknown. Every blank must contribute to the stools. On each panel, the closed corner region X 360..400 and Y 330..400 is waste through the full thickness; retained wood must lie where X < 360 or Y < 330. Billet material beyond L 500 is waste, comprising the 15 mm buffer and defect at L 515..560. Every separating saw cut consumes 3 mm. Our additional allowance is 36 M6 bolts of nominal 60 mm length, 36 matching nuts, 72 washers, twelve mild-steel connector blanks of 80 by 80 by 3 mm, twelve felt squares of 80 by 80 by 3 mm, wood adhesive and water-based finish. Develop the form and part arrangement within this stock, using a clear water-based finish that leaves the grain visible.\n\nEach stool needs a seat top 440–470 mm above the floor, a clear horizontal seating square of 300 by 300 mm and a footprint within 550 by 550 mm. Store the three complete stools in one upright nested stack within 600 mm wide by 600 mm deep by 1050 mm high. Designed bearing contacts support each upper stool; every other close approach between stools needs at least 5 mm clearance. A sits above B above C and is lifted off first, then returned as a complete stool. Our existing worktable is 1800 by 800 mm, with its top at 740 mm and clear underside at 710 mm. Show one adult on each stool at three distinct table positions and a continuous route at least 750 mm wide to storage. Print \"OFFCUT THREE\" on the stool views and stock account, and \"Lift A first\" on the retrieval sequence.\n\nAudience: the studio owners and furniture maker, for choosing the stool design and organising the three-stool build and storage arrangement.\n\nInputs (attached): 01-client-facts.en.md contains the stock records, processing allowances and studio dimensions. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. allocated-stock.png is the constraint image for blank geometry, defect exclusions, kerf and additional materials. allocated-timber-identity.png is the identity image for the existing hardwood stock, its visible grain and defect locations. studio-after-session.png is an atmosphere reference for a shared studio being cleared after a group session.\n\nDeliverables:\n1. One resolved stool views sheet with front, side, plan, underside and three-quarter views, finished dimensions, the 300 by 300 mm usable seat overlay and the OFFCUT THREE name\n2. One final cutting and stock account document covering P1–P3 and B01–B12, dimensioned part layouts and grain directions, every 3 mm separating kerf, defect waste, numbered sound offcuts, the part allocation to A, B and C, and used and remaining quantities of all hardware and felt\n3. One assembly and connection sheet with an exploded stool, timber part IDs and quantities, dimensioned joints and connector positions, bolt paths, assembly tools, the largest dismantled part dimensions, and finish treatments at feet and stack contacts\n4. One three-stool stack sheet with complete stools A, B and C, dimensioned overall width, depth and height, the repeated vertical stack increment, bearing contacts and a section through the controlling clearance\n5. One retrieval and return sequence sheet with the complete A lifting from B and C, its grip locations and schematic hand positions, its carrying position, its return path and orientation, and the printed label \"Lift A first\"\n6. One studio use and storage sheet with two matched scenes: three adults using A, B and C around the existing worktable, and the same three stools stacked in the storage allowance, supported by a dimensioned plan of the connecting route\n\nAcceptance:\n- The stool views and assembly sheet describe one freestanding design with identical timber part types, dimensions and connector systems for A, B and C. The views dimension the seat height at 440–470 mm, the unobstructed 300 by 300 mm seating square and the overall footprint within 550 by 550 mm; the assembly sheet identifies every floor contact and the clear water-based finish.\n- The cutting and stock account assigns finished parts from all three panels P1–P3 and all twelve billets B01–B12 to A, B and C. Its layouts retain the original coordinate origins, follow the grain of each cut piece, place retained panel wood where X < 360 or Y < 330, and fit retained billet wood and the actual separating kerfs within the stock. Every separating cut has a visible 3 mm width; the L 515..560 defects, 15 mm buffers, panel corner waste, other waste and numbered sound offcuts have distinct entries. Laminated parts identify their source pieces and finished thickness.\n- The assembly sheet and stock account agree on part IDs and quantities, joint dimensions and the allocation of up to 36 M6 bolts of nominal 60 mm length, 36 nuts, 72 washers, twelve 80 by 80 by 3 mm steel blanks and twelve 80 by 80 by 3 mm felt squares. The account records used and remaining quantities, including the parent blanks of cut steel and felt pieces; the assembly sheet names the tools and dimensions the largest dismantled part.\n- The stack sheet repeats the complete assembled geometry and part IDs from the stool views and assembly sheet, with A above B above C. Its envelope fits 600 by 600 by 1050 mm; the section dimensions the repeated vertical increment, identifies each bearing contact and shows at least 5 mm separation at every other close approach, with distinct occupied outlines for timber, hardware and felt.\n- The retrieval sequence prints \"Lift A first\" and follows the stack sheet's geometry through lifting, carrying and returning the complete A. Grip locations and schematic fingers sit clear of bearing contacts, the drawn movement clears B and C, and B and C remain a complete supported pair throughout; the return uses the same orientation or a drawn permissible rotation.\n- The studio sheet uses the same A, B and C as the stool views and stack sheet, seats one adult at each of three distinct positions around the 1800 by 800 mm table, labels its 740 mm top and 710 mm underside, and dimensions a continuous route at least 750 mm wide to the 600 by 600 mm storage footprint. The stool views and stock account both print \"OFFCUT THREE\".\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/allocated-stock.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "e70b92f8bb61abfa4c98b2a3b61c22ba1038c2c0dc508b4574cb54ebfc373f1a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/allocated-timber-identity.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "0c6eca04ec04a9a02dda82f274879e2c5da630ce57c4c109eaf8f13693916dcb"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-03/studio-after-session.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "2b10f526d01f6c7dc9c8b4e6266ce60449a7d8d064dd21ea71d6568c36596e49"
+    }
+  ]
+}

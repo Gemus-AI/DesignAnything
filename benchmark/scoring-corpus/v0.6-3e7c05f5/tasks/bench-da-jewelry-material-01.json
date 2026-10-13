@@ -1,0 +1,578 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-jewelry-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "pendant-overview",
+      "label": "Pendant and complete chain overview",
+      "description": "One finished overview board showing the pendant in three-quarter view and its complete silver chain, bail and clasp.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pendant-orthographic",
+      "label": "Dimensioned pendant front, side and rear",
+      "description": "One orthographic board containing aligned front, side and rear pendant views with selected dimensions and the separate nominal G1 envelope.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "stone-setting",
+      "label": "Stone support and retention relationship",
+      "description": "One stone-to-setting board containing an exploded relationship view and a section with mechanical supports, contact regions and labelled nominal stone geometry.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pendant-specification",
+      "label": "Final pendant specification",
+      "description": "One final specification board recording the G1 identity, stone and pendant dimensions, selected chain length, silver components, finishes and clasp arrangement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "wearing-w1",
+      "label": "W1 open-neckline wearing view",
+      "description": "One W1 wearing board showing the pendant against an adult wearer’s upper chest, its chain attachment and selected chain length.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "wearing-w2",
+      "label": "W2 fine-knit wearing view",
+      "description": "One W2 wearing board showing the same pendant on a fine knit top on the same adult wearer, its chain attachment and selected chain length.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "MEMENTO",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "silver-label",
+      "kind": "text-verbatim",
+      "text": "925 silver",
+      "scope": {
+        "slots": [
+          "pendant-specification",
+          "stone-setting"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "nominal-geometry-label",
+      "kind": "text-verbatim",
+      "text": "Nominal stone envelope",
+      "scope": {
+        "slots": [
+          "stone-setting"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "MEMENTO",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "complete-pendant-system",
+      "slots": [
+        "pendant-overview",
+        "pendant-orthographic",
+        "stone-setting",
+        "wearing-w1",
+        "wearing-w2"
+      ],
+      "sourceSlots": [
+        "pendant-specification"
+      ],
+      "items": [
+        {
+          "item": "All depictions resolve to one pendant design with consistent stone proportions, bail position, rear metalwork and perimeter retention.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Visible silver finishes, chain details and clasp arrangement agree with the specification, allowing viewpoint, lighting and clothing occlusion.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Both wearing boards use the same adult wearer, pendant and selected chain length.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The design preserves one intact G1 with its carved face outward, using the reddish stone reference for material identity rather than the grey mirrored impression.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "MEMENTO"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "pendant-overview",
+      "pendant-orthographic",
+      "stone-setting",
+      "pendant-specification",
+      "wearing-w1",
+      "wearing-w2"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge undocumented hidden stone geometry as measured anatomy or infer certified structural performance from presentation boards."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "pendant-overview",
+        "pendant-orthographic",
+        "stone-setting",
+        "pendant-specification",
+        "wearing-w1",
+        "wearing-w2"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-pendant-overview",
+      "requirementId": "R-format-pendant-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pendant-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pendant-orthographic",
+      "requirementId": "R-format-pendant-orthographic",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pendant-orthographic"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-stone-setting",
+      "requirementId": "R-format-stone-setting",
+      "method": "artifact-property",
+      "targetSlots": [
+        "stone-setting"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pendant-specification",
+      "requirementId": "R-format-pendant-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pendant-specification"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-wearing-w1",
+      "requirementId": "R-format-wearing-w1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wearing-w1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-wearing-w2",
+      "requirementId": "R-format-wearing-w2",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wearing-w2"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "stone-preservation-and-record",
+      "requirementId": "R-stone-preservation-and-record",
+      "method": "visual",
+      "targetSlots": [
+        "pendant-overview",
+        "pendant-orthographic",
+        "stone-setting",
+        "pendant-specification"
+      ],
+      "criteria": "The depicted mounting contains one intact G1 with its existing carved surfaces and edge losses retained. Across views, its irregular outline, reddish translucent material and incised figure/chariot/serpent motif agree with the supplied stone identity. Viewpoint and lighting may vary, but replacement motifs, restored edges, additional stones or a grey raised-relief substitute fail. The specification identifies G1 as the inherited carnelian intaglio and records its nominal 13 × 9 × 4 mm stone envelope independently of pendant dimensions. Any museum identification shown must agree with The Metropolitan Museum of Art, object 244973, accession 81.6.102; credit and published dimensions, if shown, must agree with the supplied record.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "dimensions-and-nominal-geometry",
+      "requirementId": "R-dimensions-and-nominal-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "pendant-orthographic",
+        "pendant-specification",
+        "stone-setting"
+      ],
+      "criteria": "Read the selected height, width and depth on both dimension records and verify numerical agreement, allowing equivalent unit notation. Each value must be within its corresponding 30, 24 and 10 mm maximum, with the bail included and the chain excluded. Every stone section or hidden-surface representation must be clearly associated with the label \"Nominal stone envelope\"; a shared label is acceptable only when its scope is unambiguous. Missing dimensions, conflicting values, exceeded limits or undocumented hidden stone geometry presented as measured fact fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "mounting-agreement-and-retention",
+      "requirementId": "R-mounting-agreement-and-retention",
+      "method": "visual",
+      "targetSlots": [
+        "pendant-overview",
+        "pendant-orthographic",
+        "stone-setting"
+      ],
+      "criteria": "Compare the bail location, designed rear metalwork and edge-retaining features across the assembled and explanatory views. Perspective and explanatory separation may differ, but the underlying mounting must remain the same. The stone-to-setting board must identify where the stone bears on metal and how perimeter overlap retains it. Unsupported placement, contradictory backing or retention, unidentified contact regions, or metal obscuring the central carving fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "silver-finishes-and-clasp",
+      "requirementId": "R-silver-finishes-and-clasp",
+      "method": "visual",
+      "targetSlots": [
+        "pendant-specification",
+        "stone-setting",
+        "pendant-overview",
+        "wearing-w1",
+        "wearing-w2"
+      ],
+      "criteria": "The specification records the setting, bail and coordinating chain as 925 silver, assigns each finish location using polished, satin or oxidized silver, and identifies a generic silver clasp and its arrangement. Any combination of the permitted finishes is acceptable. The overview and wearing depictions must follow those assignments and clasp arrangement wherever visible; natural lighting differences and a clasp hidden behind the neck are acceptable. Missing finish assignments, incompatible visible materials or clasp designs, or absent \"925 silver\" lettering on either required board fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "wearing-contexts-scale-and-chain",
+      "requirementId": "R-wearing-contexts-scale-and-chain",
+      "method": "visual",
+      "targetSlots": [
+        "wearing-w1",
+        "wearing-w2"
+      ],
+      "criteria": "W1 must be labelled W1 and show an open neckline with the pendant against the upper chest; W2 must be labelled W2 and show the same adult wearer with the pendant resting on fine knit fabric. Both must include the entire pendant, visible chain attachment, and enough neck and upper torso to assess size. Require a small detail view when the main wearing image does not make the carving readable. Read both stated chain lengths and compare them with the specification: all must use one value from 420 through 500 mm inclusive. Clothing colour, hairstyle, skin tone and camera position are not independently prescribed, but the wearer must remain recognizably the same person. Wrong contexts, missing labels, cropped assessment areas or inconsistent lengths fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "pendant-specification"
+      ]
+    },
+    {
+      "id": "name-orientation-and-proportions",
+      "requirementId": "R-name-orientation-and-proportions",
+      "method": "visual",
+      "targetSlots": [
+        "pendant-overview",
+        "pendant-orthographic",
+        "stone-setting",
+        "pendant-specification",
+        "wearing-w1",
+        "wearing-w2"
+      ],
+      "criteria": "Every board must visibly carry MEMENTO. Compare the depicted pendant and stone proportions with the specification, allowing perspective, enlargement and diagrammatic separation. The assembled design must expose the engraved side toward the viewer when worn; rear and side explanatory views need not themselves show the carving. A reversed mounting, materially inconsistent relative dimensions or missing project lettering fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "overview-completeness",
+      "requirementId": "R-overview-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "pendant-overview"
+      ],
+      "criteria": "The overview must provide an enlarged oblique view that reveals the pendant's front and depth, plus a readable presentation of the complete coordinating chain, bail and clasp. These may share one composition or use supporting views. A solely frontal depiction, absent enlargement, or an omitted or cropped chain component fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "orthographic-view-coverage",
+      "requirementId": "R-orthographic-view-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "pendant-orthographic"
+      ],
+      "criteria": "Require recognizable front, side and rear orthographic views arranged with corresponding axes and a consistent scale so their geometry can be compared. Selected pendant height, width and depth must be readable, with the nominal G1 envelope distinguished from the complete pendant. Layout and annotation style may vary; missing views, incompatible alignment or conflation of stone and pendant dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "exploded-view-and-section",
+      "requirementId": "R-exploded-view-and-section",
+      "method": "visual",
+      "targetSlots": [
+        "stone-setting"
+      ],
+      "criteria": "Require both an exploded view explaining the relationship between G1 and the mounting components and a section explaining the mounting interface. Together they must visibly locate stone contacts, edge retention and the nominal stone envelope. Diagram style and separation distances may vary, but an assembled view alone, an absent section or an interface that cannot be understood fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-complete-pendant-system",
+      "requirementId": "R-set-complete-pendant-system",
+      "method": "visual",
+      "targetSlots": [
+        "pendant-overview",
+        "pendant-orthographic",
+        "stone-setting",
+        "wearing-w1",
+        "wearing-w2"
+      ],
+      "criteria": "All depictions resolve to one pendant design with consistent stone proportions, bail position, rear metalwork and perimeter retention. Visible silver finishes, chain details and clasp arrangement agree with the specification, allowing viewpoint, lighting and clothing occlusion. Both wearing boards use the same adult wearer, pendant and selected chain length. The design preserves one intact G1 with its carved face outward, using the reddish stone reference for material identity rather than the grey mirrored impression.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "pendant-specification"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "g1-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "stone-front.jpg"
+      ],
+      "subjectSlots": [
+        "pendant-overview",
+        "pendant-orthographic",
+        "stone-setting",
+        "wearing-w1",
+        "wearing-w2"
+      ],
+      "notes": "Preserve its irregular oval outline, existing small edge losses, translucent red body and incised figure/chariot/serpent scene."
+    },
+    {
+      "id": "same-adult-wearer",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "wearing-w1",
+      "subjectSlots": [
+        "wearing-w2"
+      ],
+      "notes": "The same adult wearer appears in W1, an open neckline with the pendant against the upper chest, and W2, a fine knit top with the pendant on the fabric."
+    }
+  ]
+}

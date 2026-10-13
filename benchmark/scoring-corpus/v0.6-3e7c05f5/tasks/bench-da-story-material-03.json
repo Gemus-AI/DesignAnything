@@ -1,0 +1,632 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-story-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "parts-identification",
+      "label": "Parts identification and assembled keyboard",
+      "description": "One finished parts-identification image with five inventory groups, their IDs and quantities, and the assembled keyboard.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "stabiliser-keyframe",
+      "label": "S03 stabiliser placement keyframe",
+      "description": "One finished S03 keyframe showing the five stabiliser assemblies aligned with their plate positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "switch-keyframe",
+      "label": "S06 switch insertion keyframe",
+      "description": "One finished S06 keyframe showing switch-pin alignment and vertical insertion through the seated plate.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storyboard-first",
+      "label": "Assembly storyboard S01–S04",
+      "description": "One four-panel storyboard sheet covering inventory, base orientation, stabiliser installation and plate seating.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storyboard-second",
+      "label": "Assembly storyboard S05–S08",
+      "description": "One four-panel storyboard sheet covering switch-pin inspection, switch insertion, keycap installation and the completed keyboard.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "final-shot-table",
+      "label": "Final eight-shot assembly table",
+      "description": "One final eight-row shot table with framing, timing, part IDs, cast, actions and exact captions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-title",
+      "kind": "text-verbatim",
+      "text": "CLICKFRAME 61",
+      "scope": {
+        "slots": [
+          "parts-identification",
+          "storyboard-first"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "closing-copy",
+      "kind": "text-verbatim",
+      "text": "Assembly complete",
+      "scope": {
+        "slots": [
+          "storyboard-second"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CLICKFRAME 61",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "fixed-component-system",
+      "slots": [
+        "parts-identification",
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "items": [
+        {
+          "item": "Visible components retain their recorded properties: a #243D4A base with installed hot-swap board, USB-C connector, feet and four integral plate clips; a satin aluminium plate with 61 switch openings and five stabiliser positions; complete stabilisers with black housings and silver wires; switches with clear upper housings, black lower housings, orange cross stems and two straight metal contact pins; and blank #EEE8DA ivory caps with one #E97938 orange Escape cap.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Exposed assembly interfaces follow the records: stabilisers mount to the plate, the plate snaps into four base clips, switch clips engage the plate while pins enter board sockets, and keycaps press onto switch stems with five wide caps also engaging stabiliser stems. Clip placement corresponds to rear-left-based coordinates (75, 7), (225, 7), (75, 103) and (225, 103) mm, with downward engagement at those locations. Judge visible spatial agreement rather than requiring printed measurements or exposure of enclosed parts.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The same component designs and materials persist between inventory views, assembly keyframes and storyboard panels; only the installation stage, framing and physically consistent lighting response may change.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "keyframe-storyboard-continuity",
+      "slots": [
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "sourceSlots": [
+        "stabiliser-keyframe",
+        "switch-keyframe"
+      ],
+      "items": [
+        {
+          "item": "S03 agrees with the stabiliser keyframe and S06 agrees with the switch keyframe in component position, assembly state, front-edge orientation and lighting, allowing reproduction at a different scale within a storyboard sheet.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "CLICKFRAME 61",
+    "carryThrough": {
+      "none": "The shot table is the final written deliverable, and the letter does not require later files to repeat facts extracted from it."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Storyboard Creation",
+    "slots": [
+      "parts-identification",
+      "stabiliser-keyframe",
+      "switch-keyframe",
+      "storyboard-first",
+      "storyboard-second"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the clarity and visual execution of the supplied keyboard assembly storyboards, without scoring redesign of the fixed product or actual animation playback, interpolation or audio."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "parts-identification",
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-parts-identification",
+      "requirementId": "R-format-parts-identification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "parts-identification"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-stabiliser-keyframe",
+      "requirementId": "R-format-stabiliser-keyframe",
+      "method": "artifact-property",
+      "targetSlots": [
+        "stabiliser-keyframe"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-switch-keyframe",
+      "requirementId": "R-format-switch-keyframe",
+      "method": "artifact-property",
+      "targetSlots": [
+        "switch-keyframe"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storyboard-first",
+      "requirementId": "R-format-storyboard-first",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storyboard-first"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storyboard-second",
+      "requirementId": "R-format-storyboard-second",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storyboard-second"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-final-shot-table",
+      "requirementId": "R-format-final-shot-table",
+      "method": "artifact-property",
+      "targetSlots": [
+        "final-shot-table"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "inventory-and-visible-identity",
+      "requirementId": "R-inventory-and-visible-identity",
+      "method": "visual",
+      "targetSlots": [
+        "parts-identification",
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "On parts-identification, read five distinct inventory records: B01 / Base assembly / 1; P01 / Plate / 1; T01 / Stabiliser assembly / 5; W01 / Switch / 61; K01 / Keycap / 61. Require the corresponding component groups and an assembled keyboard view. Across every target, inspect exposed identity features for the specified layout, deep teal base, centred front notch, rear-left USB-C opening and orange upper-left Escape cap. Perspective, lighting and stage-appropriate enclosure may change visibility; incorrect visible features, missing inventory records or contradictory quantities fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "stabiliser-and-switch-mechanics",
+      "requirementId": "R-stabiliser-and-switch-mechanics",
+      "method": "visual",
+      "targetSlots": [
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "Inspect S03 in both representations for four complete 2u stabilisers at R1C14, R3C13, R4C1 and R4C12, plus one complete 6.25u stabiliser at R5C4. Inspect S06 for two switch contact pins aligned with board sockets and a downward insertion path through an already seated plate. Moving parts must have their matching B01, P01, T01, W01 or K01 identifier as applicable. Exploded spacing may illustrate travel, but misplaced stabilisers, disconnected stabiliser pieces counted as complete assemblies, a floating plate during switch insertion, misaligned pins or missing movement labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "storyboard-sequence-and-completion",
+      "requirementId": "R-storyboard-sequence-and-completion",
+      "method": "visual",
+      "targetSlots": [
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "Require four consecutive panels S01–S04 on the first sheet and four S05–S08 on the second, each marked 5 seconds, yielding 40 seconds. Read the depicted actions and annotations together: S01 inventory groups with names, quantities and title above; S02 front notch nearest the viewer and port at rear left; S03 five stabilisers clipped into the plate; S04 populated plate lowered into the base and all four clips engaged; S05 underside close-up showing both straight switch pins; S06 vertical switch insertion followed by all 61 switches seated; S07 keycaps pressed onto stems with five wide caps engaging stabilisers and orange Escape upper left; S08 all 61 caps seated with internal parts enclosed. Arrows and annotations may communicate progression within a static panel. Omitted, duplicated, reordered or mechanically premature steps fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "panel-records-and-captions",
+      "requirementId": "R-panel-records-and-captions",
+      "method": "visual",
+      "targetSlots": [
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "Read each panel's shot ID, WS/MS/CU framing, 5-second duration, visible-part record and Cast: None. Expected part records are S01 B01/P01/T01/W01/K01; S02 B01; S03 P01/T01; S04 B01/P01/T01; S05 W01; S06 B01/P01/T01/W01; S07 and S08 B01/P01/T01/W01/K01. Enclosed internal parts may remain listed without being exposed in the artwork. Match captions character for character to the attachment: S01 'Check the five part groups.'; S02 'Place the front notch towards you.'; S03 'Clip the five stabilisers into the plate.'; S04 'Seat the plate in all four clips.'; S05 'Check that both switch pins are straight.'; S06 'Align and press in all 61 switches.'; S07 'Fit the keycaps, with orange at the upper left.'; S08 'Assembly complete'. Allow line wrapping into at most two lines without changing wording or punctuation. Require bottom-centred caption boxes and annotations establishing full-shot caption visibility. Missing fields, unsupported framing codes, changed captions or shorter caption exposure fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "shot-table-records-and-storyboard-agreement",
+      "requirementId": "R-shot-table-records-and-storyboard-agreement",
+      "method": "content",
+      "targetSlots": [
+        "final-shot-table"
+      ],
+      "criteria": "Require eight ordered rows S01–S08 with shot ID, framing, duration, visible part IDs, cast, action, caption and start/end times. Compare framing, part IDs, cast and actions with the corresponding storyboard panels and 04-step-copy.en.md. Each duration is 5 seconds; start/end pairs are 0–5, 5–10, 10–15, 15–20, 20–25, 25–30, 30–35 and 35–40 seconds, with no gaps or overlaps. Read all eight captions against the attachment verbatim, preserving punctuation and case. The table must specify full-shot caption exposure and bottom-centred placement with at most two on-screen lines, either per row or through an explicit shared instruction. Table-cell wrapping is not an on-screen line count. Missing columns, altered copy, inconsistent panel records or actions that violate the prescribed installation order fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "sourceSlots": [
+        "storyboard-first",
+        "storyboard-second"
+      ]
+    },
+    {
+      "id": "composition-and-safe-areas",
+      "requirementId": "R-composition-and-safe-areas",
+      "method": "visual",
+      "targetSlots": [
+        "parts-identification",
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "Assess the parts image as a portrait 9:16 composition and each keyframe and individual storyboard panel as a landscape 16:9 composition; do not impose an aspect ratio on the complete storyboard sheet. Measure safe placement relative to each composition's own bounds: assembly actions remain within the 3.5% inset and text within the 5% inset. Storyboard shot annotations belong in the 5%–14% height band and captions in the 78%–95% band. Allow ordinary measurement uncertainty from rasterisation, but fail visibly incorrect proportions, clipped action, text crossing the safe boundary or misplaced annotation bands. No exact canvas pixel count is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "title-placement-and-keyframe-matching",
+      "requirementId": "R-title-placement-and-keyframe-matching",
+      "method": "visual",
+      "targetSlots": [
+        "parts-identification",
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "Locate the product title on parts-identification and specifically within S01, and locate the closing wording specifically within S08. Compare stabiliser-keyframe with S03 and switch-keyframe with S06 for matching component arrangement, installation state and lighting. Scaling and sheet placement may differ while preserving those relationships. Both pairs must orient the keyboard front toward the image bottom. Text appearing only in another panel, contradictory part positions or installation states, reversed orientation or visibly different lighting setups fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "object-only-directional-storytelling",
+      "requirementId": "R-object-only-directional-storytelling",
+      "method": "visual",
+      "targetSlots": [
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "Assembly is communicated through components, their positions and directional arrows, without people, hands or character performers. Each depicted movement has an unambiguous arrow consistent with its installation path. Static inspection and completed-product holds need no invented movement. Human-assisted assembly imagery, absent arrows for moving parts or arrows contradicting the required mechanics fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "recorded-product-geometry",
+      "requirementId": "R-recorded-product-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "parts-identification",
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "Where geometry is visible, compare it with the supplied kit records and dimensioned arrangement. The completed layout has five rows containing 14, 14, 13, 12 and 8 keys, each totalling 15u. Left-to-right widths are R1 thirteen 1u keys then 2u; R2 1.5u, twelve 1u keys, 1.5u; R3 1.75u, eleven 1u keys, 2.25u; R4 2.25u, ten 1u keys, 2.75u; R5 three 1.25u keys, 6.25u, four 1.25u keys. Assess visible proportions against the 300 × 110 × 20 mm base, 286 × 96 mm plate and centred 285.75 × 95.25 mm key field with 19.05 mm pitch. Keycap tops follow nominal unit width times 19.05 mm minus 1.05 mm, with 18 mm depth. Perspective and occlusion are allowed; do not demand dimension labels or infer absolute scale from pixels. Wrong row counts, incompatible key widths, an uncentred key field or clearly contradictory component proportions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-fixed-component-system",
+      "requirementId": "R-set-fixed-component-system",
+      "method": "visual",
+      "targetSlots": [
+        "parts-identification",
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "Visible components retain their recorded properties: a #243D4A base with installed hot-swap board, USB-C connector, feet and four integral plate clips; a satin aluminium plate with 61 switch openings and five stabiliser positions; complete stabilisers with black housings and silver wires; switches with clear upper housings, black lower housings, orange cross stems and two straight metal contact pins; and blank #EEE8DA ivory caps with one #E97938 orange Escape cap. Exposed assembly interfaces follow the records: stabilisers mount to the plate, the plate snaps into four base clips, switch clips engage the plate while pins enter board sockets, and keycaps press onto switch stems with five wide caps also engaging stabiliser stems. Clip placement corresponds to rear-left-based coordinates (75, 7), (225, 7), (75, 103) and (225, 103) mm, with downward engagement at those locations. Judge visible spatial agreement rather than requiring printed measurements or exposure of enclosed parts. The same component designs and materials persist between inventory views, assembly keyframes and storyboard panels; only the installation stage, framing and physically consistent lighting response may change.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-keyframe-storyboard-continuity",
+      "requirementId": "R-set-keyframe-storyboard-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "criteria": "S03 agrees with the stabiliser keyframe and S06 agrees with the switch keyframe in component position, assembly state, front-edge orientation and lighting, allowing reproduction at a different scale within a storyboard sheet.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/03-kit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-03/04-step-copy.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "stabiliser-keyframe",
+        "switch-keyframe"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "reference-keyboard-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "kit-front-identity.png",
+        "kit-angle-identity.png"
+      ],
+      "subjectSlots": [
+        "parts-identification",
+        "stabiliser-keyframe",
+        "switch-keyframe",
+        "storyboard-first",
+        "storyboard-second"
+      ],
+      "notes": "Its assembled view, both keyframes and both storyboard sheets retain the 61-key layout, #243D4A base, front-centre notch, rear-left port and orange upper-left Escape key wherever those features are visible."
+    }
+  ]
+}

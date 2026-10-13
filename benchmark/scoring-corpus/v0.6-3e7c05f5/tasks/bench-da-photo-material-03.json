@@ -1,0 +1,1132 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-photo-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "shoot-specification",
+      "label": "Shoot specification and shot list",
+      "description": "A two-page specification covering the practical concept, identity anchors, lighting and six numbered shots.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "practical-setup-board",
+      "label": "Practical-effects setup board",
+      "description": "One board with four practical-effects arrangements and the repeated wardrobe and lighting facts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "s01-approach",
+      "label": "S01 Approach opening hero",
+      "description": "The full-length S01 Approach photograph of Mara Vale in the fastened coat.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "s02-divide",
+      "label": "S02 Divide portrait",
+      "description": "The S02 Divide three-quarter portrait of Mara Vale at the practical threshold.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "s03-reverse",
+      "label": "S03 Reverse rear view",
+      "description": "The S03 Reverse rear garment photograph with Mara Vale's face reflected in the mirror.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "s04-return",
+      "label": "S04 Return environmental photograph",
+      "description": "The S04 Return wide environmental photograph of Mara Vale within the practical set.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "d01-chest-detail",
+      "label": "D01 Chest construction detail",
+      "description": "The D01 detail photograph of the left chest welt, wool herringbone and one front button.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "d02-back-detail",
+      "label": "D02 Back construction detail",
+      "description": "The D02 detail photograph of the centre-back seam and 300 mm vent.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "s01-square-crop",
+      "label": "S01 Square crop",
+      "description": "A square crop of S01 retaining Mara Vale's full figure, six buttons and both boots.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "s01-story-crop",
+      "label": "S01 Vertical story crop",
+      "description": "A vertical story crop of S01 retaining Mara Vale's full figure, six buttons and both boots.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "opening-spread",
+      "label": "Opening magazine spread",
+      "description": "The opening magazine spread combining S01, S02 and D01 with the editorial title and line.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "closing-spread",
+      "label": "Closing magazine spread",
+      "description": "The closing magazine spread combining S03, S04 and D02 with the editorial title and line.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "editorial-video",
+      "label": "Ten-second editorial video",
+      "description": "A 10-second editorial video following the four passages and ending with the editorial title and line.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "editorial-presentation",
+      "label": "Editorial presentation",
+      "description": "A presentation of at least eight pages assembling the earlier work, ordered sequence and practical-effects account.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "editorial-title",
+      "kind": "text-verbatim",
+      "text": "THE ROOM BETWEEN",
+      "scope": {
+        "slots": [
+          "opening-spread",
+          "closing-spread",
+          "editorial-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "editorial-line",
+      "kind": "text-verbatim",
+      "text": "One coat, four passages",
+      "scope": {
+        "slots": [
+          "opening-spread",
+          "closing-spread",
+          "editorial-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "THE ROOM BETWEEN",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "photographic-story-continuity",
+      "slots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail",
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ],
+      "sourceSlots": [
+        "shoot-specification",
+        "practical-setup-board"
+      ],
+      "items": [
+        {
+          "item": "All visible appearances maintain Mara's identity and the same coat construction, material and supporting styling, allowing framing, perspective and physically correct reflection.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The photographic setting and visible lighting remain compatible with the specified studio and the four practical-effects arrangements.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "photograph-to-publication-continuity",
+      "slots": [
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ],
+      "sourceSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail"
+      ],
+      "items": [
+        {
+          "item": "Both S01 derivatives preserve the same photographed figure and garment, and the spreads reproduce their assigned source photographs without identity or construction changes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The S01 crops retain the head, six buttons and both boots; spread layouts keep faces, buttons and chest pockets clear of the specified gutter protection band.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "THE ROOM BETWEEN"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "s01-approach",
+      "s02-divide",
+      "s03-reverse",
+      "s04-return",
+      "d01-chest-detail",
+      "d02-back-detail",
+      "s01-square-crop",
+      "s01-story-crop",
+      "opening-spread",
+      "closing-spread"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design-quality scoring must not judge factual spelling, measured production specifications or reference-identity compliance, and must not demand visible facial or garment details outside the assigned framing."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "shoot-specification",
+        "practical-setup-board",
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail",
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread",
+        "editorial-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "practical-setup-board",
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail",
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-shoot-specification",
+      "requirementId": "R-format-shoot-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shoot-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-practical-setup-board",
+      "requirementId": "R-format-practical-setup-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "practical-setup-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s01-approach",
+      "requirementId": "R-format-s01-approach",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s01-approach"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s02-divide",
+      "requirementId": "R-format-s02-divide",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s02-divide"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s03-reverse",
+      "requirementId": "R-format-s03-reverse",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s03-reverse"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s04-return",
+      "requirementId": "R-format-s04-return",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s04-return"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-d01-chest-detail",
+      "requirementId": "R-format-d01-chest-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "d01-chest-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-d02-back-detail",
+      "requirementId": "R-format-d02-back-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "d02-back-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s01-square-crop",
+      "requirementId": "R-format-s01-square-crop",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s01-square-crop"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s01-story-crop",
+      "requirementId": "R-format-s01-story-crop",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s01-story-crop"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-opening-spread",
+      "requirementId": "R-format-opening-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "opening-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-closing-spread",
+      "requirementId": "R-format-closing-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closing-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-editorial-video",
+      "requirementId": "R-format-editorial-video",
+      "method": "manual",
+      "targetSlots": [
+        "editorial-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-editorial-presentation",
+      "requirementId": "R-format-editorial-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "editorial-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "shoot-specification-completeness",
+      "requirementId": "R-shoot-specification-completeness",
+      "method": "content",
+      "targetSlots": [
+        "shoot-specification"
+      ],
+      "criteria": "The specification has two pages and describes a practical photographic concept using constructed scenery, mirrors or in-camera optical effects. It includes wardrobe and lighting records and six identifiable shot entries. Each entry supplies framing, camera position, subject and editorial use consistent with the client shot records. Missing entries, missing required fields or contradictory assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "repeated-wardrobe-and-shot-facts",
+      "requirementId": "R-repeated-wardrobe-and-shot-facts",
+      "method": "content",
+      "targetSlots": [
+        "shoot-specification",
+        "practical-setup-board",
+        "editorial-presentation"
+      ],
+      "criteria": "Read the written records and labels. Each target includes the six shot identifiers and correctly records the steel-blue colour code, button count and diameter, and back-vent length. The presentation additionally captions all six shots with their assigned framing. Equivalent unit notation is acceptable; omissions, altered values or mismatched shot captions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "shoot-specification"
+      ]
+    },
+    {
+      "id": "coat-technical-anchors",
+      "requirementId": "R-coat-technical-anchors",
+      "method": "content",
+      "targetSlots": [
+        "shoot-specification"
+      ],
+      "criteria": "The wardrobe anchors identify the specified steel-blue wool herringbone coat, its 1180 mm shoulder-to-hem length, six matte-black 22 mm front buttons, left chest welt, two hip welts and 300 mm centre-back vent. Written material and dimensional claims must agree with these records; physical measurements and fibre composition are assessed from the specification rather than inferred from photographic pixels.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "visible-subject-and-wardrobe",
+      "requirementId": "R-visible-subject-and-wardrobe",
+      "method": "visual",
+      "targetSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail",
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ],
+      "criteria": "Compare all visible appearances with the supplied subject and garment references. Mara retains the same facial structure, centre-parted jaw-length dark brown bob and anatomically left-cheek mole. The coat retains its single-breasted silhouette, notched lapels, plain cuffs, herringbone, matte-black single-row six-button construction, left chest welt, two hip welts and centre-back seam and vent. Framing, perspective, lighting and physically correct mirror reversal may change visibility; hidden features need not be exposed. Substituted identity, changed construction, added or missing visible features, or a mirrored mole inconsistent with the reflection fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fastened-coat-and-supporting-styling",
+      "requirementId": "R-fastened-coat-and-supporting-styling",
+      "method": "visual",
+      "targetSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail",
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ],
+      "criteria": "Where the relevant clothing is visible, the trousers are black and straight-legged, the footwear is black leather ankle boots, and the coat is closed with all six buttons fastened. Cropping or a rear view may conceal these features; visible replacement styling or an open closure fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "four-practical-setups",
+      "requirementId": "R-four-practical-setups",
+      "method": "visual",
+      "targetSlots": [
+        "practical-setup-board"
+      ],
+      "criteria": "The board has four clearly associated arrangements for S01 through S04. Each locates the doorframe, mirror, performer, camera and lighting sufficiently clearly to understand the practical shot. Diagram style and viewpoint may vary; a missing arrangement or an arrangement that omits a required component fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "studio-and-practical-scenery",
+      "requirementId": "R-studio-and-practical-scenery",
+      "method": "visual",
+      "targetSlots": [
+        "practical-setup-board"
+      ],
+      "criteria": "Read the board against studio-plan.png and the studio record. The arrangements fit the 6000 × 8000 mm envelope and 4000 mm clear height, using the supplied 1000 × 2400 × 120 mm doorframe with 80 mm members and the 1200 × 2400 mm freestanding rectangular mirror. Any stated baseline coordinates must agree with the recorded origin, axes and starting positions. The movable scenery and starting marks may be repositioned to create the shots; an incompatible studio, substituted practical geometry or impossible arrangement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "lighting-records-and-effect-explanations",
+      "requirementId": "R-lighting-records-and-effect-explanations",
+      "method": "content",
+      "targetSlots": [
+        "practical-setup-board",
+        "editorial-presentation"
+      ],
+      "criteria": "All four setups are explicitly covered by the camera-left 45-degree key, 2600 mm centre height, 5600 K and 2:1 ratio. A shared board annotation may cover all four when its applicability is unambiguous. In the presentation, the values appear beside the corresponding setup diagrams, and each story shot has an explanation connecting the doorframe or mirror arrangement to its visible effect. Missing shot coverage, inconsistent values or an unexplained effect fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "shoot-specification",
+        "practical-setup-board"
+      ]
+    },
+    {
+      "id": "background-and-visible-lighting",
+      "requirementId": "R-background-and-visible-lighting",
+      "method": "visual",
+      "targetSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail"
+      ],
+      "criteria": "Visible backgrounds and illumination are compatible with the warm pale neutral background and camera-left lighting established by empty-studio-light.png and the setup records. Permit exposure, surface shading, reflections and crop-dependent visibility. A clearly different background scheme or contradictory dominant lighting fails; do not estimate exact kelvin, millimetres or numeric light ratios from pixels.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "practical-setup-board"
+      ]
+    },
+    {
+      "id": "story-shot-assignments",
+      "requirementId": "R-story-shot-assignments",
+      "method": "visual",
+      "targetSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return"
+      ],
+      "criteria": "S01 is a frontal full-length hero; S02 is a three-quarter portrait involving the practical threshold; S03 shows the coat from behind while Mara's face is visible in the mirror; S04 is a wide view placing Mara within the practical environment. Composition and effects may vary within those assignments. A swapped framing, missing reflected face or missing environmental closing view fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "detail-shot-content",
+      "requirementId": "R-detail-shot-content",
+      "method": "visual",
+      "targetSlots": [
+        "d01-chest-detail",
+        "d02-back-detail"
+      ],
+      "criteria": "D01 clearly resolves the wearer's left chest welt, the herringbone weave and one front button. D02 clearly shows the centre-back seam and lower vent in a construction consistent with the reference and specified 300 mm length. Additional surrounding garment context is acceptable. Missing required detail, incorrect pocket placement or a materially different seam or vent fails; exact physical length is verified through written records.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "s01-scale-and-derived-crops",
+      "requirementId": "R-s01-scale-and-derived-crops",
+      "method": "visual",
+      "targetSlots": [
+        "s01-approach",
+        "s01-square-crop",
+        "s01-story-crop"
+      ],
+      "criteria": "In the S01 master, Mara's head-to-boot figure occupies at least 60% of the image height. Both crop files visibly derive from that same photograph and retain the complete head, all six buttons and both boots. Cropping may change surrounding space but must not replace the pose, invent new image content or clip a required feature.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "spread-print-geometry",
+      "requirementId": "R-spread-print-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "closing-spread"
+      ],
+      "criteria": "Read each spread using editorial-crop-map.png: the trim corresponds to two 210 × 280 mm pages, with 3 mm outer bleed and a protected strip extending 12 mm to either side of the fold. No depicted face, coat button or chest pocket overlaps that strip. Bleed may lie beyond the trim without visible production labels. Incorrect physical layout proportions, absent bleed provision or a protected feature crossing the gutter band fails; do not require an exact canvas pixel count.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "spread-copy-and-photo-assignments",
+      "requirementId": "R-spread-copy-and-photo-assignments",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "closing-spread"
+      ],
+      "criteria": "Each spread visibly includes the exact editorial title and line. The opening spread recognizably reproduces S01, S02 and D01; the closing spread reproduces S03, S04 and D02. Placement, scale and editorial cropping may vary while preserving recognizable source content and required protected features. Missing copy, missing assigned photographs or substitutions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail"
+      ]
+    },
+    {
+      "id": "presentation-reading-sequence",
+      "requirementId": "R-presentation-reading-sequence",
+      "method": "content",
+      "targetSlots": [
+        "editorial-presentation"
+      ],
+      "criteria": "The presentation establishes an unambiguous publication reading order from S01 through S04. Its sequence layout places D01 alongside S02 and D02 alongside S03. Supporting pages may appear elsewhere, but an absent sequence, reordered story or misplaced detail association fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "presentation-page-count-and-reuse",
+      "requirementId": "R-presentation-page-count-and-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "editorial-presentation"
+      ],
+      "criteria": "The presentation contains at least eight pages and visibly incorporates material from every listed source: specification pages, the setup board, all six photographs, both crops, both spreads and stills recognizable from the delivered video. Resizing and page placement may vary. Merely naming a source, substituting unrelated imagery or omitting a source fails. The assembled work includes an ordered sequence and a practical-effects account organized by shot.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "shoot-specification",
+        "practical-setup-board",
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail",
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ]
+    },
+    {
+      "id": "video-duration-order-final-frame-and-continuity",
+      "requirementId": "R-video-duration-order-final-frame-and-continuity",
+      "method": "manual",
+      "targetSlots": [
+        "editorial-video"
+      ],
+      "criteria": "Review the complete video and its duration. It lasts 10 seconds, presents the four passages in the assigned order and ends on a frame visibly carrying both exact editorial phrases. Throughout, Mara, the fastened steel-blue coat, supporting styling and practical setting agree with the supplied references and photographs. Judge the mole, weave, buttons and pockets only when visible, allowing physically correct reflections and motion. Incorrect duration or order, missing final-frame copy, identity drift or wardrobe and setting substitutions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "practical-setup-board",
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return"
+      ]
+    },
+    {
+      "id": "set-photographic-story-continuity",
+      "requirementId": "R-set-photographic-story-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail",
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ],
+      "criteria": "All visible appearances maintain Mara's identity and the same coat construction, material and supporting styling, allowing framing, perspective and physically correct reflection. The photographic setting and visible lighting remain compatible with the specified studio and the four practical-effects arrangements.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "shoot-specification",
+        "practical-setup-board"
+      ]
+    },
+    {
+      "id": "set-photograph-to-publication-continuity",
+      "requirementId": "R-set-photograph-to-publication-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ],
+      "criteria": "Both S01 derivatives preserve the same photographed figure and garment, and the spreads reproduce their assigned source photographs without identity or construction changes. The S01 crops retain the head, six buttons and both boots; spread layouts keep faces, buttons and chest pockets clear of the specified gutter protection band.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "mara-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "subject-front-profile.png"
+      ],
+      "subjectSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail",
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ],
+      "notes": "Her front and profile reference establishes the person throughout the story."
+    },
+    {
+      "id": "coat-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "coat-front-back.png",
+        "wool-detail.png"
+      ],
+      "subjectSlots": [
+        "s01-approach",
+        "s02-divide",
+        "s03-reverse",
+        "s04-return",
+        "d01-chest-detail",
+        "d02-back-detail",
+        "s01-square-crop",
+        "s01-story-crop",
+        "opening-spread",
+        "closing-spread"
+      ],
+      "notes": "The four story photographs, two details, two crops, two spreads and video preserve the subject and visible wardrobe features established by subject-front-profile.png, coat-front-back.png and wool-detail.png, including Mara's left-cheek mole, the wool herringbone, six-button construction and three-pocket arrangement wherever those features enter the frame."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "wardrobe-and-shot-records",
+      "fromSlot": "shoot-specification",
+      "toSlots": [
+        "practical-setup-board",
+        "editorial-presentation"
+      ],
+      "extract": [
+        "shot IDs S01–S04 and D01–D02",
+        "assigned framing for each shot",
+        "coat colour #5C6670",
+        "six front buttons of 22 mm diameter",
+        "300 mm centre-back vent"
+      ],
+      "notes": "The shoot specification names S01–S04 and D01–D02 and states #5C6670, six 22 mm buttons and the 300 mm vent; the setup board and presentation repeat those facts, and the presentation captions repeat every shot ID and its assigned framing."
+    }
+  ]
+}

@@ -1,0 +1,501 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-graphic-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "alder-gate-notice",
+      "label": "Alder Gate ticket-gate notice",
+      "description": "An A3 portrait station notice for Alder Gate with the overnight L1 closure, operating rail sections and B1 boarding via Exit 2, Stop A toward East Market.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "east-market-notice",
+      "label": "East Market platform-column notice",
+      "description": "An A1 portrait station notice for East Market with the overnight L1 closure, operating rail sections and B1 boarding via Exit 1, Stop E toward Alder Gate.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "route-toward-east-market",
+      "label": "Replacement-route sheet toward East Market",
+      "description": "An A4 portrait route sheet with the six L1 stations, overnight service boundaries and four named B1 stops ordered from Alder Gate toward East Market.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "route-toward-alder-gate",
+      "label": "Replacement-route sheet toward Alder Gate",
+      "description": "An A4 portrait route sheet with the six L1 stations, overnight service boundaries and four named B1 stops ordered from East Market toward Alder Gate.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "alder-gate-mobile",
+      "label": "Alder Gate mobile notification",
+      "description": "A portrait mobile notification with the overnight L1 closure and free B1 boarding at Alder Gate via Exit 2, Stop A toward East Market, with planned frequency every 12 minutes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "east-market-mobile",
+      "label": "East Market mobile notification",
+      "description": "A portrait mobile notification with the overnight L1 closure and free B1 boarding at East Market via Exit 1, Stop E toward Alder Gate, with planned frequency every 12 minutes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "operator-name",
+      "kind": "text-verbatim",
+      "text": "Lantern Transit",
+      "scope": "*",
+      "caseSensitive": false,
+      "critical": true
+    },
+    {
+      "id": "bus-description",
+      "kind": "text-verbatim",
+      "text": "free replacement bus",
+      "scope": "*",
+      "caseSensitive": false,
+      "critical": true
+    },
+    {
+      "id": "planned-frequency",
+      "kind": "text-verbatim",
+      "text": "every 12 minutes",
+      "scope": "*",
+      "caseSensitive": false,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "Lantern Transit",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-route-semantics",
+      "slots": [
+        "alder-gate-notice",
+        "east-market-notice",
+        "route-toward-east-market",
+        "route-toward-alder-gate",
+        "alder-gate-mobile",
+        "east-market-mobile"
+      ],
+      "items": [
+        {
+          "item": "Every artwork assigns Indigo #2856A3 to L1, distinguishes B1, and supplements colour with route labels, directional arrows and written closure status.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Closure dates, service boundaries, planned B1 frequency and terminal boarding records agree wherever repeated, while destination and stop order change correctly for the artwork's travel direction.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The commission fixes network topology and route treatments but does not request consistency of a logo, product, character or space across images."
+    },
+    "brandToken": "Lantern Transit"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "alder-gate-notice",
+      "east-market-notice",
+      "route-toward-east-market",
+      "route-toward-alder-gate",
+      "alder-gate-mobile",
+      "east-market-mobile"
+    ],
+    "layoutExtras": true,
+    "naRules": "Design quality must not judge photographic realism, material texture or concourse lighting in these passenger-information artworks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "alder-gate-notice",
+        "east-market-notice",
+        "route-toward-east-market",
+        "route-toward-alder-gate",
+        "alder-gate-mobile",
+        "east-market-mobile"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-alder-gate-notice",
+      "requirementId": "R-format-alder-gate-notice",
+      "method": "artifact-property",
+      "targetSlots": [
+        "alder-gate-notice"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-east-market-notice",
+      "requirementId": "R-format-east-market-notice",
+      "method": "artifact-property",
+      "targetSlots": [
+        "east-market-notice"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-route-toward-east-market",
+      "requirementId": "R-format-route-toward-east-market",
+      "method": "artifact-property",
+      "targetSlots": [
+        "route-toward-east-market"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-route-toward-alder-gate",
+      "requirementId": "R-format-route-toward-alder-gate",
+      "method": "artifact-property",
+      "targetSlots": [
+        "route-toward-alder-gate"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-alder-gate-mobile",
+      "requirementId": "R-format-alder-gate-mobile",
+      "method": "artifact-property",
+      "targetSlots": [
+        "alder-gate-mobile"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-east-market-mobile",
+      "requirementId": "R-format-east-market-mobile",
+      "method": "artifact-property",
+      "targetSlots": [
+        "east-market-mobile"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "shared-service-information-and-hierarchy",
+      "requirementId": "R-shared-service-information-and-hierarchy",
+      "method": "visual",
+      "targetSlots": [
+        "alder-gate-notice",
+        "east-market-notice",
+        "route-toward-east-market",
+        "route-toward-alder-gate",
+        "alder-gate-mobile",
+        "east-market-mobile"
+      ],
+      "criteria": "Each artwork visibly includes the operator name, both route identifiers, the free-bus description and the frequency phrase. It communicates one overnight closure beginning 17 October 2027 at 22:00 and ending 18 October 2027 at 05:00, with no L1 trains between Alder Gate and East Market in either direction. B1 serves that closure interval, and its 12-minute interval is identified as planned bus frequency rather than journey duration or a guarantee. The closure interval and the artwork's boarding destination occupy the two largest text levels; either may be the larger. Unambiguous English date formats, capitalization and line breaks may vary. Missing dates, reversed times, a one-direction closure, an incorrect destination or another message displacing either required text level fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "operating-rail-and-route-sheet-facts",
+      "requirementId": "R-operating-rail-and-route-sheet-facts",
+      "method": "visual",
+      "targetSlots": [
+        "alder-gate-notice",
+        "east-market-notice",
+        "route-toward-east-market",
+        "route-toward-alder-gate"
+      ],
+      "criteria": "Each target clearly identifies bidirectional rail operation between West Dock and Alder Gate and between East Market and Garden End, while identifying Civic Hall and Foundry as without rail service. Each route sheet additionally states that operating rail sections retain normal fares and that rail resumption is planned for 18 October 2027 at 05:00. Text and diagram arrangements may vary, but neither may imply rail operation through the closed section, free operating trains or guaranteed resumption.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "directional-route-records-and-network",
+      "requirementId": "R-directional-route-records-and-network",
+      "method": "visual",
+      "targetSlots": [
+        "route-toward-east-market",
+        "route-toward-alder-gate"
+      ],
+      "criteria": "The East Market-bound sheet presents these station/boarding pairs in travel order: Alder Gate with Exit 2, Stop A; Civic Hall with South Stop C; Foundry with East Stop F; East Market with Exit 1, Stop E. The Alder Gate-bound sheet presents the exact reverse sequence. Both communicate that B1 serves every listed stop in both directions and terminates at Alder Gate and East Market. Both preserve the rail topology West Dock—Alder Gate—Civic Hall—Foundry—East Market—Garden End, with bidirectional normal connections distinguished from the closure. Orientation, spacing and punctuation may vary. Missing, duplicated, reassigned or misordered records, extra network stations or bus endpoints beyond the stated terminals fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "terminal-boarding-and-arrows",
+      "requirementId": "R-terminal-boarding-and-arrows",
+      "method": "visual",
+      "targetSlots": [
+        "alder-gate-notice",
+        "east-market-notice",
+        "alder-gate-mobile",
+        "east-market-mobile"
+      ],
+      "criteria": "Each Alder Gate artwork clearly connects Exit 2 and Stop A to B1 toward East Market. Each East Market artwork clearly connects Exit 1 and Stop E to B1 toward Alder Gate. Directional arrows must support the destination expressed in the text and any depicted route sequence. Layout and arrow orientation may vary with the composition; ambiguous associations, exchanged exit or stop records, or arrows indicating the opposite destination fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "route-colour-redundant-cues-and-contrast",
+      "requirementId": "R-route-colour-redundant-cues-and-contrast",
+      "method": "visual",
+      "targetSlots": [
+        "alder-gate-notice",
+        "east-market-notice",
+        "route-toward-east-market",
+        "route-toward-alder-gate",
+        "alder-gate-mobile",
+        "east-market-mobile"
+      ],
+      "criteria": "Each artwork uses Indigo #2856A3 as the L1 route colour and makes B1 visibly distinguishable. Route identifiers, arrows and explicit written closure status supplement colour so that service status and direction do not depend on colour alone. Rendered body text must meet a 4.5:1 foreground/background contrast ratio, and large text and essential route graphics must meet 3:1. B1 styling and layout may vary. Replacing the L1 colour, confusing the two services, omitting a required non-colour cue or falling below either applicable contrast threshold fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "print-reading-scale-and-production-margins",
+      "requirementId": "R-print-reading-scale-and-production-margins",
+      "method": "visual",
+      "targetSlots": [
+        "alder-gate-notice",
+        "east-market-notice",
+        "route-toward-east-market",
+        "route-toward-alder-gate"
+      ],
+      "criteria": "Evaluate visible lettering and margins at the specified physical trim sizes: Alder Gate notice 297 × 420 mm, East Market notice 594 × 841 mm, and each route sheet 210 × 297 mm, all portrait. Minimum visible letter heights are respectively 4 mm, 8 mm and 2.5 mm, supporting the stated 1000 mm, 2000 mm and 400 mm reading distances. Each print artwork provides 3 mm bleed outside trim and keeps text and essential information at least 5 mm inside trim. Larger lettering and internal margins are allowed. Undersized lettering, missing bleed or essential content intruding into the safe margin fails; merely printing a claim of compliance is insufficient.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "mobile-reading-scale-and-safe-margins",
+      "requirementId": "R-mobile-reading-scale-and-safe-margins",
+      "method": "visual",
+      "targetSlots": [
+        "alder-gate-mobile",
+        "east-market-mobile"
+      ],
+      "criteria": "Assess each portrait notification on the supplied 360 × 640 logical-unit reference scale. All text is at least 16 logical units, and text and essential information remain within a 24-logical-unit internal safe boundary, supporting reading at 400 mm. Larger text or additional inset is acceptable. Smaller text, content entering the safe boundary or clipping that obstructs a quick boarding decision fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-shared-route-semantics",
+      "requirementId": "R-set-shared-route-semantics",
+      "method": "visual",
+      "targetSlots": [
+        "alder-gate-notice",
+        "east-market-notice",
+        "route-toward-east-market",
+        "route-toward-alder-gate",
+        "alder-gate-mobile",
+        "east-market-mobile"
+      ],
+      "criteria": "Every artwork assigns Indigo #2856A3 to L1, distinguishes B1, and supplements colour with route labels, directional arrows and written closure status. Closure dates, service boundaries, planned B1 frequency and terminal boarding records agree wherever repeated, while destination and stop order change correctly for the artwork's travel direction.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ]
+}

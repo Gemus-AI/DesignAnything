@@ -1,0 +1,560 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-product-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "product-orthographics",
+      "label": "Complete set orthographic drawing",
+      "description": "A dimensioned product sheet with front, top and right orthographic views, separate W, F and C views, well geometry and the joined envelope.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "assembly-cleaning",
+      "label": "Assembly and cleaning sequence",
+      "description": "An eight-part assembly and cleaning diagram tracing emptying, clip release, disassembly, hand washing, rinsing, separate drying and reassembly.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-map",
+      "label": "Eight-part material zoning board",
+      "description": "A material zoning board mapping proposed grades, finishes and wet or dry contact zones to all eight parts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "placement-d1",
+      "label": "D1 daily pair",
+      "description": "A D1 daily-use scene with W left and F right joined on a 400 W x 220 D mm floor mat.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "drying-dr1",
+      "label": "DR1 separated drying",
+      "description": "A DR1 scene showing all eight separated parts on a 500 W x 400 D mm draining surface with empty bowl interiors exposed.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-st1",
+      "label": "ST1 dry storage",
+      "description": "An ST1 scene with dry reassembled W and F unconnected beside C inside a 400 W x 240 D x 160 H mm cabinet opening.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "nestpair-name",
+      "kind": "text-verbatim",
+      "text": "NESTPAIR",
+      "scope": {
+        "slots": [
+          "product-orthographics",
+          "assembly-cleaning",
+          "material-map",
+          "placement-d1",
+          "drying-dr1",
+          "storage-st1"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "clip-handling-warning",
+      "kind": "text-verbatim",
+      "text": "Detach C before lifting",
+      "scope": {
+        "slots": [
+          "assembly-cleaning"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "water-fill-mark",
+      "kind": "text-verbatim",
+      "text": "350 mL",
+      "scope": {
+        "slots": [
+          "product-orthographics"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "NESTPAIR",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-board-product-family",
+      "slots": [
+        "assembly-cleaning",
+        "material-map",
+        "placement-d1",
+        "drying-dr1",
+        "storage-st1"
+      ],
+      "sourceSlots": [
+        "product-orthographics"
+      ],
+      "items": [
+        {
+          "item": "W and F maintain a calm domestic family through related rims, grips, seams and exterior finishes across drawings, diagrams and scenes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The same eight-part design remains recognizable through assembled use, separated drying and reassembled storage, with no replacement components.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The two bowls share a material family, the bases share an exterior finish family, and each removable elastomer pad belongs beneath its own base.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "NESTPAIR"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "product-orthographics",
+      "assembly-cleaning",
+      "material-map",
+      "placement-d1",
+      "drying-dr1",
+      "storage-st1"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not certify real-world food-contact safety, grip performance, clip retention, manufacturing feasibility or environmental savings from visual proposals alone."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "product-orthographics",
+        "assembly-cleaning",
+        "material-map",
+        "placement-d1",
+        "drying-dr1",
+        "storage-st1"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-product-orthographics",
+      "requirementId": "R-format-product-orthographics",
+      "method": "artifact-property",
+      "targetSlots": [
+        "product-orthographics"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-assembly-cleaning",
+      "requirementId": "R-format-assembly-cleaning",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembly-cleaning"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-map",
+      "requirementId": "R-format-material-map",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-map"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-placement-d1",
+      "requirementId": "R-format-placement-d1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "placement-d1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-drying-dr1",
+      "requirementId": "R-format-drying-dr1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "drying-dr1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-st1",
+      "requirementId": "R-format-storage-st1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-st1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "independent-products",
+      "requirementId": "R-independent-products",
+      "method": "visual",
+      "targetSlots": [
+        "product-orthographics",
+        "assembly-cleaning"
+      ],
+      "criteria": "The drawings establish an independently supported passive water product and an independently supported slow feeder, each with its own base and removable underside pad. F-I is a separate removable insert, and C is a detachable connector rather than shared structural support needed for either product to stand. Drinking and eating surfaces remain open from above. Silhouettes and obstacle paths may vary; merged products, a shared indispensable base, or an integral nonremovable insert fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fixed-reversible-interface",
+      "requirementId": "R-fixed-reversible-interface",
+      "method": "visual",
+      "targetSlots": [
+        "product-orthographics",
+        "assembly-cleaning"
+      ],
+      "criteria": "Visible geometry and annotations establish matching vertical side patches on the left and right of both bases, centred along side depth, with 36 mm width and 20 mm height, spanning z = 6–26 mm. Each horizontal open recess measures 28 x 4 x 3 mm and is centred at z = 16 mm. C engages facing recesses across a 2 mm connection-plane gap in the dry exterior zone. Opposite patches permit reversal with the same parts; bowls lift upward without dismantling their bases. Clip exterior design may vary, but inaccessible or tool-dependent release, missing opposite patches, or altered fixed geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "eight-part-material-proposals",
+      "requirementId": "R-eight-part-material-proposals",
+      "method": "visual",
+      "targetSlots": [
+        "material-map"
+      ],
+      "criteria": "A readable map assigns a specific proposed material grade, finish and intended water/food-contact or dry-exterior zone to W-B, W-R, W-P, F-B, F-R, F-I, F-P and C. The bowls share a proposed material family, base finishes share a family, and two distinct removable non-slip elastomer pads attach beneath their respective bases in dry zones. Material and manufacturing choices are open proposals; missing assignments, generic material labels without grades, or incompatible paired assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "required-wording-placement",
+      "requirementId": "R-required-wording-placement",
+      "method": "visual",
+      "targetSlots": [
+        "product-orthographics",
+        "assembly-cleaning",
+        "material-map",
+        "placement-d1",
+        "drying-dr1",
+        "storage-st1"
+      ],
+      "criteria": "Every image board includes NESTPAIR in its title. Assembly and clip-detail boards also carry the exact handling warning; on assembly-cleaning it sits beside the clip-removal step. Typography and title layout may vary. A name appearing only on a depicted physical product does not satisfy the title requirement, and an absent or misplaced required warning fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-drawing-geometry",
+      "requirementId": "R-tier6-drawing-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "product-orthographics"
+      ],
+      "criteria": "Front, top and right orthographic views correspond to one complete design, with separate W, F and C views. Readable dimensions establish the individual and joined maximum envelopes, a clear circular W-R well of diameter 150 mm and depth 35 mm, a circular F-R well of diameter 140 mm and depth 25 mm, F-I rise no greater than 18 mm, every food path at least 12 mm wide, and the 2 mm connection gap. W-R visibly locates its 350 mL fill mark below the rim. Bodies may be smaller than the maximum envelopes; conflicting views, omitted dimensions, or geometry outside the specified bounds fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-inventory-cleaning",
+      "requirementId": "R-tier6-inventory-cleaning",
+      "method": "visual",
+      "targetSlots": [
+        "product-orthographics",
+        "assembly-cleaning"
+      ],
+      "criteria": "Both sheets map the same eight IDs to the same service parts. Numbering or arrows clearly order emptying both vessels, detaching C and separating products, lifting both bowls upward, removing F-I, removing both pads, hand washing, rinsing, separately air drying all eight parts with bowl interiors exposed, and dry reassembly. Reassembly restores pads to their correct bases, F-I to F-R and bowls to their own bases before final reconnection. Integrated grips and release features are allowed; extra service parts, swapped IDs, inaccessible washing surfaces or an out-of-order sequence fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-scene-records",
+      "requirementId": "R-tier6-scene-records",
+      "method": "visual",
+      "targetSlots": [
+        "placement-d1",
+        "drying-dr1",
+        "storage-st1"
+      ],
+      "criteria": "D1 places the joined, bowl-seated W-left/F-right pair fully within a 400 x 220 mm mat. DR1 fits exactly the eight separated service parts within a 500 x 400 mm draining surface, with F-I detached and both empty bowl interiors exposed. ST1 fits dry, complete, unconnected products side by side in a 400 x 240 x 160 mm cabinet opening, each on its own base and pad, with C beside them and independently accessible. Area annotations or clear dimensional evidence establish fit; exceeding boundaries, missing parts or blocking clip retrieval fails. Scene context remains a neutral compact home; an animal is optional.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-six-board-product-family",
+      "requirementId": "R-set-six-board-product-family",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-cleaning",
+        "material-map",
+        "placement-d1",
+        "drying-dr1",
+        "storage-st1"
+      ],
+      "criteria": "W and F maintain a calm domestic family through related rims, grips, seams and exterior finishes across drawings, diagrams and scenes. The same eight-part design remains recognizable through assembled use, separated drying and reassembled storage, with no replacement components. The two bowls share a material family, the bases share an exterior finish family, and each removable elastomer pad belongs beneath its own base.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-b-n06/interface.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "product-orthographics"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-product-family",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "product-orthographics",
+      "subjectSlots": [
+        "assembly-cleaning",
+        "material-map",
+        "placement-d1",
+        "drying-dr1",
+        "storage-st1"
+      ],
+      "notes": "Start with W left and F right, then retain the same parts for reversal and separate use."
+    },
+    {
+      "id": "supplied-side-interface",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "local-interface-identity.png"
+      ],
+      "subjectSlots": [
+        "product-orthographics"
+      ],
+      "notes": "local-interface-identity.png depicts the shared recessed side detail to retain across both products."
+    }
+  ]
+}

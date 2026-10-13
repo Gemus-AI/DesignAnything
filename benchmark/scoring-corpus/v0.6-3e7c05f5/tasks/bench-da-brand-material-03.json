@@ -1,0 +1,605 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-brand-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "event-identity",
+      "label": "Final event identity plate",
+      "description": "One final OPEN WORK DAY identity composition with the invitation, both complete tool logos and the exact co-host line.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "opening-screen",
+      "label": "Event opening screen",
+      "description": "One opening screen with the event identity, invitation, date, venue and complete co-host block.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "programme-screen",
+      "label": "Five-session programme screen",
+      "description": "One programme screen with all five timed sessions, the contribution areas, event name, date, venue and complete co-host block.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "social-announcement",
+      "label": "Social announcement",
+      "description": "One social announcement with the event identity, invitation, date, venue, full event time, attendance line and complete co-host block.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "participant-badges",
+      "label": "Three participant badge faces on one board",
+      "description": "One board of three equal badge fronts for Alex Chen, Morgan Reed and Sam Ellis, each with the recorded role, event name and complete co-host block.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "welcome-sticker",
+      "label": "First contribution welcome sticker",
+      "description": "One welcome sticker artwork with Ask me about my first contribution., the event name and complete co-host block.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "event-name",
+      "kind": "text-verbatim",
+      "text": "OPEN WORK DAY",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "co-host-line",
+      "kind": "text-verbatim",
+      "text": "Co-hosted by PATCHBAY + TYPELOOM",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "invitation",
+      "kind": "text-verbatim",
+      "text": "Make one useful contribution.",
+      "scope": {
+        "slots": [
+          "event-identity",
+          "opening-screen",
+          "social-announcement"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "attendance-line",
+      "kind": "text-verbatim",
+      "text": "Free; registration required",
+      "scope": {
+        "slots": [
+          "social-announcement"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "welcome-line",
+      "kind": "text-verbatim",
+      "text": "Ask me about my first contribution.",
+      "scope": {
+        "slots": [
+          "welcome-sticker"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "OPEN WORK DAY",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-event-identity",
+      "slots": [
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "sourceSlots": [
+        "event-identity"
+      ],
+      "items": [
+        {
+          "item": "All applications retain the identity plate's event lettering and graphic treatment while adapting composition and information hierarchy to their uses.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Every application, including each individual badge face, preserves the complete two-host block, left-to-right host order, equal visible logo ink heights and exact co-host line.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "OPEN WORK DAY"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "event-identity",
+      "opening-screen",
+      "programme-screen",
+      "social-announcement",
+      "participant-badges",
+      "welcome-sticker"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge tool functionality, redesign the supplied logos, or require photographic material and lighting realism in these graphic artworks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "event-identity",
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-event-identity",
+      "requirementId": "R-format-event-identity",
+      "method": "artifact-property",
+      "targetSlots": [
+        "event-identity"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-opening-screen",
+      "requirementId": "R-format-opening-screen",
+      "method": "artifact-property",
+      "targetSlots": [
+        "opening-screen"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-programme-screen",
+      "requirementId": "R-format-programme-screen",
+      "method": "artifact-property",
+      "targetSlots": [
+        "programme-screen"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-social-announcement",
+      "requirementId": "R-format-social-announcement",
+      "method": "artifact-property",
+      "targetSlots": [
+        "social-announcement"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-participant-badges",
+      "requirementId": "R-format-participant-badges",
+      "method": "artifact-property",
+      "targetSlots": [
+        "participant-badges"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-welcome-sticker",
+      "requirementId": "R-format-welcome-sticker",
+      "method": "artifact-property",
+      "targetSlots": [
+        "welcome-sticker"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "complete-co-host-block",
+      "requirementId": "R-complete-co-host-block",
+      "method": "visual",
+      "targetSlots": [
+        "event-identity",
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "criteria": "Each output must visibly contain the exact event name, exact co-host line and both complete supplied marks; inspect all three badge faces individually. PATCHBAY must be on the left and TYPELOOM on the right in a horizontal pair. Compare the heights of actual visible ink, not image boxes: the marks must have equal apparent ink heights, a discernible gap and light solid fields. Preserve each source mark's symbol, full lettering including DATA RECIPES or TYPE TOGETHER, internal arrangement, proportions and supplied blue or plum colour. Overall placement and uniformly scaled size may vary by application; omissions, altered marks, swapped order or unequal ink heights fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "invitation-and-event-language",
+      "requirementId": "R-invitation-and-event-language",
+      "method": "visual",
+      "targetSlots": [
+        "event-identity",
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "criteria": "The identity plate, opening screen and social announcement must reproduce the invitation with its exact capitalization and terminal period. Across all six outputs, event-title lettering and graphic treatment must remain recognizably the same system. Layout, scale and information density may adapt to the application; unrelated title treatments or incompatible graphic styles fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "event-records",
+      "requirementId": "R-event-records",
+      "method": "visual",
+      "targetSlots": [
+        "opening-screen",
+        "programme-screen",
+        "social-announcement"
+      ],
+      "criteria": "Read each image for the venue Junction Studio and the event date of 17 April 2027. The social announcement must additionally communicate the full 10:00–16:00 event span and contain the exact attendance line Free; registration required. Unambiguous equivalent date and time formatting is allowed; a missing field, different venue, incorrect date, shortened event span or changed attendance wording fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "programme-records",
+      "requirementId": "R-programme-records",
+      "method": "visual",
+      "targetSlots": [
+        "programme-screen"
+      ],
+      "criteria": "Read five distinct title/time pairs: 10:00–10:30 Welcome and choose a task; 10:30–12:00 Work together; 12:00–13:00 Lunch break; 13:00–15:00 Pair and review; 15:00–16:00 Show and continue. Session words must be preserved, with flexible capitalization and line breaks; equivalent unambiguous time formatting is allowed. A readable note must explicitly welcome contributions in all three areas: code, design and documentation. Missing, duplicated, incorrectly paired or altered sessions, or omission of any contribution area, fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "badge-records-and-hierarchy",
+      "requirementId": "R-badge-records-and-hierarchy",
+      "method": "visual",
+      "targetSlots": [
+        "participant-badges"
+      ],
+      "criteria": "The board must show three equally sized rectangular front faces with the 3:2 proportions of the specified 90 × 60 mm badge constraint. Read the faces from left to right as Alex Chen with Developer, Morgan Reed with Designer, and Sam Ellis with Volunteer. Names must be the primary wearable information, with roles treated as responsibilities of equal standing. Name and role may occupy separate lines without a printed dash. Incorrect records, order, unequal face sizes, distorted face proportions or participant names subordinated to other badge content fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "welcome-sticker-copy",
+      "requirementId": "R-welcome-sticker-copy",
+      "method": "visual",
+      "targetSlots": [
+        "welcome-sticker"
+      ],
+      "criteria": "The sticker must visibly combine the exact sentence Ask me about my first contribution., including its terminal period, with OPEN WORK DAY, both complete logos and the exact co-host line. Arrangement and line wrapping may vary. Missing or changed wording, or an incomplete co-host block, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "logo-scaling-and-clear-bounds",
+      "requirementId": "R-logo-scaling-and-clear-bounds",
+      "method": "visual",
+      "targetSlots": [
+        "event-identity",
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "criteria": "Inspect each logo occurrence, including every badge face, for proportional scaling and a light, flat background. Surrounding graphics and the co-host line must remain outside each complete mark's visible bounds, and the marks must remain visibly separated. Clear-space distance may vary because no minimum is specified. Stretching, overlapping graphics or co-host text, patterned fields behind the marks, or touching logos fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "host-and-title-prominence",
+      "requirementId": "R-host-and-title-prominence",
+      "method": "visual",
+      "targetSlots": [
+        "event-identity",
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "criteria": "The event title must be at least as prominent as the combined co-host block, and neither host may receive stronger emphasis than the other through positioning, scale or surrounding treatment. Apply this comparison within each badge face while allowing the participant name to lead the badge overall. Different layouts are permitted; a co-host block that dominates the event title or preferential emphasis for one host fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "atmosphere-reference-role",
+      "requirementId": "R-atmosphere-reference-role",
+      "method": "diagnostic",
+      "targetSlots": [
+        "event-identity",
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "criteria": "Record 06-contribution-table.png as the supplied reference image for atmosphere. It complements the identity images 03-patchbay-logo.png and 04-typeloom-logo.png and the constraint image 05-badge-outline.png already named in the Inputs paragraph. This reference establishes context without requiring reproduction of its worktable scene and does not independently cause a failure.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-shared-event-identity",
+      "requirementId": "R-set-shared-event-identity",
+      "method": "visual",
+      "targetSlots": [
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "criteria": "All applications retain the identity plate's event lettering and graphic treatment while adapting composition and information hierarchy to their uses. Every application, including each individual badge face, preserves the complete two-host block, left-to-right host order, equal visible logo ink heights and exact co-host line.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "event-identity"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "patchbay-source-identity",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "03-patchbay-logo.png"
+      ],
+      "subjectSlots": [
+        "event-identity",
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "notes": "Place PATCHBAY left and TYPELOOM right, side by side at equal visible ink heights, retaining each logo's original proportions, lettering, symbol, arrangement and supplied colour: nominal #3355A6 for PATCHBAY and #8B3468 for TYPELOOM."
+    },
+    {
+      "id": "typeloom-source-identity",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "04-typeloom-logo.png"
+      ],
+      "subjectSlots": [
+        "event-identity",
+        "opening-screen",
+        "programme-screen",
+        "social-announcement",
+        "participant-badges",
+        "welcome-sticker"
+      ],
+      "notes": "Place PATCHBAY left and TYPELOOM right, side by side at equal visible ink heights, retaining each logo's original proportions, lettering, symbol, arrangement and supplied colour: nominal #3355A6 for PATCHBAY and #8B3468 for TYPELOOM."
+    }
+  ]
+}

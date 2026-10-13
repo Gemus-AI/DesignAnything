@@ -1,0 +1,545 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-furniture-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "assembly-drawing",
+      "label": "Dimensioned assembly and connection drawing",
+      "description": "One assembly drawing with dimensioned views, a numbered parts inventory, connector details and the tool-free assembly sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "extended-state",
+      "label": "Extended screen configuration",
+      "description": "One extended-state sheet with a room plan, perspective, overall dimensions and the clear entrance-to-desk route.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "corner-state",
+      "label": "Corner screen configuration",
+      "description": "One corner-state sheet with a room plan, perspective, overall dimensions, a 90-degree connection and the clear route.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "stored-state",
+      "label": "Complete screen in storage",
+      "description": "One stored-state sheet with three dimensioned views and the location of every component within the storage envelope.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "textile-construction",
+      "label": "Textile panels and removable attachments",
+      "description": "One textile construction sheet with A and B fabric records, panel arrangement, edge details, attachments and the washing removal sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "domestic-scenes",
+      "label": "Video-call and reading scenes",
+      "description": "One domestic scene sheet pairing the extended video-call background with the corner reading retreat.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "FOLD FIELD",
+      "scope": {
+        "slots": [
+          "assembly-drawing",
+          "extended-state",
+          "corner-state",
+          "stored-state",
+          "textile-construction",
+          "domestic-scenes"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "domestic-caption",
+      "kind": "text-verbatim",
+      "text": "Room to yourself",
+      "scope": {
+        "slots": [
+          "domestic-scenes"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FOLD FIELD",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "one-reconfigurable-screen",
+      "slots": [
+        "extended-state",
+        "corner-state",
+        "stored-state",
+        "textile-construction",
+        "domestic-scenes"
+      ],
+      "sourceSlots": [
+        "assembly-drawing"
+      ],
+      "items": [
+        {
+          "item": "All sheets describe one screen with consistent frame geometry, support and connector designs, part identities and quantities; configuration changes preserve the complete inventory.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The domestic views use the A/B arrangement of the corresponding occupied state and agree with the textile construction details.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Both existing fabrics remain part of the design, panels are removable, and every component including loose parts is accounted for in storage.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FOLD FIELD"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "assembly-drawing",
+      "extended-state",
+      "corner-state",
+      "stored-state",
+      "textile-construction",
+      "domestic-scenes"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not score photorealistic lighting in technical drawings or infer unshown physical load performance from rendered images."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-drawing",
+        "extended-state",
+        "corner-state",
+        "stored-state",
+        "textile-construction",
+        "domestic-scenes"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-assembly-drawing",
+      "requirementId": "R-format-assembly-drawing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembly-drawing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-extended-state",
+      "requirementId": "R-format-extended-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "extended-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-corner-state",
+      "requirementId": "R-format-corner-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "corner-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-stored-state",
+      "requirementId": "R-format-stored-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "stored-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-textile-construction",
+      "requirementId": "R-format-textile-construction",
+      "method": "artifact-property",
+      "targetSlots": [
+        "textile-construction"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-domestic-scenes",
+      "requirementId": "R-format-domestic-scenes",
+      "method": "artifact-property",
+      "targetSlots": [
+        "domestic-scenes"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "frame-construction-and-parts",
+      "requirementId": "R-frame-construction-and-parts",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-drawing",
+        "extended-state",
+        "corner-state",
+        "stored-state"
+      ],
+      "criteria": "The assembly sheet includes dimensioned front, side and exploded views and a numbered inventory with quantities. Across the four sheets, identify exactly three connected frames, each with outer dimensions of 600 mm wide by 1800 mm high, specified as solid ash with clear water-based lacquer. Part numbers, component identities and quantities must reconcile across states. Frame sections and construction details may vary by the designer's chosen solution, but conflicting dimensions, materials, part numbering or quantities fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "occupied-room-layout-and-route",
+      "requirementId": "R-occupied-room-layout-and-route",
+      "method": "visual",
+      "targetSlots": [
+        "extended-state",
+        "corner-state"
+      ],
+      "criteria": "Each sheet provides a room plan, perspective and overall screen dimensions, with the extended screen behind the desk user and the corner screen forming a seated retreat. Read the plans against the supplied room layout and fact-sheet record: the room is 4200 × 3600 mm with a 2500 mm ceiling; coordinates originate at the northwest corner, with x east and y south. The south entrance spans x = 0–900 at y = 3600, hinges at its west end and swings inward through 90 degrees. The north window spans x = 600–2400, with sill/head heights of 900/2200 mm. The desk starts at (2700, 0) and measures 1200 × 600 × 740 mm; the sofa starts at (0, 700) and measures 850 east–west × 1800 north–south × 800 mm high. Storage remains at (3500, 3200), occupying 700 × 400 mm with 1850 mm height. These facts need not all be printed, but depicted or stated geometry must agree. Both plans must explicitly dimension an uninterrupted entrance-to-desk passage of at least 900 mm; screen supports and furniture cannot intrude into it. Different screen placements are allowed if the fixed layout and passage remain valid; relocated fixed elements, contradictory geometry or an undimensioned or obstructed route fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "state-connections-and-complete-storage",
+      "requirementId": "R-state-connections-and-complete-storage",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-drawing",
+        "corner-state",
+        "stored-state"
+      ],
+      "criteria": "Assembly details make the connector and support placement understandable in extended, corner and stored configurations. The corner connection is visibly and dimensionally 90 degrees. The stored sheet supplies front, side and plan views, overall dimensions and identifiable locations for all three frames, every textile panel, support, connector and loose part listed in the assembly inventory. The complete stored assembly must occupy no more than 700 mm width, 400 mm depth and 1850 mm height. Folding, stacking or tool-free disassembly are allowed; omitted components, unexplained storage locations or any component extending beyond the allowance fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "textile-records-and-removal",
+      "requirementId": "R-textile-records-and-removal",
+      "method": "visual",
+      "targetSlots": [
+        "textile-construction"
+      ],
+      "criteria": "Read two clearly associated fabric records: A is oat-colored, opaque, 70% cotton and 30% linen, 320 g/m², supplied at 1400 mm width; B is rust-colored, translucent, 100% polyester, 120 g/m², supplied at 1500 mm width. Both specify machine washing at 30°C. The sheet shows the A/B panel arrangement, edge and overlap construction, attachment close-ups and an intelligible removal sequence for washing. Attachment details agree with the assembly sequence and permit removal without tools. Record formatting and attachment design are open; missing or exchanged properties, permanently fixed panels, contradictory attachment mechanisms or missing construction/removal details fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "assembly-drawing"
+      ]
+    },
+    {
+      "id": "domestic-scenes-match-developed-screen",
+      "requirementId": "R-domestic-scenes-match-developed-screen",
+      "method": "visual",
+      "targetSlots": [
+        "domestic-scenes"
+      ],
+      "criteria": "The sheet contains two domestic views of the developed screen: an extended video-call setting with a seated adult at the desk and a corner reading retreat with a seated adult. Compare each view with its corresponding state sheet and the textile arrangement: frame geometry, component design and A/B placement must agree. Opaque oat fabric provides the caller's background, and translucent rust fabric forms a layer at the retreat boundary. Viewpoint, lighting and incidental domestic activity may differ; a substituted screen, incompatible panel arrangement, absent use view or reversed opacity function fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "extended-state",
+        "corner-state",
+        "textile-construction"
+      ]
+    },
+    {
+      "id": "required-sheet-copy",
+      "requirementId": "R-required-sheet-copy",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-drawing",
+        "extended-state",
+        "corner-state",
+        "stored-state",
+        "textile-construction",
+        "domestic-scenes"
+      ],
+      "criteria": "Verify a legible printed project name on every sheet and the additional caption on the domestic scene sheet. Typography and placement are unrestricted. Missing, misspelled or unreadable required copy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tool-free-assembly-and-state-changes",
+      "requirementId": "R-tool-free-assembly-and-state-changes",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-drawing",
+        "extended-state",
+        "corner-state",
+        "stored-state",
+        "textile-construction"
+      ],
+      "criteria": "The assembly sequence and connector, support and textile details provide a coherent hand-operated route from the component inventory to the freestanding screen and between all three states. The designer may choose the sections and mechanisms. A tool-free label alone is insufficient if the illustrated operations require tools; missing operational evidence, required external anchoring incompatible with a freestanding screen, or a transition requiring a tool fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "textile-material-expression",
+      "requirementId": "R-textile-material-expression",
+      "method": "visual",
+      "targetSlots": [
+        "textile-construction",
+        "domestic-scenes"
+      ],
+      "criteria": "Across the construction details and domestic views, both existing textiles are recognizable through their oat/rust colors, visible weave character and different light transmission. Show how tension, finished edges and overlapping layers contribute to the screen's appearance, consistent with the supplied fabric samples. Rendering style may vary, but treating both fabrics as visually interchangeable, reversing their opacity or leaving the specified textile characteristics indiscernible fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-one-reconfigurable-screen",
+      "requirementId": "R-set-one-reconfigurable-screen",
+      "method": "visual",
+      "targetSlots": [
+        "extended-state",
+        "corner-state",
+        "stored-state",
+        "textile-construction",
+        "domestic-scenes"
+      ],
+      "criteria": "All sheets describe one screen with consistent frame geometry, support and connector designs, part identities and quantities; configuration changes preserve the complete inventory. The domestic views use the A/B arrangement of the corresponding occupied state and agree with the textile construction details. Both existing fabrics remain part of the design, panels are removable, and every component including loose parts is accounted for in storage.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "assembly-drawing"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "screen-across-states",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "assembly-drawing",
+      "subjectSlots": [
+        "extended-state",
+        "corner-state",
+        "stored-state"
+      ],
+      "notes": "Use both fabrics, with removable panels, and carry the same frame, support, connector and textile inventory through all three states."
+    }
+  ]
+}

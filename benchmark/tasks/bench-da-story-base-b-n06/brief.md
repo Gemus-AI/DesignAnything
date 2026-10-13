@@ -1,0 +1,25 @@
+THE NEXT STOP | A railway mix-up told through two travelers and two matching cases
+
+We are developing a 36-second animated railway adventure for family viewing on our character channel. The story follows Pip and Rowan from Willow Quay through Juniper Halt to Orchard End: they board with their own cases, accidentally take each other's case at the intermediate stop, discover the mistake and exchange them at their destination. Use the attached six-shot story, with each shot lasting 6 seconds and each act occupying 12 seconds. The tone is gently comic, with the recognition carried by hands, glances and luggage details. Print "THE NEXT STOP" on the character sheet, shot table and final storyboard panel. The two spoken lines are "This one is yours." and "Back where it belongs."
+
+The existing characters and cases set the direction. Pip is a 1000 mm tall cinnamon otter with a cream muzzle, a mustard coat and a navy square patch on the left elbow. Rowan is a 1200 mm tall dark-brown otter with a cream muzzle, round glasses and a moss-green vest. Both cases have a #356B70 shell, three vertical ribs, two black wheels and a black top handle; each measures 550 × 360 × 220 mm, height × width × depth. Their sole distinguishing feature is an ivory symbol on a navy handle tag: Pip owns the star case and Rowan owns the circle case. The carriage has a 600 mm central aisle, a forward-left luggage rack and a yellow pole beside that rack. Platform sides follow the station table. Use warm #F3D9A4 light for Acts 1 and 3 and cooler #B9CDD8 light for Act 2. Compose the story in both 16:9 and 9:16, with action inset 3.5% and graphics inset 5% from every edge. Recompose each shot for the vertical version, with the subjects inside both versions' action-safe areas.
+
+Audience: families with children aged 6–10 and followers of our character channel, with the work supporting our producer's story approval and the animation team's shot planning.
+
+Inputs (attached): 01-client-facts.en.md records the character anchors, luggage construction, palette and screen rules. 02-delivery-catalog.en.md lists the deliverables and their proportions, formats and stages. 03-story-records.en.md contains the three-act synopsis, station sequence, six timed shots and dialogue cues. landscape-safe-area.png supplies the 16:9 action and graphics boundaries. portrait-safe-area.png supplies the corresponding 9:16 boundaries. carriage-and-stations.png supplies the carriage geometry, camera areas and platform sides. travelers-identity.png supplies the existing appearances of Pip and Rowan. matching-cases-identity.png supplies the case construction and the two ownership symbols. carriage-daylight-reference.png supplies the daylight, upholstery and window-reflection atmosphere.
+
+Deliverables:
+1. One finished character sheet showing Pip and Rowan in front, side and back views, each with neutral, surprised and relieved expressions, their heights and clothing colors
+2. One six-row shot table covering shots S01–S06, with shot size, duration, characters, action, dialogue, subtitle cues and case ownership
+3. One six-frame color script covering S01–S06 in order, with the act colors and the 36-second timeline
+4. Two finished keyframes: S01 establishing the travelers and their own cases at Willow Quay, and S06 showing the return of both cases at Orchard End
+5. One complete storyboard sheet with six numbered shot pairs, each pairing a 16:9 composition with its recomposed 9:16 counterpart
+
+Acceptance:
+- The character sheet contains six character views and six expressions, labels Pip at 1000 mm and Rowan at 1200 mm, and establishes the muzzle, clothing, patch and glasses anchors used in both keyframes, the color script and every storyboard appearance.
+- The shot table and storyboard follow S01–S06 at 6 seconds each, totaling 36 seconds: correct ownership in S01–S02, swapped cases in S03–S05, and restored ownership during S06. Both reproduce the two dialogue lines and their cue times from 03-story-records.en.md; the storyboard's final panel carries THE NEXT STOP.
+- Each storyboard panel prints its shot ID, WS, MS or CU shot size, 6-second duration and character names. Its case symbols remain legible, with a detail inset for an oblique view; Pip stays screen-left and Rowan screen-right in shared views. The storyboard and keyframes retain the forward-left rack, adjacent yellow pole and recorded platform sides wherever those features appear.
+- The storyboard contains six landscape and six freshly composed portrait panels. Both compositions place action within the 3.5% margins and graphics within the 5% margins; dialogue panels contain bottom-centered subtitle boxes of at most two lines, using the recorded 2-second and 3-second cues.
+- The color script maps one frame to each of the six storyboard shots, uses #F3D9A4 in S01–S02 and S05–S06 and #B9CDD8 in S03–S04, and supplies the lighting colors used in the two finished keyframes. The character sheet and shot table both carry THE NEXT STOP.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

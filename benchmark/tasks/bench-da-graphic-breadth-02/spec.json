@@ -1,0 +1,1114 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-graphic-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "information-hierarchy",
+      "label": "Information hierarchy specification",
+      "description": "A one-page specification of information priorities, carrier placement, typography, poster geometry, institution color and scale labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "series-rules",
+      "label": "Series graphic rules board",
+      "description": "One graphic rules board with the master visual, four theme identifiers, typography, diagram symbols and repeated specification facts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "moon-poster",
+      "label": "The changing Moon poster",
+      "description": "One A1 poster for The changing Moon with its quarterly program block, learning question, phase explanation and eight-phase graphic.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "eclipse-poster",
+      "label": "When shadows align poster",
+      "description": "One A1 poster for When shadows align with its quarterly program block, learning question and paired eclipse explanation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "seasons-poster",
+      "label": "One tilt, two seasons poster",
+      "description": "One A1 poster for One tilt, two seasons with its quarterly program block, learning question and paired June and December hemisphere graphics.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "distance-poster",
+      "label": "A ruler for space poster",
+      "description": "One A1 poster for A ruler for space with its quarterly program block, learning question, AU explanation and linear distance ruler.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "eclipse-diagram",
+      "label": "Solar and lunar eclipse comparison",
+      "description": "One standalone When shadows align diagram pairing labelled solar and lunar eclipse arrangements with the tilted-orbit explanation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "distance-diagram",
+      "label": "Linear AU comparison ruler",
+      "description": "One standalone A ruler for space diagram with Sun at 0 AU, Earth at 1 AU and Saturn at 9.5 AU on a shared linear scale.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "moon-screen",
+      "label": "The changing Moon screen adaptation",
+      "description": "One landscape screen adaptation of The changing Moon poster retaining its program block, learning question, explanation and phase sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "eclipse-screen",
+      "label": "When shadows align screen adaptation",
+      "description": "One landscape screen adaptation of When shadows align retaining its program block, learning question and paired eclipse explanation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "seasons-social",
+      "label": "One tilt, two seasons social post",
+      "description": "One square One tilt, two seasons social post retaining the program block, learning question and June and December hemisphere explanation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "distance-social",
+      "label": "A ruler for space social post",
+      "description": "One square A ruler for space social post retaining the program block, learning question, AU explanation and linear ruler.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "eclipse-animation",
+      "label": "When shadows align animation",
+      "description": "One 10-second animation of the eclipse screen with a persistent program block, a solar opening frame and a lunar closing frame.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "series-presentation",
+      "label": "Annual series presentation",
+      "description": "One presentation of at least 8 pages reusing the specification and series artwork with an application map of program and science facts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "program-name",
+      "kind": "text-verbatim",
+      "text": "ORBIT YEAR",
+      "scope": {
+        "slots": [
+          "series-rules",
+          "moon-poster",
+          "eclipse-poster",
+          "seasons-poster",
+          "distance-poster",
+          "moon-screen",
+          "eclipse-screen",
+          "seasons-social",
+          "distance-social"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": false,
+      "critical": true
+    },
+    {
+      "id": "institution-name",
+      "kind": "text-verbatim",
+      "text": "Meridian City Planetarium",
+      "scope": {
+        "slots": [
+          "moon-poster",
+          "eclipse-poster",
+          "seasons-poster",
+          "distance-poster",
+          "moon-screen",
+          "eclipse-screen",
+          "seasons-social",
+          "distance-social"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": false,
+      "critical": true
+    },
+    {
+      "id": "schematic-disclosure",
+      "kind": "text-verbatim",
+      "text": "Schematic — not to scale",
+      "scope": {
+        "slots": [
+          "information-hierarchy",
+          "series-rules",
+          "moon-poster",
+          "eclipse-poster",
+          "seasons-poster",
+          "eclipse-diagram",
+          "moon-screen",
+          "eclipse-screen",
+          "seasons-social",
+          "series-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "ORBIT YEAR",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-explanation-system",
+      "slots": [
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster",
+        "eclipse-diagram",
+        "distance-diagram",
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "series-rules"
+      ],
+      "items": [
+        {
+          "item": "Applications implement the specification and rules board through a recognizable shared information hierarchy, typography, scientific symbols and caption treatments; carrier-specific rearrangement is allowed.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The four themes have distinct visual treatments within the shared institution-based system, and each theme's identifier and scientific visual language remain recognizable in its corresponding diagram or digital adaptation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Each digital adaptation retains its corresponding poster's program block, learning-question meaning, causal explanation and scientific relationship while adapting the composition to its carrier.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "ORBIT YEAR"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "moon-poster",
+      "eclipse-poster",
+      "seasons-poster",
+      "distance-poster",
+      "eclipse-diagram",
+      "distance-diagram",
+      "moon-screen",
+      "eclipse-screen",
+      "seasons-social",
+      "distance-social"
+    ],
+    "layoutExtras": true,
+    "naRules": "Judge communication design and explanatory clarity, not photorealistic astronomical materials, lighting or realistic body sizes in disclosed schematic diagrams."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "information-hierarchy",
+        "series-rules",
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster",
+        "eclipse-diagram",
+        "distance-diagram",
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social",
+        "series-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "series-rules",
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster",
+        "eclipse-diagram",
+        "distance-diagram",
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-information-hierarchy",
+      "requirementId": "R-format-information-hierarchy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-series-rules",
+      "requirementId": "R-format-series-rules",
+      "method": "artifact-property",
+      "targetSlots": [
+        "series-rules"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-moon-poster",
+      "requirementId": "R-format-moon-poster",
+      "method": "artifact-property",
+      "targetSlots": [
+        "moon-poster"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-eclipse-poster",
+      "requirementId": "R-format-eclipse-poster",
+      "method": "artifact-property",
+      "targetSlots": [
+        "eclipse-poster"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-seasons-poster",
+      "requirementId": "R-format-seasons-poster",
+      "method": "artifact-property",
+      "targetSlots": [
+        "seasons-poster"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-distance-poster",
+      "requirementId": "R-format-distance-poster",
+      "method": "artifact-property",
+      "targetSlots": [
+        "distance-poster"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-eclipse-diagram",
+      "requirementId": "R-format-eclipse-diagram",
+      "method": "artifact-property",
+      "targetSlots": [
+        "eclipse-diagram"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-distance-diagram",
+      "requirementId": "R-format-distance-diagram",
+      "method": "artifact-property",
+      "targetSlots": [
+        "distance-diagram"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-moon-screen",
+      "requirementId": "R-format-moon-screen",
+      "method": "artifact-property",
+      "targetSlots": [
+        "moon-screen"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-eclipse-screen",
+      "requirementId": "R-format-eclipse-screen",
+      "method": "artifact-property",
+      "targetSlots": [
+        "eclipse-screen"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-seasons-social",
+      "requirementId": "R-format-seasons-social",
+      "method": "artifact-property",
+      "targetSlots": [
+        "seasons-social"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-distance-social",
+      "requirementId": "R-format-distance-social",
+      "method": "artifact-property",
+      "targetSlots": [
+        "distance-social"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-eclipse-animation",
+      "requirementId": "R-format-eclipse-animation",
+      "method": "manual",
+      "targetSlots": [
+        "eclipse-animation"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-series-presentation",
+      "requirementId": "R-format-series-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "series-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "starting-specification",
+      "requirementId": "R-starting-specification",
+      "method": "content",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "A single specification page defines the series' information order, placement for each carrier, font families, weights and minimum sizes. It records 594 × 841 mm A1 trim, 3 mm bleed, at least 5 mm internal safety, #18324A, and the full wording of both disclosure labels. Missing categories or contradictory values fail; the organization and chosen typefaces are flexible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "rules-board",
+      "requirementId": "R-rules-board",
+      "method": "visual",
+      "targetSlots": [
+        "series-rules"
+      ],
+      "criteria": "The board visibly demonstrates a master visual, four distinguishable theme identifiers, type treatments, scientific symbols and caption styling that implement the specification. It prints the program name, 594 × 841 mm, #18324A, 'Schematic — not to scale' and 'Distance scale in AU; body symbols not to scale'. Composition may vary; omitted components or conflicts with the specification fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "information-hierarchy"
+      ]
+    },
+    {
+      "id": "repeated-specification-facts",
+      "requirementId": "R-repeated-specification-facts",
+      "method": "content",
+      "targetSlots": [
+        "series-rules",
+        "series-presentation"
+      ],
+      "criteria": "Each target explicitly reproduces the specification's 594 × 841 mm dimensions, #18324A code and complete wording of both scale disclosures. Clear text within a reused specification page counts in the presentation. Paraphrased disclosures, missing facts or inconsistent values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "information-hierarchy"
+      ]
+    },
+    {
+      "id": "poster-print-margins",
+      "requirementId": "R-poster-print-margins",
+      "method": "visual",
+      "targetSlots": [
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster"
+      ],
+      "criteria": "Assess the portrait poster trim and artwork relative to the specified physical geometry. Edge-reaching artwork extends through the 3 mm bleed, while text, the institution mark and essential diagram content remain at least 5 mm inside trim. Larger internal margins are allowed. Intrusion into the protected area or missing required bleed fails; do not assess exact raster pixel counts.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "information-hierarchy"
+      ]
+    },
+    {
+      "id": "application-program-records",
+      "requirementId": "R-application-program-records",
+      "method": "visual",
+      "targetSlots": [
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster",
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social"
+      ],
+      "criteria": "Read each program block. Moon roles pair the program and institution names with The changing Moon and January–March 2027; eclipse roles with When shadows align and April–June 2027; seasons roles with One tilt, two seasons and July–September 2027; distance roles with A ruler for space and October–December 2027. Original name and title words are required, with flexible capitalization and line breaks; unambiguous equivalent date typography is allowed. Missing, mismatched or event-date interpretations of the quarterly records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "moon-science",
+      "requirementId": "R-moon-science",
+      "method": "visual",
+      "targetSlots": [
+        "moon-poster",
+        "moon-screen"
+      ],
+      "criteria": "Each image explains that sunlight illuminates half the Moon and orbital motion changes how much of that half an Earth observer sees, with an approximately 29.5-day cycle. Show new Moon, waxing crescent, first quarter, waxing gibbous, full Moon, waning gibbous, last quarter and waning crescent in a readable sequence. Identify the Earth viewpoint and Northern Hemisphere convention, with corresponding right-lit waxing and left-lit waning appearances. A labelled outline for new Moon and paraphrased explanations are allowed. Missing phases, reversed sequence, incompatible illumination or an Earth-shadow explanation for ordinary phases fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "eclipse-science-images",
+      "requirementId": "R-eclipse-science-images",
+      "method": "visual",
+      "targetSlots": [
+        "eclipse-poster",
+        "eclipse-screen",
+        "eclipse-diagram"
+      ],
+      "criteria": "Each image includes explicitly named solar and lunar examples and labels Sun, Earth and Moon. The solar arrangement places the Moon between Sun and Earth and shows its shadow reaching part of Earth; the lunar arrangement places Earth between Sun and Moon and shows Earth's shadow reaching the Moon. Explain that the lunar orbital plane is tilted relative to Earth's orbital plane, so suitable alignments occur only occasionally. Rotation, diagram orientation and exaggerated sizes are allowed; reversed body order, shadow direction or an implication of eclipses every orbit fails. The standalone diagram also carries its corresponding theme title.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "seasonal-science",
+      "requirementId": "R-seasonal-science",
+      "method": "visual",
+      "targetSlots": [
+        "seasons-poster",
+        "seasons-social"
+      ],
+      "criteria": "June and December configurations preserve an approximately parallel Earth axis. Written hemisphere and season labels pair northern summer with southern winter around June and reverse those seasons around December. Explain how axial tilt produces more direct sunlight in the hemisphere experiencing summer and winter in the opposite hemisphere. Diagram orientation and explanatory exaggeration may vary; changing the axial direction between positions, reversing the pairings or attributing seasons to Earth–Sun distance fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "au-ruler-science",
+      "requirementId": "R-au-ruler-science",
+      "method": "visual",
+      "targetSlots": [
+        "distance-poster",
+        "distance-social",
+        "distance-diagram"
+      ],
+      "criteria": "Each ruler identifies an astronomical unit as approximately the mean Earth–Sun distance, about 150 million kilometres, and represents mean orbital distances from the Sun. Label Sun at 0 AU, Earth at 1 AU and Saturn at 9.5 AU, with Earth positioned about 1/9.5 of the Sun-to-Saturn span on one unbroken linear scale. Print 'Distance scale in AU; body symbols not to scale' in full. Symbol sizes and ruler orientation are flexible; equal spacing, logarithmic or broken scales, incorrect values or missing disclosure fail. The standalone diagram also prints its corresponding theme title.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "diagram-disclosures-and-paired-labels",
+      "requirementId": "R-diagram-disclosures-and-paired-labels",
+      "method": "visual",
+      "targetSlots": [
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster",
+        "eclipse-diagram",
+        "distance-diagram",
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social"
+      ],
+      "criteria": "Every schematic figure or clearly grouped schematic comparison has an associated 'Schematic — not to scale' disclosure. Embedded diagrams retain the same disclosure as standalone equivalents. Solar versus lunar examples and northern versus southern hemispheres are distinguished with words, supported by symbols and color. A shared caption may cover a clearly bounded paired figure; an unrelated label elsewhere or color-only distinctions fail. Linear AU rulers use their dedicated distance disclosure; an additional schematic disclosure is required only for separate schematic geometry.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "teaching-content",
+      "requirementId": "R-teaching-content",
+      "method": "visual",
+      "targetSlots": [
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster",
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social"
+      ],
+      "criteria": "Each application contains a learning question, a causal explanation and a diagram that teaches its assigned relationship. Moon asks why the visible bright shape changes; eclipse asks how solar and lunar eclipses differ; seasons asks why northern and southern seasons differ; distance asks how one unit describes very large distances. Rephrasing and carrier-specific rearrangement are allowed while preserving these meanings and the complete teaching content. Decorative astronomy imagery alone, an omitted question or an explanation reduced to a topic label fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "digital-carriers-and-safe-insets",
+      "requirementId": "R-digital-carriers-and-safe-insets",
+      "method": "visual",
+      "targetSlots": [
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social"
+      ],
+      "criteria": "Screens use landscape composition and social posts use square composition. All copy and the institution mark remain inside a protected region inset by 5% of the corresponding width or height from each edge. Larger insets are allowed and backgrounds may extend to the edges. Incorrect carrier shape or protected content entering the outer inset fails; exact pixel dimensions are not assessed.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "animation-sequence-and-retention",
+      "requirementId": "R-animation-sequence-and-retention",
+      "method": "manual",
+      "targetSlots": [
+        "eclipse-animation"
+      ],
+      "criteria": "Review the complete video and its duration. It runs for 10 seconds, begins with the solar example and ends with the lunar example. The complete program block remains legible throughout, and the screen's wording and labels are retained. Motion and intermediate transitions are flexible; a blank or unrelated endpoint, disappearing program block, changed copy or incorrect duration fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "eclipse-screen"
+      ]
+    },
+    {
+      "id": "animation-eclipse-science",
+      "requirementId": "R-animation-eclipse-science",
+      "method": "manual",
+      "targetSlots": [
+        "eclipse-animation"
+      ],
+      "criteria": "Across the video, explicitly label the three bodies and distinguish the solar and lunar examples. Solar eclipse geometry shows the Moon between Sun and Earth with the Moon's shadow reaching Earth; lunar geometry shows Earth between Sun and Moon with Earth's shadow reaching the Moon. Retain the explanation that tilted orbital planes limit eclipse alignments. Sequential presentation is allowed; reversed arrangements, incorrect shadow motion or omitted orbital explanation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "animation-schematic-labels",
+      "requirementId": "R-animation-schematic-labels",
+      "method": "manual",
+      "targetSlots": [
+        "eclipse-animation"
+      ],
+      "criteria": "Whenever explanatory schematic geometry is visible, an associated 'Schematic — not to scale' label remains readable. The solar and lunar examples are distinguished by written labels. A persistent common disclosure may cover the sequence; a disclosure shown only before or after the diagrams, altered wording or color-only distinctions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "animation-safe-inset",
+      "requirementId": "R-animation-safe-inset",
+      "method": "manual",
+      "targetSlots": [
+        "eclipse-animation"
+      ],
+      "criteria": "Inspect the entire sequence, including transitions: all copy and the institution mark stay at least 5% of frame width from the left and right edges and 5% of frame height from the top and bottom. Larger margins are allowed. Any protected element crossing into that border during motion fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "animation-program-and-symbol",
+      "requirementId": "R-animation-program-and-symbol",
+      "method": "manual",
+      "targetSlots": [
+        "eclipse-animation"
+      ],
+      "criteria": "The video pairs ORBIT YEAR and Meridian City Planetarium with When shadows align and April–June 2027. Capitalization, line breaks and unambiguous equivalent date typography may vary. Compare the institution mark against planetarium-mark.png and its screen application: preserve the supplied geometry and #18324A throughout. Uniform scaling is allowed; missing or incorrect records, distortion, substitution or recoloring fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "eclipse-screen"
+      ]
+    },
+    {
+      "id": "presentation-pages-and-application-map",
+      "requirementId": "R-presentation-pages-and-application-map",
+      "method": "content",
+      "targetSlots": [
+        "series-presentation"
+      ],
+      "criteria": "The presentation has eight or more pages and an application map that names where each quarterly program record, required scientific relationship and exact scale disclosure appears. Coverage includes the four themes, relevant standalone diagrams, digital versions and eclipse animation. Tables, annotated thumbnails or prose mappings are acceptable; a generic inventory without fact-to-application links or omitted required mappings fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "presentation-reuse",
+      "requirementId": "R-presentation-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "series-presentation"
+      ],
+      "criteria": "Find identifiable visible reuse of every listed source, including specification content, the board, all four posters, both diagrams, all four digital adaptations and frames from the delivered animation. Scaled reproductions and contextual mockups are allowed if the original work remains identifiable. Text-only mentions, substitute artwork or omission of any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "series-rules",
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster",
+        "eclipse-diagram",
+        "distance-diagram",
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social"
+      ]
+    },
+    {
+      "id": "set-shared-explanation-system",
+      "requirementId": "R-set-shared-explanation-system",
+      "method": "visual",
+      "targetSlots": [
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster",
+        "eclipse-diagram",
+        "distance-diagram",
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social"
+      ],
+      "criteria": "Applications implement the specification and rules board through a recognizable shared information hierarchy, typography, scientific symbols and caption treatments; carrier-specific rearrangement is allowed. The four themes have distinct visual treatments within the shared institution-based system, and each theme's identifier and scientific visual language remain recognizable in its corresponding diagram or digital adaptation. Each digital adaptation retains its corresponding poster's program block, learning-question meaning, causal explanation and scientific relationship while adapting the composition to its carrier.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "information-hierarchy",
+        "series-rules"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "institution-symbol",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "planetarium-mark.png"
+      ],
+      "subjectSlots": [
+        "moon-poster",
+        "eclipse-poster",
+        "seasons-poster",
+        "distance-poster",
+        "moon-screen",
+        "eclipse-screen",
+        "seasons-social",
+        "distance-social"
+      ],
+      "notes": "The institution symbol retains the geometry of planetarium-mark.png and #18324A across those nine applications."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specification-facts",
+      "fromSlot": "information-hierarchy",
+      "toSlots": [
+        "series-rules",
+        "series-presentation"
+      ],
+      "extract": [
+        "A1 dimensions of 594 × 841 mm",
+        "institution color code #18324A",
+        "exact schematic label",
+        "exact linear ruler label"
+      ],
+      "notes": "The rules board and presentation repeat its A1 dimensions of 594 × 841 mm, color code #18324A and both exact scale labels; the four posters use its 3 mm bleed and minimum 5 mm internal safe margin."
+    }
+  ]
+}

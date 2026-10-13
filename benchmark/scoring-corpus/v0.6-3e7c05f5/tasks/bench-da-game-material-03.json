@@ -1,0 +1,1221 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-game-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "component-specification",
+      "label": "Component specification",
+      "description": "A one-page specification of the faction palette, emblem, symbols, component geometry, card bands and pawn states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "expansion-roster",
+      "label": "Expansion roster",
+      "description": "A one-page roster of seven component IDs with pawn equipment, terrain features and complete card records.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "ferryman-pawn",
+      "label": "Ferryman pawn sheet",
+      "description": "A Ferryman pawn sheet with three orthographic views, dimensions and overhead Ready and Spent views.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "surveyor-pawn",
+      "label": "Surveyor pawn sheet",
+      "description": "A Surveyor pawn sheet with three orthographic views, dimensions and overhead Ready and Spent views.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "reed-landing-tile",
+      "label": "Reed Landing tile face",
+      "description": "One hexagonal Reed Landing tile face with its timber jetty, reeds, name and T01 identifier.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "gauge-bank-tile",
+      "label": "Gauge Bank tile face",
+      "description": "One hexagonal Gauge Bank tile face with its brass gauge, gravel bank, name and T02 identifier.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ferry-run-card",
+      "label": "Ferry Run card front",
+      "description": "The C01 Ferry Run action card front with Cost 1, Move and its complete rule.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "raise-marker-card",
+      "label": "Raise Marker card front",
+      "description": "The C02 Raise Marker action card front with Cost 0, Supply and its complete rule.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "hold-fast-card",
+      "label": "Hold Fast card front",
+      "description": "The C03 Hold Fast action card front with Cost 1, Guard and its complete rule.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shared-card-back",
+      "label": "Shared card back",
+      "description": "One shared card back with the existing faction emblem and LOCKREACH, Reed Union and Floodline text.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "icon-sheet",
+      "label": "Faction icon sheet",
+      "description": "One labeled sheet of Supply, Move and Guard symbols at two physical sizes with their meanings and faction color codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tabletop-display",
+      "label": "Complete tabletop display",
+      "description": "One tabletop display of eight expansion components beside the existing Warden pawn and core card reverse.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tabletop-video",
+      "label": "Tabletop rotation video",
+      "description": "A 10-second tabletop video of the full expansion and a labeled Ready-to-Spent pawn rotation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "expansion-presentation",
+      "label": "Floodline presentation",
+      "description": "A presentation of at least eight pages reusing the specification, roster, component artwork, icons and tabletop display.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "game-name",
+      "kind": "text-verbatim",
+      "text": "LOCKREACH",
+      "scope": {
+        "slots": [
+          "ferry-run-card",
+          "raise-marker-card",
+          "hold-fast-card",
+          "shared-card-back"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "faction-name",
+      "kind": "text-verbatim",
+      "text": "Reed Union",
+      "scope": {
+        "slots": [
+          "ferry-run-card",
+          "raise-marker-card",
+          "hold-fast-card",
+          "shared-card-back"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "expansion-name",
+      "kind": "text-verbatim",
+      "text": "Floodline",
+      "scope": {
+        "slots": [
+          "shared-card-back",
+          "expansion-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "LOCKREACH",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "expansion-system",
+      "slots": [
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back",
+        "icon-sheet",
+        "tabletop-display"
+      ],
+      "sourceSlots": [
+        "component-specification",
+        "expansion-roster"
+      ],
+      "items": [
+        {
+          "item": "The expansion uses a coherent faction language across engraved contours, flat color fields, prescribed equipment materials and teal/ivory identity, allowing medium-appropriate rendering.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Component identities, equipment, terrain features, card illustrations and identifiers agree with the roster across standalone artwork and the tabletop scene.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Symbol meanings and shapes remain stable, and the card fronts share the specified five-band structure with their distinct recorded content.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "LOCKREACH"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Game Design",
+    "slots": [
+      "ferryman-pawn",
+      "surveyor-pawn",
+      "reed-landing-tile",
+      "gauge-bank-tile",
+      "ferry-run-card",
+      "raise-marker-card",
+      "hold-fast-card",
+      "shared-card-back",
+      "icon-sheet",
+      "tabletop-display"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge game balance, invent new mechanics, or require photorealistic materials and lighting for the flat component artwork."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "component-specification",
+        "expansion-roster",
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back",
+        "icon-sheet",
+        "tabletop-display",
+        "expansion-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back",
+        "icon-sheet",
+        "tabletop-display"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-component-specification",
+      "requirementId": "R-format-component-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "component-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-expansion-roster",
+      "requirementId": "R-format-expansion-roster",
+      "method": "artifact-property",
+      "targetSlots": [
+        "expansion-roster"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-ferryman-pawn",
+      "requirementId": "R-format-ferryman-pawn",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ferryman-pawn"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-surveyor-pawn",
+      "requirementId": "R-format-surveyor-pawn",
+      "method": "artifact-property",
+      "targetSlots": [
+        "surveyor-pawn"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-reed-landing-tile",
+      "requirementId": "R-format-reed-landing-tile",
+      "method": "artifact-property",
+      "targetSlots": [
+        "reed-landing-tile"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-gauge-bank-tile",
+      "requirementId": "R-format-gauge-bank-tile",
+      "method": "artifact-property",
+      "targetSlots": [
+        "gauge-bank-tile"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ferry-run-card",
+      "requirementId": "R-format-ferry-run-card",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ferry-run-card"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-raise-marker-card",
+      "requirementId": "R-format-raise-marker-card",
+      "method": "artifact-property",
+      "targetSlots": [
+        "raise-marker-card"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-hold-fast-card",
+      "requirementId": "R-format-hold-fast-card",
+      "method": "artifact-property",
+      "targetSlots": [
+        "hold-fast-card"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shared-card-back",
+      "requirementId": "R-format-shared-card-back",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shared-card-back"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-icon-sheet",
+      "requirementId": "R-format-icon-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "icon-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tabletop-display",
+      "requirementId": "R-format-tabletop-display",
+      "method": "artifact-property",
+      "targetSlots": [
+        "tabletop-display"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tabletop-video",
+      "requirementId": "R-format-tabletop-video",
+      "method": "manual",
+      "targetSlots": [
+        "tabletop-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-expansion-presentation",
+      "requirementId": "R-format-expansion-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "expansion-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "specification-record",
+      "requirementId": "R-specification-record",
+      "method": "content",
+      "targetSlots": [
+        "component-specification"
+      ],
+      "criteria": "Require one page recording teal #234E52, ivory #F3EBDD, and the open-top thick circular emblem with three vertical reeds and a taller center reed. Record Supply as a filled diamond meaning resource spent to pay card costs, Move as a double right chevron meaning movement measured in hexes, and Guard as an outlined square meaning guard points gained. Include 63 × 88 mm card trim, 3 mm bleed on every edge, 3 mm internal text margin, 40 mm hex sides, 25 mm base diameter, 3 mm base thickness, 32 mm figure height above the base, and 22 mm maximum figure width. Record the five band intervals measured from the top trim edge: title 0–10, cost and keyword 10–18, illustration 18–60, rules 60–80, footer 80–88 mm. Include the white 1 × 4 mm index line on the upper face at the front rim, Ready pointing toward the tile's top vertex, and Spent rotated 90 degrees clockwise. Layout may vary; missing or contradictory facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ]
+    },
+    {
+      "id": "roster-record",
+      "requirementId": "R-roster-record",
+      "method": "content",
+      "targetSlots": [
+        "expansion-roster"
+      ],
+      "criteria": "Require one page with P01 Ferryman, P02 Surveyor, T01 Reed Landing, T02 Gauge Bank, C01 Ferry Run, C02 Raise Marker and C03 Hold Fast. Both pawns have teal hooded coats, ivory shoulder panels and back emblems; Ferryman has one short wooden paddle in the right hand and one rope coil at the left hip, while Surveyor has one folded brass measuring rod in the right hand and one rectangular timber case at the left hip. Reed Landing has a timber jetty entering from the lower edge, reeds along the left bank, teal water and an ivory emblem-bearing name tab. Gauge Bank has a central brass water gauge, gravel bank, teal water along the right edge and an ivory emblem-bearing name tab. Both terrain records specify passable, single-hex terrain. Card records must associate C01 with Ferry Run / Cost 1 / Move / Move 1 hex. / Ferryman at Reed Landing; C02 with Raise Marker / Cost 0 / Supply / Gain 1 Supply. / Surveyor at Gauge Bank; and C03 with Hold Fast / Cost 1 / Guard / Gain 1 Guard. / both characters on Gauge Bank. Each card record includes the LOCKREACH / Reed Union footer. Organization may vary; omitted fields, altered card text or incorrect associations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ]
+    },
+    {
+      "id": "pawn-sheets-and-states",
+      "requirementId": "R-pawn-sheets-and-states",
+      "method": "visual",
+      "targetSlots": [
+        "ferryman-pawn",
+        "surveyor-pawn"
+      ],
+      "criteria": "Each sheet must show front, side and rear orthographic views, plus overhead Ready and Spent views, and explicitly dimension the base diameter as 25 mm, base thickness as 3 mm, figure height above the base as 32 mm and maximum width as 22 mm. P01 must identify Ferryman and P02 Surveyor. Preserve each roster-defined garment, back emblem and item of equipment in its correct anatomical location across views; natural occlusion is allowed, but swapping hands, adding equipment or changing construction fails. Show a white 1 mm wide, 4 mm long index line on the upper front rim. Overhead views must establish the tile-top reference and a 90-degree clockwise change from Ready to Spent.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-specification",
+        "expansion-roster"
+      ]
+    },
+    {
+      "id": "tile-records-and-features",
+      "requirementId": "R-tile-records-and-features",
+      "method": "visual",
+      "targetSlots": [
+        "reed-landing-tile",
+        "gauge-bank-tile"
+      ],
+      "criteria": "Require two distinct single-hex terrain faces. Reed Landing must print its name and T01 and show one timber jetty entering from the lower edge, reeds along the left bank, teal water, and an ivory name tab with the faction emblem. Gauge Bank must print its name and T02 and show one central brass water gauge, a gravel bank, teal water along the right edge, and an ivory name tab with the emblem. Both must remain consistent with their recorded passable terrain behavior. Surface detail may vary; missing features, reversed required locations or exchanged identifiers fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "expansion-roster"
+      ]
+    },
+    {
+      "id": "component-production-geometry",
+      "requirementId": "R-component-production-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back"
+      ],
+      "criteria": "Tile faces must use regular hexagonal geometry consistent with 40 mm sides. All four card artworks must use a consistent 63:88 trim proportion and provide artwork extending through a 3 mm bleed on every edge. Use physical annotations, trim guides and the specification where available; do not infer millimeters from raster pixel counts. Conflicting physical dimensions, distorted component envelopes or absent bleed fail; guide styling may vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-specification"
+      ]
+    },
+    {
+      "id": "card-layout-and-complete-records",
+      "requirementId": "R-card-layout-and-complete-records",
+      "method": "visual",
+      "targetSlots": [
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card"
+      ],
+      "criteria": "Check all three fronts against the specification's title, cost/keyword, illustration, rules and footer intervals, measured from the top trim edge, with text at least 3 mm inside trim. Require C01 Ferry Run, Cost 1, Move, and Move 1 hex.; C02 Raise Marker, Cost 0, Supply, and Gain 1 Supply.; C03 Hold Fast, Cost 1, Guard, and Gain 1 Guard. Preserve spelling, capitalization and rule punctuation. Illustrations must respectively show Ferryman at Reed Landing, Surveyor at Gauge Bank, and both characters on Gauge Bank. Each footer carries LOCKREACH and Reed Union. Illustration composition and typography may vary within the prescribed bands; omissions, mismatched IDs, altered records or misplaced text fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-specification",
+        "expansion-roster"
+      ]
+    },
+    {
+      "id": "icon-sheet-record-and-sizes",
+      "requirementId": "R-icon-sheet-record-and-sizes",
+      "method": "visual",
+      "targetSlots": [
+        "icon-sheet"
+      ],
+      "criteria": "Show labeled Supply, Move and Guard samples at both 4 mm and 8 mm printed height, with an unambiguous size reference and a consistent 1:2 height relationship. State that Supply is the resource spent to pay card costs, Move is movement measured in hexes, and Guard represents guard points gained. Print both #234E52 and #F3EBDD. Meaning wording may vary if equivalent; missing samples, incorrect meanings, absent color codes or contradictory size labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-specification"
+      ]
+    },
+    {
+      "id": "symbol-shapes",
+      "requirementId": "R-symbol-shapes",
+      "method": "visual",
+      "targetSlots": [
+        "icon-sheet",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card"
+      ],
+      "criteria": "The icon sheet must establish a solid diamond for Supply, two right-pointing chevrons for Move and a hollow square for Guard. Each action card must use the correct symbol for its recorded keyword, with any additional occurrences retaining the same meaning. Scale and stroke adjustments for legibility are allowed if the symbol remains recognizable; substituted shapes, wrong directions or exchanged meanings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-specification"
+      ]
+    },
+    {
+      "id": "faction-identity-on-components",
+      "requirementId": "R-faction-identity-on-components",
+      "method": "visual",
+      "targetSlots": [
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "shared-card-back",
+        "tabletop-display"
+      ],
+      "criteria": "Both pawn designs, both terrain faces and the shared back must visibly use the supplied split-ring emblem and the teal/ivory palette, and retain these in the tabletop scene. The emblem must preserve its top opening, three reed stems and taller center stem. Material rendering, shadows and lighting may change apparent color, but replacing either faction color or materially redesigning the emblem fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-specification"
+      ]
+    },
+    {
+      "id": "component-text-and-icon-legibility",
+      "requirementId": "R-component-text-and-icon-legibility",
+      "method": "visual",
+      "targetSlots": [
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back"
+      ],
+      "criteria": "Evaluate text at the declared physical component scale: all card and tile text must be at least 9 pt, text/background contrast at least 4.5:1, and icon/background contrast at least 3:1. Use available type specifications, physical scale references and foreground/background colors rather than judging enlarged previews alone. Typeface and color placement may vary; undersized text or contrast below the stated thresholds fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "complete-tabletop-display",
+      "requirementId": "R-complete-tabletop-display",
+      "method": "visual",
+      "targetSlots": [
+        "tabletop-display"
+      ],
+      "criteria": "Show together two new pawns, two terrain tiles, three distinct face-up action cards and one additional card displaying the shared back, alongside the existing Warden and a separate core card reverse. All required components must be identifiable and preserve their delivered designs and relative physical scale. Warden retains the hooded teal coat, ivory shoulder panel, brass lantern in the left hand, wooden staff in the right hand and teal base with a white index line. The core reverse retains an ivory field, teal perimeter rule and centered teal faction emblem. Arrangement and camera angle may vary; missing components, a front and back counted as the same physical card, or substituted existing components fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back"
+      ]
+    },
+    {
+      "id": "video-complete-expansion",
+      "requirementId": "R-video-complete-expansion",
+      "method": "manual",
+      "targetSlots": [
+        "tabletop-video"
+      ],
+      "criteria": "Review the complete video and confirm a 10-second duration and a view showing all eight expansion objects together: two pawns, two tiles, three fronts and an additional reverse-up card, plus Warden and the core reverse. Preserve component identities, faction emblems and colors relative to the delivered artwork. Camera movement and lighting may vary; absent or replaced components, loss of required identity details, or an incorrect duration fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "tabletop-display",
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back"
+      ]
+    },
+    {
+      "id": "video-pawn-form-and-rotation",
+      "requirementId": "R-video-pawn-form-and-rotation",
+      "method": "manual",
+      "targetSlots": [
+        "tabletop-video"
+      ],
+      "criteria": "Both new pawns must retain their sheet-defined proportions, equipment, anatomical placement and white base index lines throughout the video. At least one pawn must visibly rotate from an index line aimed at the tile's top vertex to a position 90 degrees clockwise from that reference. Judge rotation relative to the tile rather than camera motion. Either new pawn may demonstrate the action; equipment morphing, a missing index line, counterclockwise motion or an incorrect final angle fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "component-specification"
+      ]
+    },
+    {
+      "id": "video-state-labels",
+      "requirementId": "R-video-state-labels",
+      "method": "manual",
+      "targetSlots": [
+        "tabletop-video"
+      ],
+      "criteria": "The rotation sequence must visibly label the initial state Ready and the completed state Spent, with each label associated with the correct orientation. Caption placement and transition treatment may vary; absent, unreadable, misspelled or reversed labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "presentation-repeated-identity-facts",
+      "requirementId": "R-presentation-repeated-identity-facts",
+      "method": "content",
+      "targetSlots": [
+        "expansion-presentation"
+      ],
+      "criteria": "The presentation must explicitly include both color codes and all three symbol meanings from the specification. Meanings may be faithfully paraphrased, but color codes must be exact. A palette swatch without its code, symbol artwork without its meaning, or a contradictory definition fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "sourceSlots": [
+        "component-specification"
+      ]
+    },
+    {
+      "id": "presentation-cover-and-faction",
+      "requirementId": "R-presentation-cover-and-faction",
+      "method": "content",
+      "targetSlots": [
+        "expansion-presentation"
+      ],
+      "criteria": "Require Floodline on the presentation's cover page, not solely on an interior page. The presentation must also visibly repeat the faction's supplied split-ring emblem and teal/ivory colors through its content or reused artwork. Cover layout may vary; absent cover naming or missing faction identity fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "sourceSlots": [
+        "component-specification"
+      ]
+    },
+    {
+      "id": "presentation-length-and-dimensions",
+      "requirementId": "R-presentation-length-and-dimensions",
+      "method": "content",
+      "targetSlots": [
+        "expansion-presentation"
+      ],
+      "criteria": "Require at least eight pages and readable repetition of the specification's physical dimensions, including card trim, bleed and text margin, hex side length, pawn base diameter and thickness, figure height and maximum width, and index-line dimensions. Reusing a legible specification page or restating its measurements is acceptable; fewer pages, omitted dimensions or conflicting values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "sourceSlots": [
+        "component-specification"
+      ]
+    },
+    {
+      "id": "presentation-artwork-reuse",
+      "requirementId": "R-presentation-artwork-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "expansion-presentation"
+      ],
+      "criteria": "The presentation must visibly reuse recognizable material from every listed source. Resizing, page composition and crops are allowed when source identity and relevant content remain readable. Merely naming a deliverable, replacing it with unrelated artwork, or omitting any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "sourceSlots": [
+        "component-specification",
+        "expansion-roster",
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back",
+        "icon-sheet",
+        "tabletop-display"
+      ]
+    },
+    {
+      "id": "established-visual-language",
+      "requirementId": "R-established-visual-language",
+      "method": "visual",
+      "targetSlots": [
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back",
+        "tabletop-display"
+      ],
+      "criteria": "Component artwork must share an engraved contour treatment and flat color organization, with equipment visibly constructed from the prescribed timber, rope and brass where applicable. Three-dimensional pawn and tabletop lighting is allowed while preserving the underlying faction treatment. Unrelated illustration systems or replacement of the prescribed equipment materials fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-expansion-system",
+      "requirementId": "R-set-expansion-system",
+      "method": "visual",
+      "targetSlots": [
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card",
+        "shared-card-back",
+        "icon-sheet",
+        "tabletop-display"
+      ],
+      "criteria": "The expansion uses a coherent faction language across engraved contours, flat color fields, prescribed equipment materials and teal/ivory identity, allowing medium-appropriate rendering. Component identities, equipment, terrain features, card illustrations and identifiers agree with the roster across standalone artwork and the tabletop scene. Symbol meanings and shapes remain stable, and the card fronts share the specified five-band structure with their distinct recorded content.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-03/03-component-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-specification",
+        "expansion-roster"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-faction-emblem",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "reed-union-emblem.png"
+      ],
+      "subjectSlots": [
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "shared-card-back",
+        "tabletop-display"
+      ],
+      "notes": "The attached emblem and the existing Warden pawn anchor the family resemblance."
+    },
+    {
+      "id": "ferryman-display-consistency",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "ferryman-pawn",
+      "subjectSlots": [
+        "tabletop-display"
+      ],
+      "notes": "Preserve these forms in the tabletop display and video, including the white index line and its 90-degree Ready-to-Spent rotation."
+    },
+    {
+      "id": "surveyor-display-consistency",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "surveyor-pawn",
+      "subjectSlots": [
+        "tabletop-display"
+      ],
+      "notes": "Preserve these forms in the tabletop display and video, including the white index line and its 90-degree Ready-to-Spent rotation."
+    },
+    {
+      "id": "existing-warden",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "core-component-archive.png"
+      ],
+      "subjectSlots": [
+        "tabletop-display"
+      ],
+      "notes": "The attached emblem and the existing Warden pawn anchor the family resemblance."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specification-palette-and-meanings",
+      "fromSlot": "component-specification",
+      "toSlots": [
+        "icon-sheet",
+        "expansion-presentation"
+      ],
+      "extract": [
+        "faction color codes #234E52 and #F3EBDD",
+        "the meanings of Supply, Move and Guard"
+      ],
+      "notes": "Establish the specification and roster first; repeat #234E52, #F3EBDD and the three symbol meanings on the icon sheet and in the presentation, and carry the roster's component IDs onto the pawn sheets, tile faces and card fronts."
+    },
+    {
+      "id": "roster-component-identifiers",
+      "fromSlot": "expansion-roster",
+      "toSlots": [
+        "ferryman-pawn",
+        "surveyor-pawn",
+        "reed-landing-tile",
+        "gauge-bank-tile",
+        "ferry-run-card",
+        "raise-marker-card",
+        "hold-fast-card"
+      ],
+      "extract": [
+        "the seven component IDs and their associated component names"
+      ],
+      "notes": "Establish the specification and roster first; repeat #234E52, #F3EBDD and the three symbol meanings on the icon sheet and in the presentation, and carry the roster's component IDs onto the pawn sheets, tile faces and card fronts."
+    },
+    {
+      "id": "specification-dimensions-in-presentation",
+      "fromSlot": "component-specification",
+      "toSlots": [
+        "expansion-presentation"
+      ],
+      "extract": [
+        "the physical component dimensions recorded in the specification"
+      ],
+      "notes": "Label Ready and Spent during the video's rotation; reuse the display and the specification's dimensions in the presentation's minimum 8 pages."
+    }
+  ]
+}

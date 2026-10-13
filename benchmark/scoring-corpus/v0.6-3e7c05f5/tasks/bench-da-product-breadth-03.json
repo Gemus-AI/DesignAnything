@@ -1,0 +1,1319 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-product-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "component-state-register",
+      "label": "Component and state register",
+      "description": "A component and state register containing component IDs, dimensions, connections, materials, finishes and operating-state changes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "orthographic-board",
+      "label": "Dimensioned orthographic board",
+      "description": "One board containing front, side and top views of the complete open rollator with its envelope and grip settings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "perspective-board",
+      "label": "Complete-product perspective board",
+      "description": "One board containing front and rear three-quarter views of the complete developed rollator.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "contact-board",
+      "label": "Contact and grip adjustment board",
+      "description": "One contact board containing U1 and U2 standing references, two hand details, grip retention and seat/back dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "brake-board",
+      "label": "Dual brake mechanisms and states",
+      "description": "One brake board containing both mechanical control paths and the four specified braking cases.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "folding-board",
+      "label": "Folding sequence and reopening endpoint",
+      "description": "One folding board containing four ordered snapshots, handholds, pinch zones, wheel paths and the reopening endpoint.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "exploded-board",
+      "label": "Technical assembly relationships",
+      "description": "One exploded board identifying the rollator components, mechanical interfaces and connection directions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "bag-access-board",
+      "label": "Attached bag contents and access",
+      "description": "One bag-access board containing the three objects together in the attached bag and their clear access path.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "care-board",
+      "label": "Basic care and adjustment boundary",
+      "description": "One care board containing cloth cleaning, visual checks and the technician-only mechanical adjustment boundary.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "walking-context",
+      "label": "Community walking context",
+      "description": "One walking image of schematic U2 using the open locked rollator at 900 mm on the 1000 mm strip.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "resting-context",
+      "label": "Stationary resting context",
+      "description": "One resting image of a generic adult seated on the locked and Parked rollator on the 1600 × 1600 mm pad.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-context",
+      "label": "Folded home storage context",
+      "description": "One storage image of the retained folded rollator within the dimensioned home recess with remaining clearances.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "operation-video",
+      "label": "Parking, folding and reopening video",
+      "description": "One 12-second operation video containing the parking action, folding sequence and positively locked reopening endpoint.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "development-presentation",
+      "label": "Development presentation",
+      "description": "A development presentation of at least eight pages reusing the register, product boards, operation sequences and three contexts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "WAYFARER",
+      "scope": {
+        "slots": [
+          "orthographic-board",
+          "perspective-board",
+          "development-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "left-only-parking-warning",
+      "kind": "text-verbatim",
+      "text": "Not parked: apply both brakes",
+      "scope": {
+        "slots": [
+          "brake-board"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "open-lock-label",
+      "kind": "text-verbatim",
+      "text": "Open lock engaged",
+      "scope": {
+        "slots": [
+          "folding-board",
+          "development-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "release-lock-label",
+      "kind": "text-verbatim",
+      "text": "Release open lock",
+      "scope": {
+        "slots": [
+          "folding-board",
+          "development-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "folding-label",
+      "kind": "text-verbatim",
+      "text": "Folding",
+      "scope": {
+        "slots": [
+          "folding-board",
+          "development-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "folded-retention-label",
+      "kind": "text-verbatim",
+      "text": "Fold retention engaged",
+      "scope": {
+        "slots": [
+          "folding-board",
+          "development-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "reopening-label",
+      "kind": "text-verbatim",
+      "text": "Re-engage open lock",
+      "scope": {
+        "slots": [
+          "folding-board",
+          "development-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "WAYFARER",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "complete-product-system",
+      "slots": [
+        "orthographic-board",
+        "perspective-board",
+        "contact-board",
+        "brake-board",
+        "folding-board",
+        "exploded-board",
+        "bag-access-board",
+        "care-board",
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ],
+      "sourceSlots": [
+        "component-state-register"
+      ],
+      "items": [
+        {
+          "item": "All boards and contexts depict the same registered assembly, with consistent component identities, dimensions, connections, material allocation and finishes wherever those properties are shown.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Grip retention, control geometry, latch direction, release gestures, brake routes, open lock and folded retention retain the same design and state meanings across technical and use depictions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "State changes preserve rigid-member dimensions and attached components while permitting the specified grip adjustment, seat flexing or hinging, empty attached-bag compression and retained folded caster reorientation.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "WAYFARER"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "orthographic-board",
+      "perspective-board",
+      "contact-board",
+      "brake-board",
+      "folding-board",
+      "exploded-board",
+      "bag-access-board",
+      "care-board",
+      "walking-context",
+      "resting-context",
+      "storage-context"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not infer certified structural strength, braking performance, durability or clinical suitability from concept drawings, renders or animation."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "component-state-register",
+        "orthographic-board",
+        "perspective-board",
+        "contact-board",
+        "brake-board",
+        "folding-board",
+        "exploded-board",
+        "bag-access-board",
+        "care-board",
+        "walking-context",
+        "resting-context",
+        "storage-context",
+        "development-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "orthographic-board",
+        "perspective-board",
+        "contact-board",
+        "brake-board",
+        "folding-board",
+        "exploded-board",
+        "bag-access-board",
+        "care-board",
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-component-state-register",
+      "requirementId": "R-format-component-state-register",
+      "method": "artifact-property",
+      "targetSlots": [
+        "component-state-register"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-orthographic-board",
+      "requirementId": "R-format-orthographic-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "orthographic-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-perspective-board",
+      "requirementId": "R-format-perspective-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "perspective-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-contact-board",
+      "requirementId": "R-format-contact-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "contact-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-brake-board",
+      "requirementId": "R-format-brake-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "brake-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-folding-board",
+      "requirementId": "R-format-folding-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "folding-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-exploded-board",
+      "requirementId": "R-format-exploded-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exploded-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-bag-access-board",
+      "requirementId": "R-format-bag-access-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bag-access-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-care-board",
+      "requirementId": "R-format-care-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "care-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-walking-context",
+      "requirementId": "R-format-walking-context",
+      "method": "artifact-property",
+      "targetSlots": [
+        "walking-context"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-resting-context",
+      "requirementId": "R-format-resting-context",
+      "method": "artifact-property",
+      "targetSlots": [
+        "resting-context"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-context",
+      "requirementId": "R-format-storage-context",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-context"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-operation-video",
+      "requirementId": "R-format-operation-video",
+      "method": "manual",
+      "targetSlots": [
+        "operation-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-development-presentation",
+      "requirementId": "R-format-development-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "development-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "component-state-register-completeness",
+      "requirementId": "R-component-state-register-completeness",
+      "method": "content",
+      "targetSlots": [
+        "component-state-register"
+      ],
+      "criteria": "The register assigns identifiable records to the frame, F-L/F-R and R-L/R-R wheel units, adjustable grips, independent mechanical brakes, seat/back, attached soft bag, folding joints, open lock and separate folded retention. Records state dimensions, connections, material and finish allocation, and visible operating-state changes. They specify 6061 aluminium tubing, fine-textured powder coat and TPE grip contact surfaces, and resolve remaining materials. Selected open and folded dimensions are actual design values within the respective 650 W × 750 D × 900 H mm and 300 W × 750 D × 900 H mm limits, with folding at 800 mm. State records distinguish released, squeezed and parking-latched controls, left-only parking, and the folding and reopening conditions. Missing component categories, unresolved required fields or contradictory records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ]
+    },
+    {
+      "id": "orthographic-view-evidence",
+      "requirementId": "R-orthographic-view-evidence",
+      "method": "visual",
+      "targetSlots": [
+        "orthographic-board"
+      ],
+      "criteria": "The board contains identifiable front, side and top orthographic views of one complete open assembly, with selected overall dimensions and the three grip settings. Corresponding parts and proportions agree across projections. Annotations may use overlays or subsidiary details, but perspective-only views, missing projections or incompatible geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "perspective-view-evidence",
+      "requirementId": "R-perspective-view-evidence",
+      "method": "visual",
+      "targetSlots": [
+        "perspective-board"
+      ],
+      "criteria": "Both front and rear three-quarter perspectives expose the complete developed assembly, including four wheels, grips and controls, seat/back, bag and folding provisions. Viewpoint and lighting may differ; part substitutions, incompatible frame geometry or an absent required perspective fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "selected-envelopes-and-recess-clearance",
+      "requirementId": "R-selected-envelopes-and-recess-clearance",
+      "method": "visual",
+      "targetSlots": [
+        "orthographic-board",
+        "folding-board",
+        "storage-context"
+      ],
+      "criteria": "Each target explicitly repeats both selected W/D/H triplets from the register. The open envelope includes wheels, controls, bag and the highest grip setting; the folded envelope uses the 800 mm setting. Neither exceeds its stated maximum. Storage depicts the folded assembly within a 320 W × 800 D × 1020 H mm recess and labels remaining total width, depth and height equal to the recess dimensions minus the selected folded dimensions, meeting minima of 20, 50 and 120 mm. Smaller products and larger resulting clearances are allowed; substituting maximum limits for different selected values, clipping protrusions or inconsistent clearance arithmetic fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-register"
+      ]
+    },
+    {
+      "id": "component-material-and-name-continuity",
+      "requirementId": "R-component-material-and-name-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "orthographic-board",
+        "perspective-board",
+        "exploded-board",
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ],
+      "criteria": "Component identifiers and their associated parts agree with the register across all targets, through readable callouts or keys. Material annotations identify the specified aluminium alloy, powder-coat finish and TPE contacts; visible surfaces support the registered allocation without requiring alloy identification from appearance alone. WAYFARER appears legibly on the frame in the complete-product boards, with branding position retained wherever that frame surface is visible elsewhere. Lighting and viewpoint variation are allowed; reassigned IDs, conflicting material allocations or missing frame branding on the complete-product boards fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-register"
+      ]
+    },
+    {
+      "id": "wheel-interface-geometry",
+      "requirementId": "R-wheel-interface-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "orthographic-board",
+        "exploded-board"
+      ],
+      "criteria": "Dimensions and assembly geometry jointly establish two front swivelling casters and two rear wheels fixed in the walking direction. All tyres are diameter 200 × width 32 mm, with 100 mm axle height. Each front caster has a stem top 250 mm above ground, 30 mm trail and an unobstructed diameter 270 mm open swivel sweep. Each rear hub/brake interface totals 60 mm in width and contains its brake hardware without changing tyre size or ground contact. Fork forms and frame positions may vary within these records; missing dimensional evidence or incompatible interfaces fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-register"
+      ]
+    },
+    {
+      "id": "grip-and-body-contact",
+      "requirementId": "R-grip-and-body-contact",
+      "method": "visual",
+      "targetSlots": [
+        "contact-board",
+        "orthographic-board",
+        "resting-context"
+      ],
+      "criteria": "The contact and orthographic boards establish one pair of grips at equal left/right upper-contact heights of 800, 850 and 900 mm above level ground, with visible positive retention and at least 120 mm usable length per grip; adjusting height leaves frame and wheel geometry unchanged. The contact board includes standing U1 at 800 mm, standing U2 at 900 mm and two enlarged hand/grip details. Nominal reference records remain independent: U1 is 1600 mm tall with 165 mm hand length, 75 mm palm breadth and 360 mm seated hip breadth; U2 is 1780 mm tall with corresponding values 195, 95 and 420 mm. The contact board and resting scene agree on seat width of at least 440 mm, depth 320 mm, top height 460 mm and back contact 180–260 mm above the seat. The separate generic resting adult contacts the actual seat and back with feet grounded and hand/brake clearance. Grip shape, reach and padding may vary; incompatible dimensions, missing hand details or unsupported body contact fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "brake-grammar-and-rest-locking",
+      "requirementId": "R-brake-grammar-and-rest-locking",
+      "method": "visual",
+      "targetSlots": [
+        "brake-board",
+        "walking-context",
+        "resting-context"
+      ],
+      "criteria": "The brake board reads as four distinct state records with exact labels Walking, Slowing, Parked and Not parked: apply both brakes. Walking releases both squeeze and parking controls; Slowing applies both squeeze controls; Parked latches both parking controls. The warning sits beside an unoccupied example with only the left parking control latched. Traceable mechanical routes connect the left hand control to R-L and the right to R-R. Walking and resting contexts repeat their applicable state names and registered control positions; rest visibly engages both parking latches and the open lock. Slowing and parking may share a lever but must remain distinct actions, with consistent latch direction and release gesture. Crossed routes, ambiguous control positions or an occupied left-only case fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-register"
+      ]
+    },
+    {
+      "id": "folding-and-reopening-mechanics",
+      "requirementId": "R-folding-and-reopening-mechanics",
+      "method": "visual",
+      "targetSlots": [
+        "folding-board"
+      ],
+      "criteria": "Four ordered snapshots use the exact labels Open lock engaged, Release open lock, Folding and Fold retention engaged, followed by a reverse-opening endpoint labelled Re-engage open lock. The unoccupied product starts locked at 800 mm with an empty attached bag; release is deliberate and uses designated frame handholds outside marked moving joint gaps. Intermediate movement states the brake condition, shows supported wheel trajectories and visible cable slack, and preserves rigid-link lengths and all four attached 200 × 32 mm tyres. A parking-locked wheel moves by supported lift or slide rather than rolling. The folded endpoint visibly engages separate retention and both parking brakes, with designed ground contacts; reopening positively re-engages the same open lock before walking support. Seat hinging or flexing, attached-bag compression and deliberately retained folded caster reorientation are allowed. Missing steps, changing rigid parts, detached wheels or unsupported motion fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-state-register",
+        "brake-board",
+        "orthographic-board"
+      ]
+    },
+    {
+      "id": "exploded-assembly-relationships",
+      "requirementId": "R-exploded-assembly-relationships",
+      "method": "visual",
+      "targetSlots": [
+        "exploded-board"
+      ],
+      "criteria": "The exploded view identifies every listed assembly category, distinguishes all four wheel units and both brake mechanisms, and shows intelligible interfaces and connection directions. Open-frame locking and folded retention are separately identifiable, and parts correspond to the registered complete product. Exploded spacing is unrestricted; omitted mechanisms, unexplained floating parts or connections incompatible with the assembled views fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-state-register",
+        "perspective-board"
+      ]
+    },
+    {
+      "id": "attached-bag-capacity-and-access",
+      "requirementId": "R-attached-bag-capacity-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "bag-access-board"
+      ],
+      "criteria": "The attached bag sits under or in front of the seat and establishes a 300 W × 160 D × 240 H mm usable contents envelope. One diameter 70 × 220 H mm bottle, one 105 × 148 × 12 mm notebook and one 170 × 80 × 70 mm rolled scarf are shown together at compatible scale. An intelligible insertion/removal path clears the seat, frame and brake routes, while contents avoid wheel sweeps and rear walking foot space. The product is unoccupied and labelled Parked with both parking controls latched. Access beside a fixed seat or through a deliberately movable seat is allowed; separately pictured objects without evidence of simultaneous fit, an obstructed path or a detached bag fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-state-register",
+        "brake-board"
+      ]
+    },
+    {
+      "id": "basic-care-content-and-condition",
+      "requirementId": "R-basic-care-content-and-condition",
+      "method": "visual",
+      "targetSlots": [
+        "care-board"
+      ],
+      "criteria": "The care sequence shows an empty, unoccupied product in Parked with the open-frame lock engaged. Cloth cleaning covers grips, seat, frame and the empty attached bag; wheel/brake interfaces are free of depicted debris. Visual inspection addresses both brake links, open retention and folded retention. Text or a clear labelled boundary reserves mechanical adjustment for a technician. Insets may expose inspection locations, but missing care categories, an unlocked occupied working condition or instructions assigning mechanical adjustment to the everyday user fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-state-register",
+        "brake-board",
+        "folding-board"
+      ]
+    },
+    {
+      "id": "context-scale-and-use",
+      "requirementId": "R-context-scale-and-use",
+      "method": "visual",
+      "targetSlots": [
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ],
+      "criteria": "The walking scene places schematic U2 at 900 mm on a straight, level 1000 mm-wide strip, approaching from the rear with hands on the grips, shins and feet clear, the open lock engaged and both squeeze and parking controls released. The resting scene places a separate generic adult on a level 1600 × 1600 mm pad with a companion standing nearby, both parking controls latched and the open lock engaged. Storage uses a 320 W × 800 D × 1020 H mm recess with a 700 mm clear approach; the product is folded at 800 mm, retained and Parked. Dimension annotations and visible proportions must support actual product scale within these boundaries. Scene dressing may vary; rescaled products, altered context geometry or conflicting use states fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "orthographic-board",
+        "folding-board"
+      ]
+    },
+    {
+      "id": "operation-video-sequence",
+      "requirementId": "R-operation-video-sequence",
+      "method": "manual",
+      "targetSlots": [
+        "operation-video"
+      ],
+      "criteria": "Review the entire 12-second video against the source records and boards. It demonstrates the selected parking action, then the four corresponding folding states at 800 mm and a reopening endpoint with the open lock positively re-engaged before support. Applicable state names and control positions match the register. The empty bag and all four 200 × 32 mm tyres stay attached; rigid links and wheel identities remain constant. Designated handholds, marked pinch zones, intermediate brake condition, supported wheel movement and cable slack remain evident. The folded state engages retention and both parking brakes; locked wheels are lifted or slid with support rather than rolled. Editing and camera changes are allowed if they preserve readable causal continuity. Wrong duration, omitted operations, mechanism substitutions or transitions concealing incompatible motion fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "component-state-register",
+        "brake-board",
+        "folding-board"
+      ]
+    },
+    {
+      "id": "presentation-source-reuse",
+      "requirementId": "R-presentation-source-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "development-presentation"
+      ],
+      "criteria": "The presentation has at least eight pages and visibly incorporates identifiable material from every listed source, including register records, both complete-product boards, contact details, operating sequences, exploded connections, bag access, care and each of the three contexts. Cropping and recomposition are allowed when the relevant evidence remains legible and recognisably derived from the delivered source. A title-only reference, omitted source or replacement with a different design fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "sourceSlots": [
+        "component-state-register",
+        "orthographic-board",
+        "perspective-board",
+        "contact-board",
+        "brake-board",
+        "folding-board",
+        "exploded-board",
+        "bag-access-board",
+        "care-board",
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ]
+    },
+    {
+      "id": "presentation-envelope-record",
+      "requirementId": "R-presentation-envelope-record",
+      "method": "content",
+      "targetSlots": [
+        "development-presentation"
+      ],
+      "criteria": "Readable presentation content repeats the register's selected open and folded width, depth and height, identifying the folded condition as the 800 mm grip setting. Values must stay within the respective open and folded limits. Units and typographic notation may vary without changing meaning; absent values, conflicting triplets or maximum limits substituted for different selected dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "sourceSlots": [
+        "component-state-register"
+      ]
+    },
+    {
+      "id": "presentation-state-and-control-record",
+      "requirementId": "R-presentation-state-and-control-record",
+      "method": "content",
+      "targetSlots": [
+        "development-presentation"
+      ],
+      "criteria": "The presentation's brake and use explanations preserve the exact applicable state names and their registered left/right control conditions: Walking releases squeeze and parking controls, Slowing squeezes both, and Parked latches both parking controls. Any reused left-only example retains its warning and unoccupied condition. Described latch direction and release gesture agree with the selected mechanism. Equivalent explanatory prose around the exact state names is allowed; renamed states, reversed controls or contradictory rest conditions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "sourceSlots": [
+        "component-state-register",
+        "brake-board"
+      ]
+    },
+    {
+      "id": "presentation-folding-labels-and-cover",
+      "requirementId": "R-presentation-folding-labels-and-cover",
+      "method": "content",
+      "targetSlots": [
+        "development-presentation"
+      ],
+      "criteria": "The presentation includes Open lock engaged, Release open lock, Folding and Fold retention engaged in the corresponding sequence, plus Re-engage open lock at the reverse-opening endpoint. Labels remain associated with the correct source states, whose links and wheel identities do not change. The presentation cover also prints WAYFARER legibly as required by the name-location record. Page layout may vary; missing or altered labels, misassigned endpoints, contradictory illustrated states or absent cover branding fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "sourceSlots": [
+        "folding-board"
+      ]
+    },
+    {
+      "id": "existing-rear-wheel-form",
+      "requirementId": "R-existing-rear-wheel-form",
+      "method": "visual",
+      "targetSlots": [
+        "orthographic-board",
+        "perspective-board",
+        "exploded-board",
+        "folding-board",
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ],
+      "criteria": "Visible rear wheel units preserve the supplied reference's recognisable charcoal tyre, pale grey circular hub, concentric hub recess and central axle interface across assembled, exploded and folded depictions. Perspective, lighting and ordinary occlusion may vary; an observable replacement hub form, missing defining recess or inconsistent rear wheel identity fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "functional-space-separation",
+      "requirementId": "R-functional-space-separation",
+      "method": "visual",
+      "targetSlots": [
+        "orthographic-board",
+        "contact-board",
+        "bag-access-board",
+        "walking-context",
+        "resting-context"
+      ],
+      "criteria": "The views jointly demonstrate that the usable seat, filled bag, rear approach, user feet and mechanical brake routes can coexist without physical overlap or obstruction. Contact poses and bag-access diagrams must agree with the actual frame and wheel locations. Movable-seat access is allowed when its movement is explained; clearance obtained only by hiding, removing or relocating an otherwise fixed component fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "everyday-product-character",
+      "requirementId": "R-everyday-product-character",
+      "method": "visual",
+      "targetSlots": [
+        "perspective-board",
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ],
+      "criteria": "The developed form and finish presentation communicate an approachable everyday household product through coherent tubing, contact surfaces and practical attached components. The frame reads as finely textured coated tubing and grip contacts agree with the registered TPE allocation. Colour, silhouette and remaining finish choices are open. An overtly incompatible product character or visible material treatment contradicting the specified construction fails; no particular decorative style is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-register"
+      ]
+    },
+    {
+      "id": "set-complete-product-system",
+      "requirementId": "R-set-complete-product-system",
+      "method": "visual",
+      "targetSlots": [
+        "orthographic-board",
+        "perspective-board",
+        "contact-board",
+        "brake-board",
+        "folding-board",
+        "exploded-board",
+        "bag-access-board",
+        "care-board",
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ],
+      "criteria": "All boards and contexts depict the same registered assembly, with consistent component identities, dimensions, connections, material allocation and finishes wherever those properties are shown. Grip retention, control geometry, latch direction, release gestures, brake routes, open lock and folded retention retain the same design and state meanings across technical and use depictions. State changes preserve rigid-member dimensions and attached components while permitting the specified grip adjustment, seat flexing or hinging, empty attached-bag compression and retained folded caster reorientation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/components-contact.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/empty-contexts.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-register"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "developed-rollator-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "perspective-board",
+      "subjectSlots": [
+        "orthographic-board",
+        "contact-board",
+        "brake-board",
+        "folding-board",
+        "exploded-board",
+        "bag-access-board",
+        "care-board",
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ],
+      "notes": "Walking, stationary rest and storage use the same frame and attached components."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "selected-envelope-record",
+      "fromSlot": "component-state-register",
+      "toSlots": [
+        "orthographic-board",
+        "folding-board",
+        "storage-context",
+        "development-presentation"
+      ],
+      "extract": [
+        "selected open width, depth and height",
+        "selected folded width, depth and height at the 800 mm grip setting"
+      ],
+      "notes": "The register, orthographic board, folding board, storage image and presentation repeat the selected open and folded dimensions."
+    },
+    {
+      "id": "component-and-material-record",
+      "fromSlot": "component-state-register",
+      "toSlots": [
+        "orthographic-board",
+        "perspective-board",
+        "exploded-board",
+        "walking-context",
+        "resting-context",
+        "storage-context"
+      ],
+      "extract": [
+        "component IDs and their corresponding parts",
+        "component material and finish allocation"
+      ],
+      "notes": "The orthographic, perspective, exploded and context images use the register's component IDs and material allocation consistently, including 6061 aluminium tubing, fine-textured powder coat and TPE grip surfaces."
+    },
+    {
+      "id": "operating-state-record",
+      "fromSlot": "component-state-register",
+      "toSlots": [
+        "brake-board",
+        "walking-context",
+        "resting-context",
+        "operation-video",
+        "development-presentation"
+      ],
+      "extract": [
+        "applicable operating-state names",
+        "left and right squeeze-control positions",
+        "left and right parking-control positions",
+        "selected latch direction and release gesture"
+      ],
+      "notes": "The brake board, walking image, resting image, video and presentation repeat the register's applicable state names and control positions."
+    }
+  ]
+}

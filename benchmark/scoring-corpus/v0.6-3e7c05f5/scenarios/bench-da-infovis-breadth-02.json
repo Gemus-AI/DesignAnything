@@ -1,0 +1,184 @@
+{
+  "id": "bench-da-infovis-breadth-02",
+  "title": "RELAY CARGO — City cargo-bike shifts and parcel connections, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GRAPHIC",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# RELAY CARGO\n\n## Project\n- Subtitle: City cargo-bike shifts and parcel connections\n- Organization: Relay Cargo\n- Subject: Cargo-bike service connections and parcel transfers\n- Audience: Operations staff and public readers\n- Dataset preparation date: 9 September 2026\n- Reporting scope: One service window; clock times from 08:54 to 09:56\n- Service date: Unspecified\n- Time zone: Unspecified; all times share one local clock\n\n## Identity and printed wording\n- Printed name: RELAY CARGO\n- Source credit: Source: Relay Cargo, 2026\n- Missing-arrival label: Arrival not recorded\n- Existing identity: Blue front cargo box, black bicycle frame, white circular badge containing two dark horizontal bars\n- Identity color: #0072B2\n- Planned operation: #0072B2; dashed line; open marker; Planned label\n- Actual operation: #D55E00; solid line; filled marker; Actual label\n\n## Scope counts\n| Measure | Value | Unit |\n| --- | --- | --- |\n| Stations | 4 | stations |\n| Distinct parcels | 12 | parcels |\n| Distinct trips | 6 | trips |\n| Handoff events | 9 | events |\n| Planned parcel boardings | 21 | parcel boardings |\n| Actual parcel boardings | 21 | parcel boardings |\n| Recorded actual trip arrivals | 5 | trips |\n| Empty actual trip arrival fields | 1 | trip |\n| Parcels with recorded destination arrival | 10 | parcels |\n| Parcels with missing destination arrival | 2 | parcels |\n\n## Measures\n- Arrival delay: actualArrival minus plannedArrival, in minutes\n- Planned station waiting: Planned outgoing departure minus planned incoming arrival for the parcel's planned transfer\n- Actual station waiting: departedStation minus arrivalAtStation, in minutes\n- Arrival-to-ready time: readyForOutgoing minus arrivalAtStation, in minutes\n- Ready-to-departure time: departedStation minus readyForOutgoing, in minutes\n- Parcel boardings: One parcel counted once for each trip in its sequence\n- Destination arrival: Recorded arrival of the final trip in a parcel's actual sequence\n- Map coordinates: Local schematic x/y positions, in km\n- Network links: Directed station-to-station service relationships\n\n## Fixed cases\n- P05 planned sequence: T04 | T05\n- P05 actual sequence: T04 | T03\n- H08 arrival at C: 09:29\n- H08 ready for outgoing: 09:37\n- T05 actual departure: 09:35\n- H08 departure on T03: 09:40\n- H08 actual station waiting: 11 minutes\n- T06 actualArrival: Empty\n- Parcels ending on T06: P07, P08\n\n## Publication surfaces\n| Surface | Width | Height | Unit |\n| --- | --- | --- | --- |\n| A3 landscape operations overview | 420 | 297 | mm |\n| Portrait public explainer | 210 | 315 | mm |\n| A4 summary | 210 | 297 | mm |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# RELAY CARGO — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | data-summary | Data summary and chart inventory | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | station-network | Station network map | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | planned-parcel-flow | Planned parcel-flow map | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | actual-parcel-flow | Actual parcel-flow map | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | trip-timetable | Planned and actual trip timetable | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | handoff-timeline | Handoff event timeline | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | waiting-distribution | Station-wait distribution | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | p05-case | P05 connection-change case sheet | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | t06-case | T06 missing-arrival case sheet | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | operations-overview | A3 landscape operations overview | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n| 11 | public-explainer | Portrait public explainer | 14 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | a4-summary | A4 service-window summary | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n| 13 | p05-video | P05 connection explainer video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | operations-presentation | Operations and public communication presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: stations.md",
+            "config": {
+              "text": "# Stations\n\n| stationId | stationName | xKm | yKm |\n| --- | --- | --- | --- |\n| A | Canal Depot | 0 | 0 |\n| B | North Gate | 2 | 3 |\n| C | Market Lane | 5 | 1 |\n| D | Library Steps | 7 | 4 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: trips.md",
+            "config": {
+              "text": "# Trips\n\n| tripId | fromStation | toStation | plannedDeparture | plannedArrival | actualDeparture | actualArrival |\n| --- | --- | --- | --- | --- | --- | --- |\n| T01 | A | B | 09:00 | 09:12 | 09:02 | 09:16 |\n| T02 | B | C | 09:18 | 09:30 | 09:22 | 09:36 |\n| T03 | C | D | 09:36 | 09:50 | 09:40 | 09:56 |\n| T04 | A | C | 09:10 | 09:28 | 09:12 | 09:29 |\n| T05 | C | D | 09:34 | 09:48 | 09:35 | 09:50 |\n| T06 | B | D | 09:28 | 09:48 | 09:31 |  |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-5",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: parcels.md",
+            "config": {
+              "text": "# Parcels\n\n| parcelId | origin | destination | readyAtOrigin | plannedTrips | actualTrips |\n| --- | --- | --- | --- | --- | --- |\n| P01 | A | D | 08:54 | T01\\|T02\\|T03 | T01\\|T02\\|T03 |\n| P02 | A | D | 08:56 | T01\\|T02\\|T03 | T01\\|T02\\|T03 |\n| P03 | A | D | 08:58 | T01\\|T02\\|T03 | T01\\|T02\\|T03 |\n| P04 | A | D | 09:00 | T04\\|T05 | T04\\|T05 |\n| P05 | A | D | 09:05 | T04\\|T05 | T04\\|T03 |\n| P06 | B | D | 09:12 | T02\\|T03 | T02\\|T03 |\n| P07 | B | D | 09:22 | T06 | T06 |\n| P08 | B | D | 09:26 | T06 | T06 |\n| P09 | A | B | 08:57 | T01 | T01 |\n| P10 | C | D | 09:30 | T05 | T05 |\n| P11 | A | C | 09:04 | T04 | T04 |\n| P12 | B | C | 09:17 | T02 | T02 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-6",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: handoffs.md",
+            "config": {
+              "text": "# Handoffs\n\n| handoffId | parcelId | stationId | incomingTrip | outgoingTrip | arrivalAtStation | readyForOutgoing | departedStation |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| H01 | P01 | B | T01 | T02 | 09:16 | 09:18 | 09:22 |\n| H02 | P01 | C | T02 | T03 | 09:36 | 09:38 | 09:40 |\n| H03 | P02 | B | T01 | T02 | 09:16 | 09:18 | 09:22 |\n| H04 | P02 | C | T02 | T03 | 09:36 | 09:38 | 09:40 |\n| H05 | P03 | B | T01 | T02 | 09:16 | 09:18 | 09:22 |\n| H06 | P03 | C | T02 | T03 | 09:36 | 09:38 | 09:40 |\n| H07 | P04 | C | T04 | T05 | 09:29 | 09:31 | 09:35 |\n| H08 | P05 | C | T04 | T03 | 09:29 | 09:37 | 09:40 |\n| H09 | P06 | C | T02 | T03 | 09:36 | 09:38 | 09:40 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-7",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: data-definitions.en.md",
+            "config": {
+              "text": "# Data guide\n\n## Record context\n| Field | Value |\n| --- | --- |\n| Source credit | Source: Relay Cargo, 2026 |\n| Nature | Commission-authored operational scenario |\n| Preparation date | 9 September 2026 |\n| Service date | Unspecified |\n| Time basis | One shared local clock; HH:MM |\n| Time zone | Unspecified |\n| Earliest recorded time | 08:54 |\n| Latest recorded time | 09:56 |\n| Coordinate basis | Local schematic coordinates in km; x increases rightward and y upward |\n| Geographic registration | Unspecified |\n| Connection meaning | Directed station-to-station service relationship |\n| Parcel identifiers | Anonymous P01 through P12 |\n| Empty field meaning | Missing recorded value |\n| Planned handoff readiness | Unrecorded |\n| Causal explanations for delays | Unrecorded |\n\n## Counting and time definitions\n| Measure | Definition | Unit | Record basis |\n| --- | --- | --- | --- |\n| Station count | Distinct stationId | stations | stations.md |\n| Parcel count | Distinct parcelId | parcels | parcels.md |\n| Trip count | Distinct tripId | trips | trips.md |\n| Handoff count | Distinct handoffId | events | handoffs.md |\n| Parcel boardings | One occurrence of a parcel on a trip in its planned or actual sequence | parcel boardings | parcels.md |\n| Arrival delay | actualArrival minus plannedArrival | minutes | trips.md |\n| Planned station waiting | Planned outgoing departure minus planned incoming arrival at the same transfer station in the parcel's planned sequence | minutes | parcels.md and trips.md |\n| Actual station waiting | departedStation minus arrivalAtStation | minutes | handoffs.md |\n| Arrival-to-ready time | readyForOutgoing minus arrivalAtStation | minutes | handoffs.md |\n| Ready-to-departure time | departedStation minus readyForOutgoing | minutes | handoffs.md |\n| Destination-arrival coverage | Availability of actualArrival for the final trip in actualTrips | parcels | parcels.md and trips.md |\n\n## Summary values\n| Measure | Value | Unit |\n| --- | --- | --- |\n| Stations | 4 | stations |\n| Unique parcels | 12 | parcels |\n| Unique trips | 6 | trips |\n| Handoffs | 9 | events |\n| Planned parcel boardings | 21 | parcel boardings |\n| Actual parcel boardings | 21 | parcel boardings |\n| Recorded actual trip arrivals | 5 | trips |\n| Missing actual trip arrivals | 1 | trip |\n| Parcels with recorded destination arrival | 10 | parcels |\n| Parcels with missing destination arrival | 2 | parcels |\n\n## Trip loads and arrival delays\n| tripId | plannedParcelCount | actualParcelCount | plannedArrival | actualArrival | arrivalDelayMinutes |\n| --- | --- | --- | --- | --- | --- |\n| T01 | 4 | 4 | 09:12 | 09:16 | 4 |\n| T02 | 5 | 5 | 09:30 | 09:36 | 6 |\n| T03 | 4 | 5 | 09:50 | 09:56 | 6 |\n| T04 | 3 | 3 | 09:28 | 09:29 | 1 |\n| T05 | 3 | 2 | 09:48 | 09:50 | 2 |\n| T06 | 2 | 2 | 09:48 |  |  |\n\n## Handoff calculations\n| handoffId | parcelId | plannedIncoming | plannedOutgoing | plannedIncomingArrival | plannedOutgoingDeparture | plannedWaitMinutes | actualWaitMinutes | arrivalToReadyMinutes | readyToDepartureMinutes |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| H01 | P01 | T01 | T02 | 09:12 | 09:18 | 6 | 6 | 2 | 4 |\n| H02 | P01 | T02 | T03 | 09:30 | 09:36 | 6 | 4 | 2 | 2 |\n| H03 | P02 | T01 | T02 | 09:12 | 09:18 | 6 | 6 | 2 | 4 |\n| H04 | P02 | T02 | T03 | 09:30 | 09:36 | 6 | 4 | 2 | 2 |\n| H05 | P03 | T01 | T02 | 09:12 | 09:18 | 6 | 6 | 2 | 4 |\n| H06 | P03 | T02 | T03 | 09:30 | 09:36 | 6 | 4 | 2 | 2 |\n| H07 | P04 | T04 | T05 | 09:28 | 09:34 | 6 | 6 | 2 | 4 |\n| H08 | P05 | T04 | T05 | 09:28 | 09:34 | 6 | 11 | 8 | 3 |\n| H09 | P06 | T02 | T03 | 09:30 | 09:36 | 6 | 4 | 2 | 2 |\n\n## Station-wait distribution\n| waitMinutes | plannedEventCount | actualEventCount | actualHandoffIds |\n| --- | --- | --- | --- |\n| 4 | 0 | 4 | H02, H04, H06, H09 |\n| 6 | 9 | 4 | H01, H03, H05, H07 |\n| 11 | 0 | 1 | H08 |\n\n## Exception records\n| Case | Field | Value |\n| --- | --- | --- |\n| P05 | Planned sequence | T04, T05 |\n| P05 | Actual sequence | T04, T03 |\n| P05 | Handoff | H08 |\n| P05 | Arrival at C | 09:29 |\n| P05 | Ready for outgoing | 09:37 |\n| P05 | T05 actual departure | 09:35 |\n| P05 | Readiness after T05 departure | 2 minutes |\n| P05 | T03 actual departure | 09:40 |\n| P05 | Actual waiting minus planned waiting | 5 minutes |\n| T06 | Actual departure | 09:31 |\n| T06 | Planned arrival | 09:48 |\n| T06 | Actual arrival | Empty |\n| T06 | Missing-value display text | Arrival not recorded |\n| T06 | Affected destination-arrival records | P07, P08 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: report-surfaces.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: cargo-bike-identity.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: microhub-handoff-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "RELAY CARGO | City cargo-bike shifts and parcel connections\n\nWe need an information graphics series explaining how our cargo-bike operation connects Canal Depot, North Gate, Market Lane and Library Steps. The attached service window contains 12 parcels, 6 trips and 9 handoff events across 4 stations. Follow the parcels through these connections, comparing the timetable with recorded operation and making the difference between a parcel, a trip and a handoff immediately readable.\n\nBuild from our existing blue cargo box, black bicycle frame and circular badge. The identity color is #0072B2. Planned operation uses #0072B2 with dashed lines and open markers; actual operation uses #D55E00 with solid lines and filled markers. Arrival delay means actual arrival minus planned arrival; station waiting means departure minus arrival at the transfer station, both in minutes. P05 changes from planned T05 to actual T03 after T04. T06 has an empty actual-arrival field, affecting the destination-arrival account for P07 and P08. Print \"RELAY CARGO\" and \"Source: Relay Cargo, 2026\" on every chart and publication page. Use \"Arrival not recorded\" for the T06 arrival gap.\n\nAudience: operations staff deciding which connections deserve attention, and public readers learning how last-mile delivery is organized.\n\nInputs (attached): 01-client-facts.en.md contains the identity, reporting scope and fixed wording. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. stations.md supplies station names and local coordinates. trips.md supplies planned and actual departure and arrival records. parcels.md supplies anonymous parcel identifiers and their planned and actual trip sequences. handoffs.md supplies the nine transfer-event records. data-definitions.en.md contains definitions, calculated values and missing-data coverage. report-surfaces.png fixes the physical publication surfaces. cargo-bike-identity.png supplies the existing bicycle, cargo-box color and badge. microhub-handoff-reference.png supplies the atmosphere of a working transfer point.\n\nDeliverables:\n1. A two-page data summary and chart inventory stating counting units, waiting formulas, source credit, visual encodings and each chart's data columns, chart type, carrier and printed labels\n2. One station network map locating all four stations and six directed trip connections in local coordinates\n3. Two parcel-flow maps, one planned and one actual, with parcel counts on each trip connection\n4. One timetable comparing planned and actual departure and arrival for all six trips\n5. One handoff timeline covering H01–H09, separating arrival-to-ready time from ready-to-departure time\n6. One waiting-distribution chart comparing planned and actual station waiting for the nine handoffs\n7. Two exception case sheets: P05's changed connection and T06's missing arrival with P07 and P08\n8. One A3 landscape operations overview combining the network, timetable and principal findings\n9. One portrait public explainer connecting parcel flow, waiting and the two exception cases\n10. One A4 summary page with the headline counts, waiting distribution and arrival-record coverage\n11. One 12-second explanatory video following P05 through T04 and T03, alongside its planned T04 and T05 connection\n12. One presentation document of at least eight pages reusing the specification, charts, case sheets and publication layouts\n\nAcceptance:\n- The data summary, landscape overview, portrait explainer, A4 summary and presentation repeat 4 stations, 12 distinct parcels, 6 distinct trips and 9 handoff events as separate measures; the presentation also repeats the summary's waiting formulas and source credit.\n- The network and parcel-flow maps retain the station coordinates and directed endpoints in stations.md and trips.md. Flow labels show planned/actual counts of T01 4/4, T02 5/5, T03 4/5, T04 3/3, T05 3/2 and T06 2/2, with 21 parcel boardings in each scenario distinguished from 12 unique parcels.\n- The timetable, handoff timeline, waiting distribution, case sheets and video trace their displayed times to trip or handoff IDs. The waiting distribution shows planned waiting of 6 minutes for all 9 events and actual waiting of 4 minutes for 4 events, 6 minutes for 4 events and 11 minutes for H08; the P05 case and video show readiness at 09:37, T05 departure at 09:35 and T03 departure at 09:40.\n- The timetable, T06 case sheet, publication layouts and presentation display \"Arrival not recorded\" for T06 and distinguish 5 recorded trip arrivals from 6 trips, and 10 parcels with recorded destination arrival from 12 parcels.\n- Every chart, case sheet, publication layout and the video follows the summary's planned/actual colors, line styles and marker shapes, with direct labels that remain distinguishable in grayscale. Every chart and publication page carries its title, units, source credit, RELAY CARGO name and one reading annotation; displayed numerical values match the attached tables, and numerical axes begin at zero or label their starting value.\n- The landscape overview, portrait explainer, A4 summary and presentation reuse the earlier charts with matching values and encodings. Their printed surfaces follow report-surfaces.png; the presentation has at least eight pages, and the video runs for 12 seconds.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/report-surfaces.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "1ec6c33f661e525f0e4bf1a1968e7c38431628f170971817e15ef367b78873a6"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/cargo-bike-identity.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "765485a14f57e66bf934e0b6d7f3065ece199dd8a92bbad7214fbd4408a4c5f8"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-02/microhub-handoff-reference.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "64b3189ab399dcf34d19d4720904c0401d1f3924d953e807527c24378e4dd2a3"
+    }
+  ]
+}

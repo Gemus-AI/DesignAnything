@@ -1,0 +1,32 @@
+ONE KITCHEN | A cookbook for four freshly prepared meals for one
+
+We are publishing a 20-page sample cookbook for one adult cooking in a compact kitchen. Print the title "ONE KITCHEN" and subtitle "Four meals for one" on the front cover. The manuscript follows four freshly prepared meals: R1 Chickpea and lemon couscous, R2 Chickpea and tomato pasta, R3 Lentil and carrot soup, and R4 Lentil and pepper pita. R1–R4 identify meals; cooking occasions follow the purchased products' use-by and after-opening instructions. The shopping plan supplies each recipe once at one portion. A separate comparison gives two portions of each recipe. The available equipment includes one active hob ring, a 2.5 L saucepan, a 24 cm frying pan and a 1 L heatproof bowl; R2 uses the same saucepan sequentially.
+
+Build the content outline and lookup rules first, then develop the publication around them. The format is 170 × 240 mm, with 20 pages including covers, 120 g/m² uncoated paper throughout, saddle stitching, a 0 mm spine panel and 3 mm bleed. The open book occupies 340 × 240 mm within a 420 × 320 mm clear worktop area. Use two columns per page, a 6 mm column gap, numbered recipe steps and original process diagrams. Recipe identifiers, yield and tools belong in consistent positions. The front cover should be led by typography. Credit author Ellis Reed and publisher Counterspace Press; the chapter spread carries the copyright line "Copyright 2026 Counterspace Press" and the supplied source credits.
+
+Audience: adults living alone who need to move between shopping, ingredient allocation and cooking instructions, and the publishing team choosing the book's reading and lookup system.
+
+Inputs (attached): 01-client-facts.en.md contains the manuscript, stock, equipment, food guidance, fixed wording and page allocation. 02-delivery-catalog.en.md lists the deliverables and their proportions, formats and stages. 03-quantity-records.en.md contains the one-portion allocation, remaining stock and separate two-portion quantities. kitchen-format.png is the constraint drawing for trim, bleed, binding and worktop footprint. tool-reference.png is the identity image of the existing equipment inventory. kitchen-counter.png is an atmosphere reference for reading an open book in a compact kitchen.
+
+Deliverables:
+1. One content outline and book standards document, with the complete 20-page allocation, lookup fields, step-number rules, two-column grid, type hierarchy, actual font names and production dimensions
+2. One front cover, page 1, with title, subtitle, author and publisher
+3. One contents and lookup introduction spread, pages 2–3, explaining the reading route and ingredient-to-recipe lookup
+4. One chapter introduction spread, pages 4–5, with the equipment inventory, fresh-meal context, editorial preparation record, product-label guidance, copyright line and source credits
+5. Four illustrated recipe spreads: R1 Chickpea and lemon couscous on pages 6–7; R2 Chickpea and tomato pasta on pages 8–9; R3 Lentil and carrot soup on pages 10–11; R4 Lentil and pepper pita on pages 12–13
+6. One shopping index spread, pages 14–15, with all 12 purchased-stock records and distinct total and drained can weights
+7. One allocation index spread, pages 16–17, with each ingredient's R1–R4 quantities, total use, remaining stock and recipe page references
+8. One portion conversion spread, pages 18–19, comparing one and two portions for all four recipes, with food quantities and cooking-water notes
+9. One back cover, page 20, with title, publisher, quick lookup for R1–R4 and a blank 35 × 22 mm ISBN barcode area at the lower right
+10. One 12-second lookup video following chickpeas from the allocation index to R2 and its reserved-water operation
+11. One presentation document of at least eight pages, reusing the outline, all eleven publication pieces and the video sequence, with the final book standards and actual font names
+
+Acceptance:
+- The outline and all publication pieces follow the 20-page allocation above. The contents, four recipe spreads and back-cover lookup repeat R1–R4 and their page pairs. Recipe spreads use two columns per page with a 6 mm gap, recipe identifiers at the upper outer corner, yield and tools before the ingredients, and step identifiers R1.1–R1.3, R2.1–R2.4, R3.1–R3.3 and R4.1–R4.3 beside the matching operations.
+- The front cover prints ONE KITCHEN, Four meals for one, Ellis Reed and Counterspace Press. The back cover repeats ONE KITCHEN and Counterspace Press and places its 35 × 22 mm ISBN area at the lower right. The chapter spread prints Copyright 2026 Counterspace Press and the three supplied source credits with the access date 10 September 2026.
+- The four recipe spreads carry every ingredient amount, operation and doneness cue in the manuscript. Their diagrams show R1's hydrated grain and 120 g drained chickpeas; R2's 100 mL reserve taken from its 1,000 mL cooking water before draining and the same saucepan returning to the hob; R3's thin carrot half-moons and fork-tenderness check; and R4's single 60 g pita with the remaining filling alongside.
+- R1, R2 and R4 print "Contains wheat (gluten). Check every product label and your own dietary requirements." R3 prints "Check every product label and your own dietary requirements; this recipe is not an allergen-free guarantee." The chapter spread carries the manuscript's editorial preparation record and explains product-label checks, individual dietary requirements, additional ingredients and cross-contact information.
+- The shopping and allocation spreads account for all 12 stock rows at one portion per recipe, including 240 g chickpeas used with 0 g remaining, 320 g carrot used with 80 g remaining, and one 60 g pita used with one 60 g pita remaining. The conversion spread doubles every food amount while retaining its unit and preparation basis, including R4's two pita pieces totaling 120 g; its cooking-water notes retain the manuscript's operation and packet guidance.
+- The 12-second video visibly follows chickpeas on pages 16–17 to R2 on pages 8–9 and then to R2.1's 100 mL reserve. The presentation contains at least eight pages, reuses all eleven publication pieces, and repeats the outline's 170 × 240 mm trim, 20 pages, 0 mm spine panel, two columns per page, 6 mm gap, fixed cover wording and actual font names.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

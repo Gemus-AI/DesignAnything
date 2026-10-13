@@ -1,0 +1,144 @@
+{
+  "id": "bench-da-infovis-breadth-01",
+  "title": "SOLAR SYSTEM MISSIONS — Mission timelines and target connections, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GRAPHIC",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# SOLAR SYSTEM MISSIONS\n\n## Publication\n- Project name: SOLAR SYSTEM MISSIONS\n- Subtitle: Mission timelines and target connections\n- Publisher: ORBIT DESK\n- Audience: museum visitors and general science readers\n- Editorial snapshot: 2026-09-12\n- Source credit: NASA / ESA, 2026\n- Relationship caption: Connections indicate mission targets\n- Relationship column labels: Missions; Target bodies\n\n## Editorial identity\n- Masthead: ORBIT DESK\n- Heading style: bold sans serif\n- Body style: regular sans serif\n- Structure: left-aligned headings, numbered entries, thin horizontal rules\n- Background: #FFFFFF\n- Text: #17212B\n- Secondary mission identification: mission ID and full mission name\n\n| Target class | Color | Mission IDs |\n|---|---|---|\n| Planets | #0072B2 | M01, M02, M04 |\n| Comets | #CC79A7 | M03 |\n| Asteroids | #E69F00 | M05, M06 |\n\n## Physical carriers\n| Carrier | Width | Height | Clear margin on each edge |\n|---|---|---|---|\n| Landscape panel | 420 mm | 280 mm | 10 mm |\n| Portrait panel | 200 mm | 300 mm | 10 mm |\n| A4 takeaway | 210 mm | 297 mm | 10 mm |\n\n## Data scope\n- Mission count: 6\n- Distinct target bodies: 5\n- Mission-to-target links: 7\n- Timeline start: 1997-01-01\n- Timeline end: 2027-01-01\n- Date convention: UTC calendar dates\n- Day precision: YYYY-MM-DD\n- Month precision: YYYY-MM\n- Time unit: calendar years (UTC)\n- Count units: missions; target bodies\n- Record attachment: 03-mission-records.en.md\n- Relationship meaning: recorded science target association\n- Relationship layout: two-column schematic\n- Actual milestone symbol: filled marker\n- Planned milestone symbol: hollow marker\n- Temporal tracks: Actual; Planned\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# SOLAR SYSTEM MISSIONS — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | mission-timeline | Six-mission timeline | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | target-relationships | Mission and target relationship diagram | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | reader-guide | Mission grouping and status reader guide | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | mercury-comparison | Mercury mission comparison | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | asteroid-comparison | DART and Hera comparison | 6 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | a4-takeaway | One-page museum takeaway | 6 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-mission-records.en.md",
+            "config": {
+              "text": "# Mission records\n\n## Snapshot and conventions\n- Editorial snapshot: 2026-09-12\n- Source institutions: NASA; ESA\n- Source credit: NASA / ESA, 2026\n- Source-credit year: editorial compilation year\n- Dates: UTC calendar dates\n- Day precision: YYYY-MM-DD\n- Month precision: YYYY-MM\n- Timeline bounds: 1997-01-01; 2027-01-01\n- Suggested labeled years: 1997; 2000; 2005; 2010; 2015; 2020; 2025; 2027\n- Time unit: calendar years (UTC)\n- Count units: missions; target bodies\n- Arrival field: the specific milestone named in each mission row\n- Relationship scope: selected science destinations listed in the relationship table\n- Planned arrival field: scheduled arrival retained for missions still en route at the snapshot\n\n## Mission table\n| ID | Mission | Target class | Actual launch | Planned arrival | Actual arrival | Arrival milestone | Actual end | Status at snapshot | Sources |\n|---|---|---|---|---|---|---|---|---|---|\n| M01 | Cassini | Planets | 1997-10-15 | Not recorded | 2004-07-01 | Saturn orbit insertion | 2017-09-15 | Completed | S01; S02 |\n| M02 | MESSENGER | Planets | 2004-08-03 | Not recorded | 2011-03-18 | Mercury orbit insertion | 2015-04-30 | Completed | S03 |\n| M03 | Rosetta | Comets | 2004-03-02 | Not recorded | 2014-08-06 | Rendezvous with 67P/Churyumov-Gerasimenko | 2016-09-30 | Completed | S04 |\n| M04 | BepiColombo | Planets | 2018-10-20 | 2026-11-21 | Pending | Mercury orbit insertion | Open | En route | S05; S06 |\n| M05 | DART | Asteroids | 2021-11-24 | Not recorded | 2022-09-26 | Impact on Dimorphos | 2022-09-26 | Completed | S07 |\n| M06 | Hera | Asteroids | 2024-10-07 | 2026-11 | Pending | Rendezvous with the Didymos binary system | Open | En route | S08; S09 |\n\n## Mission-to-target relationships\n| Link ID | Mission ID | Mission | Target body | Target class |\n|---|---|---|---|---|\n| L01 | M01 | Cassini | Saturn | Planets |\n| L02 | M02 | MESSENGER | Mercury | Planets |\n| L03 | M03 | Rosetta | 67P/Churyumov-Gerasimenko | Comets |\n| L04 | M04 | BepiColombo | Mercury | Planets |\n| L05 | M05 | DART | Dimorphos | Asteroids |\n| L06 | M06 | Hera | Didymos | Asteroids |\n| L07 | M06 | Hera | Dimorphos | Asteroids |\n\n## Labels and meanings\n| Label | Meaning |\n|---|---|\n| Actual | An event that occurred on the recorded date |\n| Planned | A scheduled event later than the snapshot |\n| Not recorded | A date absent from this editorial record |\n| Pending | An actual arrival date awaiting the future event |\n| Open | An actual mission end date still open at the snapshot |\n| Completed | A mission whose operations ended by the snapshot |\n| En route | A mission traveling toward its recorded arrival milestone at the snapshot |\n\n## Aggregates\n| Measure | Value | Unit | Basis |\n|---|---|---|---|\n| All missions | 6 | missions | Distinct mission IDs |\n| Planets | 3 | missions | M01; M02; M04 |\n| Comets | 1 | mission | M03 |\n| Asteroids | 2 | missions | M05; M06 |\n| Completed | 4 | missions | M01; M02; M03; M05 |\n| En route | 2 | missions | M04; M06 |\n| Distinct targets | 5 | target bodies | Saturn; Mercury; 67P/Churyumov-Gerasimenko; Dimorphos; Didymos |\n| Target relationships | 7 | links | L01 through L07 |\n| Active on 2014-08-06 | 3 | missions | M01; M02; M03 |\n\n## Calculations\n| Calculation | Expression | Result |\n|---|---|---|\n| Status total | Completed + En route | 4 + 2 = 6 missions |\n| Category total | Planets + Comets + Asteroids | 3 + 1 + 2 = 6 missions |\n| Temporal overlap | Count of mission IDs with actual launch on or before 2014-08-06 and actual end on or after 2014-08-06 | 3 missions |\n\n## Sources\n| ID | Institution | Record |\n|---|---|---|\n| S01 | NASA | [Cassini quick facts: launch and UTC arrival](https://science.nasa.gov/mission/cassini/quick-facts/) |\n| S02 | NASA | [Cassini FAQ: arrival and mission end](https://science.nasa.gov/mission/cassini/faq/) |\n| S03 | NASA | [MESSENGER: launch date and time table; In Depth orbital arrival and mission end](https://science.nasa.gov/mission/messenger/) |\n| S04 | ESA | [Rosetta in numbers: launch, comet arrival and mission end](https://blogs.esa.int/rosetta/2016/09/27/rosetta-in-numbers/) |\n| S05 | ESA | [BepiColombo: launch](https://www.esa.int/Science_Exploration/Space_Science/BepiColombo) |\n| S06 | ESA | [BepiColombo arrival updates: planned Mercury orbit insertion](https://www.esa.int/Science_Exploration/Space_Science/BepiColombo/Latest_updates_BepiColombo_s_arrival_at_Mercury) |\n| S07 | NASA | [DART: launch and Dimorphos impact](https://science.nasa.gov/mission/dart/) |\n| S08 | ESA | [Hera: launch and planned rendezvous](https://www.esa.int/Space_Safety/Hera) |\n| S09 | ESA | [Hera mission overview: Didymos and Dimorphos survey](https://www.esa.int/Space_Safety/Hera/Hera_mission_overview) |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: reading-surfaces.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: orbit-desk-style.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: museum-reading-scene.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "SOLAR SYSTEM MISSIONS | Mission timelines and target connections\n\nORBIT DESK is commissioning a museum reading set about six missions: Cassini, MESSENGER, Rosetta, BepiColombo, DART and Hera. Readers should be able to move from when a mission operated to what it studied, then find the same mission in a closer comparison. The editorial snapshot is 2026-09-12. The records contain five target bodies and seven mission-to-target links; the timeline runs from 1997-01-01 to 2027-01-01.\n\nUse our existing masthead and editorial style. Print \"SOLAR SYSTEM MISSIONS\" on all six pieces. Planet missions use #0072B2, comet missions #CC79A7 and asteroid missions #E69F00, paired with mission IDs and written category labels. Dates use UTC and retain their recorded precision: BepiColombo's planned Mercury orbit insertion is 2026-11-21; Hera's planned system rendezvous is 2026-11. Separate actual and planned milestones into labeled tracks. Organize target connections as a two-column relationship diagram, with the caption \"Connections indicate mission targets\". The physical reading surfaces are a 420 × 280 mm landscape panel, a 200 × 300 mm portrait panel and an A4 takeaway, each with a 10 mm clear margin.\n\nAudience: museum visitors and general science readers, choosing which missions and destinations to explore further through the exhibition and its takeaway.\n\nInputs (attached): 01-client-facts.en.md contains the publication identity, snapshot, physical dimensions and category colors.\n02-delivery-catalog.en.md contains the proportions, formats and stages for the six deliverables.\n03-mission-records.en.md contains the mission dates, target relationships, status definitions, totals and NASA and ESA source links.\nreading-surfaces.png supplies the three dimensioned carrier surfaces and their clear margins.\norbit-desk-style.png supplies the existing masthead, typography hierarchy, rules and palette.\nmuseum-reading-scene.png supplies the exhibition lighting and visitor reading atmosphere.\n\nDeliverables:\n1. One landscape mission timeline covering all six missions, with launch, arrival, end and snapshot markers, separate actual and planned tracks, and an overlap annotation\n2. One landscape target relationship diagram connecting all six missions to the five target bodies through the seven recorded links\n3. One portrait reader guide grouping all six missions by target class and status, with counts and explanations of Actual, Planned, Not recorded, Pending and Open\n4. One portrait Mercury comparison combining the MESSENGER and BepiColombo timelines, arrival records and shared target\n5. One portrait asteroid comparison combining the DART and Hera timelines and their connections to Didymos and Dimorphos\n6. One single-page A4 takeaway combining the six-mission timeline, target relationships, category totals and status totals\n\nAcceptance:\n- All six pieces carry SOLAR SYSTEM MISSIONS, the ORBIT DESK masthead, an individual title, the source credit \"NASA / ESA, 2026\", the snapshot 2026-09-12 and a reading annotation. Label time scales in calendar years (UTC) and counts in missions or target bodies. Every displayed data value matches a record or aggregate in 03-mission-records.en.md.\n- The timeline and A4 takeaway use a linear 1997-01-01 to 2027-01-01 scale, mark the snapshot, and show three overlapping missions on 2014-08-06: Cassini, MESSENGER and Rosetta. Their actual spans end at the recorded mission end or continue to the snapshot with an Open endpoint.\n- The target diagram and relationship panels in both comparisons and the A4 takeaway reproduce the applicable rows of the seven-link relationship table. Use two labeled columns, Missions and Target bodies, and print Connections indicate mission targets beside each relationship panel.\n- The reader guide and A4 takeaway report Planets: 3 missions, Comets: 1 mission, Asteroids: 2 missions, Completed: 4 missions and En route: 2 missions. Show the calculation 4 + 2 = 6 missions. Explain Completed as an ended mission and En route as travel toward the recorded arrival milestone at the snapshot.\n- The timeline, both comparisons and A4 takeaway distinguish Actual with filled markers and Planned with hollow markers on separate labeled tracks. The Mercury comparison prints MESSENGER's actual arrival 2011-03-18 and BepiColombo's planned arrival 2026-11-21; the asteroid comparison prints DART's impact 2022-09-26 and Hera's planned arrival 2026-11 as a month-wide band. The reader guide explains the three missing-value labels using the attached definitions.\n- Across all six pieces, each mission retains its M01–M06 ID, name and category color; written category labels and mission IDs remain readable in grayscale. The landscape pieces occupy 420 × 280 mm, the portrait pieces 200 × 300 mm and the takeaway A4, with the 10 mm clear margins shown in reading-surfaces.png.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/reading-surfaces.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "83e6e50d780a77144427677bc338ae2f778cfe331654860c5aa4af706df03f42"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/orbit-desk-style.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "dbd056166f90bb3f793d7d8c9cde0cdb42a4dd81b50c7027434c94c5a5dc2c7a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/museum-reading-scene.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "40cff664d8fb4d703fd034dac88acad25090383e5006ae0082cd515cf79ed3a7"
+    }
+  ]
+}

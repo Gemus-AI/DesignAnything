@@ -1,0 +1,728 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-game-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "character-world",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "band-characters",
+      "label": "Band character sheet",
+      "description": "One finished sheet of Pip, Reed and Wren in five depictions each, with two additional scale depictions of Pip.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "stage-instrument",
+      "label": "Stage and instrument sheet",
+      "description": "One finished sheet containing the frontal Boxlight Stage composition and seven Tin Moon Drum depictions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "rhythm-sprites",
+      "label": "Rhythm cue sprite sheet",
+      "description": "One finished sprite sheet containing Ready, Hit and Miss cue tiles for controller and touch input, six tiles in total.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "gameplay-ready",
+      "label": "Ready gameplay at 1750 ms",
+      "description": "One controller gameplay image at 1750 ms showing E01 Ready, Score 0 and Combo 0.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "gameplay-hit",
+      "label": "Hit gameplay at 2540 ms",
+      "description": "One touch gameplay image at 2540 ms showing E02 Hit, Score 200 and Combo 2.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "gameplay-miss",
+      "label": "Miss gameplay at 3140 ms",
+      "description": "One controller gameplay image at 3140 ms showing E03 Miss, Score 200 and Combo 0.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "FOLD PARADE",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "venue-name",
+      "kind": "text-verbatim",
+      "text": "Boxlight Stage",
+      "scope": {
+        "slots": [
+          "stage-instrument",
+          "gameplay-ready",
+          "gameplay-hit",
+          "gameplay-miss"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "instrument-name",
+      "kind": "text-verbatim",
+      "text": "Tin Moon Drum",
+      "scope": {
+        "slots": [
+          "stage-instrument",
+          "gameplay-ready",
+          "gameplay-hit",
+          "gameplay-miss"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "ready-label",
+      "kind": "text-verbatim",
+      "text": "Ready",
+      "scope": {
+        "slots": [
+          "rhythm-sprites",
+          "gameplay-ready"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "miss-label",
+      "kind": "text-verbatim",
+      "text": "Miss",
+      "scope": {
+        "slots": [
+          "rhythm-sprites",
+          "gameplay-miss"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "controller-prompt",
+      "kind": "text-verbatim",
+      "text": "Press A",
+      "scope": {
+        "slots": [
+          "rhythm-sprites",
+          "gameplay-ready",
+          "gameplay-miss"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "score-label",
+      "kind": "text-verbatim",
+      "text": "Score",
+      "scope": {
+        "slots": [
+          "gameplay-ready",
+          "gameplay-hit",
+          "gameplay-miss"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "combo-label",
+      "kind": "text-verbatim",
+      "text": "Combo",
+      "scope": {
+        "slots": [
+          "gameplay-ready",
+          "gameplay-hit",
+          "gameplay-miss"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FOLD PARADE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "performance-design-continuity",
+      "slots": [
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "sourceSlots": [
+        "band-characters",
+        "stage-instrument"
+      ],
+      "items": [
+        {
+          "item": "The three performance snapshots preserve the character and instrument designs established on the finished sheets, allowing the recorded changes in pose and drum state.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The performers and set retain the required cardstock construction and upper-left stage-lighting direction throughout the snapshots.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "cue-and-input-system",
+      "slots": [
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "sourceSlots": [
+        "rhythm-sprites"
+      ],
+      "items": [
+        {
+          "item": "Gameplay cue symbols, state colors and device prompts agree with the corresponding sprite-sheet tiles.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The snapshots share the specified single-lane geometry and prompt anchor while displaying their distinct recorded states and counter values.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FOLD PARADE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Game Design",
+    "slots": [
+      "band-characters",
+      "stage-instrument",
+      "rhythm-sprites",
+      "gameplay-ready",
+      "gameplay-hit",
+      "gameplay-miss"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the visual game assets and recorded still-image states without scoring audio playback, executable timing behavior, or exact export pixel dimensions."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "band-characters",
+        "stage-instrument",
+        "rhythm-sprites",
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-band-characters",
+      "requirementId": "R-format-band-characters",
+      "method": "artifact-property",
+      "targetSlots": [
+        "band-characters"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-stage-instrument",
+      "requirementId": "R-format-stage-instrument",
+      "method": "artifact-property",
+      "targetSlots": [
+        "stage-instrument"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-rhythm-sprites",
+      "requirementId": "R-format-rhythm-sprites",
+      "method": "artifact-property",
+      "targetSlots": [
+        "rhythm-sprites"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-gameplay-ready",
+      "requirementId": "R-format-gameplay-ready",
+      "method": "artifact-property",
+      "targetSlots": [
+        "gameplay-ready"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-gameplay-hit",
+      "requirementId": "R-format-gameplay-hit",
+      "method": "artifact-property",
+      "targetSlots": [
+        "gameplay-hit"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-gameplay-miss",
+      "requirementId": "R-format-gameplay-miss",
+      "method": "artifact-property",
+      "targetSlots": [
+        "gameplay-miss"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "band-and-instrument-coverage",
+      "requirementId": "R-band-and-instrument-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "band-characters",
+        "stage-instrument",
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "Identify Pip as drummer, Reed as bass player and Wren as keyboard player. Each member needs distinguishable front, side, back, idle and performing depictions; Pip also needs close-up and small gameplay-scale views. The stage sheet needs a frontal venue composition and drum front, side, back, resting, struck, close-up and small gameplay-scale views. Compare the sheets with all gameplay appearances: pose and perspective may change, but Pip's silhouette, clothing colors and accessory count, the other members' established designs, and the drum's rim, body and attachments must remain recognizable and consistent. Missing views, substituted instruments or contradictory designs fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "printed-identity-and-emblem",
+      "requirementId": "R-printed-identity-and-emblem",
+      "method": "visual",
+      "targetSlots": [
+        "band-characters",
+        "stage-instrument",
+        "rhythm-sprites",
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "Each image must visibly contain the project name and the supplied emblem structure: three folded panels converging at a lower point, with one circular cutout in the center panel. Use the supplied blue #1E4D8A or black monochrome treatment; scale and placement may vary without changing the emblem. On the stage sheet, associate the venue and instrument labels with their subjects. On each gameplay image, place both names in the header. Missing identity elements, altered panel or cutout structure, or names absent from the required location fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "cue-inventory-and-accessibility",
+      "requirementId": "R-cue-inventory-and-accessibility",
+      "method": "visual",
+      "targetSlots": [
+        "rhythm-sprites",
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "The sprite sheet must show exactly the six required labeled combinations: each of Ready, Hit and Miss for both controller and touch. Check the corresponding gameplay state against the same mapping: blue #1E4D8A hollow diamond, green #236344 checked circle, and red #A33232 crossed split square. The input strip uses cream #FFF5DF. Labels, including the three-character label Hit, must be legible and correctly spelled. Assess text and icon contrast against their actual immediate backgrounds using the specified 4.5:1 and 3:1 thresholds. Tile arrangement and decorative treatment may vary; omitted combinations, swapped meanings, incorrect symbols or insufficient contrast fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "logical-layout-and-legibility",
+      "requirementId": "R-logical-layout-and-legibility",
+      "method": "visual",
+      "targetSlots": [
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "Map each composition proportionally to a 1920-by-1080 logical coordinate frame with its origin at the upper left; do not require an exact export pixel count. Verify safe bounds x=80–1840 and y=80–1000, header x=160–1760 and y=80–180, performance x=160–1760 and y=200–650, and input strip x=160–1760 and y=720–960. The single lane has cue centers at y=800, a judgment line at x=960 from y=744–856, and a band spanning x=912–1008 over that same vertical interval. Cue symbols occupy at least 64 by 64 logical units and printed interface characters reach 26 logical units in height. Proportional scaling is allowed; displaced boundaries, undersized elements, or performers, scenery or their shadows extending outside the performance region fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "snapshot-record-and-performance-state",
+      "requirementId": "R-snapshot-record-and-performance-state",
+      "method": "visual",
+      "targetSlots": [
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "Read the three images as snapshots of the supplied event record. The ready image contains only E01's cue at (1060,800), with Score 0 and Combo 0; Pip is idle with beater raised and the drum rests. The hit image contains only E02's feedback at (960,800), with Score 200 and Combo 2; Pip strikes the drum and its paper vibration tabs are raised. The miss image contains only E03's feedback at (960,800), with Score 200 and Combo 0; Pip returns to the raised-beater idle pose and the drum rests. Reed is plucking and Wren is playing in all three. Interpret positions using right-to-left travel at 400 units per second, appearance 300 ms before target, inclusive ±120 ms input windows, and feedback intervals with inclusive starts and exclusive ends. E02 feedback is valid over 2540–2640 ms and E03 feedback over 3120–3220 ms. The counters must reflect 100 points and one combo increment per accepted input, followed by a retained score and reset combo on a miss. Do not require timestamps or event IDs to be printed; wrong states, extra event cues, wrong counters, positions or performance poses fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "device-prompts-and-alignment",
+      "requirementId": "R-device-prompts-and-alignment",
+      "method": "visual",
+      "targetSlots": [
+        "rhythm-sprites",
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "Compare prompt placement relative to tile boundaries: corresponding controller and touch tiles must use matching alignment and anchor placement, allowing different text widths. Controller tiles and the ready and miss gameplay images read Press A; touch tiles and the hit gameplay image read Tap. Each gameplay prompt is centered at logical (960,920). All prompts communicate one press or tap; hold, swipe, multi-button instructions, incorrect device wording or shifted anchors fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "paper-construction-language",
+      "requirementId": "R-paper-construction-language",
+      "method": "visual",
+      "targetSlots": [
+        "band-characters",
+        "stage-instrument",
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "Look for visible cardstock thickness or cut edges, folded planes, cut-joint articulation and cast paper shadows in the depicted performers and set. Character styling and construction details are open to invention, and small views may simplify fine texture while preserving the paper construction. A smooth plastic, fabric or unarticulated flat treatment that omits the required material evidence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "lighting-direction",
+      "requirementId": "R-lighting-direction",
+      "method": "visual",
+      "targetSlots": [
+        "stage-instrument",
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "The frontal stage composition and gameplay performances must show illumination originating from the upper left, supported by lit planes and cast-shadow direction. Intensity and softness may vary; a dominant contradictory lighting direction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "passage-record-context",
+      "requirementId": "R-passage-record-context",
+      "method": "diagnostic",
+      "targetSlots": [
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "Treat the supplied two-bar musical passage, pitch and articulation table, event timeline and snapshot record as fixed context for interpreting the still images. These image deliverables do not demonstrate audio playback or elapsed feedback duration, and the record does not create a requirement to print notation, composer credit or musical metadata. This diagnostic does not fail a submission.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ]
+    },
+    {
+      "id": "set-performance-design-continuity",
+      "requirementId": "R-set-performance-design-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "The three performance snapshots preserve the character and instrument designs established on the finished sheets, allowing the recorded changes in pose and drum state. The performers and set retain the required cardstock construction and upper-left stage-lighting direction throughout the snapshots.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "band-characters",
+        "stage-instrument"
+      ]
+    },
+    {
+      "id": "set-cue-and-input-system",
+      "requirementId": "R-set-cue-and-input-system",
+      "method": "visual",
+      "targetSlots": [
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "criteria": "Gameplay cue symbols, state colors and device prompts agree with the corresponding sprite-sheet tiles. The snapshots share the specified single-lane geometry and prompt anchor while displaying their distinct recorded states and counter values.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-breadth-01/03-pocket-overture.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "rhythm-sprites"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-fan-emblem",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "folded-fan-emblem.png"
+      ],
+      "subjectSlots": [
+        "band-characters",
+        "stage-instrument",
+        "rhythm-sprites",
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "notes": "All six final images carry FOLD PARADE and the folded-fan emblem, retaining its three panels and circular cutout."
+    },
+    {
+      "id": "band-design-reuse",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "band-characters",
+      "subjectSlots": [
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "notes": "The three gameplay images repeat those character and instrument designs."
+    },
+    {
+      "id": "drum-design-reuse",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "stage-instrument",
+      "subjectSlots": [
+        "gameplay-ready",
+        "gameplay-hit",
+        "gameplay-miss"
+      ],
+      "notes": "The three gameplay images repeat those character and instrument designs."
+    }
+  ]
+}

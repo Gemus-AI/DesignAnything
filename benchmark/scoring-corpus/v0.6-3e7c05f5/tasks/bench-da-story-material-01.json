@@ -1,0 +1,611 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-story-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "character-world",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "character-model",
+      "label": "Finished character model sheet",
+      "description": "One finished Milo model sheet with front, character-left side and back views and three established expressions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "acting-poses",
+      "label": "Expression and pose sheet",
+      "description": "One sheet of six paired facial studies and full-body poses corresponding to shots 01 through 06.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "keyframe-04",
+      "label": "Shot 04 disappointment keyframe",
+      "description": "One finished color keyframe for shot 04 showing Milo's lowered gaze, pressed lips and settled shoulders.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "keyframe-06",
+      "label": "Shot 06 release keyframe",
+      "description": "One finished color keyframe for shot 06 showing the plane on the windowsill, Milo's opening hand and small closed-mouth smile.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "continuous-storyboard",
+      "label": "Six-panel performance storyboard",
+      "description": "One continuous six-panel storyboard with shot numbers, shot sizes, durations and character names.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shot-table",
+      "label": "Final synopsis and shot table",
+      "description": "One final document containing the fixed synopsis, six shot records and the 18-second total.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-title",
+      "kind": "text-verbatim",
+      "text": "MILO",
+      "scope": {
+        "slots": [
+          "continuous-storyboard",
+          "shot-table"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "printed-heading",
+      "kind": "text-verbatim",
+      "text": "Room to breathe",
+      "scope": {
+        "slots": [
+          "continuous-storyboard",
+          "shot-table"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "MILO",
+      "maxEditDistance": 1,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "character-performance-system",
+      "slots": [
+        "acting-poses",
+        "keyframe-04",
+        "keyframe-06",
+        "continuous-storyboard"
+      ],
+      "sourceSlots": [
+        "character-model"
+      ],
+      "items": [
+        {
+          "item": "Visible anatomy, facial asymmetries, clothing and character color treatment remain consistent with the finished character model across poses and shots.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The six facial and body studies correspond to the storyboard's numbered acting beats and preserve the anticipation, disappointment and release progression.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "scene-and-keyframe-continuity",
+      "slots": [
+        "keyframe-04",
+        "keyframe-06"
+      ],
+      "sourceSlots": [
+        "continuous-storyboard"
+      ],
+      "items": [
+        {
+          "item": "Each keyframe agrees with its corresponding storyboard panel in acting pose, shot size and visible plane position.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Visible room landmarks, plane construction and north-window daylight remain coherent across the storyboard and both keyframes.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "MILO",
+    "carryThrough": {
+      "none": "The shot table repeats supplied client records; the letter does not require later deliverables to extract or repeat facts authored in a delivered document."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Storyboard Creation",
+    "slots": [
+      "character-model",
+      "acting-poses",
+      "keyframe-04",
+      "keyframe-06",
+      "continuous-storyboard"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the finished acting drawings and storyboard communication without requiring animated playback, photorealistic rendering, or a separate 9:16 delivery."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "character-model",
+        "acting-poses",
+        "keyframe-04",
+        "keyframe-06",
+        "continuous-storyboard"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-character-model",
+      "requirementId": "R-format-character-model",
+      "method": "artifact-property",
+      "targetSlots": [
+        "character-model"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-acting-poses",
+      "requirementId": "R-format-acting-poses",
+      "method": "artifact-property",
+      "targetSlots": [
+        "acting-poses"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-keyframe-04",
+      "requirementId": "R-format-keyframe-04",
+      "method": "artifact-property",
+      "targetSlots": [
+        "keyframe-04"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-keyframe-06",
+      "requirementId": "R-format-keyframe-06",
+      "method": "artifact-property",
+      "targetSlots": [
+        "keyframe-06"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-continuous-storyboard",
+      "requirementId": "R-format-continuous-storyboard",
+      "method": "artifact-property",
+      "targetSlots": [
+        "continuous-storyboard"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shot-table",
+      "requirementId": "R-format-shot-table",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shot-table"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "character-construction-and-expression-limits",
+      "requirementId": "R-character-construction-and-expression-limits",
+      "method": "visual",
+      "targetSlots": [
+        "character-model",
+        "acting-poses",
+        "keyframe-04",
+        "keyframe-06",
+        "continuous-storyboard"
+      ],
+      "criteria": "Compare visible character construction with milo-model.png and milo-proportions.png. Milo has a 1000 mm standing height represented by four 250 mm head units, ochre #D99B55 skin, one dark forelock bending toward the character's left, and one dark circular mark on the character's left cheek. Clothing comprises a navy #233D54 sweatshirt with one orange square patch on the character's left upper sleeve, cream trousers, and two navy shoes. Facial deformation stays within brow travel of -0.08H to +0.08H, horizontal pupil travel of -0.04H to +0.04H, mouth width of 0.18H to 0.38H, and mouth opening of 0H to 0.12H. Allow perspective, articulation, lighting and occlusion; do not demand hidden features or printed measurements. Mirrored asymmetries, missing visible clothing, changed proportions, or expressions outside the supplied ranges fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "model-sheet-view-and-expression-coverage",
+      "requirementId": "R-model-sheet-view-and-expression-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "character-model"
+      ],
+      "criteria": "The sheet visibly supplies a front view, a profile showing the character's left side, and a back view, together with identifiable neutral, closed-mouth smiling and frowning expression studies. Arrangement and study scale may vary. A missing view, substituted right-side profile, missing expression or visibly unfinished study fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-shot-acting-and-action-progression",
+      "requirementId": "R-six-shot-acting-and-action-progression",
+      "method": "visual",
+      "targetSlots": [
+        "acting-poses",
+        "continuous-storyboard"
+      ],
+      "criteria": "The pose sheet has six distinguishable facial-study/full-body-pose pairs numbered 01–06, and the continuous storyboard has six panels in that order. Each pair corresponds to its panel. The progression shows chest-height cradling and forward preparation in 01; raising, drawing back and launching toward the north window in 02; the plane dropping and landing while the extended hand lingers and shoulders begin to fall in 03; lowered gaze, pressed lips and sinking shoulders in 04; crouching, two-handed retrieval and an exhale as the shoulders settle in 05; and rising, smoothing the fold and placing the plane on the sill with an opening supporting hand and small closed-mouth smile in 06. Hands, shoulders, breath cues and weight must communicate the three emotional phases silently and legibly for viewers aged eight and above. Allow economical motion indications within a panel; missing, duplicated, reordered or contradictory action beats fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "storyboard-record-fields",
+      "requirementId": "R-storyboard-record-fields",
+      "method": "visual",
+      "targetSlots": [
+        "continuous-storyboard"
+      ],
+      "criteria": "Read all six panel records: shot 01 is MS, 02 MS, 03 WS, 04 CU, 05 MS and 06 MS. Every panel identifies Milo and gives a duration of three seconds with an explicit seconds unit. The pictured framing agrees with the stated wide, medium or close-up size. Typography and equivalent seconds notation may vary; missing fields, wrong values, duplicate shot identifiers or mismatched framing fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "shot-table-exact-records",
+      "requirementId": "R-shot-table-exact-records",
+      "method": "content",
+      "targetSlots": [
+        "shot-table"
+      ],
+      "criteria": "Require the synopsis: \"Milo launches a paper plane in an empty rehearsal room. It falls nearby. After a moment of disappointment, Milo retrieves it, smooths its fold and rests it on the windowsill with a small smile.\" Require six records ordered 01–06 with sizes MS, MS, WS, CU, MS, MS respectively, each lasting 3 seconds and naming Milo. Their action text must respectively be: 01 \"Milo cradles the plane at chest height, shifts weight forward and looks along its nose.\"; 02 \"Milo raises the plane, draws the throwing hand back and releases it toward the north window.\"; 03 \"The plane dips and lands at the marked landing point; Milo's extended hand hangs in place as the shoulders begin to fall.\"; 04 \"Milo lowers the gaze toward the plane, presses the lips together and lets the shoulders sink.\"; 05 \"Milo crouches, retrieves the plane with both hands and exhales as the shoulders settle.\"; 06 \"Milo rises, smooths the central fold with an open supporting hand and rests the plane on the windowsill with a small closed-mouth smile.\" Every dialogue cell reads \"Silent\", and the stated total is 18 seconds. Allow layout and line wrapping changes, but no paraphrased synopsis or actions, missing records, incorrect values or additional spoken dialogue.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ]
+    },
+    {
+      "id": "room-camera-and-plane-continuity",
+      "requirementId": "R-room-camera-and-plane-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "continuous-storyboard",
+        "keyframe-04",
+        "keyframe-06"
+      ],
+      "criteria": "Compare the depicted empty rehearsal room with rehearsal-room-plan.png and the supplied spatial facts. The room is 6000 mm east-west by 6000 mm north-south and 3000 mm high. Using the southwest origin with x east and y north, preserve the north window at x=2100–3900, y=6000; its sill height of 800 mm and depth of 250 mm; the east door at x=6000, y=3900–4800; and the acting-center cross at x=3000, y=5000, formed by two perpendicular 200 mm tape strips. Acting remains consistent with x=2000–4000, y=4500–6000. Cameras face north from south of the acting center, with perspective consistent with 4000 mm for WS, 2400 mm for MS and 1200 mm for CU. Track one cream paper plane with a pointed nose, central longitudinal fold and two triangular wings, scaled to 160 mm length and 140 mm wingspan. It lands at x=3300, y=5500 and ends at x=3000 on the north sill. Judge dimensions through reference geometry and relative scale without requiring printed measurements. Cropping or occlusion may hide landmarks or the plane; visible relocation, mirrored room geometry, incompatible camera perspective, plane duplication or changed prop construction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "keyframe-storyboard-match-and-framing",
+      "requirementId": "R-keyframe-storyboard-match-and-framing",
+      "method": "visual",
+      "targetSlots": [
+        "continuous-storyboard",
+        "keyframe-04",
+        "keyframe-06"
+      ],
+      "criteria": "Keyframe 04 agrees with panel 04's close-up pose and prop continuity, showing lowered gaze, pressed lips and settled shoulders. Keyframe 06 agrees with panel 06's medium framing and completed placement, showing the plane resting on the sill, the supporting hand opening away and a small closed-mouth smile. Every storyboard picture area and both keyframes use 16:9 proportions. Essential acting lies inside an inset of 3.5% on every edge, and storyboard panel labels lie inside an inset of 5% on every edge. The attached 9:16 guide supplies additional composition reference and does not require alternate exports. Lighting reads as soft daylight from the north window, with the room's pale plaster, light timber floor and cream window frame consistent with rehearsal-light.png wherever color is depicted. Allow different rendering detail between storyboard and finished keyframes; contradictory poses, shot sizes, prop positions, unsafe placement or a conflicting light source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "storyboard-headings-and-in-panel-labels",
+      "requirementId": "R-storyboard-headings-and-in-panel-labels",
+      "method": "visual",
+      "targetSlots": [
+        "continuous-storyboard"
+      ],
+      "criteria": "The storyboard visibly presents MILO and Room to breathe as headings. All six panels contain their own readable shot number, shot-size label, duration and Milo name within the panel itself. Heading placement and typography may vary; absent headings or labels supplied only in an external legend fail. The shot-table heading strings are separately enforced by the text constraints.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "finished-color-keyframe-identification",
+      "requirementId": "R-finished-color-keyframe-identification",
+      "method": "visual",
+      "targetSlots": [
+        "keyframe-04",
+        "keyframe-06"
+      ],
+      "criteria": "Both keyframes are resolved color acting drawings with finished character treatment and room illumination. The keyframe-04 image visibly identifies shot 04 and the keyframe-06 image visibly identifies shot 06. Rendering style and number placement may vary; monochrome roughs, unresolved construction drawings, absent identifiers or identifiers assigned to the wrong shot fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-character-performance-system",
+      "requirementId": "R-set-character-performance-system",
+      "method": "visual",
+      "targetSlots": [
+        "acting-poses",
+        "keyframe-04",
+        "keyframe-06",
+        "continuous-storyboard"
+      ],
+      "criteria": "Visible anatomy, facial asymmetries, clothing and character color treatment remain consistent with the finished character model across poses and shots. The six facial and body studies correspond to the storyboard's numbered acting beats and preserve the anticipation, disappointment and release progression.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "character-model"
+      ]
+    },
+    {
+      "id": "set-scene-and-keyframe-continuity",
+      "requirementId": "R-set-scene-and-keyframe-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "keyframe-04",
+        "keyframe-06"
+      ],
+      "criteria": "Each keyframe agrees with its corresponding storyboard panel in acting pose, shot size and visible plane position. Visible room landmarks, plane construction and north-window daylight remain coherent across the storyboard and both keyframes.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-material-01/03-scene-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "continuous-storyboard"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "milo-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "milo-model.png",
+        "milo-proportions.png"
+      ],
+      "subjectSlots": [
+        "character-model",
+        "acting-poses",
+        "keyframe-04",
+        "keyframe-06",
+        "continuous-storyboard"
+      ],
+      "notes": "Carry those same features into the pose sheet, both keyframes and all six storyboard panels wherever the corresponding body area is visible; use the attached facial movement ranges in every expression."
+    },
+    {
+      "id": "rehearsal-room-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "rehearsal-room-plan.png"
+      ],
+      "subjectSlots": [
+        "continuous-storyboard",
+        "keyframe-04",
+        "keyframe-06"
+      ],
+      "notes": "Use the north window, east door and floor cross from rehearsal-room-plan.png consistently in the storyboard and both keyframes when visible."
+    }
+  ]
+}

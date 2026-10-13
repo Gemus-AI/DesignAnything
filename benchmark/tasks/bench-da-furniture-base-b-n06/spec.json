@@ -1,0 +1,561 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-furniture-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "module-overview",
+      "label": "L, S and R module overview",
+      "description": "One dimensioned overview of L, S and R in plan, front and side views with their shared upholstery details.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "arrangement-a-oat",
+      "label": "Arrangement A in F01 Oat before the cover change",
+      "description": "One dimensioned plate of joined L-S-R in F01 Oat with a 2700 × 1600 mm footprint and four engaged latch assemblies.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "arrangement-a-moss",
+      "label": "Arrangement A in F02 Moss after the cover change",
+      "description": "One dimensioned plate of the same joined L-S-R geometry in F02 Moss after replacement of the covers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "joining-cover-service",
+      "label": "Joining and cover replacement sheet",
+      "description": "One illustrated sheet covering latch operation and the removal and refitting of the seat, back-cushion and body covers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fabric-family",
+      "label": "Three-colour fabric family",
+      "description": "One fabric family sheet with F01 Oat, F02 Moss and F03 Clay swatches, colour codes, composition, weight and care records.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "room-b-oat",
+      "label": "Arrangement B room application in F01 Oat",
+      "description": "One furnished room view and dimensioned plan of Arrangement B in F01 Oat within the supplied living room.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "RELAY",
+      "scope": {
+        "slots": [
+          "module-overview",
+          "joining-cover-service",
+          "fabric-family"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "cover-message",
+      "kind": "text-verbatim",
+      "text": "Replace the cover, keep the module",
+      "scope": {
+        "slots": [
+          "joining-cover-service",
+          "fabric-family"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "RELAY",
+      "maxEditDistance": 1,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-product-continuity",
+      "slots": [
+        "arrangement-a-oat",
+        "arrangement-a-moss",
+        "joining-cover-service",
+        "room-b-oat"
+      ],
+      "sourceSlots": [
+        "module-overview"
+      ],
+      "items": [
+        {
+          "item": "Corresponding L, S and R modules retain the overview's upholstery profiles, cushion divisions, stitching and feet through cover replacement, servicing and room placement.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Reconfiguration retains the complete module and service-part inventory; open connection hardware remains attached.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "six-fabric-continuity",
+      "slots": [
+        "arrangement-a-oat",
+        "arrangement-a-moss",
+        "room-b-oat"
+      ],
+      "sourceSlots": [
+        "fabric-family"
+      ],
+      "items": [
+        {
+          "item": "The Oat and Moss applications use their family-sheet colour identities and shared weave while preserving the corresponding cover geometry.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "RELAY"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "module-overview",
+      "arrangement-a-oat",
+      "arrangement-a-moss",
+      "joining-cover-service",
+      "fabric-family",
+      "room-b-oat"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not reward redesign of the fixed module system, demand pale oak and grey wool from contextual references, or infer physical durability and manufacturing performance from illustrations."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "module-overview",
+        "arrangement-a-oat",
+        "arrangement-a-moss",
+        "joining-cover-service",
+        "fabric-family",
+        "room-b-oat"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-module-overview",
+      "requirementId": "R-format-module-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "module-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-arrangement-a-oat",
+      "requirementId": "R-format-arrangement-a-oat",
+      "method": "artifact-property",
+      "targetSlots": [
+        "arrangement-a-oat"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-arrangement-a-moss",
+      "requirementId": "R-format-arrangement-a-moss",
+      "method": "artifact-property",
+      "targetSlots": [
+        "arrangement-a-moss"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-joining-cover-service",
+      "requirementId": "R-format-joining-cover-service",
+      "method": "artifact-property",
+      "targetSlots": [
+        "joining-cover-service"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fabric-family",
+      "requirementId": "R-format-fabric-family",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fabric-family"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-room-b-oat",
+      "requirementId": "R-format-room-b-oat",
+      "method": "artifact-property",
+      "targetSlots": [
+        "room-b-oat"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "fixed-material-system",
+      "requirementId": "R-fixed-material-system",
+      "method": "visual",
+      "targetSlots": [
+        "module-overview",
+        "arrangement-a-oat",
+        "arrangement-a-moss",
+        "joining-cover-service",
+        "fabric-family",
+        "room-b-oat"
+      ],
+      "criteria": "Where these components are visible or specified, the frame is 18 mm birch plywood with a clear water-based finish, the feet are solid smoked oak with hardwax oil, and connection hardware is black powder-coated steel. Hidden components need not be exposed in every image. Lighting variation is allowed; contradictory material labels or substitution of pale oak feet fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "module-construction",
+      "requirementId": "R-module-construction",
+      "method": "visual",
+      "targetSlots": [
+        "module-overview"
+      ],
+      "criteria": "The overview identifies L as a left-arm chaise, S as armless and R as a right-arm seat, using front-view handedness, and supplies plan, front and side views. S retains separate cushions, rounded rectangular geometry, 40 mm corners, double stitching inset 15 mm and four square smoked-oak feet. Relevant detail views show 45 × 45 mm feet, independent cover divisions and underside interfaces; L and R have 620 mm arms integrated into their body covers. Drawing style may vary, but conflicting construction or handedness fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "conserved-arrangement-inventory",
+      "requirementId": "R-conserved-arrangement-inventory",
+      "method": "visual",
+      "targetSlots": [
+        "arrangement-a-oat",
+        "arrangement-a-moss",
+        "room-b-oat"
+      ],
+      "criteria": "Each depicted state contains exactly one of each module, retaining four feet, two cushion inserts and three covers per module and the complete connection hardware. Rear edges align and joined upholstered edges touch without extra seam width. Ordinary occlusion is allowed; missing or duplicated modules, discarded hardware, or explicit inventory contradictions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-module-dimensions",
+      "requirementId": "R-six-module-dimensions",
+      "method": "visual",
+      "targetSlots": [
+        "module-overview"
+      ],
+      "criteria": "Readable dimensions associate L with a 900 × 1600 mm envelope and S and R with 900 × 900 mm envelopes. Shared callouts clearly cover all modules for 780 mm overall height, 420 mm seat height, 120 mm feet, 40 mm cushion corner radius and 15 mm stitching inset. Shared annotations are allowed; missing values or geometry visibly contradicting them fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-cover-change-pair",
+      "requirementId": "R-six-cover-change-pair",
+      "method": "visual",
+      "targetSlots": [
+        "arrangement-a-oat",
+        "arrangement-a-moss"
+      ],
+      "criteria": "Both plates dimension a joined 2700 × 1600 mm L-S-R arrangement and account for four closed latch assemblies. The before plate is labelled F01 Oat and the after plate F02 Moss, with corresponding upholstery colours. Comparing the pair shows unchanged module shapes, cushion divisions and seam locations. Camera or lighting differences are allowed; altered geometry, order or hardware count fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-cover-service",
+      "requirementId": "R-six-cover-service",
+      "method": "visual",
+      "targetSlots": [
+        "joining-cover-service"
+      ],
+      "criteria": "Illustrations and labels locate two retained over-centre assemblies per seam at the specified rear-edge offsets. Routine joining uses hand-operated levers; the 4 mm hex key is identified for hardware replacement. The sequence releases and separates modules, lifts cushions, unzips cushion covers, supports the module for underside body-cover removal, refits the body cover, returns the module upright, refits covered cushions and reconnects. All three independent covers are identifiable. Combined steps are acceptable if the order remains clear.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-fabric-and-required-copy",
+      "requirementId": "R-six-fabric-and-required-copy",
+      "method": "visual",
+      "targetSlots": [
+        "fabric-family",
+        "joining-cover-service",
+        "module-overview"
+      ],
+      "criteria": "The family sheet contains swatches correctly mapped to F01 Oat #C7B9A5, F02 Moss #65705B and F03 Clay #A86E57, plus the common 70% polyester, 30% cotton weave, 360 g/m² weight and 30°C gentle wash with air drying. RELAY appears on all three target sheets; the complete cover message appears on the family and cover-service sheets. Shared fabric annotations are acceptable; missing records, incorrect associations or missing required copy fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-room-application",
+      "requirementId": "R-six-room-application",
+      "method": "visual",
+      "targetSlots": [
+        "room-b-oat"
+      ],
+      "criteria": "A furnished view and dimensioned plan agree on F01 Oat Arrangement B: separate L beside joined S-R, a 600 mm gap, a 3300 × 1600 mm overall footprint, and two engaged plus two retained parked assemblies. The supplied living-room drawing governs the 7 m × 4 m boundary, door swing and windows; the room has 2.7 m clear height. A dimensioned, unobstructed route at least 900 mm wide connects the actual door to the seating. Furniture styling may vary; relocated openings or a narrowed route fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-six-product-continuity",
+      "requirementId": "R-set-six-product-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "arrangement-a-oat",
+        "arrangement-a-moss",
+        "joining-cover-service",
+        "room-b-oat"
+      ],
+      "criteria": "Corresponding L, S and R modules retain the overview's upholstery profiles, cushion divisions, stitching and feet through cover replacement, servicing and room placement. Reconfiguration retains the complete module and service-part inventory; open connection hardware remains attached.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "module-overview"
+      ]
+    },
+    {
+      "id": "set-six-fabric-continuity",
+      "requirementId": "R-set-six-fabric-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "arrangement-a-oat",
+        "arrangement-a-moss",
+        "room-b-oat"
+      ],
+      "criteria": "The Oat and Moss applications use their family-sheet colour identities and shared weave while preserving the corresponding cover geometry.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "fabric-family"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-seat-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "existing-seat-module.png"
+      ],
+      "subjectSlots": [
+        "module-overview",
+        "arrangement-a-oat",
+        "arrangement-a-moss",
+        "room-b-oat"
+      ],
+      "notes": "Develop the upholstery details and fabric applications around these dimensions and the existing S module's rounded cushion corners and inset double stitching."
+    }
+  ]
+}

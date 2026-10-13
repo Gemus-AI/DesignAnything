@@ -1,0 +1,569 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-infovis-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "data",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "method-diagram",
+      "label": "Satellite comparison method diagram",
+      "description": "One landscape diagram of the retrieval, reconstruction and urban-minus-rural comparison method.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "daytime-results",
+      "label": "Daytime results and confidence intervals",
+      "description": "One landscape chart of global annual daytime clear-sky and all-sky estimates with confidence intervals.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "nighttime-results",
+      "label": "Nighttime results and confidence intervals",
+      "description": "One landscape chart of global annual nighttime clear-sky and all-sky estimates with confidence intervals.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "uncertainty-explainer",
+      "label": "Daytime difference uncertainty explainer",
+      "description": "One portrait explanation of the daytime difference, its confidence interval and additional uncertainty sources.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "public-explainer",
+      "label": "Public study findings explainer",
+      "description": "One portrait public graphic combining the four intensity estimates with the study scope and proposed cloud mechanism.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "a4-takeaway",
+      "label": "A4 illustrated study takeaway",
+      "description": "One A4 illustrated page combining the method, four intensity estimates, daytime difference and uncertainty explanation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "HEAT THROUGH CLOUDS",
+      "scope": {
+        "slots": [
+          "method-diagram",
+          "daytime-results",
+          "nighttime-results",
+          "uncertainty-explainer",
+          "public-explainer",
+          "a4-takeaway"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "temperature-descriptor",
+      "kind": "text-verbatim",
+      "text": "Land surface temperature",
+      "scope": {
+        "slots": [
+          "method-diagram",
+          "daytime-results",
+          "nighttime-results",
+          "uncertainty-explainer",
+          "public-explainer",
+          "a4-takeaway"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "publisher-masthead",
+      "kind": "text-verbatim",
+      "text": "CIVIC CLIMATE DESK",
+      "scope": {
+        "slots": [
+          "method-diagram",
+          "daytime-results",
+          "nighttime-results",
+          "uncertainty-explainer",
+          "public-explainer",
+          "a4-takeaway"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "HEAT THROUGH CLOUDS",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "publication-graphics-system",
+      "slots": [
+        "method-diagram",
+        "daytime-results",
+        "nighttime-results",
+        "uncertainty-explainer",
+        "public-explainer"
+      ],
+      "items": [
+        {
+          "item": "The five image roles use a coherent masthead and typography hierarchy consistent with the supplied publication style, with carrier-specific layout adaptations allowed.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Across all five images, observation-based estimates use directly labeled #D55E00 circles, reconstructed estimates use directly labeled #0072B2 diamonds, confidence intervals use black capped lines, and body text uses #111111 on #FFFFFF.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The daytime chart, nighttime chart and public explainer agree on category meanings, numerical records and the 0.00–1.50 °C intensity comparison scale.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The commission requires preservation of a publication system comprising a masthead, typography and evidence symbols, rather than consistency of a separately defined logo, product, character or space."
+    },
+    "brandToken": "HEAT THROUGH CLOUDS",
+    "carryThrough": {
+      "none": "The A4 document is a final takeaway, and no later deliverable is required to repeat facts extracted from it."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "method-diagram",
+      "daytime-results",
+      "nighttime-results",
+      "uncertainty-explainer",
+      "public-explainer"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge scientific novelty, photorealistic materials or lighting, or impose a visual identity beyond the supplied publication system."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "method-diagram",
+        "daytime-results",
+        "nighttime-results",
+        "uncertainty-explainer",
+        "public-explainer"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-method-diagram",
+      "requirementId": "R-format-method-diagram",
+      "method": "artifact-property",
+      "targetSlots": [
+        "method-diagram"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-daytime-results",
+      "requirementId": "R-format-daytime-results",
+      "method": "artifact-property",
+      "targetSlots": [
+        "daytime-results"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-nighttime-results",
+      "requirementId": "R-format-nighttime-results",
+      "method": "artifact-property",
+      "targetSlots": [
+        "nighttime-results"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-uncertainty-explainer",
+      "requirementId": "R-format-uncertainty-explainer",
+      "method": "artifact-property",
+      "targetSlots": [
+        "uncertainty-explainer"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-public-explainer",
+      "requirementId": "R-format-public-explainer",
+      "method": "artifact-property",
+      "targetSlots": [
+        "public-explainer"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-a4-takeaway",
+      "requirementId": "R-format-a4-takeaway",
+      "method": "artifact-property",
+      "targetSlots": [
+        "a4-takeaway"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "image-publication-copy",
+      "requirementId": "R-image-publication-copy",
+      "method": "visual",
+      "targetSlots": [
+        "method-diagram",
+        "daytime-results",
+        "nighttime-results",
+        "uncertainty-explainer",
+        "public-explainer"
+      ],
+      "criteria": "Each image visibly includes the three required identity phrases and the complete source credit Macau University of Science and Technology; Yang et al., 2024. Each also has a descriptive title specific to its subject, a readable °C unit and at least one useful reading annotation. Title and annotation wording may vary; missing, truncated or incorrect required copy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "method-evidence-route",
+      "requirementId": "R-method-evidence-route",
+      "method": "visual",
+      "targetSlots": [
+        "method-diagram"
+      ],
+      "criteria": "A connected diagram distinguishes satellite retrieval, cloud-related missing observations, reconstructed all-sky temperatures and the urban–rural comparison. It identifies Terra MODIS MOD11A2, GSHTD, 1 km, 2014–2016 and 639 urban clusters, and states that all available clear-sky pixels are retained. The calculation subtracts mean surrounding rural land surface temperature from mean urban land surface temperature. Layout and explanatory wording may vary; reversed subtraction, a disconnected process, missing identifiers or an implication of extra clear-sky screening fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "image-results-and-common-scale",
+      "requirementId": "R-image-results-and-common-scale",
+      "method": "visual",
+      "targetSlots": [
+        "daytime-results",
+        "nighttime-results",
+        "public-explainer"
+      ],
+      "criteria": "The daytime chart presents clear-sky 1.23 °C with endpoints 1.11–1.35 °C and reconstructed all-sky 1.12 °C with endpoints 1.00–1.24 °C. The nighttime chart presents clear-sky 1.31 °C with endpoints 1.26–1.36 °C and reconstructed all-sky 1.27 °C with endpoints 1.22–1.32 °C. The public explainer includes both pairs. These are identified as global annual mean surface heat-island intensities. All intensity plots use a linear 0.00–1.50 °C range with ticks at 0.00, 0.50, 1.00 and 1.50; plotted positions agree with the labels. Orientation and arrangement may vary. Swapped categories, omitted endpoints, incorrect numerical labels or inconsistent scales fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "daytime-uncertainty-explanation",
+      "requirementId": "R-daytime-uncertainty-explanation",
+      "method": "visual",
+      "targetSlots": [
+        "uncertainty-explainer"
+      ],
+      "criteria": "The explainer shows the daytime subtraction 1.23 − 1.12 = 0.11 °C and identifies 0.09–0.13 °C as the separately reported 95% confidence interval for that difference. It explains uncertainty around the mean and distinguishes temperature retrieval and reconstruction errors from the quantified interval. Any difference-detail axis uses the supplied 0.00–0.15 °C range and 0.05 °C tick steps. Accessible paraphrases are allowed; treating the interval as a range of individual temperatures, deriving it by subtracting the two intensity intervals, or claiming that it includes all pixel-level errors fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "image-evidence-symbols-and-scope",
+      "requirementId": "R-image-evidence-symbols-and-scope",
+      "method": "visual",
+      "targetSlots": [
+        "method-diagram",
+        "daytime-results",
+        "nighttime-results",
+        "uncertainty-explainer",
+        "public-explainer"
+      ],
+      "criteria": "Across the images, the masthead retains uppercase sans serif lettering and its black underline. Observation-based estimates use #D55E00 circles, reconstructed estimates use #0072B2 diamonds, and confidence intervals use black lines with perpendicular end caps. Each occurrence of an estimate symbol has a direct category label, and interval marks are identified as 95% confidence intervals. The public explainer links its findings to 639 urban clusters worldwide during 2014–2016 and attributes cloud-related missing-observation differences to the authors as a proposed explanation. Size and placement may adapt to the carrier; changing symbol meanings, relying only on a remote legend, omitting scope or presenting the mechanism as established causation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "image-carriers-and-grayscale",
+      "requirementId": "R-image-carriers-and-grayscale",
+      "method": "visual",
+      "targetSlots": [
+        "method-diagram",
+        "daytime-results",
+        "nighttime-results",
+        "uncertainty-explainer",
+        "public-explainer"
+      ],
+      "criteria": "The method and two results graphics use landscape projection proportions of 16:9 and keep meaningful content inside a 5% inset on every edge. The uncertainty and public explainers use 9:16 portrait proportions with the phone carrier's 5% inset. In grayscale, category identification remains readable through distinct shapes and direct text labels. Composition may vary within these boundaries; clipped content, inset violations, incorrect carrier orientation or dependence on hue alone fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "takeaway-publication-identity",
+      "requirementId": "R-takeaway-publication-identity",
+      "method": "content",
+      "targetSlots": [
+        "a4-takeaway"
+      ],
+      "criteria": "The takeaway visibly prints HEAT THROUGH CLOUDS, Land surface temperature, CIVIC CLIMATE DESK and the complete source credit Macau University of Science and Technology; Yang et al., 2024. It includes its own descriptive title, a °C unit within the illustrated content and a useful reading annotation. Its masthead uses uppercase sans serif text with a black rule underneath. Evidence graphics retain directly labeled #D55E00 circles for observation-based estimates, directly labeled #0072B2 diamonds for reconstructed estimates, and black capped lines identified as 95% confidence intervals. Body text is #111111 on #FFFFFF. Flexible layout is allowed; omissions, incorrect source wording or altered evidence encodings fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ]
+    },
+    {
+      "id": "takeaway-method-results-and-uncertainty",
+      "requirementId": "R-takeaway-method-results-and-uncertainty",
+      "method": "content",
+      "targetSlots": [
+        "a4-takeaway"
+      ],
+      "criteria": "One illustrated page combines a clear-sky retrieval to all-sky reconstruction method summary, the urban-minus-rural land surface temperature definition, and both global annual comparisons. Daytime clear-sky is 1.23 °C with 1.11–1.35 °C and all-sky is 1.12 °C with 1.00–1.24 °C; nighttime clear-sky is 1.31 °C with 1.26–1.36 °C and all-sky is 1.27 °C with 1.22–1.32 °C. Intensity comparisons use 0.00–1.50 °C with ticks at 0.00, 0.50, 1.00 and 1.50. The page shows 1.23 − 1.12 = 0.11 °C and the separately reported difference interval 0.09–0.13 °C at 95% confidence. It explains uncertainty around a mean and separately identifies retrieval and reconstruction errors. Any difference-detail axis follows the supplied 0.00–0.15 °C scale with 0.05 °C tick steps. Findings explicitly concern 639 urban clusters worldwide during 2014–2016, and cloud-related missing observations are described as the authors' proposed mechanism. Concise wording and layout may vary; omitted required content, wrong values, misleading uncertainty interpretation or unsupported causal certainty fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ]
+    },
+    {
+      "id": "takeaway-carrier-and-grayscale",
+      "requirementId": "R-takeaway-carrier-and-grayscale",
+      "method": "content",
+      "targetSlots": [
+        "a4-takeaway"
+      ],
+      "criteria": "The single portrait takeaway follows the 210 mm × 297 mm A4 carrier and places meaningful content at least 12 mm from every page edge. Its category symbols remain distinguishable by shape and direct labels in grayscale. Interior composition may vary; content entering the required margins, clipping or category distinctions that disappear without color fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ]
+    },
+    {
+      "id": "set-publication-graphics-system",
+      "requirementId": "R-set-publication-graphics-system",
+      "method": "visual",
+      "targetSlots": [
+        "method-diagram",
+        "daytime-results",
+        "nighttime-results",
+        "uncertainty-explainer",
+        "public-explainer"
+      ],
+      "criteria": "The five image roles use a coherent masthead and typography hierarchy consistent with the supplied publication style, with carrier-specific layout adaptations allowed. Across all five images, observation-based estimates use directly labeled #D55E00 circles, reconstructed estimates use directly labeled #0072B2 diamonds, confidence intervals use black capped lines, and body text uses #111111 on #FFFFFF. The daytime chart, nighttime chart and public explainer agree on category meanings, numerical records and the 0.00–1.50 °C intensity comparison scale.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-03/03-study-records.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ]
+}

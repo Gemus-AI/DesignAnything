@@ -1,0 +1,591 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ui-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "digital-product",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "catalogue-a",
+      "label": "A — Stitch catalogue and preview",
+      "description": "One finished catalogue screen showing all three stitches and the applied S01 Straight configuration in Standby.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "draft-editor-b",
+      "label": "B — Draft parameter editing",
+      "description": "One finished editing screen showing the default S02 Zigzag draft, its preview and the separately retained applied S01 configuration.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "apply-review-c",
+      "label": "C — Pre-Apply review",
+      "description": "One finished review screen comparing the applied S01 tuple with the S02 draft and showing Apply pressed before release.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "running-d",
+      "label": "D — Running status",
+      "description": "One finished Running screen showing the applied S02 configuration, a 450 spm speed limit and 126 recorded stitches.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "paused-draft-e",
+      "label": "E — Paused with pending changes",
+      "description": "One finished Paused screen showing the applied S02 tuple beside its revised draft, 126 recorded stitches and the pending-edit resume condition.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "thread-alert-f",
+      "label": "F — Upper thread alert",
+      "description": "One finished Inhibited screen showing T01, the preserved S02 configuration, 139 recorded stitches and disabled Acknowledge.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "STITCHLINE",
+      "scope": {
+        "slots": [
+          "catalogue-a",
+          "apply-review-c"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "review-wording",
+      "kind": "text-verbatim",
+      "text": "Review",
+      "scope": {
+        "slots": [
+          "draft-editor-b"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "apply-wording",
+      "kind": "text-verbatim",
+      "text": "Apply",
+      "scope": {
+        "slots": [
+          "apply-review-c",
+          "running-d",
+          "paused-draft-e"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "back-wording",
+      "kind": "text-verbatim",
+      "text": "Back",
+      "scope": {
+        "slots": [
+          "apply-review-c"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "discard-wording",
+      "kind": "text-verbatim",
+      "text": "Discard",
+      "scope": {
+        "slots": [
+          "draft-editor-b",
+          "apply-review-c",
+          "paused-draft-e"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "acknowledge-wording",
+      "kind": "text-verbatim",
+      "text": "Acknowledge",
+      "scope": {
+        "slots": [
+          "thread-alert-f"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "thread-alert-message",
+      "kind": "text-verbatim",
+      "text": "Upper thread not detected",
+      "scope": {
+        "slots": [
+          "thread-alert-f"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "STITCHLINE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "stitch-preview-language",
+      "slots": [
+        "catalogue-a",
+        "draft-editor-b",
+        "apply-review-c",
+        "paused-draft-e"
+      ],
+      "items": [
+        {
+          "item": "Repeated stitch diagrams retain recognisable straight or alternating zigzag path identities across catalogue, editing and review views.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Preview spacing uses one common illustrative scale, with default S03 visibly longer-spaced than default S01, or independently scaled diagrams carry the exact caption 'Diagram — not to scale'.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The commission concerns an interface and stitch-diagram language rather than an object tracked by the supported identity subjects; diagram identities and scale are covered by visual checks and sets."
+    },
+    "brandToken": "STITCHLINE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "catalogue-a",
+      "draft-editor-b",
+      "apply-review-c",
+      "running-d",
+      "paused-draft-e",
+      "thread-alert-f"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design-quality review must not judge enclosure redesign, physical-control styling, or unobservable controller implementation."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "catalogue-a",
+        "draft-editor-b",
+        "apply-review-c",
+        "running-d",
+        "paused-draft-e",
+        "thread-alert-f"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-catalogue-a",
+      "requirementId": "R-format-catalogue-a",
+      "method": "artifact-property",
+      "targetSlots": [
+        "catalogue-a"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-draft-editor-b",
+      "requirementId": "R-format-draft-editor-b",
+      "method": "artifact-property",
+      "targetSlots": [
+        "draft-editor-b"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-apply-review-c",
+      "requirementId": "R-format-apply-review-c",
+      "method": "artifact-property",
+      "targetSlots": [
+        "apply-review-c"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-running-d",
+      "requirementId": "R-format-running-d",
+      "method": "artifact-property",
+      "targetSlots": [
+        "running-d"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-paused-draft-e",
+      "requirementId": "R-format-paused-draft-e",
+      "method": "artifact-property",
+      "targetSlots": [
+        "paused-draft-e"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-thread-alert-f",
+      "requirementId": "R-format-thread-alert-f",
+      "method": "artifact-property",
+      "targetSlots": [
+        "thread-alert-f"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "readability-and-state-communication",
+      "requirementId": "R-readability-and-state-communication",
+      "method": "visual",
+      "targetSlots": [
+        "catalogue-a",
+        "draft-editor-b",
+        "apply-review-c",
+        "running-d",
+        "paused-draft-e",
+        "thread-alert-f"
+      ],
+      "criteria": "Each view has a landscape composition with readable, unclipped interface content. Body text must meet 4.5:1 contrast and large text and icons 3:1; judge contrasting foreground/background pairs rather than aesthetic preference. Machine and action states need explicit words plus a visible treatment, so color alone fails. A and C must visibly carry the product name. Do not assess exact pixel dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "catalogue-drafts-and-component-examples",
+      "requirementId": "R-catalogue-drafts-and-component-examples",
+      "method": "visual",
+      "targetSlots": [
+        "catalogue-a",
+        "draft-editor-b",
+        "apply-review-c",
+        "paused-draft-e"
+      ],
+      "criteria": "A makes all three named stitch records available and identifies S01 as applied. Straight previews have aligned punctures on a straight path; Zigzag alternates left and right. At a common illustrative scale, default S03 spacing is visibly longer than default S01 spacing. Diagrams using independent scales must carry 'Diagram — not to scale'. B, C and E explicitly label previewed configurations as drafts and separately display all four applied fields. B's Review looks enabled and unpressed; C's Apply is visibly pressed before release, with S01 still applied and acknowledgement pending. C includes Back and Discard. Styling may vary while these meanings remain unambiguous.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "snapshot-records-and-parameter-domain",
+      "requirementId": "R-snapshot-records-and-parameter-domain",
+      "method": "visual",
+      "targetSlots": [
+        "catalogue-a",
+        "draft-editor-b",
+        "apply-review-c",
+        "running-d",
+        "paused-draft-e",
+        "thread-alert-f"
+      ],
+      "criteria": "Read each screen against its snapshot: A has applied S01 Straight, 2.5 mm length, 0.0 mm width, 450 spm, Standby; B and C retain that applied tuple beside draft S02 Zigzag, 1.5 mm, 5.0 mm, 450 spm, Standby; D has applied S02 Zigzag, 1.5 mm, 5.0 mm, 450 spm, Running, needle down, 126 recorded stitches; E retains D's applied tuple beside draft S02 Zigzag, 2.0 mm, 4.5 mm, 300 spm, Paused, needle up, 126 recorded stitches; F retains D's applied tuple with Inhibited, needle down, T01 active and 139 recorded stitches. A, B and C have needle-up and no-alert conditions; D and E have no active alert. B and E must communicate 0.5 mm adjustment increments and valid limits for the displayed stitch. Any exposed catalogue ranges must use inclusive S01 length 0.5–4.0 mm, S02 length 0.5–3.0 mm and width 1.0–6.0 mm, and S03 length 4.0–5.0 mm. Straight-stitch widths remain noneditable at 0.0 mm. Speed options are limited to 300, 450 and 600 spm. Any shown selection defaults must be S01 2.5/0.0/450, S02 1.5/5.0/450 and S03 4.5/0.0/300. Meaningful abbreviations are allowed, but altered IDs, stitch names, numerical precision, units or field associations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "pending-edits-and-action-gating",
+      "requirementId": "R-pending-edits-and-action-gating",
+      "method": "visual",
+      "targetSlots": [
+        "draft-editor-b",
+        "apply-review-c",
+        "running-d",
+        "paused-draft-e"
+      ],
+      "criteria": "B, C and E visibly identify an unapplied change and offer Discard with semantics that restore stitch ID, length, width and speed together. C and E communicate valid values, needle up and clear alerts alongside Standby or Paused and an available Apply; C's pressed appearance must remain distinguishable from disabled. D visibly disables parameter editing and Apply, identifies Running as the blocker, and preserves usable viewing and navigation. E explicitly explains that the draft must be applied or discarded before the physical Start/Pause button can resume movement. Copy or controls implying partial discard or resume with unresolved edits fail; hidden interaction behavior is not inferred from a static view.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "motion-counts-and-branch-continuity",
+      "requirementId": "R-motion-counts-and-branch-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "running-d",
+        "paused-draft-e",
+        "thread-alert-f"
+      ],
+      "criteria": "D labels 450 spm as a configured limit, not an instantaneous measurement, and gives 126 the meaning of stitches recorded during the current run. E retains that count despite its pending parameter changes. F shows 139 and D's acknowledged S02 configuration, without inheriting E's 2.0 mm/4.5 mm/300 spm draft. Running, Paused and Inhibited are clearly machine-motion states, visually and verbally distinct from applied or draft settings. Different layouts are acceptable; implying that changed settings reset the run count or that F follows E's draft fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "thread-alert-and-recovery",
+      "requirementId": "R-thread-alert-and-recovery",
+      "method": "visual",
+      "targetSlots": [
+        "thread-alert-f"
+      ],
+      "criteria": "F visibly presents error code T01 and the required message, indicates stopped movement through Inhibited, and disables Acknowledge because the sensor still reports missing upper thread. Recovery text must make controller-reported clearance the condition for enabling Acknowledge, explain that acknowledgement returns to Paused while preserving the complete applied configuration, and identify physical Start/Pause as the subsequent resume action. Wording may be concise; automatic restart, immediate acknowledgement while missing thread persists, or loss of the applied tuple fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "hardware-boundary-and-language",
+      "requirementId": "R-hardware-boundary-and-language",
+      "method": "visual",
+      "targetSlots": [
+        "catalogue-a",
+        "draft-editor-b",
+        "apply-review-c",
+        "running-d",
+        "paused-draft-e",
+        "thread-alert-f"
+      ],
+      "criteria": "Interface labels and explanatory copy are in English. Start/resume instructions refer to the physical Start/Pause button; no touchscreen action, including Apply or Acknowledge, claims to initiate needle motion or replace the physical power switch. Any visible hardware context must respect the existing enclosure, screen opening, one Start/Pause button and separate power switch defined by panel-layout.png. Screen content stays within the depicted opening; a screen-only export does not need to add a housing illustration. Do not evaluate exact canvas dimensions or invent detailed panel geometry absent from the available reference.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "draft-acknowledgement-and-motion-separation",
+      "requirementId": "R-draft-acknowledgement-and-motion-separation",
+      "method": "visual",
+      "targetSlots": [
+        "catalogue-a",
+        "draft-editor-b",
+        "apply-review-c",
+        "running-d",
+        "paused-draft-e",
+        "thread-alert-f"
+      ],
+      "criteria": "Across A–F, labels, tuple placement and action copy distinguish proposed settings, the last controller-acknowledged complete settings, and current motion. Selection, parameter edits and preview changes must not be depicted as changing applied settings or starting movement. B and C retain the same S01 applied tuple until acknowledgement; D shows the acknowledged S02 tuple and a subsequent physical start. Any displayed explanation of Apply must submit the full draft, make acknowledgement the point of commitment, clear pending status only afterward, and retain Standby or Paused until physical start/resume. Any displayed physical-control guidance must keep start/resume blocked during an alert or unresolved draft and describe Start/Pause during Running as a pause request. Judge visible evidence and contradictions, without requiring additional snapshots or proof of executable controller behavior.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-stitch-preview-language",
+      "requirementId": "R-set-stitch-preview-language",
+      "method": "visual",
+      "targetSlots": [
+        "catalogue-a",
+        "draft-editor-b",
+        "apply-review-c",
+        "paused-draft-e"
+      ],
+      "criteria": "Repeated stitch diagrams retain recognisable straight or alternating zigzag path identities across catalogue, editing and review views. Preview spacing uses one common illustrative scale, with default S03 visibly longer-spaced than default S01, or independently scaled diagrams carry the exact caption 'Diagram — not to scale'.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ]
+}

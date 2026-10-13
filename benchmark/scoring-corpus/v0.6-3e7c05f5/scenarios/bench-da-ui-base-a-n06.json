@@ -1,0 +1,260 @@
+{
+  "id": "bench-da-ui-base-a-n06",
+  "title": "WARDROBE DAY — A personal wardrobe and everyday outfit planner, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "family-a"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "UIUX",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# WARDROBE DAY — shared client records\n\n## Product and audience\n\n- Product name: WARDROBE DAY.\n- Audience: young adults managing existing garments, exploring personal style and planning outfits for everyday occasions.\n- Product activities: manual garment entry and editing; wardrobe browsing; outfit assembly and saving; occasion planning; availability and conflict review.\n- Supplied content: seven garment images, entered garment fields, outfit memberships, occasions, preferences and one planning outlook.\n- Record labels: human-readable garment, outfit and event names.\n- Internal IDs: source-record identifiers; optional discreet interface metadata.\n- Navigation alternatives: garment-led, outfit-led and occasion-led.\n\n## Display and fixed wording\n\n| Property | Value |\n| --- | --- |\n| Phone orientation | Portrait |\n| Phone logical canvas | 402 × 874 pt |\n| Phone safe areas | Top 62 pt; bottom 34 pt; left 0 pt; right 0 pt |\n| Tablet orientation | Landscape |\n| Tablet logical canvas | 1024 × 768 pt |\n| Tablet safe areas | Top, bottom, left and right 24 pt |\n| Interface platform | Platform-neutral |\n| Main wardrobe identity | WARDROBE DAY |\n| Main wardrobe total | 7 items |\n| Reference-time available count | 5 available |\n| Outfit-saving action | Save outfit |\n| Plan-confirmation action | Confirm plan |\n| Availability labels | Available; In laundry; Loaned |\n| Weather context label | Planning outlook |\n| Body-text contrast | At least 4.5:1 |\n| Large-text and meaningful-icon contrast | At least 3:1 |\n| Status expression | Colour plus text and symbols |\n| Component states | Default; pressed; disabled; error |\n| Outer-layer suggestion states | Suggested; awaiting confirmation; applied |\n\n## Image identity\n\n- Garment records: seven, including two matching footwear pairs.\n- Footwear counting unit: one matching pair equals one wardrobe record.\n- Identity sources: t01.png, t02.png, b01.png, b02.png, f01.png, f02.png, j01.png.\n- Fixed visual attributes: each item's colour, construction, garment parts, orientation and existing surface details.\n- Final garment representations: supplied original images, with uniform scaling, rectangular framing that retains identifying construction, or background removal around the intact item.\n- Process representations: source images or labelled placeholders.\n- Outfit memberships: unarranged data; composition layout and navigation remain open.\n- Garment material, fit and performance properties: unspecified beyond the visible descriptions in the register.\n\n## Reference time and interval rules\n\n- Reference time: Monday 14 September 2026, 08:00, UTC+08:00.\n- Calendar time zone: UTC+08:00 for all displayed dates and times.\n- Unavailable windows: start-inclusive, end-exclusive.\n- T02 unavailable through the interval ending 14 September 2026, 18:00.\n- B02 unavailable through the interval ending 15 September 2026, 12:00.\n- Reference-time available records: T01, B01, F01, F02, J01; count 5.\n- Future-event availability basis: overlap between the proposed event interval and each item's recorded unavailable intervals.\n- Item-detail history: original laundry and loan records remain attached to the garment after planning.\n\n## Outfit and reservation rules\n\n- Complete planning membership: exactly one top, one bottom and one footwear record; one outerwear record optional.\n- Incomplete membership: editable draft; plan confirmation disabled.\n- Saved outfit membership: available and currently unavailable garments permitted.\n- Viewing and editing saved outfits: available regardless of current garment availability.\n- Unavailable garment overlapping the proposed event: blocked confirmation; editable draft retained with its members and original availability records.\n- Reservation conflict: a shared garment ID and overlapping confirmed-event intervals.\n- Touching interval endpoints: compatible reservations.\n- Different outfit names with shared garments: the same interval-overlap rule.\n- Conflict information: affected garment names, conflicting event name and time, retained draft, garment-editing route or explicitly permitted alternative time.\n- Fixed events and existing plans: their recorded times and memberships persist through the Rain walk flow.\n- Garment laundry and loan state after outfit use: original records persist until a separate manual change.\n\n## Preferences and outlook\n\n- User preference: reuse existing garments and review conflicts before confirmation.\n- Repeat-wear advice: enabled.\n- Repeat condition: identical complete garment set on a different date within the preceding seven calendar days.\n- Repeat effect: advisory; acknowledgement permits continuation.\n- Same-date reuse in non-overlapping intervals: outside the repeat-advice condition.\n- Outer-layer preference: dismissible suggestion for the supplied light-rain outlook.\n- Outerwear membership: optional.\n- Outer-layer interaction: suggestion, user confirmation pending, then applied after manual jacket addition; dismissal is available.\n- Planning outlook date: Monday 14 September 2026.\n- Planning outlook temperature: 18°C.\n- Planning outlook condition: light rain.\n- Weather context: supplied planning outlook for this date.\n- Garment performance: unspecified.\n\n## Garment register\n\n| ID | Name | Image | Category | Colour | Visible construction | Reference-time status | Note | Unavailable interval |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| T01 | Navy Oxford shirt | t01.png | top | navy blue | Long sleeves, pointed collar, button front and one chest pocket | available | Hang after wearing. | None recorded |\n| T02 | Cream knit sweater | t02.png | top | cream | Long sleeves, crew neck and ribbed neck, cuffs and hem | laundry | Recorded laundry window ends Monday at 18:00. | [2026-09-13T20:00:00+08:00, 2026-09-14T18:00:00+08:00) |\n| B01 | Charcoal straight trousers | b01.png | bottom | charcoal grey | Full-length straight legs, waistband, belt loops and front fly | available | Fold along the leg. | None recorded |\n| B02 | Indigo straight jeans | b02.png | bottom | indigo blue | Full-length straight denim legs, visible front pockets and small coin pocket; intact fabric | loaned | Loaned to a housemate; recorded return Tuesday at 12:00. | [2026-09-12T09:00:00+08:00, 2026-09-15T12:00:00+08:00) |\n| F01 | White low-top sneakers | f01.png | footwear | white | One matching pair, low tops, laces and rubber soles | available | One pair is one wardrobe record. | None recorded |\n| F02 | Black penny loafers | f02.png | footwear | black | One matching black leather-look pair, low heels and simple penny straps | available | One pair is one wardrobe record. | None recorded |\n| J01 | Olive hooded jacket | j01.png | outerwear | olive green | Lightweight appearance, attached hood, front zip and two lower front pockets | available | Optional outer layer; waterproof performance unspecified. | None recorded |\n\n## Outfit membership\n\n| ID | Name | Garment IDs | Recorded state |\n| --- | --- | --- | --- |\n| O01 | Navy weekday | T01, B01, F02 | Saved before the shown flow |\n| O02 | Easy weekend | T02, B02, F01 | Saved before the shown flow; currently unavailable garments retained |\n| O03 | Rain walk | T01, B01, F01, J01 | Supplied edit outcome; saved after successful confirmation |\n\n## Event register before the shown flow\n\n| ID | Name | Date | Time | Offset | Type | Outfit | State |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| E01 | Studio review | 2026-09-14 | 09:00–10:00 | UTC+08:00 | indoor work meeting | O01 | Confirmed before and after the flow |\n| E02 | Coffee catch-up | 2026-09-14 | 09:30–10:30 | UTC+08:00 | casual visit with a short outdoor walk | None yet | Initial unplanned draft; explicitly permitted alternative 11:00–12:00 |\n| E03 | Bookshop afternoon | 2026-09-16 | 14:00–15:00 | UTC+08:00 | casual indoor visit | O02 | Future plan saved before the flow |\n| E04 | Portfolio coffee | 2026-09-15 | 18:00–19:00 | UTC+08:00 | casual work conversation | None yet | Unplanned; separate repeat-wear preview |\n\n## Main interaction snapshots\n\n| Snapshot | Membership and event | State and result |\n| --- | --- | --- |\n| Wardrobe and T02 detail | Reference-time garment records | Seven total; five available; original laundry and loan records |\n| D03 editor | Rain walk: T01 + B01 + F01 + J01; E02 at 09:30–10:30 | J01 manually added; suggestion applied; unsaved draft |\n| D03 reservation conflict | E02 at 09:30–10:30 overlaps E01 at 09:00–10:00 | Exactly T01 and B01 reserved by E01; F01 and J01 free of that reservation; confirmation blocked; D03 retained |\n| E02 alternative selection | User selects 11:00–12:00 | Compatible with E01; all four D03 garments available for the event |\n| Successful confirmation | O03 saved as Rain walk; E02 confirmed at 11:00–12:00 | Four garment members retained; E01 and E03 unchanged; laundry and loan intervals unchanged |\n| Main calendar after confirmation | E01 with O01; E02 with O03; E03 with O02 | E01 14 September 09:00–10:00; E02 14 September 11:00–12:00; E03 16 September 14:00–15:00 |\n| Rain walk detail after confirmation | O03: T01 + B01 + F01 + J01 | Saved outfit; E02 confirmed on 14 September at 11:00–12:00 |\n\n## Additional recorded states\n\n| State | Source records | Result |\n| --- | --- | --- |\n| Available-only filter | T01, B01, F01, F02, J01 | Five visible records; wardrobe total seven |\n| Search | Query: purple | Zero matching records; query-clearing action; existing wardrobe retained |\n| B02 detail | Original loan interval; Tuesday 15 September 12:00 return | Loaned at reference time |\n| T01 manual edit | Original note: Hang after wearing. Edited note: Steam collar before use. | Unsaved note-only change; name, category, colour, image and availability retained; total seven |\n| D04 incomplete editor | E02; T01 + B01 | Missing footwear; optional outerwear; editable draft; confirmation disabled |\n| D05 laundry conflict | E02 at 11:00–12:00; T02 + B01 + F01 | Complete membership; T02 in laundry until 14 September 18:00; confirmation blocked; draft retained |\n| O02 future detail | T02 + B02 + F01; E03 on 16 September 14:00–15:00 | Both unavailable windows end before E03; event-time availability clear |\n| Empty day | Thursday 17 September 2026 | Zero events; occasion-creation action; other dates and wardrobe retained |\n| E04 repeat preview | O01 proposed for Tuesday 15 September 18:00–19:00; identical set used by E01 on 14 September | Advisory awaiting acknowledgement; garments available; reservation intervals compatible; proposed plan unsaved |\n| T01 discard confirmation | Unsaved Steam collar before use. replacing Hang after wearing. | Dialog choices: keep editing or discard; discard outcome restores original note and retains saved outfits, calendar and garment identity |\n\n## Compact state-components examples\n\n| Group | Recorded example |\n| --- | --- |\n| Availability badges | Available; In laundry; Loaned; labelled symbols; suggested, awaiting-confirmation and applied outer-layer indicators |\n| Search zero results | purple; zero matches; clear-query action |\n| Reservation block | D03; T01 and B01 reserved by E01 09:00–10:00; disabled Confirm plan; error time field |\n| Repeat advisory | E04; O01 set previously used by E01 on 14 September; acknowledgement and continuation |\n| Discard dialog | T01 unsaved note; keep editing or discard |\n| Successful confirmation | O03 and E02 at 11:00–12:00; default and pressed Confirm plan component samples |\n\n- Example grouping: six separate labelled groups.\n- Interface entity states: unsaved draft; saved outfit; confirmed calendar plan.\n- Expanded views: additional instances of wardrobe browsing, garment editing, outfit editing, calendar planning and existing feedback states.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# WARDROBE DAY — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | direction-garments | Garment-led direction | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 2 | direction-outfits | Outfit-led direction | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | direction-occasions | Occasion-led direction | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 4 | selection-specification | Selection and interaction specification | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 5 | wardrobe-main | Complete phone wardrobe | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | sweater-detail | Cream knit sweater detail | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | rain-walk-editor | Rain walk draft editor | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | calendar-confirmed | Phone calendar after confirmation | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | rain-walk-detail | Saved Rain walk detail | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | state-components | Six-group state-components sheet | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | reservation-conflict | D03 reservation conflict | 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | plan-confirmation | Rain walk plan confirmation | 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | wardrobe-available | Available-only phone wardrobe | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 14 | jeans-detail | Indigo straight jeans detail | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 15 | shirt-note-edit | Unsaved Navy Oxford shirt note edit | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 16 | incomplete-outfit | D04 incomplete outfit editor | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 17 | laundry-conflict | D05 laundry conflict editor | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 18 | easy-weekend-detail | Easy weekend future-plan detail | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 19 | calendar-empty-day | Thursday 17 September empty day | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 20 | repeat-preview | Portfolio coffee repeat preview | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 21 | tablet-wardrobe | Complete tablet wardrobe | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 22 | tablet-calendar | Tablet calendar after confirmation | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 23 | planning-flow-video | Twelve-second planning flow | 14, 24 | Format: video; 5 to 15 seconds. Stage: final. |\n| 24 | presentation | Product interaction presentation | 14, 24 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: t01.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: t02.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: b01.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: b02.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: f01.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-6",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: f02.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-7",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: j01.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-8",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: phone-safe-area.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-9",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: tablet-safe-area.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-10",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: wardrobe-planning-scene.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "WARDROBE DAY | A personal wardrobe and everyday outfit planner\n\nWe are commissioning WARDROBE DAY for young adults who want to use the clothes they already own and decide what to wear before the day begins. The app connects a seven-item wardrobe, saved outfits and everyday occasions. Garment images and fields are supplied; adding and editing garments are manual actions. Each footwear pair counts as one item. At Monday 14 September 2026, 08:00, UTC+08:00, five items are available; Cream knit sweater is in laundry until 18:00 that day, and Indigo straight jeans is loaned until Tuesday 15 September at 12:00. Print \"WARDROBE DAY\", \"7 items\" and \"5 available\" on the main wardrobe screen. Use \"Save outfit\" for saving an outfit and \"Confirm plan\" for committing it to an occasion. Availability labels are \"Available\", \"In laundry\" and \"Loaned\". Navigation and visual direction are open.\n\nThe central task is planning Rain walk for Coffee catch-up. Its unsaved draft contains Navy Oxford shirt, Charcoal straight trousers, White low-top sneakers and Olive hooded jacket. The initial 09:30–10:30 time overlaps Studio review at 09:00–10:00; the shirt and trousers are the two reserved items. The user chooses the permitted 11:00–12:00 alternative, saves Rain walk and confirms Coffee catch-up. A complete outfit has one top, one bottom and one footwear record, with optional outerwear. Availability is assessed over the occasion's interval. The planning outlook for 14 September is 18°C and light rain; label it \"Planning outlook\" beside the dismissible outer-layer suggestion, with distinct suggested, awaiting-confirmation and applied states. Use platform-neutral phone screens at a logical 402 × 874 pt, with top and bottom safe areas of 62 pt and 34 pt. Landscape tablet screens, where a delivery section requests them, use 1024 × 768 pt with 24 pt safe areas on all four sides. Body text contrast is at least 4.5:1; large text and meaningful icons are at least 3:1. Availability and feedback combine colour with text and symbols.\n\nAudience: the product owner and interface engineering team, deciding the first-release navigation and the editing-to-calendar interaction.\n\nInputs (attached): 01-client-facts.en.md contains the garment register, outfit memberships, event records, preferences and interaction states. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. phone-safe-area.png is the constraint drawing for the phone canvas and safe areas. tablet-safe-area.png is the constraint drawing for the tablet canvas and safe areas. t01.png is the fixed identity image for Navy Oxford shirt. t02.png is the fixed identity image for Cream knit sweater. b01.png is the fixed identity image for Charcoal straight trousers. b02.png is the fixed identity image for Indigo straight jeans. f01.png is the fixed identity image for the White low-top sneakers pair. f02.png is the fixed identity image for the Black penny loafers pair. j01.png is the fixed identity image for Olive hooded jacket. wardrobe-planning-scene.png provides atmosphere reference for choosing clothes beside a calendar.\n\nDeliverables:\n1. One main wardrobe screen with all seven garments, category browsing, availability labels and a manual garment-entry action\n2. One Cream knit sweater detail screen with its garment fields, original note, laundry interval and manual-edit action\n3. One Rain walk editor screen with the four-member unsaved D03 draft, the applied outer-layer suggestion and outfit-saving and planning controls\n4. One calendar screen after confirmation, showing Studio review, Coffee catch-up and Bookshop afternoon with their outfits and times\n5. One saved Rain walk detail screen with its four garment members and confirmed Coffee catch-up appointment at 11:00–12:00\n6. One finished state-components sheet with six labelled groups: availability badges, the purple search zero-result state, the D03 reservation block, the E04 repeat advisory, the T01 discard dialog and the successful O03/E02 confirmation\n\nAcceptance:\n- The wardrobe screen prints WARDROBE DAY, 7 items and 5 available, with seven supplied garment identities and each footwear pair counted once; the sweater detail retains the laundry interval from 13 September 2026, 20:00 to 14 September, 18:00, UTC+08:00.\n- The editor and Rain walk detail retain T01 + B01 + F01 + J01 and use Save outfit and Confirm plan for their respective actions. The editor identifies an unsaved draft and an applied jacket suggestion; the detail identifies a saved outfit and confirmed appointment. The editor also carries Planning outlook, 18°C and light rain.\n- The calendar and Rain walk detail show Coffee catch-up on 14 September at 11:00–12:00. The calendar retains Studio review with Navy weekday at 09:00–10:00 on 14 September and Bookshop afternoon with Easy weekend at 14:00–15:00 on 16 September.\n- The state-components sheet contains all six named groups. Its reservation block identifies only Navy Oxford shirt and Charcoal straight trousers against Studio review, 09:00–10:00, and preserves D03. Its repeat advisory identifies Navy weekday's 14 September use and Portfolio coffee on 15 September, 18:00–19:00, with an acknowledgement action; its purple search offers query clearing; its discard dialog offers continued editing or discarding the change from \"Hang after wearing.\" to \"Steam collar before use.\".\n- The state-components sheet shows default and pressed Confirm plan controls in the successful-confirmation group, a disabled Confirm plan control and an error time field in the reservation group, and Available, In laundry and Loaned badges. Its success group names Rain walk, Coffee catch-up and 11:00–12:00.\n- All five full screens use the 402 × 874 pt phone canvas and 62 pt top / 34 pt bottom safe areas. Those screens and the state-components sheet meet the 4.5:1 body-text and 3:1 large-text/icon contrast values, use labelled status symbols, and preserve the supplied garments' colours and construction.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/t01.png",
+      "nodeId": "provided-image-1",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "a92190af26757a98696d5a7eaf7077102d0f3b0ca8d38714692ff97a20ad78bd"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/t02.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "e71dd11a6d9860b24339d5f8e431bf5219e9e74dc4a1fd532a93984253fcf2b1"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/b01.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "6d9309422fa2fac643702baa5c0dfad71f74c56f0e62aff828c6eab0f926af32"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/b02.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "3bb5a342eeb359eb7b0e3792c21c73255312b8814999b6b771ce1bc7062ddf5c"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/f01.png",
+      "nodeId": "provided-image-5",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "a879ac8b2b25d0c90f9c0421ff0e97cc6622482217f3aea7d34cb4cc185b5b3f"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/f02.png",
+      "nodeId": "provided-image-6",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "fde8eaaea16e8facc1e0387a3cb21a918f1bf30a2223536bc5dad91a84c71661"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/j01.png",
+      "nodeId": "provided-image-7",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "09554757f9ea4d5a1919e3120a1924cf6190a1a2d689489864cdfc50f85c40be"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/phone-safe-area.png",
+      "nodeId": "provided-image-8",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "9f81ff101d1f4b47f4cc21be56e7ccf45cad499d5ffb019eb7183ba2526e8010"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/tablet-safe-area.png",
+      "nodeId": "provided-image-9",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "8801c78dc383c0239f99ad487c498b303ba3c52969444b96b7b5d4373fe1c97e"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-a-n06/wardrobe-planning-scene.png",
+      "nodeId": "provided-image-10",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "70928827583cfc8f7cc5cf03038c27f0c3fcf94c5a33d44790349eb10b2d82fd"
+    }
+  ]
+}

@@ -1,0 +1,571 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-exhibition-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "complete-floor-plan",
+      "label": "Complete floor and visitor-flow plan",
+      "description": "One dimensioned exhibition floor plan with exhibit records, visitor routes, retail and operating reservations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "complete-section",
+      "label": "Coordinated elevation, transverse section and kit schedule",
+      "description": "One coordinated elevation and transverse section sheet with interpretation, activity, retail, installation heights and the kit schedule.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "perspective-c1",
+      "label": "Visitor perspective C1",
+      "description": "One complete exhibition-shop perspective from C1 with the entrance wording and existing character identity.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "perspective-c2",
+      "label": "Visitor perspective C2",
+      "description": "One complete exhibition-shop perspective from C2 with the entrance wording and existing character identity.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "open-state",
+      "label": "Open operating-state sheet",
+      "description": "One open-state plan and detail sheet with visitors, staff, queue positions and the token reset arrangement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "closed-state",
+      "label": "Closed operating-state sheet",
+      "description": "One closed-state plan and detail sheet with exhibit covers, locked stockroom storage and closure barriers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exhibition-name",
+      "kind": "text-verbatim",
+      "text": "MORROW HOUSE",
+      "scope": {
+        "slots": [
+          "perspective-c1",
+          "perspective-c2"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "entrance-phrase",
+      "kind": "text-verbatim",
+      "text": "Leave a little wonder",
+      "scope": {
+        "slots": [
+          "perspective-c1",
+          "perspective-c2"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "MORROW HOUSE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-coordinated-exhibition",
+      "slots": [
+        "complete-section",
+        "perspective-c1",
+        "perspective-c2",
+        "open-state",
+        "closed-state"
+      ],
+      "sourceSlots": [
+        "complete-floor-plan"
+      ],
+      "items": [
+        {
+          "item": "The section, perspectives and operating states realize the same exhibit, activity, retail and operating-area arrangement as the floor plan.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Open and closed states retain fixture positions while changing only the prescribed operational conditions.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "MORROW HOUSE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "complete-floor-plan",
+      "complete-section",
+      "perspective-c1",
+      "perspective-c2",
+      "open-state",
+      "closed-state"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not rescore exact wording, record accuracy, numeric dimensions, component counts, capacity, duration or document coverage, which belong to compliance checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "complete-floor-plan",
+        "complete-section",
+        "perspective-c1",
+        "perspective-c2",
+        "open-state",
+        "closed-state"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-complete-floor-plan",
+      "requirementId": "R-format-complete-floor-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "complete-floor-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-complete-section",
+      "requirementId": "R-format-complete-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "complete-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-perspective-c1",
+      "requirementId": "R-format-perspective-c1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "perspective-c1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-perspective-c2",
+      "requirementId": "R-format-perspective-c2",
+      "method": "artifact-property",
+      "targetSlots": [
+        "perspective-c2"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-open-state",
+      "requirementId": "R-format-open-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "open-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-closed-state",
+      "requirementId": "R-format-closed-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closed-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "adult-visitor-experience",
+      "requirementId": "R-adult-visitor-experience",
+      "method": "visual",
+      "targetSlots": [
+        "complete-floor-plan",
+        "perspective-c1",
+        "perspective-c2",
+        "open-state"
+      ],
+      "criteria": "Together, the layout and views support an approximately 12-minute adult visit incorporating a character encounter, contribution activity, photograph opportunity and browsing of all three merchandise lines. A photo opportunity may be integrated into an exhibit rather than occupy a separate booth. Missing experiences or a route that makes the intended visit implausible fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "physical-experience-media",
+      "requirementId": "R-physical-experience-media",
+      "method": "visual",
+      "targetSlots": [
+        "complete-floor-plan",
+        "complete-section",
+        "perspective-c1",
+        "perspective-c2"
+      ],
+      "criteria": "The proposal uses three tangible exhibits, a mechanical token interaction and readable printed interpretation. MH-01 is the existing vinyl figure, MH-02 is a brass bell with a stationary clapper, and MH-03 is a birch tray with reusable wooden tokens. A screen-only substitute for an exhibit, interpretation or the mechanical activity fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "atrium-and-reference-context",
+      "requirementId": "R-atrium-and-reference-context",
+      "method": "visual",
+      "targetSlots": [
+        "complete-floor-plan",
+        "perspective-c1",
+        "perspective-c2"
+      ],
+      "criteria": "The installation's scale and placement are compatible with the 40 × 32 m atrium and allocated area in plan-with-cameras.png. C1 and C2 use their respective camera positions and preserve the surrounding occupied-mall context of view-c1.png and view-c2.png. Cropped drawings are acceptable; a rescaled site, relocated allocation or unrelated viewpoint fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-floor-geometry",
+      "requirementId": "R-tier6-floor-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "complete-floor-plan"
+      ],
+      "criteria": "Dimension the 6000 mm east–west by 8000 mm north–south boundary, south entrance at x 0–1500 and south exit at x 4500–6000, both at y 0. Keep the north stockroom at x 0–6000, y 6500–8000; east service bay at x 4500–6000, y 4500–6500; and southeast queue at x 3000–6000, y 1500–4500. Show their specified dimensions, unobstructed 1500 mm main routes and a 1500 mm external strip on every side. Identify all three exhibits, the activity and all three retail SKUs. Participation must be free and connect directly to the exit with a separate optional retail branch. Relocated reservations, blocked clearances or compulsory shopping fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-records-and-labels",
+      "requirementId": "R-tier6-records-and-labels",
+      "method": "visual",
+      "targetSlots": [
+        "complete-floor-plan",
+        "complete-section"
+      ],
+      "criteria": "Both sheets must correctly pair MH-01 / The Collector / 2026 / The Collection; MH-02 / The Quiet Bell / 2026 / The Collection; and MH-03 / A Place for Your Find / 2026 / Your Find. The section sheet must print these English bodies without paraphrase: 'Morrow collects overlooked things and gives each one a place to belong.'; 'This bell has lost its sound. Morrow keeps it for the shape of its silence.'; and 'Choose a token and turn the wheel. Your small discovery becomes part of Morrow's collection.' It must also print 'Pick a token', 'Turn the wheel' and 'Leave your find' in that order. Line wrapping may vary; missing text, altered wording or mismatched records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-heights-retail-and-kit",
+      "requirementId": "R-tier6-heights-retail-and-kit",
+      "method": "visual",
+      "targetSlots": [
+        "complete-section"
+      ],
+      "criteria": "Show the 3200 mm installation ceiling, 900 mm plinth tops, 1400 mm label centres, separate 600 mm frontages for MR-01 Morrow Figure, MR-02 Satchel Pin and MR-03 Small Wonders Postcard Set, and a 1500 mm checkout. The schedule must reconcile 12 aluminium frames and eight birch plywood plinths with 24 uprights, 24 rails, 48 hand-knob corner blocks, 12 fabric skins, 48 plywood panels and 96 quarter-turn cams. Indicate tool-free hand knobs for frames and quarter-turn cams operated with a flat-head screwdriver for plinths. Record the largest dismantled part as 2000 × 1000 × 100 mm and four transport cases. Depicted details must agree with 1000 × 2000 mm frames, 500 × 500 × 900 mm plinths, 18 mm plywood, 32 side panels plus eight tops and eight bases, and 2100 × 1100 × 650 mm cases. Treat shelving, checkout, token mechanism and barriers as additional fixtures rather than kit components. Missing counts, contradictory dimensions or an impossible packing envelope fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-perspective-fidelity",
+      "requirementId": "R-tier6-perspective-fidelity",
+      "method": "visual",
+      "targetSlots": [
+        "perspective-c1",
+        "perspective-c2"
+      ],
+      "criteria": "Both views must depict the same planned exhibit, activity and retail locations, with the required title and phrase readable at the entrance. Morrow must retain a rounded warm-ivory body, flat standing base, two short ears with a V notch in its own left ear, two black oval eyes, smooth lower face, square rust-orange satchel on its right hip and deep-teal strap from left shoulder to right hip. Lighting may alter apparent color without changing the identity. MR-01 must match the existing figure and MH-01; MR-02 must derive from the square orange satchel; MR-03 must use the existing character. Mirrored anatomy, redesigned figure details or contradictory fixture positions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "complete-floor-plan",
+        "complete-section"
+      ]
+    },
+    {
+      "id": "tier6-open-operation",
+      "requirementId": "R-tier6-open-operation",
+      "method": "visual",
+      "targetSlots": [
+        "open-state"
+      ],
+      "criteria": "Show 12 visitors inside, six additional waiting adults in two returning queue lanes, and three staff identifiable as host, activity attendant and cashier at their stations. All three exhibits are exposed and all three SKUs displayed. The activity detail must make the starting tray, wheel pocket, visible collection channel, return tray and attendant reset position understandable: pick up a token, rotate it through the wheel, release it and return collected tokens to the start. Token and tray details must accommodate the recorded 12 wooden tokens, 40 mm diameter and 6 mm thickness, and 300 × 200 × 30 mm tray. Double-counted queuers, omitted staff or an incomplete token/reset path fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "complete-floor-plan"
+      ]
+    },
+    {
+      "id": "tier6-closed-operation",
+      "requirementId": "R-tier6-closed-operation",
+      "method": "visual",
+      "targetSlots": [
+        "closed-state"
+      ],
+      "criteria": "Compare the closed drawing with the open drawing: fixture locations, including frames and plinths, must stay fixed. Covers protect all three exhibits; merchandise and tokens are visibly indicated as locked in the north stockroom; checkout is closed; and barriers close both southern openings from inside the allocated boundary. Operational overlays and removal of retail stock are allowed. Moved fixtures, unsecured stock or barriers in the external circulation strip fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "open-state",
+        "complete-floor-plan"
+      ]
+    },
+    {
+      "id": "set-tier6-coordinated-exhibition",
+      "requirementId": "R-set-tier6-coordinated-exhibition",
+      "method": "visual",
+      "targetSlots": [
+        "complete-section",
+        "perspective-c1",
+        "perspective-c2",
+        "open-state",
+        "closed-state"
+      ],
+      "criteria": "The section, perspectives and operating states realize the same exhibit, activity, retail and operating-area arrangement as the floor plan. Open and closed states retain fixture positions while changing only the prescribed operational conditions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-a-n06/03-object-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "complete-floor-plan"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-morrow-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "morrow-character.png",
+        "morrow-figure.png"
+      ],
+      "subjectSlots": [
+        "perspective-c1",
+        "perspective-c2"
+      ],
+      "notes": "Morrow's ivory body, notched left ear, two black eyes and orange square satchel are the existing character identity; the exhibition layout and fixtures are open for exploration."
+    }
+  ]
+}

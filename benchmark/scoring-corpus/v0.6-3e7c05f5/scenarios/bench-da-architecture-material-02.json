@@ -1,0 +1,134 @@
+{
+  "id": "bench-da-architecture-material-02",
+  "title": "HILLFOLD STAY — Six guest rooms along a village hillside, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "ARCHITECTURE",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# HILLFOLD STAY\n\n## Project\n- Location name: Hillfold village\n- Accommodation: six double guest rooms; 12 guests\n- Project lettering: HILLFOLD STAY\n- Public route label: Village path\n- Building arrangement: single-storey volumes on two terraces\n\n## Site geometry\n- Coordinate units: m\n- Origin: southwest site corner A\n- Axes: x east; y north; z elevation\n- Datum: A, +0.000 m\n- Boundary: A (0, 0); B (36, 0); C (36, 30); D (0, 30)\n- Site dimensions: 36 m east–west × 30 m north–south\n- Site area: 1080 m²\n- Existing terrain surface: z = 0.100y, continuous across the site\n- Contour interval: 0.500 m\n- Village path edges: y = 3.800 m and y = 6.200 m, from x = 0 m to x = 36 m\n- Village path clear width: 2400 mm\n- Village path centerline: y = 5.000 m; elevation +0.500 m\n- Village path use: continuous public passage\n- Building setback: 3 m from each site boundary\n- Lower Terrace finished floor: +1.200 m\n- Upper Terrace finished floor: +2.400 m\n- Maximum proposed roof ridge: +7.500 m\n- Room clear height: 2.700 m\n- Maximum principal beam span: 4.800 m\n\n## Terrain records\n| y (m) | Existing z (m) |\n|---|---|\n| 0.000 | +0.000 |\n| 5.000 | +0.500 |\n| 10.000 | +1.000 |\n| 15.000 | +1.500 |\n| 20.000 | +2.000 |\n| 25.000 | +2.500 |\n| 30.000 | +3.000 |\n\n## Neighboring buildings\n| Building | Southwest corner (m) | Northeast corner (m) | Floor elevation | Eaves elevation | Roof |\n|---|---|---|---|---|---|\n| West House | (-10, 12) | (-4, 22) | +1.200 m | +4.200 m | 30-degree clay-tile gable; north–south ridge |\n| East House | (40, 16) | (48, 26) | +1.600 m | +4.600 m | 30-degree clay-tile gable; north–south ridge |\n\n- West House distance from west site boundary: 4 m\n- East House distance from east site boundary: 4 m\n- West House walls: coursed rubble stone with lime mortar\n- West House south facade: 6 m wide; one centered timber door and two flanking recessed windows\n- West House door opening: 900 mm wide × 2100 mm high\n- West House window openings: 600 mm wide × 1200 mm high each; sill 900 mm above floor\n- West House opening centerlines, measured from southwest facade corner: 1500 mm, 3000 mm, 4500 mm\n- East House walls: coursed rubble stone with lime mortar\n\n## Room records\n| ID | Name | Net area | Clear height | Terrace | Finished floor | Adjacency |\n|---|---|---|---|---|---|---|\n| G01 | Guest Room 01 | 24 m² | 2.700 m | Lower Terrace | +1.200 m | Private guest route |\n| G02 | Guest Room 02 | 24 m² | 2.700 m | Lower Terrace | +1.200 m | Private guest route |\n| G03 | Guest Room 03 | 24 m² | 2.700 m | Lower Terrace | +1.200 m | Private guest route |\n| G04 | Guest Room 04 | 24 m² | 2.700 m | Upper Terrace | +2.400 m | Private guest route |\n| G05 | Guest Room 05 | 24 m² | 2.700 m | Upper Terrace | +2.400 m | Private guest route |\n| G06 | Guest Room 06 | 24 m² | 2.700 m | Upper Terrace | +2.400 m | Private guest route |\n| R01 | Reception | 12 m² | 2.700 m | Lower Terrace | +1.200 m | Guest arrival; Kitchen and Dining |\n| S01 | Kitchen and Dining | 36 m² | 2.700 m | Lower Terrace | +1.200 m | Reception; outdoor breakfast space |\n| U01 | Laundry | 6 m² | 2.700 m | Lower Terrace | +1.200 m | Staff service route |\n| U02 | Plant | 6 m² | 2.700 m | Lower Terrace | +1.200 m | Staff service route |\n\n- Guest room area basis: bathroom included within each 24 m²\n- Lower Terrace room net area total: 132 m²\n- Upper Terrace room net area total: 72 m²\n- Combined room net area: 204 m²\n- Kitchen and Dining capacity: 12 seats\n- Kitchen equipment: two cooking hobs; 3000 mm worktop\n- Laundry equipment: one washing machine\n\n## Material anchors\n- Proposed roofs: clay tiles; 30-degree pitch\n- Kitchen and Dining roof structure: exposed glulam beams\n- Village material context: rubble stone; lime mortar; recessed timber-framed openings\n\n## Use states\n- Guest arrival: reception, luggage handling and movement to guest rooms\n- Village passage: residents walking through the site while lodging is occupied\n- Shared breakfast: 12 seated guests in Kitchen and Dining\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# HILLFOLD STAY — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | room-schedule | Room schedule | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | settlement-plan | Settlement and building plan | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | lower-terrace-plan | Lower Terrace plan | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | upper-terrace-plan | Upper Terrace plan | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | longitudinal-section | North–south terrain section | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | guest-room-section | Guest room cross-section | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | four-elevations | Four building elevations | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | terrain-axonometric | Terrain and massing axonometric | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | construction-detail | Kitchen and Dining construction detail | 14 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | guest-arrival-view | Guest arrival perspective | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | village-passage-view | Village passage perspective | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | shared-interior-view | Kitchen and Dining interior | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | arrival-walkthrough | Arrival walkthrough | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | architecture-presentation | Architecture presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: site-terrain.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: west-house.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: village-morning.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "HILLFOLD STAY | Six guest rooms along a village hillside\n\nWe are opening HILLFOLD STAY for visitors spending a few nights in Hillfold village. We need six double guest rooms for 12 guests, with a shared kitchen and dining room where our local reception team can host breakfast. The site is 36 m east to west by 30 m north to south. Ground rises from +0.000 m at the southwest corner to +3.000 m along the north boundary. A village path crosses the full site between y = 3.800 m and y = 6.200 m; its 2400 mm clear width and continuous public passage are fixed. Guest arrival, breakfast seating and luggage handling need their own space beside this everyday route.\n\nDevelop single-storey volumes on two terraces, with finished floors at +1.200 m and +2.400 m. Guest Rooms 01–03 belong on the Lower Terrace with Reception, Kitchen and Dining, Laundry and Plant; Guest Rooms 04–06 belong on the Upper Terrace. Each guest room has 24 m² net area including its bathroom. Kitchen and Dining has 36 m² and 12 seats; Reception has 12 m²; Laundry and Plant each have 6 m². Clear room height is 2.700 m. Building setbacks are 3 m from every site boundary, and the maximum roof ridge is +7.500 m. Use 30-degree clay-tile roofs and exposed glulam beams inside Kitchen and Dining, with principal beam spans up to 4.800 m. Develop the remaining material palette from the village's rubble-stone walls and recessed openings. Print \"HILLFOLD STAY\" on the settlement plan and presentation cover, and label the public route \"Village path\" on the settlement and Lower Terrace plans.\n\nAudience: visiting guests and the local operating team, supporting the owner's layout decision and the architect's next design stage.\n\nInputs (attached): 01-client-facts.en.md contains the site coordinates, terrain levels, neighboring buildings and room records.\n02-delivery-catalog.en.md contains the proportions, formats and stages for all 14 deliverables.\nsite-terrain.png provides the fixed boundary, contours, village path, neighboring footprints and north–south ground section.\nwest-house.png establishes the existing West House's clay-tile roof, rubble-stone walls and south-facing openings.\nvillage-morning.png provides the atmosphere of morning passage and work in the village drying yard.\n\nDeliverables:\n1. A one-page room schedule covering all ten rooms, with IDs, names, net areas, clear heights, adjacencies, terrace assignments and finished floor levels\n2. One settlement and building plan showing the site boundary, both neighboring houses, contours, roof footprints, setbacks, public passage and guest arrival\n3. One Lower Terrace plan showing three guest rooms, Reception, Kitchen and Dining, Laundry, Plant, furniture and separate public and guest routes\n4. One Upper Terrace plan showing three guest rooms, bathrooms, furniture and the connection to the Lower Terrace\n5. One north–south section through both terraces and the village path, showing existing ground, proposed ground, foundations, floor levels and roof ridges\n6. One cross-section through a guest room and its outdoor threshold, with room height, privacy screening and structural span\n7. One elevation sheet containing north, south, east and west elevations, with opening IDs, roof pitches and keyed material assemblies\n8. One terrain and massing axonometric showing both terraces, the path and neighboring houses\n9. One eaves-to-floor construction detail through Kitchen and Dining, showing clay tiles, roof underlay, insulation, exposed glulam beams, wall assembly and foundation connection\n10. One guest-arrival perspective showing luggage handling and the Reception entrance\n11. One village-passage perspective showing residents using the full path beside the occupied lodging\n12. One Kitchen and Dining interior perspective showing the 12-seat breakfast arrangement and exposed beams\n13. One 10-second walkthrough connecting the village path, Reception and Kitchen and Dining\n14. One presentation document of at least 10 pages, reusing the room schedule, plans, sections, elevations, construction detail and three perspectives\n\nAcceptance:\n- The room schedule, both terrace plans and presentation repeat all ten room IDs, names and net areas, totaling 204 m²; the plans and presentation repeat the schedule's +1.200 m and +2.400 m terrace assignments. Kitchen and Dining shows 12 seats, two cooking hobs and 3000 mm of worktop; Laundry shows one washing machine.\n- The settlement plan, Lower Terrace plan and terrain axonometric retain the path between y = 3.800 m and y = 6.200 m across the 36 m site width. The plans dimension its 2400 mm clear passage, label it Village path and place reception queues, seating and luggage handling beside it. The village-passage perspective depicts that same route in use.\n- The settlement plan and sections retain the 36 m × 30 m boundary, 3 m setbacks, neighboring footprints and ground levels from +0.000 m to +3.000 m. Both terrace plans label room names and floor levels; the sections dimension 2.700 m clear heights and roof ridges at or below +7.500 m. The settlement plan prints HILLFOLD STAY; all plans carry a north arrow and scale bar, and both sections carry scale bars and the +0.000 m datum.\n- The elevation sheet, sections and construction detail show 30-degree clay-tile roofs; the detail identifies exposed glulam beams with spans up to 4.800 m. Opening IDs and material keys connect the elevations to the plans and detail, including the chosen wall assembly.\n- The three perspectives, terrain axonometric and walkthrough depict the plans' single-storey terrace volumes, entrance positions, opening counts and material divisions. The guest-arrival and village-passage perspectives locate their cameras on the settlement plan; West House retains its stone walls, tiled gable and three south-facing openings wherever visible.\n- The presentation has at least 10 pages, prints HILLFOLD STAY on its cover and repeats the room schedule's areas and floor levels beside the reused drawings. The 10-second walkthrough follows the route marked on the Lower Terrace plan.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/site-terrain.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "3c87427381c2e623977883034bbef455c181412fd6753e680efacd8459afe0e5"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/west-house.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "9ea2f64dac14e24a19fbabb633b40e04a39f088a60114cd8fea83e944e4e68c4"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/village-morning.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "f0c250a8adce56b815d76d9917bc9ee1b175e4d75d4bdcfe03d47cb3181ee9b5"
+    }
+  ]
+}

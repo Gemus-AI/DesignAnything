@@ -1,0 +1,663 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ui-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "digital-product",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "library",
+      "label": "Library",
+      "description": "One Library screen with both supplied books, L1 paused at 00:37 and the L2 download in progress.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "reader",
+      "label": "Reader at the saved sentence",
+      "description": "One Day Reader screen at L1-S03 with size 18, the supplied chapter text and Listen.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "player",
+      "label": "Player at the saved media offset",
+      "description": "One Player screen playing L1 at 00:37 of 01:30 with 1.0x, timer Off and Read.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "downloads",
+      "label": "Downloads in progress",
+      "description": "One Downloads screen for both books with separate text and narration statuses and L2 audio at 6 of 10 MB.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "offline-unavailable",
+      "label": "Incomplete narration offline",
+      "description": "One offline-unavailable screen with blocked target 00:15, retained L2-S02 / 00:22, disabled Listen and Open saved text.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "sync-choice",
+      "label": "Device continuation choice",
+      "description": "One sync-choice screen comparing Phone A's 08:40 local record with Tablet B's received 08:35 record and explicit selection controls.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "PAGEWIND",
+      "scope": {
+        "slots": [
+          "library",
+          "downloads"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "lantern-title",
+      "kind": "text-verbatim",
+      "text": "The Small Lantern",
+      "scope": {
+        "slots": [
+          "library",
+          "downloads"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "bench-title",
+      "kind": "text-verbatim",
+      "text": "The Empty Bench",
+      "scope": {
+        "slots": [
+          "library",
+          "downloads"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "listen-action",
+      "kind": "text-verbatim",
+      "text": "Listen",
+      "scope": {
+        "slots": [
+          "reader",
+          "offline-unavailable"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "read-action",
+      "kind": "text-verbatim",
+      "text": "Read",
+      "scope": {
+        "slots": [
+          "player"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "saved-text-action",
+      "kind": "text-verbatim",
+      "text": "Open saved text",
+      "scope": {
+        "slots": [
+          "offline-unavailable"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "PAGEWIND",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-screen-interface-system",
+      "slots": [
+        "library",
+        "reader",
+        "player",
+        "downloads",
+        "offline-unavailable",
+        "sync-choice"
+      ],
+      "items": [
+        {
+          "item": "The six screens share quiet, content-led typography, spacing, controls, icon treatment, and navigation language.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The interface uses #1F4E5F as its brand accent, English copy, and stable sentence-location and status grammar; supporting visual choices may vary.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "PAGEWIND"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "library",
+      "reader",
+      "player",
+      "downloads",
+      "offline-unavailable",
+      "sync-choice"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the rendered interface communication and specified state designs, excluding physical-device materials, photographic lighting, executable application behaviour, and optional film audio."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "library",
+        "reader",
+        "player",
+        "downloads",
+        "offline-unavailable",
+        "sync-choice"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-library",
+      "requirementId": "R-format-library",
+      "method": "artifact-property",
+      "targetSlots": [
+        "library"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-reader",
+      "requirementId": "R-format-reader",
+      "method": "artifact-property",
+      "targetSlots": [
+        "reader"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-player",
+      "requirementId": "R-format-player",
+      "method": "artifact-property",
+      "targetSlots": [
+        "player"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-downloads",
+      "requirementId": "R-format-downloads",
+      "method": "artifact-property",
+      "targetSlots": [
+        "downloads"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-offline-unavailable",
+      "requirementId": "R-format-offline-unavailable",
+      "method": "artifact-property",
+      "targetSlots": [
+        "offline-unavailable"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-sync-choice",
+      "requirementId": "R-format-sync-choice",
+      "method": "artifact-property",
+      "targetSlots": [
+        "sync-choice"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "screen-envelopes-and-safe-areas",
+      "requirementId": "R-screen-envelopes-and-safe-areas",
+      "method": "visual",
+      "targetSlots": [
+        "library",
+        "reader",
+        "player",
+        "downloads",
+        "offline-unavailable",
+        "sync-choice"
+      ],
+      "criteria": "Assess the internal logical screen envelope and proportional safe-area bands, independently of export pixel dimensions. Standard screens follow the 390:844 envelope with 47/34 logical-unit top/bottom insets; reader-wide follows 430:932 with 59/34 insets. Required copy and complete controls remain inside the safe region. Each image depicts one flat screen, with any named overlay on its actual underlying screen; its complete frame is proportionally centred within the delivery canvas. Clipping, stretching, or controls intruding into protected bands fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "contrast-and-status-accessibility",
+      "requirementId": "R-contrast-and-status-accessibility",
+      "method": "visual",
+      "targetSlots": [
+        "library",
+        "reader",
+        "player",
+        "downloads",
+        "offline-unavailable",
+        "sync-choice"
+      ],
+      "criteria": "Evaluate foreground/background contrast for visible body text against 4.5:1 and for large text and meaningful icons against 3:1. Every status communicated through colour also has readable wording or a recognizable symbol. Supporting colours may vary, but low-contrast content or a status distinguishable only by colour fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "catalog-identification",
+      "requirementId": "R-catalog-identification",
+      "method": "visual",
+      "targetSlots": [
+        "library",
+        "downloads"
+      ],
+      "criteria": "Both screens identify the two distinct supplied books with their exact titles and attribute both to PAGEWIND Studio. PAGEWIND is visibly printed as the product name. Book records must not be duplicated, interchanged, or omitted; any displayed chapter counts, narration totals, and chapter titles agree with the supplied records. Layout and explanatory wording may vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "navigation-and-return-actions",
+      "requirementId": "R-navigation-and-return-actions",
+      "method": "visual",
+      "targetSlots": [
+        "library",
+        "reader",
+        "player",
+        "downloads",
+        "offline-unavailable",
+        "sync-choice"
+      ],
+      "criteria": "Library and Downloads display the three named main destinations in the prescribed reading order. Other main-area navigation, when present, preserves that order. Reader, Player, settings overlays, mode-switch screens, and continuation choices expose an identifiable return action. Icons may accompany labels, and return controls may use conventional symbols; missing destinations, reordered main navigation, or a missing required return action fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "cover-artwork-use",
+      "requirementId": "R-cover-artwork-use",
+      "method": "visual",
+      "targetSlots": [
+        "library",
+        "reader",
+        "player",
+        "downloads",
+        "offline-unavailable",
+        "sync-choice"
+      ],
+      "criteria": "Every depicted cover for The Small Lantern visibly uses lantern-cover-art.png and remains associated with the correct title. Proportional scaling within the cover treatment is acceptable; replacing it with newly invented lantern art or assigning it to The Empty Bench fails. Screens with no cover depiction do not need an added cover.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "screen-specific-record-fidelity",
+      "requirementId": "R-screen-specific-record-fidelity",
+      "method": "visual",
+      "targetSlots": [
+        "library",
+        "reader",
+        "player",
+        "downloads",
+        "offline-unavailable",
+        "sync-choice"
+      ],
+      "criteria": "Read each screen against its named row in 05-state-snapshots.md, distinguishing connection, device, sentence anchor, chapter-relative offset, playback, local file availability, and save/sync status where relevant. Core Library shows paused L1 at 00:37 and the L2 download in progress; the four core snapshots use the 08:20 synced record. Downloads distinguishes saved L1/L2 text, ready L1 audio, incomplete L2 audio, and The Empty Bench text not downloaded with narration not offered. Other states must preserve their supplied records. Equivalent chapter-and-sentence wording is allowed, and irrelevant record fields need not be printed; contradictory state data or treating a received record as already applied fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-reader-and-player",
+      "requirementId": "R-tier6-reader-and-player",
+      "method": "visual",
+      "targetSlots": [
+        "reader",
+        "player"
+      ],
+      "criteria": "Reader identifies chapter 1 sentence 3, uses Day appearance and size 18, and provides Listen. Its reading flow preserves all six L1 sentences from 04-chapter-text-and-timeline.md in order without paraphrasing; scrolling is acceptable and all six need not fit simultaneously. Player depicts active L1 playback at 00:37 of nominal 01:30, with Read, speed 1.0x, and timer Off. Pagination may vary, but a shifted sentence anchor, altered text, incorrect playback state, or wrong control value fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-offline-block",
+      "requirementId": "R-tier6-offline-block",
+      "method": "visual",
+      "targetSlots": [
+        "downloads",
+        "offline-unavailable"
+      ],
+      "criteria": "Both files identify L2 narration as an incomplete 6-of-10-MB download equivalent to 60%, separate from a playback clock. Downloads represents the online transfer; offline-unavailable represents the offline block with download paused, disabled Listen, a written explanation, and Open saved text. The blocked attempt proposes 00:15 while the saved L2-S02/00:22 record remains intact with local retention and sync pending. Explanatory wording may vary; showing partial audio as offline-ready or replacing the saved offset with the proposal fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-continuation-choice",
+      "requirementId": "R-tier6-continuation-choice",
+      "method": "visual",
+      "targetSlots": [
+        "sync-choice"
+      ],
+      "criteria": "The choice screen clearly associates Phone A with its locally saved L2-S02/00:22 record at 08:40 and Tablet B with its received L2-S04/00:50 record synced at 08:35, dated 24 August 2027. Each record has an explicit selection action, cancellation is available, and its explanation preserves Phone A's current position. Equivalent date formatting is acceptable if unambiguous. Swapped records, automatic application, or implying that the older received record is newly synchronized fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-six-screen-interface-system",
+      "requirementId": "R-set-six-screen-interface-system",
+      "method": "visual",
+      "targetSlots": [
+        "library",
+        "reader",
+        "player",
+        "downloads",
+        "offline-unavailable",
+        "sync-choice"
+      ],
+      "criteria": "The six screens share quiet, content-led typography, spacing, controls, icon treatment, and navigation language. The interface uses #1F4E5F as its brand accent, English copy, and stable sentence-location and status grammar; supporting visual choices may vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/03-books.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/04-chapter-text-and-timeline.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/05-state-snapshots.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "supplied-lantern-cover",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "lantern-cover-art.png"
+      ],
+      "subjectSlots": [
+        "library",
+        "downloads"
+      ],
+      "notes": "Use the supplied lantern artwork to identify The Small Lantern wherever its cover appears."
+    }
+  ]
+}

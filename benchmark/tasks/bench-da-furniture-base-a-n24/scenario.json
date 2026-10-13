@@ -1,0 +1,170 @@
+{
+  "id": "bench-da-furniture-base-a-n24",
+  "title": "COMMONHOUR — One rental-home table for work, dinner and moving day, 24 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n24",
+    "family-a"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# COMMONHOUR — complete client room and object records\n\n## Project\n\n- Product: COMMONHOUR.\n- Household: two adults, A and B, renting their home.\n- Furniture system: one complete freestanding expandable table with internal storage.\n- States: W, D and S.\n- Fixed conversion-board wording: Work away, dinner ready.\n- Image-title and document-cover identity: COMMONHOUR followed by the relevant role or state.\n- Native room drawings: room-plan.png and room-elevations.png; shared empty-room geometry.\n- Dimension unit: millimetres unless stated otherwise.\n\n## Room coordinates and fixed areas\n\n| Record | Fixed value |\n|---|---|\n| Room width | x=0–3600, left to right |\n| Room depth | y=0–3000, entrance wall to rear wall |\n| Room height | z=0–2600, finished floor to flat ceiling |\n| Main circulation strip | x=0–3600, y=0–900; clear of fixed, parked and stored furniture and objects |\n| Movement through circulation strip | A person or carried part during an identified movement |\n| Existing low cabinet | x=0–1200, y=2600–3000, z=0–700; solid occupied volume |\n| Work-kit storage destination | Internal table storage |\n| Window wall | x=3600 |\n| Window opening | y=1400–2600, z=900–2100 |\n| Protected window floor band | x=3300–3600, y=1400–2600; clear of furniture |\n| Building condition | Existing walls, floor, openings and window retained |\n| Furniture installation | Freestanding; connections contained within the furniture |\n\n## Door and moving corridor\n\n| Record | Fixed value |\n|---|---|\n| Door opening | y=0, x=200–1000 |\n| Door clear width and height | 800 × 2050 |\n| Threshold | Level |\n| Door leaf width | 800 |\n| Hinge | x=200, y=0 |\n| Swing | Inward, 90 degrees |\n| Closed leaf | x=200–1000, y=0 |\n| Open leaf | x=200, y=0–800 |\n| Door sweep | Clear quarter-disc of radius 800, contained within the main circulation strip |\n| Outside turning square | x=200–1100, y=-900–0; 900 × 900 clear |\n| Rightward corridor | x=1100–3100, y=-900–0; 900 clear width |\n| Corridor clear height | 2300 |\n\n## Household schedule and states\n\n| Record | Time or use |\n|---|---|\n| A | Home working, 09:00–17:00 |\n| B | Returns at 18:30 |\n| A and B | Dining together, 19:00–20:00 |\n| W | One active workplace for A; L/K/M/N on the surface; F/C in internal storage |\n| D | Two simultaneous dining places for A and B; all six work items concealed inside the table |\n| S | Complete assembled table stored between uses; all six work items concealed inside the table |\n\n## Existing chairs\n\n| Record | Fixed value |\n|---|---|\n| Chair IDs | CH-A and CH-B |\n| Quantity | 2 |\n| Each chair envelope | 500 wide × 500 deep × 820 high |\n| Each seat height | 450 |\n| Reserved chair-parking area | x=0–1100, y=1000–1550 |\n| W chair arrangement | CH-A active; CH-B in the reserved parking area |\n| D chair arrangement | Both chairs active; empty parking area available for passage |\n| S chair arrangement | Both chairs in the reserved parking area; table outside that area |\n| Chair status | Existing household objects |\n\n## Work and dining envelopes\n\n| Record | Fixed value |\n|---|---|\n| W clear surface | At least 1000 long × 600 deep |\n| W surface height | 720–760 |\n| W simultaneous surface objects | Open L, K, M and N |\n| W internal objects | F and C |\n| D clear surface | At least 1200 long × 800 deep |\n| D surface height | 720–760 |\n| D place-setting areas | 2 separate areas, each 600 × 400 |\n| Plates | 2, each diameter 240 |\n| Cups | 2, each diameter 80 × 100 high |\n| Setting positions | Within the two place-setting areas |\n| Each active chair floor-use envelope | 600 wide × 900 deep, measured outward from its table edge |\n| Chair depth within use envelope | 500 |\n| Active-chair envelope location | Within the room, outside the main circulation strip and protected window band |\n| Associated under-table leg space | Clear of table supports |\n\n## Complete work-item inventory\n\n| ID | Item | Quantity | Closed or stored envelope | W condition |\n|---|---|---|---|---|\n| L | Laptop | 1 | 330 × 230 × 20 | Base 330 × 230 on the surface; open screen rises nominally 220 above the rear base edge |\n| K | Keyboard | 1 | 280 × 120 × 20 | On the surface |\n| M | Mouse | 1 | 120 × 70 × 40 | On the surface |\n| N | Notebook | 1 | 210 × 297 × 18 | Closed notebook on the surface |\n| F | Folder | 1 | 320 × 240 × 40 | In internal storage |\n| C | Cable box | 1 | 180 × 120 × 70 | Closed box containing loose cables, in internal storage |\n\n- Complete kit quantity: exactly 6 named items.\n- Item geometry: listed dimensions and separate identities retained; rotation available.\n- L storage condition: closed.\n- D and S storage: all 6 items inside actual table compartments, with allocated volumes and access paths.\n- W storage: F and C inside the table.\n- Electronics arrangement: self-contained work kit; cables contained in C.\n\n## Stored envelope and component continuity\n\n- S maximum assembled envelope: 1100 long × 600 deep × 850 high, including handles, supports and the complete stored work kit.\n- W, D and S component basis: the same actual furniture parts.\n- Principal assemblies, removable leaves, trays, supports and hardware pouch: stable designer-selected IDs.\n- Ordinary individual fasteners: grouped quantities available in the component inventory.\n- Conversion accounting: a stated location for every component throughout movement.\n- W-to-D locations: all removed pieces and work objects remain in the room and reach their allocated final locations.\n- Furniture movement: available within the permitted room areas, with positions recorded in the sequence.\n- Product quantity: one table integrating work, dining and storage.\n\n## Materials and actual connections\n\n| Component or connection | Assignment |\n|---|---|\n| Tabletop and storage panels, including tray panels | 18 mm birch plywood, clear water-based lacquer |\n| Supports | Powder-coated steel tube |\n| Powder-coat color, steel tube section and wall thickness | Designer selection, recorded in the material assignments |\n| Grips and transformation hardware | Designer selection, recorded by actual component |\n| Relocation fasteners | M6 bolts with captive nuts |\n| Relocation tool | 4 mm hex key |\n| Relocation fastener quantity | Designer selection, recorded with the assembly inventory |\n| Transformation connection | Actual expanding or converting joint, with operation, support and retention identified |\n| Separation connection | Actual joint for separating and reassembling the table for moving, with operation, support and retention identified |\n| Connection detail count | At least 2 meaningful details; shared hardware possible where both functions are explained |\n\n## Relocation records\n\n| Record | Fixed value |\n|---|---|\n| Furniture preparation | Folding and/or separation into named modules |\n| Work-kit preparation | All 6 items removed from the table and packed together |\n| Client tote envelope | 400 × 320 × 180 |\n| Each principal furniture module | At most 1300 × 850 × 250 in a stated packing orientation, including protrusions |\n| Small hardware | 1 identified pouch, accounted for with the modules |\n| Handling participants | 2 adults, with proposed holding and support positions |\n| Moving sequence | Room doorway, outside turning square, rightward corridor |\n| Available orientations | Flat, tilted or upright, with the chosen orientation recorded |\n| Moving demonstration contents | Table modules, hardware pouch and work-kit tote |\n| Existing chairs and cabinet | Remain outside the moving sequence |\n\n## Same-room application cases\n\n| Case | Time | Contents |\n|---|---|---|\n| W1 | 10:00 | A working; L/K/M/N on the surface; F/C inside; CH-B parked |\n| D1 | 19:00 | A and B dining; all 6 work items inside |\n| S1 | Between uses | Assembled stored table and both parked chairs; stored-state location key |\n\n- Application setting: the same room in all cases.\n- Additional-view subjects: alternate camera, reverse conversion, enlarged actual connections, item retrieval and the same moving turn.\n- Shared design records across views: table modules, geometry, item counts and chosen materials.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# COMMONHOUR — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | direction-one | Direction 1 | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 2 | direction-two | Direction 2 | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | direction-three | Direction 3 | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 4 | selection-specification | Selection, specification and state inventory | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 5 | state-work | W work state | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | state-dining | D dining state | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | state-stored | S stored state | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | work-underside | W underside view | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | dining-underside | D underside view | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | stored-cutaway | S storage cutaway | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | conversion-storage | W-to-D conversion and storage | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | reverse-conversion | D-to-W reverse conversion | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | item-retrieval | Six-item retrieval | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 14 | materials-connections | Materials and connections | 6, 14, 24 | Format: presentation document; at least eight actual pages. Stage: final. |\n| 15 | transformation-detail | Transformation joint detail | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 16 | relocation-joint-detail | Relocation joint detail | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 17 | work-room-entrance | W1 room application from entrance | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 18 | dining-room-entrance | D1 room application from entrance | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 19 | work-room-window | W1 room application from window | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 20 | dining-room-cabinet | D1 room application from cabinet | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 21 | relocation-sequence | S1-to-corridor relocation | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 22 | moving-turn-detail | Doorway and moving-turn detail | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 23 | conversion-video | Ten-second table conversion | 14, 24 | Format: video; 5 to 15 seconds. Stage: final. |\n| 24 | presentation | COMMONHOUR presentation | 14, 24 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: room-plan.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: room-elevations.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: household-objects.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: morning-room.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: evening-room.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "COMMONHOUR | One rental-home table for work, dinner and moving day\n\nWe are commissioning COMMONHOUR, an expandable table with internal storage for a renting household of two adults, A and B. A works from 09:00 to 17:00; B returns at 18:30, and they dine together from 19:00 to 20:00. The table has three states: W, one active workplace; D, two simultaneous dining places; and S, the assembled table stored between uses. W needs a clear surface of at least 1000 × 600 mm, D at least 1200 × 800 mm, both at a height of 720–760 mm. D contains two separate 600 × 400 mm place-setting areas. The complete S envelope, including handles and the stored work kit, is at most 1100 × 600 × 850 mm. The expansion method and silhouette are open. Develop the states from the same identifiable assemblies, with a location for every part throughout conversion.\n\nThe room is 3600 × 3000 × 2600 mm. Its entrance-side circulation strip is 900 mm deep; the cabinet, chair parking, door swing and protected window band are fixed in the attached room records. Each active chair needs a 600 × 900 mm floor-use envelope. The household keeps chairs CH-A and CH-B and six work items: laptop L, keyboard K, mouse M, notebook N, folder F and cable box C. In W, L/K/M/N are on the surface and F/C are inside; in D and S, all six are concealed inside the table. Use 18 mm birch plywood with clear water-based lacquer for the tabletop and storage panels, and powder-coated steel tube for the supports. Relocation connections use M6 bolts with captive nuts, operated with a 4 mm hex key; select and record their quantity. Each separated furniture module fits within 1300 × 850 × 250 mm in its packing orientation. The moving route passes through an 800 × 2050 mm doorway, a 900 × 900 mm turning square and a 900 mm-wide corridor. Print \"COMMONHOUR\" in every image title and on every document cover, followed by the relevant role or state. Print \"Work away, dinner ready\" on the conversion and storage board.\n\nAudience: the furniture studio and its workshop partner, choosing a table for renters who share limited space between home working and dining and need to take the same furniture to their next home.\n\nInputs (attached): 01-client-facts.en.md contains the household schedule, room coordinates, object inventory, use envelopes and furniture requirements. 02-delivery-catalog.en.md lists the deliverable proportions, formats and stages. room-plan.png is the constraint drawing for the room boundary, circulation, door swing, cabinet, chair parking and moving route. room-elevations.png is the constraint drawing for the entrance and window heights. household-objects.png is the identity board for the household's existing work kit and dining objects. morning-room.png is an atmosphere reference for A's working day in this room. evening-room.png is an atmosphere reference for A and B preparing to eat in the same room.\n\nDeliverables:\n1. Three distinct direction boards comparing expansion methods, each with W, D and S sketches and a proposed internal storage arrangement\n2. One two-page selection, specification and state inventory naming the chosen direction, its assembly IDs and quantities, W/D/S dimensions, material assignments and relocation fastener quantity\n3. Six developed state drawings: W, D and S with dimensioned views and room placement insets, plus a W underside view, a D underside view and an S storage cutaway\n4. Three conversion and storage boards: W-to-D conversion, D-to-W conversion, and retrieval of all six work items with compartment dimensions and access paths\n5. One two-page materials and connections sheet with the assembly inventory and fastener quantities, plus two enlarged detail images covering the transformation joint and the relocation joint\n6. Four same-room application images: W1 at 10:00 from the entrance and from beside the window, and D1 at 19:00 from the entrance and from beside the cabinet\n7. Two relocation boards: the complete S1-to-corridor sequence with modules, hardware pouch, packed work tote and two-adult holding positions; and an enlarged doorway and turning-square sequence with module orientations\n8. One 10-second conversion video following the selected table from W through work-item storage to D\n9. One presentation document of at least twelve pages reusing the directions, selection, specification, six state drawings, three storage boards, connection details, four room applications and both relocation boards\n\nAcceptance:\n- The three direction boards precede the selection, specification and state inventory; that document names one selected direction, and all state drawings, conversion boards, connection work, room applications, relocation boards, video and presentation develop it. The presentation's first page names the selection.\n- The specification, six state drawings, materials and connections sheet and presentation repeat the same selected W/D/S dimensions, assembly IDs and quantities, and material assignments: 18 mm birch plywood with clear water-based lacquer for tabletop and storage panels, and powder-coated steel tube for supports. W meets 1000 × 600 mm, D meets 1200 × 800 mm, both are 720–760 mm high, and S fits within 1100 × 600 × 850 mm; the underside views and cutaway match these assemblies.\n- The state drawings and four W1/D1 application images preserve the attached room coordinates, 900 mm entrance strip, cabinet, window band and chair parking; active chairs have 600 × 900 mm floor-use envelopes and clear leg space, and D has two separate 600 × 400 mm place areas. Both W1 views show L/K/M/N on the surface and F/C inside; both D1 views and S show all six inside.\n- The three conversion and storage boards account for every assembly and L/K/M/N/F/C through forward conversion, reverse conversion and retrieval, with dimensioned compartments and access paths; L closes before storage. The W-to-D board and 10-second video carry Work away, dinner ready and use the same conversion order; the video opens with COMMONHOUR.\n- The materials and connections sheet and two enlarged details show operation, support and retention for the actual joints, repeating the specification's M6 bolt quantity and 4 mm hex key. Both relocation boards use the same module inventory and packing orientations, with every module within 1300 × 850 × 250 mm; the complete sequence accounts for one hardware pouch and the 400 × 320 × 180 mm work tote, and the enlarged sequence dimensions the 800 × 2050 mm doorway, 900 × 900 mm turn and 900 mm-wide corridor.\n- Every image title and document cover carries COMMONHOUR and its role or state; the presentation contains at least twelve pages and reuses all eight preceding deliverable categories, including every added state, detail, application and relocation view.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n24/room-plan.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "edb80fa05fa192984fff8c83916becf6701e4b4d69a257fb3d324de491a50cd0"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n24/room-elevations.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "46897c0225d58fde4a632748f9f4534417c648a8acc3b74f79a048c3a7c59325"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n24/household-objects.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "a5dbdfbb2ccf90eee49c988e5f0273d6828a93b65f109c43f5ac132146e01d34"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n24/morning-room.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "17f72d253350db4e52c186a015d7ec64cb3b2e3b7252530e196d3a38a6dee0a3"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n24/evening-room.png",
+      "nodeId": "provided-image-5",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "a77f1293a25349b8bb12116754dd066fd1bf642404c6b24a4c738c6db5e5524d"
+    }
+  ]
+}

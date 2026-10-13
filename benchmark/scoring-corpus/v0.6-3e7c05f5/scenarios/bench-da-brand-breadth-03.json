@@ -1,0 +1,134 @@
+{
+  "id": "bench-da-brand-breadth-03",
+  "title": "TIDEWAY FERRIES — One regional ferry operator across three routes, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GRAPHIC",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# TIDEWAY FERRIES — service and carrier records\n\n## Operator and identity\n- Operator: TIDEWAY FERRIES\n- Service: regional public ferry transport\n- Passenger groups: everyday cross-water commuters; visitors unfamiliar with the piers\n- Passenger-facing language: English\n- Identity starting point: open logo, palette, route colors and typography\n- Brand architecture: one operator; three routes\n- Service levels: Regular; Express\n- Regular: every listed pier served in sequence\n- Express: the two listed endpoints served directly\n- Route operation: daily, in both directions; reverse stop order on return journeys\n- Frequency meaning: planned interval between departures\n- Time convention: local 24-hour clock\n- Operating window meaning: service availability\n- Diagram type: connectivity and stop order\n- Diagram label: Schematic\n\n## Pier registry\n| Pier ID | English name | Routes serving the pier |\n|---|---|---|\n| P1 | Harbor Hall | F1, F2 |\n| P2 | Reed Bank | F1, F3 |\n| P3 | Lantern Isle | F2 |\n| P4 | North Quay | F2, F3 |\n\n## Complete route records\n| Code | English route name | Service level | Outward stop order | Daily operating window | Planned frequency |\n|---|---|---|---|---|---|\n| F1 | Cross Reach | Regular | P1 Harbor Hall → P2 Reed Bank | 07:00–21:00 | Every 20 minutes |\n| F2 | Island Link | Regular | P1 Harbor Hall → P3 Lantern Isle → P4 North Quay | 08:00–20:00 | Every 40 minutes |\n| F3 | Quay Direct | Express | P2 Reed Bank → P4 North Quay | 06:30–09:30 and 16:30–19:30 | Every 30 minutes |\n\n- F3 intermediate stops: none\n- F3 daily service windows: two; service resumes at 16:30 after the morning window ends at 09:30\n- Express fare relationship: included in the all-route day pass\n\n## Single journey ticket and mobile ticket\n| Field | Value |\n|---|---|\n| Sample label | Sample |\n| Ticket ID | TW-1084 |\n| Operator | TIDEWAY FERRIES |\n| Ticket type | Single journey |\n| Passenger | Adult |\n| Route | F1 Cross Reach |\n| Service | Regular |\n| From | P1 Harbor Hall |\n| To | P2 Reed Bank |\n| Date | 18 April 2028 |\n| Scheduled departure | 08:20 |\n\n- Entitlement: one directed departure from P1 Harbor Hall to P2 Reed Bank on the stated date and scheduled departure\n- Mobile ticket source: the same TW-1084 record\n\n## Network day pass\n| Field | Value |\n|---|---|\n| Sample label | Sample |\n| Ticket ID | TW-D2042 |\n| Operator | TIDEWAY FERRIES |\n| Ticket type | Day pass |\n| Passenger | Adult |\n| Valid on | 18 April 2028 |\n| Coverage | All routes |\n| Route codes | F1, F2, F3 |\n| Entitlement line | Unlimited journeys on the valid date |\n\n- Entitlement: unlimited journeys on all three routes on the valid date within their operating windows, including Express\n- Product scope: operator-wide\n- Day pass field set: Sample label, Ticket ID, Operator, Ticket type, Passenger, Valid on, Coverage, Route codes, Entitlement line\n\n## Harbor Hall mobile departures snapshot\n- Header location: P1 Harbor Hall\n- Snapshot date: 18 April 2028\n- Snapshot time: 08:05\n- Heading: Scheduled departures\n- Status label: Planned example\n- Departure rows: 2\n\n| Scheduled departure | Route | Service | To | Via |\n|---|---|---|---|---|\n| 08:20 | F1 Cross Reach | Regular | P2 Reed Bank | — |\n| 08:40 | F2 Island Link | Regular | P4 North Quay | P3 Lantern Isle |\n\n- Mobile application states: departures snapshot; single journey ticket\n- Application behavior: static\n\n## Blank vessel graphic carrier\n- Source image: 03-vessel-carrier.png\n- Source type: AI-generated unbranded side elevation\n- Source canvas: 2688 × 1344 pixels\n- Orientation: facing right\n- Framing: full body\n- Existing geometry: hull outline, cabin proportions, door and window positions\n- Surface scope: graphic application carrier\n- Area A: x=700–1900, y=785–870\n- Area A content: operator signature\n- Area B: x=1980–2380, y=770–860\n- Area B content: assigned route code and service level\n- Graphic treatment within A and B: brand color and motifs\n- Surface treatment outside A and B: neutral unbranded carrier\n- Source image lettering, guide boundaries and notes: none\n- Area boundary interpretation: placement limits\n- F1 specimen assignment: F1 Regular\n- F3 specimen assignment: F3 Express\n- Vessel application views: two separate flat side elevations\n- Application-zone chart: 04-vessel-application-zones.png\n- Chart coordinates: source-image coordinates, origin at upper left\n\n## Atmosphere reference\n- Reference image: 05-harbor-materials.png\n- Subject: waterfront materials, weathered timber, brushed metal, rope and translucent glass\n- Reference scope: atmosphere and material character\n\n## Source record\n- Source text and native carrier authoring date: 10 September 2026\n- Source text and native carrier origin: project repository\n- Source text and native carrier reuse: available as design inputs\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# TIDEWAY FERRIES — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | direction-one | Identity direction one | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 2 | direction-two | Identity direction two | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | direction-three | Identity direction three | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 4 | selected-strategy | Selected direction and brand strategy | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 5 | identity-rules | Operator identity and route rules | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | vessel-f1 | F1 Regular vessel elevation | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | vessel-f3 | F3 Express vessel elevation | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | harbor-hall-panel | Harbor Hall pier information panel | 14 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | single-ticket | TW-1084 single journey ticket | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | network-day-pass | TW-D2042 network day pass | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | mobile-departures | Harbor Hall mobile departures | 14 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | mobile-ticket | TW-1084 mobile ticket | 14 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | service-video | Ten-second service introduction | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | brand-presentation | Brand presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 03-vessel-carrier.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 04-vessel-application-zones.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 05-harbor-materials.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "TIDEWAY FERRIES | One regional ferry operator across three routes\n\nWe are launching a regional public ferry service for everyday cross-water journeys and occasional visits. Build an identity that lets passengers recognise one operator before finding their route, service level and destination. The operator name is \"TIDEWAY FERRIES\". The identity is open: begin with three distinct directions, select one in the strategy, and develop the remaining work from that choice. Passenger-facing wording is English throughout.\n\nOur four piers are P1 Harbor Hall, P2 Reed Bank, P3 Lantern Isle and P4 North Quay. F1 Cross Reach is Regular, connecting P1 and P2 daily, 07:00–21:00, every 20 minutes. F2 Island Link is Regular, connecting P1, P3 and P4 in that order daily, 08:00–20:00, every 40 minutes. F3 Quay Direct is Express, connecting P2 and P4 directly during two daily windows, 06:30–09:30 and 16:30–19:30, every 30 minutes. Each route also serves the reverse sequence. Regular serves every listed stop; Express serves its two endpoints directly. Frequencies describe departure intervals. The single journey ticket and mobile ticket share record TW-1084; the operator-wide day pass is TW-D2042. Both are dated 18 April 2028 and carry \"Sample\". The existing blank vessel is our shared application carrier: preserve its outline, cabin, windows, door, right-facing orientation and full-body framing, with the operator signature in area A and the assigned route code and service level in area B.\n\nAudience: residents commuting across the water and visitors unfamiliar with the piers, with our operations and design teams using the work to choose the identity and prepare passenger touchpoints.\n\nInputs (attached): 01-client-facts.en.md contains the operator, pier, route, ticket, mobile snapshot and vessel application records. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-vessel-carrier.png is the identity input: the existing unbranded vessel that remains recognisable in both route applications. 04-vessel-application-zones.png is the constraint input locating areas A and B on the carrier coordinate grid. 05-harbor-materials.png is the reference input for the atmosphere of a working waterfront and durable public information surfaces.\n\nDeliverables:\n1. Three identity direction boards, each showing an operator signature, an F1–F3 route identification approach and a Regular/Express distinction\n2. A one-page strategy selecting one of the three directions and stating the operator-to-route hierarchy, the chosen primary color code and the Regular/Express distinction\n3. One selected identity and rules sheet containing the operator signature, all three route identifiers, both service-level labels, typography and the strategy's primary color code\n4. Two vessel side elevations on the supplied carrier: F1 Regular and F3 Express, each with the shared operator signature in area A and its route code and service level in area B\n5. One Harbor Hall pier information panel identifying P1, F1 and F2, with their stop sequences, daily operating windows and frequencies, plus a three-route connectivity diagram labeled \"Schematic\"\n6. Two passenger ticket artworks: single journey TW-1084 for one Adult traveling on F1 Regular from P1 Harbor Hall to P2 Reed Bank on 18 April 2028 at 08:20, and day pass TW-D2042 for one Adult with unlimited journeys on F1, F2 and F3 on 18 April 2028 within their operating windows\n7. Two mobile applications: the P1 Harbor Hall departures snapshot for 18 April 2028 at 08:05, with the 08:20 F1 departure to P2 and the 08:40 F2 departure to P4 via P3, and the mobile ticket reproducing TW-1084\n8. One 10-second service introduction video connecting the operator signature, F1–F3 identifiers and the completed vessel, pier and ticket applications\n9. One presentation document of at least eight pages, opening with the selected direction and reusing the strategy, identity rules, vessel elevations, pier panel, ticket artworks, mobile applications and video storyboard\n\nAcceptance:\n- The three direction boards each present TIDEWAY FERRIES, F1, F2, F3, Regular and Express; the strategy selects one board by name, and the identity sheet and presentation opening identify that same selection.\n- The strategy and identity sheet state one operator, three routes, the selected primary color code and the Regular/Express distinction. The vessel elevations, pier panel, tickets, mobile applications and video use that primary color and the same operator signature; the presentation repeats the color code and hierarchy.\n- Both vessel elevations preserve the supplied carrier geometry and framing. Their graphics occupy areas A and B as recorded in 01-client-facts.en.md and 04-vessel-application-zones.png, with neutral carrier surfaces surrounding them; the F1 elevation reads F1 Regular and the F3 elevation reads F3 Express.\n- The Harbor Hall panel identifies P1 with F1 and F2, gives their recorded stop order, windows and frequencies, and labels its network diagram \"Schematic\". The mobile departures application prints \"Scheduled departures\" and \"Planned example\", the 18 April 2028, 08:05 snapshot, and exactly the two departures specified in deliverable 7, with full route and pier names.\n- The single journey artwork and mobile ticket repeat TW-1084, Adult, F1 Cross Reach, Regular, P1 Harbor Hall, P2 Reed Bank, 18 April 2028 and Scheduled departure 08:20. The day pass repeats TW-D2042, Adult, Valid on 18 April 2028, All routes, F1, F2, F3 and \"Unlimited journeys on the valid date\". All three ticket applications print \"Sample\" and TIDEWAY FERRIES, with fields matching their respective records in 01-client-facts.en.md.\n- The video runs for 10 seconds and reuses the selected operator signature, all three route identifiers and the completed applications named in deliverable 8. The presentation contains at least eight pages and reuses every earlier deliverable category, including all three initial directions and the video storyboard.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-03/03-vessel-carrier.png",
+      "nodeId": "provided-image-1",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "00f4a92da62033e444f0b94f8eb31a111945f07720eaf80ec32ae2505d965708"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-03/04-vessel-application-zones.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "27c2d80ae27eb74bd77d103d48f9da2ec72a029d3695ec42bfecae7b009d8e81"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-03/05-harbor-materials.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "49fb76224354278feeaa179104cca92f85ec3068bf77911687c53430021042f5"
+    }
+  ]
+}

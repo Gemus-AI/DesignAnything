@@ -1,0 +1,23 @@
+ALDER BENCH | A spoon maker at work
+
+We are commissioning an environmental portrait story about Nora Ellis, the spoon maker behind ALDER BENCH, for our craft journal and studio channels. Nora is our approved subject: 48 years old, right-handed, with a chin-length straight gray bob, brown eyes and a small mole on her left cheek. Her clothing throughout is an indigo cotton shirt, a rust canvas apron with one square chest pocket, charcoal trousers and brown lace-up boots. The attached identity sheet fixes her appearance. Follow her working sequence from a rough cherrywood blank through hollowing to an oiled spoon, 240 mm long with a 65 mm-wide oval bowl. The tools are a straight carving knife with a pale ash handle and a hook knife with a dark walnut handle.
+
+The documentary direction is already set: working gestures, visible wood fibers and a readable relationship between Nora, her tools and her bench. Work takes place in one session, 09:00–12:00 on 21 October 2026, inside the 6000 × 4000 mm workshop. The north window is the main light; its center is 1400 mm above the floor. Use a white reflector for a 2:1 lit-side-to-shadow-side ratio and a 5200 K white balance. The plaster walls are warm gray #D8D2C8. Preserve the bench, east-wall tool cabinet and existing three-slot workshop mark in their mapped positions. Maintain the 900 mm camera clearance south of the bench. The opening portrait serves a 360 × 240 mm magazine spread with 3 mm bleed and a portrait social crop; detail D03 supplies the square treatment. Print "ALDER BENCH" and "A spoon, from blank to bowl" on both opening portrait treatments, and on the film end card and presentation cover where those deliverables apply.
+
+Audience: readers of cultural magazines and craft brands, with the journal editor and studio owner selecting the story for publication and the studio campaign.
+
+Inputs (attached): 01-client-facts.en.md records Nora's background, wardrobe, materials, lighting and publication facts. 02-delivery-catalog.en.md lists every deliverable's proportion, format and stage. 03-shot-records.en.md records the shot IDs, subjects, camera stations and narrative order. workshop-plan.png fixes the room geometry, window, furniture, camera stations and clearance. publication-crops.png records the spread, portrait crop, square treatment and protected areas. nora-identity.png establishes Nora's front and profile appearance and complete wardrobe. spoon-and-tools.png establishes the two knives and the spoon at three stages. workshop-mark.png establishes the existing three-slot mark. empty-workshop-light.png supplies the empty room's window-light atmosphere.
+
+Deliverables:
+1. Two opening portrait treatments, P01 as the magazine spread and P01-V as a portrait crop of the same exposure, both showing Nora at the bench with the finished spoon
+2. One workshop environment photograph, E01, showing Nora, the north window, bench and east-wall tool cabinet together
+3. Three craft detail photographs, D01 of the rough blank and straight knife, D02 of right-handed hollowing with the hook knife, and D03 of the finished spoon, sequenced with their shot IDs and stage captions
+
+Acceptance:
+- The two opening portraits and E01 preserve Nora's gray bob, left-cheek mole where visible, indigo shirt and single-pocket rust apron; D02 places the walnut-handled hook knife in her right hand.
+- P01 and P01-V use the same exposure and print ALDER BENCH and A spoon, from blank to bowl. P01 follows the 360 × 240 mm spread with 3 mm bleed; P01-V uses the central 2:3 crop. Nora's face, both hands and the entire spoon remain inside both treatments, at least 12 mm from the spread fold and 9 mm inside the relevant trim or crop boundary.
+- E01 follows the 6000 × 4000 mm workshop plan, shows the three-slot mark above the east-wall cabinet and places its camera at C2; the opening portraits and detail photographs follow their stations in 03-shot-records.en.md and the 900 mm clearance.
+- D01, D02 and D03 carry their shot IDs and the respective stage captions Blank, Hollowing and Oiled. Their cherrywood grain and spoon outline follow the three-stage identity sheet; D03 shows the completed 240 mm spoon with its 65 mm-wide bowl in a square composition.
+- All six photographs use the north-window light direction, 2:1 lit-side-to-shadow-side ratio and 5200 K white balance; workshop walls visible in P01, P01-V and E01 retain the warm gray #D8D2C8 palette.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

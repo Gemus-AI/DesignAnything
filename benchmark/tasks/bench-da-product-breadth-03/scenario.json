@@ -1,0 +1,172 @@
+{
+  "id": "bench-da-product-breadth-03",
+  "title": "WAYFARER — An everyday folding rollator for walking, resting and home storage, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# WAYFARER — client contact, component and use conditions\n\n## Product scope\n- Product name: WAYFARER.\n- Product: complete four-wheel folding rollator for older adults and companions.\n- Uses: everyday walking, short stationary rest and indoor storage.\n- Product assembly: frame, wheel layout, hand grips, dual mechanical brakes, seat/back contact, one attached soft bag, folding joints, open lock, folded retention and finishes.\n- Design variables: frame silhouette, wheel spacing, fork shape, hinge arrangement, control geometry, brake-line routes, bag access and remaining material allocation.\n- Frame material: 6061 aluminium tubing.\n- Frame finish: fine-textured powder coat.\n- Grip contact material: TPE.\n\n## Nominal contact cases\n| Case | Standing height | Grip-reference height | Hand length | Palm breadth | Seated hip breadth |\n| --- | --- | --- | --- | --- | --- |\n| U1 | 1600 mm | 800 mm | 165 mm | 75 mm | 360 mm |\n| U2 | 1780 mm | 900 mm | 195 mm | 95 mm | 420 mm |\n\n- Case relationship: two independent nominal digital contact references.\n- Contact-board figures: standing U1 at 800 mm and standing U2 at 900 mm.\n- Hand/grip details: two enlarged details.\n- Grip settings: 800, 850 and 900 mm above level ground at the upper grip contact surface; equal left/right settings.\n- Height adjustment: one pair of grips, with visible positive retention; frame and wheels retain their geometry.\n- Usable grip length: at least 120 mm per grip.\n- Grip section, lever reach and padding: design variables.\n- Seat usable width: at least 440 mm.\n- Seat depth: 320 mm.\n- Seat top height: 460 mm.\n- Back contact: 180–260 mm above the seat.\n- Resting contact reference: a separate generic schematic adult, feet on the floor and contact with the actual seat and back.\n\n## Wheel references\n| Position | Units | Tyre | Axle height | Interface |\n| --- | --- | --- | --- | --- |\n| Front / F-L and F-R | two | diameter 200 × width 32 mm | 100 mm | Vertical swivel stem top 250 mm above ground; caster trail 30 mm; open full swivel sweep diameter 270 mm |\n| Rear / R-L and R-R | two | diameter 200 × width 32 mm | 100 mm | Fixed walking direction; total hub/brake-interface width 60 mm |\n\n- Rear brake hardware: within the wheel/interface references, with tyre dimensions and ground contacts retained.\n- Folding assembly: all four wheels attached.\n- Folded caster orientation: a deliberately retained orientation may differ from the open position.\n- Existing rear-wheel identity: charcoal tyre, pale grey circular hub, concentric hub recess and central axle interface, as pictured in rear-wheel-identity.png.\n\n## Frame and envelope limits\n- Open maximum: 650 W × 750 D × 900 H mm, including highest grip setting, wheels, controls and bag.\n- Folded maximum: 300 W × 750 D × 900 H mm at the 800 mm grip setting.\n- Shared assembly across states: frame, four wheels, seat/back, grips, brakes and one attached bag.\n- Folding provisions: actual joints, positive open-frame lock and separate folded retention.\n- Seat movement: flexing or hinging permitted.\n- Empty bag movement: compression permitted while attached.\n- Rigid members: constant dimensions through folding.\n- Clearance relationships: usable seat, bag contents, rear walking approach, feet and brake routes occupy distinct spaces.\n- Release and engagement cues: visible positions or symbols with text.\n- Folding handholds: outside marked moving joint gaps.\n- Walking-support state: open-frame lock engaged.\n\n## Dual braking grammar\n| Case | Left control | Right control | Exact label |\n| --- | --- | --- | --- |\n| Walking | Squeeze and parking controls released | Squeeze and parking controls released | Walking |\n| Slowing | Squeeze control applied | Squeeze control applied | Slowing |\n| Parked | Parking control latched | Parking control latched | Parked |\n| Left-only parking | Parking control latched | Parking control released | Not parked: apply both brakes |\n\n- Left mechanical route: left hand control → cable/link → R-L brake.\n- Right mechanical route: right hand control → cable/link → R-R brake.\n- Front wheel function: swivelling steering.\n- Physical latch direction and release gesture: selected design details, consistent across later views.\n- Slowing and parking: distinct actions, potentially sharing a lever.\n- Left-only parking illustration: unoccupied seat.\n\n## Stationary rest and walking\n- Rest surface: supplied level resting pad.\n- Rest condition: stationary product, engaged open-frame lock and both parking controls latched.\n- Rest contact: feet on ground, back on the back contact and hand/brake clearance matching the product.\n- Companion position: standing nearby.\n- Walking approach: from the rear, hands on grips, shins and feet clear of wheels and frame.\n- Walking context figure: schematic U2 at the 900 mm grip setting.\n\n## Folding sequence\n| Order | Exact label | Visible condition |\n| --- | --- | --- |\n| 1 | Open lock engaged | Unoccupied, open and locked, empty attached bag, grips at 800 mm |\n| 2 | Release open lock | Deliberate release, hands on designated frame handholds |\n| 3 | Folding | Controlled rigid-link movement, supported wheel trajectories, cable slack and stated intermediate brake condition |\n| 4 | Fold retention engaged | Fully folded, retention engaged and both parking brakes latched |\n| Reverse-opening endpoint | Re-engage open lock | Same open lock positively re-engaged before walking support |\n\n- Folding board: four ordered snapshots plus the reverse-opening endpoint detail.\n- Wheel movement: actual lift, slide or rolling paths paired with visible support and corresponding brake condition.\n- Parking-locked wheel path: lift or slide during supported movement.\n- Folded ground contact: designed contact points.\n\n## Attached bag and objects\n- Bag location: under or in front of the seat.\n- Nominal open contents envelope: 300 W × 160 D × 240 H mm.\n| Object | Envelope | Count |\n| --- | --- | --- |\n| Bottle | diameter 70 × 220 H mm | one |\n| Notebook | 105 W × 148 H × 12 mm thick | one |\n| Loosely rolled scarf | 170 × 80 × 70 mm | one |\n\n- Access condition: unoccupied, Parked product; all three objects together.\n- Access options: beside a fixed seat or through a deliberately movable seat.\n- Access path: clear of seat, frame and brake routes.\n- Contents location: clear of wheel sweep and rear walking foot space.\n- Folding condition: empty bag, attached and compressible.\n\n## Empty contexts\n| Context | Geometry | Product condition |\n| --- | --- | --- |\n| Home storage recess | 320 W × 800 D × 1020 H mm; approach clear width 700 mm | Folded, grip setting 800 mm, retained and Parked |\n| Community walking strip | 1000 mm wide; open length; straight and level | Open lock engaged; U2 at 900 mm; both squeeze and parking controls released |\n| Resting pad | 1600 × 1600 mm; level | Generic resting adult; open lock engaged; both parking controls latched |\n\n- Recess spare space at maximum product size: total width 20 mm, depth 50 mm, height 120 mm.\n- Context geometry: actual product scale within the stated boundaries.\n\n## Basic care\n- Care condition: empty, unoccupied, Parked product with open-frame lock engaged.\n- Cloth-cleaning surfaces: grips, seat, frame and empty attached bag.\n- Wheel/brake interfaces: clear of depicted debris.\n- Visual checks: open retention, folded retention and both brake links.\n- Mechanical adjustment boundary: technician-only.\n- Technical exploded view: component assembly relationships.\n\n## Exact wording and continuity\n- Product typography: WAYFARER.\n- Product-name locations: frame, complete-product boards and presentation cover.\n- Brake labels: Walking; Slowing; Parked; Not parked: apply both brakes.\n- Folding labels: Open lock engaged; Release open lock; Folding; Fold retention engaged; Re-engage open lock.\n- State communication: text plus visible position or symbols.\n- Material allocation: one coherent allocation across technical and context views.\n- Operation video duration: 12 seconds.\n- Development presentation length: at least 8 pages.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# WAYFARER — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | component-state-register | Component and state register | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | orthographic-board | Dimensioned orthographic board | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | perspective-board | Complete-product perspective board | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | contact-board | Contact and grip adjustment board | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | brake-board | Dual brake mechanisms and states | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | folding-board | Folding sequence and reopening endpoint | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | exploded-board | Technical assembly relationships | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | bag-access-board | Attached bag contents and access | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | care-board | Basic care and adjustment boundary | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | walking-context | Community walking context | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | resting-context | Stationary resting context | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | storage-context | Folded home storage context | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | operation-video | Parking, folding and reopening video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | development-presentation | Development presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: components-contact.en.md",
+            "config": {
+              "text": "# WAYFARER — given component and contact references\n\nNominal dimensions in mm; separate diagram scales.\n\n## Wheels\n\n| Position | Units | Tyre | Axle height | Notes |\n| --- | --- | --- | --- | --- |\n| Front / F-L and F-R | two | diameter 200 x 32 wide | 100 | Caster: stem top 250, trail 30, full swivel sweep diameter 270. Fork shape and frame position are design variables. |\n| Rear / R-L and R-R | two | diameter 200 x 32 wide | 100 | Fixed walking direction. Hub/brake-interface total width 60. Left control -> left rear; right control -> right rear. |\n\n## Three bag objects\n\n| Object | Envelope (mm) | Count |\n| --- | --- | --- |\n| Bottle | diameter 70 x 220 H | one |\n| Notebook | 105 x 148 x 12 | one |\n| Rolled scarf | 170 x 80 x 70 | one |\n\n- Bag content envelope: 300 W x 160 D x 240 H.\n- Folding bag condition: empty and attached.\n\n## Nominal digital cases\n\n| Case | Standing height | Grip reference | Hand length | Palm breadth | Seated hip breadth |\n| --- | --- | --- | --- | --- | --- |\n| U1 | 1600 | 800 | 165 | 75 | 360 |\n| U2 | 1780 | 900 | 195 | 95 | 420 |\n\n## Contact limits\n\n- Grip upper surface heights: 800 / 850 / 900.\n- Usable grip length: at least 120; shape open.\n- Seat usable width: at least 440; depth 320; height 460.\n- Back contact: 180 to 260 above seat.\n- Wheel attachment: all four wheels attached across states.\n- Front casters: retained folded orientation may differ from open orientation.\n- Contact cases: independent references.\n- Design variables: complete frame, control geometry, locks, seat/back, bag access and material allocation.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: empty-contexts.en.md",
+            "config": {
+              "text": "# WAYFARER — empty client contexts\n\nLevel geometry in mm; separate scales.\n\n## Storage / front view\n\n| Item | Value (mm) |\n| --- | --- |\n| Storage recess clear width | 320 |\n| Storage recess clear height | 1020 |\n| Recess depth | 800 |\n| Approach clear width | 700 |\n| Folded maximum | 300 W x 750 D x 900 H |\n| Spare at maximum size | W 20 / D 50 / H 120 total |\n| Storage grip setting | 800; retained and Parked |\n\n## Walking / level strip plan\n\n| Item | Value (mm) |\n| --- | --- |\n| Empty straight strip clear width | 1000 |\n| Strip length | open; straight and level |\n| Open maximum | 650 W x 750 D x 900 H |\n\n## Rest / level pad plan\n\n| Item | Value (mm) |\n| --- | --- |\n| Empty pad | 1600 x 1600 |\n\n- Rest condition: stationary, open lock engaged and both parking brakes latched.\n- Resting person: generic schematic adult with feet on the ground.\n- Companion position: standing nearby.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: contact-and-storage-limits.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: rear-wheel-identity.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: community-rest-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: home-entry-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "WAYFARER | An everyday folding rollator for walking, resting and home storage\n\nWe are developing WAYFARER for older adults who walk around their neighbourhood, pause for a seated rest and store their rollator at home. Develop the complete four-wheel product: frame, adjustable grips, independent mechanical brakes, seat and back contact, attached bag, folding joints and retention. Our component and interaction rules are fixed; the frame layout, fork shapes, folding arrangement and control forms are yours to resolve. Give it the familiarity of an everyday household object, using 6061 aluminium tubing with a fine-textured powder coat and TPE grip contact surfaces. Establish the remaining materials and finishes in the component and state register.\n\nThe three grip settings are 800, 850 and 900 mm. Seat height is 460 mm, depth 320 mm and usable width at least 440 mm. Four attached wheels have tyres of diameter 200 mm and width 32 mm. The complete open product fits within 650 W × 750 D × 900 H mm; folded at the 800 mm grip setting, it fits within 300 W × 750 D × 900 H mm. Walking, stationary rest and storage use the same frame and attached components. Each hand control operates its corresponding rear brake. A seated rest uses the engaged open-frame lock and both parking brakes. Print \"WAYFARER\" on the frame, the complete-product views and the presentation cover. The brake board includes \"Not parked: apply both brakes\" beside the left-only parking example. Use the other state labels listed below exactly.\n\nAudience: older adults and companions, our product team and the development workshop, for the concept selection and detailed development brief.\n\nInputs (attached): 01-client-facts.en.md contains the product scope, operating conditions and exact labels. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. components-contact.en.md contains the wheel, contact and bag-object records. empty-contexts.en.md contains the storage recess, walking strip and resting pad dimensions. contact-and-storage-limits.png maps contact heights and the storage boundary. rear-wheel-identity.png records the existing rear wheel's recognisable tyre, hub and interface form. community-rest-reference.png provides the atmosphere of an ordinary neighbourhood resting place. home-entry-reference.png provides the materials and atmosphere of a compact home entrance.\n\nDeliverables:\n1. A component and state register, one document recording component IDs, dimensions, connections, materials, finishes and visible changes in each operating state\n2. A dimensioned orthographic board, one sheet with front, side and top views of the complete open product, its selected envelope and grip settings\n3. A complete-product perspective board, one sheet with front and rear three-quarter views of the same developed design\n4. A contact board, one sheet with U1 at 800 mm, U2 at 900 mm, two enlarged hand/grip details and the seat/back contact dimensions\n5. A brake board, one sheet with both mechanical control paths and four cases labelled Walking, Slowing, Parked and Not parked: apply both brakes\n6. A folding board, one sheet with four ordered snapshots labelled Open lock engaged, Release open lock, Folding and Fold retention engaged, plus a reverse-opening endpoint labelled Re-engage open lock\n7. A technical exploded board, one sheet identifying the frame, four wheel units, brake mechanisms, grip adjustment, seat/back, bag attachments and folding locks with their connection directions\n8. A bag-access board, one sheet showing the attached 300 W × 160 D × 240 H mm contents envelope, all three specified objects together and the access path on the unoccupied Parked product\n9. A basic care board, one sheet showing cloth cleaning, clear wheel/brake interfaces, visual checks of both brake links and retention, and a technician-only mechanical adjustment boundary\n10. Three context images: U2 walking at the 900 mm grip setting on the 1000 mm strip; a generic adult resting on the 1600 × 1600 mm pad; the folded product in the 320 W × 800 D × 1020 H mm recess\n11. One 12-second operation video following the brake board's parking action and the folding board's release, fold, retention and reopening sequence\n12. A development presentation, at least 8 pages, reusing the register, complete-product views, contact details, brake and folding sequences, exploded relationships, bag access, care and three contexts\n\nAcceptance:\n- The register, orthographic board, folding board, storage image and presentation repeat the selected open and folded dimensions. The open envelope fits 650 W × 750 D × 900 H mm; the folded envelope fits 300 W × 750 D × 900 H mm at the 800 mm grip setting. The storage image labels at least 20 mm total width, 50 mm depth and 120 mm height remaining in the recess.\n- The orthographic, perspective, exploded and context images use the register's component IDs and material allocation consistently, including 6061 aluminium tubing, fine-textured powder coat and TPE grip surfaces. F-L/F-R retain diameter 270 mm open swivel sweeps and 30 mm trail; R-L/R-R retain 60 mm hub/brake interfaces. All four 200 × 32 mm tyres remain attached through the folding board and video. WAYFARER is legible on the frame, complete-product boards and presentation cover.\n- The contact board and orthographic board show equal left/right grip settings of 800, 850 and 900 mm with positive retention and at least 120 mm usable grip length. The contact board and resting image share a seat at least 440 mm wide, 320 mm deep and 460 mm high, with back contact 180–260 mm above it; the resting image shows feet on the ground.\n- The brake board, walking image, resting image, video and presentation repeat the register's applicable state names and control positions. Walking releases both controls; Slowing squeezes both; Parked latches both. The brake board exposes each control's mechanical route to its corresponding rear wheel and labels the unoccupied left-only case Not parked: apply both brakes. The resting image shows both parking latches and the open lock engaged.\n- The folding board and video follow the same four snapshots at 800 mm, with an empty attached bag, designated handholds, marked pinch zones, a stated intermediate brake condition, supported wheel paths and visible cable slack. The board and presentation repeat all five folding labels, including Re-engage open lock at the opening endpoint; rigid links and wheel identities correspond throughout.\n- The bag-access board shows the diameter 70 × 220 H mm bottle, 105 × 148 × 12 mm notebook and 170 × 80 × 70 mm scarf together, with access clear of the seat, frame and brake routes. The care board shows the empty product Parked with its open lock engaged. The presentation reuses these two boards and all three context images across at least 8 pages.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/contact-and-storage-limits.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "4d679ec83b56920482ad367f7247a9b7f49ce9aff1200b37f00c5e537e53b00c"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/rear-wheel-identity.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "fde5a464019a6ee9ae11dc786171eed17ed6bd84d5b1b1cd55f4ee82128b88af"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/community-rest-reference.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "4b81b67451603742cfb30b1bc071d4ccc277791cf45e32057ffda3e1b3b5feb4"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-03/home-entry-reference.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "9a4e5573a288c26542979760a31e1a07c12a611644b715748c931ed9e4ac31e5"
+    }
+  ]
+}

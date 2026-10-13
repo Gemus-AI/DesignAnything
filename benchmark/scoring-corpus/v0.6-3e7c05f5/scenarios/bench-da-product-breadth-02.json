@@ -1,0 +1,144 @@
+{
+  "id": "bench-da-product-breadth-02",
+  "title": "PALMSET — A commuter lunchbox for one-handed meals, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# PALMSET — client records\n\n## Product\n\n- Product name: PALMSET.\n- Product: one complete commuter lunchbox for adults eating at work with one hand available.\n- Design scope: body, lid, opening mechanism, meal partitions, utensil storage, grip and material proposals.\n- Starting framework: fixed operating rules, followed by one component and state specification and its applications.\n- Exterior lid wording: PALMSET.\n- Eating board and video opening wording: Open for lunch.\n- State labels: Closed, Open, Separated, Drying, Stored.\n\n## Component inventory\n\n| ID | Record |\n| --- | --- |\n| BX | Main box body; counted as a removable box service part |\n| LD | Lid; counted as a removable box service part; releasable for cleaning |\n| P1–P6 | Available stable IDs for additional chosen service parts |\n| U-S | Existing unbranded client spoon; additional contents |\n| U-F | Existing unbranded client fork; additional contents |\n\n- Total user-removable box service parts: 2–8, including BX and LD.\n- Additional service-part possibilities: removable dividers, seals, utensil retainers and separate carrying pieces.\n- Captive hardware: counted within its service assembly; joint function part of the assembly record.\n- Inventory continuity: the same BX, LD, zones, closure and chosen service parts across all states.\n- Commissioned product set: one box, its integrated mechanisms and carrying features, and the two existing utensils.\n- Operation system: manual, supported by an ordinary desk and any integrated base surface.\n\n## Meal records\n\n| Case | A, 350 mL | B, 200 mL | C, 50 mL |\n| --- | --- | --- | --- |\n| M1 | Cooked rice | Mixed vegetables | Thick sauce |\n| M2 | Short noodles | Salad | Thick dip |\n\n- Total nominal working volume: 600 mL.\n- Intended fill plane: at least 5 mm below each food-zone rim.\n- Zone configuration: three distinct zones, with integral or removable partitions.\n- Zone locations and shapes: open for design.\n- Meal scenes: all three foods at their recorded nominal portions.\n- Meal conditions: prepared meals and thick accompaniments, eaten at work.\n\n## Closed box and utensils\n\n| Item | Full envelope |\n| --- | --- |\n| Complete closed box | Maximum 230 L x 165 W x 90 H mm |\n| U-S spoon | 160 L x 35 W x 18 H mm |\n| U-F fork | 160 L x 25 W x 18 H mm |\n\n- Closed envelope contents: stored utensils, grips, closures and all protrusions.\n- Utensil dimensions: complete conservative bounding envelopes.\n- Utensil storage: clearance or section labels around the full envelopes; retention arrangement open for design.\n- Stored utensil relationship: separated from direct meal contact and retrievable with the loaded box open.\n- Utensil identity: forms in existing-utensils.png, with dimensions governed by the envelope records.\n- Utensil material: an open record; the supplied identity covers form and envelope.\n\n## One-hand operation\n\n| Case | Active hand | Starting condition | Opening limit | Closing limit |\n| --- | --- | --- | --- | --- |\n| H-R | Right | Closed, loaded box, front facing user, on an ordinary level desk | 4 actions | 4 actions |\n| H-L | Left | The same closed, loaded box and desk arrangement | 4 actions | 4 actions |\n\n- Support contacts: active hand, ordinary desk and any integrated base surface.\n- Action unit: one continuous purposeful movement.\n- Sequential actions available: stabilize, release, reposition and rotate.\n- Rotation accounting: each rotation counts as an action.\n- Ghost hand positions: sequential states with explicit sequence labels.\n- Hand representation: the active hand only; schematic contact maps acceptable.\n- Open endpoint: meal-access state with a supported attached lid or a stably parked lid.\n- Closed endpoint: complete box ready for carrying.\n\n## Control fixtures\n\n| Fixture | Value or record |\n| --- | --- |\n| Two simultaneous thumb/finger control contacts | Maximum 70 mm center-to-center span |\n| Single-contact action | Single contact label |\n| Push or slide release | Maximum 12 mm travel |\n| Other release types | Actual motion arc or path |\n| Action diagram content | Active contact, box support and resulting latch/lid state |\n\n## Utensil access and eating\n\n- Retrieval: either utensil with the same active hand after opening.\n- Finger path: clear of food during utensil retrieval.\n- Eating access: A, B and C available from the open state.\n- Unused utensil: stored clear of direct meal contact.\n- Eating board: H-R with M1.\n- Left-hand operation board: H-L access to the same zones and both utensils.\n\n## After-meal cleaning\n\n| Order | Routine record |\n| --- | --- |\n| 1 | Food residues emptied |\n| 2 | U-S and U-F removed |\n| 3 | LD released for cleaning |\n| 4 | Every chosen user-removable box service part separated by hand |\n| 5 | Food-contact surfaces, grooves and any sealing interface accessible for hand washing and rinsing |\n| 6 | Separated parts air drying with food-contact surfaces exposed |\n| 7 | Dry parts reassembled; both utensils stored |\n\n- Available hands during cleaning: two.\n- Separation method: tool-free.\n- Integral dividers: accessible surfaces for washing and rinsing.\n- Optional seal: removal and return path associated with its service-part ID.\n- Cleaning conditions: hand washing, rinsing, air drying and reassembly when dry.\n\n## Materials and development questions\n\n- Each chosen box service part: proposed specific material family and finish.\n- Surface groups: meal-contact, utensil-contact, hand-contact and exterior/base.\n- Material assignments: shared by component drawings, materials board and presentation.\n- Material board and presentation development questions: food-contact qualification, closure retention, seal performance when a seal is proposed, base friction and one-hand usability.\n- Open technical records: force, torque, cycle life, polymer grade, alloy, coating, recycled percentage and performance values.\n- Additional development topics: thermal retention, heating suitability, dishwasher suitability, hygiene, recycled content and production readiness.\n\n## Context records\n\n| ID | Context | Clear envelope | Contents and arrangement |\n| --- | --- | --- | --- |\n| D1 | Ordinary desk working zone | 520 L x 340 W mm | Open box, supported or parked lid, both utensils and any temporarily removed opening parts; M2 portions; identified unused-utensil resting place |\n| C1 | Existing unbranded bag compartment | 245 L x 180 W x 105 H mm | Same complete closed box, base-down, both utensils stored, grip and closure protrusions included |\n| DR1 | Drying surface | 500 L x 400 W mm | All chosen service parts and both utensils separated; food-contact surfaces exposed |\n| ST1 | Cabinet opening | 260 L x 190 W x 120 H mm | Same empty, dry, reassembled closed box with both utensils stored |\n\n- C1 bag role: existing carrying context.\n- Reference atmosphere: warm neutral office, ordinary desk, everyday commuter bag.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# PALMSET — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | component-state-spec | Component and state specification | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | closed-orthographic | Closed orthographic views and utensil section | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | open-meal-layout | Open M1 meal layout | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | right-hand-operation | H-R opening and closing | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | left-hand-operation | H-L opening and closing | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | utensil-eating | H-R utensil retrieval and eating | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | separated-cleaning | Separated parts and cleaning access | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | drying-storage | DR1 drying and ST1 storage | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | materials-surfaces | Materials and contact surfaces | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | desk-meal | D1 desk meal with M2 | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | bag-carry | C1 base-down carrying | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | closed-hero | Closed product hero | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | operation-video | H-R operation video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | product-presentation | Product development presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: client-fixtures.en.md",
+            "config": {
+              "text": "# PALMSET — client operation and envelope fixtures\n\n## Control contacts\n\n| Fixture | Limit or condition |\n| --- | --- |\n| Two required simultaneous control contacts | Center span at most 70 mm |\n| Push or slide release travel | At most 12 mm |\n| Other release mechanisms | Actual motion arc or path |\n| H-R | Right hand only |\n| H-L | Left hand only |\n| Opening | At most 4 actions |\n| Closing | At most 4 actions |\n| Support | Active hand, ordinary level desk and any integrated base surface |\n\n## Existing utensils | full bounding envelopes\n\n| Utensil | Envelope (mm) |\n| --- | --- |\n| U-S spoon | 160 L x 35 W x 18 H |\n| U-F fork | 160 L x 25 W x 18 H |\n\n- Utensil envelopes: fixed in full.\n- Storage and retention arrangement: open for design.\n\n## Complete closed box | maximum envelope\n\n- Maximum: 230 L x 165 W x 90 H mm.\n- Envelope contents: stored utensils and all protrusions.\n\n## Meal zones | nominal working volumes\n\n| Zone | Nominal working volume |\n| --- | --- |\n| A | 350 mL |\n| B | 200 mL |\n| C | 50 mL |\n| Total | 600 mL |\n\n- Intended fill planes: at least 5 mm below each food-zone rim.\n\n## Context envelopes\n\n| Context | Envelope (mm) |\n| --- | --- |\n| D1 desk | 520 L x 340 W |\n| C1 bag | 245 L x 180 W x 105 H |\n| DR1 drying | 500 L x 400 W |\n| ST1 cabinet | 260 L x 190 W x 120 H |\n\n- Drawing type: schematic dimension records.\n- Dimension basis: project operation and spatial inputs.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: operation-envelopes.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: workday-atmosphere.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: existing-utensils.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "PALMSET | A commuter lunchbox for one-handed meals\n\nWe are commissioning a complete lunchbox for adults who eat at work with one hand available. The operating rules are fixed; begin with a component and state specification and develop one product from it. Body shape, closure, partitions, utensil retention and grip are open for design. Print \"PALMSET\" on the exterior lid and \"Open for lunch\" on the eating board and the opening scene of the video. The complete closed box, with utensils and protrusions, must fit within 230 L x 165 W x 90 H mm. Retain the existing U-S spoon and U-F fork at their full envelopes of 160 L x 35 W x 18 H mm and 160 L x 25 W x 18 H mm. Provide zones A, B and C for 350 mL, 200 mL and 50 mL, totaling 600 mL, with each fill plane at least 5 mm below its rim.\n\nH-R uses the right hand; H-L uses the left. Each starts with the same loaded box facing the user on an ordinary level desk. Opening takes at most 4 actions and closing at most 4, with the active hand and desk providing support. Each action is one continuous purposeful movement; a box rotation counts as an action. Simultaneous control contacts have a maximum center span of 70 mm, and push or slide releases have at most 12 mm travel. The lid stays supported when open or parks stably on the desk. Choose 2–8 removable box service parts, including BX and LD, with additional IDs P1–P6 as needed; U-S and U-F are separate contents. Cleaning allows two hands and tool-free separation. Use the state labels Closed, Open, Separated, Drying and Stored throughout the work.\n\nAudience: our product lead and industrial design team, deciding the product layout and the mechanism to take into development.\n\nInputs (attached): 01-client-facts.en.md contains the component, meal, operation, material and cleaning records. 02-delivery-catalog.en.md lists every delivery file with its proportion, format and stage. client-fixtures.en.md contains the control limits, utensil envelopes and desk, bag, drying and cabinet dimensions. operation-envelopes.png diagrams those fixed dimensions. existing-utensils.png establishes the recognizable forms of U-S and U-F. workday-atmosphere.png provides the warm, ordinary office setting for the meal and carrying scenes.\n\nDeliverables:\n1. A one-page component and state specification recording the chosen 2–8 service parts, their IDs, dimensions and connections, the five state labels, control motion and the three meal volumes\n2. One Closed drawing sheet with front, top and right orthographic views, overall dimensions and a section through the stored U-S and U-F envelopes with clearance labels\n3. One Open layout drawing with M1 cooked rice in A, mixed vegetables in B and thick sauce in C, dimensioned fill planes, utensil storage and the supported or parked lid\n4. Two operation boards, one H-R and one H-L, each containing numbered opening and closing sequences, active contacts, support points, control travel and resulting closure states\n5. One H-R eating board showing sequential retrieval of either utensil and access to A, B and C in M1, with the unused utensil stored clear of the meal\n6. One Separated cleaning board showing residue removal, utensil removal, lid release, all service parts, joint directions and hand-washing access to food-contact surfaces, grooves and any seal interface\n7. One Drying and Stored board showing all separated parts and utensils on DR1, followed by dry reassembly and cabinet storage in ST1\n8. One materials board assigning a specific material family and finish to every service part, mapping meal, utensil, hand and exterior/base contact surfaces, and listing development questions\n9. Two context images: the M2 desk meal in D1 with short noodles in A, salad in B and thick dip in C; the complete Closed box base-down in C1 with both utensils stored\n10. One Closed product hero showing the exterior lid, grip and closure\n11. One 10-second video following the selected H-R opening sequence, utensil retrieval and the corresponding closing sequence\n12. One presentation document of at least 8 pages, reusing the specification, orthographic views, operation sequences, meal layouts, cleaning, materials and context images, with the development questions and chosen component inventory\n\nAcceptance:\n- The specification assigns BX, LD and any P1–P6 IDs to 2–8 service parts. The cleaning board, materials board and presentation repeat that inventory; the orthographic sheet and presentation repeat its chosen overall dimensions, and the state drawings use its Closed, Open, Separated, Drying and Stored labels.\n- The orthographic sheet, Open layout and presentation show the same box within 230 L x 165 W x 90 H mm, zones A/B/C at 350/200/50 mL and fill planes at least 5 mm below their rims. The utensil section labels both complete U-S and U-F envelopes and the designed clearance; the Open layout keeps them retrievable and separated from food.\n- Each H-R and H-L operation board shows at most 4 opening and 4 closing actions using its single active hand and ordinary desk support. Each action identifies its contact, support and resulting lid or latch state; paired contacts are dimensioned at 70 mm or less, single contacts are labeled, and push/slide travel is dimensioned at 12 mm or less. Other release motions have a drawn path. The eating board and H-L board show access to both utensils and all three zones with the lid supported or parked.\n- The cleaning board accounts for every service part and both utensils through tool-free separation, with washing access and removal/return paths for any seal. The Drying and Stored board places that complete inventory within DR1 at 500 L x 400 W mm with food-contact surfaces exposed, then shows the dry reassembled box and stored utensils within ST1 at 260 L x 190 W x 120 H mm.\n- The D1 context image contains the open box, lid, both utensils and any temporarily removed parts within 520 L x 340 W mm, with M2 portions of 350/200/50 mL and an identified resting place for the unused utensil. The C1 image places the complete box base-down within 245 L x 180 W x 105 H mm, including grip and closure protrusions.\n- The materials board and presentation match each service-part ID to the same material family and finish. The hero, context images and video preserve those assignments and the geometry of the orthographic sheet. The hero shows PALMSET clearly on the lid; the eating board and video opening scene print Open for lunch. The 10-second video follows the H-R board, and the presentation spans at least 8 pages.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/operation-envelopes.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "1f4330de45c74bd7c44e081d0a410dd9c1764ab60e3b2d247f3af3e85f65760e"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/workday-atmosphere.png",
+      "nodeId": "provided-image-2",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "87f1a99d1bce855c15a107691a4628710f2fc54e192c5f7b3ef653abec5aa808"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-02/existing-utensils.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "1673e147c5fc879ef35e8c26aefb91378e7a8b7a4f63faa8140b59970feeac21"
+    }
+  ]
+}

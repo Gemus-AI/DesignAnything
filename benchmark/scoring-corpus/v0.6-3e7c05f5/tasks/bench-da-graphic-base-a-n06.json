@@ -1,0 +1,548 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-graphic-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "festival-master-portrait",
+      "label": "A1 festival master poster",
+      "description": "One A1 portrait festival master with the title, descriptor, dates, Bellwater, three venue names and organiser mark.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "programme-handheld",
+      "label": "A3 handheld programme sheet",
+      "description": "One single-sided A3 programme sheet with all six complete records, three venue addresses, festival title, descriptor and organiser mark.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "signal-hall-portrait",
+      "label": "Signal Hall portrait venue poster",
+      "description": "One 600 × 900 mm Signal Hall poster with complete Quiet Engines and Soft Circuit records, 8 Relay Lane, festival title and organiser mark.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "foundry-yard-portrait",
+      "label": "Foundry Yard portrait venue poster",
+      "description": "One 600 × 900 mm Foundry Yard poster with complete Afterimage Field and Borrowed Frequencies records, 21 Loom Street, festival title and organiser mark.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tide-archive-portrait",
+      "label": "Tide Archive portrait venue poster",
+      "description": "One 600 × 900 mm Tide Archive poster with complete Recursive Garden and Slow Signal Atlas installation records, 4 Quay Passage, festival title and organiser mark.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "festival-mobile",
+      "label": "Mobile festival announcement",
+      "description": "One mobile festival announcement with the title, descriptor, dates, Bellwater, three venue names and organiser mark.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "festival-title",
+      "kind": "text-verbatim",
+      "text": "NORTH WAVE 2027",
+      "scope": {
+        "slots": [
+          "festival-master-portrait",
+          "programme-handheld",
+          "signal-hall-portrait",
+          "foundry-yard-portrait",
+          "tide-archive-portrait",
+          "festival-mobile"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "festival-descriptor",
+      "kind": "text-verbatim",
+      "text": "Independent music + digital art",
+      "scope": {
+        "slots": [
+          "festival-master-portrait",
+          "programme-handheld",
+          "festival-mobile"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "NORTH WAVE 2027",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-artwork-festival-system",
+      "slots": [
+        "festival-master-portrait",
+        "signal-hall-portrait",
+        "foundry-yard-portrait",
+        "tide-archive-portrait",
+        "festival-mobile"
+      ],
+      "sourceSlots": [
+        "programme-handheld"
+      ],
+      "items": [
+        {
+          "item": "The image applications and handheld programme share the same festival motif, type families and colour palette, with carrier-specific hierarchy and composition allowed.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "NORTH WAVE 2027",
+    "carryThrough": {
+      "none": "Every declared carry-through of the family reads from or writes to roles that tier 6 does not commission."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "festival-master-portrait",
+      "signal-hall-portrait",
+      "foundry-yard-portrait",
+      "tide-archive-portrait",
+      "festival-mobile"
+    ],
+    "layoutExtras": true,
+    "naRules": "Design quality must not rescore fixed-copy accuracy, organiser-mark fidelity or measured carrier compliance, or require photographic lighting and material realism for these graphic applications."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "festival-master-portrait",
+        "signal-hall-portrait",
+        "foundry-yard-portrait",
+        "tide-archive-portrait",
+        "festival-mobile"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-festival-master-portrait",
+      "requirementId": "R-format-festival-master-portrait",
+      "method": "artifact-property",
+      "targetSlots": [
+        "festival-master-portrait"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-programme-handheld",
+      "requirementId": "R-format-programme-handheld",
+      "method": "artifact-property",
+      "targetSlots": [
+        "programme-handheld"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-signal-hall-portrait",
+      "requirementId": "R-format-signal-hall-portrait",
+      "method": "artifact-property",
+      "targetSlots": [
+        "signal-hall-portrait"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-foundry-yard-portrait",
+      "requirementId": "R-format-foundry-yard-portrait",
+      "method": "artifact-property",
+      "targetSlots": [
+        "foundry-yard-portrait"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tide-archive-portrait",
+      "requirementId": "R-format-tide-archive-portrait",
+      "method": "artifact-property",
+      "targetSlots": [
+        "tide-archive-portrait"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-festival-mobile",
+      "requirementId": "R-format-festival-mobile",
+      "method": "artifact-property",
+      "targetSlots": [
+        "festival-mobile"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "organiser-mark-on-images",
+      "requirementId": "R-organiser-mark-on-images",
+      "method": "visual",
+      "targetSlots": [
+        "festival-master-portrait",
+        "signal-hall-portrait",
+        "foundry-yard-portrait",
+        "tide-archive-portrait",
+        "festival-mobile"
+      ],
+      "criteria": "Each target carries the festival title and the supplied Morrow Arts Collective mark. Compare the mark with 04-organiser-mark.png: its icon, lettering, relative proportions and dark colour must remain intact. Resizing proportionally and making the surrounding white field transparent are permitted; replacement lettering, recolouring, distortion, component removal or omission fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "handheld-complete-programme",
+      "requirementId": "R-handheld-complete-programme",
+      "method": "content",
+      "targetSlots": [
+        "programme-handheld"
+      ],
+      "criteria": "The single-sided sheet contains all six records without duplication or omission: Quiet Engines, independent live set, 12 November 2027, 18:00–19:00, Signal Hall, 8 Relay Lane; Soft Circuit, electronic live set, 13 November 2027, 19:00–20:15, Signal Hall, 8 Relay Lane; Afterimage Field, projection + live sound, 12 November 2027, 20:00–21:00, Foundry Yard, 21 Loom Street; Borrowed Frequencies, audiovisual performance, 13 November 2027, 20:45–21:45, Foundry Yard, 21 Loom Street; Recursive Garden, interactive digital installation, 12 November 2027, 14:00–17:00, Tide Archive, 4 Quay Passage; Slow Signal Atlas, generative moving-image installation, 13 November 2027, 14:00–17:00, Tide Archive, 4 Quay Passage. Every record's fields must be grouped so their association is unambiguous; a shared venue/address heading is acceptable when it clearly belongs to both records. The two installations must label their intervals as opening windows. Use 24-hour venue-local times. Equivalent English type wording, an ampersand for the projection conjunction, unambiguous English date formats, title capitalization styling and line wrapping are allowed. Internal P01–P06 identifiers need not print. Wrong associations, altered facts or missing fields fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ]
+    },
+    {
+      "id": "handheld-festival-and-organiser-identity",
+      "requirementId": "R-handheld-festival-and-organiser-identity",
+      "method": "content",
+      "targetSlots": [
+        "programme-handheld"
+      ],
+      "criteria": "The programme document prints NORTH WAVE 2027 and Independent music + digital art and includes the supplied organiser artwork as a visible credit. Its icon, wording, proportions and dark colour must match 04-organiser-mark.png; proportional scaling and removal of the white surround are allowed. A typed organiser name without the supplied icon, an altered mark or an omitted credit fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ]
+    },
+    {
+      "id": "festival-introduction-6",
+      "requirementId": "R-festival-introduction-6",
+      "method": "visual",
+      "targetSlots": [
+        "festival-master-portrait",
+        "festival-mobile"
+      ],
+      "criteria": "Both festival introductions visibly communicate NORTH WAVE 2027, Independent music + digital art, Bellwater, 12–13 November 2027, Signal Hall, Foundry Yard and Tide Archive. Unambiguous English date formatting and changes in placement are allowed. Missing a venue, changing the city or dates, or replacing the festival-wide introduction with one event's information fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "venue-records-6",
+      "requirementId": "R-venue-records-6",
+      "method": "visual",
+      "targetSlots": [
+        "signal-hall-portrait",
+        "foundry-yard-portrait",
+        "tide-archive-portrait"
+      ],
+      "criteria": "Check each poster against 03-programme.md and the venue addresses in 01-client-facts.en.md. Signal Hall must carry Quiet Engines and Soft Circuit at 8 Relay Lane; Foundry Yard must carry Afterimage Field and Borrowed Frequencies at 21 Loom Street; Tide Archive must carry Recursive Garden and Slow Signal Atlas at 4 Quay Passage. Each event needs its correct title, type, date and complete 24-hour interval, visibly associated with its venue/address. Both Tide Archive entries must communicate installation opening windows. Shared venue/address headings are acceptable if the association is clear. Equivalent English type labels, unambiguous English date formats, capitalization styling and line wrapping are allowed; missing, duplicated, swapped or inaccurate records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "image-carrier-and-readability-6",
+      "requirementId": "R-image-carrier-and-readability-6",
+      "method": "visual",
+      "targetSlots": [
+        "festival-master-portrait",
+        "signal-hall-portrait",
+        "foundry-yard-portrait",
+        "tide-archive-portrait",
+        "festival-mobile"
+      ],
+      "criteria": "Use the physical carrier geometry in 05-carrier-geometry.png to assess the A1 master and 600 × 900 mm venue posters: artwork extends through 3 mm bleed on every edge, and essential content remains at least 5 mm inside trim. Mobile copy stays within the reference safe rectangle. At the stated print scale, venue-name letters are at least 20 mm high. Programme text reaches 4.5:1 contrast; large headings and information-bearing graphics reach 3:1 against their actual backgrounds. Composition may vary within those limits. Unsafe content, insufficient bleed, undersized venue names or deficient contrast fails; do not require an exact raster pixel count.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "handheld-carrier-and-readability-6",
+      "requirementId": "R-handheld-carrier-and-readability-6",
+      "method": "content",
+      "targetSlots": [
+        "programme-handheld"
+      ],
+      "criteria": "Read the programme document at its intended A3 trim of 297 × 420 mm. Programme text must be at least 10 pt, with at least 4.5:1 contrast; large headings and information-bearing graphics need at least 3:1. Its print layout provides 3 mm bleed on each edge and keeps essential content at least 5 mm inside trim. Different typefaces and layouts are allowed when these limits hold. A written claim of compliance does not excuse contradictory document geometry or typography.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ]
+    },
+    {
+      "id": "festival-system-6",
+      "requirementId": "R-festival-system-6",
+      "method": "visual",
+      "targetSlots": [
+        "festival-master-portrait",
+        "signal-hall-portrait",
+        "foundry-yard-portrait",
+        "tide-archive-portrait",
+        "festival-mobile"
+      ],
+      "criteria": "The five image applications and the handheld document visibly belong to one festival identity through a recurring graphic motif, matching type families and a common palette. Carrier-specific composition, scale and hierarchy may change. An unrelated motif, replacement type system or incompatible palette on any application fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "programme-handheld"
+      ]
+    },
+    {
+      "id": "set-six-artwork-festival-system",
+      "requirementId": "R-set-six-artwork-festival-system",
+      "method": "visual",
+      "targetSlots": [
+        "festival-master-portrait",
+        "signal-hall-portrait",
+        "foundry-yard-portrait",
+        "tide-archive-portrait",
+        "festival-mobile"
+      ],
+      "criteria": "The image applications and handheld programme share the same festival motif, type families and colour palette, with carrier-specific hierarchy and composition allowed.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-graphic-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-graphic-base-a-n06/03-programme.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "programme-handheld"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "supplied-organiser-identity",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "04-organiser-mark.png"
+      ],
+      "subjectSlots": [
+        "festival-master-portrait",
+        "signal-hall-portrait",
+        "foundry-yard-portrait",
+        "tide-archive-portrait",
+        "festival-mobile"
+      ],
+      "notes": "Use the organiser mark on every final static artwork and on the selection board, preserving its icon, wording, proportions and supplied dark colour; uniform scaling and removal of its surrounding white field are allowed."
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "id": "bench-da-packaging-breadth-03",
+  "title": "ROUNDTRIP — Reusable apparel delivery and return packaging, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GRAPHIC",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# ROUNDTRIP — client facts for the reusable return mailer system\n\n## Programme\n\n- Programme name: ROUNDTRIP.\n- Retailer category: online apparel.\n- Identity status: new wordmark and graphic identity.\n- Product status: new mailer structures; existing mailer count 0.\n- Packaging family: S bag, M bag, L box.\n- Size records: 03-size-series.en.md.\n- Development variables: wordmark, typography, colours, pictograms, state marking mechanism, folding system, closure, material family, indicator form, indicator material and indicator colour.\n- Shared family features: identity, state logic and information-zone system.\n- M bag and L box construction: individual construction choices within the shared family.\n- Reuse target: at least 20 cycles per unit.\n- Journeys per cycle: 2.\n\n## Journey states\n\n| State | Route | Label zone | Seal position |\n| --- | --- | --- | --- |\n| OUTBOUND | Retailer to customer, carrying the order | 100 x 150 mm | SEAL 1 |\n| RETURN | Customer to retailer, carrying returned apparel in the same unit | 100 x 150 mm | SEAL 2 |\n\n- State-marker reading distance: arm's length.\n- Shipping-label zones in artwork: blank.\n- Return transition: outbound label covered or cleanly removed by the customer without tools; supplied return label revealed or attached.\n- Return label supply: pre-printed, inside the unit.\n- Closure operation: reusable and tool-free.\n- Primary closure: reusable fastening mechanism.\n- Journey protection: one replaceable tamper-evident indicator at the active seal position.\n- Indicator fitting and removal: unit remains intact.\n\n## Permanent tracking features\n\n| Feature | Quantity per unit | Dimensions | Artwork and use |\n| --- | --- | --- | --- |\n| SCAN zone | 1 | 60 x 60 mm | Blank zone with technical annotation; same zone on both journeys |\n| UNIT ID line | 1 | 60 x 10 mm | Blank line with technical annotation, beside SCAN; minimum usable area 60 x 10 mm |\n| CYCLE tally | 1 | 20 cells, each at least 8 x 8 mm | Retailer marks one cell per completed cycle |\n\n## Size, mass and storage\n\n- Bag dimension order: width x height x depth.\n- Box dimension order: width x depth x height.\n- S maximum closed external dimensions: 330 x 250 x 50 mm.\n- M maximum closed external dimensions: 430 x 330 x 90 mm.\n- L maximum closed external dimensions: 380 x 260 x 165 mm.\n- S maximum folded dimensions: 330 x 125 x 15 mm.\n- M maximum folded dimensions: 430 x 165 x 25 mm.\n- L maximum folded dimensions: 380 x 260 x 40 mm.\n- Empty mass targets: S 90 g or less; M 160 g or less; L 420 g or less.\n- Ten folded M units: stack within 430 x 165 x 250 mm.\n- Folding operation: flat storage, without tools.\n\n## Permanent exterior print copy\n\n| Element | Exact copy |\n| --- | --- |\n| Programme name | ROUNDTRIP |\n| Descriptor | REUSABLE MAILER · RETURN ME |\n| Retention reminder | Do not discard |\n| Size identification | S, M or L, corresponding to the unit |\n| First seal | SEAL 1 · OUTBOUND |\n| Second seal | SEAL 2 · RETURN |\n| Scan-zone label | SCAN |\n| Identifier label | UNIT ID |\n| Tally label | CYCLE |\n| Outbound state marker | OUTBOUND |\n| Return state marker | RETURN |\n\n## Insert card\n\n- Finished dimensions: 148 x 105 mm.\n- Text inset: 5 mm.\n- Numbered front steps: 6, in the order below.\n- Function: packaging-use information.\n\n| Position | Exact copy |\n| --- | --- |\n| Front title | Keep me. Return in me. |\n| Front step 1 | 1 Open at SEAL 1 and take out your order. |\n| Front step 2 | 2 Keep the mailer flat until you decide. |\n| Front step 3 | 3 To return, fold the garment and place it inside. |\n| Front step 4 | 4 Cover the outbound label and reveal the return label. |\n| Front step 5 | 5 Close the mailer and fit the SEAL 2 indicator. |\n| Front step 6 | 6 Drop it at any collection point; no box or tape needed. |\n| Back statement 1 | Not returning anything? Keep the mailer for your next order or hand it in at any store counter. |\n| Back statement 2 | Designed for many journeys, not one. |\n\n## Return sticker\n\n- Finished dimensions: 90 x 50 mm.\n- Supply: loose, with the return label.\n- Application: customer-applied beside SEAL 2 in the RETURN state.\n- Checkbox count: 1, empty.\n- Function: packaging-use information.\n\n| Element | Exact copy |\n| --- | --- |\n| State | RETURN |\n| Programme | ROUNDTRIP |\n| Checkbox label | Seal 2 fitted |\n\n## Communication scope\n\n- Packaging information: two journey states, reusable closures, replaceable indicators, tracking areas, cycle tally, folding, customer handling and warehouse storage.\n- Additional copy: short English packaging-use microcopy.\n- Additional graphics: packaging-use pictograms.\n- Technical-board contents: related views grouped on a single board.\n- Dimension labels: numerical values with units.\n- Material record fields: family, grade, thickness or grammage.\n- Structural record fields: flat blank dimensions, fold positions, closure construction and information-zone coordinates.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# ROUNDTRIP — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | direction-one | Structure and identity direction one | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process. |\n| 2 | direction-two | Structure and identity direction two | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | direction-three | Structure and identity direction three | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process. |\n| 4 | selected-specification | Selected direction and structural specification | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 5 | copy-placement | Copy and placement schedule | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 6 | bag-construction | S and M bag construction board | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | box-construction | L box construction board | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | outbound-array | OUTBOUND size array | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | return-array | RETURN size array | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | insert-card | Two-sided insert card | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | return-sticker | Return sticker | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | folding-journey | Warehouse folding and customer journey | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | return-journey-video | M bag return journey video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | system-presentation | Packaging system presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-size-series.en.md",
+            "config": {
+              "text": "# ROUNDTRIP — size series\n\n- Dimension unit: mm.\n- Bag dimension order: width x height x depth.\n- Box dimension order: width x depth x height.\n\n| Size | Form | Typical contents | Internal usable | Maximum closed external | Maximum folded for storage | Empty mass target |\n| --- | --- | --- | --- | --- | --- | --- |\n| S | bag | up to 2 folded tops | 300 x 220 x 40 | 330 x 250 x 50 | 330 x 125 x 15 | 90 g or less |\n| M | bag | up to 4 folded garments or 1 light jacket | 400 x 300 x 80 | 430 x 330 x 90 | 430 x 165 x 25 | 160 g or less |\n| L | box | 1 footwear box up to 340 x 220 x 130, or 1 coat | 360 x 240 x 150 | 380 x 260 x 165 | 380 x 260 x 40 | 420 g or less |\n\n- Ten folded M units: stack within 430 x 165 x 250 mm.\n- Common zones per unit: two 100 x 150 mm label zones, one 60 x 60 mm scan zone, one 60 x 10 mm identifier line and one 20-cell CYCLE tally.\n- Common zone dimensions: identical across S, M and L.\n- Insert card: 148 x 105 mm with a 5 mm text inset.\n- Return sticker: 90 x 50 mm.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: size-and-storage-envelopes.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: dispatch-and-return-context.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: blank-mailer-and-box.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "ROUNDTRIP | Reusable apparel delivery and return packaging\n\nWe need a reusable packaging system for our online apparel orders and customer returns. ROUNDTRIP is the programme name; the wordmark, graphics, materials and structures are open for development. The family comprises S and M bags and an L box. Their maximum closed external dimensions are respectively 330 x 250 x 50 mm, 430 x 330 x 90 mm and 380 x 260 x 165 mm. Bag dimensions follow width x height x depth; box dimensions follow width x depth x height. Empty mass targets are 90 g, 160 g and 420 g or less. Material and closure choices should support a target of at least 20 cycles, each comprising an outbound journey and a return journey.\n\nEvery unit needs clearly distinguishable \"OUTBOUND\" and \"RETURN\" states, a separate 100 x 150 mm shipping-label zone for each journey, and tool-free reusable closures with replaceable tamper-evident indicators at SEAL 1 and SEAL 2. The customer covers or cleanly removes the outbound label and reveals or attaches the return label supplied inside. Permanent features are a 60 x 60 mm scan zone, an adjacent 60 x 10 mm identifier line and a CYCLE tally of 20 cells, each at least 8 x 8 mm. The scan zone and identifier line remain empty and are annotated on technical drawings. Every unit carries ROUNDTRIP and \"REUSABLE MAILER · RETURN ME\". Folded storage limits are 330 x 125 x 15 mm for S, 430 x 165 x 25 mm for M and 380 x 260 x 40 mm for L; ten folded M units fit within 430 x 165 x 250 mm.\n\nAudience: customers receiving and returning apparel, warehouse teams handling both journeys, and couriers identifying the active label and scanning the permanent tracking area, with the work supporting our packaging selection and warehouse rollout planning.\n\nInputs (attached): 01-client-facts.en.md contains the operating facts, permanent copy, insert-card wording and return-sticker wording. 02-delivery-catalog.en.md lists the deliverables, proportions, formats and stages. 03-size-series.en.md contains the usable dimensions, external limits, folded limits, contents and mass targets for all three sizes. size-and-storage-envelopes.png maps the dimensional constraints and the ten-unit M storage stack. blank-mailer-and-box.png establishes the unprinted bag and box family and its apparel contents. dispatch-and-return-context.png provides atmosphere for courier scanning and customer repacking.\n\nDeliverables:\n1. Three distinct structure and identity direction boards, each covering the bag and box family, its material proposal, closure principle and two journey states\n2. One two-page structural specification identifying the selected direction, material names and grades, thickness or grammage, mass targets, usable and external dimensions, flat blank dimensions, fold positions, closure construction, zone coordinates and the 20-cycle target\n3. One copy and placement schedule containing every permanent label, both state markers, the complete insert-card text and the return-sticker text, with their locations\n4. Two dimensioned construction boards: one covering the S and M bag flat patterns and one covering the L box flat pattern, each with assembled views, fold lines, reusable closure details, replaceable indicators and permanent tracking details\n5. One OUTBOUND size-array image containing closed S, M and L units with their active shipping-label zones and fitted SEAL 1 indicators\n6. One RETURN size-array image containing the same S, M and L units with their return labels, fitted SEAL 2 indicators and return stickers\n7. One insert-card artwork showing both sides at 148 x 105 mm with a 5 mm text inset, the title \"Keep me. Return in me.\", six numbered steps and both back-panel statements\n8. One 90 x 50 mm return-sticker artwork carrying RETURN, ROUNDTRIP and \"Seal 2 fitted\" with one empty checkbox\n9. One warehouse folding and customer journey board containing folding sequences for all three sizes, a dimensioned ten-unit M stack, a warehouse shelf arrangement and six customer steps from opening through return drop-off\n10. One 12-second video following the M bag through opening, flat storage, repacking, label change, SEAL 2 fitting and courier scanning\n11. One presentation document of at least 10 pages, opening with the selected direction and reusing the specification, copy schedule, construction boards, two state arrays, card, sticker and folding journey\n\nAcceptance:\n- The three direction boards present three different structural and visual approaches. The structural specification selects one by name and carries its bag and box construction into both construction boards, both state arrays and the presentation; the presentation names that selection on page 1.\n- The structural specification and construction boards state matching material names, grades, actual flat blank dimensions and fold positions. The construction boards dimension all three sizes against the usable and external dimensions in 03-size-series.en.md; the presentation repeats the selected materials, 90 g, 160 g and 420 g mass targets, and the target of at least 20 cycles.\n- Both construction boards and both state arrays preserve the selected positions of two 100 x 150 mm label zones, the permanent 60 x 60 mm scan zone, adjacent 60 x 10 mm identifier line and 20-cell CYCLE tally with cells at least 8 x 8 mm. Technical annotations identify the empty scan zone and identifier line, and show an indicator fitting and removal sequence at each seal position.\n- The copy schedule, construction boards and both state arrays carry the permanent exterior wording from 01-client-facts.en.md, including ROUNDTRIP, REUSABLE MAILER · RETURN ME and the size letter. The OUTBOUND array exposes OUTBOUND and the outbound label zone; the RETURN array exposes RETURN and the return label, with the outbound label covered or removed and the sticker next to SEAL 2. Each array includes an arm's-length view of its state marker.\n- The insert-card artwork repeats the title, all six numbered steps in order and both back statements from 01-client-facts.en.md within the 5 mm text inset. The return-sticker artwork repeats RETURN, ROUNDTRIP and Seal 2 fitted with exactly one empty checkbox; the RETURN array uses that same sticker at 90 x 50 mm.\n- The warehouse folding and customer journey board dimensions folded S, M and L units within 330 x 125 x 15 mm, 430 x 165 x 25 mm and 380 x 260 x 40 mm, and the ten-unit M stack within 430 x 165 x 250 mm. Its six customer steps follow the insert card. The 12-second video shows those six actions with the selected M construction, and the presentation repeats the folded limits and reuses the warehouse arrangement and journey.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-03/size-and-storage-envelopes.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "a750e69d9936bc94d0904fa3a838e644ff5df10621391f765de9c366bd1f8e0e"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-03/dispatch-and-return-context.png",
+      "nodeId": "provided-image-2",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "30446b3dfee0fab5c2d82cce05ce68668c4c1db659ff29206aa47c257cdb3d9a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-packaging-breadth-03/blank-mailer-and-box.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "270e92a30c152a917d827cfde2fb8930b09428f7f608bab517ca9dce0f8d5c50"
+    }
+  ]
+}

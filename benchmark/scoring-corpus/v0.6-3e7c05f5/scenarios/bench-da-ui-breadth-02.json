@@ -1,0 +1,144 @@
+{
+  "id": "bench-da-ui-breadth-02",
+  "title": "CUTLINE — A desktop workspace for arranging podcast audio, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "UIUX",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# CUTLINE — SMALL SIGNALS\n\n## Product and interface\n\n- Product name: CUTLINE.\n- Project name: SMALL SIGNALS.\n- Product type: desktop podcast editing workspace.\n- Audience: independent creators editing interviews and audio programs.\n- Direction: specification followed by applications.\n- Minimum application window: 1440 × 900 logical units, landscape.\n- Background: #182128.\n- Accent: #82D9C6.\n- Page names: Sources, Workspace, Export, Versions.\n- Numeric edit fields: seconds to three decimal places.\n- Timeline ruler: whole-second labels permitted.\n- Source and timeline interval convention: half-open [start, end); touching endpoints have zero overlap.\n- Body-text contrast: at least 4.5:1.\n- Large-text and icon contrast: at least 3:1.\n- State indicators: text or icons alongside color.\n- Component states: Default, Pressed, Disabled, Error.\n- Trim action label: Apply trim.\n- Completed-export action label: Download.\n- Project export range: [0.000, 24.000) s at every revision.\n- Video duration: 12 seconds.\n- Presentation length: at least eight pages.\n\n## Source identity\n\n- Source records: 03-source-records.en.md.\n- Source identity image: source-waveforms.png.\n- Source identity elements: source ID, name, metadata and waveform character.\n- Source-library duration: complete original duration, independent of instance trimming or repetition.\n- Source-to-instance relationship: one source can have multiple independent instances.\n- H01 and R01 source-type label: Synthetic speech.\n- J01 and P01 source-type label: Original synthesis.\n\n## Tracks\n\n| Track ID | Name | Gain | r01 mute state |\n|---|---|---:|---|\n| V | Voice | 0 dB | Unmuted |\n| M | Music | -12 dB | Unmuted |\n| P | Percussion | -18 dB | Unmuted |\n\n- Gain scope: all instances on the track.\n- Gain meaning: specified track gain control.\n- Mute: a separate track property.\n- Track order and placement: designer's choice.\n- Instance speed factor: 1.000 throughout.\n- Instance editing properties: source interval, timeline start and total Repeats.\n- Repeats: total number of plays, including the first.\n- Instance duration: (SourceOut - SourceIn) × Repeats.\n- Timeline end: Start + instance duration.\n\n## Initial arrangement — r01\n\n| Instance | Source | Track | Start (s) | SourceIn (s) | SourceOut (s) | Repeats | Timeline end (s) |\n|---|---|---|---:|---:|---:|---:|---:|\n| I01 | J01 | M | 0.000 | 0.000 | 2.000 | 1 | 2.000 |\n| I02 | H01 | V | 2.000 | 0.000 | 10.000 | 1 | 12.000 |\n| I03 | R01 | V | 12.000 | 0.000 | 10.000 | 1 | 22.000 |\n| I04 | J01 | M | 22.000 | 0.000 | 2.000 | 1 | 24.000 |\n| I05 | P01 | P | 2.000 | 0.000 | 1.000 | 10 | 12.000 |\n\n- Selected instance: I02.\n- Source pane: H01, 10.000 s.\n- Instance pane: I02, V, source [0.000, 10.000), timeline [2.000, 12.000).\n- I01 and I04: independent placements of J01.\n- I05 at r01: one instance referencing P01, ten plays and twenty percussion attacks over [2.000, 12.000).\n\n## Revision records\n\n| Revision | Operation | I02 source interval (s) | I02 timeline interval (s) | I05 Repeats | I05 timeline interval (s) | P mute state |\n|---|---|---|---|---:|---|---|\n| r01 | Initial arrangement | [0.000, 10.000) | [2.000, 12.000) | 10 | [2.000, 12.000) | Unmuted |\n| r02 | Trim I02 | [0.500, 9.500) | [2.000, 11.000) | 10 | [2.000, 12.000) | Unmuted |\n| r03 | Mute P | [0.500, 9.500) | [2.000, 11.000) | 10 | [2.000, 12.000) | Muted |\n| r04 | Set I05 Repeats to 8 | [0.500, 9.500) | [2.000, 11.000) | 8 | [2.000, 10.000) | Muted |\n| r05 | Undo Set I05 Repeats to 8 | [0.500, 9.500) | [2.000, 11.000) | 10 | [2.000, 12.000) | Muted |\n\n- r02 trim mode: non-ripple.\n- r02 I02 duration: 9.000 s; speed 1.000; Repeats 1; timeline start 2.000.\n- r02 I03 start: 12.000.\n- r02 Voice-track gap: [11.000, 12.000), duration 1.000 s.\n- r02 Percussion-track coverage: I05 continues unmuted through 12.000.\n- r02 removed H01 intervals: [0.000, 0.500) and [9.500, 10.000); both contain digital zeros only.\n- r02 H01 source-library duration: 10.000 s.\n- r02 remaining instances and original source data: same as r01.\n- r03 P gain: -18 dB; I05 reference, waveform and ten plays retained.\n- r03 V and M: Unmuted; r02 trim retained.\n- r03 export snapshot: P suppressed by track mute.\n- r04 change: I05 total Repeats only, from 10 to 8.\n- r04 I05 source interval: [0.000, 1.000); timeline start 2.000; speed 1.000.\n- r04 other instance ranges and track states: same as r03.\n- r05 current revision: a new immutable revision ID.\n- r05 content state: same as r03; r04 remains in history.\n- r05 next available Redo: Set I05 Repeats to 8; pending.\n- Revision labels: immutable historical identifiers.\n- Selection, hover and dialog opening: interface state changes within the existing project revision.\n- Comparison-board convention: separately labeled panels for each revision or input state.\n\n## Input error record\n\n| Page | Project revision | Selected instance | Field | Entered value (s) | Source limit (s) | Error label | Apply trim state |\n|---|---|---|---|---:|---:|---|---|\n| Workspace | r01 | I02 | SourceOut | 10.500 | 10.000 | Outside source range | Disabled |\n\n- Invalid input: a pending field value; r01 arrangement retained.\n- Valid r02 trim values: SourceIn 0.500, SourceOut 9.500.\n\n## Export settings and version filenames\n\n| Property | Value |\n|---|---|\n| Audio container | WAV |\n| Encoding | PCM 16-bit |\n| Channels | Mono |\n| Sample rate | 22050 Hz |\n| Project range | [0.000, 24.000) s |\n| Duration | 24.000 s |\n| V01 filename | SMALL_SIGNALS_V01.wav |\n| V02 filename | SMALL_SIGNALS_V02.wav |\n| V03 filename | SMALL_SIGNALS_V03.wav |\n\n- Export filenames: in-product audio-version records.\n- Snapshot contents: instance arrangement, track gains and mute states at the captured revision.\n- Current: exact equality between snapshot revision and current project revision.\n- Outdated: snapshot revision differs from current project revision.\n- Ready: download available.\n- Rendering: progress visible; Download disabled.\n- Rendering disabled-action explanation: Available when Ready.\n- Progress value at E3: 60%.\n\n## Export event sequence\n\n| Event | Current project | Export facts and available state |\n|---|---|---|\n| E1 | r02 | V01 finishes from r02; Ready; 24.000 s. |\n| E2 | r03 | V02 settings open with snapshot revision r03 before export starts; V01 remains Ready and is Outdated. |\n| E3 | r04 | V02 remains Rendering at 60% from captured r03; Download disabled. |\n| E4 | r04 | V02 finishes Ready from r03 and is Outdated; Download enabled with r03 identified. V01 remains Ready from r02 and Outdated. |\n| E5 | r05 | V03 finishes Ready from r05 and is Current. V01 and V02 remain Ready and Outdated. |\n\n- Export settings screen: E2.\n- Rendering screen: E3.\n- Completed outdated-export screen: E4.\n- Version-history screen: E5.\n- E3 and E4 V02 contents: r03 snapshot, including I05 Repeats 10 and P muted.\n- E5 V02 relationship: content equivalent to r05, snapshot revision r03, Outdated.\n- Project revision, export snapshot revision, processing status and currency: separate displayed fields.\n\n| E5 version | Filename | Snapshot revision | Status | Duration (s) | Currency |\n|---|---|---|---|---:|---|\n| V01 | SMALL_SIGNALS_V01.wav | r02 | Ready | 24.000 | Outdated |\n| V02 | SMALL_SIGNALS_V02.wav | r03 | Ready | 24.000 | Outdated |\n| V03 | SMALL_SIGNALS_V03.wav | r05 | Ready | 24.000 | Current |\n\n## Interaction records\n\n- Source preview: playback position within the selected original source.\n- Timeline transport: project playhead position.\n- Selected-instance controls: source In/Out, non-ripple trim feedback and total Repeats.\n- Track controls: gain and mute.\n- History controls: Undo and Redo.\n- Export controls: confirmation, progress and Download availability.\n- Keyboard shortcuts: optional designer choices recorded in the behavior specification.\n- Displayed factual fields: values of the labeled revision or event.\n- Waveform identity: envelope from source-waveforms.png, adapted to the displayed source interval and scale.\n- Repeated-instance waveform: repetition of the referenced source envelope.\n- Muted-instance waveform: retained envelope with a mute indicator.\n- Source IDs, instance IDs, track IDs, seconds, gains and revision relationships: visible in their relevant views.\n- Video operation order: Apply trim; Mute P; Set I05 Repeats to 8; Undo.\n- Design choices: typography, composition and control shapes within the fixed window, colors and behavior records.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# CUTLINE — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | architecture-spec | Information architecture and behavior specification | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | component-states | Component and state value table | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 3 | source-library | Sources library and source preview | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | workspace-r01 | Initial Workspace at r01 | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | trim-r02 | Trim result and invalid-input state | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | mute-r03 | Percussion track muted at r03 | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | repeats-r04 | I05 repeat edit at r04 | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | undo-r05 | Undo result and pending Redo at r05 | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | export-settings-e2 | Export settings at E2 | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | export-rendering-e3 | Rendering snapshot at E3 | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | export-ready-e4 | Completed outdated export at E4 | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | version-history-e5 | Version history at E5 | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | editing-demo | Twelve-second editing demonstration | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | design-presentation | Interface and behavior presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-source-records.en.md",
+            "config": {
+              "text": "# SMALL SIGNALS — source recording records\n\n## Source metadata\n\n| Source | Name | Recorded filename | Frames | Sample rate (Hz) | Channels | Bit depth | Duration (s) | Type label |\n|---|---|---|---:|---:|---:|---:|---:|---|\n| H01 | Host introduction | H01.wav | 220500 | 22050 | 1 | 16 | 10.000 | Synthetic speech |\n| R01 | Street response | R01.wav | 220500 | 22050 | 1 | 16 | 10.000 | Synthetic speech |\n| J01 | Three-note jingle | J01.wav | 44100 | 22050 | 1 | 16 | 2.000 | Original synthesis |\n| P01 | Two-hit percussion | P01.wav | 22050 | 22050 | 1 | 16 | 1.000 | Original synthesis |\n\n- Recording encoding: mono, 22050 Hz, signed 16-bit PCM WAV.\n- Duration calculation: sample frames / sample rate.\n- H01 production: local Windows System.Speech synthesis of original written text, using Microsoft Zira Desktop.\n- R01 production: local Windows System.Speech synthesis of original written text, using Microsoft David Desktop.\n- Speech timing: original synthesis timing, with 0.500 s of silence before the raw synthesized recording and silence padding to the declared duration.\n- Speech timestamp granularity: source duration and padding boundaries.\n- J01 and P01 production: original mathematical sound synthesis.\n- Spoken references to a bicycle bell and footsteps: content of the R01 script.\n- Source visual identity: metadata and waveform envelopes.\n\n## Spoken content\n\n| Source | Complete English script |\n|---|---|\n| H01 | Welcome to Small Signals. Today we are listening for the quiet details that make an ordinary street feel familiar. |\n| R01 | I notice the bicycle bell first, then footsteps near the corner. Those small sounds help me picture the street. |\n\n## Sound events and trim intervals\n\n| Source | Source time or interval (s) | Content |\n|---|---|---|\n| H01 | [0.000, 0.500) | Digital zeros; leading silence |\n| H01 | [9.500, 10.000) | Digital zeros; trailing silence |\n| J01 | 0.000 | First pitched-note envelope start |\n| J01 | 0.500 | Second pitched-note envelope start |\n| J01 | 1.000 | Third pitched-note envelope start |\n| J01 | [0.000, 2.000) | Three pitched attacks with decay and silence within the complete source |\n| P01 | 0.000 | First percussion envelope start |\n| P01 | 0.500 | Second percussion envelope start |\n| P01 | [0.000, 1.000) | Two percussive attacks with decay and silence within the complete source |\n\n- J01 and P01 onset values: oscillator-envelope start parameters.\n- J01 and P01 content: instrumental synthesis.\n- H01 r02 retained interval: [0.500, 9.500), duration 9.000 s.\n- H01 r02 removed content: digital zeros in the two boundary intervals above.\n\n## Waveform image\n\n- Image filename: source-waveforms.png.\n- Envelope provenance: minimum and maximum samples from the four recorded sources above.\n- H01 source-axis extent: 0–10 s.\n- R01 source-axis extent: 0–10 s.\n- J01 source-axis extent: 0–2 s.\n- P01 source-axis extent: 0–1 s.\n- Vertical amplitude: signed PCM / 32768.\n- Column aggregation: minimum and maximum samples in each pixel bin.\n- Axis context: independent source time for each recording.\n- Display simplification: recognizable event and silence structure within the displayed source interval.\n- Repeated-instance envelope: repeated source envelope at speed 1.000.\n- Muted-instance identity: original source reference and retained waveform.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: source-waveforms.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: desktop-window-constraint.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: creator-desk-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "CUTLINE | A desktop workspace for arranging podcast audio\n\nWe are building a desktop editing workspace for independent podcast creators. Use \"CUTLINE\" as the product name and SMALL SIGNALS as the project. The designer works from the four source records and their waveform image: H01 / Host introduction, 10.000 s; R01 / Street response, 10.000 s; J01 / Three-note jingle, 2.000 s; and P01 / Two-hit percussion, 1.000 s. The central relationship is one source recording to independently editable timeline instances, followed by an export tied to a particular project revision.\n\nBuild the specification first, then develop the screens from it. The desktop window has a minimum logical size of 1440 × 900 units, landscape. Use background #182128 and accent #82D9C6. Numeric edit fields use seconds to three decimal places. The three tracks are V / Voice at 0 dB, M / Music at -12 dB and P / Percussion at -18 dB; the export range stays [0.000, 24.000) s through r01–r05. Label the trim action \"Apply trim\" and the completed-export action \"Download\". I01 and I04 share J01, while I05 repeats P01. Make those relationships readable alongside the selected instance's source interval and timeline placement.\n\nAudience: independent interview and audio-program creators, with our product and engineering team using the work to agree the editing behavior and desktop interface.\n\nInputs (attached): 01-client-facts.en.md contains the project, track, revision, interaction and export records. 02-delivery-catalog.en.md contains the proportions, formats and stages of all 14 deliverables. 03-source-records.en.md contains the four source recordings' names, durations, timestamps, content and waveform metadata. desktop-window-constraint.png is the constraint image establishing the minimum logical window. source-waveforms.png is the identity image preserving each source's envelope and separate source-time axis. creator-desk-reference.png is the atmosphere reference for a focused editing session.\n\nDeliverables:\n1. A one-page information architecture and behavior specification, with a page × entry × data table for Sources, Workspace, Export and Versions, plus source-to-instance-to-snapshot relationships, track gains and revision rules\n2. A one-page component × state × value table covering Default, Pressed, Disabled and Error, with color values, contrast ratios, numeric fields, buttons, mute indicators and status labels\n3. Two screens: Sources with four recordings and a distinct source-preview context; Workspace at r01 with five instances and I02 selected\n4. Four editing-state boards: the r02 trim result with an r01 invalid-input inset; P muted at r03; I05 changed to eight plays at r04; and Undo producing r05 with the next Redo visible\n5. Four export screens: E2 settings, E3 rendering, E4 completed outdated export, and E5 version history with all three versions\n6. One 12-second interaction video following Apply trim, P mute, I05 repeat editing and Undo from r01 through r05, with readable revision labels and pressed-control feedback\n7. One presentation document of at least eight pages, reusing the specification, component table, source library, workspace, editing boards and export screens, with CUTLINE and SMALL SIGNALS on its first page\n\nAcceptance:\n- The specification and component table establish the four page names, track gains, #182128 background and #82D9C6 accent; the library, workspace, editing boards, export screens and presentation repeat those names and values wherever used. Every application screen, including each inset and video frame, uses the 1440 × 900 logical window.\n- The Sources screen and r01 Workspace show H01 and R01 at 10.000 s, J01 at 2.000 s and P01 at 1.000 s. The Workspace shows I01 and I04 referencing J01 and I02 referencing H01 at source [0.000, 10.000), timeline [2.000, 12.000). Waveforms in the library, workspace and editing boards preserve the attached source's event and silence structure and distinguish source time from project time.\n- The trim board shows I02 at source [0.500, 9.500), duration 9.000 s and timeline [2.000, 11.000), with I03 still starting at 12.000 and H01 still 10.000 s. Its r01 inset shows SourceOut 10.500, the Outside source range error and disabled Apply trim. The component table and application screens provide text contrast of at least 4.5:1, large-text and icon contrast of at least 3:1, and text or icon indicators for every mute, error and export status.\n- The mute, repeat and Undo boards and the video retain P at -18 dB: r03 has P muted and I05 at 10 plays ending 12.000; r04 has eight plays ending 10.000; r05 restores 10 plays ending 12.000 while retaining mute and the I02 trim. The Undo board identifies Set I05 Repeats to 8 as the next Redo. The video displays the four operations in that order over 12 seconds.\n- The four export screens retain range [0.000, 24.000) s and the settings in the fact sheet. E3 shows current r04, V02 snapshot r03, Rendering at 60% and disabled Download; E4 shows V02 Ready and Outdated with Download enabled. E5 lists V01/r02 and V02/r03 as Ready and Outdated, and V03/r05 as Ready and Current, each with 24.000 s duration and its recorded filename.\n- The presentation has at least eight pages and repeats the specification's three track gains, three-decimal seconds rule and snapshot-revision rule beside the reused editing and export screens; its first page prints CUTLINE and SMALL SIGNALS.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/source-waveforms.png",
+      "nodeId": "provided-image-1",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "966b93375125ff0a9ad99060ba9ca70d5900918f0edf81b479ece0c07f026499"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/desktop-window-constraint.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "026d5a14f45dc2a262c08733dd9eee50bf7a99e8b14be3b29044ac20e464370a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-02/creator-desk-reference.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "417d9a81a2e4217520b7f0a5b150b1889a97bbe3004c060567c287fa07c71715"
+    }
+  ]
+}

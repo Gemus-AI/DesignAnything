@@ -1,0 +1,635 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ecom-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "pearl-product-front",
+      "label": "PA-101 front-led product card",
+      "description": "One square PA-101 front-led product card with identity, grade, storage, price and bundle summary.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "graphite-product-front",
+      "label": "PA-102 front-led product card",
+      "description": "One square PA-102 front-led product card with identity, grade, storage, price and bundle summary.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pearl-condition-bundle",
+      "label": "PA-101 condition and accessory panel",
+      "description": "One landscape PA-101 panel with front, rear and port views, hairline detail, accessories and dimension comparison.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "graphite-condition-bundle",
+      "label": "PA-102 condition and accessory panel",
+      "description": "One landscape PA-102 panel with front, rear and port views, three wear details, accessories and dimension comparison.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "unit-comparison",
+      "label": "Two-unit condition and price comparison",
+      "description": "One two-row comparison panel covering both units' names, IDs, grades, wear, storage, prices and accessory counts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "portrait-both",
+      "label": "Two-unit portrait shopping panel",
+      "description": "One portrait shopping panel presenting both units with identity, grade, storage, price, wear and included accessories.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "store-name",
+      "kind": "text-verbatim",
+      "text": "LOOP AGAIN",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "product-family",
+      "kind": "text-verbatim",
+      "text": "Pocket P1",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "listing-phrase",
+      "kind": "text-verbatim",
+      "text": "See the wear. Know the bundle.",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "unit-label",
+      "kind": "text-verbatim",
+      "text": "Unit",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "condition-label",
+      "kind": "text-verbatim",
+      "text": "Condition",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "included-label",
+      "kind": "text-verbatim",
+      "text": "Included",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "price-label",
+      "kind": "text-verbatim",
+      "text": "Price",
+      "scope": {
+        "slots": [
+          "pearl-product-front",
+          "graphite-product-front",
+          "pearl-condition-bundle",
+          "graphite-condition-bundle",
+          "unit-comparison",
+          "portrait-both"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "LOOP AGAIN",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-purchase-records",
+      "slots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "items": [
+        {
+          "item": "The same unit retains the same name, ID, grade, storage, price, wear and accessory inventory across square, landscape, comparison and portrait layouts.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Every depiction preserves the correct Pearl or Graphite identity and shows the recorded marks whenever their surfaces are visible.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "LOOP AGAIN"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "pearl-product-front",
+      "graphite-product-front",
+      "pearl-condition-bundle",
+      "graphite-condition-bundle",
+      "unit-comparison",
+      "portrait-both"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge redesign of the fixed handheld hardware or penalize its required wear; factual accuracy, required copy, frame geometry and text-height compliance belong to the explicit checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-pearl-product-front",
+      "requirementId": "R-format-pearl-product-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pearl-product-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-graphite-product-front",
+      "requirementId": "R-format-graphite-product-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "graphite-product-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pearl-condition-bundle",
+      "requirementId": "R-format-pearl-condition-bundle",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pearl-condition-bundle"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-graphite-condition-bundle",
+      "requirementId": "R-format-graphite-condition-bundle",
+      "method": "artifact-property",
+      "targetSlots": [
+        "graphite-condition-bundle"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-unit-comparison",
+      "requirementId": "R-format-unit-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "unit-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-portrait-both",
+      "requirementId": "R-format-portrait-both",
+      "method": "artifact-property",
+      "targetSlots": [
+        "portrait-both"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "unit-records-and-layout-content",
+      "requirementId": "R-unit-records-and-layout-content",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "Read the purchase information for every unit presented. PA-101 must be identified as Pocket P1 Pearl, Grade A, 64 GB, USD 99, with one USB-C cable and one zip case; PA-102 must be identified as Pocket P1 Graphite, Grade B, 64 GB, USD 79, with one USB-C cable and no zip case. The four fixed purchase labels must organize the corresponding information without swapping records. Each single-unit role must feature its designated unit; both-unit roles must present both. Front-led product cards show the front, and rear-led cards show the rear. Portrait panels identify their unit or units and their included accessories. Wording and layout may vary except for required verbatim text; missing information, mismatched associations or extra included accessories fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "physical-identity-and-visible-condition",
+      "requirementId": "R-physical-identity-and-visible-condition",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "Each depicted handheld must retain its reference identity: Pearl #E8E5DE or Graphite #343A40 shell, rounded horizontal housing with the recorded proportions, centered landscape black screen, left cross-shaped directional pad, four right face buttons, two lower oval buttons, rear recess and corner screws, and centered top USB-C port with the power button to its left. PA-101 retains clear glass, matte buttons and port rim, and a 6 mm horizontal upper-right rear hairline. PA-102 retains clear glass, a 12 mm upper-right rear scratch descending rightward, the polished lower-right face button and the 3 mm pale scuff on the port's right lip. Judge locations in the relevant surface's viewing orientation. Changes in camera angle, crop and lighting are allowed, but visible surfaces must not be cleaned up, mirrored, recolored or assigned another unit's wear. Depicted included accessories must match the black USB-C-to-USB-C cable and charcoal fabric zip case identities.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "purchase-text-height",
+      "requirementId": "R-purchase-text-height",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "Measure visible purchase lettering relative to each image's shorter edge. Unit identification, condition, included-item and price information must have text height of at least 2.5% of that edge and remain readable. Typeface and line arrangement may vary; undersized purchase text fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "storefront-regions-6",
+      "requirementId": "R-storefront-regions-6",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "portrait-both"
+      ],
+      "criteria": "Product-card handhelds span 85–90% of canvas width inside the upper 75% product region on white, with a 5% spacing band before the lower 20% caption region. Portrait purchase text occupies the lower 30%; landscape condition-panel text occupies the rightmost 30%. Internal styling may vary within these regions; moving purchase captions elsewhere or violating the prescribed product scale fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "condition-evidence-6",
+      "requirementId": "R-condition-evidence-6",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-condition-bundle",
+        "graphite-condition-bundle"
+      ],
+      "criteria": "Each complete panel includes front, rear and port views, wear callouts and its complete accessory inventory. PA-101's rear detail locates and identifies the 6 mm horizontal upper-right hairline. PA-102's views locate and identify the 12 mm diagonal upper-right rear scratch, polished lower-right face button and 3 mm right-port-lip scuff. Each panel places a plain reference card beside the handheld with credible relative scale and labels the handheld 160 × 76 × 18 mm and card 85 × 54 mm. View arrangement may vary; missing surfaces, misplaced callouts, omitted accessories or incorrect dimension labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "comparison-records-6",
+      "requirementId": "R-comparison-records-6",
+      "method": "visual",
+      "targetSlots": [
+        "unit-comparison"
+      ],
+      "criteria": "The comparison has two distinct unit rows with both product names, IDs, grades, wear, 64 GB storage, prices and accessory counts. The Pearl row pairs USD 99 with cable count 1 and case count 1; the Graphite row pairs USD 79 with cable count 1 and case count 0, explicitly showing the zero. Explain Grade A using the light rear hairline and matte controls, and Grade B using the rear scratch, polished button and port scuff. Explanation wording may vary; generic grades without the recorded evidence, duplicate units or incorrect counts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-shared-purchase-records",
+      "requirementId": "R-set-shared-purchase-records",
+      "method": "visual",
+      "targetSlots": [
+        "pearl-product-front",
+        "graphite-product-front",
+        "pearl-condition-bundle",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "criteria": "The same unit retains the same name, ID, grade, storage, price, wear and accessory inventory across square, landscape, comparison and portrait layouts. Every depiction preserves the correct Pearl or Graphite identity and shows the recorded marks whenever their surfaces are visible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n06/03-unit-records.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "pearl-unit-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "05-pearl-front.png",
+        "06-pearl-rear.png",
+        "07-pearl-port.png"
+      ],
+      "subjectSlots": [
+        "pearl-product-front",
+        "pearl-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "notes": "These marks remain visible at their recorded locations whenever those surfaces appear."
+    },
+    {
+      "id": "graphite-unit-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "08-graphite-front.png",
+        "09-graphite-rear.png",
+        "10-graphite-port.png"
+      ],
+      "subjectSlots": [
+        "graphite-product-front",
+        "graphite-condition-bundle",
+        "unit-comparison",
+        "portrait-both"
+      ],
+      "notes": "These marks remain visible at their recorded locations whenever those surfaces appear."
+    }
+  ]
+}

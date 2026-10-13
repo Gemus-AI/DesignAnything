@@ -1,0 +1,30 @@
+TIDEWAY FERRIES | One regional ferry operator across three routes
+
+We are launching a regional public ferry service for everyday cross-water journeys and occasional visits. Build an identity that lets passengers recognise one operator before finding their route, service level and destination. The operator name is "TIDEWAY FERRIES". The identity is open: begin with three distinct directions, select one in the strategy, and develop the remaining work from that choice. Passenger-facing wording is English throughout.
+
+Our four piers are P1 Harbor Hall, P2 Reed Bank, P3 Lantern Isle and P4 North Quay. F1 Cross Reach is Regular, connecting P1 and P2 daily, 07:00–21:00, every 20 minutes. F2 Island Link is Regular, connecting P1, P3 and P4 in that order daily, 08:00–20:00, every 40 minutes. F3 Quay Direct is Express, connecting P2 and P4 directly during two daily windows, 06:30–09:30 and 16:30–19:30, every 30 minutes. Each route also serves the reverse sequence. Regular serves every listed stop; Express serves its two endpoints directly. Frequencies describe departure intervals. The single journey ticket and mobile ticket share record TW-1084; the operator-wide day pass is TW-D2042. Both are dated 18 April 2028 and carry "Sample". The existing blank vessel is our shared application carrier: preserve its outline, cabin, windows, door, right-facing orientation and full-body framing, with the operator signature in area A and the assigned route code and service level in area B.
+
+Audience: residents commuting across the water and visitors unfamiliar with the piers, with our operations and design teams using the work to choose the identity and prepare passenger touchpoints.
+
+Inputs (attached): 01-client-facts.en.md contains the operator, pier, route, ticket, mobile snapshot and vessel application records. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-vessel-carrier.png is the identity input: the existing unbranded vessel that remains recognisable in both route applications. 04-vessel-application-zones.png is the constraint input locating areas A and B on the carrier coordinate grid. 05-harbor-materials.png is the reference input for the atmosphere of a working waterfront and durable public information surfaces.
+
+Deliverables:
+1. Three identity direction boards, each showing an operator signature, an F1–F3 route identification approach and a Regular/Express distinction
+2. A one-page strategy selecting one of the three directions and stating the operator-to-route hierarchy, the chosen primary color code and the Regular/Express distinction
+3. One selected identity and rules sheet containing the operator signature, all three route identifiers, both service-level labels, typography and the strategy's primary color code
+4. Two vessel side elevations on the supplied carrier: F1 Regular and F3 Express, each with the shared operator signature in area A and its route code and service level in area B
+5. One Harbor Hall pier information panel identifying P1, F1 and F2, with their stop sequences, daily operating windows and frequencies, plus a three-route connectivity diagram labeled "Schematic"
+6. Two passenger ticket artworks: single journey TW-1084 for one Adult traveling on F1 Regular from P1 Harbor Hall to P2 Reed Bank on 18 April 2028 at 08:20, and day pass TW-D2042 for one Adult with unlimited journeys on F1, F2 and F3 on 18 April 2028 within their operating windows
+7. Two mobile applications: the P1 Harbor Hall departures snapshot for 18 April 2028 at 08:05, with the 08:20 F1 departure to P2 and the 08:40 F2 departure to P4 via P3, and the mobile ticket reproducing TW-1084
+8. One 10-second service introduction video connecting the operator signature, F1–F3 identifiers and the completed vessel, pier and ticket applications
+9. One presentation document of at least eight pages, opening with the selected direction and reusing the strategy, identity rules, vessel elevations, pier panel, ticket artworks, mobile applications and video storyboard
+
+Acceptance:
+- The three direction boards each present TIDEWAY FERRIES, F1, F2, F3, Regular and Express; the strategy selects one board by name, and the identity sheet and presentation opening identify that same selection.
+- The strategy and identity sheet state one operator, three routes, the selected primary color code and the Regular/Express distinction. The vessel elevations, pier panel, tickets, mobile applications and video use that primary color and the same operator signature; the presentation repeats the color code and hierarchy.
+- Both vessel elevations preserve the supplied carrier geometry and framing. Their graphics occupy areas A and B as recorded in 01-client-facts.en.md and 04-vessel-application-zones.png, with neutral carrier surfaces surrounding them; the F1 elevation reads F1 Regular and the F3 elevation reads F3 Express.
+- The Harbor Hall panel identifies P1 with F1 and F2, gives their recorded stop order, windows and frequencies, and labels its network diagram "Schematic". The mobile departures application prints "Scheduled departures" and "Planned example", the 18 April 2028, 08:05 snapshot, and exactly the two departures specified in deliverable 7, with full route and pier names.
+- The single journey artwork and mobile ticket repeat TW-1084, Adult, F1 Cross Reach, Regular, P1 Harbor Hall, P2 Reed Bank, 18 April 2028 and Scheduled departure 08:20. The day pass repeats TW-D2042, Adult, Valid on 18 April 2028, All routes, F1, F2, F3 and "Unlimited journeys on the valid date". All three ticket applications print "Sample" and TIDEWAY FERRIES, with fields matching their respective records in 01-client-facts.en.md.
+- The video runs for 10 seconds and reuses the selected operator signature, all three route identifiers and the completed applications named in deliverable 8. The presentation contains at least eight pages and reuses every earlier deliverable category, including all three initial directions and the video storyboard.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

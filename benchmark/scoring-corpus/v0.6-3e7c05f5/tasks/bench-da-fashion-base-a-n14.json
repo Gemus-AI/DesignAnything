@@ -1,0 +1,1014 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-fashion-base-a-n14",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "direction-a",
+      "label": "Wardrobe direction A",
+      "description": "Direction A board with all three styles, silhouette, panel arrangement and color placement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-b",
+      "label": "Wardrobe direction B",
+      "description": "Direction B board with all three styles, silhouette, panel arrangement and color placement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-c",
+      "label": "Wardrobe direction C",
+      "description": "Direction C board with all three styles, silhouette, panel arrangement and color placement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "selection-note",
+      "label": "Direction selection note",
+      "description": "A selection note naming one direction and its reasons for reach, pocket access and walking.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "materials-craft",
+      "label": "Materials and craft sheet",
+      "description": "A materials and craft sheet with fabric records, seams, hardware, colors, style assignments and shell measurements.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "front-lineup",
+      "label": "Three-style front flat-lay lineup",
+      "description": "A front flat-lay lineup of CW01, CW02 and CW03 with enlarged inside-label views.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "back-lineup",
+      "label": "Three-style back flat-lay lineup",
+      "description": "A back flat-lay lineup of CW01, CW02 and CW03 with annotated shell lengths and sleeve extension.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cycling-m",
+      "label": "Size M cycling outfit",
+      "description": "A size M worn cycling image with all three garments and forward handlebar reach.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "trail-m",
+      "label": "Size M trail outfit",
+      "description": "A size M trail-walking image with CW01 open over CW02 and CW03 worn beneath a small daypack.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "construction-details",
+      "label": "Storage and construction details",
+      "description": "A construction plate with three loaded pockets, reflective components, shell dimensions, shared hardware and knee articulation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-closeups",
+      "label": "Three-garment material close-ups",
+      "description": "A plate of three finished garment fabric-and-color crops with style, fabric and color codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cafe-m",
+      "label": "Size M café arrival outfit",
+      "description": "A size M café arrival image with CW01 carried over one arm and CW02 and CW03 worn.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "layering-motion",
+      "label": "Layering and movement video",
+      "description": "A 12-second size M sequence of shell layering, forward handlebar reach and walking.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "range-presentation",
+      "label": "Range presentation",
+      "description": "A range presentation reusing the selected direction and earlier work, with at least 8 pages for tier 14 and 10 pages for tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "inside-label-brand",
+      "kind": "text-verbatim",
+      "text": "COMMON WEATHER",
+      "scope": {
+        "slots": [
+          "front-lineup"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "inside-label-phrase",
+      "kind": "text-verbatim",
+      "text": "Ride out. Walk on.",
+      "scope": {
+        "slots": [
+          "front-lineup"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON WEATHER",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "fourteen-selected-wardrobe",
+      "slots": [
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "cafe-m",
+        "construction-details",
+        "material-closeups"
+      ],
+      "sourceSlots": [
+        "direction-a",
+        "direction-b",
+        "direction-c",
+        "selection-note",
+        "materials-craft"
+      ],
+      "items": [
+        {
+          "item": "Use the selection note to identify the chosen board; final garment silhouettes, panel arrangements and color placement develop that direction consistently.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The same three garments retain corresponding seams, pockets, closures and hardware through flat views, details and all three wearing states.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Fabric assignments, finished surfaces and main and accent colors agree with the materials and craft sheet.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON WEATHER"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "front-lineup",
+      "back-lineup",
+      "cycling-m",
+      "trail-m",
+      "construction-details",
+      "material-closeups",
+      "cafe-m"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not infer waterproof performance, hidden fiber composition or exact physical fit from rendered garment images."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "direction-a",
+        "direction-b",
+        "direction-c",
+        "selection-note",
+        "materials-craft",
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "construction-details",
+        "material-closeups",
+        "cafe-m",
+        "range-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "direction-a",
+        "direction-b",
+        "direction-c",
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "construction-details",
+        "material-closeups",
+        "cafe-m"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-direction-a",
+      "requirementId": "R-format-direction-a",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-a"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-b",
+      "requirementId": "R-format-direction-b",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-b"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-c",
+      "requirementId": "R-format-direction-c",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-c"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-selection-note",
+      "requirementId": "R-format-selection-note",
+      "method": "artifact-property",
+      "targetSlots": [
+        "selection-note"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-materials-craft",
+      "requirementId": "R-format-materials-craft",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-front-lineup",
+      "requirementId": "R-format-front-lineup",
+      "method": "artifact-property",
+      "targetSlots": [
+        "front-lineup"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-back-lineup",
+      "requirementId": "R-format-back-lineup",
+      "method": "artifact-property",
+      "targetSlots": [
+        "back-lineup"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cycling-m",
+      "requirementId": "R-format-cycling-m",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cycling-m"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-trail-m",
+      "requirementId": "R-format-trail-m",
+      "method": "artifact-property",
+      "targetSlots": [
+        "trail-m"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-construction-details",
+      "requirementId": "R-format-construction-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-closeups",
+      "requirementId": "R-format-material-closeups",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-closeups"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cafe-m",
+      "requirementId": "R-format-cafe-m",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cafe-m"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-layering-motion",
+      "requirementId": "R-format-layering-motion",
+      "method": "manual",
+      "targetSlots": [
+        "layering-motion"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-range-presentation",
+      "requirementId": "R-format-range-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "range-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "shared-hardware-form",
+      "requirementId": "R-shared-hardware-form",
+      "method": "visual",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "The enlarged hardware depicts the supplied matte-charcoal forms: a flat rounded-rectangle R1 pull with proportions corresponding to 24 × 8 mm, 2 mm corner radii, an upper centered 12 × 3 mm attachment slot and centered R1 engraving below it; and a rectangular three-bar ladder-lock buckle corresponding to 35 × 30 mm for 25 mm webbing. Perspective and rendering style may vary. A different pull outline, missing slot or engraving, or a different buckle mechanism fails; physical dimensions need not be inferred precisely from pixels.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "layering-and-trouser-construction",
+      "requirementId": "R-layering-and-trouser-construction",
+      "method": "visual",
+      "targetSlots": [
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "construction-details"
+      ],
+      "criteria": "The views collectively establish a vest that fits beneath the shell and overtrousers with shaped knee articulation and separate left and right ankle buckle adjustments. Visible garment records also agree with the fixed hood and center-front shell zipper, sleeveless center-front zipped vest and elastic trouser waistband. Hidden features need not be visible in every pose; a contradictory construction or absent required feature across the evidence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "direction-exploration",
+      "requirementId": "R-direction-exploration",
+      "method": "visual",
+      "targetSlots": [
+        "direction-a",
+        "direction-b",
+        "direction-c"
+      ],
+      "criteria": "A, B and C are identifiable alternatives, each presenting CW01, CW02 and CW03 with assessable silhouettes, panel arrangements and color placement. There must be meaningful wardrobe-design differences between the directions; merely changing the board title or rearranging identical drawings fails. Silhouette and panel choices remain open within the fixed garment requirements.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-selection-development",
+      "requirementId": "R-fourteen-selection-development",
+      "method": "content",
+      "targetSlots": [
+        "selection-note",
+        "materials-craft",
+        "range-presentation"
+      ],
+      "criteria": "The process establishes the three alternatives before choosing exactly one of A, B or C. The note explains the choice in terms of handlebar reach, pocket access and walking, and subsequent written development agrees with that choice. The presentation opens with the same selected letter. Wording and page layout are flexible; an ambiguous selection, unexplained choice, contradictory development or wrong opening letter fails. Image and video continuity are assessed by their corresponding visual and manual rules.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "direction-a",
+        "direction-b",
+        "direction-c"
+      ]
+    },
+    {
+      "id": "fourteen-materials-record",
+      "requirementId": "R-fourteen-materials-record",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft",
+        "range-presentation"
+      ],
+      "criteria": "The sheet records CW01/F01, CW03/F01 and CW02/F02; Moss #465B57 is the main color and any Clay accent is #B86E50. F01 is 125 g/m² total, 1450 mm usable width, a 2.5-layer laminate with a 100% nylon 40-denier plain-weave face, polyurethane membrane, printed inner protective layer, matte water-repellent face, lockstitch, 10 mm allowance and 20 mm internal tape. F02 is 100% polyester, 180 g/m², 1500 mm wide, warp-knitted tricot with brushed inside, smooth outside and 6 mm overlocked allowance. Hardware records include matte charcoal, the 24 × 8 mm pull with 2 mm corners and 12 × 3 mm slot, and the 35 × 30 mm buckle for 25 mm webbing. The presentation repeats the style/fabric assignments, Moss name and code, all three style codes and COMMON WEATHER. Equivalent units and record organization are allowed; omissions or contradictory specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "developed-material-closeups",
+      "requirementId": "R-developed-material-closeups",
+      "method": "visual",
+      "targetSlots": [
+        "material-closeups"
+      ],
+      "criteria": "Three identifiable finished garment crops show CW01/F01, CW02/F02 and CW03/F01, each with its applicable color code. The plate also prints COMMON WEATHER and identifies Moss #465B57 as the main color. Fabric surfaces and color placement agree with the materials sheet and final garments; optional Clay accents retain #B86E50. Crop scale and lighting may vary. A missing style, raw swatches replacing finished crops, wrong codes or contradictory surfaces and color placement fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "materials-craft",
+        "front-lineup"
+      ]
+    },
+    {
+      "id": "fourteen-written-shell-measurements",
+      "requirementId": "R-fourteen-written-shell-measurements",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft",
+        "range-presentation"
+      ],
+      "criteria": "Both documents explicitly record size M shell front 720 mm, back 800 mm, collar 80 mm and shoulder-to-cuff sleeve 690 mm, with an 80 mm back drop and a 30 mm extension over the 660 mm reference sleeve. Measurement names must distinguish body lengths from collar and sleeve values. Equivalent units are allowed; missing values or inconsistent records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "developed-shell-measurement-plates",
+      "requirementId": "R-developed-shell-measurement-plates",
+      "method": "visual",
+      "targetSlots": [
+        "back-lineup",
+        "construction-details"
+      ],
+      "criteria": "Each plate independently annotates the size M shell with front length 720 mm, back length 800 mm, collar 80 mm, sleeve 690 mm, back drop 80 mm and sleeve extension 30 mm. The sleeve reference is 660 mm, and leaders or captions associate values with the proper regions and measurement endpoints. The shell retains its fixed hood. Callout style may vary; omission, disagreement with the specification or misleading measurement placement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "fourteen-pocket-reflector-and-garment-continuity",
+      "requirementId": "R-fourteen-pocket-reflector-and-garment-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "construction-details",
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "cafe-m"
+      ],
+      "criteria": "The detail plate shows zipped chest storage around a 170 × 85 × 12 mm phone, wearer-right hand storage around 220 × 110 × 40 mm gloves and wearer-left storage around a 180 × 100 × 30 mm cap. It dimensions one 60 × 10 mm tab on each outer cuff and one horizontal 120 × 10 mm center-back strip whose lower edge is 100 mm above the back hem. Both lineups contain all three selected styles, and visible pockets, seams and closures remain consistent throughout the image set. Cutaways, folds and occlusion are allowed; wrong envelopes, reflective counts or placement, missing styles or garment redesigns fail. Video continuity is covered by the manual check.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "selection-note",
+        "direction-a",
+        "direction-b",
+        "direction-c"
+      ]
+    },
+    {
+      "id": "fourteen-label-and-hardware-evidence",
+      "requirementId": "R-fourteen-label-and-hardware-evidence",
+      "method": "visual",
+      "targetSlots": [
+        "front-lineup",
+        "construction-details",
+        "material-closeups"
+      ],
+      "criteria": "The front lineup associates a readable enlarged label containing both required phrases with each of CW01, CW02 and CW03. Neck labels sit inside the back neck of shell and vest, and the trouser label sits inside the back waistband. The detail plate shows readable R1 engraving and one shared buckle on each ankle. The close-up plate identifies all three style codes and COMMON WEATHER. Callout arrangement may vary; omitted labels, incorrect locations, one buckle standing for both ankles without evidence or missing plate identification fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-worn-scenarios",
+      "requirementId": "R-fourteen-worn-scenarios",
+      "method": "visual",
+      "targetSlots": [
+        "cycling-m",
+        "trail-m",
+        "cafe-m"
+      ],
+      "criteria": "The three size M outfits cover distinct settings: cycling with CW01 closed over CW02, CW03 worn and forward handlebar reach consistent with the 35-degree reference; trail walking with CW01 open over CW02, CW03 worn and a small daypack; and café arrival with CW01 carried over one arm while CW02 and CW03 remain worn. Garment colors match the material specification across changing light. Pose and composition may vary; a duplicated activity, wrong wearing state or missing garment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-motion",
+      "requirementId": "R-fourteen-motion",
+      "method": "manual",
+      "targetSlots": [
+        "layering-motion"
+      ],
+      "criteria": "Review the whole sequence: its duration is 12 seconds, allowing only ordinary frame rounding, and the same size M wearer visibly puts CW01 over CW02, reaches forward to handlebars and walks wearing CW03. The garments retain the selected seams, pockets, closures, hardware and colors. Editing and camera angles may vary; omitted actions, a changed wearer, contradictory wardrobe details or a materially different duration fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "selection-note",
+        "front-lineup",
+        "back-lineup",
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "fourteen-presentation-reuse",
+      "requirementId": "R-fourteen-presentation-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "range-presentation"
+      ],
+      "criteria": "The presentation has at least eight pages and visibly incorporates all three direction boards, the actual selection and materials/craft content, both lineups, detail plates and each of the three worn images. Cropping, resizing and readable document excerpts are acceptable when the original content remains identifiable. Merely mentioning an earlier deliverable, substituting new garment imagery or omitting a source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "direction-a",
+        "direction-b",
+        "direction-c",
+        "selection-note",
+        "materials-craft",
+        "front-lineup",
+        "back-lineup",
+        "construction-details",
+        "material-closeups",
+        "cycling-m",
+        "trail-m",
+        "cafe-m"
+      ]
+    },
+    {
+      "id": "set-fourteen-selected-wardrobe",
+      "requirementId": "R-set-fourteen-selected-wardrobe",
+      "method": "visual",
+      "targetSlots": [
+        "front-lineup",
+        "back-lineup",
+        "cycling-m",
+        "trail-m",
+        "cafe-m",
+        "construction-details",
+        "material-closeups"
+      ],
+      "criteria": "Use the selection note to identify the chosen board; final garment silhouettes, panel arrangements and color placement develop that direction consistently. The same three garments retain corresponding seams, pockets, closures and hardware through flat views, details and all three wearing states. Fabric assignments, finished surfaces and main and accent colors agree with the materials and craft sheet.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "direction-a",
+        "direction-b",
+        "direction-c",
+        "selection-note",
+        "materials-craft"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "shared-hardware-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "shared-hardware.png"
+      ],
+      "subjectSlots": [
+        "front-lineup",
+        "back-lineup",
+        "construction-details",
+        "cycling-m",
+        "trail-m",
+        "cafe-m"
+      ],
+      "notes": "Our existing R1 zipper pull and webbing buckle are the shared hardware identity."
+    },
+    {
+      "id": "garment-identity-across-views",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "front-lineup",
+      "subjectSlots": [
+        "back-lineup",
+        "construction-details",
+        "material-closeups",
+        "cycling-m",
+        "trail-m",
+        "cafe-m"
+      ],
+      "notes": "The flat-lay and worn images retain matching panel seams, pockets and closures for each style and size."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "selected-direction-letter",
+      "fromSlot": "selection-note",
+      "toSlots": [
+        "range-presentation"
+      ],
+      "extract": [
+        "selected direction letter A, B or C"
+      ],
+      "notes": "The presentation's first page repeats its letter."
+    },
+    {
+      "id": "fabric-and-color-assignments",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "material-closeups",
+        "range-presentation"
+      ],
+      "extract": [
+        "CW01 and CW03 assigned to F01",
+        "CW02 assigned to F02",
+        "main color Moss #465B57"
+      ],
+      "notes": "The materials and craft sheet assigns F01 to CW01 and CW03, F02 to CW02 and Moss #465B57 as the main color; the material close-up plate and presentation repeat those codes and assignments."
+    },
+    {
+      "id": "size-m-shell-measurements",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "back-lineup",
+        "construction-details",
+        "range-presentation"
+      ],
+      "extract": [
+        "size M CW01 front body length 720 mm",
+        "size M CW01 back body length 800 mm",
+        "CW01 collar height 80 mm",
+        "size M CW01 sleeve length 690 mm",
+        "CW01 back drop 80 mm",
+        "CW01 sleeve extension 30 mm"
+      ],
+      "notes": "The materials and craft sheet, size and fit note, back lineup, construction-detail plate and presentation repeat size M CW01's 720 mm front length, 800 mm back length, 80 mm collar and 690 mm sleeve, including the 80 mm back drop and 30 mm sleeve extension."
+    }
+  ]
+}

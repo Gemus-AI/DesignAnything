@@ -1,0 +1,32 @@
+MORROW HOUSE | A collectible character pop-up with a story to enter
+
+We are bringing Morrow, our small collector of overlooked objects, into a temporary exhibition shop at Alder Court Mall from 6–22 November 2026, open daily 10:00–21:00. Adult collectors should be able to meet the character, contribute to its collection, take a photograph and browse three merchandise lines within a 12-minute visit. Print "MORROW HOUSE" and "Leave a little wonder" at the entrance. Morrow's ivory body, notched left ear, two black eyes and orange square satchel are the existing character identity; the exhibition layout and fixtures are open for exploration.
+
+The atrium is 40 × 32 m. Our footprint is 6000 × 8000 mm, with a maximum installation height of 3200 mm and a 1500 mm clear circulation strip around it. Within the footprint, the south entrance and exit are each 1500 mm wide. The north stockroom is 6000 × 1500 mm; the east service bay is 1500 × 2000 mm; the southeast queue bay is 3000 × 3000 mm for six adults. Main visitor routes have 1500 mm clear width. Plan for 12 visitors inside and three staff. The experience has three physical exhibits, MH-01–MH-03, one mechanical token activity and three retail SKUs. The experience uses physical objects and printed interpretation. The activity is free, with a direct route from participation to the exit as well as an optional shop branch.
+
+The reusable kit contains 12 aluminium frames and eight birch plywood plinths. Its parts are 24 uprights, 24 rails, 48 hand-knob corner blocks, 12 fabric skins, 48 plywood panels and 96 quarter-turn cams. The largest dismantled part is 2000 × 1000 × 100 mm; the kit travels in four cases. Plinth tops are 900 mm high and exhibit label centres are 1400 mm above the floor. Give each retail SKU 600 mm of display frontage and the checkout 1500 mm of counter length. The stockroom, queue and service reservations stay in the positions recorded in the operating-zones drawing.
+
+Audience: our character studio, mall operations team and exhibition fabricator, for the spatial concept decision, merchandise layout and installation brief.
+
+Inputs (attached): 01-client-facts.en.md contains the character, site, operating and fixture facts. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-object-records.en.md contains the exhibit records, exact label copy, activity sequence and merchandise data. plan-with-cameras.png records the atrium, allocated footprint and camera positions C1 and C2. operating-zones.png records the entrance, exit, clear circulation strip and reserved operating areas. morrow-character.png supplies the existing character's front, side and rear appearance. morrow-figure.png supplies the existing collectible figure's shape, finish and satchel detail. view-c1.png supplies the occupied mall atmosphere from C1 around the empty allocated area. view-c2.png supplies the occupied mall atmosphere from C2 around the same empty area.
+
+Deliverables:
+1. Three distinct spatial direction boards, one each, comparing the story sequence, physical activity, retail relationship and fixture arrangement
+2. Two written schedules: a one-page exhibit register and route sheet recording the selected direction, exhibit IDs, names, dates, dimensions, zones and visit order; and a label copy sheet recording the three exact labels, activity steps, 30-word body limit and mounting heights
+3. One dimensioned floor and visitor-flow plan, with all exhibits, the activity, three retail SKUs, reserved operating areas and clear route widths
+4. One coordinated elevation and section sheet, with story labels, token activity, shelving, checkout, installation heights and the reusable kit's parts and packing schedule
+5. Two visitor perspectives of the selected exhibition shop, one from C1 and one from C2
+6. Two operating-state sheets, one open and one closed, with the same floor plan and supporting spatial details
+7. One entrance and wayfinding artwork sheet containing the entrance title and phrase, three zone signs, an exit sign and a queue sign
+8. One 12-second visitor-route video following the entrance, story, token activity and optional shop branch to the exit
+9. One presentation document of at least eight pages, reusing the direction comparison, selection, written schedules, plan, section, perspectives, operating states and signage, with a table locating each fixed fact in the delivered work
+
+Acceptance:
+- The three direction boards precede selection; the exhibit register and route sheet names one selected direction, and the plan, section, perspectives, states, signage, video and presentation develop that selection. The presentation's first page repeats its name.
+- The exhibit register, floor plan, elevation and section sheet and presentation repeat the MH-01–MH-03 IDs, names, 2026 dates and zone assignments; the label copy sheet, elevation and section sheet and presentation repeat the three exact label bodies, activity steps, 900 mm plinth tops and 1400 mm label centres.
+- The floor plan and both operating-state sheets preserve the operating-zones.png reservations, 6000 × 8000 mm boundary, 1500 mm entrance, exit and clear routes, six queue positions and separate participation-to-exit and optional shop routes; the open sheet locates 12 visitors plus six waiting adults and three staff, and the closed sheet shows covers, stockroom storage and closure barriers.
+- The elevation and section sheet records the 3200 mm height limit, three 600 mm retail frontages, 1500 mm checkout, 12 frames, eight plinths, all six component counts, both connection methods, largest dismantled part and four cases from 01-client-facts.en.md; the presentation repeats this kit schedule.
+- The C1 and C2 perspectives and video follow the plan's positions and preserve the character features in morrow-character.png and morrow-figure.png; both perspectives, the entrance artwork and presentation print "MORROW HOUSE" and "Leave a little wonder", and the wayfinding artwork uses the zone names in the route sheet.
+- The video lasts 12 seconds and shows a token moving through the recorded three-step activity; the presentation contains at least eight pages and its fact-location table names the deliverable and page or view carrying each site, object, character, operating and fixture fact.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

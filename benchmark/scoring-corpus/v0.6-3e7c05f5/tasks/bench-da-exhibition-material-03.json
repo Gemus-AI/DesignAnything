@@ -1,0 +1,1362 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-exhibition-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "inventory-route",
+      "label": "Exhibit inventory and route specification",
+      "description": "One inventory and route specification containing six archive records, three narrative sections, pairings, dimensions and installation heights.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "label-copy",
+      "label": "Label copy table",
+      "description": "One copy table containing six complete display blocks, credits, section headings and introductory wording.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "market-plan",
+      "label": "Market Room exhibition plan",
+      "description": "One dimensioned Market Room plan with all six records, the A1 and A2 displays, route and seating.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "library-plan",
+      "label": "Canal Library exhibition plan",
+      "description": "One dimensioned Canal Library plan with all six records, the B1 display, route and seating.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "wall-elevations",
+      "label": "Three-wall installation elevations",
+      "description": "One elevation sheet for A1, A2 and B1 with dimensions, anchors, installation heights, typography and lighting annotations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "morning-trade-panel",
+      "label": "Morning trade panel",
+      "description": "One finished Morning trade panel containing the exhibition introduction and the complete P01 and T01 records.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "after-school-panel",
+      "label": "After school panel",
+      "description": "One finished After school panel containing the complete P02 and T02 records.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "place-to-pause-panel",
+      "label": "A place to pause panel",
+      "description": "One finished A place to pause panel containing the complete P03 and T03 records.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "frame-assembly",
+      "label": "Frame assembly sheet",
+      "description": "One assembly sheet showing the three frames, numbered parts, materials, connections, tethers and assembly sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dismantling-packing",
+      "label": "Dismantling and packing sheet",
+      "description": "One dismantling and packing sheet with component counts, three crate allocations and dimensioned transport clearances.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "market-visitor-view",
+      "label": "Market Room visitor view",
+      "description": "One annotated visitor view of Market Room showing three completed panels, circulation, seating and lighting settings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "library-visitor-view",
+      "label": "Canal Library visitor view",
+      "description": "One annotated visitor view of Canal Library showing three completed panels, circulation, seating and lighting settings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "route-film",
+      "label": "Ten-second narrative route film",
+      "description": "One 10-second animated film following Morning trade, After school and A place to pause in sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation-catalogue",
+      "label": "Exhibition presentation and archive catalogue",
+      "description": "One presentation and archive catalogue of at least eight pages reusing the earlier work and locating the fixed facts across the deliverables.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exhibition-name",
+      "kind": "text-verbatim",
+      "text": "CEDAR STREET VOICES",
+      "scope": {
+        "slots": [
+          "label-copy",
+          "morning-trade-panel",
+          "presentation-catalogue"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "introductory-tagline",
+      "kind": "text-verbatim",
+      "text": "One street, many memories",
+      "scope": {
+        "slots": [
+          "label-copy",
+          "morning-trade-panel",
+          "presentation-catalogue"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "photographic-record-label",
+      "kind": "text-verbatim",
+      "text": "Archive photograph",
+      "scope": {
+        "slots": [
+          "label-copy",
+          "morning-trade-panel",
+          "after-school-panel",
+          "place-to-pause-panel",
+          "presentation-catalogue"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "interview-record-label",
+      "kind": "text-verbatim",
+      "text": "Personal memory",
+      "scope": {
+        "slots": [
+          "label-copy",
+          "morning-trade-panel",
+          "after-school-panel",
+          "place-to-pause-panel",
+          "presentation-catalogue"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "morning-section-name",
+      "kind": "text-verbatim",
+      "text": "Morning trade",
+      "scope": {
+        "slots": [
+          "inventory-route",
+          "label-copy",
+          "market-plan",
+          "library-plan",
+          "morning-trade-panel",
+          "presentation-catalogue"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "school-section-name",
+      "kind": "text-verbatim",
+      "text": "After school",
+      "scope": {
+        "slots": [
+          "inventory-route",
+          "label-copy",
+          "market-plan",
+          "library-plan",
+          "after-school-panel",
+          "presentation-catalogue"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "pause-section-name",
+      "kind": "text-verbatim",
+      "text": "A place to pause",
+      "scope": {
+        "slots": [
+          "inventory-route",
+          "label-copy",
+          "market-plan",
+          "library-plan",
+          "place-to-pause-panel",
+          "presentation-catalogue"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CEDAR STREET VOICES",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "narrative-and-panel-reuse",
+      "slots": [
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel",
+        "market-visitor-view",
+        "library-visitor-view"
+      ],
+      "sourceSlots": [
+        "inventory-route",
+        "label-copy"
+      ],
+      "items": [
+        {
+          "item": "The three section panels agree with the written route and copy, preserving each photograph–interview pairing and distinguishing archive records from personal recollections.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Both venue views visibly use the completed panel compositions, including the Morning trade introduction, while allowing perspective and venue lighting to differ.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "venue-installation-agreement",
+      "slots": [
+        "market-plan",
+        "library-plan",
+        "wall-elevations",
+        "market-visitor-view",
+        "library-visitor-view"
+      ],
+      "sourceSlots": [
+        "inventory-route"
+      ],
+      "items": [
+        {
+          "item": "Each venue's plan, elevations and visitor view describe compatible frame locations, section order, installation heights, seating and clear circulation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Market Room uses A1 for the first two sections and A2 for the third; Canal Library uses B1 for all three sections west to east, with the fixed accessibility and lighting conditions maintained.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "assembly-packing-agreement",
+      "slots": [
+        "frame-assembly",
+        "dismantling-packing"
+      ],
+      "sourceSlots": [
+        "wall-elevations"
+      ],
+      "items": [
+        {
+          "item": "The assembled frames and wall connections agree with the installation elevations, and dismantling reverses the illustrated construction method.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The same fixed components reconcile from three assembled frames into three crates without omissions, substitutions or incompatible transport dimensions.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The commission requires reuse of panel compositions and consistency of exhibition information, rather than an object identity expressible by the permitted subjects."
+    },
+    "brandToken": "CEDAR STREET VOICES"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "market-plan",
+      "library-plan",
+      "wall-elevations",
+      "morning-trade-panel",
+      "after-school-panel",
+      "place-to-pause-panel",
+      "frame-assembly",
+      "dismantling-packing",
+      "market-visitor-view",
+      "library-visitor-view"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not score the supplied archive photographs' artistic quality or duplicate the separate checks for exact text, record accuracy and numerical compliance."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "inventory-route",
+        "label-copy",
+        "market-plan",
+        "library-plan",
+        "wall-elevations",
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel",
+        "frame-assembly",
+        "dismantling-packing",
+        "market-visitor-view",
+        "library-visitor-view",
+        "presentation-catalogue"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "market-plan",
+        "library-plan",
+        "wall-elevations",
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel",
+        "frame-assembly",
+        "dismantling-packing",
+        "market-visitor-view",
+        "library-visitor-view"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-inventory-route",
+      "requirementId": "R-format-inventory-route",
+      "method": "artifact-property",
+      "targetSlots": [
+        "inventory-route"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-label-copy",
+      "requirementId": "R-format-label-copy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "label-copy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-market-plan",
+      "requirementId": "R-format-market-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "market-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-library-plan",
+      "requirementId": "R-format-library-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "library-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-wall-elevations",
+      "requirementId": "R-format-wall-elevations",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wall-elevations"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-morning-trade-panel",
+      "requirementId": "R-format-morning-trade-panel",
+      "method": "artifact-property",
+      "targetSlots": [
+        "morning-trade-panel"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-after-school-panel",
+      "requirementId": "R-format-after-school-panel",
+      "method": "artifact-property",
+      "targetSlots": [
+        "after-school-panel"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-place-to-pause-panel",
+      "requirementId": "R-format-place-to-pause-panel",
+      "method": "artifact-property",
+      "targetSlots": [
+        "place-to-pause-panel"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-frame-assembly",
+      "requirementId": "R-format-frame-assembly",
+      "method": "artifact-property",
+      "targetSlots": [
+        "frame-assembly"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dismantling-packing",
+      "requirementId": "R-format-dismantling-packing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dismantling-packing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-market-visitor-view",
+      "requirementId": "R-format-market-visitor-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "market-visitor-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-library-visitor-view",
+      "requirementId": "R-format-library-visitor-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "library-visitor-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-route-film",
+      "requirementId": "R-format-route-film",
+      "method": "manual",
+      "targetSlots": [
+        "route-film"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation-catalogue",
+      "requirementId": "R-format-presentation-catalogue",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation-catalogue"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "inventory-completeness",
+      "requirementId": "R-inventory-completeness",
+      "method": "content",
+      "targetSlots": [
+        "inventory-route"
+      ],
+      "criteria": "Require six individually identifiable entries: P01 Market corner, 1968; T01 Ruth Bell, interviewed 2024-04-12; P02 Bus stop, 1989; T02 David Cole, interviewed 2024-04-19; P03 Corner bench, 2007; T03 Leila Grant, interviewed 2024-05-03. Assign P01/T01 to Morning trade, P02/T02 to After school and P03/T03 to A place to pause, with that explicit route order. State photograph display dimensions of 300 × 200 mm, transcript dimensions of 210 × 297 mm, photograph centres at 1450 mm and label centres at 1100 mm above floor. Table or prose organisation may vary; omissions, substitutions or contradictory values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ]
+    },
+    {
+      "id": "plans-and-panels-narrative",
+      "requirementId": "R-plans-and-panels-narrative",
+      "method": "visual",
+      "targetSlots": [
+        "market-plan",
+        "library-plan",
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel"
+      ],
+      "criteria": "Each plan must locate all six records and communicate the three-stop route. Each panel must place the photograph beside its associated interview: P01 Market corner, 1968, with T01 Ruth Bell, 2024-04-12; P02 Bus stop, 1989, with T02 David Cole, 2024-04-19; P03 Corner bench, 2007, with T03 Leila Grant, 2024-05-03. The panel roles and planned route must agree on Morning trade, After school, then A place to pause. Graphic arrangements may differ between venues; missing records, incorrect metadata, swapped pairings or a reversed sequence fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "inventory-route"
+      ]
+    },
+    {
+      "id": "catalogue-narrative",
+      "requirementId": "R-catalogue-narrative",
+      "method": "content",
+      "targetSlots": [
+        "presentation-catalogue"
+      ],
+      "criteria": "The catalogue must explicitly preserve the three section-to-record pairings and route order defined in the inventory, with all six correct IDs, titles and dates. Editorial pagination may vary, but the exhibition sequence must remain unambiguous; regrouping a record under a different section or changing its metadata fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "sourceSlots": [
+        "inventory-route"
+      ]
+    },
+    {
+      "id": "document-record-copy",
+      "requirementId": "R-document-record-copy",
+      "method": "content",
+      "targetSlots": [
+        "label-copy",
+        "presentation-catalogue"
+      ],
+      "criteria": "Each document must contain all six complete English display blocks. Photographs use Archive photograph: P01 / Market corner / 1968 / 12 Cedar Street / caption 'A produce stall outside the corner shop, with wooden crates beside the pavement.' / credit 'Photograph: Alan Bell. Collection: Alder Ward Memory Archive.'; P02 / Bus stop / 1989 / 38 Cedar Street / caption 'Three young people wait beside the bus shelter on Cedar Street.' / credit 'Photograph: Helen Cole. Collection: Alder Ward Memory Archive.'; P03 / Corner bench / 2007 / 64 Cedar Street / caption 'Two neighbours sit on a bench beside the former repair shop.' / credit 'Photograph: Martin Grant. Collection: Alder Ward Memory Archive.'. Interviews use Personal memory and the date label Interviewed: T01 / Ruth Bell / 2024-04-12 / 12 Cedar Street / excerpt 'I remember carrying the empty crates inside before school. To me, the corner always smelled of apples, even in winter.' / credit 'Speaker: Ruth Bell. Interviewer: Nora Ellis. Collection: Alder Ward Memory Archive.'; T02 / David Cole / 2024-04-19 / 38 Cedar Street / excerpt 'We called it our meeting place. I think we spent more time talking at that stop than riding the bus.' / credit 'Speaker: David Cole. Interviewer: Nora Ellis. Collection: Alder Ward Memory Archive.'; T03 / Leila Grant / 2024-05-03 / 64 Cedar Street / excerpt 'After the repair shop closed, I started sitting here with my neighbour. That bench made the street feel familiar again.' / credit 'Speaker: Leila Grant. Interviewer: Nora Ellis. Collection: Alder Ward Memory Archive.'. The label-copy document must also include the three section headings and introductory title and tagline; the catalogue cover must contain the title and tagline. Each caption or excerpt is at most 35 words, excluding metadata and credits. Line wrapping and table arrangement may vary; paraphrases, missing fields, changed punctuation or credits, and presentation of recollections as established historical facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ]
+    },
+    {
+      "id": "finished-panel-records",
+      "requirementId": "R-finished-panel-records",
+      "method": "visual",
+      "targetSlots": [
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel"
+      ],
+      "criteria": "Inspect each panel for its corresponding supplied photograph and interview, with both complete record blocks matching the copy table validated against the archive. P01 uses market-corner-1968.png, P02 uses bus-stop-1989.png and P03 uses corner-bench-2007.png; the interviews correspond to the identified pages in interview-excerpts.png. Photographic blocks must be introduced by Archive photograph and interviews by Personal memory, retaining speaker attribution and recollection wording. Require all metadata, exact captions or excerpts and credits to be readable, with no caption or excerpt exceeding 35 words. Typographic reflow is allowed; replacing source photographs, mismatching transcripts, truncating records or omitting credits fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "label-copy"
+      ]
+    },
+    {
+      "id": "introductory-panel",
+      "requirementId": "R-introductory-panel",
+      "method": "visual",
+      "targetSlots": [
+        "morning-trade-panel"
+      ],
+      "criteria": "The first section panel must visibly include the exact exhibition title and tagline as introductory information. Position, alignment and typographic hierarchy may vary; absence, altered wording or placement solely in an unrelated annotation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "visitor-panel-reuse",
+      "requirementId": "R-visitor-panel-reuse",
+      "method": "visual",
+      "targetSlots": [
+        "market-visitor-view",
+        "library-visitor-view"
+      ],
+      "criteria": "Both venue views must show all three finished panels with recognisable matching photographs, section headings, introduction placement and record-block compositions. Perspective, lighting and apparent scale may vary naturally. Generic placeholders, redesigned panel content, duplicate sections or an omitted section fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel"
+      ]
+    },
+    {
+      "id": "animated-route",
+      "requirementId": "R-animated-route",
+      "method": "manual",
+      "targetSlots": [
+        "route-film"
+      ],
+      "criteria": "Review the entire animation and its duration. It must run for 10 seconds and visibly travel through Morning trade, After school and A place to pause in that order, making each stop identifiable. Camera path and transitions may vary; a static substitute, wrong duration, skipped stop or reordered route fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "venue-geometry-and-anchors",
+      "requirementId": "R-venue-geometry-and-anchors",
+      "method": "visual",
+      "targetSlots": [
+        "market-plan",
+        "library-plan",
+        "wall-elevations"
+      ],
+      "criteria": "Check dimension annotations and drawn geometry against the site records, using a southwest origin with x east, y north and z above floor. Market Room is 8000 × 6000 × 3000 mm; A1 runs from (1000,6000) to (7000,6000), length 6000 mm, with wall-local anchor x positions 800, 1600, 3200 and 4000 mm; A2 runs from (8000,5000) to (8000,1000), length 4000 mm, with anchor x positions 1100 and 1900 mm measured from its northern end. Canal Library is 6000 × 5000 × 2800 mm; B1 runs from (900,5000) to (5100,5000), length 4200 mm, with anchor x positions 500, 1300, 1700, 2500, 2900 and 3700 mm. Every anchor is at z = 2000 mm. South entrances are centred: x = 3250–4750 mm at Market Room and 2250–3750 mm at Canal Library, each 2100 mm high. Place Morning trade and After school at A1, A place to pause at A2, and all three sections west to east at B1. The elevation sheet must cover all three walls. Drawing scale and sheet composition may vary; contradictory dimensions, displaced anchors, invented anchoring locations or incorrect section distribution fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "circulation-and-seating",
+      "requirementId": "R-circulation-and-seating",
+      "method": "visual",
+      "targetSlots": [
+        "market-plan",
+        "library-plan",
+        "market-visitor-view",
+        "library-visitor-view"
+      ],
+      "criteria": "For each venue, verify a continuous 1500 mm clear circulation route from the entrance through the exhibition, two seats and a clear 900 × 1400 mm wheelchair rectangle beside one seat. Seats correspond to the supplied 500 × 500 mm footprints and 450 mm seat height. Plans must dimension the clearances, and visitor views must spatially agree with those plans. Furniture placement may vary within the site constraints; route pinch points, frame feet intruding into required clear space, missing seats or an obstructed wheelchair space fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "document-installation-heights",
+      "requirementId": "R-document-installation-heights",
+      "method": "content",
+      "targetSlots": [
+        "inventory-route",
+        "presentation-catalogue"
+      ],
+      "criteria": "Both documents must explicitly state 1450 mm above finished floor for photograph centres and 1100 mm for label centres. Wording and notation may vary, but the reference must be the centre rather than a top or bottom edge. Missing, swapped or contradictory heights fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ]
+    },
+    {
+      "id": "drawn-display-settings",
+      "requirementId": "R-drawn-display-settings",
+      "method": "visual",
+      "targetSlots": [
+        "wall-elevations",
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel",
+        "market-visitor-view",
+        "library-visitor-view"
+      ],
+      "criteria": "The elevations must dimension photograph centres at 1450 mm and label centres at 1100 mm above floor; both visitor views must depict those placements consistently. Elevations and all panel layouts must specify label body text of at least 24 pt. Elevations and both annotated visitor views must identify 50 lux for photographs and separately lit label areas at 150 lux. Larger label text is allowed. Missing required annotations, conflicting centre heights, smaller specified label body text, or a single undifferentiated lighting level fails; apparent brightness alone is not evidence of lux values.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "inventory-route"
+      ]
+    },
+    {
+      "id": "kit-accounting-sheets",
+      "requirementId": "R-kit-accounting-sheets",
+      "method": "visual",
+      "targetSlots": [
+        "frame-assembly",
+        "dismantling-packing"
+      ],
+      "criteria": "Read both sheets for a reconciled kit of three frames, each 1200 × 1800 × 500 mm, and three crates, each externally 1360 × 1040 × 440 mm. Fixed totals are U: 12 aluminium upright halves, 900 × 40 × 40 mm; R: 9 aluminium rails, 1200 × 40 × 40 mm; F: 6 steel feet, 500 × 80 × 40 mm; S: 6 steel splice sleeves, 160 × 50 × 50 mm; K: 36 M8 hand knobs with steel shafts and polymer grips of 40 mm diameter; G: 6 birch plywood carriers, 600 × 1200 × 6 mm; C: 24 spring-steel retaining clips, 40 × 20 × 15 mm; T: 6 woven-polyester safety tethers with steel clips, adjustable from 300 to 1500 mm and 25 mm wide. Detailed material and part dimensions must be available on the assembly sheet; quantities and crate allocation must be readable on the packing sheet. Tabular or diagrammatic accounting is allowed; changed materials, missing components, inconsistent totals or altered frame or crate envelopes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "catalogue-kit-accounting",
+      "requirementId": "R-catalogue-kit-accounting",
+      "method": "content",
+      "targetSlots": [
+        "presentation-catalogue"
+      ],
+      "criteria": "The catalogue must make readable the three frame and three crate quantities and their respective external dimensions of 1200 × 1800 × 500 mm and 1360 × 1040 × 440 mm. Require component totals of 12 U, 9 R, 6 F, 6 S, 36 K, 6 G, 24 C and 6 T, agreeing with the assembly and packing sheets. These facts may appear in readable reused sheets or catalogue text; omissions and conflicting counts or dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "sourceSlots": [
+        "frame-assembly",
+        "dismantling-packing"
+      ]
+    },
+    {
+      "id": "transport-fit",
+      "requirementId": "R-transport-fit",
+      "method": "visual",
+      "targetSlots": [
+        "dismantling-packing"
+      ],
+      "criteria": "Require a dimensioned G carrier at 1200 × 600 × 6 mm in packing orientation and crates with internal space of 1280 × 960 × 360 mm. Show the loaded crate travelling with 1040 mm across the doorway, 1360 mm along travel and 440 mm vertically. Verify Market Room clearances: loading door 1500 × 2200 mm, lift door 1300 × 2100 mm, lift cabin 1600 × 2000 × 2200 mm and corridor width 1600 mm. Verify Canal Library clearances: loading door 1200 × 2100 mm, lift door 1200 × 2100 mm, lift cabin 1500 × 1700 × 2200 mm and corridor width 1500 mm. Both approaches are straight. Diagram style may vary; missing dimensional evidence, use of internal dimensions as the transport envelope, a width that cannot pass a door or an impossible cabin fit fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "assembly-method",
+      "requirementId": "R-assembly-method",
+      "method": "visual",
+      "targetSlots": [
+        "frame-assembly"
+      ],
+      "criteria": "Require numbered parts linked to an intelligible assembly sequence covering upright-half splices, rails, feet, graphic carriers and final wall tethering. Show captive M8 hand-knob connections, spring clips and tether clips. Across the kit, allocate 12 knobs at sleeves, 18 at rail ends and 6 at feet; use four retaining clips per carrier and two adjustable tethers per frame connected to existing anchors. Each frame uses two adjacent carriers forming a 1200 × 1200 mm graphic field with its lower edge 600 mm above floor. Sequence illustration style may vary; unexplained joints, incompatible parts, substituted connection systems or missing safety tethers fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "wall-elevations"
+      ]
+    },
+    {
+      "id": "dismantling-and-crate-allocation",
+      "requirementId": "R-dismantling-and-crate-allocation",
+      "method": "visual",
+      "targetSlots": [
+        "dismantling-packing"
+      ],
+      "criteria": "Show an intelligible reversal of the assembly operations, followed by a readable allocation of every fixed component to C1, C2 or C3. Crate subtotals must reconcile to 12 U, 9 R, 6 F, 6 S, 36 K, 6 G, 24 C and 6 T, and the illustrated contents must fit the internal crate envelope. The distribution need not be equal between crates. Missing parts, double counting, unsupported packing arrangements or a dismantling sequence that contradicts the assembly connections fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "frame-assembly"
+      ]
+    },
+    {
+      "id": "catalogue-length-and-fact-index",
+      "requirementId": "R-catalogue-length-and-fact-index",
+      "method": "content",
+      "targetSlots": [
+        "presentation-catalogue"
+      ],
+      "criteria": "Require at least eight pages and an identifiable fact-location page mapping the commission's fixed identity wording, six archive records, narrative pairings and order, display dimensions, installation settings, venue geometry and anchors, circulation and seating, kit quantities, and transport dimensions to the relevant delivered files and locations within them. More pages and different editorial structures are allowed. A generic contents list without fact-to-deliverable mappings, materially omitted fact categories or fewer than eight pages fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ]
+    },
+    {
+      "id": "catalogue-visible-reuse",
+      "requirementId": "R-catalogue-visible-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation-catalogue"
+      ],
+      "criteria": "Require identifiable, readable reuse from every listed source role: the specifications and record copy, both plans, all three panels, the complete elevation coverage, both visitor views and both transport-related sheets. Re-pagination, resizing and editorial framing are allowed if the relevant content remains inspectable. Mere file-name references, illegible thumbnails, replacement designs or omission of any source role fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "sourceSlots": [
+        "inventory-route",
+        "label-copy",
+        "market-plan",
+        "library-plan",
+        "wall-elevations",
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel",
+        "frame-assembly",
+        "dismantling-packing",
+        "market-visitor-view",
+        "library-visitor-view"
+      ]
+    },
+    {
+      "id": "physical-display-dimensions",
+      "requirementId": "R-physical-display-dimensions",
+      "method": "visual",
+      "targetSlots": [
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel",
+        "wall-elevations"
+      ],
+      "criteria": "Use physical-size annotations or the dimensioned panel and elevation geometry to verify a 300 × 200 mm display area for each of P01–P03 and a 210 × 297 mm display area for each of T01–T03. Sheet scale and export resolution may vary. Changed physical display sizes, reversed proportions or panel geometry that cannot accommodate the specified areas fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "inventory-route"
+      ]
+    },
+    {
+      "id": "visitor-capacity-and-route-use",
+      "requirementId": "R-visitor-capacity-and-route-use",
+      "method": "visual",
+      "targetSlots": [
+        "market-plan",
+        "library-plan",
+        "market-visitor-view",
+        "library-visitor-view"
+      ],
+      "criteria": "Evaluate both venue arrangements under the stated operating conditions of short 10–15-minute visits and up to 12 simultaneous visitors. The three paired stops, seating and circulation must remain plausibly usable at that capacity. Exactly 12 drawn figures and a timed dwell annotation are not required; fail a layout whose evident crowding or blocked access makes the stated use impracticable.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-narrative-and-panel-reuse",
+      "requirementId": "R-set-narrative-and-panel-reuse",
+      "method": "visual",
+      "targetSlots": [
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel",
+        "market-visitor-view",
+        "library-visitor-view"
+      ],
+      "criteria": "The three section panels agree with the written route and copy, preserving each photograph–interview pairing and distinguishing archive records from personal recollections. Both venue views visibly use the completed panel compositions, including the Morning trade introduction, while allowing perspective and venue lighting to differ.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "inventory-route",
+        "label-copy"
+      ]
+    },
+    {
+      "id": "set-venue-installation-agreement",
+      "requirementId": "R-set-venue-installation-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "market-plan",
+        "library-plan",
+        "wall-elevations",
+        "market-visitor-view",
+        "library-visitor-view"
+      ],
+      "criteria": "Each venue's plan, elevations and visitor view describe compatible frame locations, section order, installation heights, seating and clear circulation. Market Room uses A1 for the first two sections and A2 for the third; Canal Library uses B1 for all three sections west to east, with the fixed accessibility and lighting conditions maintained.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "inventory-route"
+      ]
+    },
+    {
+      "id": "set-assembly-packing-agreement",
+      "requirementId": "R-set-assembly-packing-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "frame-assembly",
+        "dismantling-packing"
+      ],
+      "criteria": "The assembled frames and wall connections agree with the installation elevations, and dismantling reverses the illustrated construction method. The same fixed components reconcile from three assembled frames into three crates without omissions, substitutions or incompatible transport dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/03-archive-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-03/04-site-kit.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "wall-elevations"
+      ]
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "inventory-narrative-carry-through",
+      "fromSlot": "inventory-route",
+      "toSlots": [
+        "market-plan",
+        "library-plan",
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel",
+        "presentation-catalogue"
+      ],
+      "extract": [
+        "six archive IDs with their titles and dates",
+        "three section names in route order",
+        "photograph and interview pairings"
+      ],
+      "notes": "The inventory, both venue plans, three panel layouts and presentation retain P01/T01 in Morning trade, P02/T02 in After school and P03/T03 in A place to pause, in that order; IDs, titles and dates match the six archive records."
+    },
+    {
+      "id": "approved-copy-carry-through",
+      "fromSlot": "label-copy",
+      "toSlots": [
+        "morning-trade-panel",
+        "after-school-panel",
+        "place-to-pause-panel",
+        "presentation-catalogue"
+      ],
+      "extract": [
+        "six complete display record blocks and credits",
+        "record type labels"
+      ],
+      "notes": "The label copy table, three panel layouts and presentation catalogue reproduce all six record blocks and credits from 03-archive-records.en.md."
+    },
+    {
+      "id": "installation-height-carry-through",
+      "fromSlot": "inventory-route",
+      "toSlots": [
+        "wall-elevations",
+        "presentation-catalogue"
+      ],
+      "extract": [
+        "photograph centre height above finished floor",
+        "label centre height above finished floor"
+      ],
+      "notes": "The inventory, elevation sheet and presentation repeat photograph centres at 1450 mm and label centres at 1100 mm."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+ROOMLEAF | Indoor plants, from choosing a spot to opening the box
+
+We sell indoor plants through our own online shop. Build six finished shopping images that help a first-time buyer choose between two plants and prepare a suitable place at home. The collection name is "ROOMLEAF"; print it on every image. Print "Choose one plant" on the collection main image, both specification cards and the placement image. Each purchase is one plant. RL-01 Golden Pothos costs EUR 16, with an overall height of 200–300 mm and a crown width of 180–260 mm. RL-02 Marble Queen Pothos costs EUR 24, with an overall height of 220–320 mm and a crown width of 200–280 mm. Height is measured from the nursery-pot base to the highest leaf; crown width is the widest leaf-to-leaf span.
+
+Both plants arrive rooted in a Charcoal #343434 nursery pot, 120 mm in outer rim diameter and 110 mm high. Each order also contains one matching saucer, 140 mm in outer diameter and 20 mm high, one paper plant sleeve, one care card and one plant passport. The optional Chalk #E8E3D9 ceramic cover pot costs EUR 12 separately and measures 150 mm in outer diameter and 140 mm high. Separate the purchase contents from this accessory using the printed labels "Included with your plant" and "Sold separately". Our placement setting is a shelf 1000 mm behind a sheer-curtained window, with bright indirect light and a room temperature of 18–26 C. The care copy is fixed: "Unpack on arrival. Remove the paper sleeve. Check the top 20 mm of compost; water when dry. Empty the saucer after watering." Arrival views show the current rooted plants, upright stems and loosely gathered leaves inside their sleeves; unpacked views use the same plants with their leaves released.
+
+Audience: Adults buying their first indoor plant, deciding which plant to order, what arrives with it and whether their intended shelf meets the stated conditions.
+
+Inputs (attached): 01-client-facts.en.md contains the product records, prices, packing quantities and fixed care copy. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. plant-dimensions.png defines the measurement endpoints, pot geometry and packing quantities. shop-image-layout.png defines the main-image product area, copy band and text margins. golden-pothos.png records the existing RL-01 plant, leaf markings and nursery pot. marble-queen-pothos.png records the existing RL-02 plant, leaf markings and nursery pot. window-shelf-reference.png provides the domestic light and shelf atmosphere.
+
+Deliverables:
+1. One square collection main image comparing both plants, with their SKU codes, names, prices and individual-purchase wording
+2. Two square specification cards, one per SKU, with height and crown ranges, measurement endpoints, nursery-pot dimensions, price and a dimensioned 100 mm reference bar
+3. One landscape contents image with a shared packing inventory for either SKU and a separate ceramic cover-pot accessory panel
+4. One vertical placement image with one shelf scene per SKU, the window-to-shelf distance, light and temperature conditions, SKU names, codes and prices
+5. One portrait arrival-and-care image with a sleeved and an unpacked view of each SKU, its packing items and the complete fixed care copy
+
+Acceptance:
+- The collection main image identifies RL-01 Golden Pothos at EUR 16 and RL-02 Marble Queen Pothos at EUR 24. Its combined plant-and-pot group occupies 85–90% of the canvas width within the upper 80% product area; its copy occupies the bottom 20% band.
+- The two specification cards give RL-01 as 200–300 mm high and 180–260 mm wide, and RL-02 as 220–320 mm high and 200–280 mm wide. Each card shows the 120 mm nursery-pot rim diameter, 110 mm pot height and 100 mm reference bar, with height measured from the pot base and width across the crown.
+- The contents image assigns one rooted plant in one nursery pot, one saucer, one paper sleeve, one care card and one plant passport to each purchase under "Included with your plant". Its "Sold separately" panel gives the ceramic cover pot as EUR 12, 150 mm in outer diameter and 140 mm high; the included saucer is labelled 140 mm in outer diameter and 20 mm high.
+- The placement image shows each SKU on a shelf 1000 mm behind a sheer-curtained window, with labels for bright indirect light and 18–26 C. Both scenes retain the plant sizes and nursery pots shown on the corresponding specification cards, and identify each SKU and its price.
+- The arrival-and-care image shows two views per SKU: one with loosely gathered leaves inside the paper sleeve and one with the sleeve removed. Each SKU's packing group matches the six inventory entries in the contents image, and the image prints the complete care copy beginning "Unpack on arrival." and ending "Empty the saucer after watering."
+- All six images print "ROOMLEAF", use the leaf markings of the corresponding identity attachment and retain Charcoal #343434 nursery pots. The collection main image, both specification cards and placement image print "Choose one plant"; text on every image stays within a 5% inset from each canvas edge.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

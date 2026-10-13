@@ -1,0 +1,564 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-brand-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "identity-sheet",
+      "label": "Finished identity sheet",
+      "description": "One finished identity sheet with the AFTER HOURS WASH wordmark, single-colour version, colour codes and roles, and typography samples.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fascia",
+      "label": "Fascia application",
+      "description": "One fascia application displaying the wordmark and descriptor on the 4000 mm by 600 mm artwork surface.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entrance-window",
+      "label": "Entrance-window application",
+      "description": "One entrance-window application with the wordmark, descriptor, daily opening period and both last-start cutoffs on the 900 mm by 1800 mm surface.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "machine-zone-board",
+      "label": "Machine-zone board",
+      "description": "One machine-zone board with the wordmark, three complete service records, both last-start cutoffs, wash and drying purchase information, and five ordered operating steps.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "waiting-zone-board",
+      "label": "Waiting-zone board",
+      "description": "One waiting-zone board with the wordmark and four etiquette messages covering folding space, staying nearby, laundry collection and quiet calls after 22:00.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "price-service-card",
+      "label": "Price and service card",
+      "description": "One price and service card with the wordmark, descriptor, opening period, both last-start cutoffs, three complete service records and wash and drying purchase information.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "shop-name",
+      "kind": "text-verbatim",
+      "text": "AFTER HOURS WASH",
+      "scope": "*",
+      "caseSensitive": false,
+      "critical": true
+    },
+    {
+      "id": "service-descriptor",
+      "kind": "text-verbatim",
+      "text": "Self-service laundry",
+      "scope": {
+        "slots": [
+          "fascia",
+          "entrance-window",
+          "price-service-card"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "AFTER HOURS WASH",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "identity-across-applications",
+      "slots": [
+        "fascia",
+        "entrance-window",
+        "machine-zone-board",
+        "waiting-zone-board",
+        "price-service-card"
+      ],
+      "sourceSlots": [
+        "identity-sheet"
+      ],
+      "items": [
+        {
+          "item": "Every application follows the identity sheet's resolved wordmark, colour roles and typography, allowing variable capitalisation, line breaks and deliberate single-colour use.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "AFTER HOURS WASH"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "identity-sheet",
+      "fascia",
+      "entrance-window",
+      "machine-zone-board",
+      "waiting-zone-board",
+      "price-service-card"
+    ],
+    "layoutExtras": false,
+    "naRules": "Do not judge equipment engineering, shop architecture or photorealistic material and lighting execution; this commission evaluates graphic identity and customer communications."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "identity-sheet",
+        "fascia",
+        "entrance-window",
+        "machine-zone-board",
+        "waiting-zone-board",
+        "price-service-card"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-identity-sheet",
+      "requirementId": "R-format-identity-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "identity-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fascia",
+      "requirementId": "R-format-fascia",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fascia"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-window",
+      "requirementId": "R-format-entrance-window",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-window"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-machine-zone-board",
+      "requirementId": "R-format-machine-zone-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "machine-zone-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-waiting-zone-board",
+      "requirementId": "R-format-waiting-zone-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "waiting-zone-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-price-service-card",
+      "requirementId": "R-format-price-service-card",
+      "method": "artifact-property",
+      "targetSlots": [
+        "price-service-card"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "identity-system",
+      "requirementId": "R-identity-system",
+      "method": "visual",
+      "targetSlots": [
+        "identity-sheet",
+        "fascia",
+        "entrance-window",
+        "machine-zone-board",
+        "waiting-zone-board",
+        "price-service-card"
+      ],
+      "criteria": "The identity sheet visibly defines a finished wordmark, a single-colour rendition, explicit colour codes with assigned uses, and typography samples. The applications follow that wordmark and the defined colour and type system. Capitalisation, line breaks, scale and deliberate single-colour use may vary; missing specifications or unrelated identity treatments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "illustrated-equipment",
+      "requirementId": "R-illustrated-equipment",
+      "method": "visual",
+      "targetSlots": [
+        "identity-sheet",
+        "fascia",
+        "entrance-window",
+        "machine-zone-board",
+        "waiting-zone-board",
+        "price-service-card"
+      ],
+      "criteria": "Where laundry equipment is depicted, its front-loading form visibly includes a round door, a discernible drum and a rectangular cabinet, consistent with the supplied equipment anchor. Stylisation is allowed if all three features remain recognisable. An image with no equipment illustration passes without requiring one.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "exterior-surfaces-and-hierarchy",
+      "requirementId": "R-exterior-surfaces-and-hierarchy",
+      "method": "visual",
+      "targetSlots": [
+        "fascia",
+        "entrance-window",
+        "price-service-card"
+      ],
+      "criteria": "Use laundry-surfaces.png as the constraint image for the exterior artwork boundaries. The fascia artwork fits a horizontal 20:3 surface and the entrance artwork fits an upright 1:2 surface, without cropping required information. Surrounding presentation margins or mockup context are allowed. Each of the three pieces includes the descriptor, and the fascia gives the shop name the strongest reading priority. Judge physical surface proportions, not export pixel counts.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "opening-session-and-cutoffs",
+      "requirementId": "R-opening-session-and-cutoffs",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-window",
+        "machine-zone-board",
+        "price-service-card"
+      ],
+      "criteria": "Read each required operating record independently. The entrance window and card communicate daily opening from 17:00 until 02:00 the following day. All three pieces identify 00:30 as the latest wash start and 01:20 as the latest dry start, clearly placing both after midnight within the same evening session. Equivalent readable time notation is acceptable; omitted, swapped or temporally ambiguous records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "complete-service-records",
+      "requirementId": "R-complete-service-records",
+      "method": "visual",
+      "targetSlots": [
+        "machine-zone-board",
+        "price-service-card"
+      ],
+      "criteria": "Each piece must independently contain three unambiguous records: A is washing on W1 and W2, maximum 8 kg, 40 minutes, CNY 24 per cycle; B is washing on W3 and W4, maximum 12 kg, 40 minutes, CNY 32 per cycle; D is drying on D1 through D4, maximum 12 kg, 30 minutes, CNY 16 per cycle. Each also explains tax inclusion, automatic detergent with washing, a separate drying purchase, and one 30-minute cycle per dry purchase. Tables, cards and equivalent wording are allowed if associations stay clear. Missing or misassigned values, IDs or purchase terms fail, as does identification through colour alone.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "ordered-operating-instructions",
+      "requirementId": "R-ordered-operating-instructions",
+      "method": "visual",
+      "targetSlots": [
+        "machine-zone-board"
+      ],
+      "criteria": "A readable sequence numbered 1 through 5 directs the customer to select an available machine, load it and shut the door, select its corresponding ID at the shop kiosk, pay there, then press Start on the selected machine. Concise paraphrases and supporting icons are allowed. Missing numbering, reordered or merged-away actions, an incorrect payment location, or unreadable Start or machine IDs fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "waiting-etiquette",
+      "requirementId": "R-waiting-etiquette",
+      "method": "visual",
+      "targetSlots": [
+        "waiting-zone-board"
+      ],
+      "criteria": "The board communicates four distinct instructions: preserve counter space for folding, remain nearby during operation, collect laundry promptly when the cycle finishes, and keep telephone calls quiet after 22:00. Wording and supporting graphics may vary if every instruction and the time threshold remain clear. An omitted message or changed meaning fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "optional-line-wording",
+      "requirementId": "R-optional-line-wording",
+      "method": "visual",
+      "targetSlots": [
+        "identity-sheet",
+        "fascia",
+        "entrance-window",
+        "machine-zone-board",
+        "waiting-zone-board",
+        "price-service-card"
+      ],
+      "criteria": "The optional tagline may be absent. Wherever it is used, it reads 'A lighter load after dark.' without rewritten or added words; line wrapping is allowed. A changed tagline fails only on a piece that uses it.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "atmosphere-reference-role",
+      "requirementId": "R-atmosphere-reference-role",
+      "method": "diagnostic",
+      "targetSlots": [
+        "identity-sheet",
+        "fascia",
+        "entrance-window",
+        "machine-zone-board",
+        "waiting-zone-board",
+        "price-service-card"
+      ],
+      "criteria": "Treat evening-materials.png as the reference image for atmosphere. It supplies inspiration through textiles, lighting and material colours rather than a mandatory object or exact palette to reproduce. This input-role record never fails a deliverable.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-identity-across-applications",
+      "requirementId": "R-set-identity-across-applications",
+      "method": "visual",
+      "targetSlots": [
+        "fascia",
+        "entrance-window",
+        "machine-zone-board",
+        "waiting-zone-board",
+        "price-service-card"
+      ],
+      "criteria": "Every application follows the identity sheet's resolved wordmark, colour roles and typography, allowing variable capitalisation, line breaks and deliberate single-colour use.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "identity-sheet"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "resolved-wordmark",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorSlot": "identity-sheet",
+      "subjectSlots": [
+        "fascia",
+        "entrance-window",
+        "machine-zone-board",
+        "waiting-zone-board",
+        "price-service-card"
+      ],
+      "notes": "All six pieces use the identity sheet's resolved AFTER HOURS WASH wordmark, colour roles and typography; the sheet supplies colour codes and a single-colour wordmark."
+    },
+    {
+      "id": "equipment-form",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "front-loading-machine.png"
+      ],
+      "subjectSlots": [
+        "identity-sheet",
+        "fascia",
+        "entrance-window",
+        "machine-zone-board",
+        "waiting-zone-board",
+        "price-service-card"
+      ],
+      "notes": "The attached machine image anchors the recognisable front-loading equipment form wherever equipment is illustrated.",
+      "comparisonScope": "compare only the machine form, its rectangular cabinet, its large circular door and rim and their proportions; the illustration style, the palette it is drawn in and any identity placed on or around it are the design work"
+    }
+  ]
+}

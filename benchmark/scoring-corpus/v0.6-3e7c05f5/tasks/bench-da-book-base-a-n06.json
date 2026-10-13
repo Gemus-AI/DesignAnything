@@ -1,0 +1,578 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-book-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "publication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "front-cover",
+      "label": "Finished front cover",
+      "description": "One finished front cover carrying the four fixed publication lines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "opener-work",
+      "label": "Work in view chapter opener",
+      "description": "One complete chapter-opening spread for 01 — Work in view using P01 and a short chapter introduction.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "opener-provisions",
+      "label": "Daily provisions chapter opener",
+      "description": "One complete chapter-opening spread for 02 — Daily provisions using P03 and a short chapter introduction.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "narrative-work",
+      "label": "Work in view narrative spread",
+      "description": "One Work in view narrative spread using P01, P02 and P09 with complete captions and a 30–50-word editorial bridge.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "narrative-provisions",
+      "label": "Daily provisions narrative spread",
+      "description": "One Daily provisions narrative spread using P03, P04 and P05 with complete captions and a 30–50-word editorial bridge.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "narrative-together",
+      "label": "Being together narrative spread",
+      "description": "One Being together narrative spread using P06, P07, P08 and P10 with complete captions and a 30–50-word editorial bridge.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "publication-title",
+      "kind": "text-verbatim",
+      "text": "CITY, IN EVERYDAY GESTURES",
+      "scope": {
+        "slots": [
+          "front-cover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "publication-subtitle",
+      "kind": "text-verbatim",
+      "text": "Washington, D.C., 1942",
+      "scope": {
+        "slots": [
+          "front-cover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "photographer-line",
+      "kind": "text-verbatim",
+      "text": "Photographs by Gordon Parks",
+      "scope": {
+        "slots": [
+          "front-cover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "editorial-descriptor",
+      "kind": "text-verbatim",
+      "text": "An archival selection",
+      "scope": {
+        "slots": [
+          "front-cover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "chapter-work",
+      "kind": "text-verbatim",
+      "text": "01 — Work in view",
+      "scope": {
+        "slots": [
+          "opener-work"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "chapter-provisions",
+      "kind": "text-verbatim",
+      "text": "02 — Daily provisions",
+      "scope": {
+        "slots": [
+          "opener-provisions"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CITY, IN EVERYDAY GESTURES",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-publication-system",
+      "slots": [
+        "front-cover",
+        "opener-work",
+        "opener-provisions",
+        "narrative-work",
+        "narrative-provisions",
+        "narrative-together"
+      ],
+      "items": [
+        {
+          "item": "The typography-led cover and five spreads form a coherent publication, with a shared typographic language and matching chapter-heading, sample-folio and caption systems.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The interiors maintain flat, upright facing-page geometry and the required central reading clearance while allowing photograph arrangements to vary.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The recurring designed identity is a publication layout system rather than a logo, product, character or space; sets assess that system, and visual checks assess fidelity to the supplied archival photographs."
+    },
+    "brandToken": "CITY, IN EVERYDAY GESTURES"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "front-cover",
+      "opener-work",
+      "opener-provisions",
+      "narrative-work",
+      "narrative-provisions",
+      "narrative-together"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the authored publication design, not the supplied archival photographs' lighting, material texture, photographic polish or historical image quality."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "opener-work",
+        "opener-provisions",
+        "narrative-work",
+        "narrative-provisions",
+        "narrative-together"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-front-cover",
+      "requirementId": "R-format-front-cover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "front-cover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-opener-work",
+      "requirementId": "R-format-opener-work",
+      "method": "artifact-property",
+      "targetSlots": [
+        "opener-work"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-opener-provisions",
+      "requirementId": "R-format-opener-provisions",
+      "method": "artifact-property",
+      "targetSlots": [
+        "opener-provisions"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-narrative-work",
+      "requirementId": "R-format-narrative-work",
+      "method": "artifact-property",
+      "targetSlots": [
+        "narrative-work"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-narrative-provisions",
+      "requirementId": "R-format-narrative-provisions",
+      "method": "artifact-property",
+      "targetSlots": [
+        "narrative-provisions"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-narrative-together",
+      "requirementId": "R-format-narrative-together",
+      "method": "artifact-property",
+      "targetSlots": [
+        "narrative-together"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "finished-cover-copy-and-form",
+      "requirementId": "R-finished-cover-copy-and-form",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover"
+      ],
+      "criteria": "The finished front cover visibly includes all four prescribed lines with their exact wording and capitalization. Typography leads the composition, and the cover has the prescribed 4:5 page proportion. Line wrapping, placement and typographic treatment may vary; missing, altered or unreadable wording fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "archival-scenes-and-assignments",
+      "requirementId": "R-archival-scenes-and-assignments",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "opener-work",
+        "opener-provisions",
+        "narrative-work",
+        "narrative-provisions",
+        "narrative-together"
+      ],
+      "criteria": "Apply to delivered opener, narrative and study spreads, comparing photographs directly with the corresponding supplied P01.jpg–P10.jpg references. Assignments are opener-work: P01; opener-provisions: P03; opener-together: P06; narrative-work: P01, P02, P09; narrative-provisions: P03, P04, P05; narrative-together: P06, P07, P08, P10; narrative-closing: P01, P04, P10; each study-pNN: its matching PNN photograph. Each assigned source must have at least one complete, unobscured scene in that individual artwork. Scaling and placement may vary, but replacement imagery, missing sources, cropping every occurrence, colorization, mirroring, rotation, distortion or changes to depicted contents fail. This requirement does not assign a photograph to the cover.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "photograph-record-captions",
+      "requirementId": "R-photograph-record-captions",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "opener-work",
+        "opener-provisions",
+        "narrative-work",
+        "narrative-provisions",
+        "narrative-together"
+      ],
+      "criteria": "For every photograph on each opener, narrative or individual study spread, read its associated caption and compare all five fields with its record in 01-client-facts.en.md. Require the correct P-number, neutral caption label, recorded place, month/year and full credit. The dates are June 1942 for P01, P05, P06 and P07; August 1942 for P02, P03 and P04; July 1942 for P08; November 1942 for P09 and P10. P07 and P08 retain Anacostia, D.C.; Frederick Douglass housing project as their recorded place; the other records use Washington, D.C. Caption placement and field order may vary, and one clearly applicable credit may serve an entire spread. Missing fields, ambiguous image-to-caption associations, swapped records or altered record facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "narrative-bridge-length-and-grounding",
+      "requirementId": "R-narrative-bridge-length-and-grounding",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "opener-work",
+        "opener-provisions",
+        "narrative-work",
+        "narrative-provisions",
+        "narrative-together"
+      ],
+      "criteria": "Apply to narrative-work, narrative-provisions, narrative-together, narrative-closing and every delivered study-p01–study-p10. Each must contain a distinct English editorial bridge of 30–50 words, counting the bridge separately from headings and captions. Assess statements against the chapter aims and photograph records in 01-client-facts.en.md. Work concerns the three separate labor settings; provisions connects separate store, shopping and home-meal records; togetherness connects distinct gatherings and occasions. The closing spread associates P01, P04 and P10 without inventing a shared event. Individual studies may discuss their single record in relation to their chapter without displaying another photograph. Reading order and original editorial phrasing may vary. Unsupported identities, relationships, chronology or settings fail, including treating P03 and P04 as one documented visit, P07 and P08 as one dated occasion, or assigning unrecorded left/right identities to P10.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "additional-crop-label",
+      "requirementId": "R-additional-crop-label",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "opener-work",
+        "opener-provisions",
+        "narrative-work",
+        "narrative-provisions",
+        "narrative-together"
+      ],
+      "criteria": "If an opener or narrative spread includes a cropped supplementary photograph, the word Detail must visibly identify that crop. A spread without additional crops passes without printing this label. A label does not excuse omission of the required intact source appearance.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "editorial-language",
+      "requirementId": "R-editorial-language",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "opener-work",
+        "opener-provisions",
+        "narrative-work",
+        "narrative-provisions",
+        "narrative-together"
+      ],
+      "criteria": "Visible authored publication headings, introductions, captions and editorial bridges are in English. Archival lettering within the original photographs is source content and is not evaluated as newly authored editorial text.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-spread-geometry-and-system",
+      "requirementId": "R-tier6-spread-geometry-and-system",
+      "method": "visual",
+      "targetSlots": [
+        "opener-work",
+        "opener-provisions",
+        "narrative-work",
+        "narrative-provisions",
+        "narrative-together"
+      ],
+      "criteria": "All five artworks are flat, upright facing-page spreads with two 4:5 pages forming an 8:5 spread. On each side of the central gutter, the inner reading margin measures at least 5% of one page's width. Headings, captions and sample-sequence folios follow a recognizable common hierarchy and placement logic. Photograph arrangements may vary within that system. Perspective mockups, incorrect proportions, inadequate gutter clearance or inconsistent editorial systems fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-opener-introductions",
+      "requirementId": "R-tier6-opener-introductions",
+      "method": "visual",
+      "targetSlots": [
+        "opener-work",
+        "opener-provisions"
+      ],
+      "criteria": "Each opener visibly carries its exact numbered chapter name and a short English introduction adapted from its corresponding chapter aim. The work introduction frames distinct forms of labor; the provisions introduction frames an editorial connection between separate daily-provision settings. Wording and length are flexible because no numerical introduction length is prescribed. Missing introductions or unsupported claims that the records depict one continuous event fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-tier6-publication-system",
+      "requirementId": "R-set-tier6-publication-system",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "opener-work",
+        "opener-provisions",
+        "narrative-work",
+        "narrative-provisions",
+        "narrative-together"
+      ],
+      "criteria": "The typography-led cover and five spreads form a coherent publication, with a shared typographic language and matching chapter-heading, sample-folio and caption systems. The interiors maintain flat, upright facing-page geometry and the required central reading clearance while allowing photograph arrangements to vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ]
+}

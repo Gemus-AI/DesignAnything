@@ -1,0 +1,1169 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-product-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "component-state-inventory",
+      "label": "Component and state inventory",
+      "description": "A two-page inventory of body-unit IDs, dimensions, connections, materials, palette codes, finishes and four pose states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "character-translation",
+      "label": "Character translation board",
+      "description": "One board pairing the supplied flat front identity with the resolved solid form, depth and back decisions, name and descriptor.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "neutral-front",
+      "label": "Dimensioned neutral front view",
+      "description": "One orthographic front view in P0 neutral with inventory dimensions and body-unit IDs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "neutral-back",
+      "label": "Dimensioned neutral back view",
+      "description": "One orthographic back view in P0 neutral with resolved rear volumes, inventory dimensions and body-unit IDs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "neutral-side",
+      "label": "Dimensioned neutral side view",
+      "description": "One orthographic side view in P0 neutral with resolved depth, inventory dimensions and body-unit IDs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "exploded-assembly",
+      "label": "Exploded body assembly",
+      "description": "One exploded board identifying eight body units, dimensions, part cuts and seven connecting assemblies.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "articulation-mechanisms",
+      "label": "Seven-connection articulation board",
+      "description": "One articulation board with mechanism sections, axes, angular sweeps, stops and clearances for all seven connections.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-colour",
+      "label": "Material and colour allocation",
+      "description": "One material board mapping proposed materials, palette codes and matte/satin finishes to front, back and joint-detail views.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pose-wave",
+      "label": "P1 wave pose",
+      "description": "One complete-body P1 wave image with principal joint angles and a shoulder clearance inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pose-sit",
+      "label": "P2 sit pose",
+      "description": "One complete-body P2 sit image with principal joint angles and a hip/support contact and clearance inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pose-welcome",
+      "label": "P3 welcome pose",
+      "description": "One complete-body P3 welcome image with principal joint angles and a neck/shoulder clearance inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "domestic-display",
+      "label": "Domestic display scene",
+      "description": "One domestic scene of a single VELL in P3 welcome with the name, descriptor and 160 mm neutral-height inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pose-video",
+      "label": "Four-state pose video",
+      "description": "One 10-second video of the complete toy progressing through labelled P0 neutral, P1 wave, P2 sit and P3 welcome states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "design-presentation",
+      "label": "Collectible design presentation",
+      "description": "One presentation of at least 8 pages reusing the resolved design work and recording pending prototype work.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-name",
+      "kind": "text-verbatim",
+      "text": "VELL",
+      "scope": {
+        "slots": [
+          "character-translation",
+          "domestic-display",
+          "design-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "printed-descriptor",
+      "kind": "text-verbatim",
+      "text": "Quiet seedling wanderer",
+      "scope": {
+        "slots": [
+          "character-translation",
+          "domestic-display",
+          "design-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "VELL",
+      "maxEditDistance": 1,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "one-resolved-toy",
+      "slots": [
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "exploded-assembly",
+        "articulation-mechanisms",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "sourceSlots": [
+        "character-translation"
+      ],
+      "items": [
+        {
+          "item": "All views develop one recognizable rounded VELL form, preserving the selected depth, rear volumes and broad-head, pear-body proportions through viewpoint and pose changes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Body-unit shapes, part lengths, joint locations and seam decisions agree between assembled views, the exploded construction and the mechanism drawings.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The design has eight anatomical body units and exactly seven articulated connections; exploded separation is allowed, while posed and displayed bodies remain attached.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "recorded-material-system",
+      "slots": [
+        "material-colour",
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "sourceSlots": [
+        "component-state-inventory"
+      ],
+      "items": [
+        {
+          "item": "The material board's names, colour codes and finish assignments agree with the inventory, and rendered surfaces follow those assignments despite natural lighting variation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Cream, green, navy, coral, teal and yellow retain their fixed anatomical regions, with facial marks and the yellow diamond confined to their front surfaces.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "VELL"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "neutral-front",
+      "neutral-back",
+      "neutral-side",
+      "exploded-assembly",
+      "articulation-mechanisms",
+      "material-colour",
+      "pose-wave",
+      "pose-sit",
+      "pose-welcome",
+      "domestic-display"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not require demonstrated prototype friction, contact performance, edge finishing, joint range or pose retention, because these remain pending prototype work."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "component-state-inventory",
+        "character-translation",
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "exploded-assembly",
+        "articulation-mechanisms",
+        "material-colour",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display",
+        "design-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "character-translation",
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "exploded-assembly",
+        "articulation-mechanisms",
+        "material-colour",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-component-state-inventory",
+      "requirementId": "R-format-component-state-inventory",
+      "method": "artifact-property",
+      "targetSlots": [
+        "component-state-inventory"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-character-translation",
+      "requirementId": "R-format-character-translation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "character-translation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-neutral-front",
+      "requirementId": "R-format-neutral-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "neutral-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-neutral-back",
+      "requirementId": "R-format-neutral-back",
+      "method": "artifact-property",
+      "targetSlots": [
+        "neutral-back"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-neutral-side",
+      "requirementId": "R-format-neutral-side",
+      "method": "artifact-property",
+      "targetSlots": [
+        "neutral-side"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-exploded-assembly",
+      "requirementId": "R-format-exploded-assembly",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exploded-assembly"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-articulation-mechanisms",
+      "requirementId": "R-format-articulation-mechanisms",
+      "method": "artifact-property",
+      "targetSlots": [
+        "articulation-mechanisms"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-colour",
+      "requirementId": "R-format-material-colour",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-colour"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pose-wave",
+      "requirementId": "R-format-pose-wave",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pose-wave"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pose-sit",
+      "requirementId": "R-format-pose-sit",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pose-sit"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pose-welcome",
+      "requirementId": "R-format-pose-welcome",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pose-welcome"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-domestic-display",
+      "requirementId": "R-format-domestic-display",
+      "method": "artifact-property",
+      "targetSlots": [
+        "domestic-display"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pose-video",
+      "requirementId": "R-format-pose-video",
+      "method": "manual",
+      "targetSlots": [
+        "pose-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-design-presentation",
+      "requirementId": "R-format-design-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "design-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "inventory-completeness",
+      "requirementId": "R-inventory-completeness",
+      "method": "content",
+      "targetSlots": [
+        "component-state-inventory"
+      ],
+      "criteria": "The inventory occupies two pages and records H, T, AR, AL, LR, LL, FR and FL with their component meanings; JN, JSR, JSL, JHR, JHL, JAR and JAL; and explicit proposed materials, colour codes and regional matte/satin assignments. It declares 160 mm in P0 from a common sole plane to the highest leaf tip, chosen overall width/depth, head and torso width/height/depth, arm and leg lengths, and foot width/height/depth. Each of the four coded states has a readable account of its visible posture changes. Designer-selected measurements and codes may vary, but missing fields, wrong fixed values or contradictory records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "translation-board",
+      "requirementId": "R-translation-board",
+      "method": "visual",
+      "targetSlots": [
+        "character-translation"
+      ],
+      "criteria": "The board visibly pairs the supplied flat front character with a rounded, materially rendered solid interpretation and enough additional views to explain its depth and rear surfaces. It prints VELL and Quiet seedling wanderer. Depth, rear shaping and small articulation-driven proportion changes are open decisions; omitting the source pairing, leaving the rear unresolved or replacing the broad-head, pear-body silhouette fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "neutral-orthographic-views",
+      "requirementId": "R-neutral-orthographic-views",
+      "method": "visual",
+      "targetSlots": [
+        "neutral-front",
+        "neutral-back",
+        "neutral-side"
+      ],
+      "criteria": "The assigned roles depict true front, rear and lateral orthographic presentations of the same neutral toy. The head faces forward, arms hang down, hips are neutral and both soles meet a shared horizontal datum. Dimension annotations communicate overall height, width and depth and the component measurements appropriate to each projection. A perspective substitute, duplicated viewing direction, non-neutral articulation or inconsistent dimensions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-inventory"
+      ]
+    },
+    {
+      "id": "dimension-and-unit-repetition",
+      "requirementId": "R-dimension-and-unit-repetition",
+      "method": "visual",
+      "targetSlots": [
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "exploded-assembly"
+      ],
+      "criteria": "Read dimension and body-unit annotations against the inventory. The orthographic collection and exploded board each recover the declared overall and component measurements and the eight correctly assigned unit IDs. Measurements can be distributed among appropriate orthographic projections, and hidden units may use callouts; the exploded board must independently repeat the records. The 160 mm annotation must describe the assembled neutral sole-to-highest-tip height, not the spread of exploded parts. Missing records, altered values or reassigned IDs fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-inventory"
+      ]
+    },
+    {
+      "id": "exploded-assembly-topology",
+      "requirementId": "R-exploded-assembly-topology",
+      "method": "visual",
+      "targetSlots": [
+        "exploded-assembly"
+      ],
+      "criteria": "The separated assembly identifies H as head with both fixed leaf tips, T as torso, AR/AL as integrated rigid arm-and-mitten units, LR/LL as rigid leg segments and FR/FL as feet. Cuts and connection paths establish JN between H and T, JSR/JSL between the respective arms and T, JHR/JHL between the respective legs and T, and JAR/JAL between each foot and its leg. Internal bearing pieces may be shown separately without becoming additional anatomical body units or joints. Missing connections, incorrect side assignments or extra anatomical articulation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "mechanisms-and-motion-ranges",
+      "requirementId": "R-mechanisms-and-motion-ranges",
+      "method": "visual",
+      "targetSlots": [
+        "articulation-mechanisms"
+      ],
+      "criteria": "All seven named anatomical joints have legible mechanism sections, selected mechanism types, axis locations, part divisions, labelled angular sweeps and corresponding stop and clearance details. Neck yaw reaches both ±30° limits; each shoulder supports at least 90° forward and lateral elevation; each hip supports at least 90° forward swing; and each ankle supports at least 30° tilt in both directions. Larger ranges and compound internal mechanisms are allowed. Missing directions, insufficient stated travel, unidentified joints or diagrams that visibly block their claimed motion fail; physical prototype proof is not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "exploded-assembly"
+      ]
+    },
+    {
+      "id": "fixed-visible-character-features",
+      "requirementId": "R-fixed-visible-character-features",
+      "method": "visual",
+      "targetSlots": [
+        "character-translation",
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "material-colour",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "criteria": "Where anatomically visible, the toy retains a broad cream head with exactly two green tips, two navy vertical oval eyes, a tiny curved navy smile, exactly three coral dots on character-left and a plain opposite cheek. Character-left corresponds to viewer-right in a frontal view. The torso remains teal and pear-shaped with one integral yellow front diamond; short cream arms end in integrated mittens and short navy legs meet broad rounded navy feet. Natural occlusion and modest articulation-related proportion adjustments are allowed. Mirrored cheek placement, altered expression, extra marks, missing features in unobstructed views or displaced front graphics fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "rear-volume-and-colour-continuity",
+      "requirementId": "R-rear-volume-and-colour-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "neutral-back",
+        "exploded-assembly",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "criteria": "The rear view resolves rounded depth and surface transitions with cream continuing around the head, green around both tips, teal around the torso and navy around the lower limbs. Visible rear and side portions elsewhere agree with that geometry and those region boundaries. Rear design choices are free within this continuity; camera occlusion is acceptable. Contradictory rear shapes, unexplained colour changes or front facial/diamond graphics duplicated onto the rear fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "character-translation"
+      ]
+    },
+    {
+      "id": "required-pose-records",
+      "requirementId": "R-required-pose-records",
+      "method": "visual",
+      "targetSlots": [
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome"
+      ],
+      "criteria": "Each role contains the complete attached toy, its correct code and state name, readable principal angles and one relevant contact/clearance inset. P1 shows a 75–90° character-right lateral arm raise from neutral down, the mitten at or above shoulder height and clear of the head/tips, left arm down, head forward and hips neutral. P2 shows both hips forward 80–90°, straight rigid legs, a forward-facing head and upright torso seated at an unbranded rectangular support edge, with both arms relaxed down and clear; feet may hang. P3 shows both arms forward 45–60°, head yaw 20–30° to character-left and neutral hips. Both soles share one horizontal surface in P1 and P3. Angles within the prescribed ranges and natural perspective variation are allowed; swapped anatomy, visibly incompatible labels, bending rigid parts, absent insets or incorrect support contact fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "articulation-mechanisms"
+      ]
+    },
+    {
+      "id": "proposed-material-boundaries",
+      "requirementId": "R-proposed-material-boundaries",
+      "method": "content",
+      "targetSlots": [
+        "component-state-inventory"
+      ],
+      "criteria": "The proposal gives specific material names for the head, torso, limb shells, bearing components and feet, and assigns matte or satin finishes by region. Head and torso materials are opaque rigid polymers or resins; limb and bearing choices are stated coherently with the selected construction. Different suitable proposed materials are allowed. Generic unnamed material placeholders, transparent or flexible main-body materials, or missing regional finish assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "material-board-mapping",
+      "requirementId": "R-material-board-mapping",
+      "method": "visual",
+      "targetSlots": [
+        "material-colour"
+      ],
+      "criteria": "The board includes front and rear character views plus a joint detail, with legible mappings from regions or parts to the inventory's proposed material names, exact palette codes and matte/satin finishes. Callouts, legends or keyed swatches are acceptable if assignments are unambiguous. Missing required views, unassigned regions, altered records or an unexplained generic swatch collection fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "component-state-inventory"
+      ]
+    },
+    {
+      "id": "physical-and-surface-consistency",
+      "requirementId": "R-physical-and-surface-consistency",
+      "method": "visual",
+      "targetSlots": [
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "criteria": "Across the images, the eight body units remain assembled and retain their dimensions, joint attachment positions, rigid shapes and seam placement. Both leaf tips belong to the moving head, hands remain integrated with arms and leg segments do not bend. Surface colours and apparent matte/satin character follow the recorded allocation. Perspective, illumination, occlusion and joint-driven pose envelopes may vary. Detached units, stretched parts, relocated joints, new articulation, changing seams or incompatible finishes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-inventory",
+        "exploded-assembly",
+        "articulation-mechanisms"
+      ]
+    },
+    {
+      "id": "domestic-display-content",
+      "requirementId": "R-domestic-display-content",
+      "method": "visual",
+      "targetSlots": [
+        "domestic-display"
+      ],
+      "criteria": "The scene presents one assembled physical VELL in the welcome posture on an ordinary domestic shelf or desk, with both soles meeting its flat horizontal surface. A caption prints VELL and Quiet seedling wanderer, and a small inset identifies 160 mm as the neutral sole-to-highest-leaf-tip height. The inset may depict a neutral reference figure without counting as a second displayed toy. Domestic styling may vary; multiple displayed toys, a different pose, floating feet, missing caption wording or a height inset measuring the welcome pose instead of neutral fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "pose-welcome"
+      ]
+    },
+    {
+      "id": "pose-video-review",
+      "requirementId": "R-pose-video-review",
+      "method": "manual",
+      "targetSlots": [
+        "pose-video"
+      ],
+      "criteria": "Review the whole video and its runtime: it lasts 10 seconds and shows readable P0 neutral, P1 wave, P2 sit and P3 welcome labels in that order while the toy moves through the corresponding recorded postures. P0 has a forward head, lowered arms and neutral hips; P1 raises the right arm sideways 75–90°; P2 seats an upright torso at a plain rectangular support edge with both hips 80–90°, rigid legs and arms clear; P3 raises both arms forward 45–60° with head yaw 20–30° left. Required standing states maintain common-surface sole contact. Throughout, all eight units stay attached, leaf tips remain fixed to the head, and identity marks, rear form, material allocation, part lengths, seams and joint positions remain consistent with the design records. Natural occlusion and camera changes are allowed. Wrong duration, missing or reordered states, absent labels, static substitution for the requested movement, morphing or contradictory construction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "component-state-inventory",
+        "neutral-back",
+        "articulation-mechanisms",
+        "material-colour"
+      ]
+    },
+    {
+      "id": "presentation-structure-and-prototype-work",
+      "requirementId": "R-presentation-structure-and-prototype-work",
+      "method": "content",
+      "targetSlots": [
+        "design-presentation"
+      ],
+      "criteria": "The presentation has eight or more pages, places VELL and Quiet seedling wanderer on its cover, and includes an identifiable prototype-work page addressing friction, contact, edge finishing, joint range and pose retention as pending work. Additional pages and prototype topics are allowed. Too few pages, misplaced or missing cover wording, omitted required topics or claims that replace the requested pending-work status with completed validation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "presentation-dimension-and-state-records",
+      "requirementId": "R-presentation-dimension-and-state-records",
+      "method": "content",
+      "targetSlots": [
+        "design-presentation"
+      ],
+      "criteria": "The presentation reproduces the inventory's neutral overall and component dimensions, including the 160 mm sole-plane-to-highest-tip datum, and explicitly identifies P0 neutral, P1 wave, P2 sit and P3 welcome. Readable reused inventory or drawing pages count. Reformatting and equivalent measurement notation are allowed; missing measurements, changed values or absent/misnamed states fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "component-state-inventory"
+      ]
+    },
+    {
+      "id": "presentation-material-records",
+      "requirementId": "R-presentation-material-records",
+      "method": "content",
+      "targetSlots": [
+        "design-presentation"
+      ],
+      "criteria": "Readable presentation content repeats the proposed material names, exact production-intent colour codes and regional matte/satin assignments recorded in the inventory. A legible reused specification or material-board page is sufficient. Different page organization is allowed; omitted assignments, substituted names or codes, and conflicting finishes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "component-state-inventory"
+      ]
+    },
+    {
+      "id": "presentation-visible-reuse",
+      "requirementId": "R-presentation-visible-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "design-presentation"
+      ],
+      "criteria": "Every listed source is visibly identifiable in the presentation through readable reproductions or faithful excerpts retaining its relevant design evidence. Sources may share pages and may be resized or cropped without losing their defining content. Merely mentioning a deliverable, replacing it with unrelated imagery or omitting any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "component-state-inventory",
+        "character-translation",
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "exploded-assembly",
+        "articulation-mechanisms",
+        "material-colour",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ]
+    },
+    {
+      "id": "set-one-resolved-toy",
+      "requirementId": "R-set-one-resolved-toy",
+      "method": "visual",
+      "targetSlots": [
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "exploded-assembly",
+        "articulation-mechanisms",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "criteria": "All views develop one recognizable rounded VELL form, preserving the selected depth, rear volumes and broad-head, pear-body proportions through viewpoint and pose changes. Body-unit shapes, part lengths, joint locations and seam decisions agree between assembled views, the exploded construction and the mechanism drawings. The design has eight anatomical body units and exactly seven articulated connections; exploded separation is allowed, while posed and displayed bodies remain attached.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "character-translation"
+      ]
+    },
+    {
+      "id": "set-recorded-material-system",
+      "requirementId": "R-set-recorded-material-system",
+      "method": "visual",
+      "targetSlots": [
+        "material-colour",
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "criteria": "The material board's names, colour codes and finish assignments agree with the inventory, and rendered surfaces follow those assignments despite natural lighting variation. Cream, green, navy, coral, teal and yellow retain their fixed anatomical regions, with facial marks and the yellow diamond confined to their front surfaces.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "component-state-inventory"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "source-character-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "vell-front-2d.png"
+      ],
+      "subjectSlots": [
+        "character-translation",
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "material-colour",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "notes": "The translation board, orthographic views, material board, pose images, display scene and video preserve two leaf tips, three coral dots on the character's left cheek, the fixed eyes and smile, and one yellow diamond on the torso front."
+    },
+    {
+      "id": "resolved-rear-form",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "neutral-back",
+      "subjectSlots": [
+        "exploded-assembly",
+        "pose-wave",
+        "pose-sit",
+        "pose-welcome",
+        "domestic-display"
+      ],
+      "notes": "The back view establishes continuous source-region colours and volumes that recur in the assembly, poses, scene and video."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "inventory-dimensions-and-units",
+      "fromSlot": "component-state-inventory",
+      "toSlots": [
+        "neutral-front",
+        "neutral-back",
+        "neutral-side",
+        "exploded-assembly"
+      ],
+      "extract": [
+        "neutral height and its lower and upper datums",
+        "chosen total width and depth",
+        "head and torso width, height and depth",
+        "arm, leg and foot dimensions",
+        "body-unit IDs and their corresponding components"
+      ],
+      "notes": "The orthographic views and exploded assembly repeat those dimensions and body-unit IDs; the presentation repeats the neutral dimensions and all four state names."
+    },
+    {
+      "id": "inventory-presentation-dimensions-and-states",
+      "fromSlot": "component-state-inventory",
+      "toSlots": [
+        "design-presentation"
+      ],
+      "extract": [
+        "neutral overall and component dimensions",
+        "P0 neutral, P1 wave, P2 sit and P3 welcome state records"
+      ],
+      "notes": "The orthographic views and exploded assembly repeat those dimensions and body-unit IDs; the presentation repeats the neutral dimensions and all four state names."
+    },
+    {
+      "id": "inventory-material-records",
+      "fromSlot": "component-state-inventory",
+      "toSlots": [
+        "material-colour",
+        "design-presentation"
+      ],
+      "extract": [
+        "proposed material names and their component assignments",
+        "production-intent palette codes and their region assignments",
+        "matte/satin finish allocation"
+      ],
+      "notes": "The material board and presentation repeat the inventory's material names, palette codes and finish allocation."
+    }
+  ]
+}

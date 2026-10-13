@@ -1,0 +1,162 @@
+{
+  "id": "bench-da-product-breadth-01",
+  "title": "PALM LOOP — A desktop sampler for hands-on music making, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# PALM LOOP: client facts\n\n## Product\n- Name: PALM LOOP\n- Product: Complete portable desktop music sampler\n- Users: Adult music hobbyists beginning ideas through physical pads and knobs\n- Sound functions: Line-input recording; four stored sounds; pad preview; loop playback; output level, loop pace, sample start and sample length adjustment\n- Interaction: Four pads; four knobs; three buttons; three indicator lights\n- Display count: 0\n- Design scope: Enclosure silhouette, control arrangement, component accommodation, connectors, feet, material divisions, graphic identity and seated use posture\n\n## Physical conditions\n- Maximum overall width: 320 mm\n- Maximum overall depth: 220 mm\n- Maximum overall height, including controls and feet: 85 mm\n- Desk height: 720 mm\n- Clear desk area: 500 mm wide × 350 mm deep\n- Exposed pad surface: 36 × 36 mm each\n- Minimum clearance between adjacent exposed pad edges: 8 mm\n- Minimum clearance between an exposed knob or button edge and a pad edge: 6 mm\n- Rear edge: Edge farthest from the seated player\n- Rear connectors: J1 USB-C POWER; J2 LINE IN; J3 HEADPHONES\n- Simultaneous audio connections: One external line-source cable and headphones\n- Cable route: Behind the pad playing area\n- Support: Integral feet resting on the desktop\n- Battery: A1, internal during use, accessible through a removable underside cover\n\n## Materials and appearance\n- Enclosure: PC/ABS; fine-textured matte surface\n- Pads: Silicone\n- Knob caps: Aluminium; satin anodised surface\n- Enclosure silhouette, palette and graphic identity: Open design decisions\n- Product inscription: PALM LOOP\n- Inscription location: Upper face\n\n## Functional labels\n- Pads: P1, P2, P3, P4\n- Knobs: VOLUME, TEMPO, START, LENGTH\n- Buttons: SAMPLE, PLAY/STOP, POWER\n- Indicators: POWER, REC, PLAY\n- Connectors: USB-C POWER, LINE IN, HEADPHONES\n\n## Operating states\n| State | POWER | REC | PLAY | Action or condition |\n|---|---|---|---|---|\n| Idle | on | off | off | P2 preview by tapping |\n| Armed | on | blinking | off | P2 selected; SAMPLE starts recording |\n| Recording | on | on | off | LINE IN records into P2; SAMPLE finishes, stores and returns to Idle |\n| Playback | on | off | on | Stored pattern loops; PLAY/STOP stops and returns to Idle |\n\n- Target-selection gesture: SAMPLE held while P1, P2, P3 or P4 is pressed\n- Operation-panel recording target: P2\n- Blinking representation: Graphic cue or blinking label\n- Geometry and appearance continuity: One enclosure, control arrangement, connector order, material division and module set\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# PALM LOOP — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | complete-device-views | Complete-device view sheet | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | component-assembly | Component and assembly sheet | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | idle-operation | Idle operation and desktop-use panel | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | armed-operation | Armed operation panel | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | recording-operation | Recording operation panel | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | playback-operation | Playback operation panel | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: sampler-inputs.en.md",
+            "config": {
+              "text": "# PALM LOOP: product inputs\n\n## Client and use\n- Product: PALM LOOP, a complete portable desktop music sampler\n- Users: Adult music hobbyists who start ideas by pressing pads and turning physical controls\n- Recording source: LINE IN\n- Stored sounds: Four\n- Design scope: Whole instrument, including enclosure, control arrangement, component accommodation, connectors, feet, material divisions and use posture\n- Supplied finished enclosure, colour palette and visual identity: None\n- Desk height: 720 mm\n- Clear desktop: 500 mm wide × 350 mm deep\n- Concurrent connections: Headphones and one external line-source cable\n- Cable position: Behind the pad playing area\n- Use support: Desktop, through integral feet\n- Wall mount count: 0\n- Separate support dock count: 0\n- Maximum instrument envelope: 320 mm width × 220 mm depth × 85 mm overall height, including controls and feet\n- Actual instrument dimensions: Designer-selected values within the maximum envelope\n- Component dimension basis: Supplied project envelopes\n\n## Supplied functional modules\n| ID | Quantity | Envelope and outward interface | Function and relation |\n|---|---:|---|---|\n| P1, P2, P3, P4 | one each | each 40 × 40 × 15 mm; 36 × 36 mm exposed press surface | four independent sound pads; each connects to C1 |\n| K1, K2, K3, K4 | one each | each 20 × 20 × 25 mm behind panel; exposed knob diameter 20 mm, height 12 mm | K1 VOLUME; K2 TEMPO; K3 START; K4 LENGTH; each connects to C1 |\n| B1, B2, B3 | one each | each 14 × 14 × 12 mm behind panel; exposed button 12 × 12 mm | B1 SAMPLE; B2 PLAY/STOP; B3 POWER; each connects to C1 |\n| L1, L2, L3 | one each | each 5 × 5 × 6 mm behind panel; exposed light diameter 3 mm | L1 POWER; L2 REC; L3 PLAY; each connects to C1 |\n| C1 | 1 | 80 × 55 × 15 mm | processor; connects to pads, controls, lights, J1, J2, J3 and A1 |\n| A1 | 1 | 90 × 50 × 12 mm | battery; connects to C1; internal during use |\n| J1 | 1 | 18 × 15 × 10 mm behind panel; USB-C opening 9 × 3 mm | USB-C POWER; connects to C1; rear-edge connector |\n| J2, J3 | one each | each 15 × 15 × 12 mm behind panel; round opening diameter 3.5 mm | J2 LINE IN; J3 HEADPHONES; each connects to C1; rear-edge connectors |\n\n## Accommodation and layout\n- Module instance count: One per individual ID\n- Internal module orientation: Rotation in plan, with width and depth interchangeable\n- Module envelope geometry: Fixed dimensions and separate volumes\n- Enclosure walls and supports: Space around the component envelopes\n- Connection type: Logical relationships\n- Rear: Device edge farthest from the seated player\n- Connector placement: J1, J2 and J3 along the rear edge\n- Connector order: Open design decision\n- Connector openings: Three separate usable openings\n- Minimum adjacent exposed pad-edge clearance: 8 mm\n- Minimum exposed knob/button-edge to pad-edge clearance: 6 mm\n- Control arrangement: Rows, arcs, clusters or another usable arrangement\n- Screen count: 0\n- Pad count: 4\n- Functional control inventory: K1–K4 and B1–B3\n- Printed labels and graphic markings: Open typography and placement with legible functional labels\n\n## Label records\n| Group | Labels |\n|---|---|\n| Pads | P1, P2, P3, P4 |\n| Knobs | VOLUME, TEMPO, START, LENGTH |\n| Buttons | SAMPLE, PLAY/STOP, POWER |\n| Connectors | USB-C POWER, LINE IN, HEADPHONES |\n| Indicators | POWER, REC, PLAY |\n\n## Operation sequence\n| Starting condition | Physical action | Result |\n|---|---|---|\n| Powered on | Hold SAMPLE and press P1, P2, P3 or P4 | Selected pad becomes the recording target; Armed |\n| Armed | Press SAMPLE | Recording begins from LINE IN |\n| Recording | Press SAMPLE | Recording ends; sound stored in selected pad; Idle |\n| Idle | Press PLAY/STOP | Stored pattern begins loop playback; Playback |\n| Playback | Press PLAY/STOP | Loop stops; Idle |\n| Idle | Tap a pad | Preview of that pad's stored sound |\n| Powered on | Turn VOLUME | Output-level adjustment |\n| Powered on | Turn TEMPO | Loop-pace adjustment |\n| Stored sound selected | Turn START | Selected stored sound's start adjustment |\n| Stored sound selected | Turn LENGTH | Selected stored sound's length adjustment |\n\n## Operation board state records\n- Panel count: 4\n- Panel names: Idle, Armed, Recording, Playback\n- Recording target in Armed and Recording: P2\n\n| State | POWER light | REC light | PLAY light | Visible action or condition |\n|---|---|---|---|---|\n| Idle | on | off | off | one hand taps P2 to preview its sound |\n| Armed | on | blinking | off | P2 is selected; SAMPLE is the next action to start recording |\n| Recording | on | on | off | line input is recording into P2; SAMPLE is the action to finish |\n| Playback | on | off | on | stored pattern is playing; PLAY/STOP is the action to stop |\n\n- Blinking notation: Graphic cue or short label\n- Indicator colour treatment: Monochrome or colour\n- State explanations: Callouts and arrows\n- Powered-off panel count: 0\n\n## Product continuity\n- Shared across all six deliverables: Selected enclosure form, pad and control positions, connector order, material divisions and module identities\n- Variable scene elements: Hands, cable poses and camera positions\n- Exploded relationship: Separated parts retain their placement relationship to the assembled instrument\n- Component accommodation: Separate, non-intersecting envelope volumes\n- Component identifiers: Module IDs and dimensions\n- Drawing approach: Conceptual product drawings and engineering-style diagrams\n- Commission scope: Geometry, assembly relationships, operating states, labels and desktop use\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: sampler-constraints.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: seated-player-posture.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: bedroom-session-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: small-performance-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "PALM LOOP | A desktop sampler for hands-on music making\n\nWe are commissioning a complete portable desktop music sampler for adult hobbyists who begin musical ideas by pressing pads and turning knobs. It records through LINE IN and plays four stored sounds. The enclosure silhouette, control arrangement and graphic identity are open. The finished instrument fits within 320 mm width, 220 mm depth and 85 mm overall height, including controls and feet. Its four pads each have a 36 × 36 mm exposed surface, with at least 8 mm between adjacent pad edges and at least 6 mm between a pad edge and any exposed knob or button edge. Use a fine-textured matte PC/ABS enclosure, silicone pads and satin anodised aluminium knob caps. Print \"PALM LOOP\" on the instrument's upper face.\n\nThe instrument uses the complete module set in sampler-inputs.en.md: four pads, four knobs, three buttons, three indicators, a processor, an internal battery and three connectors. Physical controls and indicator lights carry the complete interaction. Functional labels are P1, P2, P3, P4, VOLUME, TEMPO, START, LENGTH, SAMPLE, PLAY/STOP, POWER, REC, PLAY, USB-C POWER, LINE IN and HEADPHONES. Holding \"SAMPLE\" while pressing a pad selects the recording target; subsequent SAMPLE presses start and finish recording. \"PLAY/STOP\" starts and stops loop playback. The Operation board comprises four separately delivered panels: Idle, Armed, Recording and Playback. P2 is the target in Armed and Recording. The seated player uses a 720 mm high desk with a clear area of 500 × 350 mm. All three connectors occupy the edge farthest from the player, with the line-source and headphone cables routed behind the playing area. A1 remains internal during use and is accessible through a removable underside battery cover.\n\nAudience: the product owner and instrument development team, for selecting the complete device proposal and briefing its first physical prototype.\n\nInputs (attached): 01-client-facts.en.md records the product requirements, materials and physical limits. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. sampler-inputs.en.md contains the module envelopes, functional labels, connections and operating-state records. sampler-constraints.png provides the component and desktop geometry. seated-player-posture.png establishes the seated player's orientation and two-handed desktop posture. bedroom-session-reference.png provides the atmosphere of a compact home music session. small-performance-reference.png provides the atmosphere of an intimate tabletop performance.\n\nDeliverables:\n1. One complete-device view sheet with top, front and right orthographic views, a rear three-quarter view, the chosen overall dimensions, pad clearances and all functional labels\n2. One component and assembly sheet with an exploded view, module IDs and envelope dimensions, connections to C1, material divisions, feet and an underside detail showing the battery cover and A1 removal direction\n3. One Idle operation panel showing the assembled instrument on the 500 × 350 mm desk area, one hand previewing P2, the other hand at VOLUME, both audio cables connected and the three indicator states\n4. One Armed operation panel showing the same instrument with P2 selected, the SAMPLE-plus-P2 selection gesture, a visible blinking cue for REC and SAMPLE identified as the next action\n5. One Recording operation panel showing the same instrument recording from LINE IN into P2, the three indicator states and SAMPLE identified as the action that finishes and stores the recording\n6. One Playback operation panel showing the same instrument in tabletop performance, the three indicator states and PLAY/STOP identified as the action that stops the loop\n\nAcceptance:\n- The complete-device view sheet states the chosen width, depth and overall height within 320 × 220 × 85 mm, including controls and feet. Its top view dimensions all four 36 × 36 mm pad surfaces, at least 8 mm between adjacent pad edges and at least 6 mm between pads and exposed knob or button edges.\n- The component and assembly sheet accounts for P1–P4, K1–K4, B1–B3, L1–L3, C1, A1 and J1–J3 once each, with the envelope dimensions from sampler-inputs.en.md. Its assembled-position outlines accommodate separate module volumes, its connection lines terminate at C1, and its underside detail identifies A1 and the direction of removal through the battery-cover opening.\n- The complete-device view sheet and all four operation panels depict the same enclosure, control positions, connector order, feet and material divisions. Their instrument views carry PALM LOOP on the upper face; the view sheet makes every functional label listed in this letter legible and identifies fine-textured matte PC/ABS, silicone pads and satin anodised aluminium knob caps.\n- The four operation panels carry the state headings Idle, Armed, Recording and Playback. POWER is on in all four; REC is off, blinking, on and off respectively; PLAY is off, off, off and on respectively. The Armed panel represents blinking with a graphic cue or the word blinking beside REC.\n- The Idle panel shows a P2 preview; the Armed panel shows selection by holding SAMPLE and pressing P2, followed by SAMPLE to start; the Recording panel shows LINE IN feeding P2 and SAMPLE returning the device to Idle with the sound stored; the Playback panel shows PLAY/STOP returning the device to Idle. These actions use the buttons and pads located on the complete-device view sheet.\n- The Idle desktop panel identifies the 720 mm desk height and 500 × 350 mm clear area, with the complete instrument and connected plugs inside that area. The complete-device view sheet, component and assembly sheet and Idle panel place USB-C POWER, LINE IN and HEADPHONES on the rear edge as three separate openings; the Idle panel routes the connected line-source and headphone cables behind the pad playing area.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-constraints.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "1bdcc0447812e1cebff1976883b0792703e7617b5924c1c7893befbde7dee829"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/seated-player-posture.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "7565db8647ca753005bba288e17dc26df673396f26e276884f3c480609bdfe7f"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/bedroom-session-reference.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "b900e8cdadd423dd1f96946d35559a43d8dadbfabf08dc6d1f195dce031d73ae"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/small-performance-reference.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "36bf8aded7096cf02ab86c6bea43f48217f15f261e96d3515e671f9c962f7dc4"
+    }
+  ]
+}

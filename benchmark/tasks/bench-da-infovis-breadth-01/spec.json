@@ -1,0 +1,606 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-infovis-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "data",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "mission-timeline",
+      "label": "Six-mission timeline",
+      "description": "One landscape timeline of six missions with actual and planned milestones, mission spans and an overlap annotation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "target-relationships",
+      "label": "Mission and target relationship diagram",
+      "description": "One landscape relationship diagram of six missions, five target bodies and seven recorded connections.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "reader-guide",
+      "label": "Mission grouping and status reader guide",
+      "description": "One portrait reader guide containing mission groups, status totals and date-label explanations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "mercury-comparison",
+      "label": "Mercury mission comparison",
+      "description": "One portrait comparison of MESSENGER and BepiColombo with timelines, arrival records and their shared Mercury target.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "asteroid-comparison",
+      "label": "DART and Hera comparison",
+      "description": "One portrait comparison of DART and Hera with timelines and their Didymos and Dimorphos target relationships.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "a4-takeaway",
+      "label": "One-page museum takeaway",
+      "description": "One A4 takeaway page combining the six-mission timeline, target relationships and category and status totals.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "publication-name",
+      "kind": "text-verbatim",
+      "text": "SOLAR SYSTEM MISSIONS",
+      "scope": {
+        "slots": [
+          "mission-timeline",
+          "target-relationships",
+          "reader-guide",
+          "mercury-comparison",
+          "asteroid-comparison",
+          "a4-takeaway"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "publisher-masthead",
+      "kind": "text-verbatim",
+      "text": "ORBIT DESK",
+      "scope": {
+        "slots": [
+          "mission-timeline",
+          "target-relationships",
+          "reader-guide",
+          "mercury-comparison",
+          "asteroid-comparison",
+          "a4-takeaway"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "source-credit",
+      "kind": "text-verbatim",
+      "text": "NASA / ESA, 2026",
+      "scope": {
+        "slots": [
+          "mission-timeline",
+          "target-relationships",
+          "reader-guide",
+          "mercury-comparison",
+          "asteroid-comparison",
+          "a4-takeaway"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "relationship-caption",
+      "kind": "text-verbatim",
+      "text": "Connections indicate mission targets",
+      "scope": {
+        "slots": [
+          "target-relationships",
+          "mercury-comparison",
+          "asteroid-comparison",
+          "a4-takeaway"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "mission-column-label",
+      "kind": "text-verbatim",
+      "text": "Missions",
+      "scope": {
+        "slots": [
+          "target-relationships",
+          "mercury-comparison",
+          "asteroid-comparison",
+          "a4-takeaway"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "target-column-label",
+      "kind": "text-verbatim",
+      "text": "Target bodies",
+      "scope": {
+        "slots": [
+          "target-relationships",
+          "mercury-comparison",
+          "asteroid-comparison",
+          "a4-takeaway"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SOLAR SYSTEM MISSIONS",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-editorial-and-mission-system",
+      "slots": [
+        "mission-timeline",
+        "target-relationships",
+        "reader-guide",
+        "mercury-comparison",
+        "asteroid-comparison"
+      ],
+      "items": [
+        {
+          "item": "The five image pieces use a coherent ORBIT DESK masthead, typography hierarchy, rules and editorial layout language while adapting to their individual subjects and carriers.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Recurring missions preserve their full names, M01–M06 IDs, target categories and category-color mappings across overview and comparison pieces.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Repeated dates, statuses, targets and milestone encodings agree across the images, allowing comparisons to show only their applicable mission subset.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The commission requires a shared editorial language and consistent mission encoding rather than a separately defined logo, product, character or space to track between delivered images."
+    },
+    "brandToken": "SOLAR SYSTEM MISSIONS",
+    "carryThrough": {
+      "none": "The takeaway is a final document, and the commission does not require later files to repeat facts extracted from an earlier delivered document."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "mission-timeline",
+      "target-relationships",
+      "reader-guide",
+      "mercury-comparison",
+      "asteroid-comparison"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge editorial hierarchy, readability and information graphics, excluding photorealistic materials, exhibition lighting and scene rendering because the deliverables are reading surfaces rather than environmental visualizations."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "mission-timeline",
+        "target-relationships",
+        "reader-guide",
+        "mercury-comparison",
+        "asteroid-comparison"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-mission-timeline",
+      "requirementId": "R-format-mission-timeline",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mission-timeline"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-target-relationships",
+      "requirementId": "R-format-target-relationships",
+      "method": "artifact-property",
+      "targetSlots": [
+        "target-relationships"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-reader-guide",
+      "requirementId": "R-format-reader-guide",
+      "method": "artifact-property",
+      "targetSlots": [
+        "reader-guide"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-mercury-comparison",
+      "requirementId": "R-format-mercury-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "mercury-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-asteroid-comparison",
+      "requirementId": "R-format-asteroid-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "asteroid-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-a4-takeaway",
+      "requirementId": "R-format-a4-takeaway",
+      "method": "artifact-property",
+      "targetSlots": [
+        "a4-takeaway"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "image-publication-and-record-accuracy",
+      "requirementId": "R-image-publication-and-record-accuracy",
+      "method": "visual",
+      "targetSlots": [
+        "mission-timeline",
+        "target-relationships",
+        "reader-guide",
+        "mercury-comparison",
+        "asteroid-comparison"
+      ],
+      "criteria": "Each image includes the publication name, publisher masthead, its own descriptive title, source credit, editorial snapshot and an annotation that helps interpret its content. Time scales identify calendar years and UTC; mission and target counts identify their units. Check displayed mission data against these records, expressed as launch / actual arrival / actual end: M01 Cassini 1997-10-15 / 2004-07-01 / 2017-09-15; M02 MESSENGER 2004-08-03 / 2011-03-18 / 2015-04-30; M03 Rosetta 2004-03-02 / 2014-08-06 / 2016-09-30; M04 BepiColombo 2018-10-20 / Pending / Open, planned arrival 2026-11-21; M05 DART 2021-11-24 / 2022-09-26 / 2022-09-26; M06 Hera 2024-10-07 / Pending / Open, planned arrival 2026-11. Planned arrivals for M01, M02, M03 and M05 are Not recorded. Arrival means Saturn orbit insertion, Mercury orbit insertion, comet rendezvous, Mercury orbit insertion, Dimorphos impact and Didymos binary-system rendezvous respectively. Do not require every field on every image, but fail contradictory values, invented dates or altered date precision. Titles and annotation wording may vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "linear-timeline-and-overlap",
+      "requirementId": "R-linear-timeline-and-overlap",
+      "method": "visual",
+      "targetSlots": [
+        "mission-timeline"
+      ],
+      "criteria": "The timeline contains all six missions with launch, arrival, end or Open endpoints and a snapshot marker at 2026-09-12. Equal elapsed time occupies equal distance across the full 1997-01-01–2027-01-01 domain; labeled ticks may vary. An annotation identifies Cassini, MESSENGER and Rosetta as the three missions active on 2014-08-06. Completed spans stop at their recorded ends; BepiColombo and Hera actual spans stop at the snapshot with Open endpoints, while future arrivals remain planned. Fail missing missions, nonlinear spacing, an incorrect overlap or actual spans extending into the future.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "relationship-panel-records",
+      "requirementId": "R-relationship-panel-records",
+      "method": "visual",
+      "targetSlots": [
+        "target-relationships",
+        "mercury-comparison",
+        "asteroid-comparison"
+      ],
+      "criteria": "Each relationship panel has two clearly labeled columns and its caption adjacent to that panel. The full diagram contains six mission entries, five distinct target bodies and exactly these seven associations: Cassini–Saturn; MESSENGER–Mercury; Rosetta–67P/Churyumov-Gerasimenko; BepiColombo–Mercury; DART–Dimorphos; Hera–Didymos; Hera–Dimorphos. The Mercury panel contains the two Mercury associations; the asteroid panel contains the three DART/Hera associations. Ordering and connector routing may vary if every association remains unambiguous. Fail omitted or extra links, duplicated target entries that misstate the distinct-body total, or a DART–Didymos link.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "reader-guide-groups-and-totals",
+      "requirementId": "R-reader-guide-groups-and-totals",
+      "method": "visual",
+      "targetSlots": [
+        "reader-guide"
+      ],
+      "criteria": "The guide accounts for every mission through readable target-class and snapshot-status groupings: Planets contains Cassini, MESSENGER and BepiColombo; Comets contains Rosetta; Asteroids contains DART and Hera. Completed identifies Cassini, MESSENGER, Rosetta and DART; En route identifies BepiColombo and Hera. It reports category totals 3, 1 and 2, status totals 4 and 2, and the printed calculation 4 + 2 = 6 missions. Explanations convey that Completed operations have ended and En route missions are traveling toward their recorded arrival milestones as of the snapshot. Layout and explanatory wording may vary; missing membership, incorrect totals or changed status meanings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "milestone-encoding-and-date-label-definitions",
+      "requirementId": "R-milestone-encoding-and-date-label-definitions",
+      "method": "visual",
+      "targetSlots": [
+        "mission-timeline",
+        "mercury-comparison",
+        "asteroid-comparison",
+        "reader-guide"
+      ],
+      "criteria": "On the timeline and both comparisons, actual and future milestones occupy distinct tracks labeled Actual and Planned; occurred events use filled markers and scheduled events use hollow markers. Both comparisons contain timelines for their named mission pair. Mercury explicitly shows MESSENGER's actual Mercury orbit insertion on 2011-03-18 and BepiColombo's planned insertion on 2026-11-21. The asteroid comparison identifies DART's 2022-09-26 Dimorphos impact and depicts Hera's 2026-11 planned rendezvous as a band covering November, without inventing a day. The reader guide explains Actual as an occurred event, Planned as a scheduled event after the snapshot, Not recorded as an absent date in this editorial record, Pending as an actual arrival awaiting its future event, and Open as an end date still open at the snapshot. Equivalent explanatory prose is allowed; merged tracks, reversed marker meanings, false precision or conflated missing-value meanings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "mission-encoding-and-physical-layout",
+      "requirementId": "R-mission-encoding-and-physical-layout",
+      "method": "visual",
+      "targetSlots": [
+        "mission-timeline",
+        "target-relationships",
+        "reader-guide",
+        "mercury-comparison",
+        "asteroid-comparison"
+      ],
+      "criteria": "Compare recurring mission entries across the images: M01 is Cassini, M02 MESSENGER, M03 Rosetta, M04 BepiColombo, M05 DART and M06 Hera. Planet missions use #0072B2, Rosetta uses comet color #CC79A7, and DART/Hera use asteroid color #E69F00, allowing ordinary rendering variation. IDs and written category labels provide readable identification when color is removed. The two landscape designs follow the 420 × 280 mm carrier proportions and the three portrait designs the 200 × 300 mm proportions, with content kept inside the proportional 10 mm edge insets specified by the carrier reference. Fail reassigned IDs or colors, reliance on hue alone, incorrect orientation or content intruding into the clear margins; do not require exact raster dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "existing-editorial-style",
+      "requirementId": "R-existing-editorial-style",
+      "method": "visual",
+      "targetSlots": [
+        "mission-timeline",
+        "target-relationships",
+        "reader-guide",
+        "mercury-comparison",
+        "asteroid-comparison"
+      ],
+      "criteria": "Each image follows the supplied orbit-desk-style.png masthead and editorial treatment. The written identity specification provides additional evidence: bold sans-serif headings, regular sans-serif body text, left-aligned headings, numbered entries, thin horizontal rules, white background and #17212B text. Content density and placement may adapt to the carrier and subject. A replacement masthead or conflicting typography, structure or base palette fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "complete-a4-takeaway",
+      "requirementId": "R-complete-a4-takeaway",
+      "method": "content",
+      "targetSlots": [
+        "a4-takeaway"
+      ],
+      "criteria": "Read the entire document as one A4 takeaway page with 10 mm clear margins. Require the publication name, existing ORBIT DESK masthead and editorial style, an individual title, source credit NASA / ESA, 2026, snapshot 2026-09-12 and a reading annotation. Its integrated timeline covers all six missions on a linear 1997-01-01–2027-01-01 UTC calendar-year scale with launch, arrival, end and snapshot markers. Actual filled markers and Planned hollow markers occupy separately labeled tracks. Verify launch / actual arrival / actual end against Cassini 1997-10-15 / 2004-07-01 / 2017-09-15; MESSENGER 2004-08-03 / 2011-03-18 / 2015-04-30; Rosetta 2004-03-02 / 2014-08-06 / 2016-09-30; BepiColombo 2018-10-20 / Pending / Open; DART 2021-11-24 / 2022-09-26 / 2022-09-26; Hera 2024-10-07 / Pending / Open. BepiColombo's planned arrival retains 2026-11-21 and Hera's retains month precision 2026-11; the other planned arrivals are Not recorded if shown. Actual spans stop at recorded ends or at the snapshot with Open endpoints. The overlap annotation identifies Cassini, MESSENGER and Rosetta on 2014-08-06. A two-column Missions / Target bodies panel carries Connections indicate mission targets and all seven associations: Cassini–Saturn, MESSENGER–Mercury, Rosetta–67P/Churyumov-Gerasimenko, BepiColombo–Mercury, DART–Dimorphos, Hera–Didymos and Hera–Dimorphos. Report Planets 3 missions, Comets 1 mission, Asteroids 2 missions, Completed 4 missions and En route 2 missions, including 4 + 2 = 6 missions and accurate explanations of both statuses. Any displayed overall totals agree with 6 missions, 5 target bodies and 7 links. Preserve M01–M06 mission/name mappings, the specified category colors and grayscale-readable IDs and written category labels. Wording and arrangement may adapt to the page; omitted required components, contradictory records, unsupported precision, misleading time spacing or illegible integrated content fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ]
+    },
+    {
+      "id": "set-shared-editorial-and-mission-system",
+      "requirementId": "R-set-shared-editorial-and-mission-system",
+      "method": "visual",
+      "targetSlots": [
+        "mission-timeline",
+        "target-relationships",
+        "reader-guide",
+        "mercury-comparison",
+        "asteroid-comparison"
+      ],
+      "criteria": "The five image pieces use a coherent ORBIT DESK masthead, typography hierarchy, rules and editorial layout language while adapting to their individual subjects and carriers. Recurring missions preserve their full names, M01–M06 IDs, target categories and category-color mappings across overview and comparison pieces. Repeated dates, statuses, targets and milestone encodings agree across the images, allowing comparisons to show only their applicable mission subset.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-infovis-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-infovis-breadth-01/03-mission-records.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ]
+}

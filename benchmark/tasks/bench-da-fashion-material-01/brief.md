@@ -1,0 +1,29 @@
+FOLDLINE | Stock denim costumes for a moving ensemble
+
+We are commissioning three two-piece costumes for our small theatre ensemble: one top and one pair of trousers each for P01, P02 and P03, identified as F01, F02 and F03 respectively. The performers stretch overhead, squat and rise in sequence. We want the pale and dark panels to create a rhythm across the group that remains recognisable as their bodies change position. Develop the collection from a materials and craft sheet; the garment silhouettes and panel arrangements are yours to resolve within our stock and movement requirements.
+
+Our entire garment fabric stock is D01, deep indigo denim, two rolls of 1450 × 4000 mm each, and D02, faded blue denim, one roll of 1350 × 3000 mm. Both are prewashed, right-hand twill, 98% cotton and 2% elastane; D01 weighs 340 g/m² and D02 weighs 270 g/m². Each roll has a 25 mm cutting exclusion along both long edges and 50 mm at each end. Use a 10 mm seam allowance and orient each panel's warp along the roll length. Each costume combines D01 and D02, with finished hip circumference at least 120 mm above its performer's body measurement and finished knee circumference at least 100 mm above it. Each top carries an 80 × 25 mm self-fabric patch on the left chest, printed with "FOLDLINE" above "Move together". The attached performer measurements, stock textures and movement sequence are the starting conditions for all three costumes.
+
+Audience: our artistic director, three performers and costume maker, for the collection decision and cutting preparation.
+
+Inputs (attached): 01-client-facts.en.md records the fabric inventory, cutting boundaries, construction supplies and fixed garment details. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-performers-and-movement.en.md records the three performers' measurements, costume assignments and movement sequence. stock-boundaries.png diagrams the three roll envelopes, usable cutting areas and circumference allowances. denim-stock-identity.png records the existing deep indigo and faded blue fabric surfaces. empty-stage-reference.png provides the small theatre's lighting atmosphere.
+
+Deliverables:
+1. One materials and craft sheet recording both fabrics' composition, weight, width, weave and finish; roll quantities; F01–F03 assignments and finished hip and knee measurements; the 10 mm seam allowance; seam methods; and chosen closure specifications
+2. Two flat-layout sheets for all six garments, one showing fronts and one showing backs, with costume IDs, D01/D02 panel labels and chest-patch dimensions
+3. Three standing worn views, one each of P01 in F01, P02 in F02 and P03 in F03, with each top and trousers visible together
+4. Two cutting and stock sheets, one for D01 showing rolls D01-A and D01-B separately and one for D02 showing roll D02-A, with dimensioned cutting outlines, panel IDs, piece quantities, grain arrows, patch pieces and remaining stock
+5. Two ensemble movement sheets, one showing all three performers in overhead reach and one showing all three in deep squat, with costume IDs and the relevant underarm, hip and knee construction visible
+6. Two enlarged connection details, one for the underarm panel junction and one for the trouser crotch and inner-leg junction, with fabric IDs, seam allowance, stitch paths and links to the corresponding pieces on the cutting sheets
+7. One 12-second ensemble video progressing from the standing line through overhead reach and deep squat to the staggered rise specified in the movement record
+8. One 10-page collection presentation reusing the materials and craft sheet, flat layouts, worn views, cutting sheets, movement sheets, connection details and video stills, with a final stock balance
+
+Acceptance:
+- Record D01 and D02, F01–F03 and the 10 mm seam allowance on the materials and craft sheet; repeat these identifiers and the allowance on the cutting sheets and collection presentation, with D01/D02 and 10 mm also stated on both connection details.
+- Place every garment and patch cutting piece on the cutting and stock sheets within D01-A and D01-B's separate 1400 × 3900 mm usable areas and D02-A's 1300 × 2900 mm usable area. Label piece quantities, preserve the lengthwise warp orientation and reconcile allocated and remaining areas for each roll in the collection presentation.
+- Give F01, F02 and F03 finished hip circumferences of at least 1060, 1160 and 1280 mm, and finished knee circumferences of at least 450, 480 and 520 mm respectively on the materials and craft sheet and collection presentation; dimension the corresponding seam-line measurements on the cutting sheets.
+- Carry the same six garments, D01/D02 panel boundaries and closure positions through the front and back flat layouts, standing worn views, both movement sheets, video and presentation. Show all three performers with arms overhead on the reach sheet and with hips below knees and heels grounded on the squat sheet; connect the two enlarged junction details to those garments by matching panel IDs.
+- Print FOLDLINE above Move together on every 80 × 25 mm left-chest patch, legibly in the front flat-layout sheet and each standing worn view; repeat FOLDLINE and Move together on the presentation's opening page.
+- Follow the movement record's four timed phases in the 12-second ensemble video, including rise starts at 9, 10 and 11 seconds for P01, P02 and P03. Use 10 pages in the collection presentation, with at least one reused item from every earlier deliverable category and a closing stock balance for all three rolls.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

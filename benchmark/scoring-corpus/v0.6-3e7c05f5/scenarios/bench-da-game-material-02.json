@@ -1,0 +1,172 @@
+{
+  "id": "bench-da-game-material-02",
+  "title": "SWITCHYARD — An industrial tactical map built from an existing asset library, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GAME",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# SWITCHYARD\n\n## Project\n- Game: SWITCHYARD\n- Environment: industrial relay battlefield\n- Direction: existing industrial kit, painted steel, cream details, weathered concrete\n- Audience: tactical players; environment and gameplay teams\n\n## Map geometry\n- Boundary: 64 × 64 cells\n- Cell size: 2 m × 2 m\n- Total extent: 128000 mm × 128000 mm\n- Coordinate origin: southwest boundary corner\n- Coordinate units: grid cells; coordinates refer to grid intersections\n- East axis: positive X\n- North axis: positive Y\n- Ground elevation: 0 mm\n- West Spawn: (4, 32)\n- East Spawn: (60, 32)\n- Relay: (32, 32)\n- G01-01 centre: (32, 32)\n- Route names: North; Middle; South\n- Route structure: three west-to-east routes, each connected to Relay\n- Minimum traversable width: 4 m\n- Asset orientations: 0, 90, 180 or 270 degrees clockwise from north\n- Area names: Tank Yard; Belt Lane; Crane Court\n\n## Asset inventory and behaviour\n| Type | Count | Length × width × height | Cover | Traversal |\n| --- | ---: | --- | --- | --- |\n| T01 | 4 | 8000 × 8000 × 10000 mm | Full cover at tank body | Solid footprint |\n| C01 | 6 | 12000 × 4000 × 1200 mm | Low cover along sides | Solid footprint |\n| G01 | 2 | 16000 × 8000 × 12000 mm | Full cover at legs | Open beneath beam; four solid corner legs |\n\n- G01 leg footprints: 1000 × 1000 mm each\n- G01 beam underside: 10000 mm above ground\n- G01 console: attached to southwest leg in the asset's 0-degree orientation\n- Asset state Idle: unlit circular beacon\n- Asset state Active: illuminated circular beacon with three short radial light marks\n- State geometry: identical silhouette and collision envelope\n\n## Art and faction facts\n- Painted steel: #596368\n- Cream detailing: #D9D2BD\n- Ground concrete: #85877F\n- Interface backing: #18232D\n- Interface text: #FFFFFF\n- Light direction: northwest\n- T01 recognition: two cream bands, domed roof, one side ladder\n- C01 recognition: black belt, three cream panels on each long side, four paired supports\n- G01 recognition: chamfered upper corners, four legs, one central hook, one attached console\n- Amber Union: #FFB547; square\n- Blue Assembly: #67C5FF; triangle\n\n## Interface facts\n- Logical canvas: 2560 × 1440 units\n- Safe inset: 64 logical units on all four edges\n- Minimum character height: 18 logical units\n- Text contrast: 4.5:1\n- Icon and disabled-control contrast: 3:1\n- Interaction states: Ready; Locked\n- Locked indicator: padlock plus Locked label\n- Fixed game-name copy: SWITCHYARD\n- Fixed action copy: Activate crane; Inspect cover\n- Starting objective display: Relay 50%\n- Starting timer display: 03:00\n- Controller mappings: A = Activate crane; X = Inspect cover\n- Touch mappings: Activate crane button; Inspect cover button\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# SWITCHYARD — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | tactical-specification | Tactical specification | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | interface-architecture | Interface information architecture | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 3 | master-plan | Master map plan | 14 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | route-cover-overlay | Route and cover overlay | 14 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | tank-yard-view | Tank Yard southwest view | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | belt-lane-view | Belt Lane northwest view | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | crane-court-view | Crane Court southeast view | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | asset-continuity | Industrial asset continuity sheet | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | faction-interaction-signage | Faction and interaction signage | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | controller-interaction | Controller interaction screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | touch-interaction | Touch interaction screen | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | tactical-hero | Tactical overview hero | 14 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | map-flythrough | Ten-second map flythrough | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | map-presentation | Map presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-asset-records.md",
+            "config": {
+              "text": "# Industrial asset records\n\n| Type | Object | Quantity | Instance IDs | Length mm | Width mm | Height mm |\n| --- | --- | ---: | --- | ---: | ---: | ---: |\n| T01 | Storage tank | 4 | T01-01, T01-02, T01-03, T01-04 | 8000 | 8000 | 10000 |\n| C01 | Conveyor | 6 | C01-01, C01-02, C01-03, C01-04, C01-05, C01-06 | 12000 | 4000 | 1200 |\n| G01 | Gantry crane | 2 | G01-01, G01-02 | 16000 | 8000 | 12000 |\n\n## Geometry conventions\n- Envelope dimensions: total exterior bounds, including attached details\n- Local length axis at 0 degrees: north-south\n- Local width axis at 0 degrees: east-west\n- Instance coordinates: envelope centres on grid intersections\n- Orientation choices: 0, 90, 180, 270 degrees clockwise from north\n- G01-01 centre: (32, 32)\n- Other instance positions: layout variables\n- Ground elevation: 0 mm\n- Overlapping asset envelopes: zero\n\n| Type | Appearance | Collision and cover | Traversal |\n| --- | --- | --- | --- |\n| T01 | Painted steel cylinder; domed roof; two cream bands; one side ladder; one roof beacon | Solid circular footprint, diameter 8000 mm; full cover | Around tank |\n| C01 | Black belt; three cream panels on each long side; four paired supports; one end beacon | Solid rectangular footprint; low cover, height 1200 mm | Around conveyor |\n| G01 | Four legs; chamfered upper frame; one central hook; one attached console; one upper beacon | Four corner leg footprints, each 1000 × 1000 mm; full cover at legs | Through ground-level opening beneath beam |\n\n- G01 beam underside: 10000 mm\n- G01 console position: southwest leg at 0-degree orientation, within the leg footprint\n- G01 hook: parked above 6000 mm in both states\n\n| Asset state | Beacon appearance | Geometry |\n| --- | --- | --- |\n| Idle | Unlit circular lens | Base silhouette |\n| Active | Illuminated circular lens with three short radial light marks | Base silhouette |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 04-interface-records.md",
+            "config": {
+              "text": "# Interface records\n\n| Surface | Field | Display text | Starting state |\n| --- | --- | --- | --- |\n| Tactical overview | Game name | SWITCHYARD | Persistent |\n| Tactical overview | West anchor | West Spawn | Persistent |\n| Tactical overview | East anchor | East Spawn | Persistent |\n| Tactical overview | Objective anchor | Relay | Persistent |\n| Tactical overview | Area | Tank Yard | Persistent |\n| Tactical overview | Area | Belt Lane | Persistent |\n| Tactical overview | Area | Crane Court | Persistent |\n| Interaction | Game name | SWITCHYARD | Persistent |\n| Interaction | Objective progress | Relay 50% | Persistent |\n| Interaction | Timer | 03:00 | Persistent |\n| Interaction | Crane action | Activate crane | Ready |\n| Interaction | Cover action | Inspect cover | Ready |\n| Interaction | Available action state | Ready | Ready |\n| Interaction | Unavailable action state | Locked | Locked |\n\n| Action | Controller input | Touch input | Screen region |\n| --- | --- | --- | --- |\n| Activate crane | A | Labelled touch button | Lower right, upper action row |\n| Inspect cover | X | Labelled touch button | Lower right, lower action row |\n\n- Interaction camera: G01-01 console, with a visible C01 instance in the cover-inspection inset\n- Ready presentation: action label, input indicator and Ready label\n- Locked presentation: action label, padlock and Locked label\n- Locked example location: inset above the action rows\n- Controller and touch composition: matching camera, inset, labels, values and action-row positions\n- Interface backing: #18232D\n- Interface text: #FFFFFF\n- Faction plate Amber Union: #FFB547 square with Amber Union label\n- Faction plate Blue Assembly: #67C5FF triangle with Blue Assembly label\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: map-boundary.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: asset-footprints.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: industrial-kit.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: factory-atmosphere.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "SWITCHYARD | An industrial tactical map built from an existing asset library\n\nWe need one industrial battlefield for SWITCHYARD, a desktop tactical game in which players choose routes and cover while contesting a central relay. The playable boundary is 64 × 64 cells, each 2 m square. Grid coordinates start at the southwest corner. West Spawn is at (4, 32), East Spawn at (60, 32), and Relay at (32, 32). Develop three west-to-east routes named North, Middle and South, each connected to Relay, with at least 4 m of clear width along every traversable connection.\n\nThe existing kit fixes the visual direction: four T01 storage tanks, six C01 conveyors and two G01 gantry cranes. Their respective length × width × height envelopes are 8000 × 8000 × 10000 mm, 12000 × 4000 × 1200 mm and 16000 × 8000 × 12000 mm. Arrange all 12 instances on one level; G01-01 is centred on Relay. Preserve the tank's twin cream bands, the conveyor's three cream side panels and the crane's chamfered upper corners. Tank bodies and crane legs provide full cover; conveyor sides provide low cover. The spaces beneath crane beams remain traversable. The three named areas are Tank Yard, Belt Lane and Crane Court.\n\nFaction recognition combines colour and shape: Amber Union uses #FFB547 with a square, and Blue Assembly uses #67C5FF with a triangle. The desktop interface uses a 2560 × 1440 logical canvas, a 64-unit inset on every edge and an 18-unit minimum character height. Print the game name as \"SWITCHYARD\" and the two action prompts as \"Activate crane\" and \"Inspect cover\". The interface records supply the remaining display labels and starting values.\n\nAudience: players who need to judge routes and cover quickly, and the environment and gameplay teams choosing the map layout for implementation.\n\nInputs (attached): 01-client-facts.en.md contains the fixed gameplay, art and interface facts. 02-delivery-catalog.en.md contains the delivery proportions, formats and stages. 03-asset-records.md contains asset dimensions, instance IDs, cover behaviour and visible features. 04-interface-records.md contains display copy, starting values and input mappings. map-boundary.png supplies the measured grid and fixed gameplay anchors. asset-footprints.png supplies the asset envelopes at a shared scale. industrial-kit.png supplies the existing appearance of the three asset types. factory-atmosphere.png supplies daylight, surface wear and industrial atmosphere.\n\nDeliverables:\n1. One two-page tactical specification covering the asset inventory, cover rules, faction colours and shapes, surface palette, lighting direction and asset states\n2. One interface information architecture table covering the tactical overview, crane interaction and cover inspection, with their labels, values, states and input mappings\n3. Two map drawings: a master plan with all 12 instance IDs, centre coordinates and orientations, and a matching route-and-cover overlay with North, Middle, South, clear widths and cover classifications\n4. Three key-area views: Tank Yard from the southwest, Belt Lane from the northwest and Crane Court from the southeast, each with its camera position marked on the master plan\n5. One asset continuity sheet covering T01, C01 and G01 in front, side, rear and top views, with Idle and Active details and paired close-up and map-scale depictions\n6. One faction and interaction signage sheet containing both faction emblems, the three area labels, the two action prompts and the Ready and Locked treatments\n7. Two matched interaction screens at G01-01, one for controller input and one for touch input, each containing the crane action and a cover-inspection inset\n8. One tactical overview hero showing the complete battlefield, both spawn labels, Relay, the three area labels and SWITCHYARD\n9. One 10-second map flythrough travelling from West Spawn through Relay to East Spawn\n10. One presentation document of at least 10 pages, reusing the specification, information architecture, map drawings, area views, continuity sheet, signage, interaction screens and hero\n\nAcceptance:\n- The specification, master plan and route-and-cover overlay use the 64 × 64 grid, 2 m cells, three fixed anchor coordinates and all 12 asset instances. The overlay identifies three connected routes and dimensions their narrowest traversable connections at 4 m or greater; its full-cover and low-cover markings follow the specification.\n- The three key-area views, hero and flythrough follow the master plan's instance positions and orientations. The continuity sheet repeats all three asset IDs and their dimensions from the specification, shows four views per type and both Idle and Active states, and carries the same identifying features into its map-scale depictions.\n- The signage sheet, interaction screens and hero repeat the specification's Amber Union square in #FFB547 and Blue Assembly triangle in #67C5FF. The signage sheet includes Tank Yard, Belt Lane and Crane Court; both interaction screens print SWITCHYARD, Activate crane, Inspect cover, Relay 50% and 03:00 exactly.\n- The information architecture table and both interaction screens use the same Ready and Locked states. Controller A and X correspond respectively to the two touch actions in matching screen positions. Both screens show the Ready crane action and a separate Locked treatment with a padlock; their text stays within the 64-unit inset at a minimum character height of 18 logical units. Text contrast reaches 4.5:1, and icons and disabled controls reach 3:1 against their backgrounds.\n- The key-area views, continuity sheet, hero and flythrough preserve T01's two cream bands, C01's three cream side panels and G01's chamfered upper corners. The specification and these images use #596368 painted steel, #D9D2BD cream detailing and light from the northwest; Idle and Active change beacon treatment while retaining each asset's silhouette.\n- The flythrough runs for 10 seconds and shows West Spawn, Relay and East Spawn in that order. The presentation has at least 10 pages, prints SWITCHYARD on its opening page and repeats the specification's asset dimensions, both faction colour codes and shapes, and Idle and Active state names alongside the reused work.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/map-boundary.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "312885d54fbf879abab10d3475ab5200cd65967b7150e7be9dbc58bcb24dda55"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/asset-footprints.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "8aca846d92e6d8e673469257286810421bb2976e360beca8cb86388f1b783c84"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/industrial-kit.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "8abc373942061cba8a939bc4fc02714a698999086f055fd00efdae7ae1e9f1ac"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/factory-atmosphere.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "36292765ad93f6476c57df4c1d621cede4a175b0d46958726bd330523e18ad99"
+    }
+  ]
+}

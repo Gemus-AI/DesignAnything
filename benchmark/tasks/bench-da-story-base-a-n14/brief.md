@@ -1,0 +1,32 @@
+SKYWARD COMMON | A floating city learns to find its course
+
+We are developing SKYWARD COMMON, an original science fiction animation concept short for teenage and adult audiences who enjoy exploration and character growth. Its 48 seconds contain 12 shots, S01–S12, lasting 4 seconds each. Departure occupies 0–16 seconds, Disorientation 16–32 seconds and New Course 32–48 seconds. Mira, an 18-year-old navigator, takes a floating city away from its mooring, loses the departure beacon in cloud and chooses a lower air current after reading the market's wind ribbons. Her decision brings the whole city into a sunlit passage. The attached story records fix the synopsis, events and dialogue; the visual language, camera positions within the supplied areas and performance remain open.
+
+Mira has an amber patch on her left cuff, a navy coat with a split rear hem and a triangular hair clip above her right temple. Our existing brass course finder has an 80 mm circular case, a 20 mm case depth, a top suspension loop and a red triangular needle tip. Its dial carries "TRUE COURSE" beneath the centre. The instrument appears in S03 and S10. The city is 240000 mm long and 120000 mm wide: its stern berth, central market and bow wheelhouse occupy the three positions in the attached geometry. Travel follows +X; exterior movement reads left to right, with cameras on the south side of that axis. The wheelhouse remains above the market and the berth remains at the stern. Both 16:9 and 9:16 compositions use action margins of 3.5% and graphic margins of 5% on every edge. Print "SKYWARD COMMON" in S12 and as the heading of the shot table; Mira's final line is "We steer together."
+
+Audience: our director, animation lead and producer will use the work to choose the film's visual approach and approve its next development stage for teenage and adult viewers.
+
+Inputs (attached): 01-client-facts.en.md contains the project facts, identity anchors and continuity coordinates. 02-delivery-catalog.en.md lists each delivery file, its proportion, format and stage. 03-story-records.en.md contains the fixed synopsis, shot events, timings and dialogue. landscape-safe-areas.png supplies the 16:9 margins and annotation positions. portrait-safe-areas.png supplies the equivalent 9:16 margins and annotation positions. city-plan-section.png fixes the city's three zones, relative levels, travel axis and available camera areas. course-finder-front.png records the existing instrument's face, engraving and needle. course-finder-side.png records the same instrument's case depth, loop and side profile. dawn-sea-light.png supplies low morning sunlight and layered cloud as atmosphere reference.
+
+Deliverables:
+1. Three narrative direction boards, one each for Navigator View, City View and Instrument View, comparing viewpoint, city geography, wind clues and action rhythm within the fixed 12-shot story
+2. One selection note naming the chosen direction and its decisions for viewpoint, spatial transitions and the lower-current discovery
+3. One one-page rhythm and continuity specification, with the three acts, beat events, time ranges, 12-shot count, 48-second duration, three Mira anchors, title wording and final dialogue line
+4. One finished Mira and city identity sheet, with front, side and back character views, three expressions and a city silhouette locating the wheelhouse, market and stern berth
+5. One environment sheet with three studies: the wheelhouse, central market and stern berth
+6. One continuous storyboard document containing 12 landscape panels for S01–S12 and two separately composed portrait panels for S03 and S10
+7. Two finished landscape keyframes, one for S03 and one for S10
+8. One shot table containing 12 rows with shot ID, shot size, duration, characters, action, dialogue and dialogue timing
+9. One colour script containing 12 landscape thumbnails, labelled S01–S12
+10. One 12-second animatic covering S10–S12, with the recorded dialogue as subtitles
+11. One presentation document of at least eight pages, reusing the direction comparison, selection, specification, identity sheet, environment studies, storyboard, keyframes, shot table, colour script and animatic stills
+
+Acceptance:
+- The three direction boards precede the selection note; that note names Navigator View, City View or Instrument View. The specification and all final deliverables develop that choice, and presentation page 1 repeats its name.
+- The specification states Departure 0–16 seconds, Disorientation 16–32 seconds and New Course 32–48 seconds, with S07 at 24–28 seconds reserved as a dialogue gap for description. The storyboard, shot table and presentation repeat its 12-shot count, 48-second duration and these act boundaries; the shot table retains the S07 gap.
+- The identity sheet and environment sheet establish Mira's three anchors and the wheelhouse, market and berth. The storyboard, keyframes, colour script and animatic preserve those anchors, the supplied city coordinates and left-to-right exterior movement from south-side cameras. S03 and S10 retain the course finder's brass case, top loop, red needle tip and TRUE COURSE engraving; both keyframes show that engraving legibly.
+- The storyboard and shot table match all events and dialogue in 03-story-records.en.md. Every panel prints shot ID, WS, MS or CU, duration in seconds and Mira or None, matching its table row. The 12 colour thumbnails match S01–S12, and the animatic reproduces S10–S12 as three 4-second shots with We steer together. at local 4–7 seconds.
+- The storyboard's portrait versions of S03 and S10 recompose the landscape actions. The storyboard, keyframes and animatic use the specified 3.5% action and 5% graphic margins. Storyboard subtitle placeholders and animatic subtitles are centred at the bottom, occupy at most two lines and use cues between 5/6 second and 7 seconds.
+- The storyboard and animatic print SKYWARD COMMON in S12 and We steer together. in S11. The shot table heading and presentation repeat SKYWARD COMMON; the presentation repeats the specification's final dialogue and three Mira anchors and maps each anchor, the instrument's two appearances and the lower-current decision to named storyboard shots.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

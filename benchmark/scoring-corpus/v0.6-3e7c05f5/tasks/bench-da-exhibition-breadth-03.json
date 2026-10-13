@@ -1,0 +1,1252 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-exhibition-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "exhibit-register",
+      "label": "Exhibit register and route schedule",
+      "description": "A two-page register of E01–E03 with collection data, route order, bench assignments and installation heights.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "label-copy",
+      "label": "Label and activity copy table",
+      "description": "A two-page table of three exhibit labels, three archive excerpts, three activity instructions and four content labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "route-plan",
+      "label": "Dimensioned floor and visitor-route plan",
+      "description": "One dimensioned floor plan locating the six benches, collection records, screens, seats, power routes and clear circulation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "elevation-section",
+      "label": "Coordinated elevation and section",
+      "description": "One elevation and section sheet recording bench, graphic, screen, knee-space and installation dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "timeline-graphic",
+      "label": "Three-example timeline graphic",
+      "description": "One continuous timeline graphic connecting E01–E03 to Turn, Press and Move with the entrance title and question.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "display-details",
+      "label": "Controller and interface display details",
+      "description": "One detail sheet for three collection pairs with complete labels, archive excerpts and new interface explanations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "interaction-storyboard",
+      "label": "Three-station interaction storyboard",
+      "description": "One storyboard sheet showing instruction, action, response and reset for all three timed activities.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entrance-view",
+      "label": "Visitor view from the entrance",
+      "description": "One visitor-eye view from the entrance towards Turn showing the title, question and first exhibit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "exit-view",
+      "label": "Visitor view from Move towards the exit",
+      "description": "One visitor-eye view from Move towards the exit showing the final activity and return circulation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "open-state",
+      "label": "Open exhibition state",
+      "description": "One operational drawing of the open installation with fitted collection covers, available teaching controllers and three active screens.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "closed-state",
+      "label": "Closed exhibition state",
+      "description": "One operational drawing of the closed installation with fitted collection covers, secured teaching controllers and three dark screens.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "assembly-packing",
+      "label": "Assembly, dismantling and packing sheet",
+      "description": "One assembly and packing sheet covering the six benches, materials, joints, 72 main parts, 192 bolts and six cases.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "route-video",
+      "label": "Ten-second visitor-route video",
+      "description": "One 10-second route video progressing through Turn, Press and Move and ending with PLAYER MOVES.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Exhibition presentation and catalogue",
+      "description": "One presentation of at least 10 pages reusing the earlier work with a three-exhibit catalogue and a fact-to-deliverable index.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exhibition-name",
+      "kind": "text-verbatim",
+      "text": "PLAYER MOVES",
+      "scope": {
+        "slots": [
+          "timeline-graphic",
+          "entrance-view",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "entrance-question",
+      "kind": "text-verbatim",
+      "text": "How do you play?",
+      "scope": {
+        "slots": [
+          "timeline-graphic",
+          "entrance-view",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "collection-content-label",
+      "kind": "text-verbatim",
+      "text": "Collection object",
+      "scope": {
+        "slots": [
+          "label-copy",
+          "display-details"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "archive-content-label",
+      "kind": "text-verbatim",
+      "text": "Archive content",
+      "scope": {
+        "slots": [
+          "label-copy",
+          "display-details"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "diagram-content-label",
+      "kind": "text-verbatim",
+      "text": "New diagram",
+      "scope": {
+        "slots": [
+          "label-copy",
+          "display-details"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "activity-heading",
+      "kind": "text-verbatim",
+      "text": "Try the action",
+      "scope": {
+        "slots": [
+          "label-copy",
+          "interaction-storyboard"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "PLAYER MOVES",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-spatial-installation",
+      "slots": [
+        "elevation-section",
+        "entrance-view",
+        "exit-view",
+        "open-state",
+        "closed-state",
+        "assembly-packing"
+      ],
+      "sourceSlots": [
+        "route-plan",
+        "exhibit-register"
+      ],
+      "items": [
+        {
+          "item": "Bench locations, exhibit assignments, circulation and installation heights agree across the spatial drawings and with the register and route plan.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The assembled benches shown in the exhibition are compatible with the six-bench aluminium, birch plywood and interchangeable-panel kit documented for packing.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Open and closed drawings preserve the same installation while changing teaching-controller availability and screen state, with collection covers fitted in both.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "coherent-interpretation",
+      "slots": [
+        "timeline-graphic",
+        "display-details",
+        "interaction-storyboard"
+      ],
+      "sourceSlots": [
+        "exhibit-register",
+        "label-copy"
+      ],
+      "items": [
+        {
+          "item": "Exhibit identity, dates and Turn–Press–Move associations agree with the register wherever those facts appear.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Exhibit bodies, archive excerpts and activity instructions follow the copy table and remain attached to the correct exhibit.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Collection objects, archive content, new diagrams and teaching activities remain distinguishable through the prescribed content labels.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Represented teaching screens use one instruction, one action diagram and one response area, with content matching the corresponding recorded activity.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "PLAYER MOVES"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "route-plan",
+      "elevation-section",
+      "timeline-graphic",
+      "display-details",
+      "interaction-storyboard",
+      "entrance-view",
+      "exit-view",
+      "open-state",
+      "closed-state",
+      "assembly-packing"
+    ],
+    "layoutExtras": false,
+    "naRules": "Document pages, technical drawings and interpretation graphics must not be judged for photorealistic material texture or cinematic lighting."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "exhibit-register",
+        "label-copy",
+        "route-plan",
+        "elevation-section",
+        "timeline-graphic",
+        "display-details",
+        "interaction-storyboard",
+        "entrance-view",
+        "exit-view",
+        "open-state",
+        "closed-state",
+        "assembly-packing",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "route-plan",
+        "elevation-section",
+        "timeline-graphic",
+        "display-details",
+        "interaction-storyboard",
+        "entrance-view",
+        "exit-view",
+        "open-state",
+        "closed-state",
+        "assembly-packing"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-exhibit-register",
+      "requirementId": "R-format-exhibit-register",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exhibit-register"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-label-copy",
+      "requirementId": "R-format-label-copy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "label-copy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-route-plan",
+      "requirementId": "R-format-route-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "route-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-elevation-section",
+      "requirementId": "R-format-elevation-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "elevation-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-timeline-graphic",
+      "requirementId": "R-format-timeline-graphic",
+      "method": "artifact-property",
+      "targetSlots": [
+        "timeline-graphic"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-display-details",
+      "requirementId": "R-format-display-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "display-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-interaction-storyboard",
+      "requirementId": "R-format-interaction-storyboard",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interaction-storyboard"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-view",
+      "requirementId": "R-format-entrance-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-exit-view",
+      "requirementId": "R-format-exit-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exit-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-open-state",
+      "requirementId": "R-format-open-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "open-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-closed-state",
+      "requirementId": "R-format-closed-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closed-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-assembly-packing",
+      "requirementId": "R-format-assembly-packing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembly-packing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-route-video",
+      "requirementId": "R-format-route-video",
+      "method": "manual",
+      "targetSlots": [
+        "route-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "register-and-presentation-facts",
+      "requirementId": "R-register-and-presentation-facts",
+      "method": "content",
+      "targetSlots": [
+        "exhibit-register",
+        "presentation"
+      ],
+      "criteria": "The register has two pages and records E01, Rotary paddle and console, 1978, Turn, Archive 1 and Activity 1; E02, Directional pad and console, 1986, Press, Archive 2 and Activity 2; and E03, Motion handset and console, 2007, Move, Archive 3 and Activity 3. Controller and console dimensions, respectively, are E01 70 × 110 × 55 and 340 × 220 × 80 mm; E02 125 × 55 × 20 and 260 × 200 × 75 mm; E03 40 × 150 × 35 and 160 × 210 × 45 mm. The register and presentation both explicitly establish all three IDs, their route order, 800 mm bench tops and 1400 mm graphic centres. Table arrangement and equivalent unit notation may vary; missing, reassigned or contradictory facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ]
+    },
+    {
+      "id": "drawing-fact-carry-through",
+      "requirementId": "R-drawing-fact-carry-through",
+      "method": "visual",
+      "targetSlots": [
+        "route-plan",
+        "elevation-section"
+      ],
+      "criteria": "Read E01–E03 and the Turn-to-Press-to-Move progression on the plan, and read 800 mm bench-top and 1400 mm graphic-centre dimensions on the elevation/section. These facts must agree with the register. Graphic notation may differ between sheets; omission, reversal or a conflicting value fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "exhibit-register"
+      ]
+    },
+    {
+      "id": "exhibit-copy-fidelity",
+      "requirementId": "R-exhibit-copy-fidelity",
+      "method": "content",
+      "targetSlots": [
+        "label-copy",
+        "presentation"
+      ],
+      "criteria": "Both documents contain the titles E01 / Rotary paddle and console / 1978; E02 / Directional pad and console / 1986; and E03 / Motion handset and console / 2007, each paired with its supplied body. E01 body: Turning the knob changes the paddle position continuously. Small hand movements become small movements on screen. Follow the moving target and notice how your wrist controls distance. E02 body: Four directions turn movement into separate choices. Your thumb selects a direction while another finger operates a button. Compare these distinct presses with the continuous turning action in Turn. E03 body: The handset makes movement of the controller part of the input. Tilt the teaching handset and watch the marker travel. Compare moving your hand through space with pressing a direction in Press. Each body must remain within 45 words. Line wrapping may change; rewritten, truncated, swapped or missing text fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ]
+    },
+    {
+      "id": "display-copy-and-label-placement",
+      "requirementId": "R-display-copy-and-label-placement",
+      "method": "visual",
+      "targetSlots": [
+        "display-details"
+      ],
+      "criteria": "All three physical controller-and-console pairs carry their complete, correctly matched ID–name–year title and exact exhibit body from the copy table, with no body exceeding 45 words. Each pair has an adjacent Collection object label; each supplied archive excerpt has an adjacent Archive content label; each newly drawn interface explanation has an adjacent New diagram label. Spacing and layout may vary, but the association must be unambiguous. A legend alone, missing category labels, swapped copy or incomplete bodies fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "label-copy"
+      ]
+    },
+    {
+      "id": "copy-table-completeness",
+      "requirementId": "R-copy-table-completeness",
+      "method": "content",
+      "targetSlots": [
+        "label-copy"
+      ],
+      "criteria": "The two-page table includes three exhibit title/body entries, all four content labels and the following correctly assigned texts. E01 archive: Turning the control moves the paddle up or down. E02 archive: The directional control moves the player. The action button triggers a separate move. E03 archive: Move the controller to move the pointer across the screen. E01 instruction: Turn the knob to follow the target. E02 instruction: Press a direction, then press the round button. E03 instruction: Tilt the handset to guide the marker. Activity entries begin with Try the action. Row order and line wrapping may vary; missing, paraphrased or misassigned records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ]
+    },
+    {
+      "id": "installation-geometry-and-access",
+      "requirementId": "R-installation-geometry-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "route-plan",
+        "elevation-section",
+        "entrance-view",
+        "exit-view",
+        "open-state",
+        "closed-state"
+      ],
+      "criteria": "Across the set, reconcile one room measuring 12000 mm east–west, 8000 mm north–south and 3200 mm high, containing three archive benches and three activity benches in matching locations. Dimensioned drawings establish a clear 1800 mm south strip, connecting routes at least 1500 mm wide, two clear turning circles of 1500 mm diameter, two seats, 900 × 600 × 700 mm activity knee spaces and a maximum freestanding height of 1800 mm. Perspective images need not repeat dimension annotations, but their visible geometry must support the drawings. Occlusion and viewpoint changes are allowed; obstructed clearances, extra or missing benches, incompatible layouts or conflicting dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "floor-plan-records-zones-and-services",
+      "requirementId": "R-floor-plan-records-zones-and-services",
+      "method": "visual",
+      "targetSlots": [
+        "route-plan"
+      ],
+      "criteria": "The plan identifies all three exhibits by ID, name and year, assigns each to its corresponding archive/activity benches and labels Turn, Press and Move. Using the southwest origin, entry occupies south-wall x = 0–1800 mm and exit x = 10200–12000 mm. The archive band is x = 1200–10800, y = 5600–7400 mm; the play zone is x = 2400–9600, y = 2400–4800 mm. Locate three screens and two movable seats, each seat with an adjacent 900 × 1200 mm clear space. Power originates at north-wall points (3000, 8000), (6000, 8000) and (9000, 8000) mm and follows room edges and bench backs in surface cable covers. Symbol styles and equivalent dimension notation may vary; displaced fixed zones, missing equipment, untraceable power routes or obstructed passages fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "exhibit-register"
+      ]
+    },
+    {
+      "id": "coordinated-elevation-and-section",
+      "requirementId": "R-coordinated-elevation-and-section",
+      "method": "visual",
+      "targetSlots": [
+        "elevation-section"
+      ],
+      "criteria": "The sheet contains both an elevation and a section that can be reconciled with the plan. They locate bench tops, graphic centres and screens and expose activity knee clearance and the highest freestanding elements. Relevant heights agree with the register; the room height is 3200 mm and door clear height is 2400 mm where doors are represented. Drawing scale and section location may vary. A sheet missing either drawing type, concealing the required knee-space evidence or contradicting the plan fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "route-plan",
+        "exhibit-register"
+      ]
+    },
+    {
+      "id": "continuous-interaction-timeline",
+      "requirementId": "R-continuous-interaction-timeline",
+      "method": "visual",
+      "targetSlots": [
+        "timeline-graphic"
+      ],
+      "criteria": "A connected timeline links E01 / Rotary paddle and console / 1978 to turning, E02 / Directional pad and console / 1986 to pressing, and E03 / Motion handset and console / 2007 to moving, in that order. PLAYER MOVES and How do you play? are readable. Orientation and spacing may vary, and equal spacing is acceptable; disconnected exhibit cards with no continuous timeline, swapped associations or missing dates fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "exhibit-register"
+      ]
+    },
+    {
+      "id": "collection-forms-and-interface-explanations",
+      "requirementId": "R-collection-forms-and-interface-explanations",
+      "method": "visual",
+      "targetSlots": [
+        "display-details"
+      ],
+      "criteria": "Show six collection objects as three matched pairs with proportions compatible with the recorded dimensions. E01 has a black handheld rotary controller with an orange side button and cable, paired with a low black console with brown front trim and four silver switches. E02 has a pale grey pad with a black left directional cross, two red right buttons and cable, paired with a pale grey console with a dark front band and front cartridge opening. E03 has a white elongated handset with a black directional cross, circular face button and wrist strap, paired with a flat white console with a narrow black disc opening and small power button. Include each exact archive excerpt from the copy table and a newly drawn explanation of its recorded interface: E01 dark field, left paddle and square target; E02 side-view player, ground line, directional movement and separate action; E03 pointer and three target circles. Rendering style may vary; substituted equipment, missing pair members or explanations of the wrong interface fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "exhibit-register",
+        "label-copy"
+      ]
+    },
+    {
+      "id": "activities-and-operational-states",
+      "requirementId": "R-activities-and-operational-states",
+      "method": "visual",
+      "targetSlots": [
+        "interaction-storyboard",
+        "open-state",
+        "closed-state"
+      ],
+      "criteria": "Each storyboard sequence begins with Try the action and the matching exact instruction from the copy table, then shows action, visible response, a 60-second activity and a 5-second reset. E01 turns a knob left/right, continuously moves a vertical bar towards a moving square and resets the bar to centre. E02 selects a direction and confirms with a round button, moves one grid cell per press and fills the selected cell, then clears the grid and centres the marker. E03 tilts a strapped handset left/right through limited seated or standing movement, moves a marker horizontally towards one of three targets and resets it to centre. The open drawing has three active screens and three accessible teaching controllers; the closed drawing has three dark screens and all teaching controllers secured below the bench tops. Both states retain three transparent collection covers, each consistent with 1100 × 500 × 350 mm. Panel count and drawing style may vary; missing stages, incorrect responses or resets, exposed collections or incorrect operating states fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "label-copy"
+      ]
+    },
+    {
+      "id": "visitor-eye-perspectives",
+      "requirementId": "R-visitor-eye-perspectives",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-view",
+        "exit-view"
+      ],
+      "criteria": "The entrance view looks from the entrance towards Turn and reveals the first exhibit; the exit view looks from Move towards the exit and makes the final activity and return circulation understandable. Both use visitor-eye perspectives of the planned installation, with pale grey flooring, off-white walls and an exposed grey ceiling. Human figures, if included, must have plausible scale and turn-taking spacing; no exact figure count is required. Camera framing and illustration style may vary; reversed destinations, overhead-only views or incompatible room finishes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "route-plan"
+      ]
+    },
+    {
+      "id": "kit-components-and-packing-accounting",
+      "requirementId": "R-kit-components-and-packing-accounting",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-packing"
+      ],
+      "criteria": "Counts and exploded views reconcile six benches, 12 main parts per bench and 72 total; 32 captive M6 socket bolts per bench and 192 total; and a 5 mm hex key. Each bench comprises four aluminium legs of 782 × 40 × 40 mm, two aluminium rails of 1200 × 40 × 40 mm, two aluminium rails of 600 × 40 × 40 mm, one birch plywood top of 1200 × 600 × 18 mm, two aluminium graphic supports of 1200 × 40 × 40 mm and one interchangeable graphic panel of 1200 × 600 × 6 mm. Packed views assign one dismantled bench to each of six cases with external dimensions 1250 × 650 × 650 mm; every detached main part fits within 1200 × 600 × 60 mm. Repeated components may use quantity callouts. Missing components, unreconciled totals, wrong materials or dimensions, or a packing arrangement that exceeds the stated envelopes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "assembly-and-dismantling-sequence",
+      "requirementId": "R-assembly-and-dismantling-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-packing"
+      ],
+      "criteria": "Joint details explain how the rails, legs, tops and interchangeable graphic panels connect using the specified bolts and tool. An intelligible dismantling sequence leads from an assembled bench to its packed case, with all six cases accounted for. Arrows, numbered stages or equivalent visual sequencing are acceptable. An exploded parts inventory without a discernible dismantling sequence, unexplained joints or packing views disconnected from the shown components fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "entrance-message-placement",
+      "requirementId": "R-entrance-message-placement",
+      "method": "visual",
+      "targetSlots": [
+        "timeline-graphic",
+        "entrance-view"
+      ],
+      "criteria": "Both images visibly carry PLAYER MOVES and How do you play?; in the entrance view the words belong to entrance interpretation in the exhibition space. Typography, scale and arrangement may differ. Missing or unreadable wording, or wording present only as an external image caption rather than at the entrance, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "presentation-catalogue-and-fact-index",
+      "requirementId": "R-presentation-catalogue-and-fact-index",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation has at least 10 pages, prints PLAYER MOVES and How do you play?, includes a catalogue entry for each of E01–E03 and provides a fact-to-deliverable index. The index maps individual supplied room, collection, interaction and kit facts to identifiable deliverables carrying them; grouped entries are acceptable when every included fact has a clear destination. References must agree with the actual delivered content. Four category headings without fact-level mappings, omitted facts, nonexistent destinations or an incomplete catalogue fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "sourceSlots": [
+        "exhibit-register",
+        "label-copy"
+      ]
+    },
+    {
+      "id": "route-video-sequence",
+      "requirementId": "R-route-video-sequence",
+      "method": "manual",
+      "targetSlots": [
+        "route-video"
+      ],
+      "criteria": "Review the whole video and its duration. It runs for 10 seconds, allowing ordinary frame-rounding tolerance, visibly progresses through Turn, then Press, then Move, and finishes with readable PLAYER MOVES. Camera movement and transitions may vary. A different sequence, missing station, materially different duration or incorrect or absent final name fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "presentation-reuses-developed-work",
+      "requirementId": "R-presentation-reuses-developed-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation visibly incorporates identifiable content from every listed source: register, copy table, technical and operational drawings, timeline, display details, complete activity sequence, both spatial views and assembly/packing work. Cropping, scaling and page recomposition are acceptable when the reused work remains recognizable and meaningful. Merely naming a deliverable, substituting unrelated imagery or omitting a listed source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "sourceSlots": [
+        "exhibit-register",
+        "label-copy",
+        "route-plan",
+        "elevation-section",
+        "timeline-graphic",
+        "display-details",
+        "interaction-storyboard",
+        "entrance-view",
+        "exit-view",
+        "open-state",
+        "closed-state",
+        "assembly-packing"
+      ]
+    },
+    {
+      "id": "public-label-typography",
+      "requirementId": "R-public-label-typography",
+      "method": "visual",
+      "targetSlots": [
+        "display-details"
+      ],
+      "criteria": "Exhibit body typography is consistent with 24 pt, assessed through any supplied type specification or a reliably scaled label detail. Public interpretation is in English. Typeface and line wrapping may vary. An explicitly different body size or geometry demonstrating a different size fails; raster resolution alone is insufficient evidence of a point-size violation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "loose-equipment-transport",
+      "requirementId": "R-loose-equipment-transport",
+      "method": "visual",
+      "targetSlots": [
+        "assembly-packing"
+      ],
+      "criteria": "Transport information accounts for three padded cover sleeves and three padded equipment bags, with one bag assigned to each exhibit set. These are distinguishable from the six bench cases. Drawings or clear quantity callouts are acceptable; missing transport items, incorrect quantities or treating the six cases as the entire transport inventory fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "visit-timing-and-capacity",
+      "requirementId": "R-visit-timing-and-capacity",
+      "method": "content",
+      "targetSlots": [
+        "exhibit-register"
+      ],
+      "criteria": "The route schedule supports a 20-minute typical visit with a 60-second activity at each of the three stations and uses the supplied planning occupancy of 18 visitors. Time beyond the three activities may be distributed freely across viewing, movement and waiting. No particular grouping scheme is required. A schedule with a different overall duration, incompatible activity durations or a conflicting planning occupancy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ]
+    },
+    {
+      "id": "set-coherent-spatial-installation",
+      "requirementId": "R-set-coherent-spatial-installation",
+      "method": "visual",
+      "targetSlots": [
+        "elevation-section",
+        "entrance-view",
+        "exit-view",
+        "open-state",
+        "closed-state",
+        "assembly-packing"
+      ],
+      "criteria": "Bench locations, exhibit assignments, circulation and installation heights agree across the spatial drawings and with the register and route plan. The assembled benches shown in the exhibition are compatible with the six-bench aluminium, birch plywood and interchangeable-panel kit documented for packing. Open and closed drawings preserve the same installation while changing teaching-controller availability and screen state, with collection covers fitted in both.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "route-plan",
+        "exhibit-register"
+      ]
+    },
+    {
+      "id": "set-coherent-interpretation",
+      "requirementId": "R-set-coherent-interpretation",
+      "method": "visual",
+      "targetSlots": [
+        "timeline-graphic",
+        "display-details",
+        "interaction-storyboard"
+      ],
+      "criteria": "Exhibit identity, dates and Turn–Press–Move associations agree with the register wherever those facts appear. Exhibit bodies, archive excerpts and activity instructions follow the copy table and remain attached to the correct exhibit. Collection objects, archive content, new diagrams and teaching activities remain distinguishable through the prescribed content labels. Represented teaching screens use one instruction, one action diagram and one response area, with content matching the corresponding recorded activity.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-breadth-03/03-collection-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "exhibit-register",
+        "label-copy"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-exhibition-installation",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "route-plan",
+      "subjectSlots": [
+        "elevation-section",
+        "entrance-view",
+        "exit-view",
+        "open-state",
+        "closed-state"
+      ],
+      "notes": "The floor plan, elevation, two visitor-eye views and two state drawings describe the same six-bench installation within the 12000 × 8000 × 3200 mm room."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "register-route-facts",
+      "fromSlot": "exhibit-register",
+      "toSlots": [
+        "route-plan",
+        "presentation"
+      ],
+      "extract": [
+        "exhibit IDs E01–E03",
+        "Turn–Press–Move route order"
+      ],
+      "notes": "The exhibit register establishes E01–E03, Turn–Press–Move order, 800 mm bench tops and 1400 mm graphic centres; the floor plan repeats the IDs and zone order, the elevation repeats both heights, and the presentation repeats all four facts."
+    },
+    {
+      "id": "register-installation-heights",
+      "fromSlot": "exhibit-register",
+      "toSlots": [
+        "elevation-section",
+        "presentation"
+      ],
+      "extract": [
+        "800 mm bench-top height",
+        "1400 mm graphic-centre height"
+      ],
+      "notes": "The exhibit register establishes E01–E03, Turn–Press–Move order, 800 mm bench tops and 1400 mm graphic centres; the floor plan repeats the IDs and zone order, the elevation repeats both heights, and the presentation repeats all four facts."
+    },
+    {
+      "id": "approved-exhibit-copy",
+      "fromSlot": "label-copy",
+      "toSlots": [
+        "display-details",
+        "presentation"
+      ],
+      "extract": [
+        "three exhibit ID–name–year combinations",
+        "three exact exhibit bodies"
+      ],
+      "notes": "The label copy table, display-detail sheet and presentation catalogue reproduce all three ID–name–year combinations and exhibit bodies from 03-collection-records.md; each body stays within 45 words."
+    }
+  ]
+}

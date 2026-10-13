@@ -1,0 +1,552 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-photo-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "scene-s01",
+      "label": "S01 Alex pavement warm-up campaign image",
+      "description": "One landscape campaign photograph of Alex Lane warming up on a pavement with the existing mark and both copy lines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "scene-s02",
+      "label": "S02 Morgan station steps photograph",
+      "description": "One environmental photograph of Morgan Reed climbing station steps at an easy pace.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "hero-p01",
+      "label": "P01 Three-quarter product hero",
+      "description": "One whole-product photograph of the matching shoe pair in three-quarter view on pavement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "detail-d01",
+      "label": "D01 Mesh-to-sole close-up",
+      "description": "One product close-up of the off-white mesh upper meeting the orange sole accent.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "s01-square-ad",
+      "label": "S01 Square advertising crop",
+      "description": "One square advertising crop of the S01 exposure with the existing mark and both copy lines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "s01-vertical-ad",
+      "label": "S01 Vertical advertising crop",
+      "description": "One vertical advertising crop of the S01 exposure with the existing mark and both copy lines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-name",
+      "kind": "text-verbatim",
+      "text": "DAY MILE",
+      "scope": {
+        "slots": [
+          "scene-s01",
+          "s01-square-ad",
+          "s01-vertical-ad"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "campaign-line",
+      "kind": "text-verbatim",
+      "text": "Your city. Your pace.",
+      "scope": {
+        "slots": [
+          "scene-s01",
+          "s01-square-ad",
+          "s01-vertical-ad"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "DAY MILE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-finished-campaign",
+      "slots": [
+        "scene-s01",
+        "scene-s02",
+        "hero-p01",
+        "detail-d01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "items": [
+        {
+          "item": "All six images maintain the same referenced shoe model and a coherent first-hour morning treatment, allowing subject, viewpoint and crop differences.",
+          "kind": "consistency"
+        },
+        {
+          "item": "S01 and its two advertisements preserve one photographic exposure, consistent brand typography and the existing mark across their three compositions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The campaign preserves the assigned runners, product colours, required product visibility and advertising safe zones.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "DAY MILE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "scene-s01",
+      "scene-s02",
+      "hero-p01",
+      "detail-d01",
+      "s01-square-ad",
+      "s01-vertical-ad"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge campaign photography, composition and communication quality without rewarding redesigns of the supplied shoe, runners or mark, or treating exact lighting settings and personal record fields as visually measurable aesthetic qualities."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02",
+        "hero-p01",
+        "detail-d01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-scene-s01",
+      "requirementId": "R-format-scene-s01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "scene-s01"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-scene-s02",
+      "requirementId": "R-format-scene-s02",
+      "method": "artifact-property",
+      "targetSlots": [
+        "scene-s02"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-hero-p01",
+      "requirementId": "R-format-hero-p01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "hero-p01"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-detail-d01",
+      "requirementId": "R-format-detail-d01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "detail-d01"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s01-square-ad",
+      "requirementId": "R-format-s01-square-ad",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s01-square-ad"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s01-vertical-ad",
+      "requirementId": "R-format-s01-vertical-ad",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s01-vertical-ad"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "shoe-model-and-colours",
+      "requirementId": "R-shoe-model-and-colours",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02",
+        "hero-p01",
+        "detail-d01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "Compare every visible shoe with the supplied side, top and three-quarter references. Silhouette, panel construction, mesh, sole geometry and markings must remain those of the referenced model, with an off-white upper and orange sole accent corresponding to the specified colours. Allow perspective, occlusion and photographic illumination; fail substituted models, invented construction or markings, or materially changed base colours. Do not require individual photographed pixels to equal the hexadecimal values.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "alex-casting-and-wardrobe",
+      "requirementId": "R-alex-casting-and-wardrobe",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "Alex must be recognisable as the person in alex-lane.png and retain the reference garments and their visible characteristics. Changes in pose, expression, camera angle and natural garment folds are allowed; a different person or replacement outfit fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "morgan-casting-and-wardrobe",
+      "requirementId": "R-morgan-casting-and-wardrobe",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s02"
+      ],
+      "criteria": "Compare Morgan with morgan-reed.png and the Morgan casting record: medium-brown skin, short tightly curled dark hair, a clean-shaven face, average build, sage #798777 crew-neck T-shirt, charcoal #303236 running shorts, white ankle socks and a plain black watch on the left wrist. Preserve visible identity, wardrobe and accessory details, allowing photographic colour shifts and pose-dependent occlusion. Do not infer an exact age or handedness from appearance alone.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "shared-morning-light",
+      "requirementId": "R-shared-morning-light",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02",
+        "hero-p01",
+        "detail-d01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "The final photographs and crops must present a coherent first-hour-after-sunrise treatment: low directional sunlight, plausible long shadows, controlled fill and a consistent colour balance compatible with the stated lighting setup. Use morning-light-plan.png and dawn-street.png as lighting and atmosphere evidence. Allow changes caused by camera orientation and subject position; fail contradictory light directions within a scene, midday or night treatment, or conspicuously inconsistent contrast and colour balance. Exact compass bearing, elapsed time, ratio and Kelvin setting cannot be established from pixels alone.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-runner-scenes",
+      "requirementId": "R-tier6-runner-scenes",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02"
+      ],
+      "criteria": "S01 must depict Alex performing a standing warm-up on pavement, and S02 must depict Morgan ascending station steps at an easy pace. Both should read as photographic everyday city scenes. Allow location details and camera choices to vary; swapped subjects, settings or actions fail. S01 must function as the landscape advertisement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-product-views",
+      "requirementId": "R-tier6-product-views",
+      "method": "visual",
+      "targetSlots": [
+        "hero-p01",
+        "detail-d01"
+      ],
+      "criteria": "P01 must show two matching, complete shoes on pavement in a three-quarter view, with the pair's combined horizontal extent at least 80% of the image width. D01 must show enough sharp mesh texture and adjoining orange sole structure to inspect their junction. Perspective and natural shadows may vary; a clipped or incomplete pair, undersized hero, wrong view or unresolved detail fails. Both images must preserve the referenced model and base colours.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-advertising-family",
+      "requirementId": "R-tier6-advertising-family",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "The landscape, square and vertical compositions must visibly derive from one S01 photographic exposure, with matching pose, clothing folds, scene details and illumination. Cropping, scaling and copy repositioning are allowed; a new pose or reconstructed exposure fails. Check the respective 3:2, 1:1 and 9:16 composition shapes without imposing pixel dimensions. Each must carry the exact two copy lines and the unchanged black reference mark. All copy must fit within the upper quarter, and Alex's face, both complete shoes, both copy lines and the mark must remain within the 8% inset on every edge, following campaign-safe-zones.png.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-tier6-finished-campaign",
+      "requirementId": "R-set-tier6-finished-campaign",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02",
+        "hero-p01",
+        "detail-d01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "All six images maintain the same referenced shoe model and a coherent first-hour morning treatment, allowing subject, viewpoint and crop differences. S01 and its two advertisements preserve one photographic exposure, consistent brand typography and the existing mark across their three compositions. The campaign preserves the assigned runners, product colours, required product visibility and advertising safe zones.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "reference-shoe",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "shoe-1.png",
+        "shoe-2.png",
+        "shoe-3.png"
+      ],
+      "subjectSlots": [
+        "scene-s01",
+        "scene-s02",
+        "hero-p01",
+        "detail-d01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "notes": "The shoe has an off-white #F4F1EA upper and an orange #FF5A1F sole accent; its construction and markings follow the three attached shoe views."
+    },
+    {
+      "id": "reference-mark",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "logo.png"
+      ],
+      "subjectSlots": [
+        "scene-s01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "notes": "Use the existing black stroke mark from logo.png."
+    },
+    {
+      "id": "alex-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "alex-lane.png"
+      ],
+      "subjectSlots": [
+        "scene-s01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "notes": "Alex's appearance and outfit follow alex-lane.png."
+    }
+  ]
+}

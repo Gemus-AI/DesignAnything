@@ -1,0 +1,1261 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-packaging-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "structure-board",
+      "label": "Structure specification and dimensioned board",
+      "description": "A two-page specification containing the chosen structure, external and face dimensions, materials, nominal thicknesses and repeatable closure.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "copy-schedule",
+      "label": "Copy and surface schedule",
+      "description": "One schedule of exact front and back copy, side inventory identifiers and opening and repacking instructions with their surface locations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "insert",
+      "label": "Insert accommodation plans and sections",
+      "description": "One insert layout board with dimensioned plans and sections for the three objects, sole support, thickness allowances and accessory retrieval features.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "panel-graphics",
+      "label": "Front, back and side graphics",
+      "description": "One graphics board containing the delivered front, back and two side panel designs.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "flat-print-artwork",
+      "label": "Mapped flat print artwork",
+      "description": "One flat artwork board mapping the delivered graphics to dimensioned package faces with names, orientation and fold and opening relationships.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-and-joints",
+      "label": "Materials, thicknesses and closure detail",
+      "description": "One materials-and-joints board with box and insert material labels, nominal thicknesses, actual external dimensions and an opening section detail.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "closed-storage",
+      "label": "Closed-storage package view",
+      "description": "One assembled closed-package view of the reusable box containing the complete three-piece set.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "open-display",
+      "label": "Open-display package view",
+      "description": "One open-display view with F01 visible and A01 and A02 separately stored within the same box and insert system.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "packing-sequence",
+      "label": "Four-panel handling sequence",
+      "description": "One four-panel board covering opening, lifting F01 at its robust body and feet, returning all three pieces and closing the package.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "repack",
+      "label": "Open-before-close repacking view",
+      "description": "One open-before-close view with F01 upright, both accessories in their assigned recesses and the closure path clear.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shelf-application",
+      "label": "Three-copy retail shelf application",
+      "description": "One neutral retail shelf scene containing exactly three identical copies of the delivered closed package.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "desk-application",
+      "label": "Collector's desk display application",
+      "description": "One plain collector's desk scene with one complete open package, one visible F01 and both accessories in their assigned storage locations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "package-video",
+      "label": "Opening, display and closing video",
+      "description": "One 10-second video of the delivered package opening, displaying the three-piece set and closing through its repeatable mechanism.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Packaging presentation",
+      "description": "One presentation of at least eight pages reusing the specifications, panel artwork, structural details, four handling panels and shelf and desk applications.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "set-name",
+      "kind": "text-verbatim",
+      "text": "PIP-01 FIELD SCOUT",
+      "scope": {
+        "slots": [
+          "copy-schedule",
+          "panel-graphics",
+          "flat-print-artwork",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "front-descriptor",
+      "kind": "text-verbatim",
+      "text": "Collectible display set",
+      "scope": {
+        "slots": [
+          "copy-schedule",
+          "panel-graphics",
+          "flat-print-artwork",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "inventory-heading",
+      "kind": "text-verbatim",
+      "text": "Set includes",
+      "scope": {
+        "slots": [
+          "copy-schedule",
+          "panel-graphics",
+          "flat-print-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "decorative-description",
+      "kind": "text-verbatim",
+      "text": "Decorative collectible.",
+      "scope": {
+        "slots": [
+          "copy-schedule",
+          "panel-graphics",
+          "flat-print-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "no-electronics",
+      "kind": "text-verbatim",
+      "text": "No electronic functions.",
+      "scope": {
+        "slots": [
+          "copy-schedule",
+          "panel-graphics",
+          "flat-print-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "PIP-01 FIELD SCOUT",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "one-reusable-package-structure",
+      "slots": [
+        "insert",
+        "materials-and-joints",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application"
+      ],
+      "sourceSlots": [
+        "structure-board"
+      ],
+      "items": [
+        {
+          "item": "All drawings and states follow the specified box proportions, insert arrangement, materials, thicknesses and repeatable closure; viewpoint changes and specified integrated elements are allowed.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Storage, display and repacking retain the same box and insert, with the three pieces assigned to the same accommodation positions whenever seated.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Open display exposes F01 while both accessories remain separately stored and retrievable within the package system.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "surface-system-through-applications",
+      "slots": [
+        "flat-print-artwork",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application"
+      ],
+      "sourceSlots": [
+        "panel-graphics",
+        "copy-schedule",
+        "structure-board"
+      ],
+      "items": [
+        {
+          "item": "Visible package faces consistently use the delivered panel designs, typographic identity, wording and graphic language; perspective and naturally concealed faces are allowed.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Artwork placement, face orientation and fold or opening relationships agree with the specified structure across flat and assembled representations.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The three shelf packages repeat one SKU and the same closed-package design.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "PIP-01 FIELD SCOUT"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "insert",
+      "panel-graphics",
+      "flat-print-artwork",
+      "materials-and-joints",
+      "closed-storage",
+      "open-display",
+      "packing-sequence",
+      "repack",
+      "shelf-application",
+      "desk-application"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge the supplied collectible identities as new design work, require photorealistic lighting on technical boards, or replace the explicit dimensional, copy and inventory checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "structure-board",
+        "copy-schedule",
+        "insert",
+        "panel-graphics",
+        "flat-print-artwork",
+        "materials-and-joints",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "insert",
+        "panel-graphics",
+        "flat-print-artwork",
+        "materials-and-joints",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-structure-board",
+      "requirementId": "R-format-structure-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "structure-board"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-copy-schedule",
+      "requirementId": "R-format-copy-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "copy-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-insert",
+      "requirementId": "R-format-insert",
+      "method": "artifact-property",
+      "targetSlots": [
+        "insert"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-panel-graphics",
+      "requirementId": "R-format-panel-graphics",
+      "method": "artifact-property",
+      "targetSlots": [
+        "panel-graphics"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-flat-print-artwork",
+      "requirementId": "R-format-flat-print-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "flat-print-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-and-joints",
+      "requirementId": "R-format-materials-and-joints",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-and-joints"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-closed-storage",
+      "requirementId": "R-format-closed-storage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closed-storage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-open-display",
+      "requirementId": "R-format-open-display",
+      "method": "artifact-property",
+      "targetSlots": [
+        "open-display"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-packing-sequence",
+      "requirementId": "R-format-packing-sequence",
+      "method": "artifact-property",
+      "targetSlots": [
+        "packing-sequence"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-repack",
+      "requirementId": "R-format-repack",
+      "method": "artifact-property",
+      "targetSlots": [
+        "repack"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shelf-application",
+      "requirementId": "R-format-shelf-application",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shelf-application"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-desk-application",
+      "requirementId": "R-format-desk-application",
+      "method": "artifact-property",
+      "targetSlots": [
+        "desk-application"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-package-video",
+      "requirementId": "R-format-package-video",
+      "method": "manual",
+      "targetSlots": [
+        "package-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "structure-specification",
+      "requirementId": "R-structure-specification",
+      "method": "content",
+      "targetSlots": [
+        "structure-board"
+      ],
+      "criteria": "The specification has two pages and defines one reusable package with dimensioned structure drawings, actual closed W/H/D, face sizes, named box and insert materials, nominal thicknesses and an explained repeatable closure. Actual dimensions must not exceed 180 W × 160 H × 100 D mm. Designer-selected construction and dimensions within these limits are allowed; omitted selections, conflicting structures or a destructive opening method fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ]
+    },
+    {
+      "id": "construction-facts-on-boards",
+      "requirementId": "R-construction-facts-on-boards",
+      "method": "visual",
+      "targetSlots": [
+        "flat-print-artwork",
+        "materials-and-joints"
+      ],
+      "criteria": "Read the chosen values from the specification. Each mapped face on the artwork board must carry its corresponding specified dimensions. The materials board must state the same actual external dimensions, box and insert materials, nominal thicknesses and closure method. Equivalent units and unambiguous terminology are acceptable; missing values or contradictions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "structure-board"
+      ]
+    },
+    {
+      "id": "presentation-construction-record",
+      "requirementId": "R-presentation-construction-record",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation explicitly repeats the specification's actual external W/H/D, box and insert material names, nominal thicknesses and selected closure method. Readable reused specification pages count. Equivalent units are acceptable; replacement by maximum permitted dimensions, omissions or changed construction facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "sourceSlots": [
+        "structure-board"
+      ]
+    },
+    {
+      "id": "insert-fit-support-and-retrieval",
+      "requirementId": "R-insert-fit-support-and-retrieval",
+      "method": "visual",
+      "targetSlots": [
+        "insert",
+        "materials-and-joints"
+      ],
+      "criteria": "Labeled plans and sections distinguish each object's envelope from usable accommodation: F01 76 W × 58 D × 112 H within at least 82 W × 64 D × 115 H mm above its sole plane; A01 50 × 28 × 8 within a separate recess of at least 54 × 32 × 10 mm; A02 diameter 26 × 32 H within a separate upright recess of at least diameter 28 × 34 H mm. A01's plan axes may rotate. Dimensions must account for walls, liners, insert thicknesses and closure parts within the chosen external size, including 3 mm above the mast. Show sole support and usable retrieval features for both accessories. Corresponding sections and thicknesses must agree across the boards; undersized clearances, unsupported dimension arithmetic or inaccessible recesses fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "structure-board"
+      ]
+    },
+    {
+      "id": "copy-schedule-record",
+      "requirementId": "R-copy-schedule-record",
+      "method": "content",
+      "targetSlots": [
+        "copy-schedule"
+      ],
+      "criteria": "The schedule assigns text to the front, back and both sides. The front places PIP-01 FIELD SCOUT above Collectible display set. The back lists Set includes, then 1 × Field Scout figure (F01), 1 × Signal paddle (A01), 1 × Sample canister (A02), then Decorative collectible. No electronic functions. The two sides collectively include the set name and F01, A01 and A02, plus concise opening and repacking instructions compatible with the chosen mechanism and handling sequence. Side wording and distribution may vary; missing surfaces, altered fixed wording or incompatible instructions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "sourceSlots": [
+        "structure-board",
+        "packing-sequence"
+      ]
+    },
+    {
+      "id": "printed-copy-and-hierarchy",
+      "requirementId": "R-printed-copy-and-hierarchy",
+      "method": "visual",
+      "targetSlots": [
+        "panel-graphics",
+        "flat-print-artwork"
+      ],
+      "criteria": "Both boards show the front, back and two side designs. The front name PIP-01 FIELD SCOUT is dominant and above Collectible display set. The back prints Set includes followed in order by 1 × Field Scout figure (F01), 1 × Signal paddle (A01), 1 × Sample canister (A02), and Decorative collectible. No electronic functions. Across the two sides, verify the set name, all three IDs and concise instructions consistent with the four handling panels. Typography and line wrapping may vary while wording, order and hierarchy remain intact; substitutions, omissions or contradictory instructions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "copy-schedule",
+        "packing-sequence"
+      ]
+    },
+    {
+      "id": "presentation-front-copy",
+      "requirementId": "R-presentation-front-copy",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The exact strings PIP-01 FIELD SCOUT and Collectible display set appear alongside a readable reproduction of the delivered artwork. Placement within the presentation may vary; mentioning the strings only in unrelated text or pairing them with replacement artwork fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "sourceSlots": [
+        "panel-graphics"
+      ]
+    },
+    {
+      "id": "artwork-structural-mapping",
+      "requirementId": "R-artwork-structural-mapping",
+      "method": "visual",
+      "targetSlots": [
+        "flat-print-artwork"
+      ],
+      "criteria": "The board maps the delivered front, back and both side designs onto the chosen package structure and accounts for additional visible faces. Face names, artwork orientation and fold/opening relationships make the assembled result traceable. Layout presentation may vary; missing faces, changed panel designs, reversed artwork or impossible panel relationships fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "structure-board",
+        "panel-graphics"
+      ]
+    },
+    {
+      "id": "materials-joints-operation",
+      "requirementId": "R-materials-joints-operation",
+      "method": "visual",
+      "targetSlots": [
+        "materials-and-joints"
+      ],
+      "criteria": "A readable labeled section shows both box and insert, their material layers and thickness allowances, joint construction and the selected closure operating without destroying the retained display assembly. Visible edges, folds, windows and supports, where present, must be plausible for the specified materials. The section may use any clear drawing style; unexplained joints, conflicting layers or an operation that damages the reusable assembly fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "structure-board",
+        "insert"
+      ]
+    },
+    {
+      "id": "storage-display-repack-system",
+      "requirementId": "R-storage-display-repack-system",
+      "method": "visual",
+      "targetSlots": [
+        "closed-storage",
+        "open-display",
+        "repack",
+        "desk-application"
+      ],
+      "criteria": "The views represent successive states of the specified box, retained insert and closure, with one complete F01, one A01 and one A02 per package. Open-display and desk scenes visibly expose F01 and show both accessories separately stored with retrieval access inside the same system. Repacking returns the pieces to their assigned positions. An opaque closed box may conceal contents, but its size and construction must remain compatible with the established loaded insert. Camera changes and specified integrated elements are allowed; changed structures, external accessory staging, duplicates or missing pieces fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "structure-board",
+        "insert"
+      ]
+    },
+    {
+      "id": "handling-and-repack-agreement",
+      "requirementId": "R-handling-and-repack-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "packing-sequence",
+        "repack"
+      ],
+      "criteria": "One sequence board contains exactly four ordered panels: expose the retained insert; lift F01 through robust body/feet contact while both accessories stay recessed; return upright F01 and both accessories to their marked places; close with every part outside the closure path. Lifting must avoid contact with the mast, visor, arms and backpack. The separate repacking view must depict the same loaded arrangement as panel three before closure. Camera and explanatory labels may vary; reordered or missing actions, unsafe contact, displaced accessories or conflicting repack positions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "structure-board",
+        "insert"
+      ]
+    },
+    {
+      "id": "application-counts-and-settings",
+      "requirementId": "R-application-counts-and-settings",
+      "method": "visual",
+      "targetSlots": [
+        "shelf-application",
+        "desk-application"
+      ],
+      "criteria": "Count exactly three physical copies of the same closed package on a neutral retail shelf, preserving the delivered proportions, front identity and visible side graphics. Count exactly one complete open package on a plain collector's desk, matching the open-display arrangement with one visible F01 and both accessories in their assigned storage positions. Perspective and lighting may vary; extra packages, another SKU, altered graphics, a closed desk package or separately staged accessories fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "closed-storage",
+        "open-display",
+        "panel-graphics"
+      ]
+    },
+    {
+      "id": "video-operation-and-contents",
+      "requirementId": "R-video-operation-and-contents",
+      "method": "manual",
+      "targetSlots": [
+        "package-video"
+      ],
+      "criteria": "Review the entire video and its duration: it must run 10 seconds and show the delivered package opening, displaying the complete set and closing through the specified repeatable mechanism. Track one attached F01 assembly, one orange A01 paddle and one cobalt A02 canister, retaining the five references' forms and matte colors. During display F01 is exposed and the accessories remain separately stored within the same package system. Editing and camera movement are allowed; all four illustrated handling actions need not be reenacted. Changed geometry or mechanism, disappearing or duplicated pieces, detached figure components, accessory substitution or obstructed closure fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "structure-board",
+        "insert",
+        "materials-and-joints",
+        "packing-sequence",
+        "open-display",
+        "repack"
+      ]
+    },
+    {
+      "id": "presentation-reuses-delivered-work",
+      "requirementId": "R-presentation-reuses-delivered-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation visibly incorporates recognizable material from each listed specification, graphics, construction, handling and application deliverable. Both application scenes, all four delivered panel designs and all four handling panels must be represented. Resizing, cropping and presentation layout changes are allowed if the relevant content remains legible and identifiable; substitute redesigns, text-only claims of reuse or omitted source coverage fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "sourceSlots": [
+        "structure-board",
+        "copy-schedule",
+        "insert",
+        "panel-graphics",
+        "flat-print-artwork",
+        "materials-and-joints",
+        "packing-sequence",
+        "shelf-application",
+        "desk-application"
+      ]
+    },
+    {
+      "id": "presentation-page-count",
+      "requirementId": "R-presentation-page-count",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The document contains at least eight pages. Additional pages are allowed; fewer than eight fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ]
+    },
+    {
+      "id": "reference-identity-in-depictions",
+      "requirementId": "R-reference-identity-in-depictions",
+      "method": "visual",
+      "targetSlots": [
+        "insert",
+        "panel-graphics",
+        "flat-print-artwork",
+        "materials-and-joints",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application"
+      ],
+      "criteria": "Where objects are depicted, compare them with their supplied identity references. F01 retains its cream egg-shaped body, black capsule visor with coral surround, attached cream arms, broad cobalt feet, pale-teal rear backpack and fixed yellow-tipped mast on character-right. A01 remains an orange open oval ring with a short solid handle; A02 remains a cobalt cylinder with a permanently closed shallow stepped top. Rendered and colored illustrated depictions preserve the reference colors and matte appearance. Uncolored technical sections and legitimate viewpoint occlusion are allowed; references need not be illustrated on every board. Mirrored mast placement, detached components, substituted shapes or recolored objects fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "technical-annotation-legibility",
+      "requirementId": "R-technical-annotation-legibility",
+      "method": "visual",
+      "targetSlots": [
+        "insert",
+        "flat-print-artwork",
+        "materials-and-joints"
+      ],
+      "criteria": "Required dimensions, face names, object IDs, material labels and section annotations are readable at the intended delivery viewing size and clearly associated with their drawing features. Type style may vary; illegible, overlapping or ambiguously attached annotations that prevent verification fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-one-reusable-package-structure",
+      "requirementId": "R-set-one-reusable-package-structure",
+      "method": "visual",
+      "targetSlots": [
+        "insert",
+        "materials-and-joints",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application"
+      ],
+      "criteria": "All drawings and states follow the specified box proportions, insert arrangement, materials, thicknesses and repeatable closure; viewpoint changes and specified integrated elements are allowed. Storage, display and repacking retain the same box and insert, with the three pieces assigned to the same accommodation positions whenever seated. Open display exposes F01 while both accessories remain separately stored and retrievable within the package system.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "structure-board"
+      ]
+    },
+    {
+      "id": "set-surface-system-through-applications",
+      "requirementId": "R-set-surface-system-through-applications",
+      "method": "visual",
+      "targetSlots": [
+        "flat-print-artwork",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application"
+      ],
+      "criteria": "Visible package faces consistently use the delivered panel designs, typographic identity, wording and graphic language; perspective and naturally concealed faces are allowed. Artwork placement, face orientation and fold or opening relationships agree with the specified structure across flat and assembled representations. The three shelf packages repeat one SKU and the same closed-package design.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-material-03/object-dimensions.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "panel-graphics",
+        "copy-schedule",
+        "structure-board"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "f01-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "f01-front.png",
+        "f01-back.png",
+        "f01-right.png"
+      ],
+      "subjectSlots": [
+        "insert",
+        "panel-graphics",
+        "flat-print-artwork",
+        "materials-and-joints",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application"
+      ],
+      "notes": "The five identity images fix their forms and matte colors, including F01's attached mast and backpack."
+    },
+    {
+      "id": "a01-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "a01-signal-paddle.png"
+      ],
+      "subjectSlots": [
+        "insert",
+        "panel-graphics",
+        "flat-print-artwork",
+        "materials-and-joints",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application"
+      ],
+      "notes": "The five identity images fix their forms and matte colors, including F01's attached mast and backpack."
+    },
+    {
+      "id": "a02-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "a02-sample-canister.png"
+      ],
+      "subjectSlots": [
+        "insert",
+        "panel-graphics",
+        "flat-print-artwork",
+        "materials-and-joints",
+        "closed-storage",
+        "open-display",
+        "packing-sequence",
+        "repack",
+        "shelf-application",
+        "desk-application"
+      ],
+      "notes": "The five identity images fix their forms and matte colors, including F01's attached mast and backpack."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specified-face-dimensions",
+      "fromSlot": "structure-board",
+      "toSlots": [
+        "flat-print-artwork"
+      ],
+      "extract": [
+        "chosen package face names and corresponding face dimensions"
+      ],
+      "notes": "The flat print-artwork board repeats its face dimensions; the materials-and-joints board and presentation repeat its actual external dimensions, material names, nominal thicknesses and closure method."
+    },
+    {
+      "id": "specified-construction-facts",
+      "fromSlot": "structure-board",
+      "toSlots": [
+        "materials-and-joints",
+        "presentation"
+      ],
+      "extract": [
+        "actual closed external width, height and depth",
+        "box and insert material names",
+        "nominal material thicknesses",
+        "repeatable closure method"
+      ],
+      "notes": "The flat print-artwork board repeats its face dimensions; the materials-and-joints board and presentation repeat its actual external dimensions, material names, nominal thicknesses and closure method."
+    },
+    {
+      "id": "scheduled-surface-copy",
+      "fromSlot": "copy-schedule",
+      "toSlots": [
+        "panel-graphics",
+        "flat-print-artwork"
+      ],
+      "extract": [
+        "exact front wording and hierarchy",
+        "exact back heading, ordered inventory entries and disclaimer"
+      ],
+      "notes": "The copy schedule, panel graphics and flat print-artwork carry the exact front and back wording stated above."
+    }
+  ]
+}

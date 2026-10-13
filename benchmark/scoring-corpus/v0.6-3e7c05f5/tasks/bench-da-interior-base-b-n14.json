@@ -1,0 +1,1101 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-interior-base-b-n14",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "function-furniture-schedule",
+      "label": "Function and furniture schedule",
+      "description": "An early schedule of zone names, areas, occupancies, garment capacities and furniture quantities and dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "furnished-zoning-plan",
+      "label": "Furnished zoning plan",
+      "description": "A furnished plan with zone areas, equipment counts, clearances, turning circles and camera positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "combined-circulation-plan",
+      "label": "Customer and garment circulation plan",
+      "description": "A circulation plan with customer and garment sequences, three storage capacities and two operating-state occupancy diagrams.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "east-section-elevation",
+      "label": "East-facing counter and workshop section-elevation",
+      "description": "An east-facing section-elevation with counter, glazing, storage and ceiling heights and sewing visibility.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "material-lighting-application",
+      "label": "Material and lighting application sheet",
+      "description": "A material and lighting application sheet locating four finishes, three fixture layers and their counter switches.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "reflected-ceiling-plan",
+      "label": "Reflected ceiling and lighting plan",
+      "description": "A reflected ceiling plan with suspended felt panels, lighting positions and three circuit assignments.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "sale-rail-detail",
+      "label": "Sale rail detail",
+      "description": "A detail sheet of the retained sale rail with its dimensions, twelve-garment spacing and adjacent finishes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "sewing-workstation-detail",
+      "label": "Sewing workstation detail",
+      "description": "A sewing workstation detail with table dimensions, chair, pedal, task light, finish codes and working clearance.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-v1-saturday-handover",
+      "label": "V1 Saturday handover perspective",
+      "description": "An interior perspective from V1 showing Saturday browsing and handover with the counter name and sale label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-v2-daily-repair",
+      "label": "V2 Daily repair perspective",
+      "description": "An interior perspective from V2 showing daily repair, labelled garment storage and readable material callouts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-v3-saturday-fitting",
+      "label": "V3 Saturday fitting approach perspective",
+      "description": "An interior perspective from V3 showing the fitting-room approach during the Saturday state.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-v4-daily-collection",
+      "label": "V4 Daily collection perspective",
+      "description": "An interior perspective from V4 showing daily collection at the named handover counter.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "customer-route-video",
+      "label": "Customer route walkthrough",
+      "description": "A ten-second walkthrough from the entrance through browsing to handover and a closing view into the workshop.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "interior-presentation",
+      "label": "Interior fit-out presentation",
+      "description": "An interior presentation reusing the specifications and design drawings with at least eight pages for tier 14 and twelve pages for tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-shop-name",
+      "kind": "text-verbatim",
+      "text": "SECOND SEAM",
+      "scope": {
+        "slots": [
+          "furnished-zoning-plan",
+          "view-v1-saturday-handover",
+          "view-v4-daily-collection",
+          "interior-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "sale-store-label",
+      "kind": "text-verbatim",
+      "text": "For sale",
+      "scope": {
+        "slots": [
+          "combined-circulation-plan",
+          "view-v1-saturday-handover",
+          "interior-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "awaiting-repair-label",
+      "kind": "text-verbatim",
+      "text": "Awaiting repair",
+      "scope": {
+        "slots": [
+          "combined-circulation-plan",
+          "view-v2-daily-repair",
+          "interior-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "ready-to-collect-label",
+      "kind": "text-verbatim",
+      "text": "Ready to collect",
+      "scope": {
+        "slots": [
+          "combined-circulation-plan",
+          "view-v2-daily-repair",
+          "interior-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SECOND SEAM",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "fourteen-drawing-system",
+      "slots": [
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "reflected-ceiling-plan",
+        "sale-rail-detail",
+        "sewing-workstation-detail"
+      ],
+      "sourceSlots": [
+        "function-furniture-schedule",
+        "material-lighting-application"
+      ],
+      "items": [
+        {
+          "item": "The schedule and drawings agree on zones, areas, inventory, storage allocations and the public and staff arrangement.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Section, ceiling plan and furniture details use the application's finish locations, lighting layers and control assignments.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "fourteen-perspective-system",
+      "slots": [
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v3-saturday-fitting",
+        "view-v4-daily-collection"
+      ],
+      "sourceSlots": [
+        "furnished-zoning-plan",
+        "east-section-elevation",
+        "material-lighting-application"
+      ],
+      "items": [
+        {
+          "item": "All four views reconstruct the source layout with consistent retained architecture, furniture positions, divider glazing, material locations and lighting.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Viewpoints and operating states follow the assigned camera record while the shop arrangement stays fixed.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "SECOND SEAM"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "furnished-zoning-plan",
+      "combined-circulation-plan",
+      "east-section-elevation",
+      "material-lighting-application",
+      "reflected-ceiling-plan",
+      "sale-rail-detail",
+      "sewing-workstation-detail",
+      "view-v1-saturday-handover",
+      "view-v2-daily-repair",
+      "view-v3-saturday-fitting",
+      "view-v4-daily-collection"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not impose a new logo, fashion-styling brief or cinematic production standard on this spatial fit-out commission."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "function-furniture-schedule",
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "material-lighting-application",
+        "reflected-ceiling-plan",
+        "sale-rail-detail",
+        "sewing-workstation-detail",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v3-saturday-fitting",
+        "view-v4-daily-collection",
+        "interior-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "material-lighting-application",
+        "reflected-ceiling-plan",
+        "sale-rail-detail",
+        "sewing-workstation-detail",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v3-saturday-fitting",
+        "view-v4-daily-collection"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-function-furniture-schedule",
+      "requirementId": "R-format-function-furniture-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "function-furniture-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-furnished-zoning-plan",
+      "requirementId": "R-format-furnished-zoning-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furnished-zoning-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-combined-circulation-plan",
+      "requirementId": "R-format-combined-circulation-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "combined-circulation-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-east-section-elevation",
+      "requirementId": "R-format-east-section-elevation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "east-section-elevation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-material-lighting-application",
+      "requirementId": "R-format-material-lighting-application",
+      "method": "artifact-property",
+      "targetSlots": [
+        "material-lighting-application"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-reflected-ceiling-plan",
+      "requirementId": "R-format-reflected-ceiling-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "reflected-ceiling-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-sale-rail-detail",
+      "requirementId": "R-format-sale-rail-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "sale-rail-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-sewing-workstation-detail",
+      "requirementId": "R-format-sewing-workstation-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "sewing-workstation-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-v1-saturday-handover",
+      "requirementId": "R-format-view-v1-saturday-handover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-v1-saturday-handover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-v2-daily-repair",
+      "requirementId": "R-format-view-v2-daily-repair",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-v2-daily-repair"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-v3-saturday-fitting",
+      "requirementId": "R-format-view-v3-saturday-fitting",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-v3-saturday-fitting"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-v4-daily-collection",
+      "requirementId": "R-format-view-v4-daily-collection",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-v4-daily-collection"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-customer-route-video",
+      "requirementId": "R-format-customer-route-video",
+      "method": "manual",
+      "targetSlots": [
+        "customer-route-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-interior-presentation",
+      "requirementId": "R-format-interior-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interior-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "fixed-opening-and-service-record",
+      "requirementId": "R-fixed-opening-and-service-record",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan",
+        "east-section-elevation"
+      ],
+      "criteria": "Read the drawings together using the southwest internal floor corner as origin, x east, y north and z upward. Verify D1 at south-wall x=0.8–2.0 m, 2.4 m high, west-hinged and outward opening; W1 at south-wall x=2.6–7.4 m with sill z=0.45 m and head z=2.7 m; full-height C1 at x=3.8–4.2, y=5.8–6.2 m; and full-height SH1 at x=7.4–8.0, y=9.4–10.0 m. E1 and E2 remain on the east wall at y=7.5 and 8.8 m, z=0.45 m; WP1 remains there at y=9.4 m, z=0.5 m. Annotations may establish positions and heights that a particular projection cannot show. Missing evidence of service retention, relocated elements or contradictory geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "retained-equipment-record",
+      "requirementId": "R-retained-equipment-record",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan"
+      ],
+      "criteria": "Identify four distinct sale rails with 1200 × 500 mm footprints and 1600 mm height, two sewing tables measuring 1200 × 600 × 750 mm, and one pressing table measuring 1200 × 600 × 900 mm. Rail allocations provide twelve garments per rail, forty-eight total. Labels or a keyed equipment record may establish heights and capacities. Sewing machines remain associated with the two sewing tables and pressing has its own table; substituted counts, incompatible footprints or missing retained equipment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "material-specification-record",
+      "requirementId": "R-material-specification-record",
+      "method": "content",
+      "targetSlots": [
+        "material-lighting-application"
+      ],
+      "criteria": "The application sheet explicitly associates FL-01 with the retained floor and honed matte terrazzo, WD-01 with reclaimed oak and clear matte varnish on counter facing and new joinery, PT-01 with opaque-wall limewash specified as #D8CCBA, and AC-01 with suspended wool felt of 25 mm thickness above both sewing stations. Keyed annotations or a legend are acceptable. A swatch without its material, treatment and location is insufficient; contradictory or omitted specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "fourteen-function-schedule",
+      "requirementId": "R-fourteen-function-schedule",
+      "method": "content",
+      "targetSlots": [
+        "function-furniture-schedule",
+        "interior-presentation"
+      ],
+      "criteria": "The early function schedule defines each zone's name, area and occupancy, garment capacities, equipment quantities and dimensions. Zone areas sum to 79.48 square metres with circulation included and the column and shaft excluded. Inventory includes four sale rails, two sewing stations, one pressing table and one fitting room. The presentation repeats the schedule's zone names, areas and counts without changing their meaning; omission, double-counted circulation or conflicting records fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "fourteen-plan-schedule-match",
+      "requirementId": "R-fourteen-plan-schedule-match",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan"
+      ],
+      "criteria": "The plan visibly uses the source schedule's zone names, area values and equipment counts, with drawn footprints supporting those allocations. Sewing and pressing are in the north half. Zone shapes may be design-dependent, but missing source fields, overlaps that invalidate the area allocation or a different inventory fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "function-furniture-schedule"
+      ]
+    },
+    {
+      "id": "fourteen-layout-and-clearances",
+      "requirementId": "R-fourteen-layout-and-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "reflected-ceiling-plan",
+        "east-section-elevation",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v3-saturday-fitting",
+        "view-v4-daily-collection"
+      ],
+      "criteria": "The image set preserves the 8 × 10 m room, 3.2 m clear height and fixed elements, including H1 at x=7.4–8.0, y=1.8–3.6 m with top z=0.9 m. The furnished plan dimensions actual narrowest customer routes at 1200 mm or more, unobstructed 1500 mm entrance and fitting-room circles, and a 2000 × 2200 mm clear fitting room. V1–V4 have position and direction markers. The east section labels counter, glazing, storage and ceiling heights. Projection differences are allowed; contradictory geometry, missing clearance evidence or furniture obstructing the stated spaces fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-flows-and-visibility",
+      "requirementId": "R-fourteen-flows-and-visibility",
+      "method": "visual",
+      "targetSlots": [
+        "combined-circulation-plan",
+        "east-section-elevation"
+      ],
+      "criteria": "The circulation drawing distinguishes public customer movements from garment processing and identifies sale, waiting and completed allocations of 48, 12 and 8 garments. AR1 and RC1 are separate units with individually identified positions. Purchase connects entry, rails, optional fitting, counter and exit; garment processing connects H1, AR1, sewing, pressing as needed, RC1 and collection. Customers stay on the public side. The section establishes an upper glazed divider and unobstructed views from the customer side of H1 to both sewing surfaces. Arrow styles and storage arrangement may vary; conflated streams, missing stages or obstructed visibility fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-operating-states",
+      "requirementId": "R-fourteen-operating-states",
+      "method": "visual",
+      "targetSlots": [
+        "combined-circulation-plan",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v3-saturday-fitting",
+        "view-v4-daily-collection"
+      ],
+      "criteria": "The plan provides daily and Saturday occupancy diagrams with one sales assistant and two makers in each. Daily customers comprise one browsing and one collecting; Saturday comprises three browsing, one fitting, one repair handover and one collecting. V1 and V3 carry Saturday captions specifying six customers and three staff; V2 and V4 carry daily captions specifying two customers and three staff. Visible activity agrees with the caption, and furniture remains in the same positions across states. Off-camera occupants are allowed; inconsistent totals, roles or moved furniture fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-application-coordination",
+      "requirementId": "R-fourteen-application-coordination",
+      "method": "visual",
+      "targetSlots": [
+        "east-section-elevation",
+        "reflected-ceiling-plan",
+        "sale-rail-detail",
+        "sewing-workstation-detail",
+        "view-v2-daily-repair"
+      ],
+      "criteria": "The source sheet locates finishes, mounting positions and controls; section and ceiling representations agree with it. Felt panels are suspended above both sewing tables. The lighting record specifies ceiling linear L1 at 3000 K over sales and circulation, articulated L2 at 4000 K at both sewing tables and the pressing table, and adjustable track L3 at 3000 K above all four rails. Three independent circuits map to three switches on the staff side of H1. V2 has readable material callouts and each furniture detail has the codes relevant to its depicted assembly and surroundings. Symbol styles may vary; missing codes, wrong assignments or spatial disagreement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "material-lighting-application"
+      ]
+    },
+    {
+      "id": "fourteen-furniture-details",
+      "requirementId": "R-fourteen-furniture-details",
+      "method": "visual",
+      "targetSlots": [
+        "sale-rail-detail",
+        "sewing-workstation-detail"
+      ],
+      "criteria": "The rail detail explains the retained 1200 × 500 × 1600 mm dark steel rail and placement of twelve garments on its single top bar. The workstation detail shows the 1200 × 600 × 750 mm sewing table, off-white machine, chair, pedal below, articulated task light and identifiable working clearance. Details agree with equipment on the plan. Drawing scale and annotation style may vary; missing required components, incompatible dimensions or an unexplained twelve-garment allocation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-zoning-plan"
+      ]
+    },
+    {
+      "id": "fourteen-camera-record",
+      "requirementId": "R-fourteen-camera-record",
+      "method": "visual",
+      "targetSlots": [
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v3-saturday-fitting",
+        "view-v4-daily-collection"
+      ],
+      "criteria": "Match each perspective to its furnished-plan camera: V1 (1.4,1.2) northeast toward Saturday handover, V2 (6.7,5.0) north toward daily repair, V3 (1.0,5.0) northeast toward the Saturday fitting approach, and V4 (5.8,2.6) east toward daily collection. All use a plausible 1.6 m eye level and include state occupancy captions. Lens and crop may vary while preserving camera origin, direction and subject; substituted viewpoints or missing subjects fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-zoning-plan"
+      ]
+    },
+    {
+      "id": "fourteen-signage",
+      "requirementId": "R-fourteen-signage",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v4-daily-collection"
+      ],
+      "criteria": "The plan locates the shop name above D1; V1 and V4 print it on the counter front. V1 places the sale label at a rail, and V2 makes the two repair-state labels legible on their respective stores. Styling may vary; page headings, floating captions or legends do not replace signage on the required objects.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "fourteen-presentation-facts",
+      "requirementId": "R-fourteen-presentation-facts",
+      "method": "content",
+      "targetSlots": [
+        "interior-presentation"
+      ],
+      "criteria": "The presentation has at least eight pages and prints the shop name on page one. It includes the three named garment stores with capacities 48, 12 and 8, both purchase and garment-processing sequences, and the source application's four material codes and three lighting codes with consistent meanings. A storyboard follows entry, browsing, H1 handover and a final workshop view. Page layout may vary; missing facts, contradictory source information or an absent route storyboard fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "function-furniture-schedule",
+        "combined-circulation-plan",
+        "material-lighting-application"
+      ]
+    },
+    {
+      "id": "fourteen-presentation-reuse",
+      "requirementId": "R-fourteen-presentation-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "interior-presentation"
+      ],
+      "criteria": "Every source role is visibly reused in the presentation as identifiable, readable content. Scaling, cropping and page composition are allowed when the relevant drawing or view remains recognizable. Merely listing filenames, substituting new contradictory drawings or omitting any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "function-furniture-schedule",
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "material-lighting-application",
+        "reflected-ceiling-plan",
+        "sale-rail-detail",
+        "sewing-workstation-detail",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v3-saturday-fitting",
+        "view-v4-daily-collection"
+      ]
+    },
+    {
+      "id": "customer-walkthrough",
+      "requirementId": "R-customer-walkthrough",
+      "method": "manual",
+      "targetSlots": [
+        "customer-route-video"
+      ],
+      "criteria": "Review the complete video and its duration. It runs ten seconds, starts at D1, moves along the planned public route through browsing to H1, and ends looking into the workshop. The shell, openings, column, shaft, fixed counter and furniture layout remain compatible with the drawings throughout. Camera pacing and transitions may vary; entering the staff-only workshop, skipping a route stage, changing the layout or failing to show the workshop at the end fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation"
+      ]
+    },
+    {
+      "id": "set-fourteen-drawing-system",
+      "requirementId": "R-set-fourteen-drawing-system",
+      "method": "visual",
+      "targetSlots": [
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "reflected-ceiling-plan",
+        "sale-rail-detail",
+        "sewing-workstation-detail"
+      ],
+      "criteria": "The schedule and drawings agree on zones, areas, inventory, storage allocations and the public and staff arrangement. Section, ceiling plan and furniture details use the application's finish locations, lighting layers and control assignments.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "function-furniture-schedule",
+        "material-lighting-application"
+      ]
+    },
+    {
+      "id": "set-fourteen-perspective-system",
+      "requirementId": "R-set-fourteen-perspective-system",
+      "method": "visual",
+      "targetSlots": [
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v3-saturday-fitting",
+        "view-v4-daily-collection"
+      ],
+      "criteria": "All four views reconstruct the source layout with consistent retained architecture, furniture positions, divider glazing, material locations and lighting. Viewpoints and operating states follow the assigned camera record while the shop arrangement stays fixed.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-base-b-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furnished-zoning-plan",
+        "east-section-elevation",
+        "material-lighting-application"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "surveyed-shop-retention",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "existing-shop-survey.png"
+      ],
+      "subjectSlots": [
+        "furnished-zoning-plan",
+        "combined-circulation-plan",
+        "east-section-elevation",
+        "reflected-ceiling-plan",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair",
+        "view-v3-saturday-fitting",
+        "view-v4-daily-collection"
+      ],
+      "notes": "Retain the perimeter walls, openings, column, shaft and service points."
+    },
+    {
+      "id": "retained-equipment-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "retained-equipment.png"
+      ],
+      "subjectSlots": [
+        "furnished-zoning-plan",
+        "east-section-elevation",
+        "sale-rail-detail",
+        "sewing-workstation-detail",
+        "view-v1-saturday-handover",
+        "view-v2-daily-repair"
+      ],
+      "notes": "Retain four dark steel display rails, each 1200 × 500 × 1600 mm, carrying 12 sale garments each; two sewing tables, each 1200 × 600 × 750 mm; and one pressing table, 1200 × 600 × 900 mm."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "function-schedule-propagation",
+      "fromSlot": "function-furniture-schedule",
+      "toSlots": [
+        "furnished-zoning-plan",
+        "interior-presentation"
+      ],
+      "extract": [
+        "zone names",
+        "zone areas",
+        "equipment counts"
+      ],
+      "notes": "Establish the function and furniture schedule first; repeat its zone names, areas and equipment counts on the furnished plan and in the presentation, including four sale rails, two sewing tables, one pressing table and one fitting room."
+    }
+  ]
+}

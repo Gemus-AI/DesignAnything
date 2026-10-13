@@ -1,0 +1,30 @@
+CHINA URBAN RIDES | An atlas of urban passenger transport and change
+
+We are commissioning a public reading-room atlas about how urban passenger transport in China is divided between Bus, Urban rail, Taxi and Ferry. The national story covers 2024 and 2025; the regional chapter compares six province-level records from 2024: Shanghai, Jiangsu, Fujian, Hubei, Guangdong and Chongqing. Give readers a clear route between national scale, annual change and regional differences through headings, annotations and page references. Our reading-room window, with three rounded arches and a circular opening above the middle arch, is the recurring location image on every delivered file.
+
+The 2025 national total is 1043.46 in units of 100 million passenger trips; Urban rail accounts for 332.24 and a calculated 31.84% share. Taxi includes street-hail and ride-hail services. Annual volumes and official growth rates occupy separate panels: the Ministry reports 2025 growth on a comparable basis. Print "CHINA URBAN RIDES" and "Counting passenger trips" on every final file. Every chart needs a title, an in-chart unit, a Ministry of Transport credit with the observation year, direct mode labels and one reading annotation. Every printed or plotted data value comes from the attached tables. Use Bus #E69F00, Urban rail #0072B2, Taxi #CC79A7 and Ferry #009E73 with direct labels that remain readable in grayscale. The display board is 420 × 280 mm, the portrait leaflet is 200 × 300 mm and the summary is A4; each has a 10 mm inner margin.
+
+Audience: the public, urban research readers and editors, supporting publication decisions and informed discussion of changes in urban travel.
+
+Inputs (attached): 01-client-facts.en.md contains the project facts, fixed wording and carrier dimensions. 02-delivery-catalog.en.md lists every deliverable's proportion, format and stage. 03-national-data.en.md contains 2024–2025 national volumes, official growth rates, calculated shares and sources. 04-regional-data.en.md contains the six 2024 province-level records, calculated shares and source. 05-field-definitions.en.md contains units, geographic scope, formulas and comparability notes. carrier-dimensions.png supplies the three physical page envelopes and margins. reading-room-window.png supplies the existing architectural feature used as the recurring location vignette. mobile-reading-scene.png supplies the atmosphere of a reader moving through a transport story on a phone.
+
+Deliverables:
+1. Three reading-direction boards, one each organized by region, by time and by transport mode, each using the 2025 national total and the 2024 Shanghai record
+2. One selection note naming the chosen direction and explaining its reading sequence from national overview to regional comparison
+3. One data abstract and chart inventory stating every planned chart's data columns, chart type, unit, carrier, printed labels and source credit, with the 2025 total, its unit and source credit as recurring facts
+4. One landscape national overview of 2025 and one portrait national story of 2025, each containing the total, four mode volumes and four shares
+5. One national change chart with separate 2024 and 2025 volume snapshots and official 2025 growth rates for the total and four modes
+6. Two regional comparison charts for 2024: Shanghai, Jiangsu and Fujian on one; Hubei, Guangdong and Chongqing on the other, each with totals, four mode shares and navigation to the national overview
+7. Two explanatory pages: one A4 summary with the 2025 total, four shares and three numerical findings; one scope note covering passenger trips, Taxi coverage, province-level geography, the share formula, rounding and comparable growth
+8. One 10-second explanatory video reusing the selected national overview to explain the 2025 total and Urban rail share
+9. One editorial presentation of at least eight pages, reusing the three directions, selection, data abstract, finished charts, explanatory pages and video frames
+
+Acceptance:
+- Present the three reading-direction boards first, name one choice in the selection note, then develop that choice in the data abstract, final charts, explanatory pages, video and presentation; repeat the selected direction's name on the presentation's first page.
+- Record 1043.46, 100 million passenger trips and the source credit "Ministry of Transport | 2025" in the data abstract; repeat all three on the national overview, portrait story, A4 summary, video and presentation, with the Urban rail share of 31.84% on those five deliverables.
+- Match the national and regional charts, explanatory pages, video and presentation to the attached data tables; give each chart a title, observation year, in-chart unit, source credit, direct mode labels and one reading annotation, using the four fixed mode colors and zero-based volume and share axes.
+- Identify both regional charts as 2024 province-level comparisons with their specified groups of three and totals in 10,000 passenger trips; explain multiple trips per person, both Taxi services, the reported-total share denominator and rounding in the scope note, and repeat the scope distinctions on the A4 summary and presentation.
+- Separate annual snapshots from official comparable growth on the national change chart, scope note and presentation; retain the official 2025 Ferry rate of -3.7%, give signed growth a visible zero reference, and hold the video's closing total, unit, source and rail share together for its final three seconds.
+- Print CHINA URBAN RIDES and Counting passenger trips on every final file, retain the three-arch window vignette on all 14 files, and carry the selected reading sequence through the presentation's minimum eight pages; apply the specified physical dimensions and 10 mm margins to the overview, portrait story and A4 summary.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

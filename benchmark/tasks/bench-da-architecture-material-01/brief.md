@@ -1,0 +1,32 @@
+NORTHFIELD TERMINUS | Passenger waiting and driver rest building
+
+We operate NORTHFIELD TERMINUS and need a single-storey building that brings sheltered waiting, travel information and driver breaks into the working bus yard. Develop the accommodation schedule first, then the building and its connections. Print "NORTHFIELD TERMINUS" and "Waiting and travel information" at the passenger entrance. The waiting room serves 24 passengers, including 12 seated passengers and two wheelchair spaces; the driver room serves four staff.
+
+The site measures 60000 × 40000 mm, with north upwards and coordinates measured east and north from its southwest corner. All building elements, including roof projections, fit within x=4000–28000 mm and y=28000–38000 mm. Retain B-01 and B-02, each 15000 × 3500 mm, and the turning centre at (48000, 22000) mm with inner radius 7000 mm and outer radius 12000 mm. The vehicle reserve comprises the southern apron up to y=22500 mm and the complete outer turning disc. Preserve the two charging cabinets, their service zone and the north and east boundary walls. Connect the public entrance to the existing 2500 mm pedestrian path and boarding platform; connect a separate staff entrance to the 2000 mm north path. The south bicycle track and both bus gates remain connected across the site frontage. The building floor is ±0.000, matching the platform at 150 mm above the bus apron; roof height is limited to +4.200 m. Use 6000 mm primary glulam spans, exposed inside the waiting and driver rooms, with brick infill and a standing-seam aluminium roof. Internal organisation and roof form are open within these limits.
+
+Audience: passengers waiting, transferring and making short stops, drivers taking breaks, and our operations and facilities team deciding the building layout and site connections.
+
+Inputs (attached): 01-client-facts.en.md contains the site coordinates, room schedule, capacities and construction facts. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. terminus-site-constraint.png records the fixed site geometry and existing ground section. terminus-existing-yard.png establishes the existing asphalt, kerbs, walls and charging cabinets to retain. terminus-morning-reference.png provides morning passenger activity and light around the existing yard.
+
+Deliverables:
+1. A one-page accommodation and construction schedule with eight room records, each stating ID, name, net area, clear height, adjacency, Ground floor and ±0.000, plus the 6000 mm glulam span and exposed timber decision
+2. One site integration plan with the building footprint, roof outline, B-01, B-02, turning geometry, charging zone, walls, gates, bicycle track and passenger and staff connections
+3. One ground-floor plan with room IDs, names, net areas, entrances, furniture, 12 passenger seats, two wheelchair spaces and four driver seats
+4. One roof plan with roof levels, drainage direction, projections and the 6000 mm structural span
+5. Two building sections: one through waiting, platform and apron, and one through the driver room and north staff path, with clear heights, floor and roof levels and exposed glulam
+6. One elevation sheet containing the south, north, east and west elevations, with entrance wording, openings, levels and material divisions
+7. One vehicle and pedestrian boundary drawing with both 15000 × 3500 mm bays, the 7000 mm and 12000 mm turning radii, charging access and separate passenger and staff routes
+8. One entrance and canopy detail sheet with the platform threshold, roof projection, exposed glulam connection, brick infill and standing-seam aluminium roof build-up
+9. Three occupied perspectives: morning peak arrival and boarding, off-peak sheltered waiting, and the driver room during a break
+10. One 10-second arrival-to-waiting video following the pedestrian entrance, platform-side path and public entrance
+11. One presentation document of at least eight pages, reusing the schedule, site plan, floor and roof plans, sections, elevations, boundary drawing, detail and three perspectives
+
+Acceptance:
+- The accommodation schedule, ground-floor plan and presentation repeat W-01 Waiting room 60 m², I-01 Information 12 m², D-01 Driver room 24 m², K-01 Kitchenette 8 m², T-01 Accessible toilet 8 m², T-02 Staff toilet 4 m², S-01 Store 4 m² and C-01 Circulation 24 m²; all eight records identify Ground floor, ±0.000 and 3000 mm clear height.
+- The site plan and boundary drawing preserve the 60000 × 40000 mm boundary, the two bay rectangles, the turning centre (48000, 22000) mm and radii 7000 mm and 12000 mm, plus the cabinet, service-zone, wall, gate and bicycle-track coordinates in 01-client-facts.en.md. Building and pedestrian footprints occupy the space outside the vehicle reserve, with boarding along the platform edge.
+- The site plan, ground-floor plan and boundary drawing connect the public entrance to the 2500 mm path and both boarding positions, and the staff entrance to the 2000 mm north path. The ground-floor plan records 24 passenger places comprising 12 seats, two wheelchair spaces and 10 standing places, plus four driver seats.
+- The floor plan, roof plan, sections and detail retain the x=4000–28000 mm, y=28000–38000 mm building envelope, ±0.000 floor, -0.150 m apron, maximum +4.200 m roof and 6000 mm primary span. The sections and detail depict exposed glulam in Waiting room and Driver room, brick infill and the standing-seam aluminium roof; the site, floor and roof plans carry north arrows and graphic scales, and the sections and elevations carry graphic scales.
+- The elevation sheet, morning perspective and video display "NORTHFIELD TERMINUS" and "Waiting and travel information" at the public entrance. All three perspectives and the 10-second video follow the plans and elevations for the single-storey silhouette, entrances, openings, structural positions and material divisions; morning peak and off-peak appear as separate perspectives.
+- The presentation contains at least eight pages, prints "NORTHFIELD TERMINUS" on its opening page, and repeats the schedule's eight room names and areas, ±0.000 floor level, 6000 mm span and exposed glulam decision alongside the reused drawings and three perspectives.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

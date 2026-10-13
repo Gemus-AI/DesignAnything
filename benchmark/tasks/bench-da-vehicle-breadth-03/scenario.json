@@ -1,0 +1,154 @@
+{
+  "id": "bench-da-vehicle-breadth-03",
+  "title": "NEST T2 — A two-person weekend touring trailer, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# NEST T2 client records\n\n## Project\n\n- Product name: NEST T2.\n- Exterior descriptor: Room for the weekend.\n- Occupancy: two adults; short weekend trips.\n- Design scope: complete trailer exterior and interior, sleeping, two-place daytime seating, internal meals, cold-meal preparation, luggage storage and parked-to-travel conversion.\n- Fixed platform: single axle, two main tyres, A-frame endpoints, coupling reference, four stabilizer attachment points and one retractable jockey wheel.\n- Open design decisions: body form, cabin layout, furniture, openings, storage, mechanisms, exact colour tones and material detailing.\n- Geometry source: original shared client concept record; platform projections, inventory and campsite use the same coordinate frame.\n\n## Coordinate convention\n\n- Units: millimetres unless another unit is stated.\n- X: forward.\n- Y: trailer-left; upward in plan.\n- Z: up.\n- Ground: Z=0.\n- Axle: X=0.\n- Closed total extent: 4800 x 2400 x 2450 mm.\n- Closed shell extent: 3600 x 2100 x 2000 mm.\n- Blank interior: available limit with wheel exclusions subtracted; cabin form open.\n- Fixed boxes and points: coordinates in the following tables.\n- Coupling-clearance occupancy: necessary coupling and drawbar hardware only.\n\n## Original shared geometry table\n\n| ID | X min..max | Y min..max | Z min..max |\n|---|---|---|---|\n| closed-total | -1850..2950 | -1200..1200 | 0..2450 |\n| closed-shell | -1850..1750 | -1050..1050 | 450..2450 |\n| blank-interior | -1750..1650 | -950..950 | 550..2350 |\n| wheel-left | -380..380 | 850..1200 | 0..730 |\n| wheel-right | -380..380 | -1200..-850 | 0..730 |\n| coupling-clearance | 2600..3250 | -450..450 | 250..800 |\n| low-equipment-stow-zone | -650..650 | -700..700 | 550..1050 |\n\n| ID | X | Y | Z |\n|---|---|---|---|\n| axle-left | 0 | 1000 | 300 |\n| axle-right | 0 | -1000 | 300 |\n| coupling-reference | 2850 | 0 | 450 |\n| drawbar-left | 1300 | 700 | 450 |\n| drawbar-right | 1300 | -700 | 450 |\n| stabilizer-front-left | 1300 | 850 | 420 |\n| stabilizer-front-right | 1300 | -850 | 420 |\n| stabilizer-rear-left | -1500 | 850 | 420 |\n| stabilizer-rear-right | -1500 | -850 | 420 |\n| jockey-reference | 2300 | 0 | 400 |\n\n## Wheels and supports\n\n| Element | Fixed record |\n|---|---|\n| Main tyres | Two; outside diameter 600; width 180 |\n| Jockey wheel | One retractable wheel; diameter 200; deployed centre Z=100; stowed bottom>=250 |\n| Stabilizers | Four; deployment from the recorded attachments to ground pads |\n| Stabilizer pads | Each 120x120; deployed pad Z=0; stowed bottom>=250 |\n| PARK and NIGHT contacts | Both main tyres, all four pads and deployed jockey wheel on ground |\n| TRAVEL support position | Stabilizers and jockey wheel raised |\n| C1 deployed location | Touching front of left tyre in PARK/NIGHT |\n| C2 deployed location | Touching rear of right tyre in PARK/NIGHT |\n| C1/C2 travel location | Separate retained locations inside the trailer |\n\n## Living targets\n\n| Feature | Target |\n|---|---|\n| Occupants | Exactly two adults |\n| Day seats | Exactly two; each usable width/depth>=450 |\n| Seat cushion height | 400..470 above floor |\n| Internal meal table | Usable surface 650x500; top 650..750 above floor |\n| Preparation | Internal cold-meal preparation surface |\n| Night bed | Flat; X length>=1950; Y width>=1400 |\n| Bed top | Z<=1150 |\n| Clear height above bed | >=800 |\n| DAY route | Entry to preparation surface; clear width>=550 |\n| NIGHT access | Accessible bed edge connecting to entry |\n| Entry | One side entry on positive Y |\n| Entry clear aperture | clearX>=600; clearZ>=1650 |\n| Entry sill | <=30 above floor |\n| Folding step | Two treads; deployed Z=180,360 |\n| Window | At least one opening window serving seating/bed use |\n| Ventilation | One high ventilation opening |\n\n- Furniture continuity: same furniture and shell across DAY, NIGHT and TRAVEL.\n- Bedding: R1/R2 unfolded onto the bed in NIGHT.\n- Added furniture cushions and panels: named locations in every state.\n- Living accommodation: one cabin; sleeping and storage contained within the trailer.\n- Opening placement: correspondence with actual interior functions, wheel exclusions and support/coupling clearance.\n- Opening hardware: hinge, latch, opening path and travel closure.\n- Deployable living and support parts: retracted inside closed-total in TRAVEL; travel underside>=250 above ground.\n- Body doors and hatches: extension beyond closed bounds during PARK/NIGHT within the campsite.\n\n## Independent inventory; boxes X/Y/Z, cylinders axial length/diameter\n\n| ID | Item | Shape/size | Fixed use record |\n|---|---|---|---|\n| E1 | passive cool box | box 480x320x360 | upright; top lid access in DAY; fixed retained travel bay in low-equipment zone |\n| E2 | fresh-water container | box 200x180x300 | upright; clearly labelled FRESH; capped and empty in TRAVEL; low-equipment zone |\n| E3 | waste-water container | box 200x180x300 | upright; clearly labelled WASTE; capped and empty in TRAVEL; separate from E2; low-equipment zone |\n| E4 | removable wash basin | box 300x240x100 | upright; used on internal prep surface; empty and retained in TRAVEL |\n| E5 | dry-food crate | box 380x280x250 | upright; food contents recorded as one crate; retained in TRAVEL |\n| P1 | person-one bag | box 450x280x200 | full occupied envelope; own retained place and identifiable label |\n| P2 | person-two bag | box 450x280x200 | full occupied envelope; separate retained place and identifiable label |\n| R1 | person-one bedding roll | cylinder 700x280 | rolled axis length700/diameter280 in TRAVEL; unfolds to1950x700x30 bedding in NIGHT |\n| R2 | person-two bedding roll | cylinder 700x280 | rolled axis length700/diameter280 in TRAVEL; unfolds to1950x700x30 bedding in NIGHT |\n| C1 | left-wheel chock | box 180x120x100 | nominal occupied envelope; deployed touching front of left tyre in PARK/NIGHT; retained in TRAVEL |\n| C2 | right-wheel chock | box 180x120x100 | nominal occupied envelope; deployed touching rear of right tyre in PARK/NIGHT; retained in TRAVEL |\n\n## Retention and equipment use\n\n- Inventory count: exactly eleven separate portable items, E1-E5, P1/P2, R1/R2 and C1/C2.\n- Rigid boxes: upright; optional 90-degree rotation in plan with corresponding dimension labels; full recorded dimensions.\n- Bedding forms: recorded rolled TRAVEL form and unfolded NIGHT form.\n- Travel clearance: at least 10 at each side, each end and overhead; floor or shelf support beneath.\n- Cylinder retained envelope: axial length+20, diameter+20 across, diameter+10 high.\n- R1/R2 retained envelope: each 720x300x290.\n- Retention: separate restrained locations and distinct occupied volumes for all eleven items in each state.\n- E1/E2/E3: entire retained TRAVEL envelopes inside low-equipment-stow-zone; identified retention and access.\n- E1 cooling type: passive cool box.\n- E2/E3: separate upright containers, labelled FRESH and WASTE respectively; empty and capped in TRAVEL.\n- E4: removable basin on internal preparation surface in DAY; empty and retained in TRAVEL.\n- E5: cold-food supply.\n- Water handling: manual fresh-water-to-basin-to-waste path.\n- Food preparation equipment: passive cool box, dry-food crate, removable basin and manual water containers.\n\n## State records\n\n| State | Setting and arrangement |\n|---|---|\n| TRAVEL | Stationary trailer on neutral flat studio ground, connected at coupling-reference to a neutral cropped tow-interface stub; cabin unoccupied; doors/windows/vents closed; step stowed; four stabilizers and jockey wheel raised; C1/C2 retained inside; all eleven portable items secured in assigned places |\n| PARK | Unhitched on the supplied flat campsite; both tyres, four pads and jockey wheel grounded; C1/C2 deployed at assigned wheel locations; entry and step open; two-place DAY furniture available |\n| NIGHT | Same parked footprint and supports; entry door closed; step deployed; high vent open; two adults lying on the bed; R1/R2 unfolded; remaining equipment and luggage in assigned retained locations |\n| DAY | Two-place seating arrangement, internal meal table and cold-meal preparation surface available |\n\n- Hidden state information: internal cutaways.\n- Pack-up sequence: NIGHT to DAY conversion; every removable furniture component returned to its named place; all eleven portable items returned to TRAVEL locations; chock retrieval; support, step and jockey stowage; final closed tow-ready state.\n- Sequence continuity: same shell, hinges, windows, wheel enclosures, furniture, equipment and retention scheme.\n- Pack-up setting: supplied campsite, followed by the final TRAVEL depiction.\n\n## Campsite\n\n| Axis | Range | Extent |\n|---|---|---|\n| X | -2500..3650 | 6150 |\n| Y | -2000..3300 | 5300 |\n| Height | <=3100 | ceiling 3100 |\n\n- Terrain: empty flat campsite.\n- Positive-Y entry-side access band: Y=1250..2750.\n- Clear route around deployed door and step to entrance: >=550.\n- Site occupancy: body, openings, deployed pads and step, and actors within X/Y limits and height ceiling.\n- Living and storage capacity: trailer-contained furniture, equipment and luggage.\n- PARK/NIGHT/pack-up: same campsite rectangle and original trailer coordinate frame.\n- Tow-ready setting: separate neutral flat studio ground; same level trailer and coordinate frame.\n\n## Colour, materials and exterior lighting\n\n| Location | Fixed colour family | Proposed material family |\n|---|---|---|\n| Main shell | Warm off-white | Aluminium-faced composite panels |\n| Lower protective band | Muted forest green | Coated aluminium-faced composite panels |\n| Wheels and underframe | Graphite | Metal wheel parts and steel underframe |\n| Interior furniture surfaces | Light natural wood | Birch-faced plywood |\n| Cushions | Warm grey | Recycled PET upholstery |\n| Floor | Coordinated with the five colour families | Anti-slip rubber |\n| Glazing | Transparent | Transparent glazing; detailed material selection open |\n\n- Exact tones and finish selections: design decisions recorded in final CMF.\n- Exterior wording on entry-side body: NEST T2; Room for the weekend.\n- Container labels: E2 FRESH; E3 WASTE.\n- Rear tail/brake assemblies: two red.\n- Rear turn units: two amber.\n- Rear reflectors: two passive red.\n- Forward position lamps: two white.\n- Active exterior lamps in TRAVEL/PARK/NIGHT scenes: OFF.\n- Light-function explanation: labelled lighting details.\n- Final CMF pending checks: structure, towing, support, restraint, conversion, ventilation, sealing and user-fit.\n\n## Design continuity\n\n- Design language: contemporary or slightly ahead of the 2026 market; clean purposeful surfacing, considered lighting and modern material and colour choices.\n- Product character: original body and interior design with credible proportions, supplied hard points and everyday usability.\n- Existing platform role: geometric constraints.\n- Development chain: hard-points and state rules; integrated architecture; whole trailer and dimensioned package; furniture, opening, equipment and storage decisions; state scenes; final CMF; presentation.\n- Refinements: identified changes propagated consistently through affected source designs and later work.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# NEST T2 — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | hardpoints-states | Hard-points and states sheet | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | integrated-architecture | Integrated trailer architecture | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | exterior-perspectives | Whole-trailer exterior perspectives | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | dimensioned-package | Dimensioned orthographic package | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | interior-layout | Interior plans, sections and perspectives | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | furniture-openings | Furniture conversion and openings | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | equipment-retention | Equipment access and eleven-item retention | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | travel-state | TRAVEL state | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | park-state | PARK state | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | night-state | NIGHT state | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | packup-sequence | NIGHT-to-TRAVEL pack-up sequence | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | final-cmf | Final colour, material and finish schedule | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n| 13 | state-video | Twelve-second state-transition video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | design-presentation | Integrated trailer design presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: portable-inventory.en.md",
+            "config": {
+              "text": "# NEST T2 — eleven separate portable items\n\n- Record type: nominal occupied and retained envelopes.\n- Storage cabinet, appearance and supplier hardware: open design decisions.\n- Dimension unit: mm.\n\n| ID | Item | Envelope (mm) | TRAVEL | Other states |\n| --- | --- | --- | --- | --- |\n| E1 | passive cool box | X/Y/Z 480 / 320 / 360 | own retained place | same identity and stated envelope |\n| E2 | fresh-water container | X/Y/Z 200 / 180 / 300 | own retained place | empty / capped / FRESH |\n| E3 | waste-water container | X/Y/Z 200 / 180 / 300 | own retained place | empty / capped / WASTE |\n| E4 | removable wash basin | X/Y/Z 300 / 240 / 100 | own retained place | same identity and stated envelope |\n| E5 | dry-food crate | X/Y/Z 380 / 280 / 250 | own retained place | same identity and stated envelope |\n| P1 | person-one bag | X/Y/Z 450 / 280 / 200 | own retained place | same identity and stated envelope |\n| P2 | person-two bag | X/Y/Z 450 / 280 / 200 | own retained place | same identity and stated envelope |\n| R1 | person-one bedding roll | axis 700 / diameter 280 | own retained place | NIGHT: 1950 x 700 x 30 unfolded |\n| R2 | person-two bedding roll | axis 700 / diameter 280 | own retained place | NIGHT: 1950 x 700 x 30 unfolded |\n| C1 | left-wheel chock | X/Y/Z 180 / 120 / 100 | own retained place | PARK: left tyre front |\n| C2 | right-wheel chock | X/Y/Z 180 / 120 / 100 | own retained place | PARK: right tyre rear |\n\n- Each travel bay: at least 10 at sides/ends/above; support beneath allowed.\n- Cylinder retained envelope: axial length+20, diameter+20 across, diameter+10 high.\n- R1/R2 retained envelope: each 720 x 300 x 290 mm.\n- Full use records: 01-client-facts.en.md.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: empty-campsite.en.md",
+            "config": {
+              "text": "# NEST T2 — empty campsite\n\n- Site record: original flat client concept site.\n- Trailer shape and interior plan: open design decisions.\n\n## Bounds from the shared record\n\n| Axis | Range (mm) | Extent |\n| --- | --- | --- |\n| X | -2500 .. 3650 | length 6150 |\n| Y | -2000 .. 3300 | width 5300 |\n| Height | ceiling 3100 | |\n\n- Coordinate frame: X forward; Y trailer-left points up in plan; fixed caravan coordinates.\n- Positive-Y entry access band: Y 1250 .. 2750.\n- Clear route around actual door and step: at least 550 mm.\n- Site occupancy: all openings, supports and actors within the site.\n- Living and storage provision: contained in the trailer.\n- PARK, NIGHT and pack-up setting: the same empty rectangle.\n- Tow-ready view: separate neutral flat ground; same level trailer and coordinate frame.\n- Shared geometry: bounds and hard points; final shape and layout open.\n- PARK/NIGHT: unhitched, tyres/pads/jockey grounded, chocks at the assigned wheel sides.\n- TRAVEL: all deployable parts stowed.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: shared-platform.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: portable-items.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: campsite-dusk.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "NEST T2 | A two-person weekend touring trailer\n\nWe are developing NEST T2 for two adults taking short weekend trips. Design the whole trailer: exterior, interior, cold-meal preparation, luggage storage and the conversion between daytime use and sleeping. The platform is fixed; the body shape and cabin layout are open. Work within the 4800 x 2400 x 2450 mm closed total envelope and the 3600 x 2100 mm shell envelope at Z=450..2450 mm. Retain the single axle, two main tyres, A-frame endpoints, coupling reference at X=2850, Y=0, Z=450 mm, four stabilizer attachments and retractable jockey wheel. Coordinates use X forward, Y trailer-left and Z up. The attached coordinate tables locate every fixed box and point.\n\nThe cabin needs exactly two day seats, a 650 x 500 mm usable meal table, an internal cold-meal preparation surface and a flat bed at least 1950 x 1400 mm. Provide a positive-Y side entry with at least 600 x 1650 mm clear aperture, a folding two-tread step at Z=180 and 360 mm, an opening window and a high ventilation opening. The eleven portable items E1-E5, P1/P2, R1/R2 and C1/C2 each need their own retained travel location. Develop TRAVEL, PARK and NIGHT around the same shell and furniture, with DAY as the parked seating arrangement. PARK, NIGHT and pack-up use the attached 6150 x 5300 mm campsite and its 3100 mm height ceiling. Use warm off-white for the shell, muted forest green for its lower protective band, graphite running gear, light natural wood inside and warm grey cushions. Proposed materials are aluminium-faced composite shell panels, a steel underframe, birch-faced plywood furniture, recycled PET cushion upholstery and anti-slip rubber flooring. Print \"NEST T2\" and \"Room for the weekend\" on the entry-side exterior; label E2 \"FRESH\" and E3 \"WASTE\".\n\nAudience: our product team and fabrication partners, for selecting the integrated trailer design and preparing the next development brief for two-person weekend use.\n\nInputs (attached): 01-client-facts.en.md contains the platform coordinates, living dimensions, equipment uses, state records and colour and material requirements. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. portable-inventory.en.md records the eleven portable items and their occupied envelopes. empty-campsite.en.md records the campsite boundary and entry-side access band. shared-platform.png is the constraint image, with three linked platform projections and fixed attachment and exclusion references. portable-items.png is the identity image, identifying the eleven existing portable items through their separate dimensioned envelopes. campsite-dusk.png is the reference image for the flat campsite's evening light and two-person setting.\n\nDeliverables:\n1. A hard-points and states sheet, two pages covering coordinate limits, living dimensions, portable-item rules, TRAVEL/PARK/NIGHT, fixed exterior wording and proposed materials\n2. One integrated architecture board locating the shell, entry, window, ventilation, furniture, equipment bays and all support attachments\n3. One whole-trailer exterior board with front-left and rear-right perspectives of the developed body\n4. One dimensioned package board with top, positive-Y side and rear orthographic views, including the coupling, exclusions and deployed-part envelopes\n5. One interior board with DAY and NIGHT functional plans, a longitudinal section, a transverse section and two interior perspectives\n6. One furniture and openings board with the seat-to-bed conversion, every removable furniture component's named location, entry and window hardware, high vent and folding-step movement\n7. One equipment and retention board with eleven separately labelled travel bays, occupied and retained dimensions, access details and the manual fresh-water-to-basin-to-waste sequence\n8. One TRAVEL state image on neutral flat studio ground, showing the stationary trailer coupled to a cropped tow-interface stub and a cutaway of secured contents\n9. One PARK state image on the supplied campsite, with DAY seating, entry access, deployed supports and both chocks visible\n10. One NIGHT state image on the same campsite, with two adults on the bed, R1/R2 unfolded and a cutaway revealing retained equipment\n11. One pack-up sequence board tracing NIGHT to DAY, component and inventory stowage, chock retrieval and the final closed TRAVEL state\n12. A final colour, material and finish schedule, two pages with exact tones, material locations, exterior-light functions and the pending development checks\n13. One 12-second state-transition video using the delivered trailer, furniture and retained-item arrangement across TRAVEL, PARK and NIGHT\n14. A design presentation document of at least 10 pages reusing the specification, architecture, exterior, package, interior, mechanism, retention, state, pack-up and material work\n\nAcceptance:\n- The hard-points and states sheet records the 4800 x 2400 x 2450 mm closed envelope, coupling reference X=2850/Y=0/Z=450 mm and TRAVEL/PARK/NIGHT definitions; the dimensioned package board and presentation repeat these dimensions and state names, and the architecture, exterior, state images and video preserve the same axle, A-frame, supports and openings.\n- The interior and furniture boards dimension the bed at least 1950 x 1400 mm, bed top Z<=1150 mm and clear height above it >=800 mm; they locate two seats at least 450 x 450 mm, the 650 x 500 mm table, a DAY route >=550 mm and an accessible NIGHT bed edge leading to the entry. The NIGHT image and pack-up board reuse the depicted furniture and identify each removable component's place.\n- The package, furniture and state boards place the positive-Y entry at clearX>=600 mm/clearZ>=1650 mm and sill<=30 mm above floor, show step treads at Z=180/360 mm, and trace hinges, latches and closure. PARK, NIGHT and pack-up fit X=-2500..3650 mm, Y=-2000..3300 mm and height<=3100 mm, with an entry route >=550 mm around the door and step; TRAVEL returns deployable parts inside the closed envelope with underside clearance >=250 mm.\n- The equipment board assigns all eleven IDs separate restrained bays with >=10 mm side, end and overhead clearance; R1/R2 each have a 720 x 300 x 290 mm retained envelope. E1/E2/E3 fit entirely in the low-equipment zone, E1 has DAY lid access, E2/E3 carry FRESH/WASTE, and E4 receives the manual basin sequence. TRAVEL and pack-up account for all eleven items, including capped, empty E2/E3; NIGHT unfolds R1/R2 to 1950 x 700 x 30 mm each.\n- PARK and NIGHT show both tyres, four 120 x 120 mm stabilizer pads and the jockey wheel grounded, C1 at the left tyre's front and C2 at the right tyre's rear. PARK shows the open entry and DAY furniture; NIGHT shows the closed entry, deployed step and open high vent. TRAVEL and pack-up show raised supports and jockey wheel, retained chocks and closed openings. The 12-second video repeats these arrangements and labels all three states.\n- The exterior board, TRAVEL/PARK/NIGHT images and presentation print NEST T2 and Room for the weekend on the entry-side body and use the material schedule's five colour families and named materials. The exterior board and schedule locate two red tail/brake assemblies, two amber rear turn units, two passive red rear reflectors and two white forward position lamps; state images show active lamps OFF. The schedule lists structure, towing, support, restraint, conversion, ventilation, sealing and user-fit checks as pending; the presentation repeats the final material choices and identifies any refinements carried through the source work.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-03/shared-platform.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "571b75d3e85441c02e5462d65e44315ecd13e63433309828d759eb037ee9ec60"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-03/portable-items.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "0f0db1a5cd7f1b8ec6d129ac9f418186e21cd1bca09df7b3d2ce72f70ab28b5a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-03/campsite-dusk.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "6924e8fe8726dc16897debafb19ab4f0ec1ac3097a25ddb37e5f5398814c6f41"
+    }
+  ]
+}

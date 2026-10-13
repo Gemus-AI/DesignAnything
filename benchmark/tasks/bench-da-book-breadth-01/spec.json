@@ -1,0 +1,560 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-book-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "publication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "front-cover",
+      "label": "Finished front cover",
+      "description": "The final A1 front cover with the English and Portuguese titles and bilingual descriptor.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "face-a",
+      "label": "Complete Face A artwork",
+      "description": "One continuous Face A artwork containing both covers and the four paired poem panels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "face-b",
+      "label": "Complete Face B artwork",
+      "description": "One continuous Face B artwork interpreting rooftops and streetlights across six panels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "reading-edition",
+      "label": "Four-poem reading edition",
+      "description": "One continuous reading edition reproducing final panels A2 through A5 edge to edge at their original size.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "fold-read-companion",
+      "label": "Fold-and-read companion",
+      "description": "One reader companion with dimensions, crease meanings, panel assignments, reverse pairings and the complete reading route.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "assembled-book",
+      "label": "Assembled-book catalogue composition",
+      "description": "One catalogue composition showing the finished accordion closed and opened to at least two adjacent poem panels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "english-cover-title",
+      "kind": "text-verbatim",
+      "text": "Rooftops and Streetlights",
+      "scope": {
+        "slots": [
+          "front-cover",
+          "face-a",
+          "assembled-book"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "portuguese-cover-title",
+      "kind": "text-verbatim",
+      "text": "Telhados e postes de luz",
+      "scope": {
+        "slots": [
+          "front-cover",
+          "face-a",
+          "assembled-book"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "bilingual-cover-descriptor",
+      "kind": "text-verbatim",
+      "text": "Four city poems / Quatro poemas urbanos",
+      "scope": {
+        "slots": [
+          "front-cover",
+          "face-a",
+          "assembled-book"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "Rooftops and Streetlights",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "final-cover-and-publication-system",
+      "slots": [
+        "front-cover",
+        "assembled-book"
+      ],
+      "sourceSlots": [
+        "face-a"
+      ],
+      "items": [
+        {
+          "item": "The standalone cover and assembled closed cover reproduce the final Face A A1 design, allowing only presentation perspective and lighting differences.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The assembled open view reproduces identifiable adjacent poem panels from final Face A with their typography, spacing, illustration and colors intact.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "Rooftops and Streetlights"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "front-cover",
+      "assembled-book"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not impose a particular type family, illustration medium or palette, infer exact paper grammage from images, or judge flat publication artwork for photographic lighting and material realism."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "assembled-book"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-front-cover",
+      "requirementId": "R-format-front-cover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "front-cover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-face-a",
+      "requirementId": "R-format-face-a",
+      "method": "artifact-property",
+      "targetSlots": [
+        "face-a"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-face-b",
+      "requirementId": "R-format-face-b",
+      "method": "artifact-property",
+      "targetSlots": [
+        "face-b"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-reading-edition",
+      "requirementId": "R-format-reading-edition",
+      "method": "artifact-property",
+      "targetSlots": [
+        "reading-edition"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-fold-read-companion",
+      "requirementId": "R-format-fold-read-companion",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fold-read-companion"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-assembled-book",
+      "requirementId": "R-format-assembled-book",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembled-book"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "cover-consistency-and-reduction",
+      "requirementId": "R-cover-consistency-and-reduction",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "assembled-book"
+      ],
+      "criteria": "Compare the standalone cover and the catalogue's closed front view with A1 in the final Face A document. All three must reproduce the same lettering, illustration, colors and spatial arrangement, with all three approved cover phrases present. Perspective and lighting may change in the assembled view. The standalone artwork must show A1 alone, and its English title must remain readable at a 25 mm wide reproduction. A redesigned cover, missing phrase or unreadable reduced English title fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "face-a"
+      ]
+    },
+    {
+      "id": "complete-approved-bilingual-poems",
+      "requirementId": "R-complete-approved-bilingual-poems",
+      "method": "content",
+      "targetSlots": [
+        "face-a",
+        "reading-edition"
+      ],
+      "criteria": "Read each document against the complete approved records in poems-and-copy.en.md. Require 01 Rooftop / Telhado, 02 Window / Janela, 03 Streetlight / Poste de luz and 04 Homeward / A caminho de casa, each with its exact four English and four Portuguese verse lines. Preserve accents, capitalization and punctuation; every supplied verse line must occupy one displayed line. Both language blocks must remain distinguishable, upright and wholly within their shared assigned panel. Typography may vary from the brief's references, but omissions, substitutions, duplicated poems, altered line breaks or language blocks split across panels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ]
+    },
+    {
+      "id": "face-a-panel-layout-and-back-cover",
+      "requirementId": "R-face-a-panel-layout-and-back-cover",
+      "method": "content",
+      "targetSlots": [
+        "face-a"
+      ],
+      "criteria": "Require one continuous 4:1 sheet layout divided into six equal portrait panels corresponding to the stated 600 mm by 150 mm physical sheet and 100 mm by 150 mm panels. Read upright from left to right: the final standalone A1 cover, poems 01 through 04 on A2 through A5, then A6. A6 must reproduce 'Rooftops and Streetlights — Pocket edition 01' and 'Open the folds. Read slowly. / Abra as dobras. Leia devagar.' exactly, allowing flexible wrapping. Construction labels belong in the companion rather than on this publication surface. Missing panels, wrong order, extra spine width, incorrect back-cover copy or construction annotations on the artwork fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "sourceSlots": [
+        "front-cover"
+      ]
+    },
+    {
+      "id": "continuous-reverse-artwork",
+      "requirementId": "R-continuous-reverse-artwork",
+      "method": "content",
+      "targetSlots": [
+        "face-b"
+      ],
+      "criteria": "Inspect the document's artwork as one 4:1 sheet spanning six equal panels. Both rooftops and streetlights must be interpretable within a composition that connects across all five crease boundaries. The reverse must read upright after the specified vertical-edge turn. Illustration medium, palette and degree of abstraction are open; six disconnected pictures, missing panel coverage, construction labels on the publication surface or an upside-down reverse fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ]
+    },
+    {
+      "id": "reading-edition-direct-reproduction",
+      "requirementId": "R-reading-edition-direct-reproduction",
+      "method": "content",
+      "targetSlots": [
+        "reading-edition"
+      ],
+      "criteria": "Compare the four reproduced panels with final Face A. Require A2, A3, A4 and A5 edge to edge in that order, retaining their original 100 mm by 150 mm physical panel size and their complete typography, spacing, color and artwork. The resulting strip has four equal panels with no covers inserted. Reflowed text, redesigned panels, added gutters, cropping, rescaling or reordered content fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "sourceSlots": [
+        "face-a"
+      ]
+    },
+    {
+      "id": "companion-construction-and-reading-record",
+      "requirementId": "R-companion-construction-and-reading-record",
+      "method": "content",
+      "targetSlots": [
+        "fold-read-companion"
+      ],
+      "criteria": "Require legible instructions or diagrams stating the open and closed dimensions; five full-height creases measured from upright Face A's left edge at 100, 200, 300, 400 and 500 mm; and mountain, valley, mountain, valley, mountain in that order. Define mountain as Face A convex/outside and valley as Face A concave/inside. Identify A1 as front cover, A2–A5 as the four named poems in order and A6 as back cover. Explicitly enumerate B1/A6, B2/A5, B3/A4, B4/A3, B5/A2 and B6/A1. Trace opening from A1 through A2, A3, A4 and A5, followed by turning the fully open sheet about a vertical edge while keeping the top edge uppermost. Wording and diagram style may vary; omitted records, contradictory arrows, reversed folds or a horizontal-axis turn fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ]
+    },
+    {
+      "id": "assembled-object-and-artwork",
+      "requirementId": "R-assembled-object-and-artwork",
+      "method": "visual",
+      "targetSlots": [
+        "assembled-book"
+      ],
+      "criteria": "Require a catalogue composition containing both a closed front-cover view and an open or partially open Face A view showing at least two adjacent, identifiable poem panels. Match the visible cover and poems to the final source artwork. Assess construction against constraint-open-sheet.png, constraint-closed-book.png and identity-blank-accordion.png: one rectangular sheet, six equal 2:3 panels, five alternating full-height folds, a six-panel closed stack, and A1/A6 as the exposed covers, without an added spine panel. Both views must depict the same object with lightweight uncoated-paper appearance compatible with the specified 120 gsm stock; exact grammage is not inferred from appearance. Camera angle, lighting and opening amount may vary. Changed artwork, incompatible panel geometry, extra or missing panels, wrong exposed covers or inconsistent construction between views fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "front-cover",
+        "face-a"
+      ]
+    },
+    {
+      "id": "cover-descriptor-wrapping",
+      "requirementId": "R-cover-descriptor-wrapping",
+      "method": "content",
+      "targetSlots": [
+        "face-a"
+      ],
+      "criteria": "On A1, the complete bilingual descriptor must occupy one uninterrupted typographic line. English cover-title wrapping remains flexible. A descriptor broken into multiple lines, truncated or missing fails; its reproduction in the standalone and assembled covers is assessed by the cover-consistency check.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ]
+    },
+    {
+      "id": "set-final-cover-and-publication-system",
+      "requirementId": "R-set-final-cover-and-publication-system",
+      "method": "visual",
+      "targetSlots": [
+        "front-cover",
+        "assembled-book"
+      ],
+      "criteria": "The standalone cover and assembled closed cover reproduce the final Face A A1 design, allowing only presentation perspective and lighting differences. The assembled open view reproduces identifiable adjacent poem panels from final Face A with their typography, spacing, illustration and colors intact.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/poems-and-copy.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-breadth-01/sheet-and-reading.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "face-a"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "accordion-object-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "identity-blank-accordion.png"
+      ],
+      "subjectSlots": [
+        "assembled-book"
+      ],
+      "notes": "Its closed and open views retain the same paper object, panel proportions and fold structure shown in the two constraint images and identity-blank-accordion.png."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "final-poem-copy",
+      "fromSlot": "face-a",
+      "toSlots": [
+        "reading-edition"
+      ],
+      "extract": [
+        "The ordered poem numbers 01 through 04",
+        "Each poem's English and Portuguese titles",
+        "Each poem's four English and four Portuguese verse lines, including spelling, punctuation and line breaks"
+      ],
+      "notes": "The reading edition reproduces A2–A5 directly from Face A at 100 mm × 150 mm per panel, preserving their typography, spacing, color and sequence."
+    }
+  ]
+}

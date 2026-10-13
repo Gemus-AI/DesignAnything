@@ -1,0 +1,586 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-book-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "publication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "controls-spread",
+      "label": "Controls spread, pages 2–3",
+      "description": "One finished controls spread with six component callouts, publication and device names, the source line and five task finder destinations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "preparation-spread",
+      "label": "Preparation spread, pages 4–5",
+      "description": "One finished preparation spread covering USB-C charging, clamp removal, button power-on and first activation through DJI Mimo.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "video-setup-spread",
+      "label": "Video setup spread, pages 6–7",
+      "description": "One finished video setup spread covering Video selection and the upward swipe from live view to recording parameters.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "record-review-spread",
+      "label": "Recording and review spread, pages 8–9",
+      "description": "One finished recording and review spread with two Shutter/Record presses, their resulting states and rightward-swipe media access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "computer-transfer-spread",
+      "label": "Computer-transfer spread, pages 10–11",
+      "description": "One finished computer-transfer spread covering the powered USB-C connection, Transfer File: USB, file copying and safe removal.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-spread",
+      "label": "Storage spread, pages 12–13",
+      "description": "One finished storage spread covering accessory removal, stopped recording, button shutdown, clamp fitting and handling captions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "publication-title",
+      "kind": "text-verbatim",
+      "text": "FIRST TAKE",
+      "scope": {
+        "slots": [
+          "controls-spread",
+          "preparation-spread",
+          "video-setup-spread",
+          "record-review-spread",
+          "computer-transfer-spread",
+          "storage-spread"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "device-name",
+      "kind": "text-verbatim",
+      "text": "DJI Osmo Pocket 4",
+      "scope": {
+        "slots": [
+          "controls-spread"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "video-mode-label",
+      "kind": "text-verbatim",
+      "text": "Video",
+      "scope": {
+        "slots": [
+          "video-setup-spread"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "transfer-selection",
+      "kind": "text-verbatim",
+      "text": "Transfer File: USB",
+      "scope": {
+        "slots": [
+          "computer-transfer-spread"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FIRST TAKE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "booklet-layout-system",
+      "slots": [
+        "controls-spread",
+        "preparation-spread",
+        "video-setup-spread",
+        "record-review-spread",
+        "computer-transfer-spread",
+        "storage-spread"
+      ],
+      "items": [
+        {
+          "item": "All six spreads use a coherent page grid, sans serif hierarchy, top task headings, running footers, and outer-bottom pagination; task-specific illustration arrangements may vary within that system.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Task spreads use consistent placement of numbered action captions beneath illustrations, with numbering restarting at 1 for each task.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The spreads preserve the assigned page pairs and task-finder destinations, with FIRST TAKE appearing in every running footer.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FIRST TAKE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "controls-spread",
+      "preparation-spread",
+      "video-setup-spread",
+      "record-review-spread",
+      "computer-transfer-spread",
+      "storage-spread"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge photorealistic rendering, exact camera surface details, reproduction of reference-image presentation, or physical paper and binding properties that cannot be established from spread images."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "controls-spread",
+        "preparation-spread",
+        "video-setup-spread",
+        "record-review-spread",
+        "computer-transfer-spread",
+        "storage-spread"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-controls-spread",
+      "requirementId": "R-format-controls-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "controls-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-preparation-spread",
+      "requirementId": "R-format-preparation-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "preparation-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-video-setup-spread",
+      "requirementId": "R-format-video-setup-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "video-setup-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-record-review-spread",
+      "requirementId": "R-format-record-review-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "record-review-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-computer-transfer-spread",
+      "requirementId": "R-format-computer-transfer-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "computer-transfer-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-spread",
+      "requirementId": "R-format-storage-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "page-geometry-controls-and-finder",
+      "requirementId": "R-page-geometry-controls-and-finder",
+      "method": "visual",
+      "targetSlots": [
+        "controls-spread",
+        "preparation-spread",
+        "video-setup-spread",
+        "record-review-spread",
+        "computer-transfer-spread",
+        "storage-spread"
+      ],
+      "criteria": "Each spread visibly comprises two portrait pages with proportions and layout consistent with 135 × 180 mm trim per page, 10 mm page margins, and two 55.5 mm columns separated by 4 mm per page; assess proportional geometry rather than exact raster measurements. Each running footer contains FIRST TAKE. The controls spread represents pages 2–3 and has six clearly connected callouts: Zoom above-left, Custom above-right, 5D Joystick below-left, and Shutter/Record below-right when facing the touchscreen, plus the viewer-left side microSD cover and bottom USB-C port. Screen rotation must not relocate the physical controls. It includes DJI Osmo Pocket 4 and the complete source line 'Source basis: DJI documentation, April 2026. Independent illustrated guide.'; line wrapping is flexible. Its finder maps preparation to 4, video setup to 6, recording and review to 8, transfer to 10, and storage to 12. Missing, swapped, or incorrectly linked components or destinations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "preparation-sequence",
+      "requirementId": "R-preparation-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "preparation-spread"
+      ],
+      "criteria": "Illustrations and captions communicate USB-C charging and recommend a PD charger. The clamp is removed before one physical Shutter/Record press powers the camera on. First activation then shows or states that phone Wi-Fi and Bluetooth are enabled, DJI Mimo is opened, the camera connection is selected, and app prompts are followed. Concise captions and simplified phone screens are acceptable if every action and its sequence remain clear. A held power-on press, startup with the clamp fitted, omitted activation steps, or a claim that ordinary recording always requires a phone connection fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "video-setup-and-caption-system",
+      "requirementId": "R-video-setup-and-caption-system",
+      "method": "visual",
+      "targetSlots": [
+        "preparation-spread",
+        "video-setup-spread"
+      ],
+      "criteria": "The video setup illustrations visibly select Video in the shooting-mode selector and connect an upward swipe on live view to recording parameters. Action captions begin at 1, follow an unambiguous reading order, and occupy the same relative position beneath illustrations as on the preparation spread. Resolution and frame rate may be shown as example choices but must not be presented as mandatory settings. A reversed gesture, wrong destination, missing selection, or inconsistent caption placement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "record-stop-and-review",
+      "requirementId": "R-record-stop-and-review",
+      "method": "visual",
+      "targetSlots": [
+        "record-review-spread"
+      ],
+      "criteria": "The sequence starts in Video live view, shows one Shutter/Record press producing a recognizable recording state, and shows a second press producing a distinguishable stopped state. A subsequent rightward swipe opens recorded media. Both presses target the physical control identified on the controls spread. Simplified state labels or indicators are sufficient; indistinguishable states, another control being pressed, reversed sequencing, or an incorrect swipe direction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "controls-spread"
+      ]
+    },
+    {
+      "id": "computer-transfer-sequence",
+      "requirementId": "R-computer-transfer-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "computer-transfer-spread"
+      ],
+      "criteria": "The illustrated order establishes that the camera is powered on, connects its underside USB-C port to a computer, and selects Transfer File: USB. A readable caption states that capture is unavailable during transfer. File copying precedes a computer indication that removal is safe, which precedes unplugging. Generic computer interfaces and concise labels are acceptable; omitted transfer restrictions, an incorrect selection label, or unplugging before safe removal fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "storage-and-handling",
+      "requirementId": "R-storage-and-handling",
+      "method": "visual",
+      "targetSlots": [
+        "storage-spread"
+      ],
+      "criteria": "If a fill light or wide-angle attachment is present, it is removed first. The sequence then establishes stopped recording, a held physical Shutter/Record press that shuts the camera down, and fitting the gimbal clamp after shutdown. An accessory-free starting illustration is acceptable. Captions explicitly communicate unobstructed gimbal movement during startup and supporting the camera by its body when carrying it. A single-tap shutdown, premature clamp fitting, carrying by the gimbal, or an omitted handling instruction fails. If depicted, the clamp lanyard opening belongs to the clamp.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "editorial-navigation-and-pagination",
+      "requirementId": "R-editorial-navigation-and-pagination",
+      "method": "visual",
+      "targetSlots": [
+        "controls-spread",
+        "preparation-spread",
+        "video-setup-spread",
+        "record-review-spread",
+        "computer-transfer-spread",
+        "storage-spread"
+      ],
+      "criteria": "The booklet uses English sans serif text, task headings at the top, and page numbers at the outside bottom corners. Page pairs are 2–3 for controls, 4–5 for preparation, 6–7 for video setup, 8–9 for recording and review, 10–11 for computer transfer, and 12–13 for storage. Task action numbering restarts at 1 on each task spread and proceeds in reading order beneath the corresponding illustrations. Heading wording may vary while retaining the assigned task meaning. Missing or misplaced navigation, incorrect page allocation, or action captions detached from their illustrations fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "screen-and-physical-action-clarity",
+      "requirementId": "R-screen-and-physical-action-clarity",
+      "method": "visual",
+      "targetSlots": [
+        "controls-spread",
+        "preparation-spread",
+        "video-setup-spread",
+        "record-review-spread",
+        "computer-transfer-spread",
+        "storage-spread"
+      ],
+      "criteria": "Whenever an operating screen appears, readable concise labels or semantic indicators identify the relevant mode, action, or state. Whenever a physical button press is illustrated, the fingertip visibly contacts the named control rather than the screen, another button, or empty space. Simplified screens, hands, cables, computers, and labeled clamp symbols are allowed when the operating action and before/after states remain understandable. Exact interface reproduction, reference colors, panel arrangement, surface details, and hand poses are not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "production-and-source-baseline",
+      "requirementId": "R-production-and-source-baseline",
+      "method": "diagnostic",
+      "targetSlots": [
+        "controls-spread",
+        "preparation-spread",
+        "video-setup-spread",
+        "record-review-spread",
+        "computer-transfer-spread",
+        "storage-spread"
+      ],
+      "criteria": "Record the intended production context: six interior spreads forming pages 2–13 of a 16-page saddle-stitched booklet including covers, on 120 gsm uncoated paper with four-color printing, 3 mm bleed, and a folded spine without a flat spine panel. Physical paper, printing, and binding cannot be verified from these image exports. The editorial baseline is the April 2026 Osmo Pocket 4 User Manual v1.0, 33 pages, and the 16 April 2026 release notes with firmware v01.01.32.02 and DJI Mimo v2.8.1 for iOS and Android; this metadata is not additional required printed copy. booklet-geometry.png supplies geometry and first-session-desk.png supplies atmosphere, without requiring reproduction of their presentation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-booklet-layout-system",
+      "requirementId": "R-set-booklet-layout-system",
+      "method": "visual",
+      "targetSlots": [
+        "controls-spread",
+        "preparation-spread",
+        "video-setup-spread",
+        "record-review-spread",
+        "computer-transfer-spread",
+        "storage-spread"
+      ],
+      "criteria": "All six spreads use a coherent page grid, sans serif hierarchy, top task headings, running footers, and outer-bottom pagination; task-specific illustration arrangements may vary within that system. Task spreads use consistent placement of numbered action captions beneath illustrations, with numbering restarting at 1 for each task. The spreads preserve the assigned page pairs and task-finder destinations, with FIRST TAKE appearing in every running footer.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "camera-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "control-reference.png"
+      ],
+      "subjectSlots": [
+        "controls-spread",
+        "preparation-spread",
+        "video-setup-spread",
+        "record-review-spread",
+        "computer-transfer-spread",
+        "storage-spread"
+      ],
+      "notes": "Device drawings take their identity from control-reference.png; F1–F6 supply control relationships and operating states."
+    }
+  ]
+}

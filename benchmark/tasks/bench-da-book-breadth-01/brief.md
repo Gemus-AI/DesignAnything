@@ -1,0 +1,27 @@
+ROOFTOPS AND STREETLIGHTS | A pocket accordion of English and Portuguese city poems
+
+We are publishing four city poems as a pocket accordion for adults who read on the move and enjoy the different rhythms of English and Portuguese. The cover title is "Rooftops and Streetlights", paired with "Telhados e postes de luz" and the descriptor "Four city poems / Quatro poemas urbanos". The attached copy supplies all four English originals and their Portuguese versions. Each poem has four lines in each language; their words, punctuation and verse line breaks are fixed. Typography and white space should let readers move between the two versions without losing their place.
+
+The book is one 600 mm × 150 mm sheet of 120 gsm uncoated paper, accordion-folded into six equal 100 mm × 150 mm panels. Five full-height creases sit at 100, 200, 300, 400 and 500 mm from the left edge of upright Face A, alternating mountain, valley, mountain, valley, mountain. A1 is the front cover; A2–A5 carry 01 Rooftop, 02 Window, 03 Streetlight and 04 Homeward; A6 is the back cover. Each poem's two language blocks occupy its assigned panel. Face B is one continuous interpretation of rooftops and streetlights. Turning the open sheet about a vertical edge preserves the upright orientation and produces the reverse pairings B1/A6, B2/A5, B3/A4, B4/A3, B5/A2 and B6/A1. The closed footprint is 100 mm × 150 mm, with A1 and A6 exposed as the covers. The existing blank accordion dummy establishes the object; the typography, illustration medium and palette are open.
+
+Audience: adult poetry readers receive the pocket edition, while our editorial and production team uses the finished work to approve the reading experience and publication layout.
+
+Inputs (attached): 01-client-facts.en.md records the edition's editorial and physical facts. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. poems-and-copy.en.md supplies the complete English and Portuguese publication copy. sheet-and-reading.en.md records panel assignments, dimensions, reverse pairings and reading order. constraint-open-sheet.png provides the measured flat geometry and panel correspondence. constraint-closed-book.png provides the closed footprint and six-panel stack. identity-blank-accordion.png shows the existing blank paper dummy whose construction carries this edition. reference-commuter-foldout.png provides the atmosphere and handling context of a seated commuter opening blank folded paper.
+
+Deliverables:
+1. One finished front cover reproducing A1 alone, with the English title, Portuguese title and bilingual descriptor
+2. One complete Face A artwork containing the front cover, four paired poem panels in order 01–04 and the back cover
+3. One complete Face B artwork carrying a continuous rooftops-and-streetlights image across all six panels
+4. One four-poem reading edition reproducing the final A2, A3, A4 and A5 panels edge to edge, at their original size and in that order
+5. One finished fold-and-read companion explaining the sheet dimensions, five crease positions, mountain and valley meanings, Face A content order, all six reverse pairings and the reader's route from the cover to Face B
+6. One assembled-book catalogue composition containing a closed front-cover view and an open or partially open Face A view with at least two adjacent poem panels visible
+
+Acceptance:
+- The front cover, Face A artwork and assembled-book composition carry the same A1 design, including Rooftops and Streetlights, Telhados e postes de luz and Four city poems / Quatro poemas urbanos. The standalone front cover keeps its English title readable when reduced to 25 mm wide.
+- Face A and the four-poem reading edition reproduce all four numbered poems from poems-and-copy.en.md, including both titles and all eight verse lines per poem, with identical spelling, punctuation and line breaks. English and Portuguese remain distinct, visibly paired blocks within each 100 mm × 150 mm poem panel.
+- Face A and Face B each occupy the 600 mm × 150 mm sheet. Face A follows A1 cover, A2 Rooftop, A3 Window, A4 Streetlight, A5 Homeward and A6 back cover; A6 reproduces both back-cover lines from poems-and-copy.en.md. Face B connects its imagery across the five creases. Panel IDs and fold annotations appear in the companion.
+- The reading edition reproduces A2–A5 directly from Face A at 100 mm × 150 mm per panel, preserving their typography, spacing, color and sequence. The assembled-book composition uses that same final artwork and makes the cover and at least two adjacent poem panels identifiable.
+- The fold-and-read companion states 600 mm × 150 mm open, 100 mm × 150 mm closed, crease positions 100, 200, 300, 400 and 500 mm, and M/V/M/V/M as seen from Face A. It explains M as Face A convex and V as Face A concave, lists B1/A6 through B6/A1, and traces A1 → A2 → A3 → A4 → A5 before the upright vertical-edge turn to Face B.
+- The assembled-book composition depicts six equal accordion panels with A1 and A6 as the exposed covers. Its closed and open views retain the same paper object, panel proportions and fold structure shown in the two constraint images and identity-blank-accordion.png.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

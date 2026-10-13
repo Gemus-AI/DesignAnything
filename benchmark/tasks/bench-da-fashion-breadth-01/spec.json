@@ -1,0 +1,591 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-fashion-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "front-material-board",
+      "label": "Front flat views and final material specification",
+      "description": "One board containing front flat views of both sizes, finished garment measurements, the selected shell specification, a schematic swatch and the final color-placement key.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "back-flat-board",
+      "label": "Back flat views of both sizes",
+      "description": "One board containing back flat views of the top and shorts in both sizes, with top back lengths, shorts inseams and rear seam and pocket placement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "construction-details",
+      "label": "Pocket, dressing and skin-contact details",
+      "description": "One construction board containing both sizes' pocket dimensions and positions, dressing approach, waist adjustment, inside seam finishes, casing and readable identification label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "body-a-standing",
+      "label": "Body A standing at home",
+      "description": "One home image of Body A standing with arms relaxed in the complete final top and shorts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "body-b-seated",
+      "label": "Body B seated at home",
+      "description": "One home image of Body B seated with knees bent in the complete final top and shorts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "body-b-side-lying",
+      "label": "Body B side-lying at home",
+      "description": "One home image of Body B side-lying with knees lightly bent in the complete final top and shorts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "identification-brand",
+      "kind": "text-verbatim",
+      "text": "STILL HOUR",
+      "scope": {
+        "slots": [
+          "construction-details"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "identification-descriptor",
+      "kind": "text-verbatim",
+      "text": "Summer homewear",
+      "scope": {
+        "slots": [
+          "construction-details"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "STILL HOUR",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-final-color-placement",
+      "slots": [
+        "back-flat-board",
+        "construction-details",
+        "body-a-standing",
+        "body-b-seated",
+        "body-b-side-lying"
+      ],
+      "sourceSlots": [
+        "front-material-board"
+      ],
+      "items": [
+        {
+          "item": "The named garment-area color assignments on the front specification persist across both sizes and every subsequent view, allowing natural lighting and shading.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Monochrome technical views identify their garment areas using keys linked to the final named colors.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "STILL HOUR"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "front-material-board",
+      "back-flat-board",
+      "construction-details",
+      "body-a-standing",
+      "body-b-seated",
+      "body-b-side-lying"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not infer measured fit or verified physical comfort from renderings, demand photorealistic technical boards, or judge the schematic pose reference as a garment design."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "front-material-board",
+        "back-flat-board",
+        "construction-details",
+        "body-a-standing",
+        "body-b-seated",
+        "body-b-side-lying"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-front-material-board",
+      "requirementId": "R-format-front-material-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "front-material-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-back-flat-board",
+      "requirementId": "R-format-back-flat-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "back-flat-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-construction-details",
+      "requirementId": "R-format-construction-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "construction-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-body-a-standing",
+      "requirementId": "R-format-body-a-standing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "body-a-standing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-body-b-seated",
+      "requirementId": "R-format-body-b-seated",
+      "method": "artifact-property",
+      "targetSlots": [
+        "body-b-seated"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-body-b-side-lying",
+      "requirementId": "R-format-body-b-side-lying",
+      "method": "artifact-property",
+      "targetSlots": [
+        "body-b-side-lying"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "flat-views-and-finished-measurements",
+      "requirementId": "R-flat-views-and-finished-measurements",
+      "method": "visual",
+      "targetSlots": [
+        "front-material-board",
+        "back-flat-board"
+      ],
+      "criteria": "Both boards depict complete front or rear views, respectively, of the short-sleeved top and shorts for A and B. Read the front measurements as full circumferences: A chest 1040–1120 mm and hip 1100–1180 mm; B chest 1240–1320 mm and hip 1220–1300 mm, inclusive. Each size has a designer-selected back length and inseam in mm, repeated without contradiction on the rear board. Rear seams and any rear pockets are identifiable. Missing views, out-of-range values, ambiguous half-circumference notation or inconsistent dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "waist-dressing-and-adjustment",
+      "requirementId": "R-waist-dressing-and-adjustment",
+      "method": "visual",
+      "targetSlots": [
+        "front-material-board",
+        "construction-details"
+      ],
+      "criteria": "Read matching relaxed and comfortably extended full waist targets on both boards for each size. A must have relaxed waist <800 mm and extension ≥800 mm; B must have relaxed waist <1000 mm and extension ≥1000 mm. The details explain entry and removal for each garment and depict a compatible waist adjustment. Pull-on dressing and alternatives to elastic are allowed. If T1 is selected, its width is recorded in mm and its fabric enclosure is visible; absent measurements, conflicting targets or unexplained construction fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "usable-pocket-and-placement",
+      "requirementId": "R-usable-pocket-and-placement",
+      "method": "visual",
+      "targetSlots": [
+        "construction-details",
+        "front-material-board",
+        "back-flat-board",
+        "body-a-standing",
+        "body-b-seated",
+        "body-b-side-lying"
+      ],
+      "criteria": "For each size, identify a functional garment pocket with separately readable opening and usable internal depth dimensions of at least 110 mm, suitable for the folded 100 × 100 mm cloth. Its position is dimensioned for A and B independently. Compare visible pocket locations, openings and construction across the flats and worn views. Different size-specific offsets and natural occlusion are allowed; absent dimensions, an undersized pocket or contradictory visible placement fail. The cloth need not be depicted.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "skin-contact-label-and-fittings",
+      "requirementId": "R-skin-contact-label-and-fittings",
+      "method": "visual",
+      "targetSlots": [
+        "construction-details",
+        "body-b-side-lying"
+      ],
+      "criteria": "Construction views reveal the internal seam treatment, fabric surface against the waist and attachment of an inside identification label. The label displays the brand on its first line and descriptor on its second, both readable. Any hard components shown in the construction or lying view remain outside the outer shoulder and outer hip support-contact regions. A design without hard fittings passes that portion; missing contact details, an exterior-only label or a fitting at a prohibited contact region fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "shell-specification-and-color-system",
+      "requirementId": "R-shell-specification-and-color-system",
+      "method": "visual",
+      "targetSlots": [
+        "front-material-board",
+        "back-flat-board",
+        "construction-details",
+        "body-a-standing",
+        "body-b-seated",
+        "body-b-side-lying"
+      ],
+      "criteria": "The front specification selects exactly one common shell for top and shorts: F1 means 100% cotton, plain weave, 125 g/m²; F2 means 95% cotton / 5% elastane, single jersey, 165 g/m². Its final key maps two or three named colors, each with six hexadecimal digits, to garment areas. All views follow those assignments across A and B; monochrome technical drawings explicitly link to the named key. Lighting and shading may alter apparent color. Mixed shell choices, incorrect specification fields, missing codes or inconsistent area assignments fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "wearing-poses-coverage-and-adaptation",
+      "requirementId": "R-wearing-poses-coverage-and-adaptation",
+      "method": "visual",
+      "targetSlots": [
+        "body-a-standing",
+        "body-b-seated",
+        "body-b-side-lying"
+      ],
+      "criteria": "The home scenes depict an adult A upright with relaxed arms, adult B seated with bent knees and the same B lying on either side with knees gently bent. Each wears the complete specified short-sleeved top and shorts; the top covers the waist and shorts cover the upper thighs in that pose. Visible neckline, sleeves, openings and seams agree with the technical views. Proportions and pockets follow the corresponding size adaptation, with folds responding to posture and the chosen fabric. Simple home furniture and either lying direction are allowed; wrong poses, exposed required coverage areas or incompatible garment features fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "front-material-board",
+        "back-flat-board",
+        "construction-details"
+      ]
+    },
+    {
+      "id": "body-specification-basis",
+      "requirementId": "R-body-specification-basis",
+      "method": "visual",
+      "targetSlots": [
+        "front-material-board",
+        "construction-details",
+        "body-a-standing",
+        "body-b-seated",
+        "body-b-side-lying"
+      ],
+      "criteria": "Check that A and B are consistently associated with their intended body specifications and corresponding garment adaptations. If body dimensions are recorded, they must match A height/chest/waist/hip 1600/920/800/1000 mm and B 1850/1120/1000/1120 mm. Distinguish body dimensions from finished garment dimensions. Worn depictions should plausibly represent those adults without swapping the size identities; do not infer exact millimetres from unscaled renderings or require the body table to be printed.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "gender-neutral-range",
+      "requirementId": "R-gender-neutral-range",
+      "method": "visual",
+      "targetSlots": [
+        "front-material-board",
+        "back-flat-board"
+      ],
+      "criteria": "A and B are presented as size adaptations of one range, without assigning one size to a men's range and the other to a women's range. Body appearance, styling and silhouette may vary without implying a gender restriction. Explicit gender-segregated size assignments fail; no printed gender-neutral statement is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "schematic-shell-swatch",
+      "requirementId": "R-schematic-shell-swatch",
+      "method": "visual",
+      "targetSlots": [
+        "front-material-board"
+      ],
+      "criteria": "A discernible schematic fabric swatch accompanies the selected shell specification and represents the chosen woven or jersey structure without contradicting its identification. A stylized illustration is sufficient; a missing swatch or one labeled as the unselected shell fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-shared-final-color-placement",
+      "requirementId": "R-set-shared-final-color-placement",
+      "method": "visual",
+      "targetSlots": [
+        "back-flat-board",
+        "construction-details",
+        "body-a-standing",
+        "body-b-seated",
+        "body-b-side-lying"
+      ],
+      "criteria": "The named garment-area color assignments on the front specification persist across both sizes and every subsequent view, allowing natural lighting and shading. Monochrome technical views identify their garment areas using keys linked to the final named colors.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/bodies-and-use.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-breadth-01/materials.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "front-material-board"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "outfit-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "front-material-board",
+      "subjectSlots": [
+        "back-flat-board",
+        "construction-details",
+        "body-a-standing",
+        "body-b-seated",
+        "body-b-side-lying"
+      ],
+      "notes": "Across these images and the flat views, preserve the neckline family, sleeve type, openings and seam arrangement, while showing the separately dimensioned size adaptations through pocket placement, garment proportions and pose-specific folds."
+    }
+  ]
+}

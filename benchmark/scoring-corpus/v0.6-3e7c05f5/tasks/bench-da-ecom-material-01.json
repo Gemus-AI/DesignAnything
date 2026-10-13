@@ -1,0 +1,1261 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ecom-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "information-hierarchy",
+      "label": "Selling-point and information hierarchy",
+      "description": "A one-page table of information priorities, destination images and minimum letter heights.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "shot-list",
+      "label": "Shot and image list",
+      "description": "A one-page shot list assigning roles, proportions, poses, crops and copy to ten still images and one video.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "front-hero",
+      "label": "Square front product hero",
+      "description": "A square size M front overview with DAYSPAN, Field Overshirt and USD 68.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "back-overview",
+      "label": "Back garment overview",
+      "description": "A complete size M back view showing the straight yoke and hem.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "collar-detail",
+      "label": "Collar and placket detail",
+      "description": "A collar and placket close-up with a 100% cotton caption.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cuff-detail",
+      "label": "Cuff and sleeve seam detail",
+      "description": "A single-button cuff and sleeve seam close-up with a 100% cotton caption.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "standing-fit",
+      "label": "Standing fit view",
+      "description": "A front standing view of the model wearing size M with body measurements and model disclosure.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "seated-fit",
+      "label": "Seated fit view",
+      "description": "A three-quarter seated view of the same model wearing size M with body measurements and model disclosure.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "reaching-fit",
+      "label": "Forward-reaching fit view",
+      "description": "A side view of the same model reaching forward in size M with body measurements and model disclosure.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "size-comparison",
+      "label": "Size and SKU comparison",
+      "description": "A three-SKU size table with prices, a dimensioned size M drawing and a 100 mm scale bar.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "product-detail",
+      "label": "Product detail page",
+      "description": "A portrait shopping page combining garment overviews, detail crops, three wearing states and the full size table.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "video-cover",
+      "label": "Vertical movement video cover",
+      "description": "A vertical cover using the standing model with the product name, price, composition, fit and model disclosure.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "movement-video",
+      "label": "Ten-second movement video",
+      "description": "A 10-second vertical video of standing, sitting and reaching in size M with continuous model disclosure.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Product visual presentation",
+      "description": "A presentation of at least eight pages reusing the early tables, ten still images and three video frames with a fact-location page.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-name",
+      "kind": "text-verbatim",
+      "text": "DAYSPAN",
+      "scope": {
+        "slots": [
+          "information-hierarchy",
+          "front-hero",
+          "product-detail",
+          "video-cover",
+          "movement-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "Field Overshirt",
+      "scope": {
+        "slots": [
+          "information-hierarchy",
+          "front-hero",
+          "product-detail",
+          "video-cover",
+          "movement-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "fixed-price",
+      "kind": "text-verbatim",
+      "text": "USD 68",
+      "scope": {
+        "slots": [
+          "information-hierarchy",
+          "front-hero",
+          "size-comparison",
+          "product-detail",
+          "video-cover",
+          "movement-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "fabric-composition",
+      "kind": "text-verbatim",
+      "text": "100% cotton",
+      "scope": {
+        "slots": [
+          "information-hierarchy",
+          "collar-detail",
+          "cuff-detail",
+          "product-detail",
+          "video-cover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "fit-descriptor",
+      "kind": "text-verbatim",
+      "text": "Relaxed fit",
+      "scope": {
+        "slots": [
+          "information-hierarchy",
+          "product-detail",
+          "video-cover"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "garment-table-heading",
+      "kind": "text-verbatim",
+      "text": "Garment measurements (mm)",
+      "scope": {
+        "slots": [
+          "size-comparison",
+          "product-detail"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "model-disclosure",
+      "kind": "text-verbatim",
+      "text": "AI-generated model",
+      "scope": {
+        "slots": [
+          "standing-fit",
+          "seated-fit",
+          "reaching-fit",
+          "product-detail",
+          "video-cover",
+          "movement-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "DAYSPAN",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "garment-and-model-continuity",
+      "slots": [
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "product-detail",
+        "video-cover"
+      ],
+      "sourceSlots": [
+        "front-hero"
+      ],
+      "items": [
+        {
+          "item": "The overview, detail, wearing and shopping images depict the same Clay overshirt with consistent construction and material appearance despite changes in viewpoint, lighting and folds.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Standing, seated and reaching views, including those reused on the detail page and cover, show the same adult model and M garment with consistent supporting clothing and fastening.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "planned-information-across-stills",
+      "slots": [
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "size-comparison",
+        "product-detail",
+        "video-cover"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-list"
+      ],
+      "items": [
+        {
+          "item": "The final stills implement their assigned shot-list roles, poses or crops and printed content, with the destinations and minimum letter heights recorded in the hierarchy.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Repeated brand, product, price, composition, fit, garment records and model records agree across their required destinations, while body measurements remain distinct from garment measurements.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The still-image family follows the prescribed information bands, image areas and conditional model disclosure requirements.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "DAYSPAN"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "front-hero",
+      "back-overview",
+      "collar-detail",
+      "cuff-detail",
+      "standing-fit",
+      "seated-fit",
+      "reaching-fit",
+      "size-comparison",
+      "product-detail",
+      "video-cover"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design-quality scoring must not reward garment redesign or infer exact fiber composition, fabric weight or body measurements from appearance; these are fixed-reference or stated-fact checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "information-hierarchy",
+        "shot-list",
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "size-comparison",
+        "product-detail",
+        "video-cover",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "size-comparison",
+        "product-detail",
+        "video-cover"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-information-hierarchy",
+      "requirementId": "R-format-information-hierarchy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-shot-list",
+      "requirementId": "R-format-shot-list",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shot-list"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-front-hero",
+      "requirementId": "R-format-front-hero",
+      "method": "artifact-property",
+      "targetSlots": [
+        "front-hero"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-back-overview",
+      "requirementId": "R-format-back-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "back-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-collar-detail",
+      "requirementId": "R-format-collar-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collar-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cuff-detail",
+      "requirementId": "R-format-cuff-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cuff-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-standing-fit",
+      "requirementId": "R-format-standing-fit",
+      "method": "artifact-property",
+      "targetSlots": [
+        "standing-fit"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-seated-fit",
+      "requirementId": "R-format-seated-fit",
+      "method": "artifact-property",
+      "targetSlots": [
+        "seated-fit"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-reaching-fit",
+      "requirementId": "R-format-reaching-fit",
+      "method": "artifact-property",
+      "targetSlots": [
+        "reaching-fit"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-size-comparison",
+      "requirementId": "R-format-size-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "size-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-product-detail",
+      "requirementId": "R-format-product-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "product-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-video-cover",
+      "requirementId": "R-format-video-cover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "video-cover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-movement-video",
+      "requirementId": "R-format-movement-video",
+      "method": "manual",
+      "targetSlots": [
+        "movement-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "hierarchy-table-structure",
+      "requirementId": "R-hierarchy-table-structure",
+      "method": "content",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "The document occupies one page and assigns a priority, destination image roles and minimum letter height to every named information category. It specifies disclosure letters at least 5% of the shorter frame side and other copy at least 2%. Table styling and priority ordering may vary; missing categories, destinations or minimum heights fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "hierarchy-facts-and-repetition",
+      "requirementId": "R-hierarchy-facts-and-repetition",
+      "method": "content",
+      "targetSlots": [
+        "information-hierarchy",
+        "front-hero",
+        "video-cover",
+        "product-detail"
+      ],
+      "criteria": "Read the hierarchy and the printed image content. The hierarchy must contain the five fixed brand/product/sales phrases and identify M chest width 570, back length 700, shoulder width 480 and sleeve length 590 in mm. The hero must carry brand, product and price; the cover adds composition and fit; the detail page includes every listed fact. Placement may vary within the required geometry, but missing, altered or mislabeled facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "shot-list-completeness",
+      "requirementId": "R-shot-list-completeness",
+      "method": "content",
+      "targetSlots": [
+        "shot-list"
+      ],
+      "criteria": "The single page contains eleven numbered entries mapped unambiguously to the ten final image roles and movement-video, without duplicated or omitted assignments. Each entry specifies its role, required proportion, pose or crop, and planned copy. Numbering style may vary. The video entry must describe its movement sequence.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "garment-reference-construction",
+      "requirementId": "R-garment-reference-construction",
+      "method": "visual",
+      "targetSlots": [
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "product-detail",
+        "video-cover"
+      ],
+      "criteria": "Compare visible construction with the four overshirt references: Clay color, relaxed straight silhouette, pointed collar, six dark brown front buttons, one left chest patch pocket, single dark brown button per cuff, straight hem, straight back yoke and matching stitching. The front and back overviews must expose their specified construction, and the close-ups must resolve collar/placket and cuff/sleeve-seam details with matte plain-weave texture. Lighting and pose may change shading and folds; changed construction, glossy or visibly stretchy material, or a different garment color fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "complete-size-m-overviews",
+      "requirementId": "R-complete-size-m-overviews",
+      "method": "visual",
+      "targetSlots": [
+        "front-hero",
+        "back-overview"
+      ],
+      "criteria": "The pair provides distinct front and back views of the same M sample, with collar, both sleeves, cuffs and full hem visible. Their proportions must be compatible with the M measurement reference. Presentation and lighting may differ; cropped garment extremities or substitution of a detail or wearing crop for an overview fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "close-up-subjects-and-captions",
+      "requirementId": "R-close-up-subjects-and-captions",
+      "method": "visual",
+      "targetSlots": [
+        "collar-detail",
+        "cuff-detail"
+      ],
+      "criteria": "The collar image makes the collar and placket inspectable; the cuff image makes its fastening and sleeve seam inspectable. Each independently carries a readable 100% cotton caption. Crop angle may vary, but an unrelated detail, obscured required feature or absent caption fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "complete-size-records",
+      "requirementId": "R-complete-size-records",
+      "method": "visual",
+      "targetSlots": [
+        "size-comparison",
+        "product-detail"
+      ],
+      "criteria": "Read each table independently. Required rows are DS-FO-S / Field Overshirt / S / USD 68 / 540, 680, 460, 580; DS-FO-M / Field Overshirt / M / USD 68 / 570, 700, 480, 590; and DS-FO-L / Field Overshirt / L / USD 68 / 600, 720, 500, 600. Numeric order is flat chest width, back length, shoulder width and sleeve length, all in mm. Both tables carry the fixed garment-measurement heading. Row and column ordering may vary if associations stay explicit; omitted, duplicated, swapped or incorrect records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "measurement-drawing-and-scale",
+      "requirementId": "R-measurement-drawing-and-scale",
+      "method": "visual",
+      "targetSlots": [
+        "size-comparison"
+      ],
+      "criteria": "The graphic includes a labeled M garment drawing with chest width 570 mm measured once across the underarms, back length 700 mm from the center-back collar attachment seam to hem, shoulder width 480 mm between sleeve attachment seams, and sleeve length 590 mm from shoulder seam to cuff along the outer sleeve. The measurement object is laid flat and front-fastened where visible. A labeled 100 mm bar must use the drawing's scale; its length should be consistent with the dimensioned spans. Drawing style may vary, but circumference substitution, wrong endpoints, wrong M values or a decorative unrelated scale bar fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "model-poses-and-styling",
+      "requirementId": "R-model-poses-and-styling",
+      "method": "visual",
+      "targetSlots": [
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "product-detail",
+        "video-cover"
+      ],
+      "criteria": "Use one visually consistent adult wearing the M overshirt and plain off-white trousers. Standing-fit is frontal with relaxed arms; seated-fit is an upright three-quarter view on a plain stool; reaching-fit is a side view with arms forward at shoulder height. The detail page includes these states and the cover uses the standing state. All six front buttons and cuffs remain fastened wherever visible. Natural pose-dependent folds and occlusion are allowed; changed identity, supporting clothing, fastening state or assigned pose fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "body-records-and-worn-size",
+      "requirementId": "R-body-records-and-worn-size",
+      "method": "visual",
+      "targetSlots": [
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "product-detail"
+      ],
+      "criteria": "Each wearing image prints worn size M and separately identifies model height 172 cm, chest circumference 92 cm, waist circumference 76 cm and hips circumference 98 cm. The detail page also prints all four model measurements and identifies its wearing views as M. Body records must be distinguishable from finished-garment dimensions; grouping and label wording may vary, but missing values, wrong units or confusion between body circumference and flat garment width fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "image-model-disclosure",
+      "requirementId": "R-image-model-disclosure",
+      "method": "visual",
+      "targetSlots": [
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "size-comparison",
+        "product-detail",
+        "video-cover"
+      ],
+      "criteria": "For every image that depicts the model, including composite pages, verify a readable exact disclosure at the lower left within y 92–100%. Actual letter height must be at least 5% of that image's shorter side. Images without a model are exempt. Typeface and color may vary if legible; a disclosure only embedded in a small reused crop, an undersized label or a missing label fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "hero-envelope-and-text",
+      "requirementId": "R-hero-envelope-and-text",
+      "method": "visual",
+      "targetSlots": [
+        "front-hero"
+      ],
+      "criteria": "The hero is square with a white background. The entire garment occupies 85–88% of image height, remains within x 5–95% and y 2–90%, and is no more than 90% of image width. Its brand, product and price text occupy y 92–100%. Styling may vary within these bounds; clipping, a colored background, an out-of-range garment envelope or displaced copy fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "image-proportions-and-information-zones",
+      "requirementId": "R-image-proportions-and-information-zones",
+      "method": "visual",
+      "targetSlots": [
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "size-comparison",
+        "product-detail",
+        "video-cover"
+      ],
+      "criteria": "Apply shop-image-geometry.png and its transcribed facts: back overview and close-ups are 3:2 with captions in y 88–100%; wearing images, size comparison and detail page are 2:3; the cover is 9:16. Portrait and vertical layouts use information bands at y 0–18% and y 72–92% and a primary image area at y 18–72%, reserving y 92–100% for model disclosure when applicable. Internal arrangement may vary within these zones; wrong proportions or required content placed outside its designated band fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "minimum-other-copy-size",
+      "requirementId": "R-minimum-other-copy-size",
+      "method": "visual",
+      "targetSlots": [
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "size-comparison",
+        "product-detail",
+        "video-cover"
+      ],
+      "criteria": "All printed copy other than the separately checked model disclosure has actual letter height at least 2% of the delivered image's shorter side, including captions, table entries and measurement labels. Typeface may vary; required text reduced below this threshold fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "detail-page-content-and-readability",
+      "requirementId": "R-detail-page-content-and-readability",
+      "method": "visual",
+      "targetSlots": [
+        "product-detail"
+      ],
+      "criteria": "The upper image area contains recognizable front and back garment views, both required detail crops and all three distinct wearing states. Their scale must allow inspection of construction and movement effects. The lower information band contains the complete size table and separately identified model body measurements. Arrangement and relative crop sizes may vary; omitted states, substituted imagery, illegible details or missing lower-band records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "size-comparison"
+      ]
+    },
+    {
+      "id": "video-movement-identity-and-copy",
+      "requirementId": "R-video-movement-identity-and-copy",
+      "method": "manual",
+      "targetSlots": [
+        "movement-video"
+      ],
+      "criteria": "Review the complete 10-second vertical 9:16 video. It shows standing during 0–3 seconds, sitting during 3–6 seconds and forward reaching during 6–10 seconds, with the specified viewpoints and body positions. The same adult and Clay M garment persist, with off-white trousers, all front buttons fastened and cuffs fastened; construction matches the garment references. Every frame, including transitions and the ending, displays AI-generated model at the lower left in y 92–100%, with letters at least 5% of the shorter side. Other copy meets the 2% minimum and prescribed vertical information bands. The ending visibly carries the fixed brand, product and price. Editing style may vary; incorrect timing, missing movement, identity drift, altered construction, disclosure gaps or missing ending copy fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail"
+      ]
+    },
+    {
+      "id": "presentation-reuses-source-files",
+      "requirementId": "R-presentation-reuses-source-files",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation visibly reproduces both supplied process tables and each of the ten delivered final stills. Scaling and page arrangement may vary if the source content remains recognizable and readable. Merely naming a file, showing a replacement image or omitting any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-list",
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "size-comparison",
+        "product-detail",
+        "video-cover"
+      ]
+    },
+    {
+      "id": "presentation-pages-sequence-and-fact-map",
+      "requirementId": "R-presentation-pages-sequence-and-fact-map",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Count at least eight pages and confirm a three-frame sequence representing standing, sitting and reaching. A fact-location page must identify a final image or specific video segment for each fixed product, size and model fact. Coverage includes brand/product/channel, Clay and its code, composition, plain weave, 220 g/m² weight, matte surface, no stretch, cut and construction, all three SKU records and twelve garment values, measurement definitions, M sample/worn size, model measurements, styling, poses, fastening and disclosure. Locations must identify where the fact is carried rather than merely restating it. Page design may vary; missing fact categories, incorrect facts, vague locations or fewer than three sequence frames fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-garment-and-model-continuity",
+      "requirementId": "R-set-garment-and-model-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "product-detail",
+        "video-cover"
+      ],
+      "criteria": "The overview, detail, wearing and shopping images depict the same Clay overshirt with consistent construction and material appearance despite changes in viewpoint, lighting and folds. Standing, seated and reaching views, including those reused on the detail page and cover, show the same adult model and M garment with consistent supporting clothing and fastening.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "front-hero"
+      ]
+    },
+    {
+      "id": "set-planned-information-across-stills",
+      "requirementId": "R-set-planned-information-across-stills",
+      "method": "visual",
+      "targetSlots": [
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "size-comparison",
+        "product-detail",
+        "video-cover"
+      ],
+      "criteria": "The final stills implement their assigned shot-list roles, poses or crops and printed content, with the destinations and minimum letter heights recorded in the hierarchy. Repeated brand, product, price, composition, fit, garment records and model records agree across their required destinations, while body measurements remain distinct from garment measurements. The still-image family follows the prescribed information bands, image areas and conditional model disclosure requirements.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-list"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "fixed-overshirt-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "overshirt-front.png",
+        "overshirt-back.png",
+        "overshirt-collar.png",
+        "overshirt-cuff.png"
+      ],
+      "subjectSlots": [
+        "front-hero",
+        "back-overview",
+        "collar-detail",
+        "cuff-detail",
+        "standing-fit",
+        "seated-fit",
+        "reaching-fit",
+        "product-detail",
+        "video-cover"
+      ],
+      "notes": "Both overview images, both close-ups, all three wearing images, the detail page, cover and video preserve the Clay #8A6754 garment and the construction in the four identity attachments."
+    },
+    {
+      "id": "same-adult-model",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "standing-fit",
+      "subjectSlots": [
+        "seated-fit",
+        "reaching-fit",
+        "product-detail",
+        "video-cover"
+      ],
+      "notes": "All wearing views use size M on the same generated adult model, with height 172 cm, chest 92 cm, waist 76 cm and hips 98 cm."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "hierarchy-to-hero",
+      "fromSlot": "information-hierarchy",
+      "toSlots": [
+        "front-hero"
+      ],
+      "extract": [
+        "brand name",
+        "product name",
+        "price"
+      ],
+      "notes": "the hero repeats the name and price"
+    },
+    {
+      "id": "hierarchy-to-cover",
+      "fromSlot": "information-hierarchy",
+      "toSlots": [
+        "video-cover"
+      ],
+      "extract": [
+        "brand name",
+        "product name",
+        "price",
+        "fabric composition",
+        "fit descriptor"
+      ],
+      "notes": "the cover repeats the name, price, composition and fit"
+    },
+    {
+      "id": "hierarchy-to-detail",
+      "fromSlot": "information-hierarchy",
+      "toSlots": [
+        "product-detail"
+      ],
+      "extract": [
+        "brand name",
+        "product name",
+        "price",
+        "fabric composition",
+        "fit descriptor",
+        "size M flat chest width",
+        "size M back length",
+        "size M shoulder width",
+        "size M sleeve length"
+      ],
+      "notes": "the detail page repeats all of these facts."
+    }
+  ]
+}

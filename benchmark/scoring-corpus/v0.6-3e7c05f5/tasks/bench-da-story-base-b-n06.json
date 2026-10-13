@@ -1,0 +1,623 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-story-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "character-world",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "character-sheet",
+      "label": "Pip and Rowan character sheet",
+      "description": "A finished character sheet with three views and three expressions per traveler, heights and clothing colors.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shot-table",
+      "label": "Six-shot story table",
+      "description": "A six-row table of shot IDs, sizes, durations, characters, actions, dialogue, subtitle cues and luggage ownership.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "color-script",
+      "label": "Six-frame color script",
+      "description": "A six-frame color script mapping the three acts and two lighting colors onto the 36-second story.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "keyframe-rack",
+      "label": "S01 ownership at the rack",
+      "description": "A finished S01 keyframe of Pip and Rowan with their own cases at the Willow Quay luggage rack.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "keyframe-return",
+      "label": "S06 case exchange",
+      "description": "A finished S06 keyframe of the two cases returning to their owners on the Orchard End platform.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storyboard-complete",
+      "label": "Complete paired-composition storyboard",
+      "description": "A complete six-shot storyboard with six landscape–portrait composition pairs, metadata and subtitle boxes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "printed-title",
+      "kind": "text-verbatim",
+      "text": "THE NEXT STOP",
+      "scope": {
+        "slots": [
+          "character-sheet",
+          "shot-table",
+          "storyboard-complete"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "pip-dialogue",
+      "kind": "text-verbatim",
+      "text": "This one is yours.",
+      "scope": {
+        "slots": [
+          "shot-table",
+          "storyboard-complete"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "rowan-dialogue",
+      "kind": "text-verbatim",
+      "text": "Back where it belongs.",
+      "scope": {
+        "slots": [
+          "shot-table",
+          "storyboard-complete"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "THE NEXT STOP",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-story-system",
+      "slots": [
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "sourceSlots": [
+        "character-sheet",
+        "color-script"
+      ],
+      "items": [
+        {
+          "item": "Visible traveler identities follow the character sheet across keyframes and both storyboard orientations, allowing changes in pose and expression.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The keyframes and storyboard use the color script's shot-specific warm, cool and warm progression.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The paired storyboard compositions and finished keyframes agree on case identity, ownership stage and visible carriage or platform relationships.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "THE NEXT STOP"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Storyboard Creation",
+    "slots": [
+      "character-sheet",
+      "color-script",
+      "keyframe-rack",
+      "keyframe-return",
+      "storyboard-complete"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not rescore exact copy, recorded timing, identity fidelity, ownership continuity, geometry or safe-area compliance, and must not demand finished-animation polish from storyboard or animatic planning material."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "character-sheet",
+        "color-script",
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-character-sheet",
+      "requirementId": "R-format-character-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "character-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shot-table",
+      "requirementId": "R-format-shot-table",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shot-table"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-color-script",
+      "requirementId": "R-format-color-script",
+      "method": "artifact-property",
+      "targetSlots": [
+        "color-script"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-keyframe-rack",
+      "requirementId": "R-format-keyframe-rack",
+      "method": "artifact-property",
+      "targetSlots": [
+        "keyframe-rack"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-keyframe-return",
+      "requirementId": "R-format-keyframe-return",
+      "method": "artifact-property",
+      "targetSlots": [
+        "keyframe-return"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storyboard-complete",
+      "requirementId": "R-format-storyboard-complete",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storyboard-complete"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "tier6-character-sheet-and-appearances",
+      "requirementId": "R-tier6-character-sheet-and-appearances",
+      "method": "visual",
+      "targetSlots": [
+        "character-sheet",
+        "color-script",
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "criteria": "The sheet provides front, side and back views plus neutral, surprised and relieved expressions for each named traveler, with readable height and clothing-color labels. Pip is a 1000 mm cinnamon otter with a cream muzzle, mustard coat and navy square patch on his anatomical left elbow; Rowan is a 1200 mm dark-brown otter with a cream muzzle, round navy glasses and moss-green vest. Both retain the recorded 1:4 head-to-height proportions, bare rounded paws and short tapered tails. Compare visible features across the other images; pose, perspective and expression may vary, but missing required sheet views, incorrect labels, mirrored identity details or changed identities fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-shot-table-record",
+      "requirementId": "R-tier6-shot-table-record",
+      "method": "content",
+      "targetSlots": [
+        "shot-table"
+      ],
+      "criteria": "Read six rows against the supplied fixed shot record: S01 WS 0–6, S02 MS 6–12, S03 MS 12–18, S04 CU 18–24, S05 WS 24–30 and S06 MS 30–36 seconds, with both characters and the recorded actions, dialogue, subtitle intervals and ownership. Willow Quay precedes Juniper Halt and Orchard End; the travelers stay aboard at Juniper Halt. Star belongs to Pip and circle to Rowan, possession reverses in S03–S05, and the exchange restores ownership by 32 seconds. Pip's exact line is cued at 22–24 seconds and Rowan's at 32–35 seconds. Equivalent table organization is allowed; omitted fields, altered events, wrong speakers or timing contradictions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ]
+    },
+    {
+      "id": "tier6-storyboard-story-record",
+      "requirementId": "R-tier6-storyboard-story-record",
+      "method": "visual",
+      "targetSlots": [
+        "storyboard-complete"
+      ],
+      "criteria": "Both composition sequences show the six recorded beats: placing owned cases at Willow Quay, seated departure, wrong-case pickup while remaining aboard at Juniper Halt, tag recognition, meeting on Orchard End's platform and return followed by relieved smiles. Labels establish six successive six-second shots and a 36-second total. Both exact dialogue lines appear with their recorded speakers and 22–24 and 32–35 second cues. S06 establishes exchange at 30–32 seconds and the final panel carries the title at 35–36 seconds. A still may summarize a shot through staging and annotations; changed station order, premature restoration or missing required cues fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-panel-metadata-and-staging",
+      "requirementId": "R-tier6-panel-metadata-and-staging",
+      "method": "visual",
+      "targetSlots": [
+        "storyboard-complete",
+        "keyframe-rack",
+        "keyframe-return"
+      ],
+      "criteria": "Every landscape and portrait storyboard panel has its own readable shot ID, recorded WS/MS/CU size, six-second duration and character names. Shared views put Pip on the viewer's left and Rowan on the right. Visible tags distinguish the star and circle; oblique storyboard views supply a readable detail inset. Where shown, the rack remains forward-left with the yellow pole beside it, and platform sides are right at Willow Quay, left at Juniper Halt and right at Orchard End relative to travel. S01's keyframe establishes owned cases at the rack and S06's depicts their return at Orchard End. Cropping may omit environmental features, but visible contradictions or missing panel metadata fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-paired-composition-and-subtitles",
+      "requirementId": "R-tier6-paired-composition-and-subtitles",
+      "method": "visual",
+      "targetSlots": [
+        "storyboard-complete"
+      ],
+      "criteria": "Count six matched 16:9 and 9:16 shot pairs. Portrait panels independently arrange subjects and necessary action for their narrower frame; a crop that loses subjects or essential action fails. Measure safe areas relative to each panel, keeping story action inside 3.5% edge insets and all graphics inside 5% edge insets. S04 and S06 use bottom-centered subtitle boxes with no more than two lines, cued for 22–24 and 32–35 seconds respectively. The final title is upper-centered within graphics safety. Sheet-level whitespace does not substitute for panel-level margins.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-color-script-and-title",
+      "requirementId": "R-tier6-color-script-and-title",
+      "method": "visual",
+      "targetSlots": [
+        "color-script",
+        "character-sheet",
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "criteria": "The color script contains six identifiable frames in storyboard order, mapped across 0–36 seconds and three 12-second acts. Its warm-light specification is #F3D9A4 for S01–S02 and S05–S06, and its cool-light specification is #B9CDD8 for S03–S04. The two finished keyframes visibly follow the warm script treatment. Shading and local object colors may vary; reversing the act temperatures, missing shot mappings or contradicting printed lighting codes fails. The character sheet visibly prints the exact project title; the shot-table title is covered by its text constraint.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "matching-case-construction",
+      "requirementId": "R-matching-case-construction",
+      "method": "visual",
+      "targetSlots": [
+        "character-sheet",
+        "color-script",
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "criteria": "Where cases appear, they share the supplied rounded hard-shell construction: teal #356B70 base color, three raised vertical front ribs, two black lower-rear wheels, one fixed black top handle and a black side-seam zipper. Proportions and scale agree with 550 × 360 × 220 mm overall dimensions. Navy 60 × 45 mm handle tags carry centered ivory five-point star and circle symbols, with no other designed difference between cases. Perspective, lighting and natural occlusion are allowed; do not demand hidden wheels or numeric dimension labels in narrative images. Changed construction, implausible scale, added distinguishing colors or substituted ownership symbols fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "carriage-spatial-facts",
+      "requirementId": "R-carriage-spatial-facts",
+      "method": "visual",
+      "targetSlots": [
+        "character-sheet",
+        "color-script",
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "criteria": "Judge only depicted carriage geometry and station relationships. The interior should be compatible with the supplied 6000 × 2800 mm plan, centered 600 mm aisle, recorded paired seat-bank locations, forward-left rack at x 4800–5400 and y 0–1100 with a 450 mm shelf, adjacent pole at x 4500 and y 1000, and door-end openings at x 5400–6000. Camera placement remains compatible with the recorded interior aisle and right-side exterior camera areas. Platform left/right is measured facing travel, with Willow Quay and Orchard End on the right and Juniper Halt on the left. Perspective and partial views are allowed; visible spatial reversals or incompatible scale fail, while hidden geometry is not inferred as missing.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "family-story-performance",
+      "requirementId": "R-family-story-performance",
+      "method": "visual",
+      "targetSlots": [
+        "character-sheet",
+        "color-script",
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "criteria": "In narrative images, the mix-up reads as a mild comic misunderstanding, progressing through brief concern to shared relief. Hand actions, exchanged looks and tag details provide visible evidence of pickup, recognition or reconciliation appropriate to the depicted shot. Expression and staging may vary within that tone. Hostile, frightening or punitive treatment, or recognition conveyed without the requested visual performance cues across the relevant sequence, fails. Reference-sheet poses are not required to tell the entire story.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-tier6-story-system",
+      "requirementId": "R-set-tier6-story-system",
+      "method": "visual",
+      "targetSlots": [
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "criteria": "Visible traveler identities follow the character sheet across keyframes and both storyboard orientations, allowing changes in pose and expression. The keyframes and storyboard use the color script's shot-specific warm, cool and warm progression. The paired storyboard compositions and finished keyframes agree on case identity, ownership stage and visible carriage or platform relationships.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-story-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-story-base-b-n06/03-story-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "character-sheet",
+        "color-script"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "supplied-traveler-identities",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "travelers-identity.png"
+      ],
+      "subjectSlots": [
+        "character-sheet"
+      ],
+      "notes": "The existing characters and cases set the direction."
+    },
+    {
+      "id": "character-sheet-through-story",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorSlot": "character-sheet",
+      "subjectSlots": [
+        "color-script",
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "notes": "The character sheet contains six character views and six expressions, labels Pip at 1000 mm and Rowan at 1200 mm, and establishes the muzzle, clothing, patch and glasses anchors used in both keyframes, the color script and every storyboard appearance."
+    },
+    {
+      "id": "supplied-matching-case-identities",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "matching-cases-identity.png"
+      ],
+      "subjectSlots": [
+        "color-script",
+        "keyframe-rack",
+        "keyframe-return",
+        "storyboard-complete"
+      ],
+      "notes": "The existing characters and cases set the direction."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "shot-table-to-storyboard",
+      "fromSlot": "shot-table",
+      "toSlots": [
+        "storyboard-complete"
+      ],
+      "extract": [
+        "S01–S06 order and six-second shot intervals",
+        "case ownership and transfer by shot",
+        "two dialogue lines and their subtitle cue intervals"
+      ],
+      "notes": "Both reproduce the two dialogue lines and their cue times from 03-story-records.en.md; the storyboard's final panel carries THE NEXT STOP."
+    }
+  ]
+}

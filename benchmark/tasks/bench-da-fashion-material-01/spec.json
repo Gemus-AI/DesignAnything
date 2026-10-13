@@ -1,0 +1,1208 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-fashion-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "garment",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "materials-craft",
+      "label": "Materials and craft sheet",
+      "description": "One materials and craft sheet covering D01 and D02, stock quantities, F01–F03 measurements, seams and closure specifications.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "front-flats",
+      "label": "Six-garment front flat layouts",
+      "description": "One front flat-layout sheet of all three tops and three trousers with costume IDs, fabric labels and chest patches.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "back-flats",
+      "label": "Six-garment back flat layouts",
+      "description": "One back flat-layout sheet of all three tops and three trousers with costume IDs and fabric labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "worn-f01",
+      "label": "P01 wearing F01",
+      "description": "One full-body standing view of P01 wearing the F01 top and trousers with a readable chest patch.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "worn-f02",
+      "label": "P02 wearing F02",
+      "description": "One full-body standing view of P02 wearing the F02 top and trousers with a readable chest patch.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "worn-f03",
+      "label": "P03 wearing F03",
+      "description": "One full-body standing view of P03 wearing the F03 top and trousers with a readable chest patch.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cutting-d01",
+      "label": "D01 cutting and stock sheet",
+      "description": "One dimensioned cutting and stock sheet for D01-A and D01-B with panel outlines, quantities, grain arrows and remaining areas.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "cutting-d02",
+      "label": "D02 cutting and stock sheet",
+      "description": "One dimensioned cutting and stock sheet for D02-A with panel outlines, quantities, grain arrows and remaining area.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "overhead-reach",
+      "label": "Ensemble overhead reach",
+      "description": "One ensemble movement sheet of P01, P02 and P03 reaching overhead in F01, F02 and F03.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "deep-squat",
+      "label": "Ensemble deep squat",
+      "description": "One ensemble movement sheet of P01, P02 and P03 in deep squat with hips below knees and heels grounded.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "underarm-detail",
+      "label": "Underarm panel connection",
+      "description": "One enlarged underarm junction detail with fabric and panel IDs, 10 mm seam allowance and stitch paths.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "crotch-detail",
+      "label": "Crotch and inner-leg connection",
+      "description": "One enlarged crotch and inner-leg junction detail with fabric and panel IDs, 10 mm seam allowance and stitch paths.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ensemble-video",
+      "label": "Twelve-second ensemble movement",
+      "description": "One 12-second video of the three costumes through standing, overhead reach, deep squat and staggered rise.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "collection-presentation",
+      "label": "Ten-page collection presentation",
+      "description": "One 10-page collection presentation reusing every earlier deliverable category and ending with the three-roll stock balance.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "collection-name",
+      "kind": "text-verbatim",
+      "text": "FOLDLINE",
+      "scope": {
+        "slots": [
+          "front-flats",
+          "worn-f01",
+          "worn-f02",
+          "worn-f03",
+          "collection-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "patch-message",
+      "kind": "text-verbatim",
+      "text": "Move together",
+      "scope": {
+        "slots": [
+          "front-flats",
+          "worn-f01",
+          "worn-f02",
+          "worn-f03",
+          "collection-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FOLDLINE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "garment-and-construction-system",
+      "slots": [
+        "back-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "overhead-reach",
+        "deep-squat",
+        "underarm-detail",
+        "crotch-detail"
+      ],
+      "sourceSlots": [
+        "front-flats",
+        "materials-craft",
+        "cutting-d01",
+        "cutting-d02"
+      ],
+      "items": [
+        {
+          "item": "F01, F02 and F03 retain compatible garment silhouettes, D01/D02 panel boundaries and closure locations across the collection.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Enlarged junctions match the garments and the cutting-piece identifiers, seam allowances and construction specifications.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Each complete costume uses both stock fabrics and remains assigned to its specified performer.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "ensemble-panel-rhythm",
+      "slots": [
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "overhead-reach",
+        "deep-squat"
+      ],
+      "sourceSlots": [
+        "front-flats"
+      ],
+      "items": [
+        {
+          "item": "The relationship between pale and dark panels remains recognizable across the three costumes and changing body positions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The movement sheets preserve the specified performer order, straight-line formation and centre spacing.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FOLDLINE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Fashion Styling",
+    "slots": [
+      "front-flats",
+      "back-flats",
+      "worn-f01",
+      "worn-f02",
+      "worn-f03",
+      "overhead-reach",
+      "deep-squat",
+      "underarm-detail",
+      "crotch-detail"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge exact wording, numerical fit allowances, stock arithmetic, page count or video timing, which are assessed by the explicit acceptance rules."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "materials-craft",
+        "front-flats",
+        "back-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "cutting-d01",
+        "cutting-d02",
+        "overhead-reach",
+        "deep-squat",
+        "underarm-detail",
+        "crotch-detail",
+        "collection-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "back-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "overhead-reach",
+        "deep-squat",
+        "underarm-detail",
+        "crotch-detail"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-materials-craft",
+      "requirementId": "R-format-materials-craft",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-front-flats",
+      "requirementId": "R-format-front-flats",
+      "method": "artifact-property",
+      "targetSlots": [
+        "front-flats"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-back-flats",
+      "requirementId": "R-format-back-flats",
+      "method": "artifact-property",
+      "targetSlots": [
+        "back-flats"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-worn-f01",
+      "requirementId": "R-format-worn-f01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "worn-f01"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-worn-f02",
+      "requirementId": "R-format-worn-f02",
+      "method": "artifact-property",
+      "targetSlots": [
+        "worn-f02"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-worn-f03",
+      "requirementId": "R-format-worn-f03",
+      "method": "artifact-property",
+      "targetSlots": [
+        "worn-f03"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cutting-d01",
+      "requirementId": "R-format-cutting-d01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cutting-d01"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-cutting-d02",
+      "requirementId": "R-format-cutting-d02",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cutting-d02"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-overhead-reach",
+      "requirementId": "R-format-overhead-reach",
+      "method": "artifact-property",
+      "targetSlots": [
+        "overhead-reach"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-deep-squat",
+      "requirementId": "R-format-deep-squat",
+      "method": "artifact-property",
+      "targetSlots": [
+        "deep-squat"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-underarm-detail",
+      "requirementId": "R-format-underarm-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "underarm-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-crotch-detail",
+      "requirementId": "R-format-crotch-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "crotch-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ensemble-video",
+      "requirementId": "R-format-ensemble-video",
+      "method": "manual",
+      "targetSlots": [
+        "ensemble-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-collection-presentation",
+      "requirementId": "R-format-collection-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "materials-and-craft-record",
+      "requirementId": "R-materials-and-craft-record",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "The sheet identifies D01 as deep indigo denim, 340 g/m², 1450 mm wide, with two 4000 mm rolls, and D02 as faded blue denim, 270 g/m², 1350 mm wide, with one 3000 mm roll. Both are recorded as prewashed right-hand twill, 98% cotton and 2% elastane. It maps P01/F01, P02/F02 and P03/F03, states each costume's chosen finished hip and knee circumferences, specifies a 10 mm seam allowance, and gives usable seam and closure specifications. Seam and closure choices may vary; missing fields or inventory contradictions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ]
+    },
+    {
+      "id": "construction-within-available-supplies",
+      "requirementId": "R-construction-within-available-supplies",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft"
+      ],
+      "criteria": "Specified construction uses the supplied stock and compatible supplies: indigo polyester Tex 40 sewing thread, pale-blue polyester Tex 60 topstitching thread, up to three indigo closed-end 200 mm coil zips, up to eighteen complete matte-black 12 mm press-stud sets, up to 3000 mm of black 30 mm elastic, and opaque-white printing ink. Any stated consumption must remain within the recorded quantities, including 2000 m sewing thread, 1000 m topstitching thread and 100 ml ink. Using only a subset is allowed; specifying unavailable substitutes or exceeding available quantities fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ]
+    },
+    {
+      "id": "required-record-identifiers",
+      "requirementId": "R-required-record-identifiers",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft",
+        "cutting-d01",
+        "cutting-d02",
+        "collection-presentation",
+        "underarm-detail",
+        "crotch-detail"
+      ],
+      "criteria": "The materials sheet, each cutting sheet and the presentation explicitly state both fabric IDs, all three costume IDs and the 10 mm seam allowance. Each enlarged detail explicitly states D01, D02 and the same allowance. A clear range notation for the three costume IDs is acceptable; omission, substitution or a conflicting allowance fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ]
+    },
+    {
+      "id": "cutting-placement-and-stock-accounting",
+      "requirementId": "R-cutting-placement-and-stock-accounting",
+      "method": "content",
+      "targetSlots": [
+        "cutting-d01",
+        "cutting-d02",
+        "collection-presentation"
+      ],
+      "criteria": "Dimensioned, identified cutting outlines and quantities account for all six garments and three self-fabric patches. D01-A and D01-B remain separate layouts, each inside a 1400 × 3900 mm usable rectangle; D02-A uses 1300 × 2900 mm. These areas respect the 25 mm long-edge and 50 mm end exclusions within the full rolls. Allocated pieces do not overlap or cross usable boundaries, and grain arrows keep warp parallel to roll length. Area calculations use cutting outlines including seam allowances. Each roll's allocated and remaining areas reconcile to 5.460, 5.460 or 3.770 m² respectively, totaling 14.690 m². Different valid nesting arrangements are allowed; omitted quantities, pooled D01 rolls, impossible placement or inconsistent arithmetic fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "sourceSlots": [
+        "front-flats",
+        "back-flats",
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "finished-fit-and-seam-line-dimensions",
+      "requirementId": "R-finished-fit-and-seam-line-dimensions",
+      "method": "content",
+      "targetSlots": [
+        "materials-craft",
+        "cutting-d01",
+        "cutting-d02",
+        "collection-presentation"
+      ],
+      "criteria": "Both summary documents state chosen hip/knee circumferences meeting F01 ≥1060/450 mm, F02 ≥1160/480 mm and F03 ≥1280/520 mm. Corresponding cutting-sheet seam-line dimensions, assembled using the indicated quantities, support those same finished values without counting seam allowances as ease. Larger circumferences are allowed. Values below a minimum, mismatched costume assignments, missing seam-line dimensions or contradictory assembled totals fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ]
+    },
+    {
+      "id": "complete-front-and-back-flats",
+      "requirementId": "R-complete-front-and-back-flats",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "back-flats"
+      ],
+      "criteria": "The front sheet shows front flats of three tops and three trousers; the back sheet shows their back flats. Every garment is attributable to F01, F02 or F03, and panels are labeled with their applicable fabric ID. Patch dimensions are provided where the left-chest patches are depicted on the front sheet. Layout and silhouette choices are free; missing garments, wrong view orientation or ambiguous costume/fabric labeling fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "standing-performer-assignments",
+      "requirementId": "R-standing-performer-assignments",
+      "method": "visual",
+      "targetSlots": [
+        "worn-f01",
+        "worn-f02",
+        "worn-f03"
+      ],
+      "criteria": "Each role shows its assigned performer standing in the corresponding complete costume: P01/F01, P02/F02 or P03/F03. Both top and trousers can be inspected together. Pose and framing may vary while preserving this evidence; a missing garment, incorrect assignment or framing that prevents inspection fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "garment-continuity-across-images",
+      "requirementId": "R-garment-continuity-across-images",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "back-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "overhead-reach",
+        "deep-squat"
+      ],
+      "criteria": "Each costume remains identifiable across its flats, standing view and both ensemble poses through compatible silhouettes, fabric-panel boundaries and closure locations. Front and back information describes one constructible garment pair per costume. Drape, foreshortening and pose-related occlusion are allowed; changing garment identity, fabric allocation or closure placement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "movement-sheet-poses-and-junction-links",
+      "requirementId": "R-movement-sheet-poses-and-junction-links",
+      "method": "visual",
+      "targetSlots": [
+        "overhead-reach",
+        "deep-squat",
+        "underarm-detail",
+        "crotch-detail"
+      ],
+      "criteria": "The reach sheet shows all three assigned costumes with both arms extended overhead, separated hands and grounded feet. The squat sheet shows all three with hips below knees, grounded heels and arms forward. Costume IDs and relevant underarm, hip and knee construction remain inspectable. Panel IDs on both enlarged junctions link unambiguously to the depicted garments. Natural deformation is allowed; missing performers, incorrect poses or unmatched junction identifiers fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "front-flats",
+        "back-flats"
+      ]
+    },
+    {
+      "id": "connection-detail-construction",
+      "requirementId": "R-connection-detail-construction",
+      "method": "visual",
+      "targetSlots": [
+        "underarm-detail",
+        "crotch-detail"
+      ],
+      "criteria": "The underarm detail resolves the underarm panel connection, and the crotch detail resolves the crotch and inner-leg connection. Each shows applicable fabric IDs, a 10 mm seam allowance and readable stitch paths consistent with the craft specification. Panel identifiers locate the corresponding cutting pieces. Drawing style and seam method may vary; generic unlinked close-ups, missing stitch information or incompatible piece connections fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "cutting-d01",
+        "cutting-d02",
+        "materials-craft"
+      ]
+    },
+    {
+      "id": "left-chest-patch-appearance",
+      "requirementId": "R-left-chest-patch-appearance",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03"
+      ],
+      "criteria": "Every depicted top has one patch on the wearer's left chest. The front flats dimension the finished patch as 80 × 25 mm, and standing views show a consistent size and placement. Each patch legibly places FOLDLINE on the first line and Move together below it. Typography may vary; reversed placement, incorrect line order, missing patches or unreadable required wording fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "presentation-opening-copy",
+      "requirementId": "R-presentation-opening-copy",
+      "method": "content",
+      "targetSlots": [
+        "collection-presentation"
+      ],
+      "criteria": "The opening page visibly includes the exact collection name FOLDLINE and phrase Move together. Their page layout is unrestricted; wording appearing only on later pages, omission or altered spelling fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ]
+    },
+    {
+      "id": "two-fabric-costumes",
+      "requirementId": "R-two-fabric-costumes",
+      "method": "visual",
+      "targetSlots": [
+        "front-flats",
+        "back-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03"
+      ],
+      "criteria": "Each complete costume visibly uses both deep indigo and faded blue denim, with its fabric allocation consistent between labels and worn appearance. The distribution between top and trousers is open. A costume using only one stock fabric, swapped fabric identities or an unexplained additional garment fabric fails; numeric ease is assessed from the measurement records.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "ensemble-left-to-right-order",
+      "requirementId": "R-ensemble-left-to-right-order",
+      "method": "visual",
+      "targetSlots": [
+        "overhead-reach",
+        "deep-squat"
+      ],
+      "criteria": "From the audience viewpoint, the three assigned performers appear in P01, P02, P03 order. Perspective may vary while keeping this order verifiable; reversed or exchanged positions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "ensemble-centre-spacing",
+      "requirementId": "R-ensemble-centre-spacing",
+      "method": "visual",
+      "targetSlots": [
+        "overhead-reach",
+        "deep-squat"
+      ],
+      "criteria": "Adjacent performer centres are depicted consistently with 1200 mm spacing, using any supplied scale cues or annotations and allowing perspective compression. An exact pixel separation is not required. Clearly conflicting dimensions or substantially unequal physical spacing fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "ensemble-straight-line",
+      "requirementId": "R-ensemble-straight-line",
+      "method": "visual",
+      "targetSlots": [
+        "overhead-reach",
+        "deep-squat"
+      ],
+      "criteria": "All three performers occupy a single straight formation on the stage plane. Perspective projection is allowed; a triangular, curved or staggered-depth formation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "video-sequence-and-costume-continuity",
+      "requirementId": "R-video-sequence-and-costume-continuity",
+      "method": "manual",
+      "targetSlots": [
+        "ensemble-video"
+      ],
+      "criteria": "Review the full 12-second timeline: 0–3 seconds shows neutral upright standing with arms beside the body and feet shoulder-width apart; 3–6 shows both arms overhead with hands separated and feet grounded; 6–9 shows hips below knees, heels grounded and arms forward; 9–12 shows staggered rising initiated by P01 at 9 seconds, P02 at 10 and P03 at 11, with everyone standing at 12. The audience order is P01/P02/P03 in one straight line with 1200 mm centre spacing. The same assigned tops, trousers, fabric boundaries and closures persist from the source images. Natural continuous transitions are allowed; incorrect phase timing, simultaneous rise starts, missing performers or costume changes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "front-flats",
+        "back-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "overhead-reach",
+        "deep-squat"
+      ]
+    },
+    {
+      "id": "presentation-reuses-developed-work",
+      "requirementId": "R-presentation-reuses-developed-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "collection-presentation"
+      ],
+      "criteria": "The presentation visibly incorporates recognizable material from the earlier sheets and views, plus stills traceable to the delivered video. Cropping, scaling and combining several items on a page are allowed when source identity and relevant information remain recognizable. A written mention without visible reuse, unrelated replacement artwork or a missing source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "sourceSlots": [
+        "materials-craft",
+        "front-flats",
+        "back-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "cutting-d01",
+        "cutting-d02",
+        "overhead-reach",
+        "deep-squat",
+        "underarm-detail",
+        "crotch-detail"
+      ]
+    },
+    {
+      "id": "presentation-length-and-closing-balance",
+      "requirementId": "R-presentation-length-and-closing-balance",
+      "method": "content",
+      "targetSlots": [
+        "collection-presentation"
+      ],
+      "criteria": "The presentation contains exactly ten pages and ends with an individually identified balance for D01-A, D01-B and D02-A. The closing figures agree with the cutting sheets and reconcile allocated plus remaining usable stock for each roll. Presented costume specifications and depictions preserve the developed six-garment collection. Page composition is free; an incorrect page count, an absent roll, contradictory totals or changed costume specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "sourceSlots": [
+        "materials-craft",
+        "cutting-d01",
+        "cutting-d02",
+        "front-flats",
+        "back-flats"
+      ]
+    },
+    {
+      "id": "panel-rhythm-through-movement",
+      "requirementId": "R-panel-rhythm-through-movement",
+      "method": "visual",
+      "targetSlots": [
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "overhead-reach",
+        "deep-squat"
+      ],
+      "criteria": "The three costumes establish a discernible relationship of pale and dark panel placement, and that relationship remains recognizable across standing, reaching and squatting. Identical panel arrangements are not required, and folds may partially obscure panels. Unrelated costume arrangements or movement depictions that replace the established light-dark pattern fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-garment-and-construction-system",
+      "requirementId": "R-set-garment-and-construction-system",
+      "method": "visual",
+      "targetSlots": [
+        "back-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "overhead-reach",
+        "deep-squat",
+        "underarm-detail",
+        "crotch-detail"
+      ],
+      "criteria": "F01, F02 and F03 retain compatible garment silhouettes, D01/D02 panel boundaries and closure locations across the collection. Enlarged junctions match the garments and the cutting-piece identifiers, seam allowances and construction specifications. Each complete costume uses both stock fabrics and remains assigned to its specified performer.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "front-flats",
+        "materials-craft",
+        "cutting-d01",
+        "cutting-d02"
+      ]
+    },
+    {
+      "id": "set-ensemble-panel-rhythm",
+      "requirementId": "R-set-ensemble-panel-rhythm",
+      "method": "visual",
+      "targetSlots": [
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "overhead-reach",
+        "deep-squat"
+      ],
+      "criteria": "The relationship between pale and dark panels remains recognizable across the three costumes and changing body positions. The movement sheets preserve the specified performer order, straight-line formation and centre spacing.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-fashion-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-fashion-material-01/03-performers-and-movement.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "front-flats"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "six-garment-continuity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "front-flats",
+      "subjectSlots": [
+        "back-flats",
+        "worn-f01",
+        "worn-f02",
+        "worn-f03",
+        "overhead-reach",
+        "deep-squat",
+        "underarm-detail",
+        "crotch-detail"
+      ],
+      "notes": "Carry the same six garments, D01/D02 panel boundaries and closure positions through the front and back flat layouts, standing worn views, both movement sheets, video and presentation."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "identifiers-and-allowance",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "cutting-d01",
+        "cutting-d02",
+        "collection-presentation"
+      ],
+      "extract": [
+        "fabric identifiers D01 and D02",
+        "costume identifiers F01, F02 and F03",
+        "10 mm seam allowance"
+      ],
+      "notes": "Record D01 and D02, F01–F03 and the 10 mm seam allowance on the materials and craft sheet; repeat these identifiers and the allowance on the cutting sheets and collection presentation, with D01/D02 and 10 mm also stated on both connection details."
+    },
+    {
+      "id": "detail-fabrics-and-allowance",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "underarm-detail",
+        "crotch-detail"
+      ],
+      "extract": [
+        "fabric identifiers D01 and D02",
+        "10 mm seam allowance"
+      ],
+      "notes": "Record D01 and D02, F01–F03 and the 10 mm seam allowance on the materials and craft sheet; repeat these identifiers and the allowance on the cutting sheets and collection presentation, with D01/D02 and 10 mm also stated on both connection details."
+    },
+    {
+      "id": "finished-measurements",
+      "fromSlot": "materials-craft",
+      "toSlots": [
+        "cutting-d01",
+        "cutting-d02",
+        "collection-presentation"
+      ],
+      "extract": [
+        "chosen finished hip circumference for each of F01, F02 and F03",
+        "chosen finished knee circumference for each of F01, F02 and F03"
+      ],
+      "notes": "Give F01, F02 and F03 finished hip circumferences of at least 1060, 1160 and 1280 mm, and finished knee circumferences of at least 450, 480 and 520 mm respectively on the materials and craft sheet and collection presentation; dimension the corresponding seam-line measurements on the cutting sheets."
+    }
+  ]
+}

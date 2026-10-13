@@ -1,0 +1,671 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-product-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "glasses-anatomy",
+      "label": "Complete glasses anatomy",
+      "description": "One anatomy board combining three orthographic views, dimensions, eight glasses modules, schematic wiring, materials and an exploded B01 replacement detail.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ready-w1",
+      "label": "W1 everyday READY wearing board",
+      "description": "One W1 everyday READY board with an adult wearing the open glasses in a three-quarter upper-body view and a nose/ear contact inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "capture-operation",
+      "label": "CAPTURE operation board",
+      "description": "One CAPTURE board showing the reachable capture button, exposed camera aperture and steadily white front indicator.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "privacy-w2",
+      "label": "W2 work pause PRIVACY board",
+      "description": "One W2 work pause PRIVACY board showing worn glasses, the closed shutter, its position mark and inhibited capture with a hand near the button.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "case-charging",
+      "label": "Open-case charging board",
+      "description": "One open charging board showing seated folded glasses, mating contacts, three case modules, cavity clearances, supports and removal access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "case-stored",
+      "label": "Closed-case stored/idle board",
+      "description": "One closed stored/idle board with the external indicator off, outer dimensions, material and colour callouts and an empty open-case inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "LUMA",
+      "scope": {
+        "slots": [
+          "glasses-anatomy",
+          "case-stored"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "battery-replacement-label",
+      "kind": "text-verbatim",
+      "text": "User-replaceable B01",
+      "scope": {
+        "slots": [
+          "glasses-anatomy"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "ready-label",
+      "kind": "text-verbatim",
+      "text": "READY",
+      "scope": {
+        "slots": [
+          "ready-w1"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "capture-label",
+      "kind": "text-verbatim",
+      "text": "CAPTURE",
+      "scope": {
+        "slots": [
+          "capture-operation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "privacy-label",
+      "kind": "text-verbatim",
+      "text": "PRIVACY",
+      "scope": {
+        "slots": [
+          "privacy-w2"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "charging-label",
+      "kind": "text-verbatim",
+      "text": "charging",
+      "scope": {
+        "slots": [
+          "case-charging"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": false,
+      "critical": false
+    },
+    {
+      "id": "stored-idle-label",
+      "kind": "text-verbatim",
+      "text": "stored/idle",
+      "scope": {
+        "slots": [
+          "case-stored"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": false,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "LUMA",
+      "maxEditDistance": 1,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-board-product-system",
+      "slots": [
+        "glasses-anatomy",
+        "ready-w1",
+        "capture-operation",
+        "privacy-w2",
+        "case-charging",
+        "case-stored"
+      ],
+      "items": [
+        {
+          "item": "The same glasses geometry, module locations, openings, seams, hinges and selected palette persist through wearing, operation, folding and storage; only the prescribed state-dependent features change.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The chosen folded dimensions agree across anatomy and case records, and the charging and empty-case depictions preserve one interior with matching contacts, supports and removal access.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The product uses the prescribed shell, hinge and contact materials, and its camera, privacy slider and separate case indicator obey their assigned operating states.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "LUMA"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "glasses-anatomy",
+      "ready-w1",
+      "capture-operation",
+      "privacy-w2",
+      "case-charging",
+      "case-stored"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the documented nominal product design, not measured mass, proven comfort, electrical safety, battery performance or completed prototype validation."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "glasses-anatomy",
+        "ready-w1",
+        "capture-operation",
+        "privacy-w2",
+        "case-charging",
+        "case-stored"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-glasses-anatomy",
+      "requirementId": "R-format-glasses-anatomy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "glasses-anatomy"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ready-w1",
+      "requirementId": "R-format-ready-w1",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ready-w1"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-capture-operation",
+      "requirementId": "R-format-capture-operation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "capture-operation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-privacy-w2",
+      "requirementId": "R-format-privacy-w2",
+      "method": "artifact-property",
+      "targetSlots": [
+        "privacy-w2"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-case-charging",
+      "requirementId": "R-format-case-charging",
+      "method": "artifact-property",
+      "targetSlots": [
+        "case-charging"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-case-stored",
+      "requirementId": "R-format-case-stored",
+      "method": "artifact-property",
+      "targetSlots": [
+        "case-stored"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "complete-eyewear-scope",
+      "requirementId": "R-complete-eyewear-scope",
+      "method": "visual",
+      "targetSlots": [
+        "glasses-anatomy"
+      ],
+      "criteria": "Show a complete adult eyewear concept with two transparent lenses without displays, a bridge, two folding temples, paired nose and ear contact regions, integrated components and identifiable physical controls. Form and hinge design may vary. Missing eyewear parts, display lenses, visibly intersecting folded temples or rigid modules crossing moving hinges fail; actual comfort is not established by a rendering.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "mass-target-boundary",
+      "requirementId": "R-mass-target-boundary",
+      "method": "diagnostic",
+      "targetSlots": [
+        "glasses-anatomy"
+      ],
+      "criteria": "Record 42 g as the maximum design target. Delivered drawings cannot establish measured mass, and the supplied facts explicitly leave mass unmeasured; this diagnostic does not require a weighing result or fail an image for apparent weight.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ]
+    },
+    {
+      "id": "connected-assistance-scope",
+      "requirementId": "R-connected-assistance-scope",
+      "method": "diagnostic",
+      "targetSlots": [
+        "capture-operation"
+      ],
+      "criteria": "Interpret the concept as deliberate image capture followed by a user-initiated spoken question with paired-phone assistance. This input defines the interaction context without requiring an additional phone interface deliverable or proof of functioning electronics.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ]
+    },
+    {
+      "id": "tier6-anatomy-dimensions-and-modules",
+      "requirementId": "R-tier6-anatomy-dimensions-and-modules",
+      "method": "visual",
+      "targetSlots": [
+        "glasses-anatomy"
+      ],
+      "criteria": "Front, top and right orthographic views must record an actual front width of 140–150 mm, both hinge-axis-to-tip centreline lengths of 135–150 mm, maximum temple sections no greater than 18 mm high and 12 mm thick, and an actual folded width/depth/height no greater than 150/60/48 mm. Show exactly one each of C01 28×8×5, B01 and B02 30×7×4, S01 and S02 16×5×3, K01 8×8×6, M01 4×3×2 and I01 3×2×1 mm. C01 may occupy either temple; batteries and speakers retain their assigned left/right regions, with speakers near the ears; K01 occupies an outer front corner, M01 the frame or forward temple, and I01 the front beside K01. Original local dimensions and labelled axes must survive any rotation. Schematic wiring and credible 1 mm minimum envelope gaps and enclosure must be visible; functional openings may interrupt enclosure. Missing instances, substituted dimensions or contradictory view geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-optics-access-and-materials",
+      "requirementId": "R-tier6-optics-access-and-materials",
+      "method": "visual",
+      "targetSlots": [
+        "glasses-anatomy",
+        "capture-operation"
+      ],
+      "criteria": "Both boards must resolve the same forward-facing 4 mm camera aperture and outward front indicator whose centre is within 12 mm of the aperture centre. The indicated button reach must avoid covering the aperture or pressing the lenses. Anatomy callouts must assign satin TR90 to frame and temple shells, anodised aluminium to hinges and silicone to nose/ear contacts. Its exploded B01 detail must distinguish a user-accessible cover, a detachable connection and a removal arrow, with the required replacement wording beside that detail. Different viewing angles are allowed; a label without the service arrangement or an obstructing reach fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-wearing-and-state-behaviour",
+      "requirementId": "R-tier6-wearing-and-state-behaviour",
+      "method": "visual",
+      "targetSlots": [
+        "ready-w1",
+        "capture-operation",
+        "privacy-w2"
+      ],
+      "criteria": "Read the assigned labels and compare three distinct states: W1/READY has an uncovered camera and unlit front indicator; CAPTURE has an uncovered camera, visible reachable button and steady white front indicator; W2/PRIVACY has an opaque slider covering the entire aperture, an unlit indicator still externally visible, a position mark and explicit visual or written evidence that pressing the button activates neither camera nor microphone. W1 must show an adult standing in a quiet urban pause, open glasses in a three-quarter upper-body view and a nose/ear inset. W2 must show an adult seated at a desk wearing the glasses with a hand near the button. Clothing and facial geometry may vary; ambiguous inhibition, incorrect light colours or missing assigned codes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-charging-interface",
+      "requirementId": "R-tier6-charging-interface",
+      "method": "visual",
+      "targetSlots": [
+        "case-charging"
+      ],
+      "criteria": "An open-case view and mating section must show exactly two flush circular pads on the right-temple underside, each 2 mm in diameter, with 6 mm centre spacing along the temple. Read both selected hinge distances: each must be within 60 mm, and P+ must be nearer the hinge. Two 1.2 mm case tips must share the spacing, mate to corresponding polarities and meet parallel pad faces. A visible locating feature must establish orientation. Show fully folded, shutter-closed glasses seated with both contacts mated and a separate steady amber case indicator; unplugged charging must use the case battery. Key shape and seating construction are open choices, but reversed polarity, open glasses or pre-contact charging indication fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-case-fit-and-interior",
+      "requirementId": "R-tier6-case-fit-and-interior",
+      "method": "visual",
+      "targetSlots": [
+        "case-charging",
+        "case-stored"
+      ],
+      "criteria": "Both boards must repeat the anatomy's actual folded dimensions and identify one CB01 45×25×6 mm, one CC01 20×15×4 mm and one U01 12×5×7 mm. Their interior evidence must retain 1 mm module separation and enclosure except functional openings, with U01's USB-C-shaped mouth exposed at the case wall. Read cavity dimensions and six individual clearances of at least 2 mm; only explicitly marked support/contact interfaces may be exceptions. The chosen closed envelope must not exceed 170×85×65 mm and must contain the glasses and components. Show frame/temple supports without direct lens pressure, finger access for removal, and an empty open-case inset with the same supports, contacts and key. Stored/idle must show a closed case with its externally visible indicator off and coordinated material/colour callouts. Missing dimensional evidence or inconsistent interiors fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "glasses-anatomy"
+      ]
+    },
+    {
+      "id": "tier6-product-continuity-and-marking",
+      "requirementId": "R-tier6-product-continuity-and-marking",
+      "method": "visual",
+      "targetSlots": [
+        "glasses-anatomy",
+        "ready-w1",
+        "capture-operation",
+        "privacy-w2",
+        "case-charging",
+        "case-stored"
+      ],
+      "criteria": "Track one glasses design and one matching case through all six boards. Visible geometry, component locations, apertures, seams, hinges and colour assignments must agree wherever exposed; folding, slider motion, lighting and perspective may change only as the illustrated state requires. LUMA must appear as a product marking on the anatomy glasses and stored case, rather than solely as a board title. Any unexplained redesign or misplaced branding fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-six-board-product-system",
+      "requirementId": "R-set-six-board-product-system",
+      "method": "visual",
+      "targetSlots": [
+        "glasses-anatomy",
+        "ready-w1",
+        "capture-operation",
+        "privacy-w2",
+        "case-charging",
+        "case-stored"
+      ],
+      "criteria": "The same glasses geometry, module locations, openings, seams, hinges and selected palette persist through wearing, operation, folding and storage; only the prescribed state-dependent features change. The chosen folded dimensions agree across anatomy and case records, and the charging and empty-case depictions preserve one interior with matching contacts, supports and removal access. The product uses the prescribed shell, hinge and contact materials, and its camera, privacy slider and separate case indicator obey their assigned operating states.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/03-module-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/module-envelopes.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-base-a-n06/charging-interface.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "selected-glasses-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "glasses-anatomy",
+      "subjectSlots": [
+        "ready-w1",
+        "capture-operation",
+        "privacy-w2",
+        "case-charging"
+      ],
+      "notes": "Across all six boards, preserve the same frame, module positions, openings, seams, hinge construction and palette; show LUMA on the glasses in the anatomy board and on the case in the stored/idle board."
+    },
+    {
+      "id": "selected-case-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "case-charging",
+      "subjectSlots": [
+        "case-stored"
+      ],
+      "notes": "Across the four case boards and video, preserve the keyed seat, parallel mating faces, lens-clear frame supports and removal access; show amber charging indication after docking and the visible indicator off in closed stored/idle."
+    }
+  ]
+}

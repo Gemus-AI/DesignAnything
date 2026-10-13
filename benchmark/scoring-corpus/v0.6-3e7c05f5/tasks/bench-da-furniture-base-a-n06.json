@@ -1,0 +1,550 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-furniture-base-a-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "state-work",
+      "label": "W work state",
+      "description": "One dimensioned W state drawing with furniture views, room placement, chair positions and work-item locations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "state-dining",
+      "label": "D dining state",
+      "description": "One dimensioned D state drawing with two place settings, room placement, active chairs and concealed work-item locations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "state-stored",
+      "label": "S stored state",
+      "description": "One dimensioned S state drawing with the complete assembled envelope, S1 room placement, parked chairs and internal work kit.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "conversion-storage",
+      "label": "W-to-D conversion and storage",
+      "description": "One W-to-D conversion board with assembly tracking, six-item storage allocation, compartment dimensions and access paths.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-connections",
+      "label": "Materials and connections",
+      "description": "One two-page materials and connections sheet with assembly quantities, dimensions, finishes, fasteners and two operational joint details.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "relocation-sequence",
+      "label": "S1-to-corridor relocation",
+      "description": "One complete relocation board with the S1 starting position, dimensioned modules, hardware pouch, packed tote, holding positions and moving route.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "COMMONHOUR",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "conversion-wording",
+      "kind": "text-verbatim",
+      "text": "Work away, dinner ready",
+      "scope": {
+        "slots": [
+          "conversion-storage"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMONHOUR",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-integrated-table",
+      "slots": [
+        "state-work",
+        "state-dining",
+        "state-stored",
+        "conversion-storage",
+        "relocation-sequence"
+      ],
+      "sourceSlots": [
+        "materials-connections"
+      ],
+      "items": [
+        {
+          "item": "The state drawings, conversion and relocation describe one table with stable assembly identities, quantities, dimensions and actual connections.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Work objects retain their identities and counts as they move from W to concealed D/S storage and then into the relocation tote.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Room placement, chair states and the relocation start agree with the fixed client coordinates and protected areas.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMONHOUR",
+    "carryThrough": {
+      "none": "Every declared carry-through of the family reads from or writes to roles that tier 6 does not commission."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "state-work",
+      "state-dining",
+      "state-stored",
+      "conversion-storage",
+      "relocation-sequence"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not prefer a particular expansion mechanism or silhouette, require photorealism from technical drawings, or rescore the text, dimensions, inventories and continuity covered by these rules."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "state-work",
+        "state-dining",
+        "state-stored",
+        "conversion-storage",
+        "relocation-sequence"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-state-work",
+      "requirementId": "R-format-state-work",
+      "method": "artifact-property",
+      "targetSlots": [
+        "state-work"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-state-dining",
+      "requirementId": "R-format-state-dining",
+      "method": "artifact-property",
+      "targetSlots": [
+        "state-dining"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-state-stored",
+      "requirementId": "R-format-state-stored",
+      "method": "artifact-property",
+      "targetSlots": [
+        "state-stored"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-conversion-storage",
+      "requirementId": "R-format-conversion-storage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "conversion-storage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-connections",
+      "requirementId": "R-format-materials-connections",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-connections"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-relocation-sequence",
+      "requirementId": "R-format-relocation-sequence",
+      "method": "artifact-property",
+      "targetSlots": [
+        "relocation-sequence"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "image-title-identification",
+      "requirementId": "R-image-title-identification",
+      "method": "visual",
+      "targetSlots": [
+        "state-work",
+        "state-dining",
+        "state-stored",
+        "conversion-storage",
+        "relocation-sequence"
+      ],
+      "criteria": "Each image has a readable title beginning with COMMONHOUR and followed by its correct role or state. Placement and typography may vary; a missing title, incorrect state, misspelling or project name appearing only in unrelated body text fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "materials-cover-identification",
+      "requirementId": "R-materials-cover-identification",
+      "method": "content",
+      "targetSlots": [
+        "materials-connections"
+      ],
+      "criteria": "The cover identifies COMMONHOUR followed by the materials and connections role. An interior-only project name or a cover naming another role fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "work-item-records",
+      "requirementId": "R-work-item-records",
+      "method": "visual",
+      "targetSlots": [
+        "state-work",
+        "state-dining",
+        "state-stored",
+        "conversion-storage",
+        "relocation-sequence"
+      ],
+      "criteria": "Read the inventory, dimensions and allocations across the drawings: exactly one each of L, K, M, N, F and C is retained. Stored envelopes are respectively 330 × 230 × 20, 280 × 120 × 20, 120 × 70 × 40, 210 × 297 × 18, 320 × 240 × 40 and 180 × 120 × 70 mm. W shows L open with its 330 × 230 mm base and nominal 220 mm screen rise, K/M/N on the surface, and F/C inside; D and S conceal all six in actual compartments. Rotation and explanatory cutaways are allowed. Shrinking, merging, duplicating or omitting objects, incompatible allocated volumes, or storing L open fails; loose cables remain contained in C.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-state-geometry",
+      "requirementId": "R-six-state-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "state-work",
+        "state-dining",
+        "state-stored"
+      ],
+      "criteria": "Dimensioned furniture views establish one table with unchanged assembly identities and totals in all three states. W has at least 1000 × 600 mm of clear working surface; D has at least 1200 × 800 mm and two distinct 600 × 400 mm setting areas; both surfaces are 720–760 mm high. S remains assembled and its entire envelope, including handles, supports and stored kit, is no larger than 1100 × 600 × 850 mm. Expansion mechanism and silhouette may vary. Missing dimensions, contradictory geometry, changed part counts or exceeding any bound fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-room-and-chair-records",
+      "requirementId": "R-six-room-and-chair-records",
+      "method": "visual",
+      "targetSlots": [
+        "state-work",
+        "state-dining",
+        "state-stored",
+        "relocation-sequence"
+      ],
+      "criteria": "Room insets and the S1 starting view agree with the client coordinate records: room x=0–3600, y=0–3000, z=0–2600; entrance strip y=0–900; solid cabinet x=0–1200, y=2600–3000, z=0–700; window at x=3600, y=1400–2600, z=900–2100; protected floor band x=3300–3600, y=1400–2600; chair parking x=0–1100, y=1000–1550. Retain the existing building and freestanding installation. CH-A and CH-B are the two existing 500 × 500 × 820 mm chairs with 450 mm seats: only CH-A is active in W, both are active in D, and both are parked in S with the table outside parking. Each active chair has a 600 × 900 mm use envelope measured outward from its table edge, outside the entrance strip and window band, with support-free leg space. D includes two 240 mm plates and two 80 × 100 mm cups within the setting areas. Camera and drawing scale may vary; displaced fixed geometry, obstructed protected areas, chair substitution or unusable seating fails. Identified carried parts and people may traverse the circulation strip during movement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-conversion-accounting",
+      "requirementId": "R-six-conversion-accounting",
+      "method": "visual",
+      "targetSlots": [
+        "conversion-storage"
+      ],
+      "criteria": "A readable forward sequence connects the delivered W and D assemblies, tracks every component by stable ID, keeps removed pieces and work objects in the room, and assigns final locations. L visibly closes before insertion; L/K/M/N enter dimensioned compartments while F/C are already inside. Compartment allocations and access paths accommodate the recorded object envelopes without interference. The fixed conversion phrase is readable. Different mechanisms and step counts are allowed; unexplained disappearing parts, missing objects, inaccessible storage or a sequence incompatible with the state drawings fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "state-work",
+        "state-dining",
+        "state-stored"
+      ]
+    },
+    {
+      "id": "six-materials-and-joints",
+      "requirementId": "R-six-materials-and-joints",
+      "method": "content",
+      "targetSlots": [
+        "materials-connections"
+      ],
+      "criteria": "The two-page sheet records assembly IDs, grouped fastener counts, quantities and dimensions matching the furniture drawings. Tabletop, storage and tray panels are 18 mm birch plywood with clear water-based lacquer; supports are powder-coated steel tube. Record the chosen powder-coat color, tube section and wall thickness, grips and transformation hardware, plus the selected quantity of M6 relocation bolts with captive nuts and the 4 mm hex key. At least two meaningful joint details explain the actual transformation and separation/reassembly functions, including movement, load support and retention. Shared hardware is allowed when both functions are explained; generic unrelated details, omitted selections or contradictory inventories fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "state-work",
+        "state-dining",
+        "state-stored",
+        "conversion-storage"
+      ]
+    },
+    {
+      "id": "six-relocation",
+      "requirementId": "R-six-relocation",
+      "method": "visual",
+      "targetSlots": [
+        "relocation-sequence"
+      ],
+      "criteria": "Start from the delivered S1 location and account for every separated furniture module, one identified hardware pouch and all six work objects packed together in the 400 × 320 × 180 mm tote. Dimension each module, including protrusions, within 1300 × 850 × 250 mm in its chosen packing orientation, and show two adults' holding/support positions. Trace the contents through the level doorway at y=0, x=200–1000, clear 800 × 2050 mm; preserve its hinge at x=200 and inward 800 mm radius sweep; continue through x=200–1100, y=-900–0 and then rightward through x=1100–3100, y=-900–0 with 2300 mm corridor headroom. Flat, tilted or upright handling is allowed when stated and spatially feasible. Missing contents, omitted turning stages, collisions, unsupported handling or moving the existing chairs/cabinet as part of this sequence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "state-stored",
+        "materials-connections"
+      ]
+    },
+    {
+      "id": "set-six-integrated-table",
+      "requirementId": "R-set-six-integrated-table",
+      "method": "visual",
+      "targetSlots": [
+        "state-work",
+        "state-dining",
+        "state-stored",
+        "conversion-storage",
+        "relocation-sequence"
+      ],
+      "criteria": "The state drawings, conversion and relocation describe one table with stable assembly identities, quantities, dimensions and actual connections. Work objects retain their identities and counts as they move from W to concealed D/S storage and then into the relocation tote. Room placement, chair states and the relocation start agree with the fixed client coordinates and protected areas.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-base-a-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-base-a-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-connections"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-table",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "state-work",
+      "subjectSlots": [
+        "state-dining",
+        "state-stored",
+        "conversion-storage",
+        "relocation-sequence"
+      ],
+      "notes": "Develop the states from the same identifiable assemblies, with a location for every part throughout conversion."
+    },
+    {
+      "id": "fixed-rental-room",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "room-plan.png",
+        "room-elevations.png"
+      ],
+      "subjectSlots": [
+        "state-work",
+        "state-dining",
+        "state-stored",
+        "relocation-sequence"
+      ],
+      "notes": "Its entrance-side circulation strip is 900 mm deep; the cabinet, chair parking, door swing and protected window band are fixed in the attached room records."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+SOFT EARTH STUDIO | A first pottery class, clearly priced
+
+We need purchase visuals for our introductory wheel-throwing class, First Clay, sold through the studio website. Our customers are adults trying pottery for the first time; their main questions are what happens during the class, what their payment covers and when their piece comes home. Use the existing warm clay palette, led by #825C46, and the attached example bowl as our recognisable studio object. Print "SOFT EARTH STUDIO", "First Clay" and "Your first turn at the wheel" on both package heroes, the vertical cover and both product-page layouts.
+
+There are two packages: FC-S Solo at SGD 68 for one adult and FC-P Pair at SGD 128 for two adults attending the same session. Both cover 120 minutes, with a maximum of 6 participants aged 18 or over. Each person receives 500 g of clay, one wheel station, shared instruction, tool and apron use, and finishing of one retained piece: studio trimming, clear glazing and two firings. Additional retained pieces cost SGD 18 each. The session comprises welcome and preparation, 15 minutes; demonstration, 20 minutes; wheel practice, 60 minutes; choosing and marking a piece, 15 minutes; and cleanup, 10 minutes. Collection is at the studio 21–28 calendar days after class, following a readiness email, with a 30-day collection window from that email. Delivery is a separate SGD 12 per order. Cancellations received at least 72 hours before the session receive a full refund; cancellations within 72 hours and missed sessions receive a 0% refund. The attached bowl is an example outcome, labelled "Example outcome" wherever pictured. Tools pictured with the offer carry "Tools for use in class". The purchase layouts use "Enquire about a session" as their action, followed by an explanation that studio staff reply with available sessions and a payment link.
+
+Audience: first-time adult pottery customers deciding between Solo and Pair, and the studio owner approving the purchase-page content.
+
+Inputs (attached): 01-client-facts.en.md contains the course, package, materials and collection facts. 02-delivery-catalog.en.md lists the deliverables, proportions, formats and stages. course-facts-map.png groups the session timing, package contents, additional charges and cancellation windows. storefront-layout-map.png records the image carriers, safe areas and text-panel geometry. studio-example-bowl.png supplies the existing bowl's shape and glaze as an example outcome. class-tools.png records the shared class equipment and its appearance. studio-atmosphere.png supplies the working studio's light, materials and equipment context.
+
+Deliverables:
+1. A one-page selling-points and information-hierarchy sheet recording package codes, prices, participant counts, duration, inclusions, additional charges, fixed wording, #825C46, information priorities, carrier assignments and minimum type sizes
+2. A one-page shot and image list assigning every final image its subject, role, proportion, required copy and source attachment
+3. Two square package heroes, one for FC-S Solo and one for FC-P Pair, each with its price, participant count, 120-minute duration and one retained piece per person
+4. One vertical value image and video cover with both package prices, the 120-minute duration and the distinction between making a piece and collecting it after firing
+5. One five-step experience graphic with the activity names and their individual durations
+6. One studio scene showing the six wheel stations, tools and class preparation
+7. One package comparison image with both codes, prices, participant counts, per-person inclusions and the two additional charges
+8. One collection graphic covering studio finishing, the 21–28-day readiness period, the email, the 30-day collection window and paid delivery
+9. One purchase-notes image covering the age threshold, class capacity, cancellation windows, refund amounts and enquiry sequence
+10. Two static product-page layouts, desktop and mobile, assembling the earlier images with package selection information and the enquiry action
+11. One 10-second vertical course video reusing the experience steps and ending on both package prices, duration and enquiry action
+12. One presentation document of at least 8 pages reusing the hierarchy sheet, image list and final visuals, with a map locating each course fact in the finished work
+
+Acceptance:
+- The hierarchy sheet and image list establish the content before the final images; both package heroes, the vertical cover, both product-page layouts and presentation repeat their package prices, 120-minute duration and #825C46, with the image list's subject assignments preserved.
+- Both package heroes, the vertical cover and both product-page layouts print SOFT EARTH STUDIO, First Clay and Your first turn at the wheel; the heroes and cover use the safe areas and panel geometry in storefront-layout-map.png, and both page layouts retain its outer safe margin.
+- The experience graphic presents five steps totalling 120 minutes; the studio scene contains 6 wheel stations; the comparison image and both page layouts state FC-S Solo for one adult at SGD 68 and FC-P Pair for two adults at SGD 128, with 500 g of clay and one retained piece per person, plus SGD 18 per additional piece and SGD 12 delivery per order.
+- Every final image, video frame and presentation page featuring the example bowl preserves its rounded profile, ivory clear-glazed surface and terracotta foot and carries Example outcome; every class-tool depiction carries Tools for use in class. The collection graphic and both page layouts distinguish class participation from later collection and repeat the 21–28-day readiness period and 30-day collection window.
+- The purchase-notes image and both page layouts state age 18 or over, capacity 6, full refunds at least 72 hours before class and 0% refunds within 72 hours or for missed sessions; both page layouts use Enquire about a session and describe the staff reply with session options and a payment link.
+- The video runs for 10 seconds and ends with both prices, 120 minutes and Enquire about a session; the presentation contains at least 8 pages, reuses all 10 final images and the video's closing frame, and maps the course facts to named deliverables.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

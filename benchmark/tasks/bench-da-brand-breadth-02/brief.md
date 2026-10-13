@@ -1,0 +1,33 @@
+RIDGE & DUSK | A mountain stay from arrival to nightfall
+
+We are establishing RIDGE & DUSK on a sheltered mountain slope for adult short-break travellers, particularly people spending their first night in the mountains. Quiet overnight accommodation is our primary offer. Our 8 rooms comprise 4 Juniper Twin rooms, J01–J04, with two single beds each, and 4 Larch Double rooms, L01–L04, with one double bed each. Every room accommodates two adults; total capacity is 16 adults. Develop an English-language identity with an open choice of logo, typography, colours and room cues. Print the brand name as "RIDGE & DUSK" and the descriptor as "A quiet mountain stay". The voice should be welcoming, calm, precise, plain and reassuring.
+
+The guest experience moves from Check-in at Reception, 15:00–18:00, to a quiet room and an optional beginner sky introduction. Sky Welcome runs at Viewing Terrace, 20:30–21:15, with 12 places for registered overnight guests; a shared telescope look depends on conditions. Activity registration is separate from room booking and closes at Reception at 18:00. The arrangement is displayed there at 18:30. When outdoor conditions are unsuitable, Sky Stories replaces the terrace session in Reading Room for the same registered group, time and capacity. Check-out is by 10:00; Quiet hours run from 22:00–07:00. Night Notes is a small blank takeaway notebook collected at Reception. The existing pale neutral wood doors and door clip are the carriers for room plates and the quiet-hours card.
+
+Audience: the owners and guest-service team, choosing the brand direction and the information guests use when booking, arriving and joining the evening programme.
+
+Inputs (attached): 01-client-facts.en.md contains the accommodation, naming and operating records. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. reception-and-door-surfaces.png is the constraint image for the Reception panel and door applications. pale-wood-door.png is the identity image of the existing door carrier, whose appearance remains recognisable in room-plate applications. mountain-materials.png is the reference image for material atmosphere.
+
+Deliverables:
+1. A one-page brand strategy stating the accommodation-first positioning, the fixed descriptor, one primary colour code and three brand keywords
+2. One comparison document containing three distinct visual directions, each with a logo proposal, typography, palette and a sample Juniper Twin room cue
+3. One identity guide recording the selected direction, final logo, descriptor lockup, typography, palette, room cues and the hierarchy connecting the two activities and notebook to the lodging brand
+4. One booking introduction document with an accommodation overview, a Juniper Twin information page and a Larch Double information page, covering inventory, beds, capacity, stay times and separate activity registration
+5. One Reception arrival panel with Check-in, Check-out, Quiet hours, activity sign-up and the evening arrangement announcement
+6. One J02 welcome card for two adults arriving at Reception at 16:00 for one night, with their booked room identity, departure deadline and evening registration information
+7. Two room plates, one for J02 Juniper Twin and one for L03 Larch Double, each shown as flat artwork and on the existing pale wood door within its respective image
+8. One quiet-hours card for the existing door clip, with the overnight interval and the request Please keep voices low
+9. Two activity cards, one for Sky Welcome and one for its conditional replacement Sky Stories, with location, time, capacity, audience, content and the replacement relationship
+10. One Night Notes front cover carrying the notebook title and lodging identity
+11. One 10-second brand video moving through daytime arrival, the optional evening programme and quiet accommodation, using the selected identity and guest applications
+12. One application presentation of at least 8 pages, opening with the selected direction and reusing the strategy, identity guide, booking information and all eight physical guest applications
+
+Acceptance:
+- The strategy states the descriptor A quiet mountain stay, one primary colour code and three keywords; the identity guide and presentation repeat all three facts exactly. The comparison document contains three distinct directions, and the identity guide records one selection before application development; the presentation names that selection on its first page.
+- The identity guide defines the brand, room and activity hierarchy; the booking document, arrival panel, welcome card, two room plates, quiet-hours card, two activity cards, notebook cover, video and presentation follow it and display RIDGE & DUSK. The descriptor appears on the booking overview, arrival panel and video end frame.
+- The booking document records 4 rooms of each type, 8 rooms and 16 adults overall, two single beds for Juniper Twin, one double bed for Larch Double and two adults per room, using the printed labels "Beds" and "Capacity". Its room cues match J02 Juniper Twin on the welcome card and room plate and L03 Larch Double on the second room plate.
+- The booking document, arrival panel and welcome card carry Check-in 15:00–18:00 at Reception, Check-out with By 10:00, and Quiet hours 22:00–07:00. The welcome card also records J02, two adults, arrival 16:00 and one night. The quiet-hours card repeats 22:00–07:00 and prints "Please keep voices low"; both room-plate images retain the pale wood door carrier.
+- The booking document, arrival panel, welcome card and both activity cards print "Sign up at Reception by 18:00" and "Decision at Reception, 18:30". Both activity cards state 20:30–21:15 and 12 places; Sky Welcome names Viewing Terrace and the conditions-dependent telescope look, while Sky Stories names Reading Room and prints "If outdoor conditions are unsuitable". Both cards identify Sky Stories as the replacement for the same registered group.
+- The notebook cover prints Night Notes and RIDGE & DUSK. The 10-second video presents arrival, optional activity and quiet accommodation in that order. The presentation contains at least 8 pages and reuses the booking document plus the arrival panel, welcome card, two room plates, quiet-hours card, two activity cards and notebook cover.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

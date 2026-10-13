@@ -1,0 +1,576 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-interior-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "furniture-plan",
+      "label": "Dimensioned furniture plan",
+      "description": "One furniture plan with retained pieces, added storage, services, circulation dimensions and camera positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "east-elevation",
+      "label": "East-facing internal elevation",
+      "description": "One east-facing internal elevation with furniture, storage, heights, material codes and lighting controls.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-detail",
+      "label": "Storage construction and capacity detail",
+      "description": "One storage detail sheet with two views, dimensions, laptop and box compartments, birch plywood and felt backing.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "work-perspective",
+      "label": "C1 work-state perspective",
+      "description": "One C1 perspective of the tenant working at the retained table with the task light on.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dining-perspective",
+      "label": "C1 dining-state perspective",
+      "description": "One C1 perspective of dining for one with the laptop stored and a readable material and lighting key.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "rest-perspective",
+      "label": "C2 evening rest perspective",
+      "description": "One C2 evening perspective of the tenant reading in the retained bed with the reading light on.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "ROOM SWITCH",
+      "scope": {
+        "slots": [
+          "furniture-plan",
+          "east-elevation",
+          "storage-detail"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "work-dine-label",
+      "kind": "text-verbatim",
+      "text": "Work / Dine",
+      "scope": {
+        "slots": [
+          "furniture-plan"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "rest-label",
+      "kind": "text-verbatim",
+      "text": "Rest",
+      "scope": {
+        "slots": [
+          "furniture-plan"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "ROOM SWITCH",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-room-and-storage",
+      "slots": [
+        "east-elevation",
+        "storage-detail",
+        "work-perspective",
+        "dining-perspective",
+        "rest-perspective"
+      ],
+      "sourceSlots": [
+        "furniture-plan"
+      ],
+      "items": [
+        {
+          "item": "The elevation and three perspectives depict the plan's room geometry and furniture arrangement, allowing changes in camera, activity, laptop location and illumination.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The added storage has matching proportions, compartment organisation, plywood construction and felt-backing placement wherever represented.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Visible retained furniture, finish assignments and fixture placements remain compatible across technical drawings and occupied views.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "ROOM SWITCH"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "furniture-plan",
+      "east-elevation",
+      "storage-detail",
+      "work-perspective",
+      "dining-perspective",
+      "rest-perspective"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not rescore exact wording, dimensional compliance, recorded object identity or camera coordinates, which are covered by the factual checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "furniture-plan",
+        "east-elevation",
+        "storage-detail",
+        "work-perspective",
+        "dining-perspective",
+        "rest-perspective"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-furniture-plan",
+      "requirementId": "R-format-furniture-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furniture-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-east-elevation",
+      "requirementId": "R-format-east-elevation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "east-elevation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-detail",
+      "requirementId": "R-format-storage-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-work-perspective",
+      "requirementId": "R-format-work-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "work-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dining-perspective",
+      "requirementId": "R-format-dining-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dining-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-rest-perspective",
+      "requirementId": "R-format-rest-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "rest-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "shell-and-viewpoints",
+      "requirementId": "R-shell-and-viewpoints",
+      "method": "visual",
+      "targetSlots": [
+        "furniture-plan",
+        "east-elevation",
+        "work-perspective",
+        "dining-perspective",
+        "rest-perspective"
+      ],
+      "criteria": "Read dimensions and camera annotations on the plan and compare visible geometry across the views. The room spans x=0–3.6, y=0–4.8 and z=0–2.6 m from its southwest corner. The south opening spans x=0.2–1.0 and z=0–2.1 m, with its hinge at the west jamb. The north sliding window spans x=1.2–2.8 and z=0.9–2.1 m. The radiator occupies x=1.4–2.6, y=4.65–4.8 and z=0.15–0.75 m; the northeast shaft occupies x=3.3–3.6, y=4.5–4.8 and the full room height. Plan camera markers must identify C1 at (0.9,1.2,1.5) aiming at (2.7,3.5,1.0), and C2 at (2.9,3.9,1.5) aiming at (0.8,2.0,0.8), in metres. Work and dining must share C1 framing and sightlines; rest must plausibly follow C2. Natural occlusion is acceptable, but altered shell geometry, mirrored coordinates or contradictory viewpoints fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "usable-clearances",
+      "requirementId": "R-usable-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "furniture-plan",
+        "work-perspective",
+        "dining-perspective",
+        "rest-perspective"
+      ],
+      "criteria": "The plan must trace a connected entrance route to all three destinations and dimension its tightest point at 750 mm or more. Show an unobstructed turning disk of 900 mm diameter, at least 600 mm access depth across the wardrobe front and at least 300 mm measured from the radiator's room-facing surface. The 800 mm door leaf must clear its entire inward quarter-circle, ending at (0.2,0.8) m. Furniture footprints must support the stated measurements; labels alone do not establish clearance. Visible furniture and storage in the perspectives must preserve these spaces. Larger clearances are allowed; blocked routes, overlapping clearance zones with solid furniture, or incomplete door opening fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "retained-furniture",
+      "requirementId": "R-retained-furniture",
+      "method": "visual",
+      "targetSlots": [
+        "furniture-plan",
+        "east-elevation",
+        "work-perspective",
+        "dining-perspective",
+        "rest-perspective"
+      ],
+      "criteria": "The plan must locate and identify exactly one of each retained piece, with dimensioned footprints consistent with the records. F-01 is a 2000×1000×650 mm bed with a honey-coloured pine frame, five vertical headboard slats, an off-white mattress and a 450 mm mattress-top height. F-02 is a 1100×600×740 mm white rectangular table with four straight round white legs. F-03 is a 450×500×800 mm beech chair with a curved beech back, muted green upholstered seat and 450 mm seat height. F-04 is an 800×550×1900 mm cream wardrobe with two sliding doors and recessed vertical pulls. Assess features only where visible, using dimensions and proportions together. Placement may differ from the supplied survey, but positions and orientations must agree throughout the submitted arrangement. Substitution, duplication, resizing or furniture rearrangement between states fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "storage-capacity-and-laptop-transition",
+      "requirementId": "R-storage-capacity-and-laptop-transition",
+      "method": "visual",
+      "targetSlots": [
+        "east-elevation",
+        "storage-detail",
+        "work-perspective",
+        "dining-perspective"
+      ],
+      "criteria": "Both technical sheets must state matching overall storage dimensions no greater than 900 mm wide, 350 mm deep and 1400 mm high. Compartment dimensions must demonstrate usable internal capacity for one closed 350×250×25 mm laptop and two separate 300×240×180 mm boxes simultaneously, accounting for construction and backing thickness. Compartment arrangement may vary. The work image must place the laptop on the retained table; dining must visibly locate it in the same storage design. An oversized unit, insufficient internal capacity, a missing box position, duplicated laptop or laptop left on the dining table fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "materials-lighting-and-key",
+      "requirementId": "R-materials-lighting-and-key",
+      "method": "visual",
+      "targetSlots": [
+        "furniture-plan",
+        "east-elevation",
+        "storage-detail",
+        "dining-perspective"
+      ],
+      "criteria": "Plan and elevation callouts must attach each of the six requested codes to the correct object or location. Storage-detail callouts must identify clear-finished birch plywood and exposed warm grey wool felt, with AC-01 specified as 12 mm thick and contained within the unit's overall footprint. TX-01 must identify oatmeal linen on the existing north-wall rod. The dining key must legibly map the requested material and lighting codes to their meanings. In elevation, distinguish the existing surface-mounted opal ambient fixture L-01 at 3000 K and its S-01 wall switch, plug-in tabletop-edge clamp light L-02 at 3000 K with an integral switch, and plug-in headboard-clipped light L-03 at 2700 K with an integral switch. Leaders or control annotations are acceptable when small switches cannot be depicted clearly. Missing, unreadable, misplaced or contradictory codes, finishes, fixture types or controls fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "printed-labels-and-use-states",
+      "requirementId": "R-printed-labels-and-use-states",
+      "method": "visual",
+      "targetSlots": [
+        "furniture-plan",
+        "east-elevation",
+        "storage-detail",
+        "work-perspective",
+        "dining-perspective",
+        "rest-perspective"
+      ],
+      "criteria": "The three technical drawings must display the project title legibly, and the plan's two activity labels must identify the shared table area and sleeping area. Work must show one seated tenant using a laptop at F-02 with the task light operating. Dining must show one seated tenant and exactly one place setting at that same table. Evening rest must show one tenant reading in F-01 with the reading light operating. Styling and tenant appearance may vary without changing occupancy or the required activity. Missing titles or activity labels, additional occupants or dining settings, an unoccupied bed, or an incorrect activity or required light state fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "retained-services-and-intervention-scope",
+      "requirementId": "R-retained-services-and-intervention-scope",
+      "method": "visual",
+      "targetSlots": [
+        "furniture-plan",
+        "east-elevation",
+        "work-perspective",
+        "dining-perspective",
+        "rest-perspective"
+      ],
+      "criteria": "Use plan service locations and visible features to verify E-01 on the west wall at y=2.4, z=0.3 m; E-02 on the east wall at y=2.6, z=0.3 m; S-01 on the south wall at x=1.1, z=1.1 m; the north curtain rod spanning x=1.0–3.0 at y=4.6, z=2.25 m; and L-01 centred at (1.8,2.4,2.6) m. Preserve the medium-oak-tone oak-effect laminate floor and warm-white plaster walls. Added furnishing must remain within the stated scope of one freestanding storage unit, textiles and plug-in lighting. Occluded services need not appear in every view, but visible relocation, removal, replacement of retained finishes or unsupported built-in alterations fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "storage-fabrication-information",
+      "requirementId": "R-storage-fabrication-information",
+      "method": "visual",
+      "targetSlots": [
+        "storage-detail"
+      ],
+      "criteria": "The sheet must contain recognisable front and side representations of the same unit, readable exterior and usable compartment measurements, and positions for the laptop and both boxes. Depict the plywood construction and where the felt backing is fitted so that their spatial relationship is understandable to the furniture maker. Drawing style and compartment configuration are flexible. A missing view, contradictory projections, omitted item positions or material names without an intelligible construction and backing depiction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "east-elevation-information",
+      "requirementId": "R-east-elevation-information",
+      "method": "visual",
+      "targetSlots": [
+        "east-elevation"
+      ],
+      "criteria": "The drawing must read as an internal orthographic view looking east, with furniture and storage outlines compatible with their plan locations. It must provide a clear floor datum and readable heights for the depicted furniture, storage and lighting, alongside the required material and fixture callouts. Outlines may simplify detail and account for occlusion. A perspective substituted for the elevation, the wrong viewing direction, missing height information or a projection inconsistent with the plan fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "furniture-plan"
+      ]
+    },
+    {
+      "id": "set-coherent-room-and-storage",
+      "requirementId": "R-set-coherent-room-and-storage",
+      "method": "visual",
+      "targetSlots": [
+        "east-elevation",
+        "storage-detail",
+        "work-perspective",
+        "dining-perspective",
+        "rest-perspective"
+      ],
+      "criteria": "The elevation and three perspectives depict the plan's room geometry and furniture arrangement, allowing changes in camera, activity, laptop location and illumination. The added storage has matching proportions, compartment organisation, plywood construction and felt-backing placement wherever represented. Visible retained furniture, finish assignments and fixture placements remain compatible across technical drawings and occupied views.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furniture-plan"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "room-arrangement",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "furniture-plan",
+      "subjectSlots": [
+        "east-elevation",
+        "work-perspective",
+        "dining-perspective",
+        "rest-perspective"
+      ],
+      "notes": "Identify F-01 through F-04 on the furniture plan and preserve their recorded dimensions and recognisable finishes in the elevation and perspectives wherever visible; use one fixed furniture arrangement across the work, dining and rest views."
+    }
+  ]
+}

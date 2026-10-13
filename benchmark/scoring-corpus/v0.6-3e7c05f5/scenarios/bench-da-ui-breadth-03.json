@@ -1,0 +1,190 @@
+{
+  "id": "bench-da-ui-breadth-03",
+  "title": "DAYFRAME — One order, separate returns and refunds, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "UIUX",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# DAYFRAME — order and after-sales service facts\n\n## Service and identity\n\n- Merchant: DAYFRAME.\n- Experience: English mobile after-sales service for an adult shopper handling several household products in one order.\n- Use context: short sessions, interrupted tasks and an unreliable connection.\n- Voice: calm, direct copy connecting each item's exact state with its next useful action.\n- Visual scope: typography, color, spacing, navigation, component styling and interaction presentation.\n- Starting direction: supplied service rules and product identities; visual system developed through the flow and component specifications.\n- Product identity L1: Harbor mug / Chalk; warm off-white glazed cylindrical mug with a rounded loop handle.\n- Product identity L2: Orbit desk lamp / Sage; muted sage-green lamp with a circular base, straight stem and hemispherical shade.\n- Product identity L3: Canvas pouch / Ink; deep ink-blue rectangular canvas pouch with a top zipper and short side loop.\n- Product-image sources: harbor-mug.png, orbit-desk-lamp.png and canvas-pouch.png.\n- Atmosphere source: unpacking-at-home.png; a customer checking household products beside an opened delivery box.\n\n## Order metadata\n\n- Order: DF-20418.\n- Customer: Avery Lane.\n- Payment method and refund destination: Card ending 4242.\n- Order date: 4 August 2026.\n- Delivery recorded: 8 August 2026, 12:00 UTC.\n- Service-request deadline: 22 August 2026, 23:59 UTC.\n- Event timezone: UTC.\n- Order and evidence records: 03-order-and-evidence.en.md.\n- Case and shipment records: 04-case-ledger.en.md.\n\n## Amount rules\n\n- Currency display: USD with two decimal places.\n- Cash-refund basis: selected units' paid merchandise amount after allocated discounts.\n- Original payment structure: paid merchandise plus outbound shipping; separate tax line absent.\n- Original outbound shipping: USD 6.00, retained in the order's net cash paid.\n- Approved return shipping: prepaid; customer cost USD 0.00.\n- Additional tax, restocking charge and exchange fee: USD 0.00 each.\n- Selected request: L1 USD 20.00 + L2 USD 0.00 + L3 USD 15.00 = USD 35.00.\n- Lamp remedy: like-for-like exchange in Sage; cash-refund contribution USD 0.00.\n- Second mug: retained by the customer, outside the selected request.\n- Final net order cash paid: USD 94.00, covering the retained second mug, like-for-like replacement lamp and original outbound shipping.\n- Amount-stage relationship: requested, approved, sent and received are successive descriptions of the same refund money.\n- Multiple amount stages: separately labeled values.\n\n## Request behavior\n\n- Draft-editable fields: selected quantity, problem and requested method.\n- Draft amount summary: recalculated from the current selected units and their paid amounts.\n- Applicable methods: the item-specific methods recorded in 03-order-and-evidence.en.md.\n- Active-unit reservation: each selected unit belongs to one active request at a time.\n- Confirmed case: AF-7306; submitted item values retained alongside eligible next actions.\n- Review responsibility: merchant staff, with independent decisions for each item.\n- M1 review state: L1 and L3 submitted and under review; L2 awaiting supplemental evidence.\n- Continuity through back navigation, upload retry and status recovery: item identity, selected quantity, remedy, evidence and latest known state.\n- S0 recovery: a status check or repeated status check resolves to the single existing AF-7306.\n- Submission uncertainty: a pending outcome requiring a status check.\n- Per-item changes: unaffected items retain their saved values and current states.\n- Action presentation: actionable controls distinguished from informational status.\n\n## Evidence behavior\n\n- Evidence filenames: UI attachment metadata identifying the supplied upload records.\n- Supported evidence: JPEG or PNG, maximum 5 MB per file.\n- L2 original evidence: lamp-flicker.jpg remains saved throughout supplementation.\n- Supplemental evidence: readable model-label.jpg, 1.6 MB JPEG.\n- Specified upload failure: a valid selected JPEG interrupted by connection loss.\n- Retry state: selected supplemental file and all previously uploaded files retained.\n- Successful main-timeline resubmission: 12 August, 15:00 UTC, before exchange approval.\n- Optional additional field example: invalid-file state, separate from the recorded connection-loss case.\n\n## Returns and shipments\n\n- Shared approved return: ParcelWay parcel RP-442.\n- RP-442 contents: one Harbor mug and one Orbit desk lamp.\n- Retained products: Canvas pouch and the second Harbor mug.\n- Handover deadline: 17 August 2026, 23:59 UTC.\n- Return-preparation actions: prepaid label download or handover instructions.\n- M3 parcel state: existing shared return in transit with a sorting delay.\n- M3 customer next actions: shipment details or support contact.\n- M3 financial context: refund approval retained; mug refund awaiting return receipt and transfer initiation.\n- M3 parcel handling: continued tracking of RP-442; additional parcel count 0; additional customer payment USD 0.00.\n- Replacement shipment: EX-912, separate from the return parcel and cash-refund stages.\n- Date presentation: estimated arrivals and estimated receipts labeled as estimates; recorded events presented as actual events at their supplied snapshots.\n\n## Status meanings\n\n| Status label | Meaning |\n| --- | --- |\n| Requested | Application received for merchant review |\n| Approved | Remedy authorized, subject to the stated return where applicable |\n| Refund sent | Merchant has initiated the transfer; customer receipt remains pending |\n| Refund received | Customer receipt confirmed by a specific ledger event |\n| Withdrawn | Eligible item request ended by the customer's confirmed withdrawal |\n\n## Alternate branch W\n\n- Starting point: M1, before lamp approval or return.\n- Affected request: L2 Orbit desk lamp / Sage only.\n- Confirmation content: affected product, consequence and option to retain the request.\n- Confirmed outcome: L2 Withdrawn; lamp unit available for another request within the supplied service window.\n- Lamp cash contribution after withdrawal: USD 0.00.\n- L1 and L3 outcome: submitted states retained; combined requested cash USD 35.00.\n- Cash issued by withdrawal: USD 0.00.\n- Case outcome: AF-7306 retained and open for unaffected requests.\n- Branch relationship: W is an alternate path from M1; main-timeline M4/M5 lamp shipment belongs to the main path.\n\n## Interface constants\n\n- Platform treatment: platform-neutral mobile portrait.\n- Logical viewport: 402 × 874 pt.\n- Top safe area: 62 pt.\n- Bottom safe area: 34 pt.\n- Viewport source: phone-safe-areas.png.\n- Merchant display string: DAYFRAME.\n- Submission action string: Submit request.\n- Submission-recovery action string: Check status.\n- Component states: default, pressed, disabled, error.\n- Required-field example: empty problem field; Submit request disabled.\n- Body-text contrast: at least 4.5:1.\n- Large-text and meaningful-icon contrast: at least 3:1.\n- Status encoding: color paired with text or symbols.\n- Cash progress: visible summary with separately labeled stages on case overviews and tracking screens.\n- Exchange progress: separate status alongside cash progress.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# DAYFRAME — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | flow-specification | Flow specification | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | component-specification | Component and state specification | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 3 | item-selection | Item selection | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | request-details | Request details | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | review-submission-recovery | Review and submission recovery | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | m1-case-overview | M1 Case overview | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | more-evidence | More evidence | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | m2-approved-remedies | M2 Approved remedies | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | m3-return-tracking | M3 Return tracking | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | m4-refund-exchange-tracking | M4 Refund and exchange tracking | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | m5-case-overview | M5 Case overview | 14 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | alternate-withdrawal | Alternate branch W withdrawal | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | progress-video | M4 to M5 progress video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | service-presentation | Service experience presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-order-and-evidence.en.md",
+            "config": {
+              "text": "# DAYFRAME — order, calculation and evidence records\n\n## Order\n\n| Field | Value |\n| --- | --- |\n| Order | DF-20418 |\n| Customer | Avery Lane |\n| Payment method | Card ending 4242 |\n| Order date | 4 August 2026 |\n| Delivery recorded | 8 August 2026, 12:00 UTC |\n| Service-request deadline | 22 August 2026, 23:59 UTC |\n| Event timezone | UTC |\n\n## Order amounts\n\n| Item ID | Product / variant | Ordered quantity | Unit list price | Line list subtotal | Allocated line discount | Paid line amount | Paid amount per unit |\n| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |\n| L1 | Harbor mug / Chalk | 2 | USD 24.00 | USD 48.00 | USD 8.00 | USD 40.00 | USD 20.00 |\n| L2 | Orbit desk lamp / Sage | 1 | USD 80.00 | USD 80.00 | USD 12.00 | USD 68.00 | USD 68.00 |\n| L3 | Canvas pouch / Ink | 1 | USD 18.00 | USD 18.00 | USD 3.00 | USD 15.00 | USD 15.00 |\n\n## Payment calculation\n\n| Record | Calculation | Amount |\n| --- | --- | ---: |\n| List merchandise subtotal | USD 48.00 + USD 80.00 + USD 18.00 | USD 146.00 |\n| Allocated discount | USD 8.00 + USD 12.00 + USD 3.00 | USD 23.00 |\n| Paid merchandise | USD 146.00 - USD 23.00 | USD 123.00 |\n| Outbound shipping | Original shipping retained | USD 6.00 |\n| Original paid total | USD 123.00 + USD 6.00 | USD 129.00 |\n| Selected cash-refund request | USD 20.00 + USD 0.00 + USD 15.00 | USD 35.00 |\n| Net order cash paid after both refunds | USD 129.00 - USD 35.00 | USD 94.00 |\n| Customer return shipping | Prepaid approved return | USD 0.00 |\n| Additional tax | Additional charge | USD 0.00 |\n| Restocking charge | Additional charge | USD 0.00 |\n| Exchange fee | Additional charge | USD 0.00 |\n\n## Selected request\n\n| Item | Selected / ordered | Problem | Requested method | Cash requested | Evidence |\n| --- | --- | --- | --- | ---: | --- |\n| L1 Harbor mug / Chalk | 1 of 2 | Chipped rim | Return for refund | USD 20.00 | mug-chip.jpg, 2.4 MB JPEG, already uploaded |\n| L2 Orbit desk lamp / Sage | 1 of 1 | Light flickers | Like-for-like exchange, same Sage variant | USD 0.00 | lamp-flicker.jpg, 1.8 MB JPEG, already uploaded; readable model-label.jpg later requested |\n| L3 Canvas pouch / Ink | 1 of 1 | Zip sticks | Refund without return | USD 15.00 | pouch-zip.jpg, 1.2 MB JPEG, already uploaded |\n\n## Evidence records\n\n| Item | Filename | Size | Format | Recorded role or state |\n| --- | --- | --- | --- | --- |\n| L1 | mug-chip.jpg | 2.4 MB | JPEG | Chipped-rim evidence, already uploaded |\n| L2 | lamp-flicker.jpg | 1.8 MB | JPEG | Flicker evidence, already uploaded and retained during supplementation |\n| L3 | pouch-zip.jpg | 1.2 MB | JPEG | Sticking-zip evidence, already uploaded |\n| L2 | model-label.jpg | 1.6 MB | JPEG | Readable model-label evidence requested at M1; selected valid file retained after connection-loss failure; successfully resubmitted on 12 August at 15:00 UTC before approval |\n\n- Supported evidence formats: JPEG, PNG.\n- Maximum evidence size: 5 MB per file.\n- Supplemental evidence deadline: 14 August, 18:00 UTC.\n- Evidence record type: filename, size, format and upload-state metadata.\n- Retry retention: selected model-label.jpg plus all previously uploaded files.\n\n## Unit and parcel allocation\n\n| Product unit | Selected remedy | Physical destination |\n| --- | --- | --- |\n| L1 selected mug, 1 of 2 | Return for USD 20.00 refund | Shared return RP-442 |\n| L1 second mug, 1 of 2 | Retained outside request | Customer |\n| L2 lamp, 1 of 1 | Same Sage variant exchange, USD 0.00 cash refund | Shared return RP-442; replacement EX-912 on main timeline |\n| L3 pouch, 1 of 1 | USD 15.00 refund without return | Customer |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 04-case-ledger.en.md",
+            "config": {
+              "text": "# DAYFRAME — case AF-7306 ledger\n\n- Order: DF-20418.\n- Customer: Avery Lane.\n- Event year: 2026.\n- Event timezone: UTC.\n- Refund destination: Card ending 4242.\n\n## Main case ledger\n\n| Snapshot | Recorded point | Mug request | Lamp request | Pouch request | Cash state and next context |\n| --- | --- | --- | --- | --- | --- |\n| D0 | 10 August, 10:00 | Draft: 1 of 2; return for refund | Draft: 1; exchange | Draft: 1; refund without return | Requested estimate USD 35.00; submission pending |\n| S0 | 10 August, 10:02 | Submission result initially uncertain on device | Same uncertainty | Same uncertainty | Server has created AF-7306 once; status check confirms that same submitted case |\n| M1 | 11 August, 09:00 | Submitted, under review | More evidence needed: model-label.jpg by 14 August, 18:00 | Submitted, under review | Requested USD 35.00; approved USD 0.00; received USD 0.00. Lamp is the sole item requiring customer evidence at this point |\n| M2 | 12 August, 15:00 | Approved return for USD 20.00 refund; awaiting return | Evidence accepted; exchange approved; awaiting return | USD 15.00 refund approved; transfer initiation pending | Requested USD 35.00; approved USD 35.00; sent USD 0.00; received USD 0.00. Prepaid RP-442 assigned to mug and lamp |\n| M3 | 15 August, 11:00 | Return in transit, delay reported | Same shared return parcel delay | USD 15.00 refund received on 14 August, 16:00 | Received USD 15.00; mug USD 20.00 awaiting return receipt; existing shared parcel RP-442 remains in transit |\n| M4 | 18 August, 14:00 | Return received 17 August; USD 20.00 refund sent 18 August, 10:00; customer receipt pending | Replacement shipped 18 August, 12:00; EX-912; arrival estimate 20 August | USD 15.00 received on 14 August | Received USD 15.00; USD 20.00 sent with receipt pending. Mug receipt estimate 21–23 August; exchange tracked as a separate shipment |\n| M5 | 19 August, 16:00 | USD 20.00 refund received 19 August, 15:00; mug request completed | Replacement still in transit, EX-912; arrival estimate 20 August | USD 15.00 received; pouch request completed | Received total USD 35.00; pending cash USD 0.00; lamp exchange remains open. Net order cash paid USD 94.00 |\n\n## Evidence event\n\n| Event point | Item | Event | Ordering |\n| --- | --- | --- | --- |\n| 12 August, 15:00 | L2 | Successful resubmission of model-label.jpg | Evidence resubmission and acceptance precede exchange approval recorded at M2 |\n\n## Shared return parcel\n\n| Field | Value |\n| --- | --- |\n| Carrier | ParcelWay |\n| Return parcel | RP-442 |\n| Contents | One Harbor mug and one Orbit desk lamp |\n| Customer return-shipping cost | USD 0.00 |\n| Handover deadline | 17 August 2026, 23:59 UTC |\n| Retained products | Canvas pouch and second Harbor mug |\n\n| Event or estimate | Time | Knowledge available at snapshot |\n| --- | --- | --- |\n| ParcelWay acceptance of RP-442 | 13 August, 10:00 | M3 |\n| Sorting delay reported | 15 August, 11:00 | M3 |\n| Next carrier update expected | By 16 August, 18:00 | M3 estimate |\n| Return received | 17 August | M4 |\n| Mug refund sent | 18 August, 10:00 | M4 |\n| Replacement EX-912 shipped | 18 August, 12:00 | M4 |\n| Replacement arrival estimate | 20 August | M4 and M5 estimate |\n| Mug refund receipt estimate | 21–23 August | M4 estimate |\n| Mug refund actually received | 19 August, 15:00 | M5 actual event, earlier than the M4 estimate |\n\n## M3 next-action context\n\n- Shared return count: 1 parcel, RP-442.\n- Additional parcel count: 0.\n- Additional customer payment: USD 0.00.\n- Mug approval: retained.\n- Mug transfer state: awaiting return receipt and transfer initiation.\n- Pouch cash received: USD 15.00.\n- Available customer actions: shipment details or support contact.\n- Snapshot knowledge: events recorded by 15 August, 11:00; subsequent events belong to M4 and M5.\n\n## Alternate branch W — withdrawal only\n\n| Record | Value |\n| --- | --- |\n| Starting snapshot | M1 |\n| Lamp position at branch start | Evidence needed, before approval or return |\n| Customer | Avery Lane |\n| Selected withdrawal | L2 Orbit desk lamp / Sage exchange request only |\n| Confirmation content | Affected product and withdrawal consequence |\n| Retention option | Existing L2 request kept active |\n| Confirmed L2 state | Withdrawn |\n| L2 unit availability | Available for another request within the service window ending 22 August 2026, 23:59 UTC |\n| L2 cash-refund contribution | USD 0.00 |\n| L1 state after withdrawal | Submitted, under review |\n| L3 state after withdrawal | Submitted, under review |\n| L1 and L3 requested cash | USD 35.00 |\n| Cash issued by withdrawal | USD 0.00 |\n| Case after withdrawal | AF-7306 retained and open for unaffected requests |\n| Branch identity | Alternate branch W |\n| Relationship to EX-912 | EX-912 belongs to main snapshots M4/M5; W follows the withdrawn lamp outcome |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: phone-safe-areas.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: harbor-mug.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: orbit-desk-lamp.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: canvas-pouch.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: unpacking-at-home.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "DAYFRAME | One order, separate returns and refunds\n\nWe need a mobile after-sales experience for customers handling several household products from one order. Build the visual system around our supplied service rules, starting with the flow and component specifications. The order is DF-20418 for Avery Lane, placed on 4 August 2026 and delivered on 8 August 2026 at 12:00 UTC. Its service-request deadline is 22 August 2026 at 23:59 UTC. Customers often return to an unfinished task over an unreliable connection; their selected units, evidence and latest case state need to survive those interruptions.\n\nThe order contains two Harbor mugs / Chalk, one Orbit desk lamp / Sage and one Canvas pouch / Ink. The selected request covers one mug returned for USD 20.00, the lamp exchanged for the same Sage variant with USD 0.00 cash refund, and the pouch kept with a USD 15.00 refund. The second mug stays with the customer. Original payment is USD 129.00; requested cash is USD 35.00, payable to Card ending 4242. Staff review each item independently. Approved returns share prepaid ParcelWay parcel RP-442, containing the selected mug and lamp. The supplied case AF-7306 progresses from uncertain submission through evidence collection, approval, a parcel delay and refund receipt. At M5, USD 35.00 has been received while replacement shipment EX-912 remains in transit; net order cash paid is USD 94.00. Alternate branch W covers withdrawal of the lamp request from M1.\n\nUse a platform-neutral portrait viewport of 402 × 874 pt with top and bottom safe areas of 62 pt and 34 pt. Print \"DAYFRAME\" on the item-selection screen, case overviews and presentation cover. The submission and recovery buttons read \"Submit request\" and \"Check status\". Use Requested, Approved, Refund sent and Refund received as distinct status labels with the meanings in the fact sheet. Body text contrast is at least 4.5:1; large text and meaningful icons are at least 3:1. Pair status colors with text or symbols.\n\nAudience: customers managing different remedies within one order, and the product, support and engineering teams deciding how to build and explain that service.\n\nInputs (attached): 01-client-facts.en.md contains the merchant rules, status meanings and interaction facts. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-order-and-evidence.en.md contains the item prices, discount allocations, selected remedies and evidence records. 04-case-ledger.en.md contains D0, S0, M1–M5, the parcel events and alternate branch W. phone-safe-areas.png fixes the viewport and safe areas. harbor-mug.png supplies the recognizable Chalk mug identity. orbit-desk-lamp.png supplies the recognizable Sage lamp identity. canvas-pouch.png supplies the recognizable Ink pouch identity. unpacking-at-home.png provides the setting and atmosphere for short after-sales sessions.\n\nDeliverables:\n1. One two-page flow specification, with a page × entry × data table and transitions covering D0, S0, M1–M5 and alternate branch W; the selected quantities, USD 35.00 request and four cash-status meanings\n2. One component specification with a component × state × value table for item rows, quantity controls, buttons, evidence fields, amount summaries and status timelines; default, pressed, disabled and error examples, color values, type sizes and contrast ratios\n3. Three application sheets: Item selection; Request details with each selected item's problem, remedy and saved evidence; Review and submission recovery with the USD 35.00 breakdown, uncertain S0 result and status-check confirmation of AF-7306\n4. Two evidence-stage sheets: the M1 Case overview with all three item states; More evidence with the lamp's saved files, interrupted supplemental upload, retry and successful resubmission on 12 August\n5. Four progress sheets: M2 Approved remedies and shared return instructions; M3 Return tracking with the sorting delay; M4 Refund and exchange tracking with the sent mug refund; M5 Case overview with completed cash refunds and the open lamp exchange\n6. One alternate branch W sheet with lamp-withdrawal confirmation and resulting item states, including an action to retain the request\n7. One 12-second progress video moving from dated M4 to dated M5, showing the mug refund changing from sent to received while the lamp remains in transit\n8. One 10-page presentation document reusing the flow, component table, application sheets, evidence states, progress sheets and withdrawal branch, with the refund calculation and the video sequence\n\nAcceptance:\n- The flow specification names every page and state used in the application, evidence, progress and withdrawal sheets. Repeat its selected quantities, USD 35.00 requested cash and four cash-status meanings on the Review and submission recovery sheet, the relevant case views and the presentation's calculation and status pages.\n- Every screen on the application, evidence, progress and withdrawal sheets uses the 402 × 874 pt viewport and 62 pt / 34 pt safe areas, follows the component specification's values, and meets the stated contrast ratios. The component specification contains default, pressed, disabled and error examples; Request details shows Submit request disabled while a required problem field is empty, and More evidence shows the connection-loss error. Repeat the chosen primary-action color code and type sizes in the presentation.\n- Item selection, Request details and Review and submission recovery identify L1 as 1 of 2, L2 as 1 of 1 and L3 as 1 of 1, with respective cash requests of USD 20.00, USD 0.00 and USD 15.00. Their item images match the three identity attachments. Review and submission recovery shows Submit request, then Check status during uncertainty, resolving to the existing AF-7306 with the same selections and evidence.\n- The M1 Case overview gives only the lamp an evidence action, due 14 August at 18:00 UTC. More evidence retains the saved flicker image and selected supplemental file through connection loss and retry, then records successful resubmission on 12 August at 15:00 UTC. The branch W sheet confirms withdrawal of L2 alone, offers retention of that request and ends with L1 and L3 still submitted, requested cash USD 35.00 and L2 eligible to request again within the service window.\n- The four progress sheets follow M2–M5: RP-442 contains one mug and one lamp with customer return shipping USD 0.00 and handover due 17 August at 23:59 UTC; M3 gives the expected carrier update of 16 August at 18:00 UTC and a shipment-detail or help action; M4 separates USD 15.00 received from USD 20.00 sent; M5 shows USD 35.00 received, net cash paid USD 94.00 and EX-912 still in transit. Each case overview and tracking sheet carries a visible cash summary with separately labeled stages and a separate exchange status.\n- The 12-second video and 10-page presentation preserve M4's pending mug receipt and M5's actual receipt on 19 August at 15:00 UTC, with the lamp arrival labeled as an estimate for 20 August. DAYFRAME appears on Item selection, both Case overview sheets and the presentation cover; the presentation identifies W as an alternate branch and reuses the earlier work under the same page and state names.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/phone-safe-areas.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "d8eb0796ecd4affa78e817c3c9acedc18cc9b451cd2e9e5bebe843eab3ae2572"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/harbor-mug.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "c2152e5d1daca80061f13c08f313022c408ed6e8661dcc57e9ebbe43c0b2f267"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/orbit-desk-lamp.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "dfd3e518b2ad556ba32ee988801a8031b83111d3b83223b25600708ac957b488"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/canvas-pouch.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "48ed16fbb5ea5265c53ea0d378691399328b99391e101c4b877b6f6dfc665c2f"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-breadth-03/unpacking-at-home.png",
+      "nodeId": "provided-image-5",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "10624ab0b9d5b31dea094fac1e4dd9cabd2479bdf5333a4dfce5b9598f9e4124"
+    }
+  ]
+}

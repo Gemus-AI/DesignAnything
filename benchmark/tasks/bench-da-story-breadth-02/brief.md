@@ -1,0 +1,32 @@
+BRINE EXPRESS | An underwater postal chase
+
+We are developing BRINE EXPRESS, a 15-second animated adventure told through 9 shots, for online short-film programming. Our underwater courier, Pip, loses a letter at Dispatch Bell and pursues it east through Kelp Gate, Shell Arch and Bubble Chimney to Lantern House. The finish is a physical delivery: Pip pushes the recovered letter completely through the house's mail slot. Build the film around this sequence and the attached timing record. Character anatomy and architectural styling are open; Pip's three permanent features are a mustard shoulder satchel, a white patch on the left elbow and three coral-red head fins.
+
+The envelope is 160 mm wide by 100 mm high, with a teal spiral wax seal and a water-darkened lower-right corner. Print its recipient as "Mara Vale" and its address as "7 Lantern Reef". Pip can release a tether bubble that grips this letter within 300 mm for exactly 2 seconds; each activation is followed by 4 seconds of recovery after release. The two uses occur at 2–4 seconds and 10–12 seconds. The first pulls the letter clear of kelp; Pip then swims below the arch, follows the chimney's rising current and catches up for the second grip. The route drawing fixes obstacle order, depth and camera territory. The main composition is 16:9, with 9:16 reserved for a future adaptation; both use action margins of 3.5% and graphic margins of 5% on every edge.
+
+Audience: teenage and adult viewers who enjoy light fantasy adventure, with the proposal going to our director and animation lead for approval of the action, staging and production approach.
+
+Inputs (attached): 01-client-facts.en.md contains the project facts, character features and world rules. 02-delivery-catalog.en.md lists every deliverable's proportion, format and stage. 03-story-records.en.md contains the fixed synopsis, sound premise, timing and route coordinates. chase-route.png supplies the plan, depth profile, current directions and camera territory. frame-safe-areas.png supplies the two composition frames and their safe margins. letter-identity.png supplies the existing envelope's construction, lettering and identifying marks. underwater-light.png supplies the blue-green light, suspended particles and depth atmosphere.
+
+Deliverables:
+1. A one-page rhythm and staging specification, establishing one visual approach, 3 acts, the 9-shot structure, all beat start and end times, the 15-second total, both bubble uses, Pip's three features and the envelope's two printed lines
+2. One Pip model sheet with front, side and back views, three expressions and the three permanent features
+3. One letter model sheet with front, back and edge views, the 160 mm by 100 mm dimensions, lettering, spiral seal and darkened corner
+4. One chase staging map with the five route stations, their depths, Pip and letter paths, camera positions and the action axis
+5. Three continuous storyboard sheets, three shots per sheet in order from S01 to S09, with shot ID, WS/MS/CU shot size, duration in seconds and Pip's name inside every panel
+6. Two finished keyframes, S06 at Bubble Chimney and S09 at the mail slot, with resolved light, colour and the established character and letter designs
+7. One nine-row shot table containing shot ID, shot size, duration, character, action, sound, camera movement, and Pip's and the letter's entry and exit positions
+8. One nine-panel colour script, labelled S01–S09 and matched to the storyboard's locations and actions
+9. One action and cut continuity sheet with three paired transitions: the kelp release at S03/S04, the rising pursuit at S05/S06 and the handoff from bubble to hand at S07/S08
+10. One 15-second animatic of S01–S09, timed to the shot table and accompanied by water, swimming and bubble sounds
+11. One presentation document of at least 8 pages, reusing the specification, model sheets, route map, storyboards, keyframes, colour script and animatic stills, with a shot-by-shot account of the fixed story events
+
+Acceptance:
+- The rhythm and staging specification, shot table, three storyboard sheets and animatic use S01–S09 with durations of 2, 2, 2, 2, 2, 1, 1, 1 and 2 seconds respectively, totalling 15 seconds. The specification and presentation repeat the 9-shot count, 15-second total and both envelope lines; the presentation prints "BRINE EXPRESS" on its cover and reproduces the attached synopsis on its story page.
+- The staging map, storyboard sheets and animatic follow Dispatch Bell, Kelp Gate, Shell Arch, Bubble Chimney and Lantern House in that order and at the attached depths. The map plots cameras south of the eastbound action axis; the boards and animatic maintain left-to-right progress, with the letter ahead until S07. The arch's upper letter opening, lower swimming passage and the chimney's rising current remain in their mapped positions.
+- The specification, storyboard sheets, continuity sheet and animatic show the first 2-second grip in S02, the 4-second recovery across S03–S04, and the second grip across S06–S07 within 300 mm. Kelp contact causes the first grip, the letter's narrow arch opening sends Pip into the lower passage, and the rising current sends both upward. S08 transfers the letter into Pip's hand; S09 ends with the entire envelope inside the mail slot.
+- The Pip model sheet, storyboards, keyframes, colour script and animatic retain the mustard satchel, left-elbow white patch and three coral-red head fins wherever those features face the camera. The letter model sheet and every later depiction retain its proportions, teal spiral seal and darkened lower-right corner; its front lettering reads Mara Vale and 7 Lantern Reef, with both lines legible on the model sheet and S09 keyframe.
+- Every storyboard panel and matching shot-table row share the same shot ID, WS/MS/CU size, duration and character name. The colour script matches all 9 shot IDs; the two keyframes match S06 and S09; the continuity sheet matches its three named shot pairs and records both moving subjects across each cut.
+- The storyboard sheets, keyframes and animatic use 16:9 compositions with action inside the 3.5% margins and printed graphics inside the 5% margins shown in frame-safe-areas.png. The specification records both 16:9 and 9:16 margins and reserves seconds 8–10 for an optional descriptive voice line; the animatic leaves that interval free of speech.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

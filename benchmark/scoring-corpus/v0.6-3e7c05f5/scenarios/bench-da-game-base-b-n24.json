@@ -1,0 +1,208 @@
+{
+  "id": "bench-da-game-base-b-n24",
+  "title": "SALT MOON — A science fiction world shaped by tides and working lives, 24 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n24",
+    "family-b"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GAME",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# SALT MOON\n\n## Project\n- Game: SALT MOON\n- Genre: survival crafting\n- Player role: scout of the Tidal Council\n- Audience: exploration-focused players\n- Loop: scout, gather, return to the Council hold, craft, unlock the next region's gear\n- Tide cycle: about 40 minutes of play\n\n## Regions\n| Region | Playable footprint | Dominant color | Signature material | Survival pressure |\n|---|---|---|---|---|\n| Salt Flats | 48000 × 32000 mm | #D8CDA8 | Salt glass | Heat |\n| Undersea | 36000 × 24000 mm | #397C86 | Pressure shells | Pressure |\n| Orbital Ruins | 24000 × 32000 mm | #766B83 | Vacuum-scarred alloy | Water |\n\n## Tide access\n- Low Tide: open sinkholes leading to the Undersea\n- High Tide: flooded lower Ruins and airlocks lifted within reach\n- Turning Tide: salt storms on the Flats, with heat and visibility loss outside shelter\n- Salt Flats sky identity: two moons\n\n## Shared art language\n- Brushwork: broad opaque strokes\n- Edge treatment: chipped material edges and crisp interaction silhouettes\n- Dominant light direction: upper left\n- Undersea water glow: subordinate local emission beneath the dominant light\n- Shared fittings: matte brine metal\n- Shared straps: woven fibre\n- Council badge: split circular ring with three horizontal bars\n- Badge placement: left upper arm on characters; circular inset plate on props\n\n## Baseline assets\n- C01: Council Scout; height 1720 mm; Idle and Reading\n- C01 identity: sand coat, teal forearms, one left-shoulder spool, left-arm Council badge\n- P01: Tide Gauge; 240 × 90 × 45 mm; Stowed and Reading\n- P01 identity: oval shell, circular dial, three lower slots\n\n## Printed wording\n- Game title: SALT MOON\n- Interaction prompts: Read tide; Collect sample\n- Interaction snapshot: Low Tide; 08:00; Samples 3 / 12\n- Region labels: Salt Flats; Undersea; Orbital Ruins\n- Baseline asset labels: C01 Council Scout; P01 Tide Gauge\n\n## Interaction presentation\n- Controller bindings: A for Read tide; X for Collect sample\n- Touch bindings: tap-hand icon for each action\n- Keyboard bindings: E for Read tide; F for Collect sample\n- Prompt positions: Read tide at lower left; Collect sample immediately above it\n- Ordinary text contrast: 4.5:1\n- Large text and icon contrast: 3:1\n- Unavailable action contrast: 3:1, accompanied by a lock icon\n- Low Tide symbol: open downward triangle\n- Turning Tide symbol: three diagonal strokes\n- High Tide symbol: filled upward triangle\n\n## Image records\n- region-boundaries.png: constraint; region footprints and asset dimensions\n- style-ref-1.png: identity; pale Salt Flats beneath two moons\n- style-ref-2.png: identity; painterly bioluminescent Undersea cavern\n- style-ref-3.png: identity; derelict orbital ring\n- council-badge.png: identity; existing Tidal Council badge\n- salt-and-cavern-atmosphere.png: reference; salt glare, wet rock and luminous water\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# SALT MOON — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | art-rules | World art style rule sheet | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | asset-inventory | Character and prop inventory | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 3 | c01-council-scout | C01 Council Scout character sheet | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | c02-brine-diver | C02 Brine Diver character sheet | 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | c03-ring-rigger | C03 Ring Rigger character sheet | 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | c04-fibre-gatherer | C04 Fibre Gatherer character sheet | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | c05-algae-tender | C05 Algae Tender character sheet | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | c06-core-archivist | C06 Core Archivist character sheet | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | p01-tide-gauge | P01 Tide Gauge prop sheet | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | p02-shell-sampler | P02 Shell Sampler prop sheet | 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | p03-cell-cradle | P03 Cell Cradle prop sheet | 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | p04-fibre-reel | P04 Fibre Reel prop sheet | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | p05-pressure-lamp | P05 Pressure Lamp prop sheet | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 14 | p06-core-caddy | P06 Core Caddy prop sheet | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 15 | s01-flats-turning | S01 Salt Flats at Turning Tide | 6, 14, 24 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 16 | s02-undersea-low | S02 Undersea at Low Tide | 6, 14, 24 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 17 | s03-ruins-high | S03 Orbital Ruins at High Tide | 6, 14, 24 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 18 | s04-flats-low | S04 Salt Flats at Low Tide | 24 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 19 | s05-undersea-high | S05 Undersea at High Tide | 24 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 20 | s06-ruins-low | S06 Orbital Ruins at Low Tide | 24 | Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 21 | interaction-controller-touch | Controller and touch interaction sheet | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 22 | interaction-keyboard-mouse | Keyboard and mouse interaction sheet | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 23 | undersea-rehearsal | Undersea visual rehearsal | 14, 24 | Format: video; 5 to 15 seconds. Stage: final. |\n| 24 | world-art-presentation | World art presentation | 14, 24 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: core-gameplay.md",
+            "config": {
+              "text": "# SALT MOON — Core Gameplay Note (one page)\n\n## Premise\n- Genre: survival crafting game\n- Setting: a moon whose seas evaporated, leaving salt flats above a surviving underground sea and the ruins of an orbital ring that fell in pieces\n- Player: a scout of the Tidal Council, the faction that still reads the tides\n\n## Three regions, fixed names\n| Number | Region | Conditions | Resources |\n|---|---|---|---|\n| 1 | Salt Flats | Surface; blinding white crust; salt storms; wind-carved pillars | salt glass; wind-dried fibre; scrap from fallen ring segments |\n| 2 | Undersea | Underground sea beneath the crust; bioluminescent water; cold; low visibility | pressure shells; luminous algae; brine metal |\n| 3 | Orbital Ruins | Fallen ring sections standing half-buried; sharp geometry; vacuum-scarred alloy; dead machinery | alloy plate; power cells; data cores |\n\n## The tide cycle\n- Duration: about 40 minutes of play\n- Low tide: open sinkholes leading down to the Undersea\n- High tide: flooded lower Ruins and ring-segment airlocks lifted within reach\n- Turning tide: salt storms on the Flats; shelter or loss of heat and visibility\n- Expedition planning: organized around the tide cycle\n- Tidal Council identity: keepers of the tide tables\n\n## Loop\n- Sequence: Scout → gather → return to the Council hold → craft → unlock the next region's gear\n- Survival pressures: heat, water and pressure, one per region\n\n## Visual intent for the art team\n- World continuity: one world, one light source and one material logic\n- Regional distinction: a dominant colour and material for each region\n- Lore scope: regional dominant colours and materials\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-world-records.md",
+            "config": {
+              "text": "# SALT MOON — World Records\n\n## Occupations and exchange\n| ID | Occupation | Home region | Work | Supply relationship |\n|---|---|---|---|---|\n| C01 | Council Scout | Salt Flats | Tide reading and expedition routes | Tide tables for all five specialist occupations |\n| C02 | Brine Diver | Undersea | Pressure-shell gathering | Shells for the Ring Rigger's equipment housings |\n| C03 | Ring Rigger | Orbital Ruins | Power-cell recovery and airlock rigging | Power cells for the Brine Diver and Algae Tender |\n| C04 | Fibre Gatherer | Salt Flats | Wind-dried fibre gathering | Woven straps for all six occupations |\n| C05 | Algae Tender | Undersea | Luminous-algae cultivation | Luminous algae for the Council Scout's dial and Pressure Lamp |\n| C06 | Core Archivist | Orbital Ruins | Data-core recovery | Recovered tide records for the Council Scout |\n\n## Character records\n| ID | Name | Height | States | Fixed visible features |\n|---|---|---|---|---|\n| C01 | Council Scout | 1720 mm | Idle; Reading | Sand coat; teal forearms; one spool on left shoulder; split hem |\n| C02 | Brine Diver | 1840 mm | Idle; Sampling | Teal pressure suit; one circular faceplate; two cream shoulder shells; one back cylinder |\n| C03 | Ring Rigger | 1760 mm | Idle; Lifting | Violet short jacket; one rectangular visor; two hip clamps; triangular backpack |\n| C04 | Fibre Gatherer | 1680 mm | Idle; Winding | Sand poncho; teal gloves; one oval back basket; two wrist wraps |\n| C05 | Algae Tender | 1810 mm | Idle; Tending | Teal apron; cream hood; one rectangular chest pouch; two shin guards |\n| C06 | Core Archivist | 1740 mm | Idle; Indexing | Violet long vest; sand sleeves; one square eye lens; three chest tabs |\n\n## Prop records\n| ID | Name | Primary user | Length × width × depth | States | Fixed visible features |\n|---|---|---|---|---|---|\n| P01 | Tide Gauge | C01 | 240 × 90 × 45 mm | Stowed; Reading | Oval shell; circular dial; three lower slots; wrist strap |\n| P02 | Shell Sampler | C02 | 360 × 100 × 100 mm | Closed; Sampling | Forked nose; clear cylindrical chamber; two side latches |\n| P03 | Cell Cradle | C03 | 300 × 180 × 120 mm | Empty; Loaded | U-shaped frame; two grips; one central cell socket |\n| P04 | Fibre Reel | C04 | 220 × 160 × 160 mm | Stowed; Winding | Two circular cheeks; one offset crank; exposed fibre winding |\n| P05 | Pressure Lamp | C05 | 280 × 140 × 140 mm | Dim; Lit | Ribbed cylindrical cage; four ribs; domed lens; upper handle |\n| P06 | Core Caddy | C06 | 260 × 180 × 80 mm | Closed; Open | Rectangular shell; three internal slots; one lid hinge; diagonal corner cut |\n\n## Shared identity\n- Character badge position: left upper arm\n- Prop badge position: circular inset plate on the main body\n- Badge geometry: circular ring split by gaps at top and bottom; three centered horizontal bars, middle bar longest\n- Badge color: #26383D\n- Fittings: matte brine metal\n- Straps: woven fibre\n- Character and prop colors: regional dominant color with shared sand #D8CDA8 and teal #397C86 accents\n\n## Region and scene records\n| Scene ID | Region | Tide state | Footprint | Playable route and ecological cue | Featured assets |\n|---|---|---|---|---|---|\n| S01 | Salt Flats | Turning Tide | 48000 × 32000 mm | Wind-carved pillars; salt storm; route into a ring-fragment shelter | C01; P01 |\n| S02 | Undersea | Low Tide | 36000 × 24000 mm | Open sinkhole; ledge to pressure-shell gathering beside luminous water | C01; P01; C02; P02 |\n| S03 | Orbital Ruins | High Tide | 24000 × 32000 mm | Flooded lower machinery; floating segment with reachable airlock | C01; P01; C03; P03 |\n| S04 | Salt Flats | Low Tide | 48000 × 32000 mm | Same pillars and shelter as S01; exposed fibre gathering route | C01; P01; C04; P04 |\n| S05 | Undersea | High Tide | 36000 × 24000 mm | Same sinkhole and ledge as S02; submerged sinkhole; refuge beside algae beds | C01; P01; C05; P05 |\n| S06 | Orbital Ruins | Low Tide | 24000 × 32000 mm | Same machinery and airlock as S03; exposed lower salvage route; airlock overhead | C01; P01; C06; P06 |\n\n## Scene population by scope\n- Six-file scope: C01 and P01 in S01, S02 and S03\n- Fourteen-file scope: complete featured-asset records for S01, S02 and S03\n- Twenty-four-file scope: complete featured-asset records for S01 through S06\n\n## Interaction records\n| Action | Controller | Touch | Keyboard and mouse | Position |\n|---|---|---|---|---|\n| Read tide | A | Tap-hand icon | E keycap | Lower left |\n| Collect sample | X | Tap-hand icon | F keycap | Immediately above Read tide |\n\n- Shared snapshot title: SALT MOON\n- Snapshot location: Undersea\n- Snapshot assets: C01 Council Scout; P01 Tide Gauge\n- Tide label: Low Tide\n- Countdown: 08:00\n- Resource label and count: Samples 3 / 12\n- Unavailable example: Collect sample with lock icon\n- PC viewport reference: 1920 × 1080 pixels\n- Ordinary interface text: minimum 18 pixels in the delivered image\n- Large interface text: minimum 36 pixels in the delivered image\n- Ordinary text contrast: 4.5:1\n- Large text and icon contrast: 3:1\n- Unavailable action contrast: 3:1\n\n## Tide legend\n| State | Color | Shape |\n|---|---|---|\n| Low Tide | #D8CDA8 | Open downward triangle |\n| Turning Tide | #766B83 | Three diagonal strokes |\n| High Tide | #397C86 | Filled upward triangle |\n\n## Visual rehearsal record\n- Duration: 10 seconds\n- Scene: S02 Undersea, Low Tide\n- Character: C01 Council Scout\n- Prop: P01 Tide Gauge\n- Action sequence: Idle with Stowed gauge; Reading with Reading gauge; Idle with Stowed gauge\n- End-frame labels: C01; P01; Low Tide\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: style-ref-1.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: style-ref-2.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: style-ref-3.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: region-boundaries.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: council-badge.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-6",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: salt-and-cavern-atmosphere.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "SALT MOON | A science fiction world shaped by tides and working lives\n\nWe are developing the world art for SALT MOON, a survival crafting game for players who explore by learning how a place works. Its surface seas have evaporated: Salt Flats cover an underground Undersea, and fallen ring sections form the Orbital Ruins. The player is a scout of the Tidal Council. Expeditions follow an approximately 40-minute tide cycle: low tide opens the sinkholes, high tide floods the lower Ruins and raises airlocks within reach, and turning tides bring salt storms. The working loop is scout, gather, return to the Council hold, craft and unlock the next region's gear.\n\nBuild on the attached region paintings. Salt Flats uses salt glass and #D8CDA8; Undersea uses pressure shells and #397C86; Orbital Ruins uses scarred alloy and #766B83. Repaired equipment shares matte brine-metal fittings, woven fibre straps and the Council's split-circle badge. Use broad opaque brushwork, chipped material edges and a dominant light from the upper left. The playable footprints are respectively 48000 × 32000 mm, 36000 × 24000 mm and 24000 × 32000 mm. Our scout, C01, is 1720 mm tall; the Tide Gauge, P01, measures 240 × 90 × 45 mm.\n\nEvery character and prop sheet contains front, side and rear views, its two recorded states, a close-up and a small map icon. Carry those identities into the scenes and film. Print \"SALT MOON\" on scene plates and interaction sheets; use the prompts \"Read tide\" and \"Collect sample\" on interaction sheets. The shared interaction snapshot is Low Tide, 08:00 remaining, with Samples 3 / 12.\n\nAudience: exploration-focused players and our world, character and environment leads, supporting the visual direction decision and the first playable region build.\n\nInputs (attached): 01-client-facts.en.md contains the fixed world and art facts. 02-delivery-catalog.en.md lists every deliverable's proportion, format and stage. core-gameplay.md contains the premise, resources and tide-dependent access rules. 03-world-records.md contains occupations, asset dimensions, states and interaction records. region-boundaries.png is the constraint drawing for playable footprints and asset scale. style-ref-1.png is the identity reference for Salt Flats and its two moons. style-ref-2.png is the identity reference for the Undersea. style-ref-3.png is the identity reference for the Orbital Ruins. council-badge.png is the existing Tidal Council identity mark. salt-and-cavern-atmosphere.png is the reference for salt glare, wet rock and luminous water.\n\nDeliverables:\n1. A one-page art style rule sheet stating the three region color codes, materials, brushwork treatment, upper-left dominant light and tide symbols\n2. One character and prop inventory covering C01–C06 and P01–P06, with IDs, occupations, dimensions, two states and visible identity features\n3. Six character sheets: C01 Council Scout, C02 Brine Diver, C03 Ring Rigger, C04 Fibre Gatherer, C05 Algae Tender and C06 Core Archivist, each with three views, two recorded states, a close-up and a map icon\n4. Six prop sheets: P01 Tide Gauge, P02 Shell Sampler, P03 Cell Cradle, P04 Fibre Reel, P05 Pressure Lamp and P06 Core Caddy, each with three views, two recorded states, a close-up and a map icon\n5. Six playable scene plates: Salt Flats at Turning Tide and Low Tide, Undersea at Low Tide and High Tide, and Orbital Ruins at High Tide and Low Tide, each with a perspective view and a dimensioned route inset\n6. Two interaction sheets for C01 reading P01 and collecting a sample: one with matching controller and touch views, and one with keyboard and mouse views, both with a three-state tide legend\n7. One 10-second visual rehearsal of C01 using P01 in the Low Tide Undersea scene\n8. One world art presentation of at least 12 pages, reusing the rule sheet, inventory, all characters, props, scenes, interaction views and film frames\n\nAcceptance:\n- The art style rule sheet and asset inventory precede the applications. All 6 character and 6 prop sheets repeat the inventory IDs, dimensions and both state names; captions on all 6 scene plates and the presentation repeat the rule sheet's #D8CDA8, #397C86, #766B83 and upper-left dominant light.\n- The character sheets, prop sheets, scene plates, interaction sheets, film and presentation preserve their recorded accessory counts and silhouette features; C01 retains the 1720 mm height and single left-shoulder spool, and P01 retains its 240 × 90 × 45 mm dimensions and three lower slots. All 12 asset sheets contain three views, two states, a close-up and a map icon.\n- The six scene plates print SALT MOON, their region names and tide states, repeating each region's fixed footprint in both route insets: Salt Flats 48000 × 32000 mm, Undersea 36000 × 24000 mm and Orbital Ruins 24000 × 32000 mm. Paired scenes express changing access through shelter and exposed fibre, open and submerged sinkholes, and reachable and overhead airlocks.\n- Both interaction sheets repeat SALT MOON, Read tide, Collect sample, Low Tide, 08:00 and Samples 3 / 12 in every device view. Controller A/X, touch tap-hand icons and keyboard E/F address Read tide/Collect sample in matching positions; both sheets use the open downward triangle, three diagonal strokes and filled upward triangle for the three tide states.\n- Both interaction sheets reach 4.5:1 contrast for ordinary text and 3:1 for large text and icons; each unavailable Collect sample example carries a lock icon and reaches 3:1 contrast.\n- The 10-second film reuses the completed C01, P01 and Low Tide Undersea scene, naming all three on its end frame. The presentation prints SALT MOON across at least 12 pages, repeats the early documents' color codes and asset dimensions, and includes all 6 characters, 6 props, 6 scenes, 2 interaction sheets and 2 film frames.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-b-n24/style-ref-1.png",
+      "nodeId": "provided-image-1",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "307d8bedfd1119c8cb7642e110d19d838cdeb03848aa31201fedf8db6a72c85b"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-b-n24/style-ref-2.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "510563bef061a34480018aeadd83bcaaccb0770dceaf6150687ebe2b24e9665c"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-b-n24/style-ref-3.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "284944e6b1ae09c871d8fa32f13d54501c7a4f107467211c40a6e8d985543b62"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-b-n24/region-boundaries.png",
+      "nodeId": "provided-image-4",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "e78a334b6778dcfe23f11660c666c1b503fbe501c1f58cd8e6e4231ba2a2431a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-b-n24/council-badge.png",
+      "nodeId": "provided-image-5",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "09509c74f1788d1a05fee4088c88742ad65e4f8b75d4f146d884a36efe93fbcc"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-b-n24/salt-and-cavern-atmosphere.png",
+      "nodeId": "provided-image-6",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "18a632a2f70abfc67363af8ca12da05d455e6f6e968a3ce6a89b229c450b1785"
+    }
+  ]
+}

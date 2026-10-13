@@ -1,0 +1,23 @@
+HALFTONE | A running club meeting place and everyday cafe
+
+We are fitting out the 120 m² corner unit in plan-with-cameras.png as our running club meeting place and neighbourhood cafe. Retain its north and west glazing, two columns, entrance and service door in their drawn positions, with the 3.6 m clear height. The plan supplies the footprint, opening dimensions and structural geometry. Coordinates use the southwest internal corner as the origin, x east, y north and z up, in metres. New lightweight partitions may organise storage and changing. Group new coffee equipment connections beside the service door. Preserve the attached HALFTONE wordmark and its dark green #2F4F3E. The cafe opens daily from 06:30 to 18:00. On Tuesday and Thursday, 12 runners gather from 06:45 to 07:00 and return from 07:30 to 08:00; eight cafe guests and two staff remain on site during the return peak. Provide a 12 m² meeting zone, 18 m² social rest zone seating all 12 runners, 16 m² cafe seating zone for eight guests, 12 m² storage and changing zone, and 14 m² service zone. Four cafe seats are quiet seats. Provide 12 lockers, two changing booths, a 1200 mm minimum clear main route and a 1500 mm turning circle at the entrance. Post-run rest centres on seated conversation and drinking water. Print "HALFTONE" at the counter and "Run meeting" at the meeting zone. Use matte terrazzo FL-01, clear-sealed ash WD-02 and wool-felt acoustic baffles AC-03 above the quiet seats, with separate ambient, task and accent lighting controls. Compare the return peak with weekday use from 14:00 to 15:00 by eight cafe guests and two staff. C1 looks northwest from [11.1, 0.9, 1.6] towards [4.4, 7.0, 1.55]; C2 looks east/south from [0.8, 8.5, 1.6] towards [8.6, 4.6, 1.55]. C3 is behind the selected counter, looking towards pickup and lockers at 1.6 m eye height; locate it on the developed plan.
+
+Audience: running club members, everyday cafe guests and our operations team, for the layout decision and fit-out brief.
+
+Inputs (attached): 01-client-facts.en.md contains the operating brief, furniture dimensions and material records. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. plan-with-cameras.png is the constraint drawing for the retained shell. activity-clearances.png is the constraint drawing for activity footprints and clearances. view-c1.png is an identity reference for the existing shell from C1. view-c2.png is an identity reference for the existing shell from C2. logo.png is the fixed identity reference for the wordmark. runners-after-run.png supplies a reference for post-run social behaviour. weekday-solo-visit.png supplies a reference for quiet individual use.
+
+Deliverables:
+1. One furnished zoning plan with five zone areas, two visitor routes, furniture counts, equipment positions, clearances and camera locations
+2. One counter and quiet-seat section elevation with floor, counter, baffle and ceiling heights
+3. Two occupied interior perspectives: C1 during the return peak and C2 during weekday afternoon use
+4. One storage and service detail sheet with locker elevations, both changing booths, the ordering queue, pickup and drinking-water point
+5. One materials, furniture and lighting board with coded finishes, furniture quantities and dimensions, baffle locations and three lighting circuits
+
+Acceptance:
+- Retain the 120 m² shell, 3.6 m clear height, two columns, glazing and door positions from plan-with-cameras.png in the furnished plan, section and both perspectives.
+- Label all five zone names and their 12, 18, 16, 12 and 14 m² areas on the furnished plan; dimension its narrowest main passage at least 1200 mm and its entrance turning circle 1500 mm.
+- Show 12 runners, eight cafe guests and two staff in the C1 peak perspective, and eight cafe guests and two staff in the C2 afternoon perspective; match furniture positions to the furnished plan and retain four quiet cafe seats in both states.
+- Coordinate the furnished plan and storage and service detail sheet around 12 lockers with 300 × 450 × 450 mm clear interiors, two booths with 1200 × 1500 mm clear interiors, and a cafe ordering route outside the meeting footprint and quiet seating zone.
+- Repeat FL-01, WD-02, AC-03 and LT-01 through LT-03 on the section and materials, furniture and lighting board; show AC-03 above the quiet seats in both perspectives, with HALFTONE and Run meeting legible in C1 and the wordmark in #2F4F3E.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

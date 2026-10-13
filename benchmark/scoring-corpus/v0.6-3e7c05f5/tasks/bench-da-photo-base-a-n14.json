@@ -1,0 +1,1106 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-photo-base-a-n14",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "concept-a",
+      "label": "Shooting concept A",
+      "description": "One concept board for direction A comparing action, camera position and the runner's relationship to the city.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "concept-b",
+      "label": "Shooting concept B",
+      "description": "One concept board for direction B comparing action, camera position and the runner's relationship to the city.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "concept-c",
+      "label": "Shooting concept C",
+      "description": "One concept board for direction C comparing action, camera position and the runner's relationship to the city.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "selected-shooting-sheet",
+      "label": "Selected concept and shooting sheet",
+      "description": "One shooting document containing the selected direction, rationale, shot IDs, proportions, camera positions, subjects, uses, product colours, lighting and copy.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "scene-s01",
+      "label": "S01 Alex pavement warm-up campaign image",
+      "description": "One landscape campaign photograph of Alex Lane warming up on a pavement with the existing mark and both copy lines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "scene-s02",
+      "label": "S02 Morgan station steps photograph",
+      "description": "One environmental photograph of Morgan Reed climbing station steps at an easy pace.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "scene-s03",
+      "label": "S03 Alex canal run photograph",
+      "description": "One environmental photograph of Alex Lane running beside a canal.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "hero-p01",
+      "label": "P01 Three-quarter product hero",
+      "description": "One whole-product photograph of the matching shoe pair in three-quarter view on pavement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "detail-d01",
+      "label": "D01 Mesh-to-sole close-up",
+      "description": "One product close-up of the off-white mesh upper meeting the orange sole accent.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "detail-d02",
+      "label": "D02 Lacing and tongue close-up",
+      "description": "One product close-up of the shoe's lacing and tongue.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "s01-square-ad",
+      "label": "S01 Square advertising crop",
+      "description": "One square advertising crop of the S01 exposure with the existing mark and both copy lines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "s01-vertical-ad",
+      "label": "S01 Vertical advertising crop",
+      "description": "One vertical advertising crop of the S01 exposure with the existing mark and both copy lines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "campaign-video",
+      "label": "Ten-second running-shoe advertisement",
+      "description": "One 10-second advertisement connecting Alex's preparation, Morgan's run and a product end frame carrying the mark and both copy lines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "campaign-presentation",
+      "label": "Campaign presentation and image sequence",
+      "description": "One campaign presentation reusing the concepts, selected shooting sheet, finished imagery and video stills, with an ordered sequence and at least 8 pages for tier 14 or 12 pages for tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-name",
+      "kind": "text-verbatim",
+      "text": "DAY MILE",
+      "scope": {
+        "slots": [
+          "scene-s01",
+          "s01-square-ad",
+          "s01-vertical-ad",
+          "campaign-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "campaign-line",
+      "kind": "text-verbatim",
+      "text": "Your city. Your pace.",
+      "scope": {
+        "slots": [
+          "scene-s01",
+          "s01-square-ad",
+          "s01-vertical-ad",
+          "campaign-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "DAY MILE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier14-runner-campaign",
+      "slots": [
+        "scene-s01",
+        "scene-s02",
+        "scene-s03",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "sourceSlots": [
+        "selected-shooting-sheet"
+      ],
+      "items": [
+        {
+          "item": "Runner photographs and advertisements develop the selected shooting direction and its documented lighting treatment.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The S01 family uses one exposure with a consistent mark and copy treatment across landscape, square and vertical compositions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Runner identities, clothing, shoe construction and advertising protected areas comply with the supplied campaign facts.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "tier14-product-campaign",
+      "slots": [
+        "hero-p01",
+        "detail-d01",
+        "detail-d02"
+      ],
+      "sourceSlots": [
+        "selected-shooting-sheet",
+        "scene-s01"
+      ],
+      "items": [
+        {
+          "item": "The hero and detail photographs continue the selected direction, shoe identity and morning light established by the shooting sheet and runner campaign.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The product group supplies the complete three-quarter pair and distinct, inspectable mesh junction and lacing-and-tongue details.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "DAY MILE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "scene-s01",
+      "scene-s02",
+      "scene-s03",
+      "hero-p01",
+      "detail-d01",
+      "detail-d02",
+      "s01-square-ad",
+      "s01-vertical-ad"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge campaign photography, composition and communication quality without rewarding redesigns of the supplied shoe, runners or mark, or treating exact lighting settings and personal record fields as visually measurable aesthetic qualities."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "concept-a",
+        "concept-b",
+        "concept-c",
+        "selected-shooting-sheet",
+        "scene-s01",
+        "scene-s02",
+        "scene-s03",
+        "hero-p01",
+        "detail-d01",
+        "detail-d02",
+        "s01-square-ad",
+        "s01-vertical-ad",
+        "campaign-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "concept-a",
+        "concept-b",
+        "concept-c",
+        "scene-s01",
+        "scene-s02",
+        "scene-s03",
+        "hero-p01",
+        "detail-d01",
+        "detail-d02",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-concept-a",
+      "requirementId": "R-format-concept-a",
+      "method": "artifact-property",
+      "targetSlots": [
+        "concept-a"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-concept-b",
+      "requirementId": "R-format-concept-b",
+      "method": "artifact-property",
+      "targetSlots": [
+        "concept-b"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-concept-c",
+      "requirementId": "R-format-concept-c",
+      "method": "artifact-property",
+      "targetSlots": [
+        "concept-c"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-selected-shooting-sheet",
+      "requirementId": "R-format-selected-shooting-sheet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "selected-shooting-sheet"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-scene-s01",
+      "requirementId": "R-format-scene-s01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "scene-s01"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-scene-s02",
+      "requirementId": "R-format-scene-s02",
+      "method": "artifact-property",
+      "targetSlots": [
+        "scene-s02"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-scene-s03",
+      "requirementId": "R-format-scene-s03",
+      "method": "artifact-property",
+      "targetSlots": [
+        "scene-s03"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-hero-p01",
+      "requirementId": "R-format-hero-p01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "hero-p01"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-detail-d01",
+      "requirementId": "R-format-detail-d01",
+      "method": "artifact-property",
+      "targetSlots": [
+        "detail-d01"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-detail-d02",
+      "requirementId": "R-format-detail-d02",
+      "method": "artifact-property",
+      "targetSlots": [
+        "detail-d02"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s01-square-ad",
+      "requirementId": "R-format-s01-square-ad",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s01-square-ad"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-s01-vertical-ad",
+      "requirementId": "R-format-s01-vertical-ad",
+      "method": "artifact-property",
+      "targetSlots": [
+        "s01-vertical-ad"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-campaign-video",
+      "requirementId": "R-format-campaign-video",
+      "method": "manual",
+      "targetSlots": [
+        "campaign-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-campaign-presentation",
+      "requirementId": "R-format-campaign-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "campaign-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "shoe-model-and-colours",
+      "requirementId": "R-shoe-model-and-colours",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02",
+        "scene-s03",
+        "hero-p01",
+        "detail-d01",
+        "detail-d02",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "Compare every visible shoe with the supplied side, top and three-quarter references. Silhouette, panel construction, mesh, sole geometry and markings must remain those of the referenced model, with an off-white upper and orange sole accent corresponding to the specified colours. Allow perspective, occlusion and photographic illumination; fail substituted models, invented construction or markings, or materially changed base colours. Do not require individual photographed pixels to equal the hexadecimal values.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "alex-casting-and-wardrobe",
+      "requirementId": "R-alex-casting-and-wardrobe",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s03",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "Alex must be recognisable as the person in alex-lane.png and retain the reference garments and their visible characteristics. Changes in pose, expression, camera angle and natural garment folds are allowed; a different person or replacement outfit fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "morgan-casting-and-wardrobe",
+      "requirementId": "R-morgan-casting-and-wardrobe",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s02"
+      ],
+      "criteria": "Compare Morgan with morgan-reed.png and the Morgan casting record: medium-brown skin, short tightly curled dark hair, a clean-shaven face, average build, sage #798777 crew-neck T-shirt, charcoal #303236 running shorts, white ankle socks and a plain black watch on the left wrist. Preserve visible identity, wardrobe and accessory details, allowing photographic colour shifts and pose-dependent occlusion. Do not infer an exact age or handedness from appearance alone.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "shared-morning-light",
+      "requirementId": "R-shared-morning-light",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02",
+        "scene-s03",
+        "hero-p01",
+        "detail-d01",
+        "detail-d02",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "The final photographs and crops must present a coherent first-hour-after-sunrise treatment: low directional sunlight, plausible long shadows, controlled fill and a consistent colour balance compatible with the stated lighting setup. Use morning-light-plan.png and dawn-street.png as lighting and atmosphere evidence. Allow changes caused by camera orientation and subject position; fail contradictory light directions within a scene, midday or night treatment, or conspicuously inconsistent contrast and colour balance. Exact compass bearing, elapsed time, ratio and Kelvin setting cannot be established from pixels alone.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier14-runner-scenes",
+      "requirementId": "R-tier14-runner-scenes",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02",
+        "scene-s03"
+      ],
+      "criteria": "Match the scene records: S01 shows Alex standing and warming up on pavement; S02 shows Morgan climbing station steps at an easy pace; S03 shows Alex running easily along a canal path. Allow photographic framing and city details to vary while preserving each assigned person, setting and activity. S01 must function as the landscape advertisement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier14-product-views",
+      "requirementId": "R-tier14-product-views",
+      "method": "visual",
+      "targetSlots": [
+        "hero-p01",
+        "detail-d01",
+        "detail-d02"
+      ],
+      "criteria": "P01 must contain the complete matching pair on pavement in three-quarter view, occupying at least 80% of the image width across the pair. D01 must make the mesh-to-sole interface inspectable, and D02 must clearly reveal both lacing and tongue construction. Allow framing and depth-of-field choices that preserve the required evidence; clipping the hero shoes or obscuring the named details fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier14-advertising-family",
+      "requirementId": "R-tier14-advertising-family",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "Verify one underlying S01 exposure across landscape 3:2, square 1:1 and vertical 9:16 compositions by matching pose, scene details and lighting. Allow crop, scale and graphic placement changes; regenerated or different photographic moments fail. Every image must include the exact brand name, campaign line and unchanged black reference mark. Following campaign-safe-zones.png, copy must be wholly in the upper quarter, while faces, both complete shoes, copy and mark must be wholly within the 8% edge inset.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "distinct-concept-directions",
+      "requirementId": "R-distinct-concept-directions",
+      "method": "visual",
+      "targetSlots": [
+        "concept-a",
+        "concept-b",
+        "concept-c"
+      ],
+      "criteria": "The boards must communicate identifiable A, B and C alternatives and make action, camera position and the runner's relationship to the city comparable. Allow different board layouts and explanatory text; relabelled duplicates or differences limited to superficial colour or typography fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "shooting-sheet-records",
+      "requirementId": "R-shooting-sheet-records",
+      "method": "content",
+      "targetSlots": [
+        "selected-shooting-sheet"
+      ],
+      "criteria": "The sheet must identify exactly one supplied direction by letter, explain why it was chosen and provide usable shot records for the applicable commission. Records must associate shot IDs with proportions, camera positions, subjects and intended uses, matching the assigned scene and product records. It must state both shoe colour specifications, the prescribed lighting treatment and the exact brand name and campaign line. Allow prose, tables or diagrams; missing fields, contradictory assignments or an unidentifiable selection fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "concept-a",
+        "concept-b",
+        "concept-c"
+      ]
+    },
+    {
+      "id": "shooting-plan-coordinates",
+      "requirementId": "R-shooting-plan-coordinates",
+      "method": "content",
+      "targetSlots": [
+        "selected-shooting-sheet"
+      ],
+      "criteria": "Read the sheet's required camera-position records against the supplied plan and fact sheet. The plan uses a southwest origin in an east-west 12000 mm by north-south 8000 mm area, with subject at east 6000/north 4000 mm, camera at east 6000/north 1500 mm, reflector at east 4000/north 6000 mm and flag at east 2000/north 4000 mm. Equivalent units or a clearly equivalent coordinate representation are allowed. Camera records or any reproduced setup geometry that contradict the supplied plan fail; the sheet need not reproduce every plan annotation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "tier14-selection-record",
+      "requirementId": "R-tier14-selection-record",
+      "method": "content",
+      "targetSlots": [
+        "selected-shooting-sheet",
+        "campaign-presentation"
+      ],
+      "criteria": "The documented development sequence must place the three alternatives before the selected shooting plan. The sheet must name one of A, B or C, and presentation page 1 must explicitly name that same letter. Allow any selection and page design; missing, ambiguous or conflicting selection labels fail. Assess the documented sequence without inventing requirements for timestamps.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "concept-a",
+        "concept-b",
+        "concept-c"
+      ]
+    },
+    {
+      "id": "tier14-selected-direction-in-stills",
+      "requirementId": "R-tier14-selected-direction-in-stills",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02",
+        "scene-s03",
+        "hero-p01",
+        "detail-d01",
+        "detail-d02",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "Identify the selected board from the shooting sheet, then compare the finished stills with its action, camera approach and treatment of the city. Runner images, product images and advertisements must visibly develop the selected direction where applicable. Allow execution refinements and the mandated different shots; switching to an unselected concept or producing unrelated visual approaches fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "concept-a",
+        "concept-b",
+        "concept-c",
+        "selected-shooting-sheet"
+      ]
+    },
+    {
+      "id": "production-facts-and-caption-carry-through",
+      "requirementId": "R-production-facts-and-caption-carry-through",
+      "method": "content",
+      "targetSlots": [
+        "selected-shooting-sheet",
+        "campaign-presentation"
+      ],
+      "criteria": "Verify that the sheet explicitly records both hexadecimal colours, southeast illumination at approximately 20 degrees elevation, capture within the first 60 minutes after sunrise, a 4:1 key-to-fill ratio and 5200 K white balance. The presentation must repeat those values adjacent to relevant finished images, and sequence captions must preserve the sheet's shot-ID-to-proportion associations. Equivalent notation and reasonable wording of the approximate elevation are allowed; omitted values, contradictions, misplaced facts without relevant image association or mismatched captions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "selected-shooting-sheet"
+      ]
+    },
+    {
+      "id": "video-content-and-end-frame",
+      "requirementId": "R-video-content-and-end-frame",
+      "method": "manual",
+      "targetSlots": [
+        "campaign-video"
+      ],
+      "criteria": "Review the complete video and its duration. It must run for 10 seconds, allowing only frame-rounding tolerance, and progress from Alex preparing to Morgan running before finishing on a product frame. Throughout, preserve both runners' reference identities and clothing, every visible shoe's reference model, colours and markings, the prescribed morning treatment and the selected concept. The final frame must visibly contain the existing black mark and the exact two copy lines. Apply the stated upper-quarter copy placement and 8% advertising inset to protected content when present. If the end frame is a whole-product photograph, its complete pair must span at least 80% of the frame width. Editorial transitions may vary; wrong sequencing, substituted identities or product, missing end-frame content or materially wrong duration fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "selected-shooting-sheet",
+        "concept-a",
+        "concept-b",
+        "concept-c"
+      ]
+    },
+    {
+      "id": "tier14-presentation-reuse",
+      "requirementId": "R-tier14-presentation-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "campaign-presentation"
+      ],
+      "criteria": "The presentation must visibly reuse each concept board, the selected shooting sheet, every delivered finished photograph and advertising crop, and identifiable stills from the delivered video. Resizing, page-layout changes and legible excerpts of the sheet are acceptable when the source remains identifiable. Substituted imagery, merely naming an asset, or omitting any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "concept-a",
+        "concept-b",
+        "concept-c",
+        "selected-shooting-sheet",
+        "scene-s01",
+        "scene-s02",
+        "scene-s03",
+        "hero-p01",
+        "detail-d01",
+        "detail-d02",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ]
+    },
+    {
+      "id": "tier14-presentation-length-and-sequence",
+      "requirementId": "R-tier14-presentation-length-and-sequence",
+      "method": "content",
+      "targetSlots": [
+        "campaign-presentation"
+      ],
+      "criteria": "The presentation must have at least eight pages and an identifiable campaign image sequence progressing through preparation, running, recovery and product in that order. Concepts and planning pages may sit outside that sequence, and multiple images may share a page. Recovery must be represented in the sequence without requiring an additional separately exported still. Fewer pages, a missing phase or an incorrectly ordered campaign sequence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-tier14-runner-campaign",
+      "requirementId": "R-set-tier14-runner-campaign",
+      "method": "visual",
+      "targetSlots": [
+        "scene-s01",
+        "scene-s02",
+        "scene-s03",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "criteria": "Runner photographs and advertisements develop the selected shooting direction and its documented lighting treatment. The S01 family uses one exposure with a consistent mark and copy treatment across landscape, square and vertical compositions. Runner identities, clothing, shoe construction and advertising protected areas comply with the supplied campaign facts.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "selected-shooting-sheet"
+      ]
+    },
+    {
+      "id": "set-tier14-product-campaign",
+      "requirementId": "R-set-tier14-product-campaign",
+      "method": "visual",
+      "targetSlots": [
+        "hero-p01",
+        "detail-d01",
+        "detail-d02"
+      ],
+      "criteria": "The hero and detail photographs continue the selected direction, shoe identity and morning light established by the shooting sheet and runner campaign. The product group supplies the complete three-quarter pair and distinct, inspectable mesh junction and lacing-and-tongue details.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-a-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-a-n14/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "selected-shooting-sheet",
+        "scene-s01"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "reference-shoe",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "shoe-1.png",
+        "shoe-2.png",
+        "shoe-3.png"
+      ],
+      "subjectSlots": [
+        "scene-s01",
+        "scene-s02",
+        "scene-s03",
+        "hero-p01",
+        "detail-d01",
+        "detail-d02",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "notes": "The shoe has an off-white #F4F1EA upper and an orange #FF5A1F sole accent; its construction and markings follow the three attached shoe views."
+    },
+    {
+      "id": "reference-mark",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "logo.png"
+      ],
+      "subjectSlots": [
+        "scene-s01",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "notes": "Use the existing black stroke mark from logo.png."
+    },
+    {
+      "id": "alex-reference-identity",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "alex-lane.png"
+      ],
+      "subjectSlots": [
+        "scene-s01",
+        "scene-s03",
+        "s01-square-ad",
+        "s01-vertical-ad"
+      ],
+      "notes": "Alex's appearance and outfit follow alex-lane.png."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "shooting-facts-and-sequence-records",
+      "fromSlot": "selected-shooting-sheet",
+      "toSlots": [
+        "campaign-presentation"
+      ],
+      "extract": [
+        "upper and sole accent colour specifications",
+        "sun direction and approximate elevation",
+        "shooting window after sunrise",
+        "key-to-fill ratio",
+        "white balance",
+        "shot IDs and their corresponding proportions"
+      ],
+      "notes": "The shooting sheet records #F4F1EA, #FF5A1F, southeast light at approximately 20 degrees, the first 60 minutes after sunrise, 4:1 key-to-fill and 5200 K; the presentation repeats these facts beside the relevant finished images, and its sequence captions repeat the sheet's shot IDs and proportions."
+    }
+  ]
+}

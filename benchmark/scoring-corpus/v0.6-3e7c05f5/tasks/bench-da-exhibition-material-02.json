@@ -1,0 +1,625 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-exhibition-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "exhibition-floor-plan",
+      "label": "Final exhibition floor plan",
+      "description": "One dimensioned exhibition floor plan with the five-step route, three identified utensils, furniture, doors, bench and clear passage.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "installation-interpretation",
+      "label": "Installation and interpretation document",
+      "description": "One three-page final document containing the display elevation and connection detail, interpretation graphics and three object labels arranged as a catalogue.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "south-entrance-view",
+      "label": "Visitor perspective from the south entrance",
+      "description": "One visitor perspective from the south entrance showing the completed exhibition and its introductory graphic.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "north-exit-view",
+      "label": "Visitor perspective from the north exit",
+      "description": "One visitor perspective from the north exit looking back at the same utensils, graphics and furniture arrangement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "open-state",
+      "label": "Open exhibition state",
+      "description": "One overhead drawing labelled Open with 12 visitors, outward-open doors, illuminated graphics and three covered utensils.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "closed-state",
+      "label": "Closed exhibition state",
+      "description": "One matching overhead drawing labelled Closed with shut doors, lighting off and the same furniture and covered utensils.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exhibition-title",
+      "kind": "text-verbatim",
+      "text": "TIME AT THE TABLE",
+      "scope": {
+        "slots": [
+          "installation-interpretation",
+          "south-entrance-view",
+          "north-exit-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "exhibition-descriptor",
+      "kind": "text-verbatim",
+      "text": "Everyday work, shared food",
+      "scope": {
+        "slots": [
+          "installation-interpretation",
+          "south-entrance-view",
+          "north-exit-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "open-state-label",
+      "kind": "text-verbatim",
+      "text": "Open",
+      "scope": {
+        "slots": [
+          "open-state"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "closed-state-label",
+      "kind": "text-verbatim",
+      "text": "Closed",
+      "scope": {
+        "slots": [
+          "closed-state"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "TIME AT THE TABLE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-installed-exhibition",
+      "slots": [
+        "exhibition-floor-plan",
+        "south-entrance-view",
+        "north-exit-view",
+        "open-state",
+        "closed-state"
+      ],
+      "sourceSlots": [
+        "installation-interpretation"
+      ],
+      "items": [
+        {
+          "item": "The plan, opposing visitor views and operating-state drawings describe one spatial arrangement with consistent furniture, utensil and graphic positions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Installed graphics, object-label associations and visible assembly follow the installation and interpretation document.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The supplied room boundaries, passage, display zones and bench are preserved throughout; operating-state changes are confined to the specified occupancy, doors and lighting.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "TIME AT THE TABLE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "exhibition-floor-plan",
+      "south-entrance-view",
+      "north-exit-view",
+      "open-state",
+      "closed-state"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge the originality of the supplied utensils, factual interpretation copy or existing room architecture."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-floor-plan",
+        "south-entrance-view",
+        "north-exit-view",
+        "open-state",
+        "closed-state"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-exhibition-floor-plan",
+      "requirementId": "R-format-exhibition-floor-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exhibition-floor-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-installation-interpretation",
+      "requirementId": "R-format-installation-interpretation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "installation-interpretation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-south-entrance-view",
+      "requirementId": "R-format-south-entrance-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "south-entrance-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-north-exit-view",
+      "requirementId": "R-format-north-exit-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "north-exit-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-open-state",
+      "requirementId": "R-format-open-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "open-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-closed-state",
+      "requirementId": "R-format-closed-state",
+      "method": "artifact-property",
+      "targetSlots": [
+        "closed-state"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "room-geometry-and-viewpoints",
+      "requirementId": "R-room-geometry-and-viewpoints",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-floor-plan",
+        "south-entrance-view",
+        "north-exit-view",
+        "open-state",
+        "closed-state"
+      ],
+      "criteria": "Use the southwest origin and coordinates in 01-client-facts.en.md to verify a 6000 mm east–west by 4000 mm south–north room, a 2800 mm clear height, centred openings at x=2400–3600 mm, and an unobstructed passage spanning y=0–4000 mm. The west zone occupies x=0–1800 mm and the east zone x=4200–6000 mm, both at y=600–3400 mm. Retain the bench at x=4600–5800 mm, y=0–450 mm, with a 450 mm seat height and 4000 mm usable side walls. The plan names the zones and shows furniture footprints, openings and passage dimensions. The perspectives must be recognizably taken from the south entrance and north exit respectively. Perspective foreshortening and drawing style may vary; moved boundaries, reversed orientation, relocated furniture or bench, and encroachment into the passage fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "utensil-identities-and-scale",
+      "requirementId": "R-utensil-identities-and-scale",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-floor-plan",
+        "south-entrance-view",
+        "north-exit-view"
+      ],
+      "criteria": "Verify all three distinct utensils against utensil-identities.png and the object register: F01 is a cream enamel bowl with a dark blue rolled rim and a small outer-rim chip, diameter 320 mm and height 140 mm; F02 is a pale beech tamper with a cylindrical grip and wider flat foot, length 280 mm and maximum diameter 60 mm; F03 is an ovoid amber-brown stoneware jar with a short neck and shallow domed removable lid, maximum diameter 240 mm and total height 360 mm. The plan must associate each object with its complete ID, name and year. Plan symbols may simplify surface details, and perspectives may foreshorten dimensions, but object substitution, duplication, omission or materially incorrect relative scale fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "document-interpretation-records",
+      "requirementId": "R-document-interpretation-records",
+      "method": "content",
+      "targetSlots": [
+        "installation-interpretation"
+      ],
+      "criteria": "Read the document against 03-object-and-process-records.en.md. Page 2 must contain the introductory title and descriptor, the complete English process headings and bodies ordered Prepare, Salt, Pack, Wait, Serve, and the household heading A place in the day with its complete body. Page 3 must arrange three finished labels as an object catalogue, each retaining its complete ID, name, year and unabridged label body. The document must also preserve the registered object dimensions and appearances wherever the utensils are specified or depicted. Line wrapping and catalogue arrangement may vary; paraphrased or missing record copy, mismatched identities, reordered steps or placement on the wrong required page fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ]
+    },
+    {
+      "id": "installed-graphics-match-document",
+      "requirementId": "R-installed-graphics-match-document",
+      "method": "visual",
+      "targetSlots": [
+        "south-entrance-view",
+        "north-exit-view"
+      ],
+      "criteria": "Compare the installed introductory graphic, process sequence, household note and object labels with pages 2 and 3 of the document. Both viewpoints must depict the same graphic content and placements, with the introductory graphic visible from the south entrance and labels associated with the correct utensils. Natural changes in apparent size, angle and partial occlusion are allowed; replacement copy, reordered graphics, missing interpretation or graphics that move between viewpoints fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "installation-interpretation"
+      ]
+    },
+    {
+      "id": "installation-heights-and-type-sizes",
+      "requirementId": "R-installation-heights-and-type-sizes",
+      "method": "content",
+      "targetSlots": [
+        "installation-interpretation"
+      ],
+      "criteria": "Page 1 must include a display elevation with explicit floor-referenced dimensions locating tabletops at 750 mm, frame tops at 1650 mm and object-label centres at 1000 mm. The graphic specifications or measurable document typography must establish 50 pt introductory body text and 24 pt object-label body text at installation scale. Reduced page previews are acceptable when their installed scale is explicit. Missing dimensions, heights measured to the wrong feature, or type sizes that apply only to the reduced preview fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ]
+    },
+    {
+      "id": "kit-inventory-and-connection-detail",
+      "requirementId": "R-kit-inventory-and-connection-detail",
+      "method": "content",
+      "targetSlots": [
+        "exhibition-floor-plan",
+        "installation-interpretation"
+      ],
+      "criteria": "Read annotations, schedules and details to verify that each target accounts for the complete inventory: two tabletops, four trestles, two frames, two textile graphics, four clamps, eight M6 hand knobs and three acrylic covers. Small fittings may be counted in a keyed schedule rather than drawn individually. Page 1 of the document must explain two trestles and four M6 hand knobs per tabletop, two hand-operated clamps per frame, replaceable silicone-edge textiles and lift-off covers. It must state the maximum packed-part envelope of 1200 × 900 × 450 mm and identify two storage crates with internal dimensions 1250 × 950 × 950 mm, stored outside the room during opening. Missing quantities, incompatible connections, substituted assembly fittings or contradictory packing specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ]
+    },
+    {
+      "id": "operating-state-comparison",
+      "requirementId": "R-operating-state-comparison",
+      "method": "visual",
+      "targetSlots": [
+        "open-state",
+        "closed-state"
+      ],
+      "criteria": "Compare matching overhead views with unchanged projection, framing and installed furniture positions. Open must visibly show exactly 12 visitors, both doors opening outward and illuminated graphics. Closed must show no visitors, both doors shut and graphic lighting off. Each state must retain the three distinct utensils, each under its own acrylic cover. The closed drawing may remain legible through drawing conventions or ambient visibility; moved furniture, inward-opening open doors, incorrect occupancy, missing covers or indistinguishable lighting states fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "visitor-story-and-access",
+      "requirementId": "R-visitor-story-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-floor-plan",
+        "south-entrance-view",
+        "north-exit-view",
+        "open-state"
+      ],
+      "criteria": "The plan must trace a legible five-step visitor route in the recorded order, and the installed interpretation must support a brief 5–8 minute visit with utensils as the focus. Associate F01 with preparation and salting, F02 with packing, and F03 with packing, waiting and serving. Judge plausible sequence and reading burden rather than requiring a measured visit time. The arrangement and occupied state must accommodate the stated mix of adults, families with children and wheelchair users while retaining the clear passage. Missing or reversed stages, incorrect object associations, disconnected interpretation or visitor placement that blocks the route fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "installed-kit-form-and-placement",
+      "requirementId": "R-installed-kit-form-and-placement",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-floor-plan",
+        "south-entrance-view",
+        "north-exit-view",
+        "open-state",
+        "closed-state"
+      ],
+      "criteria": "Verify that the installed display fits within the two designated zones and follows the documented kit. Tabletops are birch plywood, 1200 × 600 × 18 mm, supported by two steel folding trestles each; aluminium frames are 1200 × 900 × 30 mm with their lower edges at tabletop height, carrying 1200 × 900 mm tensioned polyester graphics. Three clear acrylic covers each have a 500 × 450 × 450 mm external envelope and contain one empty loan utensil. Visible connections must agree with the hand-operated assembly detail. Hidden fittings and schematic simplification are acceptable when the document resolves them; incompatible furniture, materially wrong proportions, uncovered exhibits, filled loan utensils or display components outside the zones fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "installation-interpretation"
+      ]
+    },
+    {
+      "id": "set-coherent-installed-exhibition",
+      "requirementId": "R-set-coherent-installed-exhibition",
+      "method": "visual",
+      "targetSlots": [
+        "exhibition-floor-plan",
+        "south-entrance-view",
+        "north-exit-view",
+        "open-state",
+        "closed-state"
+      ],
+      "criteria": "The plan, opposing visitor views and operating-state drawings describe one spatial arrangement with consistent furniture, utensil and graphic positions. Installed graphics, object-label associations and visible assembly follow the installation and interpretation document. The supplied room boundaries, passage, display zones and bench are preserved throughout; operating-state changes are confined to the specified occupancy, doors and lighting.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-material-02/03-object-and-process-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "installation-interpretation"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "room-arrangement",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "exhibition-floor-plan",
+      "subjectSlots": [
+        "south-entrance-view",
+        "north-exit-view",
+        "open-state",
+        "closed-state"
+      ],
+      "notes": "The floor plan and both state drawings retain the 6000 × 4000 mm room, centred 1200 mm door openings, continuous 1200 mm passage, two 1800 × 2800 mm display zones and fixed southeast bench; the visitor perspectives use these same positions."
+    },
+    {
+      "id": "loan-utensil-identities",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "utensil-identities.png"
+      ],
+      "subjectSlots": [
+        "exhibition-floor-plan",
+        "south-entrance-view",
+        "north-exit-view"
+      ],
+      "notes": "The floor plan, installation document and visitor perspectives retain F01 Mixing bowl, 1998; F02 Wooden tamper, 2004; and F03 Fermentation jar, 1996, with the dimensions and appearances supplied."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "installed-interpretation-copy",
+      "fromSlot": "installation-interpretation",
+      "toSlots": [
+        "south-entrance-view",
+        "north-exit-view"
+      ],
+      "extract": [
+        "introductory title and descriptor",
+        "five process headings and bodies in order",
+        "household note",
+        "three complete object labels"
+      ],
+      "notes": "Both visitor perspectives show the same graphics in their installed positions."
+    }
+  ]
+}

@@ -1,0 +1,1083 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-architecture-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "room-schedule",
+      "label": "Room schedule",
+      "description": "A one-page schedule of ten rooms with IDs, names, areas, heights, adjacencies, terraces and floor levels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "settlement-plan",
+      "label": "Settlement and building plan",
+      "description": "One settlement plan with terrain, neighboring houses, proposed roofs, setbacks, circulation and perspective camera positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "lower-terrace-plan",
+      "label": "Lower Terrace plan",
+      "description": "One furnished Lower Terrace plan with three guest rooms, four support rooms, public passage and the walkthrough route.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "upper-terrace-plan",
+      "label": "Upper Terrace plan",
+      "description": "One furnished Upper Terrace plan with three guest rooms and the connection to the Lower Terrace.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "longitudinal-section",
+      "label": "North–south terrain section",
+      "description": "One north–south section through both terraces and the village path with existing and proposed ground profiles.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "guest-room-section",
+      "label": "Guest room cross-section",
+      "description": "One guest room cross-section with its outdoor threshold, privacy screen, clear height and structural span.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "four-elevations",
+      "label": "Four building elevations",
+      "description": "One sheet of four elevations with opening IDs, roof pitches and material assembly keys.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "terrain-axonometric",
+      "label": "Terrain and massing axonometric",
+      "description": "One terrain axonometric of both lodging terraces, the village path and neighboring houses.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "construction-detail",
+      "label": "Kitchen and Dining construction detail",
+      "description": "One eaves-to-floor detail of Kitchen and Dining with the tiled roof, exposed glulam, wall layers and foundation connection.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "guest-arrival-view",
+      "label": "Guest arrival perspective",
+      "description": "One eye-level guest arrival perspective with luggage handling and the Reception entrance.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "village-passage-view",
+      "label": "Village passage perspective",
+      "description": "One eye-level perspective of residents passing the occupied lodging along the village path.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shared-interior-view",
+      "label": "Kitchen and Dining interior",
+      "description": "One Kitchen and Dining interior perspective with 12 breakfast seats and exposed glulam beams.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "arrival-walkthrough",
+      "label": "Arrival walkthrough",
+      "description": "One 10-second walkthrough from the village path through Reception to Kitchen and Dining.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "architecture-presentation",
+      "label": "Architecture presentation",
+      "description": "One presentation of at least 10 pages reusing the room schedule, drawings, construction detail and three perspectives.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-lettering",
+      "kind": "text-verbatim",
+      "text": "HILLFOLD STAY",
+      "scope": {
+        "slots": [
+          "settlement-plan",
+          "architecture-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "public-route-label",
+      "kind": "text-verbatim",
+      "text": "Village path",
+      "scope": {
+        "slots": [
+          "settlement-plan",
+          "lower-terrace-plan"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "HILLFOLD STAY",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-architectural-design",
+      "slots": [
+        "longitudinal-section",
+        "guest-room-section",
+        "four-elevations",
+        "terrain-axonometric",
+        "construction-detail",
+        "guest-arrival-view",
+        "village-passage-view",
+        "shared-interior-view"
+      ],
+      "sourceSlots": [
+        "settlement-plan",
+        "lower-terrace-plan",
+        "upper-terrace-plan"
+      ],
+      "items": [
+        {
+          "item": "Sections, elevations, axonometric, detail and perspectives describe the same terrace arrangement, single-storey volumes, entrances and visible openings established by the plans.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Material divisions, opening identifiers and assembly keys remain coordinated wherever the same architectural elements are represented.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The represented design retains the fixed public passage, terrace floor levels, clay-tile roof pitch and exposed Kitchen and Dining glulam structure.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "HILLFOLD STAY"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "settlement-plan",
+      "lower-terrace-plan",
+      "upper-terrace-plan",
+      "longitudinal-section",
+      "guest-room-section",
+      "four-elevations",
+      "terrain-axonometric",
+      "construction-detail",
+      "guest-arrival-view",
+      "village-passage-view",
+      "shared-interior-view"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge structural certification, unstated building-code requirements or photorealistic lighting and texture in technical drawings."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "room-schedule",
+        "settlement-plan",
+        "lower-terrace-plan",
+        "upper-terrace-plan",
+        "longitudinal-section",
+        "guest-room-section",
+        "four-elevations",
+        "terrain-axonometric",
+        "construction-detail",
+        "guest-arrival-view",
+        "village-passage-view",
+        "shared-interior-view",
+        "architecture-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "settlement-plan",
+        "lower-terrace-plan",
+        "upper-terrace-plan",
+        "longitudinal-section",
+        "guest-room-section",
+        "four-elevations",
+        "terrain-axonometric",
+        "construction-detail",
+        "guest-arrival-view",
+        "village-passage-view",
+        "shared-interior-view"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-room-schedule",
+      "requirementId": "R-format-room-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "room-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-settlement-plan",
+      "requirementId": "R-format-settlement-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "settlement-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-lower-terrace-plan",
+      "requirementId": "R-format-lower-terrace-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "lower-terrace-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-upper-terrace-plan",
+      "requirementId": "R-format-upper-terrace-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "upper-terrace-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-longitudinal-section",
+      "requirementId": "R-format-longitudinal-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "longitudinal-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-guest-room-section",
+      "requirementId": "R-format-guest-room-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "guest-room-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-four-elevations",
+      "requirementId": "R-format-four-elevations",
+      "method": "artifact-property",
+      "targetSlots": [
+        "four-elevations"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-terrain-axonometric",
+      "requirementId": "R-format-terrain-axonometric",
+      "method": "artifact-property",
+      "targetSlots": [
+        "terrain-axonometric"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-construction-detail",
+      "requirementId": "R-format-construction-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "construction-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-guest-arrival-view",
+      "requirementId": "R-format-guest-arrival-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "guest-arrival-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-village-passage-view",
+      "requirementId": "R-format-village-passage-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "village-passage-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shared-interior-view",
+      "requirementId": "R-format-shared-interior-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shared-interior-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-arrival-walkthrough",
+      "requirementId": "R-format-arrival-walkthrough",
+      "method": "manual",
+      "targetSlots": [
+        "arrival-walkthrough"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-architecture-presentation",
+      "requirementId": "R-format-architecture-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "architecture-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "complete-room-schedule",
+      "requirementId": "R-complete-room-schedule",
+      "method": "content",
+      "targetSlots": [
+        "room-schedule"
+      ],
+      "criteria": "Require one page containing ten distinct records: G01–G06 named Guest Room 01–06 at 24 m² each, R01 Reception at 12 m², S01 Kitchen and Dining at 36 m², U01 Laundry at 6 m² and U02 Plant at 6 m². Every clear height is 2.700 m. G01–G03 and all four support rooms belong to Lower Terrace at +1.200 m; G04–G06 belong to Upper Terrace at +2.400 m. Guest rooms adjoin the private guest route; Reception adjoins guest arrival and Kitchen and Dining; Kitchen and Dining adjoins Reception and outdoor breakfast space; Laundry and Plant adjoin the staff service route. Guest-room areas include bathrooms. Records must sum to 132 m² lower, 72 m² upper and 204 m² combined. Table styling may vary; missing fields, duplicate rooms or conflicting values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "terrace-plan-room-records",
+      "requirementId": "R-terrace-plan-room-records",
+      "method": "visual",
+      "targetSlots": [
+        "lower-terrace-plan",
+        "upper-terrace-plan"
+      ],
+      "criteria": "Read the two plans together and compare their room labels with the schedule and fixed room records. The lower plan must identify G01–G03, R01, S01, U01 and U02; the upper plan must identify G04–G06. Each room needs its correct name, ID and net area, with the correct terrace floor level legible. The represented areas must total 204 m². Labels may be placed inside rooms or in clearly linked keys; an omitted room, wrong area or reassigned terrace fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "room-schedule"
+      ]
+    },
+    {
+      "id": "guest-program-and-connections",
+      "requirementId": "R-guest-program-and-connections",
+      "method": "visual",
+      "targetSlots": [
+        "lower-terrace-plan",
+        "upper-terrace-plan"
+      ],
+      "criteria": "The furnished plans must accommodate two guests in each of six rooms, with three rooms per terrace and a bathroom contained within each 24 m² room. Show Reception, shared Kitchen and Dining, Laundry and Plant on the lower level, workable access to the recorded adjacencies, separate public and guest circulation, and an identifiable connection between terraces. Furniture and connection design may vary; missing bathrooms, inadequate sleeping capacity, omitted support rooms or disconnected upper rooms fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "breakfast-and-service-equipment",
+      "requirementId": "R-breakfast-and-service-equipment",
+      "method": "visual",
+      "targetSlots": [
+        "lower-terrace-plan"
+      ],
+      "criteria": "Count twelve dining seats, two identifiable cooking hobs and one washing machine in their respective rooms. A dimension or explicit annotation must establish 3000 mm of kitchen worktop. Furniture arrangements and equipment symbols may vary if their meaning is clear; wrong quantities or an unsupported worktop length fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "continuous-public-path",
+      "requirementId": "R-continuous-public-path",
+      "method": "visual",
+      "targetSlots": [
+        "settlement-plan",
+        "lower-terrace-plan",
+        "terrain-axonometric",
+        "village-passage-view"
+      ],
+      "criteria": "Trace an uninterrupted east–west public route from x = 0 to x = 36 between the specified y coordinates in the mapped views. Both plans must dimension a 2400 mm clear width and identify the route with its required label. Reception waiting, breakfast seating and luggage activities must occupy space beside the clear passage. The perspective must depict residents using the corresponding route beside occupied lodging. Perspective foreshortening is acceptable; diversion, narrowing, blockage or conflicting route placement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "survey-terrain-and-neighbors",
+      "requirementId": "R-survey-terrain-and-neighbors",
+      "method": "visual",
+      "targetSlots": [
+        "settlement-plan",
+        "longitudinal-section",
+        "guest-room-section",
+        "terrain-axonometric"
+      ],
+      "criteria": "Verify the settlement boundary against A(0,0), B(36,0), C(36,30), D(0,30), with x east and y north, and a 3 m building exclusion strip at every boundary. Existing terrain must follow z = 0.100y, with 0.500 m contours and a path centerline at y = 5.000, z = +0.500 m. The site represents 1080 m². Locate West House at (-10,12)–(-4,22) and East House at (40,16)–(48,26), each 4 m outside its adjacent boundary. Where corresponding features are represented, retain West/East floor levels +1.200/+1.600 m, eaves +4.200/+4.600 m and 30-degree clay-tile gables with north–south ridges. Sections must agree with the survey where their cuts intersect it; they need not depict off-cut houses. Stylized rendering is allowed if geometry remains recoverable; moved neighbors, flattened existing terrain or setback encroachment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "drawing-levels-and-navigation",
+      "requirementId": "R-drawing-levels-and-navigation",
+      "method": "visual",
+      "targetSlots": [
+        "settlement-plan",
+        "lower-terrace-plan",
+        "upper-terrace-plan",
+        "longitudinal-section",
+        "guest-room-section"
+      ],
+      "criteria": "Each of the three plans must have a legible north arrow and scale bar; the settlement plan must carry the project name. Both terrace plans must name rooms and identify their +1.200 m or +2.400 m floors. Each section must show a scale bar, the +0.000 m datum, a 2.700 m clear-height dimension and ridge elevations no higher than +7.500 m. Symbol styles and proposed ridge heights may vary within the limit; missing annotations or contradictory levels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "longitudinal-section-completeness",
+      "requirementId": "R-longitudinal-section-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "longitudinal-section"
+      ],
+      "criteria": "The cut must traverse both terrace levels and the public path in the north–south direction. Distinguish the original slope from the proposed terrain and depict foundations, finished floors and roof ridges in a coherent section. Drafting conventions may vary; an unrelated cut, a missing terrace or path, or indistinguishable existing and proposed ground fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "guest-threshold-section",
+      "requirementId": "R-guest-threshold-section",
+      "method": "visual",
+      "targetSlots": [
+        "guest-room-section"
+      ],
+      "criteria": "Show a continuous cut through a guest interior and its outdoor threshold, including an identifiable privacy screen and legible clear-height and structural-span dimensions. Principal beam spans must not exceed 4.800 m. Screening and structural solutions may vary; omitting the threshold, screening or span information, or exceeding the span limit, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "roof-structure-and-material-coordination",
+      "requirementId": "R-roof-structure-and-material-coordination",
+      "method": "visual",
+      "targetSlots": [
+        "four-elevations",
+        "longitudinal-section",
+        "guest-room-section",
+        "construction-detail",
+        "lower-terrace-plan",
+        "upper-terrace-plan"
+      ],
+      "criteria": "Roof representations in the elevations, sections and detail must establish clay tiles at 30 degrees. The detail must identify exposed glulam and principal spans no greater than 4.800 m. Trace opening identifiers between elevations and plans, and material assembly keys between elevations and the detail, including the selected wall build-up. Identifier syntax and assembly design may vary; conflicting roof specifications, untraceable openings, incompatible wall keys or oversized principal spans fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "construction-detail-layers",
+      "requirementId": "R-construction-detail-layers",
+      "method": "visual",
+      "targetSlots": [
+        "construction-detail"
+      ],
+      "criteria": "Require a readable Kitchen and Dining cut extending from the eaves to the floor and foundation connection. Identify tiles, underlay, insulation, exposed glulam and the chosen wall layers, with their physical relationships visible. Layer thicknesses and junction design are open choices; missing required layers, concealed rather than exposed interior beams, or a disconnected foundation detail fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "four-elevation-coverage",
+      "requirementId": "R-four-elevation-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "four-elevations"
+      ],
+      "criteria": "The sheet must contain four distinguishable, direction-labeled elevations covering north, south, east and west. Each relevant opening must be identifiable, and roof pitches and material assemblies must be readable through annotations or shared keys. Sheet arrangement may vary; a missing direction or insufficient identifiers to coordinate the design fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "village-material-development",
+      "requirementId": "R-village-material-development",
+      "method": "visual",
+      "targetSlots": [
+        "four-elevations",
+        "construction-detail",
+        "guest-arrival-view",
+        "village-passage-view",
+        "shared-interior-view"
+      ],
+      "criteria": "The proposed palette and opening treatment must show an identifiable relationship to the supplied rubble-stone, lime-mortar and recessed timber-opening context. Contemporary interpretation and additional complementary materials are allowed. An unrelated palette with no discernible stone-wall or recessed-opening influence, or contradictory material representations across drawings and views, fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "spatial-design-consistency",
+      "requirementId": "R-spatial-design-consistency",
+      "method": "visual",
+      "targetSlots": [
+        "terrain-axonometric",
+        "guest-arrival-view",
+        "village-passage-view",
+        "shared-interior-view"
+      ],
+      "criteria": "Compare visible geometry with the plans and elevations: two terraces of single-storey lodging, matching roof footprints, entrances, opening counts and material boundaries. The axonometric must include both terraces, the public path and both neighboring houses. Camera angle, lighting, entourage and occlusion may vary; extra storeys, relocated entrances, invented visible openings or incompatible material divisions fail. Judge only features exposed by each view.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "settlement-plan",
+        "lower-terrace-plan",
+        "upper-terrace-plan",
+        "four-elevations"
+      ]
+    },
+    {
+      "id": "perspective-cameras-and-west-house",
+      "requirementId": "R-perspective-cameras-and-west-house",
+      "method": "visual",
+      "targetSlots": [
+        "settlement-plan",
+        "terrain-axonometric",
+        "guest-arrival-view",
+        "village-passage-view"
+      ],
+      "criteria": "Locate labeled camera positions and viewing directions for both exterior perspectives on the settlement plan and verify plausible correspondence with the rendered views. Where West House is visible, preserve its coursed rubble stone with lime mortar and tiled gable. An exposed south facade must match the 6 m frontage with a centered timber door and two flanking recessed windows: centerlines 1500, 3000 and 4500 mm; door 900 × 2100 mm; windows 600 × 1200 mm with 900 mm sills. Rendered proportions may be assessed relative to the known frontage without requiring dimension labels. Natural occlusion is allowed; contradictory camera placement or altered visible house features fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "guest-arrival-use",
+      "requirementId": "R-guest-arrival-use",
+      "method": "visual",
+      "targetSlots": [
+        "guest-arrival-view"
+      ],
+      "criteria": "The view must visibly communicate arrival with luggage and an identifiable Reception entrance, with room for handling bags and proceeding toward guest accommodation. Composition and the number of depicted guests may vary; an entrance with no discernible reception role or an arrival scene lacking luggage handling fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "shared-breakfast-interior",
+      "requirementId": "R-shared-breakfast-interior",
+      "method": "visual",
+      "targetSlots": [
+        "shared-interior-view"
+      ],
+      "criteria": "Show a recognizable shared kitchen and dining interior arranged for twelve breakfast guests, with twelve seats supported by visible furniture and exposed glulam overhead. Partial furniture occlusion is acceptable if the complete arrangement can be established from the view. An insufficient seating arrangement, absent kitchen function or concealed roof beams fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "walkthrough-route-and-consistency",
+      "requirementId": "R-walkthrough-route-and-consistency",
+      "method": "manual",
+      "targetSlots": [
+        "arrival-walkthrough"
+      ],
+      "criteria": "Review the entire video and verify a ten-second walkthrough progressing from the village path through Reception to Kitchen and Dining along a route visibly marked on the Lower Terrace plan. Compare visible terrace massing, single-storey volumes, entrances, opening counts and material divisions with the drawings; retain West House's fixed features if shown. Camera speed and transitions may vary, but an incorrect duration, missing destination, unmarked or contradictory route, or inconsistent architecture fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "settlement-plan",
+        "lower-terrace-plan",
+        "upper-terrace-plan",
+        "four-elevations"
+      ]
+    },
+    {
+      "id": "presentation-records-and-cover",
+      "requirementId": "R-presentation-records-and-cover",
+      "method": "content",
+      "targetSlots": [
+        "architecture-presentation"
+      ],
+      "criteria": "Require at least ten pages and the exact project name on the cover. Read all ten room IDs, names and net areas and verify agreement with the schedule and the 204 m² combined total. Areas and terrace floor levels must also be placed beside the corresponding reused drawings, retaining the lower +1.200 m and upper +2.400 m assignments. Page design may vary; a name only on an inside page, missing room records, isolated schedule data without adjacent drawing information, or inconsistent values fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "room-schedule"
+      ]
+    },
+    {
+      "id": "presentation-source-reuse",
+      "requirementId": "R-presentation-source-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "architecture-presentation"
+      ],
+      "criteria": "Find recognizable, legible reuse of every listed source in the presentation. Scaling, cropping and page recomposition are allowed if the relevant source content remains identifiable and useful. Merely naming a drawing, substituting unrelated imagery or omitting any required source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "room-schedule",
+        "settlement-plan",
+        "lower-terrace-plan",
+        "upper-terrace-plan",
+        "longitudinal-section",
+        "guest-room-section",
+        "four-elevations",
+        "construction-detail",
+        "guest-arrival-view",
+        "village-passage-view",
+        "shared-interior-view"
+      ]
+    },
+    {
+      "id": "set-coordinated-architectural-design",
+      "requirementId": "R-set-coordinated-architectural-design",
+      "method": "visual",
+      "targetSlots": [
+        "longitudinal-section",
+        "guest-room-section",
+        "four-elevations",
+        "terrain-axonometric",
+        "construction-detail",
+        "guest-arrival-view",
+        "village-passage-view",
+        "shared-interior-view"
+      ],
+      "criteria": "Sections, elevations, axonometric, detail and perspectives describe the same terrace arrangement, single-storey volumes, entrances and visible openings established by the plans. Material divisions, opening identifiers and assembly keys remain coordinated wherever the same architectural elements are represented. The represented design retains the fixed public passage, terrace floor levels, clay-tile roof pitch and exposed Kitchen and Dining glulam structure.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "settlement-plan",
+        "lower-terrace-plan",
+        "upper-terrace-plan"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-west-house",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "west-house.png"
+      ],
+      "subjectSlots": [
+        "terrain-axonometric",
+        "guest-arrival-view",
+        "village-passage-view"
+      ],
+      "notes": "The guest-arrival and village-passage perspectives locate their cameras on the settlement plan; West House retains its stone walls, tiled gable and three south-facing openings wherever visible."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "room-records-through-design",
+      "fromSlot": "room-schedule",
+      "toSlots": [
+        "lower-terrace-plan",
+        "upper-terrace-plan",
+        "architecture-presentation"
+      ],
+      "extract": [
+        "all ten room IDs, names and net areas",
+        "combined net area of 204 m²",
+        "room-to-terrace assignments and corresponding finished floor levels"
+      ],
+      "notes": "The room schedule, both terrace plans and presentation repeat all ten room IDs, names and net areas, totaling 204 m²; the plans and presentation repeat the schedule's +1.200 m and +2.400 m terrace assignments."
+    }
+  ]
+}

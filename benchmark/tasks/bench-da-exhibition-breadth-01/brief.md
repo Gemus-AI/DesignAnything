@@ -1,0 +1,27 @@
+STONE STORIES | A permanent gallery of minerals and rocks
+
+We are commissioning a permanent minerals and rocks gallery for families, school groups and visitors encountering geology for the first time. The room measures 9000 × 6000 mm with a clear height of 3200 mm. Its two south-wall openings are each 1500 mm wide, with the entrance at the west end and the exit at the east end. A continuous 1500 mm clear aisle runs along that wall. The attached plan fixes the display boundary, existing bench and two viewing positions. Organise the visit through Observe, Compare and Form, connecting close observation with classification and geological processes. Allow for 18 visitors at a time and a typical visit of 12 minutes.
+
+The six specimens are collection originals M-01 Quartz and M-02 Calcite, and teaching samples T-01 Granite, T-02 Basalt, T-03 Sandstone and T-04 Marble. The originals occupy two enclosed cases; the four teaching samples occupy two touch tables. All four display decks are 750 mm above the floor. Use physical specimens and printed interpretation throughout. Print "STONE STORIES" at the entrance and "Look closely. Touch the teaching samples." at the touch tables. Credit specimen status as "Collection original" or "Teaching sample" beside each specimen's ID and name. The specimen register supplies the complete label copy and protection conditions. Build the four fixture bases from the aluminium, birch plywood and bolted component inventory in the fact sheet, with removable acrylic hoods for the cases and lockable covers for the touch tables.
+
+Audience: the museum's curator, learning team and exhibition fabricator, for agreement on the permanent layout, visitor experience and fabrication scope.
+
+Inputs (attached): 01-client-facts.en.md contains the room geometry, visitor assumptions, fixture inventory and display conditions. 02-delivery-catalog.en.md lists the six deliverables and their proportions, formats and stages. 03-specimen-register.en.md contains specimen records, exact label text and geological process copy. gallery-plan-section.png fixes the existing room, display boundary, bench and viewing positions. collection-specimens.png records the appearance, IDs and scales of the two collection originals. teaching-specimens.png records the appearance, IDs and scales of the four touch samples. gallery-family-reference.png provides the room finishes and family visitor atmosphere.
+
+Deliverables:
+1. One final layout plan with the Observe–Compare–Form route, six specimen IDs and names, fixture footprints, bench, clear aisle widths and viewing positions C1 and C2
+2. One coordinated elevation and section sheet with the 3200 mm room height, display decks, case hoods, graphic heights, label mounting heights and lighting annotations
+3. One open-hours visitor view from C1, showing both enclosed originals, four available touch samples and the entrance lettering
+4. One closed-hours visitor view from C2, showing the same installation with both teaching tables covered and locked
+5. One fixture detail sheet covering both collection cases and both touch tables, specimen placement, seated hand reach, component counts, bolted joints and storage crates
+6. One seven-page finished interpretation artwork and specimen catalogue document: one entrance panel, two geological process panels, two specimen-label sheets, one touch-instruction panel and one six-entry specimen catalogue
+
+Acceptance:
+- The layout plan and elevation and section sheet retain the 9000 × 6000 × 3200 mm room, both 1500 mm openings, the fixed bench and the 1500 mm south aisle; other visitor routes provide at least 1200 mm clear width and a 1500 mm turning circle beside each touch table.
+- The C1 open-hours view and C2 closed-hours view match the layout plan's walls, openings, bench and four fixtures. C1 shows four accessible teaching samples; C2 shows two locked touch-table covers and two enclosed collection originals.
+- The fixture detail sheet and elevation and section sheet show four 750 mm display decks, two 300 mm-high case hoods, label centres at 1000 mm and teaching samples within 300 mm of the visitor edge. The detail sheet accounts for the fact sheet's four bases, two hoods, two covers and four storage crates, with a largest dismantled component of 1200 × 600 × 300 mm.
+- The layout plan, fixture detail sheet and seven-page interpretation document pair M-01 with Quartz, M-02 with Calcite, T-01 with Granite, T-02 with Basalt, T-03 with Sandstone and T-04 with Marble. The two originals occupy separate enclosed cases; T-01 and T-02 share one touch table, and T-03 and T-04 share the other.
+- The interpretation document reproduces all six specimen labels and both process texts from 03-specimen-register.en.md. Its process panels connect slow and rapid cooling to Granite and Basalt, and sediment accumulation and metamorphism to Sandstone and Marble. Each panel has a headline of at most 8 words, a 40–60-word overview and the relevant specimen IDs.
+- The open-hours view and entrance artwork print "STONE STORIES"; both touch tables in that view and the touch-instruction artwork print "Look closely. Touch the teaching samples.". The label sheets and specimen catalogue print the correct status phrase for all six specimens, using 24 pt label body text; the process artwork uses 50 pt overview text.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

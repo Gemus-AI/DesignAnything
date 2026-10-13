@@ -1,0 +1,546 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-architecture-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "site-entrances",
+      "label": "Site and entrance plan",
+      "description": "One site plan with boundaries, setbacks, retained street features, utility connections and public and service approaches.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ground-floor",
+      "label": "Dimensioned ground-floor plan",
+      "description": "One ground-floor plan with six room labels, net areas, fixtures, access dimensions and structural supports.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "section-elevations",
+      "label": "Section, elevations and canopy junction",
+      "description": "One sheet containing a Care toilet and Rest area section, south and west elevations and an exposed glulam canopy junction.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "daily-use",
+      "label": "Daily use routes and care layout",
+      "description": "One 10:00 Daily use sheet with ordinary and assisted-care routes and an enlarged Care toilet layout.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cleaning",
+      "label": "Cleaning routes and maintenance junction",
+      "description": "One 14:00 Cleaning sheet with a WC closure, continuing public access, trolley movement and an enlarged Cleaner room threshold and wash-down junction.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "street-perspective",
+      "label": "Southwest street perspective",
+      "description": "One eye-level southwest perspective with both public elevations, entrance lettering, retained street features and occupied rest seating.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "CORNER PAUSE",
+      "scope": {
+        "slots": [
+          "street-perspective"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "entrance-descriptor",
+      "kind": "text-verbatim",
+      "text": "Toilets and rest",
+      "scope": {
+        "slots": [
+          "street-perspective"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CORNER PAUSE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-building-and-operations",
+      "slots": [
+        "site-entrances",
+        "section-elevations",
+        "daily-use",
+        "cleaning",
+        "street-perspective"
+      ],
+      "sourceSlots": [
+        "ground-floor"
+      ],
+      "items": [
+        {
+          "item": "All views describe the same building footprint, room arrangement, public and service entrances, structural supports, openings and sheltered Rest area wherever those elements are represented.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Daily use and Cleaning retain the same permanent layout; the cleaning state changes availability and temporary closure placement without relocating rooms or entrances.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Site drawings and the street perspective agree on the retained paving, dropped kerbs, north wall and electrical cabinet wherever visible.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "CORNER PAUSE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "site-entrances",
+      "ground-floor",
+      "section-elevations",
+      "daily-use",
+      "cleaning",
+      "street-perspective"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge photorealistic material texture or lighting on technical drawings, or impose a preferred massing, entrance position or room arrangement."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "site-entrances",
+        "ground-floor",
+        "section-elevations",
+        "daily-use",
+        "cleaning",
+        "street-perspective"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-site-entrances",
+      "requirementId": "R-format-site-entrances",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-entrances"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ground-floor",
+      "requirementId": "R-format-ground-floor",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ground-floor"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-section-elevations",
+      "requirementId": "R-format-section-elevations",
+      "method": "artifact-property",
+      "targetSlots": [
+        "section-elevations"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-daily-use",
+      "requirementId": "R-format-daily-use",
+      "method": "artifact-property",
+      "targetSlots": [
+        "daily-use"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cleaning",
+      "requirementId": "R-format-cleaning",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cleaning"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-street-perspective",
+      "requirementId": "R-format-street-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "street-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "site-record-and-approaches",
+      "requirementId": "R-site-record-and-approaches",
+      "method": "visual",
+      "targetSlots": [
+        "site-entrances"
+      ],
+      "criteria": "Read the drawing against the site record: southwest origin, eastward x and northward y, corners (0,0), (18000,0), (18000,14000), (0,14000), and 252 m2 site area. Walls and roof projections remain within x=2000–16000 and y=2000–12000. Alder Street is south, Mill Lane west; pavements occupy y=-3000–0 and x=-3000–0, and the east service lane occupies x=18000–21000. Verify the south ramp at x=6000–7800, y=-3000–-1500 and west ramp at x=-3000–-1500, y=5000–6800, each with 1800 mm width, 1500 mm run and 150 mm rise. The retained 1200 mm red-brick wall spans the north boundary. W1 is at (18000,9000), F1 at (18000,7000) with invert -0.900 m, and E1 is centred at (17200,11000), 800 mm east–west by 1000 mm north–south by 1400 mm high, with east-facing access. Retain grey 600 × 400 mm staggered pavement slabs and pale granite kerbs. Both public approaches reach the entrance and Rest area; the east service approach reaches the Cleaner room. Drawing rotation and entrance design may vary; displaced features, conflicting dimensions or disconnected approaches fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "room-schedule-and-ground-floor",
+      "requirementId": "R-room-schedule-and-ground-floor",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor",
+        "daily-use"
+      ],
+      "criteria": "Both sheets use the six scheduled room names without substitutions or omissions. The ground-floor drawing gives net areas and dimensions establishing one WC 1 and one WC 2, each at least 1600 × 2200 mm with WC and basin; one 12 m2 Care toilet; Attendant room at least 6 m2 with desk, chair and a view towards the public entrance; Cleaner room at least 4 m2 with mop sink, shelving and trolley bay; and covered Rest area at least 18 m2 with six seats and two unobstructed 900 × 1400 mm wheelchair spaces. Require at least 1500 mm clear public circulation, ordinary WC door openings at least 900 mm, Care toilet opening 950 mm, and service entrance and Cleaner room door openings at least 1000 mm. Supports and fixtures must be drawn so their intrusion into clear routes can be assessed. Minimum sizes may be exceeded; room arrangement is flexible. Missing rooms, insufficient usable dimensions or obstructed wheelchair spaces fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "care-toilet-coordination-and-equipment",
+      "requirementId": "R-care-toilet-coordination-and-equipment",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor",
+        "section-elevations",
+        "daily-use"
+      ],
+      "criteria": "Compare the same Care toilet across the three drawings: clear interior is 3000 × 4000 mm, section height is at least 2400 mm, and the automatic door provides 950 mm clear opening. Its enlargement dimensions a 1500 mm turning circle, 400 × 700 mm WC envelope, 1000 × 1500 mm transfer spaces on both sides of the WC, 1800 × 800 mm adjustable adult changing bench, 1000 mm working strip along a long bench side, and 600 × 550 mm basin envelope. Show a ceiling-hoist route connecting the WC transfer position to the bench and a privacy curtain screening the bench from entrance view. Turning and transfer areas may share clear floor; fixed equipment may not obstruct their required clearances. Missing dimensions, incompatible layouts or an unusable hoist connection fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "operating-states-and-cleaning-sequence",
+      "requirementId": "R-operating-states-and-cleaning-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "daily-use",
+        "cleaning"
+      ],
+      "criteria": "The Daily use record identifies 10:00 and makes both ordinary WCs, Care toilet and Rest area available. The Cleaning record identifies 14:00, closes exactly one ordinary WC, and traces usable public access to the other WC, Care toilet and Rest area. Trace the 600 × 900 mm trolley from east service lane through service entrance and Cleaner room to the closed WC, then back through Cleaner room to service exit. Either ordinary WC may be selected for cleaning. The temporary closure must isolate that WC without blocking a continuing public destination. Missing state identification, closure of an additional public destination or a trolley path that bypasses the Cleaner room fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "structure-elevations-and-street-view",
+      "requirementId": "R-structure-elevations-and-street-view",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor",
+        "section-elevations",
+        "street-perspective"
+      ],
+      "criteria": "Support and opening identifiers map to the same elements in plan and section/elevations. The sheet contains a section through Care toilet and Rest area plus south and west elevations. Verify a single storey, ground floor and inner pavement edges at ±0.000 m, dropped-kerb road surface at -0.150 m, proposed roof no higher than +4.200 m, scheduled clear heights of at least 2400 mm, and clear structural spans no greater than 6000 mm. The canopy junction exposes glulam beam faces and timber deck underside; enclosure walls are facing brick and external doors aluminium. The perspective is an eye-level view from the southwest pavement showing both public elevations, occupied sheltered seating and the retained street features visible from that viewpoint, including the recorded materials and muted-green cabinet where visible. Roof shape, openings and material boundaries agree with the drawings, and both required phrases appear at the actual public entrance. Massing and opening design may vary; contradictory geometry, materials, identifiers or misplaced entrance wording fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "drawing-orientation-scales-and-units",
+      "requirementId": "R-drawing-orientation-scales-and-units",
+      "method": "visual",
+      "targetSlots": [
+        "site-entrances",
+        "ground-floor",
+        "section-elevations",
+        "daily-use",
+        "cleaning"
+      ],
+      "criteria": "Require an N-labelled north arrow and a legible metric scale bar on each of the site and ground-floor plans. Require metric scale bars on the section/elevation sheet, Care toilet enlargement and Cleaner room enlargement, attributable to the relevant views. Dimension notation uses mm and level notation uses m; a clear shared unit convention is acceptable. Different drawing scales are allowed. Missing orientation markers, missing or unassignable scale bars, and inconsistent units fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "daily-user-route-separation",
+      "requirementId": "R-daily-user-route-separation",
+      "method": "visual",
+      "targetSlots": [
+        "daily-use"
+      ],
+      "criteria": "Two distinguishable route traces or an equivalent clear legend let a reader follow an ordinary user to an ordinary WC and an assisted-care user to the Care toilet. Routes connect to the public entrance and agree with the ground-floor arrangement. They may share physical circulation; their graphic identities must remain distinguishable. The Care toilet enlargement is visibly linked to the room on the main layout. An undifferentiated route, a trace through an obstruction or an enlargement of a different arrangement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "ground-floor"
+      ]
+    },
+    {
+      "id": "cleaner-threshold-and-wash-down",
+      "requirementId": "R-cleaner-threshold-and-wash-down",
+      "method": "visual",
+      "targetSlots": [
+        "cleaning"
+      ],
+      "criteria": "Locate the temporary WC closure and provide a readable enlargement of the same Cleaner room threshold and wash-down junction shown in plan. The enlargement establishes at least 1000 mm clear door opening, a 700 × 1000 mm trolley bay, 600 × 600 mm mop sink, shelving, tiled floor falling 1:80 to a floor drain, and a coved wall junction. Show enough threshold geometry to assess passage of the 600 × 900 mm trolley. Detail arrangement may vary within these requirements; an absent enlargement, incompatible threshold, undersized equipment provision or missing drainage/coving evidence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "ground-floor"
+      ]
+    },
+    {
+      "id": "public-opening-record",
+      "requirementId": "R-public-opening-record",
+      "method": "visual",
+      "targetSlots": [
+        "daily-use",
+        "cleaning"
+      ],
+      "criteria": "The operational sheets collectively communicate daily public opening from 07:00 to 21:00, with any repeated operating-hours record agreeing. One shared operating note on either sheet is sufficient; entrance signage is not required to carry the hours. Absent operating-hours evidence, different opening days or conflicting hours fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-coordinated-building-and-operations",
+      "requirementId": "R-set-coordinated-building-and-operations",
+      "method": "visual",
+      "targetSlots": [
+        "site-entrances",
+        "section-elevations",
+        "daily-use",
+        "cleaning",
+        "street-perspective"
+      ],
+      "criteria": "All views describe the same building footprint, room arrangement, public and service entrances, structural supports, openings and sheltered Rest area wherever those elements are represented. Daily use and Cleaning retain the same permanent layout; the cleaning state changes availability and temporary closure placement without relocating rooms or entrances. Site drawings and the street perspective agree on the retained paving, dropped kerbs, north wall and electrical cabinet wherever visible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "ground-floor"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "building-to-perspective",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "section-elevations",
+      "subjectSlots": [
+        "street-perspective"
+      ],
+      "notes": "The perspective matches their roof outline, opening positions and material divisions and displays \"CORNER PAUSE\" and \"Toilets and rest\" at the entrance."
+    }
+  ]
+}

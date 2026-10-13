@@ -1,0 +1,557 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-product-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "complete-device-views",
+      "label": "Complete-device view sheet",
+      "description": "One sheet containing top, front and right orthographic views, a rear three-quarter view, overall dimensions, pad clearances and functional labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "component-assembly",
+      "label": "Component and assembly sheet",
+      "description": "One exploded component sheet with module IDs, dimensions, C1 connections, material divisions, feet and an underside battery-access detail.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "idle-operation",
+      "label": "Idle operation and desktop-use panel",
+      "description": "One Idle panel showing P2 preview, two-handed desktop posture, the desk dimensions, connected audio cables and indicator states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "armed-operation",
+      "label": "Armed operation panel",
+      "description": "One Armed panel showing P2 selection through SAMPLE and P2, a REC blinking cue and the next recording action.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "recording-operation",
+      "label": "Recording operation panel",
+      "description": "One Recording panel showing the LINE IN to P2 sound path, indicator states and the SAMPLE action that stores the recording.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "playback-operation",
+      "label": "Playback operation panel",
+      "description": "One Playback panel showing the complete instrument in tabletop performance, indicator states and the PLAY/STOP action that stops the loop.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-inscription",
+      "kind": "text-verbatim",
+      "text": "PALM LOOP",
+      "scope": {
+        "slots": [
+          "complete-device-views",
+          "idle-operation",
+          "armed-operation",
+          "recording-operation",
+          "playback-operation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "PALM LOOP",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "complete-instrument-system",
+      "slots": [
+        "component-assembly",
+        "idle-operation",
+        "armed-operation",
+        "recording-operation",
+        "playback-operation"
+      ],
+      "sourceSlots": [
+        "complete-device-views"
+      ],
+      "items": [
+        {
+          "item": "All sheets describe one selected instrument: enclosure form, pad and control positions, connector order, feet, material boundaries and module identities agree. Exploded parts preserve their assembled placement relationships; hands, cable poses and camera positions may vary.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The instrument has four independent stored-sound pads, four knobs, three buttons and three indicator lights, with interaction carried by physical controls and lights and no screen. Knob assignments remain K1 VOLUME for output level, K2 TEMPO for loop pace, K3 START for sample start and K4 LENGTH for sample length; button assignments remain B1 SAMPLE, B2 PLAY/STOP and B3 POWER.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The complete device rests on integral feet during desktop use, with A1 internal and accessible through a removable underside battery cover. No wall mount or separate support dock is introduced. An exposed battery is acceptable in the exploded or battery-access detail, but not as the operating configuration.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "PALM LOOP"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "complete-device-views",
+      "component-assembly",
+      "idle-operation",
+      "armed-operation",
+      "recording-operation",
+      "playback-operation"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design-quality scoring must not demand photorealistic rendering, production-ready engineering or a prescribed enclosure silhouette, palette or graphic identity from these conceptual product drawings and engineering-style diagrams."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "complete-device-views",
+        "component-assembly",
+        "idle-operation",
+        "armed-operation",
+        "recording-operation",
+        "playback-operation"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-complete-device-views",
+      "requirementId": "R-format-complete-device-views",
+      "method": "artifact-property",
+      "targetSlots": [
+        "complete-device-views"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-component-assembly",
+      "requirementId": "R-format-component-assembly",
+      "method": "artifact-property",
+      "targetSlots": [
+        "component-assembly"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-idle-operation",
+      "requirementId": "R-format-idle-operation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "idle-operation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-armed-operation",
+      "requirementId": "R-format-armed-operation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "armed-operation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-recording-operation",
+      "requirementId": "R-format-recording-operation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "recording-operation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-playback-operation",
+      "requirementId": "R-format-playback-operation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "playback-operation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "instrument-dimensions-and-pad-clearances",
+      "requirementId": "R-instrument-dimensions-and-pad-clearances",
+      "method": "visual",
+      "targetSlots": [
+        "complete-device-views"
+      ],
+      "criteria": "Read the dimension annotations: selected width must be no greater than 320 mm, depth no greater than 220 mm, and total height no greater than 85 mm, including projecting controls and feet. The top view must establish a 36 × 36 mm exposed surface for each of four pads, adjacent pad-edge gaps of at least 8 mm, and pad-to-exposed-knob/button-edge gaps of at least 6 mm. Repeated-dimension notation is acceptable if its application to every relevant surface or clearance is unambiguous. Missing dimensions, contradictory geometry or values outside these limits fail; exact image-scale measurement is not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "module-inventory-and-assembly",
+      "requirementId": "R-module-inventory-and-assembly",
+      "method": "visual",
+      "targetSlots": [
+        "component-assembly"
+      ],
+      "criteria": "Require an exploded assembly and a legible inventory establishing 19 distinct module instances, one per individual ID; repeated depictions in detail views do not count as extra instances. Verify envelopes in mm: P1–P4 each 40 × 40 × 15, exposed surface 36 × 36; K1–K4 each 20 × 20 × 25 behind panel, exposed cap diameter 20 and height 12; B1–B3 each 14 × 14 × 12 behind panel, exposed face 12 × 12; L1–L3 each 5 × 5 × 6 behind panel, exposed light diameter 3; C1 80 × 55 × 15; A1 90 × 50 × 12; J1 18 × 15 × 10 behind panel with a 9 × 3 opening; J2–J3 each 15 × 15 × 12 behind panel with diameter 3.5 openings. Grouped dimensions are acceptable when clearly assigned. Plan rotation may interchange width and depth. Assembled-position outlines must show separate, non-intersecting module volumes with room for enclosure walls and supports; exploded spacing alone is insufficient. Logical connections from every peripheral module must reach C1; electrical circuit detail is unnecessary. Show material divisions, integral feet, and an underside opening with a removable cover and an identified A1 removal path. Missing modules, resized envelopes, obvious volume collisions, disconnected relationships or an obstructed removal path fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "shared-product-labels-and-materials",
+      "requirementId": "R-shared-product-labels-and-materials",
+      "method": "visual",
+      "targetSlots": [
+        "complete-device-views",
+        "idle-operation",
+        "armed-operation",
+        "recording-operation",
+        "playback-operation"
+      ],
+      "criteria": "Compare the assembled instruments for matching enclosure geometry, control layout, rear connector sequence, feet and material boundaries. Camera angle, hand placement and cable pose may vary; structural substitutions fail. The product name must appear on the instrument's upper face rather than solely as a page title. Read the view sheet's complete label record: pads P1, P2, P3, P4; knobs VOLUME, TEMPO, START, LENGTH; buttons SAMPLE, PLAY/STOP, POWER; indicators POWER, REC, PLAY; connectors USB-C POWER, LINE IN, HEADPHONES. Labels must be legible and associated with their respective parts. Material annotations must assign fine-textured matte PC/ABS to the enclosure, silicone to pads and satin anodised aluminium to knob caps. Missing labels, swapped assignments or contradictory material depictions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "operation-headings-and-indicator-records",
+      "requirementId": "R-operation-headings-and-indicator-records",
+      "method": "visual",
+      "targetSlots": [
+        "idle-operation",
+        "armed-operation",
+        "recording-operation",
+        "playback-operation"
+      ],
+      "criteria": "Read each panel heading and its three physical indicator states. Required POWER/REC/PLAY combinations are Idle on/off/off, Armed on/blinking/off, Recording on/on/off and Playback on/off/on. Each heading must match its role. Monochrome or colour treatments are acceptable if states are unambiguous. Armed must distinguish blinking from steady illumination using a graphic cue or the word blinking beside REC. Missing headings, incorrect states, or an undifferentiated steady REC light in Armed fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "operation-actions-and-transitions",
+      "requirementId": "R-operation-actions-and-transitions",
+      "method": "visual",
+      "targetSlots": [
+        "idle-operation",
+        "armed-operation",
+        "recording-operation",
+        "playback-operation"
+      ],
+      "criteria": "Require visible action evidence for tapping P2 to preview in Idle; holding SAMPLE while pressing P2 to select it in Armed, followed by a separate SAMPLE press to begin recording; LINE IN recording into P2 in Recording, with SAMPLE ending recording, storing the sound and returning to Idle; and PLAY/STOP stopping the loop and returning to Idle in Playback. Hands, arrows, sequence insets and explanatory callouts may establish these actions and transitions. Every action must refer to the corresponding physical control in the source view sheet. A wrong pad, reversed transition, missing storage outcome or gesture involving relocated or invented controls fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "complete-device-views"
+      ]
+    },
+    {
+      "id": "desktop-fit-and-rear-connections",
+      "requirementId": "R-desktop-fit-and-rear-connections",
+      "method": "visual",
+      "targetSlots": [
+        "complete-device-views",
+        "component-assembly",
+        "idle-operation"
+      ],
+      "criteria": "The Idle scene must identify a 720 mm high desk and a clear desktop region 500 mm wide by 350 mm deep, visibly accommodating the whole instrument and connected plugs. All three sheets must establish distinct usable rear openings for USB-C POWER, LINE IN and HEADPHONES, with rear understood as the edge farthest from the seated player. Connector order is designer-selected but must agree across the sheets. Idle must show both line-source and headphone connections, with their cables passing behind the pad playing area; cable lengths may extend beyond the marked clear region. Front or side placement, merged openings, plugs outside the clear region or cables crossing the pad playing area fail. A connected USB-C power cable is not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "required-device-views",
+      "requirementId": "R-required-device-views",
+      "method": "visual",
+      "targetSlots": [
+        "complete-device-views"
+      ],
+      "criteria": "Require identifiable top, front and right orthographic depictions plus a rear three-quarter depiction of the complete assembled instrument. The views must expose enough information to locate controls, rear connectors and support geometry and agree on the chosen design. Sheet composition and drawing style may vary. A missing orientation, a perspective substitute for a required orthographic view, or incompatible geometry between views fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "idle-two-handed-use",
+      "requirementId": "R-idle-two-handed-use",
+      "method": "visual",
+      "targetSlots": [
+        "idle-operation"
+      ],
+      "criteria": "Show the assembled device resting on the desktop in a seated playing orientation, with one hand tapping P2 and the other positioned at VOLUME. Cropping may omit the player's face or full body if the two-handed desktop posture and player-facing edge remain clear. Require simultaneous line-source and headphone connections and visible indicator-state evidence. A single-hand scene, a hand at the wrong control, handheld support or an ambiguous player orientation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "playback-performance-context",
+      "requirementId": "R-playback-performance-context",
+      "method": "visual",
+      "targetSlots": [
+        "playback-operation"
+      ],
+      "criteria": "Depict the complete assembled sampler supported on a tabletop in an active music-performance context. Visible state cues or callouts must establish that a stored pattern is looping, expose the three indicator states and identify the physical PLAY/STOP button as the stop action. Scene styling and camera position are open; a particular venue or audience is unnecessary. A detached control diagram without tabletop context, an inactive product-only scene or a stop action assigned elsewhere fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-complete-instrument-system",
+      "requirementId": "R-set-complete-instrument-system",
+      "method": "visual",
+      "targetSlots": [
+        "component-assembly",
+        "idle-operation",
+        "armed-operation",
+        "recording-operation",
+        "playback-operation"
+      ],
+      "criteria": "All sheets describe one selected instrument: enclosure form, pad and control positions, connector order, feet, material boundaries and module identities agree. Exploded parts preserve their assembled placement relationships; hands, cable poses and camera positions may vary. The instrument has four independent stored-sound pads, four knobs, three buttons and three indicator lights, with interaction carried by physical controls and lights and no screen. Knob assignments remain K1 VOLUME for output level, K2 TEMPO for loop pace, K3 START for sample start and K4 LENGTH for sample length; button assignments remain B1 SAMPLE, B2 PLAY/STOP and B3 POWER. The complete device rests on integral feet during desktop use, with A1 internal and accessible through a removable underside battery cover. No wall mount or separate support dock is introduced. An exposed battery is acceptable in the exploded or battery-access detail, but not as the operating configuration.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-product-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-product-breadth-01/sampler-inputs.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "complete-device-views"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "instrument-continuity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "complete-device-views",
+      "subjectSlots": [
+        "idle-operation",
+        "armed-operation",
+        "recording-operation",
+        "playback-operation"
+      ],
+      "notes": "The complete-device view sheet and all four operation panels depict the same enclosure, control positions, connector order, feet and material divisions."
+    }
+  ]
+}

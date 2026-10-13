@@ -1,0 +1,33 @@
+PALMSET | A commuter lunchbox for one-handed meals
+
+We are commissioning a complete lunchbox for adults who eat at work with one hand available. The operating rules are fixed; begin with a component and state specification and develop one product from it. Body shape, closure, partitions, utensil retention and grip are open for design. Print "PALMSET" on the exterior lid and "Open for lunch" on the eating board and the opening scene of the video. The complete closed box, with utensils and protrusions, must fit within 230 L x 165 W x 90 H mm. Retain the existing U-S spoon and U-F fork at their full envelopes of 160 L x 35 W x 18 H mm and 160 L x 25 W x 18 H mm. Provide zones A, B and C for 350 mL, 200 mL and 50 mL, totaling 600 mL, with each fill plane at least 5 mm below its rim.
+
+H-R uses the right hand; H-L uses the left. Each starts with the same loaded box facing the user on an ordinary level desk. Opening takes at most 4 actions and closing at most 4, with the active hand and desk providing support. Each action is one continuous purposeful movement; a box rotation counts as an action. Simultaneous control contacts have a maximum center span of 70 mm, and push or slide releases have at most 12 mm travel. The lid stays supported when open or parks stably on the desk. Choose 2–8 removable box service parts, including BX and LD, with additional IDs P1–P6 as needed; U-S and U-F are separate contents. Cleaning allows two hands and tool-free separation. Use the state labels Closed, Open, Separated, Drying and Stored throughout the work.
+
+Audience: our product lead and industrial design team, deciding the product layout and the mechanism to take into development.
+
+Inputs (attached): 01-client-facts.en.md contains the component, meal, operation, material and cleaning records. 02-delivery-catalog.en.md lists every delivery file with its proportion, format and stage. client-fixtures.en.md contains the control limits, utensil envelopes and desk, bag, drying and cabinet dimensions. operation-envelopes.png diagrams those fixed dimensions. existing-utensils.png establishes the recognizable forms of U-S and U-F. workday-atmosphere.png provides the warm, ordinary office setting for the meal and carrying scenes.
+
+Deliverables:
+1. A one-page component and state specification recording the chosen 2–8 service parts, their IDs, dimensions and connections, the five state labels, control motion and the three meal volumes
+2. One Closed drawing sheet with front, top and right orthographic views, overall dimensions and a section through the stored U-S and U-F envelopes with clearance labels
+3. One Open layout drawing with M1 cooked rice in A, mixed vegetables in B and thick sauce in C, dimensioned fill planes, utensil storage and the supported or parked lid
+4. Two operation boards, one H-R and one H-L, each containing numbered opening and closing sequences, active contacts, support points, control travel and resulting closure states
+5. One H-R eating board showing sequential retrieval of either utensil and access to A, B and C in M1, with the unused utensil stored clear of the meal
+6. One Separated cleaning board showing residue removal, utensil removal, lid release, all service parts, joint directions and hand-washing access to food-contact surfaces, grooves and any seal interface
+7. One Drying and Stored board showing all separated parts and utensils on DR1, followed by dry reassembly and cabinet storage in ST1
+8. One materials board assigning a specific material family and finish to every service part, mapping meal, utensil, hand and exterior/base contact surfaces, and listing development questions
+9. Two context images: the M2 desk meal in D1 with short noodles in A, salad in B and thick dip in C; the complete Closed box base-down in C1 with both utensils stored
+10. One Closed product hero showing the exterior lid, grip and closure
+11. One 10-second video following the selected H-R opening sequence, utensil retrieval and the corresponding closing sequence
+12. One presentation document of at least 8 pages, reusing the specification, orthographic views, operation sequences, meal layouts, cleaning, materials and context images, with the development questions and chosen component inventory
+
+Acceptance:
+- The specification assigns BX, LD and any P1–P6 IDs to 2–8 service parts. The cleaning board, materials board and presentation repeat that inventory; the orthographic sheet and presentation repeat its chosen overall dimensions, and the state drawings use its Closed, Open, Separated, Drying and Stored labels.
+- The orthographic sheet, Open layout and presentation show the same box within 230 L x 165 W x 90 H mm, zones A/B/C at 350/200/50 mL and fill planes at least 5 mm below their rims. The utensil section labels both complete U-S and U-F envelopes and the designed clearance; the Open layout keeps them retrievable and separated from food.
+- Each H-R and H-L operation board shows at most 4 opening and 4 closing actions using its single active hand and ordinary desk support. Each action identifies its contact, support and resulting lid or latch state; paired contacts are dimensioned at 70 mm or less, single contacts are labeled, and push/slide travel is dimensioned at 12 mm or less. Other release motions have a drawn path. The eating board and H-L board show access to both utensils and all three zones with the lid supported or parked.
+- The cleaning board accounts for every service part and both utensils through tool-free separation, with washing access and removal/return paths for any seal. The Drying and Stored board places that complete inventory within DR1 at 500 L x 400 W mm with food-contact surfaces exposed, then shows the dry reassembled box and stored utensils within ST1 at 260 L x 190 W x 120 H mm.
+- The D1 context image contains the open box, lid, both utensils and any temporarily removed parts within 520 L x 340 W mm, with M2 portions of 350/200/50 mL and an identified resting place for the unused utensil. The C1 image places the complete box base-down within 245 L x 180 W x 105 H mm, including grip and closure protrusions.
+- The materials board and presentation match each service-part ID to the same material family and finish. The hero, context images and video preserve those assignments and the geometry of the orthographic sheet. The hero shows PALMSET clearly on the lid; the eating board and video opening scene print Open for lunch. The 10-second video follows the H-R board, and the presentation spans at least 8 pages.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

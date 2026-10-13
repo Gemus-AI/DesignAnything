@@ -1,0 +1,625 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-vehicle-breadth-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "complete-vehicle",
+      "label": "Complete vehicle views and materials",
+      "description": "One complete-vehicle board containing front, right-side and top orthographic views, a rear three-quarter perspective, dimensions and material callouts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "loading-cargo",
+      "label": "Loading access and compartment geometry",
+      "description": "One loading and cargo board containing the operator, three open compartments, complete parcels, a dimensioned section and door movement paths.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "travel",
+      "label": "TRAVEL campus scene",
+      "description": "One TRAVEL board containing the complete moving vehicle with locked doors, DELIVERING wording and a forward-motion symbol on a campus path.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "yield",
+      "label": "YIELD pedestrian encounter",
+      "description": "One YIELD board containing the complete vehicle stopped for a pedestrian with locked doors, I'M WAITING wording and a pause or wait symbol.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "collection",
+      "label": "B collection sequence and bay plan",
+      "description": "One collection board containing PICKUP READY, code 2476 entry, AUTH B, complete P-B extraction, B closed and locked after collection, and a dimensioned bay plan.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "out-of-service",
+      "label": "OUT OF SERVICE vehicle state",
+      "description": "One OUT OF SERVICE board containing the complete stationary vehicle with all doors locked, OUT OF SERVICE wording and an unavailable symbol.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "vehicle-name",
+      "kind": "text-verbatim",
+      "text": "CAMPUS LOOP",
+      "scope": {
+        "slots": [
+          "complete-vehicle",
+          "loading-cargo",
+          "travel",
+          "yield",
+          "collection",
+          "out-of-service"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "travel-message",
+      "kind": "text-verbatim",
+      "text": "DELIVERING",
+      "scope": {
+        "slots": [
+          "travel"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "yield-message",
+      "kind": "text-verbatim",
+      "text": "I'M WAITING",
+      "scope": {
+        "slots": [
+          "yield"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "pickup-ready-message",
+      "kind": "text-verbatim",
+      "text": "ENTER CODE",
+      "scope": {
+        "slots": [
+          "collection"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "authorized-b-message",
+      "kind": "text-verbatim",
+      "text": "COLLECT B",
+      "scope": {
+        "slots": [
+          "collection"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "loading-message",
+      "kind": "text-verbatim",
+      "text": "LOADING",
+      "scope": {
+        "slots": [
+          "loading-cargo"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "unavailable-message",
+      "kind": "text-verbatim",
+      "text": "OUT OF SERVICE",
+      "scope": {
+        "slots": [
+          "out-of-service"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CAMPUS LOOP",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-physical-communication-system",
+      "slots": [
+        "loading-cargo",
+        "travel",
+        "yield",
+        "collection",
+        "out-of-service"
+      ],
+      "items": [
+        {
+          "item": "The operational boards preserve one physical status-area location and integration on the vehicle while changing messages and distinguishable symbols to match each state.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "CAMPUS LOOP"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "complete-vehicle",
+      "loading-cargo",
+      "travel",
+      "yield",
+      "collection",
+      "out-of-service"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not substitute visual polish for dimensional compliance or infer verified mechanical, sensor or safety performance from presentation boards."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "complete-vehicle",
+        "loading-cargo",
+        "travel",
+        "yield",
+        "collection",
+        "out-of-service"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-complete-vehicle",
+      "requirementId": "R-format-complete-vehicle",
+      "method": "artifact-property",
+      "targetSlots": [
+        "complete-vehicle"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-loading-cargo",
+      "requirementId": "R-format-loading-cargo",
+      "method": "artifact-property",
+      "targetSlots": [
+        "loading-cargo"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-travel",
+      "requirementId": "R-format-travel",
+      "method": "artifact-property",
+      "targetSlots": [
+        "travel"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-yield",
+      "requirementId": "R-format-yield",
+      "method": "artifact-property",
+      "targetSlots": [
+        "yield"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-collection",
+      "requirementId": "R-format-collection",
+      "method": "artifact-property",
+      "targetSlots": [
+        "collection"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-out-of-service",
+      "requirementId": "R-format-out-of-service",
+      "method": "artifact-property",
+      "targetSlots": [
+        "out-of-service"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "vehicle-definition-and-materials",
+      "requirementId": "R-vehicle-definition-and-materials",
+      "method": "visual",
+      "targetSlots": [
+        "complete-vehicle",
+        "loading-cargo",
+        "travel",
+        "yield",
+        "collection",
+        "out-of-service"
+      ],
+      "criteria": "The defining board supplies front, right-side and top orthographic views plus a rear three-quarter perspective, with A/B/C loaded, closed and locked. Dimensions establish a closed envelope no larger than 1000 mm long, 640 mm wide and 900 mm high, including wheels, covers, indicators and sensors. Material callouts assign powder-coated aluminium to chassis covers, glass-fibre composite to body and door panels, and thermoplastic polyurethane to perimeter bumpers. Visible views establish CAMPUS LOOP on both vehicle sides, and every board shows the name on the vehicle. Other boards preserve the defined body, wheel covers, compartment arrangement and material allocation; viewpoint, illumination and operational door positions may vary. Missing required views, conflicting dimensions, incorrect material assignments or changes to the vehicle design fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "platform-and-chassis-clearance",
+      "requirementId": "R-platform-and-chassis-clearance",
+      "method": "visual",
+      "targetSlots": [
+        "complete-vehicle",
+        "loading-cargo",
+        "collection"
+      ],
+      "criteria": "Orthographic views, dimensions and sections jointly establish three wheels on each side, with 160 mm diameter, 50 mm width, hubs at every combination of x 150/500/850 and y 70/570, and hub height z 80 mm. Axles run along y and ground-contact portions remain exposed. Use the rear-left ground datum, with x forward, y right and z upward. The supplied chassis remains one fixed module occupying x 100–900, y 100–540 and z 80–250 mm. Compartments, dividers, parcels and door sweeps stay outside this volume. Perspective occlusion is acceptable when the technical views establish all six wheels; displaced hubs, resized wheels, a divided or relocated module, or intersecting cargo and door geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "sensor-geometry-and-exposure",
+      "requirementId": "R-sensor-geometry-and-exposure",
+      "method": "visual",
+      "targetSlots": [
+        "complete-vehicle",
+        "loading-cargo",
+        "travel",
+        "yield",
+        "collection",
+        "out-of-service"
+      ],
+      "criteria": "All states preserve the cylindrical roof sensor at plan centre (500, 320) mm, diameter 90 mm, bottom z 800 and top z 850 mm, supported from below. Its entire circumference between z 810 and 840 mm remains free of opaque trim and moving doors. Technical views on complete-vehicle, loading-cargo and collection establish outward-facing front and rear windows at x 1000 and x 0, each centred at y 320/z 400, with width 80 along y and height 60 along z. Their internal keep-outs are respectively x 950–1000 and x 0–50, both y 280–360/z 370–430 mm. Sections and door paths must demonstrate clearance from parcels, compartments, dividers, doors and chassis throughout movement. Styling around the sensors may vary in form, but obscured sensing regions, changed sensor locations or obstructed allowances fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "cargo-fit-and-independent-access",
+      "requirementId": "R-cargo-fit-and-independent-access",
+      "method": "visual",
+      "targetSlots": [
+        "loading-cargo",
+        "collection"
+      ],
+      "criteria": "Both boards identify compartments A/B/C and their respective rigid cartons P-A/P-B/P-C, with parcel dimensions 180 L × 140 W × 100 H, 240 L × 180 W × 160 H and 160 L × 120 W × 80 H mm. Height stays vertical; horizontal rotation is allowed. The three separate compartments sit alongside one another and each has independent right-side access. Dimensioned evidence on both boards establishes at least 10 mm between each full carton and every compartment boundary, including the closed door; loading-cargo includes a compartment section and door movement paths. Loading shows a stationary operator, all three doors open and all three complete parcels available for placement. Collection shows full-sized P-B passing through B's actual opening, with handling hands and A/C remaining loaded and locked. Door paths avoid adjacent compartments. Missing labels or dimensions, stacked parcels, shared access, inadequate clearance, carton shrinkage or clipping through the opening fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "operational-states-and-collection-transition",
+      "requirementId": "R-operational-states-and-collection-transition",
+      "method": "visual",
+      "targetSlots": [
+        "travel",
+        "yield",
+        "loading-cargo",
+        "collection",
+        "out-of-service"
+      ],
+      "criteria": "Each scene visibly uses the same integrated physical vehicle status area, pairing DELIVERING with forward motion, I'M WAITING with pause or wait, ENTER CODE with code or key, COLLECT B with a B-box, LOADING with service, and OUT OF SERVICE with unavailable. Symbols must be distinguishable; their palette and drawing style are open. Travel depicts movement along a campus path with A/B/C loaded and locked; yield depicts the vehicle waiting for a pedestrian with the same cargo and lock conditions. Loading is stationary with an operator and all three doors open. Out-of-service is stationary with every door closed and locked. Collection visibly orders initial loaded/locked PICKUP READY, entry and acceptance of 2476 on a small right-side physical panel, release of B alone, COLLECT B while B is open and full P-B is retrieved, then empty B closed and locked with ENTER CODE and its code/key symbol restored. The pickup panel communicates the requested compartment state, and A/C stay loaded and locked throughout. Captions alone do not substitute for vehicle-mounted messages. Wrong message-symbol pairings, a relocated status area, an omitted transition or release of another compartment fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "collection-bay-and-human-access",
+      "requirementId": "R-collection-bay-and-human-access",
+      "method": "visual",
+      "targetSlots": [
+        "collection"
+      ],
+      "criteria": "A dimensioned plan inset establishes level pickup ground at context x 0–1600/y 0–1400 mm and an immediately adjacent pedestrian strip at y 1400–2600 mm. Every collection stage keeps the vehicle datum at (300, 350) mm with its front toward increasing x, yielding a maximum closed footprint at x 300–1300/y 350–990 mm. The recipient stands inside the bay beside B, with a visible hand path and complete parcel extraction trajectory. All moving doors, temporary vehicle hardware, handling and parcel extraction remain within the bay while passing pedestrians occupy the separate strip. Camera viewpoints may change, but vehicle relocation, rotation, missing plan dimensions or access spilling into the pedestrian strip fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "contemporary-whole-vehicle-design",
+      "requirementId": "R-contemporary-whole-vehicle-design",
+      "method": "visual",
+      "targetSlots": [
+        "complete-vehicle"
+      ],
+      "criteria": "The board presents a resolved contemporary or near-future complete vehicle, with purposeful body surfaces, designed wheel treatment, integrated doors, lighting and communication, and a deliberate colour scheme. Body form, compartment arrangement and specific colours remain design choices within the fixed geometry. An unfinished platform with no developed bodywork, missing lighting integration or disconnected component styling fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "wheel-envelope-clearance",
+      "requirementId": "R-wheel-envelope-clearance",
+      "method": "visual",
+      "targetSlots": [
+        "complete-vehicle",
+        "loading-cargo",
+        "collection"
+      ],
+      "criteria": "Views and movement diagrams show body panels and the complete door sweeps clearing each wheel's full 160 mm diameter by 50 mm wide volume. Designed wheel covers are permitted as wheel treatment when they do not imply bodywork intrusion into the wheel volume or loss of exposed ground contact. Closed-state clearance alone is insufficient where an intermediate door position would strike a wheel. Any demonstrated intersection fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "campus-scene-context",
+      "requirementId": "R-campus-scene-context",
+      "method": "visual",
+      "targetSlots": [
+        "travel",
+        "yield"
+      ],
+      "criteria": "The path scenes establish a campus through neutral building forms, planting and paved circulation. Simplified or schematic rendering is acceptable, and the two scenes need not depict the same location. A contextless vehicle cutout or a setting without the specified campus elements fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-shared-physical-communication-system",
+      "requirementId": "R-set-shared-physical-communication-system",
+      "method": "visual",
+      "targetSlots": [
+        "loading-cargo",
+        "travel",
+        "yield",
+        "collection",
+        "out-of-service"
+      ],
+      "criteria": "The operational boards preserve one physical status-area location and integration on the vehicle while changing messages and distinguishable symbols to match each state.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-vehicle-breadth-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-01/client-hardpoints.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-complete-vehicle",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "complete-vehicle",
+      "subjectSlots": [
+        "loading-cargo",
+        "travel",
+        "yield",
+        "collection",
+        "out-of-service"
+      ],
+      "notes": "All six boards use that same body, compartment arrangement and material allocation, with CAMPUS LOOP visible on the vehicle."
+    }
+  ]
+}

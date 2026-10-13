@@ -1,0 +1,605 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-jewelry-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "housing-drawing",
+      "label": "Final housing drawing",
+      "description": "One dimensioned housing sheet with front and side views, a sensor section and charging access geometry.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cap-assembly",
+      "label": "Interchangeable cap assembly",
+      "description": "One exploded assembly sheet with three caps, their shared attachment, release and fitting sequences, and exposed-edge radii.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "finish-catalogue",
+      "label": "Three-finish catalogue",
+      "description": "One catalogue of matched exterior and inner views for Satin, Ink and Flute with material labels and the required brand wording.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "satin-daytime",
+      "label": "Satin daytime worn image",
+      "description": "One daytime image of an adult hand wearing Satin beside a shirt cuff with the housing and cap junction visible.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ink-evening",
+      "label": "Ink evening worn image",
+      "description": "One evening image of an adult hand wearing Ink beside a dark tailored sleeve with the housing and cap junction visible.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "flute-charging",
+      "label": "Flute charging detail",
+      "description": "One charging detail of the assembled Flute ring slightly above a two-pin cradle with both contact access paths visible.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "catalogue-brand",
+      "kind": "text-verbatim",
+      "text": "VELT",
+      "scope": {
+        "slots": [
+          "finish-catalogue"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "catalogue-phrase",
+      "kind": "text-verbatim",
+      "text": "One ring, three finishes",
+      "scope": {
+        "slots": [
+          "finish-catalogue"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "VELT",
+      "maxEditDistance": 1,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "technical-product-system",
+      "slots": [
+        "cap-assembly",
+        "finish-catalogue"
+      ],
+      "sourceSlots": [
+        "housing-drawing"
+      ],
+      "items": [
+        {
+          "item": "The assembly and catalogue preserve the housing geometry, module placement and shared cap interface established by the drawing.",
+          "kind": "consistency"
+        },
+        {
+          "item": "All three caps use Grade 5 titanium, occupy the upper 120° and remain within the stated assembled size limits.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "product-in-use",
+      "slots": [
+        "satin-daytime",
+        "ink-evening",
+        "flute-charging"
+      ],
+      "sourceSlots": [
+        "housing-drawing",
+        "finish-catalogue"
+      ],
+      "items": [
+        {
+          "item": "The contextual images retain the specified housing profile, cap junction and corresponding catalogue finish despite changes in viewpoint and lighting.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Satin appears in daytime wear, Ink in evening wear and Flute fitted during charging, with contact access matching the drawing.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "VELT"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "housing-drawing",
+      "cap-assembly",
+      "finish-catalogue",
+      "satin-daytime",
+      "ink-evening",
+      "flute-charging"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge unrequested health-tracking performance, electronics design or physical durability that cannot be established from the delivered images."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "housing-drawing",
+        "cap-assembly",
+        "finish-catalogue",
+        "satin-daytime",
+        "ink-evening",
+        "flute-charging"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-housing-drawing",
+      "requirementId": "R-format-housing-drawing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "housing-drawing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cap-assembly",
+      "requirementId": "R-format-cap-assembly",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cap-assembly"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-finish-catalogue",
+      "requirementId": "R-format-finish-catalogue",
+      "method": "artifact-property",
+      "targetSlots": [
+        "finish-catalogue"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-satin-daytime",
+      "requirementId": "R-format-satin-daytime",
+      "method": "artifact-property",
+      "targetSlots": [
+        "satin-daytime"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ink-evening",
+      "requirementId": "R-format-ink-evening",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ink-evening"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-flute-charging",
+      "requirementId": "R-format-flute-charging",
+      "method": "artifact-property",
+      "targetSlots": [
+        "flute-charging"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "module-envelope-and-drawing",
+      "requirementId": "R-module-envelope-and-drawing",
+      "method": "visual",
+      "targetSlots": [
+        "housing-drawing"
+      ],
+      "criteria": "Read the dimension annotations and verify an unobstructed 18 mm bore, 22 mm module outside diameter, 7 mm module axial width and stated 56–57 mm intended finger circumference. The sheet includes front and side views and an axial section through the sensor, with module dimensions distinguished from assembled dimensions. Layout may vary; missing views, missing values or conflicting geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "sensor-and-contact-geometry",
+      "requirementId": "R-sensor-and-contact-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "housing-drawing",
+        "cap-assembly"
+      ],
+      "criteria": "Both sheets must communicate matching feature locations and unobstructed access. Interpret angles clockwise from the top in front view and z from the front face toward the rear. The inner cylindrical sensor spans 4 mm circumferentially and 5 mm axially, centred at 180° and z = 3.5 mm. Two circular 1 mm contacts lie on the front annular face at z = 0, radius 10 mm, and 150°/210°, each behind a clear 1.6 mm opening. Sections must substantiate full sensor exposure and both contact passages. View orientation may vary if unambiguous; mirrored locations, swapped sensor dimensions, occlusion or contradictory annotations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "common-housing-cap-system",
+      "requirementId": "R-common-housing-cap-system",
+      "method": "visual",
+      "targetSlots": [
+        "housing-drawing",
+        "cap-assembly",
+        "finish-catalogue"
+      ],
+      "criteria": "The three sheets must support a single housing design and a compatible common interface for exactly three interchangeable caps. Material labels identify Grade 5 titanium for housing and caps. Cap coverage runs from 300° through 0° to 60° in front view. Assembled dimension evidence must establish that every finish is at most 25 mm in outside diameter and 8.5 mm in axial width. The exploded sheet separates the module, housing and all three caps, enlarges the shared attachment, and labels release action and exposed-edge radii. Smaller assembled dimensions and different attachment mechanisms are allowed; incompatible interfaces, altered housings, excessive dimensions or missing labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "catalogue-views-finishes-and-copy",
+      "requirementId": "R-catalogue-views-finishes-and-copy",
+      "method": "visual",
+      "targetSlots": [
+        "finish-catalogue"
+      ],
+      "criteria": "The catalogue presents identifiable Satin, Ink and Flute entries, each with matched exterior and inner views, readable material and finish labels, and both required brand phrases. Surface appearance must distinguish brushed titanium, black PVD over brushing, and milled grooves with a satin surface respectively. The underlying housing remains the same across entries. Catalogue composition may vary; omitted views, duplicated finishes, incorrect labels or inconsistent housing geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "daytime-and-evening-wear",
+      "requirementId": "R-daytime-and-evening-wear",
+      "method": "visual",
+      "targetSlots": [
+        "satin-daytime",
+        "ink-evening"
+      ],
+      "criteria": "The daytime scene shows an adult hand wearing brushed Satin beside a shirt cuff; the evening scene shows an adult hand wearing black brushed Ink beside a dark tailored sleeve. Each view reveals enough of the cap profile and housing junction to compare them with the drawing and catalogue. Pose, lighting and framing may differ; wrong finishes, missing clothing context, concealed junctions or changed product geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "housing-drawing",
+        "finish-catalogue"
+      ]
+    },
+    {
+      "id": "flute-charging-access",
+      "requirementId": "R-flute-charging-access",
+      "method": "visual",
+      "targetSlots": [
+        "flute-charging"
+      ],
+      "criteria": "Show the assembled grooved satin Flute ring slightly lifted above a two-pin charging cradle, with the cap installed and both contact access paths visible. Pin placement must align through the two openings to the front-face contacts defined by the drawing, and the ring must match the catalogue's Flute design. Camera angle and cradle styling may vary; a removed cap, hidden or blocked paths, extra or missing pins, or displaced contacts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "housing-drawing",
+        "finish-catalogue"
+      ]
+    },
+    {
+      "id": "attachment-operation-and-edges",
+      "requirementId": "R-attachment-operation-and-edges",
+      "method": "visual",
+      "targetSlots": [
+        "cap-assembly"
+      ],
+      "criteria": "Enlarged attachment details and illustrated fitting and release sequences must explain how a cap engages and disengages the shared housing interface. Attachment features stay outside the fixed module volume and preserve its bore, sensor and contact access. Exposed edges are visibly rounded and correspond to labelled radii. The mechanism and radius values are open design choices; module intrusion, unexplained operation or sharp exposed edges fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "housing-drawing"
+      ]
+    },
+    {
+      "id": "existing-module-appearance",
+      "requirementId": "R-existing-module-appearance",
+      "method": "visual",
+      "targetSlots": [
+        "housing-drawing",
+        "cap-assembly",
+        "finish-catalogue",
+        "satin-daytime",
+        "ink-evening",
+        "flute-charging"
+      ],
+      "criteria": "Where the module is exposed, preserve a matte black polymer body and liner, a dark green rounded rectangular sensor window, and two circular gold-coloured contact pads. Natural lighting and partial visibility are allowed; visible replacement colours, changed feature shapes or an incorrect contact count fail. Exterior-only views need not expose hidden module features.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "atmosphere-reference",
+      "requirementId": "R-atmosphere-reference",
+      "method": "diagnostic",
+      "targetSlots": [
+        "satin-daytime",
+        "ink-evening",
+        "flute-charging"
+      ],
+      "criteria": "Record the reference's role as atmosphere guidance for clothing, metal and the charging desk; it does not establish an exact scene composition or additional product geometry.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-technical-product-system",
+      "requirementId": "R-set-technical-product-system",
+      "method": "visual",
+      "targetSlots": [
+        "cap-assembly",
+        "finish-catalogue"
+      ],
+      "criteria": "The assembly and catalogue preserve the housing geometry, module placement and shared cap interface established by the drawing. All three caps use Grade 5 titanium, occupy the upper 120° and remain within the stated assembled size limits.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "housing-drawing"
+      ]
+    },
+    {
+      "id": "set-product-in-use",
+      "requirementId": "R-set-product-in-use",
+      "method": "visual",
+      "targetSlots": [
+        "satin-daytime",
+        "ink-evening",
+        "flute-charging"
+      ],
+      "criteria": "The contextual images retain the specified housing profile, cap junction and corresponding catalogue finish despite changes in viewpoint and lighting. Satin appears in daytime wear, Ink in evening wear and Flute fitted during charging, with contact access matching the drawing.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-jewelry-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "housing-drawing",
+        "finish-catalogue"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "shared-housing",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "housing-drawing",
+      "subjectSlots": [
+        "cap-assembly",
+        "finish-catalogue"
+      ],
+      "notes": "The housing drawing, exploded assembly sheet and finish catalogue use one Grade 5 titanium housing and one shared attachment interface for all three upper 120° caps; each assembled finish stays within 25 mm outside diameter and 8.5 mm axial width."
+    },
+    {
+      "id": "worn-product",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "finish-catalogue",
+      "subjectSlots": [
+        "satin-daytime",
+        "ink-evening"
+      ],
+      "notes": "The daytime worn image uses Satin and the evening worn image uses Ink; both reproduce the housing profile, cap junction and respective finish shown in the housing drawing and finish catalogue."
+    },
+    {
+      "id": "charging-product",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "housing-drawing",
+      "subjectSlots": [
+        "flute-charging"
+      ],
+      "notes": "The charging detail image uses Flute with its cap fitted and shows two cradle pins aligned with the two 1.6 mm access openings, preserving the contact positions shown in the housing drawing."
+    }
+  ]
+}

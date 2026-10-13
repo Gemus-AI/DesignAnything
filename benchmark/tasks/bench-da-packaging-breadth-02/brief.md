@@ -1,0 +1,32 @@
+LEDGEKIN | Balcony herb starter kit packaging
+
+We are launching a herb seed-starting kit for adults trying their first small balcony project. The packaging needs to lead naturally from opening the box to identifying the parts, starting two pots and putting spare supplies away. Develop three distinct structural and visual directions, then select one for development. The supplied component shapes and sizes are fixed; the box silhouette, opening direction, compartments, retention and graphic system are open. Use nominal 0.6 mm folding paperboard for the outer package and retention pieces, within a closed envelope of 260 W × 190 D × 95 H mm including the closure. Print "LEDGEKIN", "BALCONY HERB STARTER" and "Start two pots now. Keep supplies for later." on the outer front.
+
+There are sixteen packing pieces: H1 and H2 seed pouches containing 20 basil and 20 chives seeds respectively, four P pots, four M sachets of 100 mL seed-starting mix, four K markers, one T catch tray and one C start card. C measures 100 W × 140 H mm and must be reachable before either seed pouch is opened. The first session uses two P, two M, two K and T, with two H1 seeds in one pot and two H2 seeds in the other. The remaining two P, two unopened M, two unused K, reclosed H1 and H2 with 18 seeds each, and C need identified dry storage positions. The two watered pots and their markers remain in T outside the closed package. Preserve the supplied English copy on its named surfaces.
+
+Audience: first-time adult growers need to understand each component and its order of use; our product and packaging teams will use the work to choose the structure and prepare a sampling brief.
+
+Inputs (attached): 01-client-facts.en.md contains the component dimensions, inventory, approved surface copy and first-session sequence. 02-delivery-catalog.en.md lists the deliverables, proportions, formats and stages. component-dimensions.png is the constraint drawing for component sizes, quantities and the closed package envelope. components.png is the identity reference for the existing unprinted component shapes. balcony-starting-scene.png is an atmosphere reference for a compact, protected seed-starting workspace.
+
+Deliverables:
+1. Three structural and visual directions, one board each, with a closed view, opening sequence and packing map for all sixteen pieces
+2. One three-page selection and specification document: the selected direction and structural specification on page 1, followed by two pages of approved copy and surface assignments, including material, board thickness, proposed assembled dimensions, opening method and component positions
+3. Two dimensioned developed-net sheets for the selected package, one for the outer box and one for its insert and retention pieces, with panel dimensions, cut/fold/glue legends, joining features and matching assembled-view identifiers
+4. One seed-pouch artwork sheet with H1 BASIL and H2 CHIVES fronts and backs, four surfaces at 55 W × 75 H mm each
+5. One consumables artwork sheet with M front and back, P identification and the K marker template, using the 60 W × 80 H mm sachet face and 15 W × 80 H mm marker
+6. One start-card artwork sheet with both sides of C at 100 W × 140 H mm, carrying the opening sequence and sowing instructions
+7. One shelf-display image with two closed copies of the selected package, presenting its outer front and back and the complete copy on both faces
+8. One opening-sequence board with four numbered views: closed package, C accessible, coded components exposed and the first-session supplies removed
+9. One after-session storage board with an overhead dry-stock map and a closed-storage view beside T holding the two watered pots and two used markers, plus the two emptied M wrappers separately
+10. One 10-second video moving from the closed package through access to C and first-session component removal to the after-session storage arrangement
+11. One presentation document of at least eight pages, reusing the direction boards, selection, specification, developed nets, surface artwork, opening sequence and after-session storage views
+
+Acceptance:
+- Present the three direction boards before the selection and specification document; identify the selected direction on that document's page 1 and the presentation's page 1, and develop that direction across both nets, all artwork, the shelf image, the opening and storage boards and the video.
+- State nominal 0.6 mm folding paperboard, the 260 W × 190 D × 95 H mm maximum closed envelope and the selected assembled dimensions in the specification; repeat these facts on both developed-net sheets and in the presentation. Match panel and retention identifiers between each net and its assembled view.
+- Account for all sixteen pieces on every direction board and the selected packing map: H1 × 1, H2 × 1, P × 4, M × 4, K × 4, T × 1 and C × 1. Dimension their allocated spaces against the component records, and show accessible removal clearances and supported stacking or nesting in the specification and opening board.
+- Reproduce the approved H1, H2, M, P, K and C wording on their named artwork sheets and the approved OUTER FRONT and OUTER BACK wording in the shelf image. Carry LEDGEKIN, BALCONY HERB STARTER and Start two pots now. Keep supplies for later. onto the outer front in the opening board, video and presentation; maintain the same code-to-component mapping throughout.
+- Show C accessible before H1 or H2 is opened on the opening board and in the video. Preserve C's four opening steps and five sowing steps on the card artwork; retain the 2-seed allocation, approximately 3 mm basil depth, approximately 6 mm chives depth and HERB: and SOWN: fields in the relevant seed, card and marker artwork.
+- Show the dry remainder on the storage board and in the video and presentation: 2 P, 2 unopened M totaling 200 mL, 2 unused K, reclosed H1 and H2 with 18 seeds each, and C. Match these positions to the specification, place the two watered P and two used K in T outside the closed dry package, and show the two emptied M wrappers separately on the storage board.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

@@ -1,0 +1,170 @@
+{
+  "id": "bench-da-vehicle-breadth-02",
+  "title": "SLEEPLINK — A two-person sleeper compartment from conversation to lights out, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "breadth"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# SLEEPLINK — complete client shell and traveller records\n\n## Commission\n- Project: SLEEPLINK.\n- Compartment: C02.\n- Occupants: two adult travellers, A and B, carrying overnight luggage.\n- Design scope: compartment interior, seating, sleeping, conversion, belongings, personal facilities and circulation.\n- Geometry basis: one shared nominal coordinate record for shell-plan.png and shell-elevations.png.\n- Design language: contemporary or slightly ahead of the 2026 market; clean purposeful surfacing, considered lighting, modern materials and colours, credible proportions and everyday usability.\n- Open design decisions: furniture architecture, joints, shapes, finishes, inner surface treatments and fitting locations within the shell.\n\n## Shared shell and corridor\n| Element | x range, mm | y range, mm | z range, mm | Record |\n|---|---|---|---|---|\n| Clear compartment | 0–2800 | 0–2200 | 0–2450 | Rectangular clear shell; flat ceiling |\n| Adjacent level corridor | 0–2800 | -900 to -100 | 0–2450 | 800 mm clear width |\n| Corridor partition | 0–2800 | -100 to 0 | 0–2450 | 100 mm thickness |\n| Fixed solid service block | 2450–2800 | 1850–2200 | 0–450 | Occupied exclusion volume; finish integration available |\n| Internal entrance landing | 1900–2700 | 0–800 | Floor level | 800 by 800 mm clear in D and N |\n\n- Coordinate orientation: x along the train; y from corridor wall to window wall; z above finished floor.\n- Corridor condition: clear of fixed or parked objects.\n- Internal route: continuous clear width of at least 550 mm from the entrance landing to each seating position and each berth access point.\n- Upper-berth option: explicit access device, proposed edge protection and a clear 550 by 550 mm base landing connected to the internal route.\n- Route and berth access side: design choices.\n- Clear-space condition: free of fixed, parked or stowed obstruction; intended traveller or bag movement occupies the route during a labelled transit step.\n- Grasp/guard elements: contact with the intended furniture boundary, with the clear route preserved.\n\n## Door and fixed window\n| Element | Position and dimensions |\n|---|---|\n| Doorway | x=1900–2600 through y=-100 to 0; z=0–2050; clear width 700 mm; clear height 2050 mm; level threshold |\n| Sliding leaf | 700 mm wide, 2050 mm high, 40 mm thick; centred within the 100 mm partition |\n| Closed leaf | x=1900–2600 |\n| Fully open leaf | x=1200–1900 |\n| Leaf travel | 700 mm leftward within the partition |\n| Reserved pocket | x=1200–1900, y=-100 to 0, z=0–2100 |\n| Fixed window | y=2200, x=450–1850, z=1050–1900; aperture 1400 by 850 mm |\n\n- Door design scope: leaf finish, handles and privacy indication.\n- Window treatment: movable shade with visible hardware and stow position.\n- Exterior treatment: neutral tone.\n\n## Day and night capacity\n| State | Capacity | Furniture and belongings |\n|---|---|---|\n| Day D | Two usable seats for A and B | Shared table deployed; BAG-A, BAG-B, BED-A and BED-B stored |\n| Night N | Two separate sleeping surfaces, A and B | Shared table stowed; BAG-A and BAG-B stored; corresponding bedding deployed on each berth |\n\n| Seated-use condition | Dimension |\n|---|---|\n| Clear plan envelope per seat | At least 480 mm wide by 950 mm deep |\n| Seat depth | At least 450 mm |\n| Front leg space | At least 500 mm |\n| Seat-surface height | 420–480 mm above floor |\n| Clear height above seat surface | At least 1100 mm |\n\n| Sleeping condition | Dimension |\n|---|---|\n| Each separate sleeping surface | At least 1900 mm long by 700 mm wide |\n| Clear height above each sleeping surface | At least 850 mm to ceiling or underside of structure directly above |\n| Height of at least one sleeping surface | 350–550 mm above floor |\n\n- Berth organisation options: stacked berths or two lower-level beds.\n- Passenger-place identities: stable A and B mapping between day seats and night berths.\n\n## Parts and conversion records\n- Space-rules inventory fields: assembly name, passenger association, D position, N position, movement and intermediate support or temporary storage location.\n- Inventory subjects: actual furniture assemblies, table, moving panels, removable cushions and any access device.\n- Conversion sequence: three to six numbered panels, D to N.\n- Conversion contents: moving assemblies, intermediate supports, temporarily removed pieces and their locations inside the compartment.\n- Part continuity: the same named parts throughout D, intermediate steps and N.\n- Reverse sequence: N-to-D arrow with reversed panel order.\n- Mechanism status: proposed conversion architecture and joints.\n\n## Belongings\n| ID | Owner | Item | Quantity | Nominal envelope, mm |\n|---|---|---|---|---|\n| BAG-A | A | Closed rectangular travel bag, including handles and wheels | 1 | 550 long by 350 wide by 230 high |\n| BAG-B | B | Closed rectangular travel bag, including handles and wheels | 1 | 550 long by 350 wide by 230 high |\n| BED-A | A | Pillow | 1 | 550 by 350 by 120 |\n| BED-A | A | Folded quilt | 1 | 450 by 350 by 180 |\n| BED-B | B | Pillow | 1 | 550 by 350 by 120 |\n| BED-B | B | Folded quilt | 1 | 450 by 350 by 180 |\n\n- Bedding set identities: BED-A and BED-B when stored.\n- Item orientation: variable; nominal envelopes retained at full size.\n- Storage information: compartment location, removal/opening direction and access.\n- Night retrieval case: BAG-A accessible while BAG-B remains stored and B's sleeping surface remains unchanged.\n- Retrieval transit: bag temporarily carried through the route and returned to storage.\n- Night resting condition: clear route with both bags stored.\n\n## Personal facilities and shared table\n| Facility | Quantity or dimension | Record |\n|---|---|---|\n| Reading light | One for A and one for B | Separately operable |\n| Light control label | READING / OFF | At each actual control location |\n| Personal shelf | One per traveller; clear 200 by 150 mm surface | Available to the corresponding traveller |\n| Phone-rest envelope | One per traveller; 170 by 85 by 12 mm | Personal shelf may also serve as phone rest |\n| Shared table surface | At least 600 by 400 mm clear | Accessible from both day seats |\n| Shared table height in D | 680–760 mm above floor | Supports fit with both seated-use envelopes and the clear route |\n| Shared table in N | Stowed | Defined volume, joint and use/stow clearance |\n| Grasp/support points | At passenger position changes | Attached to the actual furniture or shell |\n\n- Proposed palette subjects: wall, seat/berth upholstery, table and grips.\n- Palette records: specific material and finish names attached to actual parts.\n\n## Privacy and identification\n- Fixed-window shade: independent control; visible open and privacy positions; hardware and stow position attached to the shell.\n- Corridor-door privacy treatment: independent control; visible open and privacy positions; hardware and stow position attached to the shell.\n- Door treatment options: opaque leaf, screen or glazing with a privacy treatment.\n- Opaque-door option: open and closed leaf states serve as open and privacy positions.\n- Door operation: handle accessible and full sliding travel available.\n- Closed door privacy condition: corridor sightlines intercepted before reaching sleeping berths.\n- Independent night lighting: A's reading light on while B's reading light is off.\n- Visual shielding: proposed physical screening and its relationship to the two berths.\n\n| Location | Exact text |\n|---|---|\n| Beside corridor doorway | SLEEPLINK / C02 |\n| Inside door identification | C02 |\n| Every board title | SLEEPLINK |\n| Presentation cover | SLEEPLINK |\n| Each reading-light control | READING / OFF |\n\n## Four onboard cases\n| Case | Passenger and compartment record | Sequence record |\n|---|---|---|\n| D1 day conversation | C02; A and B seated at the actual shared table; both bags and both bedding sets stored; door closed | Day D resting state |\n| N1 night reading | C02; A at berth A with reading light A on; B resting at berth B with light B off; table stowed; both bags stored; door and window treatments in privacy position | Night N resting state |\n| E1 arrival | C02 initially empty and already in D; bedding stored; A carries BAG-A from corridor through open door into storage; B follows carrying BAG-B | Three to four ordered panels with waiting and moving positions; sequential passage through doorway |\n| E2 night exit | C02; A leaves berth A along the actual clear route, opens sliding door and enters corridor; B remains resting; BAG-A and BAG-B remain stored; B's berth unchanged | Three to four panels; final panel returns door to closed privacy position |\n\n- Case context: static onboard use of the same compartment and the same two travellers.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# SLEEPLINK — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | direction-one | Arrangement direction one | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 2 | direction-two | Arrangement direction two | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | direction-three | Arrangement direction three | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 4 | selection-specification | Selection and hard-points/state specification | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 5 | day-plan | Day D compartment plan | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | night-plan | Night N compartment plan | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | coordinated-sections | Coordinated compartment sections | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | conversion-sequence | Day-to-night conversion sequence | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | facilities-storage-privacy | Personal facilities, storage and privacy details | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | passenger-use-sequences | Arrival, night exit and bag retrieval sequences | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | day-conversation-view | D1 day conversation perspective | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | night-reading-view | N1 night reading perspective | 14 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | conversion-video | Ten-second compartment conversion video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | development-presentation | Compartment development presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: shell-plan.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: shell-elevations.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: traveller-belongings.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: daylight-travel-materials.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: night-corridor-light.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "SLEEPLINK | A two-person sleeper compartment from conversation to lights out\n\nWe are developing compartment C02 for two adult night-train travellers, A and B. We need a contemporary interior that gives them somewhere to talk during the day and two separate places to sleep at night. Explore three genuinely different arrangements, select one, and carry its furniture and passenger identities through the complete design. The clear shell measures 2800 mm along the train, 2200 mm from corridor wall to window wall and 2450 mm high. Coordinates run from x=0–2800, y=0–2200 and z=0–2450. The adjacent corridor occupies y=-900 to -100 and has 800 mm clear width; its partition occupies y=-100 to 0. The doorway is at x=1900–2600, z=0–2050. Its 700 mm sliding leaf travels left into the pocket at x=1200–1900. Preserve the fixed window at y=2200, x=450–1850, z=1050–1900 and the solid service block at x=2450–2800, y=1850–2200, z=0–450. Both states need the 800 by 800 mm entrance landing at x=1900–2700, y=0–800 and a continuous route at least 550 mm wide to each passenger place.\n\nDay D has two seats and a shared table with at least 600 by 400 mm usable surface, 680–760 mm above the floor. Each seat needs a 480 by 950 mm minimum seated-use envelope, including at least 450 mm seat depth and 500 mm front leg space; seat height is 420–480 mm with at least 1100 mm clear height above it. Night N has separate A and B sleeping surfaces, each at least 1900 by 700 mm with 850 mm minimum clear height above; at least one is 350–550 mm above the floor. Each traveller brings a 550 by 350 by 230 mm bag, a 550 by 350 by 120 mm pillow and a 450 by 350 by 180 mm folded quilt. Store both bags in both states and both bedding sets in D; stow the table in N. A must be able to retrieve BAG-A at night while BAG-B and B's sleeping surface stay in place. Give each traveller an independently controlled reading light, a 200 by 150 mm clear shelf and a location for a 170 by 85 by 12 mm phone. Print \"READING / OFF\" at each light control, \"SLEEPLINK / C02\" beside the corridor doorway and \"C02\" on the inside door identification. Use SLEEPLINK in every board title and on the presentation cover. Develop separate window and door privacy controls, including their hardware and stow positions, and select named materials and finishes for the walls, upholstery, table and grips.\n\nAudience: the interior design lead and product team, choosing the compartment arrangement and the details to carry into development for travellers who need sleep, luggage access and brief conversation.\n\nInputs (attached): 01-client-facts.en.md contains the coordinated shell, passenger, object and onboard-use records. 02-delivery-catalog.en.md lists the deliverables with their proportions, formats and stages. shell-plan.png is the constraint drawing for the shell, corridor, opening, pocket, entrance landing and service block. shell-elevations.png is the constraint drawing for the window wall and corridor partition. traveller-belongings.png is the identity drawing for BAG-A, BAG-B, BED-A and BED-B, preserving the shapes and dimensions of the travellers' belongings. daylight-travel-materials.png is an atmosphere reference for daylight, touch and quiet conversation. night-corridor-light.png is an atmosphere reference for subdued corridor lighting and finding a doorway at night.\n\nDeliverables:\n1. Three arrangement direction boards, one per direction, each with paired Day D and Night N layouts, the two passenger places, table, storage and clear routes\n2. A one-page selection and hard-points/state specification, identifying the chosen direction and its day-to-night A/B mapping, shell coordinates, clearances, printed labels, named material palette and stable inventory of furniture, moving panels, cushions, table and any access device\n3. Two dimensioned compartment plans of the selected direction, one for Day D and one for Night N, showing passenger-use envelopes, furniture, stored objects, entrance landing, access routes and door travel\n4. One coordinated section board with two dimensioned cuts through both passenger places and the doorway/window, showing seat and berth heights, overhead clearances, table supports and any upper-berth access and edge protection\n5. One conversion board with three to six numbered D-to-N panels, stable part names, intermediate supports, temporary storage positions and an N-to-D arrow giving the reverse panel order\n6. One personal facilities, storage and privacy detail board, with A and B light controls, shelves and phone locations, dimensioned bag and bedding accommodation, table use/stow geometry, named material callouts and open/privacy positions for both window and door treatments\n7. One passenger-use sequence board with three to four panels for E1 arrival, three to four panels for E2 night exit and three panels for BAG-A retrieval and return during Night N\n8. Two matched interior perspectives, one of D1 day conversation and one of N1 night reading, using the same viewpoint, shell and selected furniture\n9. One 10-second conversion video, progressing from Day D through the conversion board's numbered steps to Night N, with the state names and moving-part identities visible\n10. A development presentation of at least eight pages, with the selected direction on page one, reusing the specification, plans, sections, conversion, details, passenger sequences and matched perspectives, plus three frames from the video\n\nAcceptance:\n- The three direction boards each accommodate A and B in Day D and Night N. The selection specification names one of those directions; the two plans, section board, conversion board, detail board, passenger-use board, perspectives, video and presentation develop that selection and retain its A/B mapping and part names.\n- The specification, two plans, section board and presentation repeat the 2800 by 2200 by 2450 mm shell, 700 mm doorway and 1400 by 850 mm window. Their geometry preserves the doorway, leftward 700 mm leaf travel, pocket, window and service-block coordinates in the fact sheet. The plans and passenger-use board dimension the 800 by 800 mm entrance landing, routes at least 550 mm wide and the adjacent 800 mm clear corridor; an upper-berth proposal also has a connected 550 by 550 mm base landing.\n- The Day D plan and section board dimension two seated-use envelopes of at least 480 by 950 mm, including 450 mm minimum seat depth and 500 mm front leg space, seat heights of 420–480 mm, 1100 mm overhead clearance and a shared table at least 600 by 400 mm at 680–760 mm height. The Night N plan and section board dimension two sleeping surfaces of at least 1900 by 700 mm with 850 mm overhead clearance and at least one surface 350–550 mm above the floor. The detail board and matched perspectives use those same assemblies; the detail board repeats the specification's named materials on their actual parts.\n- The conversion board's three to six panels and the 10-second video track every inventoried moving or removed part from D to N, including table stowage and bedding deployment. The plans and detail board locate full-size BAG-A and BAG-B at 550 by 350 by 230 mm in both states and each 550 by 350 by 120 mm pillow and 450 by 350 by 180 mm folded quilt in D. The passenger-use board's three retrieval panels show BAG-A leaving storage and returning while BAG-B and B's sleeping surface remain in place, with the route clear again at the end.\n- The detail board shows two independently operated lights labelled READING / OFF, two clear 200 by 150 mm shelves, two 170 by 85 by 12 mm phone locations, grasp/support points and both privacy treatments' open and privacy positions. D1 shows A and B at the deployed table, bags and bedding stored, and the door closed. N1 shows A's light on, B's light off, table stowed, both bags stored and both privacy treatments in privacy position; the detail board traces how the closed door treatment blocks corridor views of the berths.\n- The passenger-use board's E1 panels begin with the empty compartment in D and bedding stored, then show A carrying BAG-A into storage before B follows with BAG-B. Its E2 panels show A moving from berth A into the corridor while both bags and B's berth stay in place, ending with the door closed in privacy position. The detail board and presentation show SLEEPLINK / C02 beside the doorway and C02 inside the door; every board title and the presentation cover carry SLEEPLINK. The presentation has at least eight pages and three video frames.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-02/shell-plan.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "cccbb49babb3dea9c0f036739dd2166194903cb0985ebc7fa55e269958359283"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-02/shell-elevations.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "5f359cb76d14623665734e53d8630a9c698cdb21cdfd8088a17cfa94b73d498f"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-02/traveller-belongings.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "d3941298bfe071c66465fc2436489dec4cb0095e21f65bde8e38468f796eb093"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-02/daylight-travel-materials.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "23e1ab1d9dfea746d4da4cecf6fd00b4936d99dcef2209e63743f96db87300c5"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-breadth-02/night-corridor-light.png",
+      "nodeId": "provided-image-5",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "afda4524b8ca81f5be2fbad26147786ab0005b7fc085a6896eb3c048aa9f8f35"
+    }
+  ]
+}

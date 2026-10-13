@@ -1,0 +1,1207 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-furniture-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "specification",
+      "label": "Furniture specification and state schedule",
+      "description": "One specification and state schedule covering five units, dimensional targets, material allocation, connections, servicing and three use states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "room-arrangement",
+      "label": "Dimensioned room arrangement",
+      "description": "One dimensioned arrangement of retained bookcases and five new furniture units with passage, retrieval and occupied seating envelopes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "furniture-overview",
+      "label": "Integrated furniture overview",
+      "description": "One overview of S1, S2, C1, A1 and A2 beside the retained bookcases with the project name and programme phrase.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "single-seat-drawings",
+      "label": "S1 and S2 seat drawing board",
+      "description": "One drawing board of S1 and S2 with plans, front and side views, sitting dimensions, footprints and material callouts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "companion-seat-drawings",
+      "label": "C1 companion seat drawing board",
+      "description": "One drawing board of C1 with plan, front and side views, two clear sitting places, footprint and material callouts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "accessory-drawings",
+      "label": "A1 and A2 accessory drawing board",
+      "description": "One accessory board with A1, A2, the sample book, both sample bags and dimensioned separation from a retained case end.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "connections",
+      "label": "Connection and assembly board",
+      "description": "One connection and assembly board showing floor support, removable joints, hardware quantities, tool access and protective feet across the five units.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-maintenance",
+      "label": "Materials and maintenance document",
+      "description": "One materials and maintenance document recording material specifications, finishes, cleaning, replacement access and staff or technician responsibilities.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "retrieval-scene",
+      "label": "Book retrieval and passing scene",
+      "description": "One occupied scene with a person retrieving a lower or middle shelf book and a second person passing along a separate route.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "solo-scene",
+      "label": "Solo reading scene",
+      "description": "One scene of a reader at S1 with S2 and C1 empty and one sample bag in A2.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "companion-scene",
+      "label": "Companion reading scene",
+      "description": "One scene of two readers at C1 sharing the open book on A1 with two bags in A2 and S1 and S2 empty.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "replacement-sequence",
+      "label": "Upholstered element replacement sequence",
+      "description": "One sequence board showing removal and refitting of a replaceable upholstered contact element with its closure or fasteners and structural access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "use-video",
+      "label": "Ten-second furniture use video",
+      "description": "One 10-second video of the fixed furniture arrangement across retrieval, solo reading and companion reading.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Furniture development presentation",
+      "description": "One presentation of at least eight pages reusing the specification, arrangement, drawings, connections, materials, replacement sequence and scenes with archive credits.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "BETWEEN SHELVES",
+      "scope": {
+        "slots": [
+          "furniture-overview",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "programme-phrase",
+      "kind": "text-verbatim",
+      "text": "Four places, five units",
+      "scope": {
+        "slots": [
+          "furniture-overview",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "BETWEEN SHELVES",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-furniture-development",
+      "slots": [
+        "single-seat-drawings",
+        "companion-seat-drawings",
+        "accessory-drawings",
+        "connections",
+        "replacement-sequence",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "sourceSlots": [
+        "furniture-overview",
+        "specification"
+      ],
+      "items": [
+        {
+          "item": "The seats and accessories form one coordinated furniture family, with recognizable unit designs and compatible material and construction decisions across drawings and scenes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Material allocation, removable connections, support details and replacement access agree with the opening specification wherever represented.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The family retains two separate single seats, one two-person companion seat and two shared accessories, without changing the five-unit and four-place programme.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "fixed-library-arrangement",
+      "slots": [
+        "furniture-overview",
+        "accessory-drawings",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "sourceSlots": [
+        "room-arrangement"
+      ],
+      "items": [
+        {
+          "item": "Furniture placement and relationships to identifiable retained bookcases agree with the dimensioned arrangement despite changes in viewpoint or occupation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The passage, accessible shelf faces, retrieval bands and door swings remain usable with the specified occupants and stored bags.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The accessory-to-case separation remains consistent wherever that relationship is depicted.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "BETWEEN SHELVES"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "room-arrangement",
+      "furniture-overview",
+      "single-seat-drawings",
+      "companion-seat-drawings",
+      "accessory-drawings",
+      "connections",
+      "retrieval-scene",
+      "solo-scene",
+      "companion-scene",
+      "replacement-sequence"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge the proposed furniture and clarity of its communication, excluding the aesthetic quality of retained historic fabric, archival image quality and photorealism of permitted diagrammatic figures."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "specification",
+        "room-arrangement",
+        "furniture-overview",
+        "single-seat-drawings",
+        "companion-seat-drawings",
+        "accessory-drawings",
+        "connections",
+        "materials-maintenance",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene",
+        "replacement-sequence",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "room-arrangement",
+        "furniture-overview",
+        "single-seat-drawings",
+        "companion-seat-drawings",
+        "accessory-drawings",
+        "connections",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene",
+        "replacement-sequence"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-specification",
+      "requirementId": "R-format-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-room-arrangement",
+      "requirementId": "R-format-room-arrangement",
+      "method": "artifact-property",
+      "targetSlots": [
+        "room-arrangement"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-furniture-overview",
+      "requirementId": "R-format-furniture-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "furniture-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-single-seat-drawings",
+      "requirementId": "R-format-single-seat-drawings",
+      "method": "artifact-property",
+      "targetSlots": [
+        "single-seat-drawings"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-companion-seat-drawings",
+      "requirementId": "R-format-companion-seat-drawings",
+      "method": "artifact-property",
+      "targetSlots": [
+        "companion-seat-drawings"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-accessory-drawings",
+      "requirementId": "R-format-accessory-drawings",
+      "method": "artifact-property",
+      "targetSlots": [
+        "accessory-drawings"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-connections",
+      "requirementId": "R-format-connections",
+      "method": "artifact-property",
+      "targetSlots": [
+        "connections"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-maintenance",
+      "requirementId": "R-format-materials-maintenance",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-maintenance"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-retrieval-scene",
+      "requirementId": "R-format-retrieval-scene",
+      "method": "artifact-property",
+      "targetSlots": [
+        "retrieval-scene"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-solo-scene",
+      "requirementId": "R-format-solo-scene",
+      "method": "artifact-property",
+      "targetSlots": [
+        "solo-scene"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-companion-scene",
+      "requirementId": "R-format-companion-scene",
+      "method": "artifact-property",
+      "targetSlots": [
+        "companion-scene"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-replacement-sequence",
+      "requirementId": "R-format-replacement-sequence",
+      "method": "artifact-property",
+      "targetSlots": [
+        "replacement-sequence"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-use-video",
+      "requirementId": "R-format-use-video",
+      "method": "manual",
+      "targetSlots": [
+        "use-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "opening-specification",
+      "requirementId": "R-opening-specification",
+      "method": "content",
+      "targetSlots": [
+        "specification"
+      ],
+      "criteria": "The schedule identifies one each of S1, S2, C1, A1 and A2, with one sitting place in each single seat and two in C1. It records 480 mm clear width and 440 mm clear depth per place, 450 mm seat height above local floor, a 650 mm book-support surface for a 320 mm by 240 mm open book, and simultaneous accommodation of two upright bags each 300 mm by 180 mm by 400 mm. It resolves material allocation, hardware types and counts, servicing tools and access, maintenance, and dimensions of the largest component after disassembly. Its three state records specify retrieval plus independent passing, solo use at S1 with S2 and C1 empty and one bag in A2, and companion use at C1 with S1 and S2 empty, an open book on A1 and two bags in A2. Missing decisions or contradictory capacities fail; unspecified design choices remain open.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "five-unit-image-programme",
+      "requirementId": "R-five-unit-image-programme",
+      "method": "visual",
+      "targetSlots": [
+        "room-arrangement",
+        "furniture-overview",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "criteria": "The arrangement and overview establish five distinct new units: two separate single seats, one companion seat with two places, one book support and one bag rest. Visible units in the scenes agree with this inventory and the specification. Viewpoint and incidental occlusion may vary, but merging S1 and S2 into one unit, adding new programme units, changing seating capacity or substituting different furniture fails. Existing optional movable furniture is not counted as a new programme unit.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "specification"
+      ]
+    },
+    {
+      "id": "arrangement-archive-retention",
+      "requirementId": "R-arrangement-archive-retention",
+      "method": "visual",
+      "targetSlots": [
+        "room-arrangement"
+      ],
+      "criteria": "The arrangement preserves the archival inner planning boundary, entrance width, other openings, windows, door swings, partitions, cupboards and complete case geometry. Both accessible faces of projecting cases and the usable length and depth of wall cases remain available, with shelf-tier retention established by the drawing or its annotations. Passage and retrieval widths are explicitly dimensioned at nominal 1200 mm and 900 mm. Archive-traced measurements are marked approximate archive-derived. The record distinguishes the 22 feet 4 inches overall value from the 22 feet 3 inches chain total and identifies their 1 inch discrepancy; silently reconciling them or changing retained geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "presentation-archive-retention",
+      "requirementId": "R-presentation-archive-retention",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Readable drawings and explanatory records preserve the arrangement's retained boundary, openings, door swings, built-ins, case footprints, shelf tiers and storage geometry. The presentation includes the nominal passage and retrieval dimensions, labels traced measurements as approximate archive-derived, and records both conflicting short-side archive values and their 1 inch difference. Simplified presentation graphics are allowed when these facts remain legible and unaltered; omission or contradiction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "room-arrangement"
+      ]
+    },
+    {
+      "id": "circulation-and-occupied-clearance",
+      "requirementId": "R-circulation-and-occupied-clearance",
+      "method": "visual",
+      "targetSlots": [
+        "room-arrangement",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "criteria": "The plan shows occupied seating envelopes and door swings, and provides nominal 900 mm retrieval space at every accessible shelf face, including both sides of projecting cases. Furniture footprints, stored bags and seated-use envelopes stay outside the passage, retrieval bands and door swings in the plan and corresponding scenes. Passage and retrieval routes may adjoin or share circulation where they meet; people may use those routes. A clearance that works only with seats unoccupied, bags omitted or a shelf face blocked fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "accessory-drawings"
+      ]
+    },
+    {
+      "id": "entrance-to-reading-passage",
+      "requirementId": "R-entrance-to-reading-passage",
+      "method": "visual",
+      "targetSlots": [
+        "room-arrangement"
+      ],
+      "criteria": "A clearly traceable nominal 1200 mm route connects the existing entrance approach to the central reading area and terminates before the rear retrieval band. The existing entrance opening remains at its drawn width rather than being widened to achieve the passage target. Retrieval bands reach all accessible shelf faces. A disconnected route, an unexplained pinch within the planned passage or a route extended through the rear retrieval band fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "seat-and-accessory-targets",
+      "requirementId": "R-seat-and-accessory-targets",
+      "method": "visual",
+      "targetSlots": [
+        "single-seat-drawings",
+        "companion-seat-drawings",
+        "accessory-drawings"
+      ],
+      "criteria": "Applicable dimensions are readable on the relevant boards: each of the four sitting places has nominal clear width 480 mm, clear depth 440 mm and height 450 mm above local floor, while A1 has a 650 mm support surface. A1 is shown with the open 320 mm by 240 mm book, and A2 with both upright 300 mm by 180 mm by 400 mm bags at once. Accessory heights and footprints are documented, and a numerical separation identifies a specific retained case end. Outer seat dimensions cannot substitute for clear sitting dimensions; depicting only one bag or fitting the bags only when laid down fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "specification"
+      ]
+    },
+    {
+      "id": "presentation-programme-and-cover",
+      "requirementId": "R-presentation-programme-and-cover",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The cover itself displays both required phrases with exact spelling and case. Elsewhere, the presentation records the five-unit programme and four sitting places, the per-place 480 mm by 440 mm clear sitting area at 450 mm, the 650 mm book-support height, the 320 mm by 240 mm open book, simultaneous capacity for two upright 300 mm by 180 mm by 400 mm bags, and the dimensioned accessory-to-case relationship. Values must agree with the specification and accessory board; placing the required cover text only on an interior page fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "specification",
+        "accessory-drawings"
+      ]
+    },
+    {
+      "id": "seat-drawing-completeness",
+      "requirementId": "R-seat-drawing-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "single-seat-drawings",
+        "companion-seat-drawings"
+      ],
+      "criteria": "Each board supplies identifiable plan, front and side views for its assigned seats, footprint dimensions, clear sitting dimensions and material callouts. The single-seat board accounts for both S1 and S2; shared drawings are acceptable if explicitly applicable to both. C1 clearly provides two sitting places. View styling may vary, but missing view information, an unassigned single-seat design or contradictory geometry between views fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "connection-and-assembly-resolution",
+      "requirementId": "R-connection-and-assembly-resolution",
+      "method": "visual",
+      "targetSlots": [
+        "connections"
+      ],
+      "criteria": "Details or clearly assigned shared details account for all five units and demonstrate independent floor support, protective feet, mechanically removable connections, hardware types and quantities, and practical access for the specified tools. Dimensions identify the largest disassembled component. The case relationship remains separated, without relying on historic cases or finishes for support or attachment. Connections between new units are allowed if every unit retains its own floor support. Inaccessible fasteners, unspecified counts or assembly dependent on permanent joints fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "specification"
+      ]
+    },
+    {
+      "id": "materials-and-maintenance-record",
+      "requirementId": "R-materials-and-maintenance-record",
+      "method": "content",
+      "targetSlots": [
+        "materials-maintenance"
+      ],
+      "criteria": "The document assigns named materials to structure, sitting contact, book and bag contact, feet and joints, consistent with the opening specification. For materials used, it identifies timber species or board type and finish, metal type and finish, and upholstery fibre composition and weight in g/m2. It documents removable upholstery or cover construction, routine cleaning, replacement access, protective feet, independent floor support, removable hardware and largest disassembled component dimensions. Accessible surface wiping and designed removable-cover handling belong to staff; structural joint servicing belongs to a technician. Generic material labels, conflicting hardware or unassigned responsibilities fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "specification",
+        "connections",
+        "replacement-sequence"
+      ]
+    },
+    {
+      "id": "upholstery-replacement-sequence",
+      "requirementId": "R-upholstery-replacement-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "replacement-sequence"
+      ],
+      "criteria": "An ordered sequence shows at least one upholstered sitting-contact element being released, removed and refitted, with its closure or fasteners identifiable and access to the supporting structure exposed. The steps are mechanically consistent with the specified construction and tools. Different removable-element or cover designs are acceptable; an unexplained before-and-after swap, destructive removal or a sequence that cannot restore the element fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "specification",
+        "connections"
+      ]
+    },
+    {
+      "id": "material-and-hardware-carry-through",
+      "requirementId": "R-material-and-hardware-carry-through",
+      "method": "visual",
+      "targetSlots": [
+        "single-seat-drawings",
+        "companion-seat-drawings",
+        "accessory-drawings",
+        "connections",
+        "replacement-sequence",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "criteria": "Drawing callouts, assembly details and visible scene materials agree with the specification's allocation and removable construction. Connections and replacement details preserve the stated hardware, tool access and servicing approach. Scenes need only show decisions visible at their scale, and hidden hardware need not be exposed. Rendering or lighting differences are acceptable; changing an upholstered contact into an incompatible material, contradicting the hardware schedule or blocking the documented servicing access fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "specification"
+      ]
+    },
+    {
+      "id": "retrieval-state",
+      "requirementId": "R-retrieval-state",
+      "method": "visual",
+      "targetSlots": [
+        "retrieval-scene"
+      ],
+      "criteria": "One figure visibly retrieves a neutral sample book from a lower or middle shelf while a second figure passes independently on a distinct route. Book spines remain neutral within the retained shelf geometry. Realistic or diagrammatic figures are acceptable. Upper-shelf-only retrieval, a second stationary reader or passing through the retriever's working position fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "room-arrangement"
+      ]
+    },
+    {
+      "id": "solo-state",
+      "requirementId": "R-solo-state",
+      "method": "visual",
+      "targetSlots": [
+        "solo-scene"
+      ],
+      "criteria": "The scene provides readable evidence of one person reading in the identified S1, with S2 and both places of C1 unoccupied, and exactly one sample bag stored in A2. Figure style may vary. Using the wrong seat, occupying another programme seat or placing the bag outside A2 fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "room-arrangement",
+        "furniture-overview"
+      ]
+    },
+    {
+      "id": "companion-state",
+      "requirementId": "R-companion-state",
+      "method": "visual",
+      "targetSlots": [
+        "companion-scene"
+      ],
+      "criteria": "Two readers occupy C1 and jointly use an open sample book resting on A1. Both sample bags are upright in A2 simultaneously, and S1 and S2 are unoccupied. Poses and figure treatment may vary, but missing book support, a missing bag, seating the pair elsewhere or occupying either single seat fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "room-arrangement",
+        "furniture-overview"
+      ]
+    },
+    {
+      "id": "video-arrangement-and-states",
+      "requirementId": "R-video-arrangement-and-states",
+      "method": "manual",
+      "targetSlots": [
+        "use-video"
+      ],
+      "criteria": "Review the entire video and its duration. It runs for 10 seconds, moves through the established furniture arrangement and makes all three specified states recognizable: lower or middle shelf retrieval with independent passing; reading at S1 with S2 and C1 empty and one bag in A2; and two readers at C1 using an open book on A1 with two bags in A2 and the single seats empty. The five units, four sitting places, retained cases, furniture positions and circulation clearances remain consistent throughout. Camera movement and transitions may vary; omitted states, relocated furniture or changed capacity fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "specification",
+        "room-arrangement",
+        "furniture-overview",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ]
+    },
+    {
+      "id": "presentation-source-reuse",
+      "requirementId": "R-presentation-source-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation visibly incorporates identifiable material from each source role, including readable specification and maintenance content, the arrangement, the furniture overview and drawing boards, assembly details, replacement steps and all three occupied states. Cropping, scaling and editorial reformatting are acceptable when the source remains recognizable and its relevant information survives. Merely naming a source, substituting unrelated imagery or omitting a source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "specification",
+        "room-arrangement",
+        "furniture-overview",
+        "single-seat-drawings",
+        "companion-seat-drawings",
+        "accessory-drawings",
+        "connections",
+        "materials-maintenance",
+        "replacement-sequence",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ]
+    },
+    {
+      "id": "presentation-length-and-credits",
+      "requirementId": "R-presentation-length-and-credits",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The document has at least eight pages and legibly records all three credit groups: the Historic American Buildings Survey, National Park Service and Library of Congress; the Thomas Hughes Public Library drawing record HABS TENN-200, sheets 2 and 4, with Judson Mc Intire and East Tennessee Project 1973; and interior photograph HABS TN-200-8 with its date explicitly unconfirmed in supplied metadata. Line breaks and credit placement may vary. Missing attribution, wrong record identifiers or treating 1973 as a confirmed photograph date fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "accessory-case-and-seat-relationship",
+      "requirementId": "R-accessory-case-and-seat-relationship",
+      "method": "visual",
+      "targetSlots": [
+        "room-arrangement",
+        "furniture-overview",
+        "accessory-drawings",
+        "connections"
+      ],
+      "criteria": "At least one of A1 or A2 is visibly associated with an identifiable retained case end and the proposed seating. A readable dimension establishes its separation, and corresponding views agree on that relationship while preserving access to shelf faces. Either accessory may fulfill the requirement and no particular gap is prescribed. An anonymous case fragment, an undimensioned gap, attachment to the retained case or a relationship that blocks retrieval fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-coordinated-furniture-development",
+      "requirementId": "R-set-coordinated-furniture-development",
+      "method": "visual",
+      "targetSlots": [
+        "single-seat-drawings",
+        "companion-seat-drawings",
+        "accessory-drawings",
+        "connections",
+        "replacement-sequence",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "criteria": "The seats and accessories form one coordinated furniture family, with recognizable unit designs and compatible material and construction decisions across drawings and scenes. Material allocation, removable connections, support details and replacement access agree with the opening specification wherever represented. The family retains two separate single seats, one two-person companion seat and two shared accessories, without changing the five-unit and four-place programme.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "furniture-overview",
+        "specification"
+      ]
+    },
+    {
+      "id": "set-fixed-library-arrangement",
+      "requirementId": "R-set-fixed-library-arrangement",
+      "method": "visual",
+      "targetSlots": [
+        "furniture-overview",
+        "accessory-drawings",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "criteria": "Furniture placement and relationships to identifiable retained bookcases agree with the dimensioned arrangement despite changes in viewpoint or occupation. The passage, accessible shelf faces, retrieval bands and door swings remain usable with the specified occupants and stored bags. The accessory-to-case separation remains consistent wherever that relationship is depicted.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-material-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "room-arrangement"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "furniture-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "furniture-overview",
+      "subjectSlots": [
+        "room-arrangement",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "notes": "The specification, room arrangement, furniture overview, occupied scenes and video use the same five units S1, S2, C1, A1 and A2 and four sitting places."
+    },
+    {
+      "id": "retained-bookcase-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "05-archive-interior.png"
+      ],
+      "subjectSlots": [
+        "furniture-overview",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "notes": "05-archive-interior.png is the identity reference for the visible bookcases and their relationships, from interior photograph HABS TN-200-8."
+    },
+    {
+      "id": "retained-archive-geometry",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "03-archive-plan.png",
+        "04-archive-section.png"
+      ],
+      "subjectSlots": [
+        "room-arrangement",
+        "furniture-overview",
+        "retrieval-scene",
+        "solo-scene",
+        "companion-scene"
+      ],
+      "notes": "Retain the drawn inner room boundary, openings, door swings, windows, built-in partitions and cupboards, every case footprint and every shelf tier, including both faces of projecting cases and the storage length and depth of wall cases."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specified-dimensions-to-drawings",
+      "fromSlot": "specification",
+      "toSlots": [
+        "single-seat-drawings",
+        "companion-seat-drawings",
+        "accessory-drawings"
+      ],
+      "extract": [
+        "clear width and depth of each sitting place",
+        "seat height above local floor",
+        "book-support surface height"
+      ],
+      "notes": "The seat and accessory boards repeat the specification's 480 mm clear seat width, 440 mm clear depth, 450 mm seat height and 650 mm book-support height."
+    },
+    {
+      "id": "specified-programme-to-presentation",
+      "fromSlot": "specification",
+      "toSlots": [
+        "presentation"
+      ],
+      "extract": [
+        "five physical unit IDs and four sitting places",
+        "clear sitting dimensions and seat height",
+        "book-support height and open-book dimensions",
+        "dimensions and simultaneous capacity of the two upright bags",
+        "accessory-to-case separation"
+      ],
+      "notes": "The presentation repeats these targets and the five-unit count."
+    },
+    {
+      "id": "specified-materials-and-hardware",
+      "fromSlot": "specification",
+      "toSlots": [
+        "connections",
+        "replacement-sequence",
+        "materials-maintenance"
+      ],
+      "extract": [
+        "material allocation to structure, sitting contact, book and bag contact, feet and joints",
+        "removable hardware types and quantities"
+      ],
+      "notes": "The connection board, replacement board and maintenance document follow the specification's material allocation and removable hardware schedule."
+    }
+  ]
+}

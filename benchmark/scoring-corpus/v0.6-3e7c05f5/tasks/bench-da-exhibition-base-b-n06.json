@@ -1,0 +1,610 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-exhibition-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "route-plan",
+      "label": "Permanent exhibition route plan",
+      "description": "A route plan locating six exhibits, three ordered zones, circulation widths, benches and wheelchair spaces.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "longitudinal-section",
+      "label": "Longitudinal gallery section",
+      "description": "A longitudinal section documenting wall, cabinet, touch-table, label and screen-control installation heights.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "exhibit-design-book",
+      "label": "Three-zone exhibit design book",
+      "description": "A three-spread exhibit design book covering the six exhibits, touch and screen interactions, cabinet assembly and E03 replacement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "interpretation-artwork",
+      "label": "Interpretation artwork book",
+      "description": "An artwork book containing six complete labels, three zone headings and E06 screen states, with entrance and direction artwork also collected for tier 6.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "entrance-open-view",
+      "label": "Entrance perspective in Open state",
+      "description": "An entrance visitor perspective showing the exhibition identity, first zone and annotated Open operating state.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "exit-closed-view",
+      "label": "Exit perspective in Closed state",
+      "description": "An exit visitor perspective showing the same gallery with annotated Closed lighting and screen states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exhibition-name",
+      "kind": "text-verbatim",
+      "text": "CITY AFTER DARK",
+      "scope": {
+        "slots": [
+          "entrance-open-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "entrance-phrase",
+      "kind": "text-verbatim",
+      "text": "Nature begins at your doorstep",
+      "scope": {
+        "slots": [
+          "entrance-open-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "tree-canopy-heading",
+      "kind": "text-verbatim",
+      "text": "Tree Canopy",
+      "scope": {
+        "slots": [
+          "interpretation-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "garden-edge-heading-and-sign",
+      "kind": "text-verbatim",
+      "text": "Garden Edge",
+      "scope": {
+        "slots": [
+          "interpretation-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "damp-path-heading",
+      "kind": "text-verbatim",
+      "text": "Damp Path",
+      "scope": {
+        "slots": [
+          "interpretation-artwork"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "open-state-label",
+      "kind": "text-verbatim",
+      "text": "Open",
+      "scope": {
+        "slots": [
+          "entrance-open-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "closed-state-label",
+      "kind": "text-verbatim",
+      "text": "Closed",
+      "scope": {
+        "slots": [
+          "exit-closed-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "CITY AFTER DARK",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-gallery-and-interpretation",
+      "slots": [
+        "entrance-open-view",
+        "exit-closed-view"
+      ],
+      "sourceSlots": [
+        "route-plan",
+        "longitudinal-section",
+        "interpretation-artwork"
+      ],
+      "items": [
+        {
+          "item": "The two perspectives show the same planned gallery, fixture positions, installation heights, benches and circulation from opposite route viewpoints.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Entrance lettering and Open-view interpretation agree with the artwork book's identity, typography and specified palette.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Open and Closed differ according to the recorded lighting and screen states while retaining the exhibition's physical arrangement.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "CITY AFTER DARK",
+    "carryThrough": {
+      "none": "Every declared carry-through of the family reads from or writes to roles that tier 6 does not commission."
+    }
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "route-plan",
+      "longitudinal-section",
+      "entrance-open-view",
+      "exit-closed-view"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not rescore exact copy, record accuracy, specified dimensions, assembly counts or operating values, and must not require photorealistic materials or lighting in technical plans, sections, schedules or artwork pages."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "route-plan",
+        "longitudinal-section",
+        "entrance-open-view",
+        "exit-closed-view"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-route-plan",
+      "requirementId": "R-format-route-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "route-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-longitudinal-section",
+      "requirementId": "R-format-longitudinal-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "longitudinal-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-exhibit-design-book",
+      "requirementId": "R-format-exhibit-design-book",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exhibit-design-book"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-interpretation-artwork",
+      "requirementId": "R-format-interpretation-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interpretation-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-open-view",
+      "requirementId": "R-format-entrance-open-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-open-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-exit-closed-view",
+      "requirementId": "R-format-exit-closed-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "exit-closed-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "surveyed-route-geometry",
+      "requirementId": "R-surveyed-route-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "route-plan"
+      ],
+      "criteria": "Compare the plan with the survey and attachment coordinates. Retain the 12000 × 8000 mm room; the west entrance at y = 1000–2800 and east exit at y = 5200–7000, both 1800 mm wide; the protected west, south and east strips; and the exhibition boundary x = 1500–10500, y = 1500–8000. B1 must occupy x = 2400–3600, y = 1800–2250 and B2 x = 8400–9600, y = 1800–2250. Preserve W1 at x = 3600–4500, y = 1800–3000 and W2 at x = 7500–8400, y = 1800–3000, each 900 × 1200 mm. Locate E01–E06 once each in their recorded zones and within-zone order, with the visitor route progressing through Tree Canopy, Garden Edge and Damp Path. Drawing scale and orientation may vary if dimensions and spatial relationships remain unambiguous; displaced fixed furniture, blocked protected space or reversed sequencing fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "longitudinal-installation-heights",
+      "requirementId": "R-longitudinal-installation-heights",
+      "method": "visual",
+      "targetSlots": [
+        "longitudinal-section"
+      ],
+      "criteria": "The section must dimension exhibition walls at 2400 mm, both cabinet and touch-table tops at 800 mm, exhibit-label centres at 1100 mm and the screen-control centre at 850 mm above the floor. The room must retain its 3200 mm clear height, and depicted zone headings must use the recorded 1800 mm centre height. Dimension leaders must identify the intended surfaces or centres, and drawn proportions must support the dimensions. Equivalent dimension notation is acceptable; missing required installation dimensions or contradictory geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "complete-interpretation-records",
+      "requirementId": "R-complete-interpretation-records",
+      "method": "content",
+      "targetSlots": [
+        "interpretation-artwork"
+      ],
+      "criteria": "Read all six finished labels against 03-exhibit-records.en.md. Each must retain its complete exact title and body, its own ID and the correct year: 2024 for E01, E03 and E05; 2025 for E02, E04 and E06. Include all three zone headings and the recorded interaction prompts. Screen artwork must show animal selection, place selection, the three correct pairings with their exact responses, the incorrect-pairing response and restart behavior. Reflow and pagination may vary, but altered wording, missing states, swapped metadata or incomplete labels fail. For tier 6, the collected entrance artwork must also contain both fixed entrance phrases, and the two collected direction signs must read Garden Edge and Exit.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ]
+    },
+    {
+      "id": "visitor-operating-states",
+      "requirementId": "R-visitor-operating-states",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-open-view",
+        "exit-closed-view"
+      ],
+      "criteria": "The entrance perspective must be identified as Open and annotate specimens at 50 lux, labels at 150 lux, direction signs at 250 lux and circulation at 150 lux, with the screen active. The exit perspective must be identified as Closed and annotate specimens at 5 lux and circulation at 50 lux, with labels, direction signs and screen off. The rendered illumination and screen appearance must support the stated state. Do not infer precise lux from image brightness alone; missing or incorrect annotations, an active Closed-state screen or visibly illuminated Closed-state interpretation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "interpretation-palette-and-hierarchy",
+      "requirementId": "R-interpretation-palette-and-hierarchy",
+      "method": "content",
+      "targetSlots": [
+        "interpretation-artwork"
+      ],
+      "criteria": "The artwork must use #182C35 as the primary interpretation colour and #F3EBDD as its text colour, including every sign required at the tier. Check declared colour values where available and the visible artwork for agreement; normal rendering variation is acceptable, but a different identity palette fails. The interpretation book must use English and distinguish zone heading, exhibit title and body, and interaction prompt. Its type specification must retain 24 pt exhibit-label bodies and 50 pt zone-introduction bodies; those fixed sizes must not be replaced with contradictory values.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ]
+    },
+    {
+      "id": "zone-learning-and-inventory",
+      "requirementId": "R-zone-learning-and-inventory",
+      "method": "content",
+      "targetSlots": [
+        "exhibit-design-book"
+      ],
+      "criteria": "For each file's assigned zone or detail, the design must support the progression from observing the object to understanding its surroundings and relating it to everyday urban nature. The complete zone coverage must pair E01 with E02, E03 with E04, and E05 with E06 in recorded order. Preserve the recorded object identities, dimensions and handling distinctions: three collection specimens behind glazing, two touchable teaching replicas within their main stations, and one screen. E02 must offer a raised shaft and branching surface; E04 must offer four recessed toe pads and a larger rear pad. Damp Path must connect shell observation to animal selection, place selection and the three recorded habitat matches. Graphic treatment may vary, but omitted exhibits, substituted objects, inaccessible touch replicas or a learning sequence unrelated to the assigned exhibits fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ]
+    },
+    {
+      "id": "tier6-route-record-annotations",
+      "requirementId": "R-tier6-route-record-annotations",
+      "method": "visual",
+      "targetSlots": [
+        "route-plan"
+      ],
+      "criteria": "Read the plan or its explicitly keyed legend for all six IDs, their exact recorded names and associated years. Each record must map unambiguously to its exhibit position, with no duplicate or omitted ID. A keyed legend is acceptable; detached metadata, incorrect names or years, or a zone sequence inconsistent with the plotted route fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-exhibit-book-construction",
+      "requirementId": "R-tier6-exhibit-book-construction",
+      "method": "content",
+      "targetSlots": [
+        "exhibit-design-book"
+      ],
+      "criteria": "Provide three spreads, one per zone, covering all six exhibits, both physical touch interactions and the screen sequence with all three recorded pairings. Show the fixed installation heights consistently with the section. Explain E03 exchange through staff access by releasing the hood and lifting the reusable specimen tray while the cabinet base remains in position. The cabinet assembly must identify four posts, four top rails, two shelves or trays, one hood and one label frame, with the fact sheet's materials and component dimensions. Show 16 captive M6 bolts, a 5 mm hex key, four hood-securing bolts, sliding label-frame clips, an 800 × 600 × 450 mm maximum loose-component envelope and two crates per cabinet, each internally 900 × 700 × 550 mm. Diagram style may vary; an incomplete assembly, moving the cabinet to exchange E03 or contradictory quantities fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ]
+    },
+    {
+      "id": "tier6-perspective-coordination",
+      "requirementId": "R-tier6-perspective-coordination",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-open-view",
+        "exit-closed-view"
+      ],
+      "criteria": "Both views must depict the planned gallery from their designated entrance and exit positions, retaining the same exhibits, zone arrangement, fixed seating and circulation. Walls, display surfaces, label centres and screen controls must agree with section heights. The entrance must visibly carry both exact entrance phrases, and its interpretation must match the specified deep-blue and warm-white artwork. Camera position and the required lighting change are allowed; relocating fixtures, changing the room or using incompatible installation heights fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "route-plan",
+        "longitudinal-section",
+        "interpretation-artwork"
+      ]
+    },
+    {
+      "id": "set-tier6-gallery-and-interpretation",
+      "requirementId": "R-set-tier6-gallery-and-interpretation",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-open-view",
+        "exit-closed-view"
+      ],
+      "criteria": "The two perspectives show the same planned gallery, fixture positions, installation heights, benches and circulation from opposite route viewpoints. Entrance lettering and Open-view interpretation agree with the artwork book's identity, typography and specified palette. Open and Closed differ according to the recorded lighting and screen states while retaining the exhibition's physical arrangement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-exhibition-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-exhibition-base-b-n06/03-exhibit-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "route-plan",
+        "longitudinal-section",
+        "interpretation-artwork"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "surveyed-gallery-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "gallery-survey.png"
+      ],
+      "subjectSlots": [
+        "route-plan",
+        "longitudinal-section",
+        "entrance-open-view",
+        "exit-closed-view"
+      ],
+      "notes": "Preserve the 1500 mm circulation strips along the west, south and east walls, the exhibition boundary and both benches shown on the survey."
+    }
+  ]
+}

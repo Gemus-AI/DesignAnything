@@ -1,0 +1,588 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-brand-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "master-logo",
+      "label": "Master logo",
+      "description": "The finished LUMA SOCIAL master logo.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "citrus-front",
+      "label": "Citrus & Rosemary can front",
+      "description": "An 80 mm × 100 mm Citrus & Rosemary front graphic panel with brand, descriptor, campaign line, taste notes and shared product copy.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "launch-poster",
+      "label": "General launch poster",
+      "description": "A general launch poster carrying LUMA SOCIAL, the campaign line and the product descriptor.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "dinner-menu",
+      "label": "Dinner drinks menu",
+      "description": "A seated-service drinks menu presenting the brand, all three flavor records, volume, alcohol content, price and serving copy.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "retail-sign",
+      "label": "Retail shelf sign",
+      "description": "A retail shelf sign presenting LUMA SOCIAL, all three flavor names, 250 ml, 0.0% alcohol and $4 per can.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "launch-social",
+      "label": "General launch social visual",
+      "description": "A launch social visual carrying LUMA SOCIAL, the campaign line and all three flavor names.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-name",
+      "kind": "text-verbatim",
+      "text": "LUMA SOCIAL",
+      "scope": "*",
+      "caseSensitive": false,
+      "critical": true
+    },
+    {
+      "id": "campaign-line",
+      "kind": "text-verbatim",
+      "text": "Stay for the moment.",
+      "scope": {
+        "slots": [
+          "citrus-front",
+          "launch-poster",
+          "launch-social"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": false,
+      "critical": true
+    },
+    {
+      "id": "product-descriptor",
+      "kind": "text-verbatim",
+      "text": "Alcohol-free botanical sparkling drink",
+      "scope": {
+        "slots": [
+          "citrus-front",
+          "launch-poster"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": false,
+      "critical": true
+    },
+    {
+      "id": "serving-copy",
+      "kind": "text-verbatim",
+      "text": "Serve chilled.",
+      "scope": {
+        "slots": [
+          "citrus-front",
+          "dinner-menu"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": false,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "LUMA SOCIAL",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "six-launch-identity",
+      "slots": [
+        "citrus-front",
+        "launch-poster",
+        "dinner-menu",
+        "retail-sign",
+        "launch-social"
+      ],
+      "sourceSlots": [
+        "master-logo"
+      ],
+      "items": [
+        {
+          "item": "All applications maintain a recognizable identity through compatible logo treatment, typography, palette and graphic language.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Menu, shelf sign and launch social distinguish all three flavors consistently, with the citrus cue matching its front panel.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "LUMA SOCIAL"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "master-logo",
+      "citrus-front",
+      "launch-poster",
+      "dinner-menu",
+      "retail-sign",
+      "launch-social"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge beverage formulation, can engineering or photorealistic material and lighting treatment on flat graphic artwork."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "master-logo",
+        "citrus-front",
+        "launch-poster",
+        "dinner-menu",
+        "retail-sign",
+        "launch-social"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-master-logo",
+      "requirementId": "R-format-master-logo",
+      "method": "artifact-property",
+      "targetSlots": [
+        "master-logo"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-citrus-front",
+      "requirementId": "R-format-citrus-front",
+      "method": "artifact-property",
+      "targetSlots": [
+        "citrus-front"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-launch-poster",
+      "requirementId": "R-format-launch-poster",
+      "method": "artifact-property",
+      "targetSlots": [
+        "launch-poster"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-dinner-menu",
+      "requirementId": "R-format-dinner-menu",
+      "method": "artifact-property",
+      "targetSlots": [
+        "dinner-menu"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-retail-sign",
+      "requirementId": "R-format-retail-sign",
+      "method": "artifact-property",
+      "targetSlots": [
+        "retail-sign"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-launch-social",
+      "requirementId": "R-format-launch-social",
+      "method": "artifact-property",
+      "targetSlots": [
+        "launch-social"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "adult-evening-positioning",
+      "requirementId": "R-adult-evening-positioning",
+      "method": "visual",
+      "targetSlots": [
+        "master-logo",
+        "citrus-front",
+        "launch-poster",
+        "dinner-menu",
+        "retail-sign",
+        "launch-social"
+      ],
+      "criteria": "The identity and applications collectively support welcoming adult company at dinners, gatherings or evening cultural events. Typography, illustration, color and composition may take any coherent direction; literal people or dinner photography are optional. A dominant child-oriented or incompatible occasion positioning fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "carrier-features",
+      "requirementId": "R-carrier-features",
+      "method": "visual",
+      "targetSlots": [
+        "master-logo",
+        "citrus-front",
+        "launch-poster",
+        "dinner-menu",
+        "retail-sign",
+        "launch-social"
+      ],
+      "criteria": "Where a physical can is pictured, its visible construction remains a cylindrical can with rounded shoulders and a pull-tab top, consistent with the supplied carrier. Applied artwork and camera angle may vary. Replacing the carrier with a different container fails; flat artwork and images without a can do not need to depict these features.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "public-copy-language-and-flexibility",
+      "requirementId": "R-public-copy-language-and-flexibility",
+      "method": "visual",
+      "targetSlots": [
+        "master-logo",
+        "citrus-front",
+        "launch-poster",
+        "dinner-menu",
+        "retail-sign",
+        "launch-social"
+      ],
+      "criteria": "Public copy is English and preserves the supplied words, numbers and associations wherever required. Accept wrapping, capitalization changes and equivalent punctuation, including a time-range en dash. Missing words, changed quantities, mistranslations or altered meaning fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "supplied-image-input-roles",
+      "requirementId": "R-supplied-image-input-roles",
+      "method": "diagnostic",
+      "targetSlots": [
+        "master-logo",
+        "citrus-front",
+        "launch-poster",
+        "dinner-menu",
+        "retail-sign",
+        "launch-social"
+      ],
+      "criteria": "The supplied image inputs cover three distinct roles: can-panel-geometry.png is the constraint image, plain-can-lineup.png is the identity image of the existing undecorated product carrier, and evening-company.png is the atmosphere reference image. They are inputs rather than finished label designs or additional deliverables. This diagnostic does not require literal reproduction of the atmosphere reference.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "six-piece-identity",
+      "requirementId": "R-six-piece-identity",
+      "method": "visual",
+      "targetSlots": [
+        "master-logo",
+        "citrus-front",
+        "launch-poster",
+        "dinner-menu",
+        "retail-sign",
+        "launch-social"
+      ],
+      "criteria": "All six pieces visibly belong to the master identity through compatible logo treatment, typography, palette and graphic language, and each has a legible brand name. Layout may adapt to the application. Unrelated identities or an unreadable or absent name fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "six-citrus-front-record",
+      "requirementId": "R-six-citrus-front-record",
+      "method": "visual",
+      "targetSlots": [
+        "citrus-front"
+      ],
+      "criteria": "The deliverable shows a flat portrait front panel with the specified 4:5 surface proportions. It identifies Citrus & Rosemary and includes the descriptor, campaign line, Bright citrus, herbal finish., 250 ml, 0.0% alcohol and Serve chilled. as readable panel copy. A perspective can mockup alone, missing fields or another flavor's notes fail; exact raster dimensions are not judged.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-menu-flavor-records",
+      "requirementId": "R-six-menu-flavor-records",
+      "method": "visual",
+      "targetSlots": [
+        "dinner-menu"
+      ],
+      "criteria": "Three readable menu entries associate Citrus & Rosemary with Bright citrus, herbal finish. and Citrus peel and rosemary.; Berry & Hibiscus with Red berry, floral finish. and Red berries and hibiscus.; and Pear & Ginger with Soft pear, gentle spice. and Pear and ginger. Ordering and layout may vary. Missing, duplicated or cross-assigned records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-menu-and-shelf-shared-record",
+      "requirementId": "R-six-menu-and-shelf-shared-record",
+      "method": "visual",
+      "targetSlots": [
+        "dinner-menu",
+        "retail-sign"
+      ],
+      "criteria": "Each application clearly presents all three flavor names and states a 250 ml can, 0.0% alcohol and a $4 price per can. Shared range-wide information may appear once if its applicability is clear. The dinner menu also contains Serve chilled. Omission, an ambiguous price basis or a conflicting product value fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "six-launch-copy-and-flavor-cues",
+      "requirementId": "R-six-launch-copy-and-flavor-cues",
+      "method": "visual",
+      "targetSlots": [
+        "launch-poster",
+        "launch-social",
+        "dinner-menu",
+        "retail-sign"
+      ],
+      "criteria": "The launch poster carries the campaign line and descriptor, while the launch social visual carries the campaign line and all three flavor names. Menu, shelf sign and social use distinguishable cues consistently assigned to the three named flavors; their citrus cue agrees with the citrus front. Scale and placement may change, but cue swaps, indistinguishable flavors or missing required copy fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "citrus-front"
+      ]
+    },
+    {
+      "id": "set-six-launch-identity",
+      "requirementId": "R-set-six-launch-identity",
+      "method": "visual",
+      "targetSlots": [
+        "citrus-front",
+        "launch-poster",
+        "dinner-menu",
+        "retail-sign",
+        "launch-social"
+      ],
+      "criteria": "All applications maintain a recognizable identity through compatible logo treatment, typography, palette and graphic language. Menu, shelf sign and launch social distinguish all three flavors consistently, with the citrus cue matching its front panel.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-brand-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-brand-base-b-n06/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "master-logo"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "shared-can-carrier",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "plain-can-lineup.png"
+      ],
+      "subjectSlots": [
+        "citrus-front",
+        "launch-poster",
+        "dinner-menu",
+        "retail-sign",
+        "launch-social"
+      ],
+      "notes": "The attached plain silver can is the shared product carrier; retain its recognizable cylindrical silhouette, rounded shoulders and pull-tab top in product imagery.",
+      "comparisonScope": "compare only the can itself, its slender cylindrical body, rounded shoulders, rolled bottom rim and recessed pull-tab top; the artwork printed on the can, its colours, flavour cues and typography are the design work"
+    }
+  ]
+}

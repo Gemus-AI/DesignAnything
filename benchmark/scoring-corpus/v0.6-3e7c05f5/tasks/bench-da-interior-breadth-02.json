@@ -1,0 +1,1146 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-interior-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "functional-schedule",
+      "label": "Functional and furniture schedule",
+      "description": "A one-page schedule of zone areas, operating occupancies, furniture quantities and dimensions, and three material codes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "daily-plan",
+      "label": "Daily furnished plan",
+      "description": "A dimensioned daily layout for 12 chess players, 18 board-game players and two hosts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "event-plan",
+      "label": "Event furnished plan",
+      "description": "A dimensioned event layout for 12 chess players, six beginners, 12 spectators and two hosts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "circulation-changeover",
+      "label": "Circulation and changeover diagram",
+      "description": "A diagram of visitor and game-handling routes and the two hosts' 15-minute furniture changeover.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "teaching-viewing-detail",
+      "label": "Teaching and viewing detail",
+      "description": "A plan and section detail of the teaching table, beginner and spectator seating, host position and viewing display.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-detail",
+      "label": "Game and bag storage detail",
+      "description": "A storage elevation and detail sheet for 80 games, 32 bags, the return tray and the table trolley.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "quiet-zone-section",
+      "label": "Quiet-zone entrance section",
+      "description": "A floor-to-ceiling section through the quiet-zone entrance with partition, door, acoustic lining and mounting heights.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-ceiling",
+      "label": "Materials and reflected ceiling sheet",
+      "description": "A coordinated material key and reflected ceiling plan locating three materials and three separately controlled lighting layers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-daily-arrival",
+      "label": "V1 daily arrival perspective",
+      "description": "An interior perspective from V1 of daily arrival and social play with the COMMON MOVE inscription.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-daily-chess",
+      "label": "V2 daily quiet chess perspective",
+      "description": "An interior perspective from V2 of daily chess with the Quiet Play entrance inscription.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "view-event",
+      "label": "V3 teaching and viewing perspective",
+      "description": "An interior perspective from V3 of the event arrangement with six beginners and 12 spectators.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "venue-signage",
+      "label": "Arrival and quiet-zone signage",
+      "description": "A dimensioned signage elevation sheet for the COMMON MOVE arrival inscription and Quiet Play entrance inscription.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "interior-walkthrough",
+      "label": "Ten-second interior walkthrough",
+      "description": "A 10-second walkthrough linking arrival, the quiet-zone threshold and the event viewing area.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "interior-presentation",
+      "label": "Interior presentation document",
+      "description": "A presentation of at least eight pages assembling the schedule, plans, details, perspectives and daily-to-event changeover.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "arrival-inscription",
+      "kind": "text-verbatim",
+      "text": "COMMON MOVE",
+      "scope": {
+        "slots": [
+          "venue-signage",
+          "view-daily-arrival",
+          "interior-walkthrough"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "quiet-entrance-inscription",
+      "kind": "text-verbatim",
+      "text": "Quiet Play",
+      "scope": {
+        "slots": [
+          "venue-signage",
+          "quiet-zone-section",
+          "view-daily-chess"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON MOVE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-planning-and-detail-system",
+      "slots": [
+        "daily-plan",
+        "event-plan",
+        "circulation-changeover",
+        "teaching-viewing-detail",
+        "storage-detail",
+        "quiet-zone-section",
+        "materials-ceiling",
+        "venue-signage"
+      ],
+      "sourceSlots": [
+        "functional-schedule"
+      ],
+      "items": [
+        {
+          "item": "Plans and details describe one buildable interior with matching zone boundaries, retained features, storage locations, quiet entrance and teaching/viewing positions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Zone names, areas, inventory and material codes agree with the functional schedule wherever those records are repeated.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Daily-to-event changes conserve six T1 tables, three T2 tables and 30 player chairs, park two folded T2 tables on TR1 and keep visitor and spectator routes outside Quiet Play.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The quiet section and ceiling sheet coordinate a full-height boundary, self-closing door, acoustic lining and three separately controlled lighting layers.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "perspectives-follow-coordinated-design",
+      "slots": [
+        "view-daily-arrival",
+        "view-daily-chess",
+        "view-event"
+      ],
+      "sourceSlots": [
+        "daily-plan",
+        "event-plan",
+        "quiet-zone-section",
+        "materials-ceiling",
+        "storage-detail",
+        "venue-signage"
+      ],
+      "items": [
+        {
+          "item": "V1 and V2 realize the daily plan, and V3 realizes the event plan, within the same shell and partition arrangement; viewpoint occlusion is allowed.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Visible retained furniture, cork flooring, oak surfaces, acoustic panels, lighting and signage agree with the coordinated drawings and with each other.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The event view retains six beginner places and 12 spectator places facing the eastern wall-mounted display without inventing a different social-area arrangement.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON MOVE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "daily-plan",
+      "event-plan",
+      "circulation-changeover",
+      "teaching-viewing-detail",
+      "storage-detail",
+      "quiet-zone-section",
+      "materials-ceiling",
+      "view-daily-arrival",
+      "view-daily-chess",
+      "view-event",
+      "venue-signage"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge unstated stylistic preferences, photorealism of technical drawings or construction and regulatory requirements beyond the supplied spatial, material, lighting and operating facts."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "functional-schedule",
+        "daily-plan",
+        "event-plan",
+        "circulation-changeover",
+        "teaching-viewing-detail",
+        "storage-detail",
+        "quiet-zone-section",
+        "materials-ceiling",
+        "view-daily-arrival",
+        "view-daily-chess",
+        "view-event",
+        "venue-signage",
+        "interior-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "daily-plan",
+        "event-plan",
+        "circulation-changeover",
+        "teaching-viewing-detail",
+        "storage-detail",
+        "quiet-zone-section",
+        "materials-ceiling",
+        "view-daily-arrival",
+        "view-daily-chess",
+        "view-event",
+        "venue-signage"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-functional-schedule",
+      "requirementId": "R-format-functional-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "functional-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-daily-plan",
+      "requirementId": "R-format-daily-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "daily-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-event-plan",
+      "requirementId": "R-format-event-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "event-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-circulation-changeover",
+      "requirementId": "R-format-circulation-changeover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "circulation-changeover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-teaching-viewing-detail",
+      "requirementId": "R-format-teaching-viewing-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "teaching-viewing-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-detail",
+      "requirementId": "R-format-storage-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-quiet-zone-section",
+      "requirementId": "R-format-quiet-zone-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "quiet-zone-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-ceiling",
+      "requirementId": "R-format-materials-ceiling",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-ceiling"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-daily-arrival",
+      "requirementId": "R-format-view-daily-arrival",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-daily-arrival"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-daily-chess",
+      "requirementId": "R-format-view-daily-chess",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-daily-chess"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-view-event",
+      "requirementId": "R-format-view-event",
+      "method": "artifact-property",
+      "targetSlots": [
+        "view-event"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-venue-signage",
+      "requirementId": "R-format-venue-signage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "venue-signage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-interior-walkthrough",
+      "requirementId": "R-format-interior-walkthrough",
+      "method": "manual",
+      "targetSlots": [
+        "interior-walkthrough"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-interior-presentation",
+      "requirementId": "R-format-interior-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interior-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "functional-schedule-completeness",
+      "requirementId": "R-functional-schedule-completeness",
+      "method": "content",
+      "targetSlots": [
+        "functional-schedule"
+      ],
+      "criteria": "The schedule occupies one page and gives an area, daily occupancy, event occupancy, furniture quantities and dimensions for each of the four named zones. It identifies six T1 tables, three T2 tables, two S1 cabinets and 30 CH1 chairs, plus the required bags, returns, trolley and display equipment. Dimensions agree with the furniture records. The material key correctly associates FL-01 with sealed cork, WD-01 with clear matte oak and AC-01 with wool-felt-faced acoustic panels. Zone allocation is a design choice, but missing fields, incorrect inventory or substituted material definitions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "zone-allocation-and-repeated-records",
+      "requirementId": "R-zone-allocation-and-repeated-records",
+      "method": "visual",
+      "targetSlots": [
+        "daily-plan",
+        "event-plan"
+      ],
+      "criteria": "Read each plan's annotations against the schedule: all four zone names, their respective areas, retained furniture totals and the three material codes must agree. Each allocation sums to 107.48 square metres including Circulation. New partition footprints are explicitly identified inside these allocations without being silently omitted or added to the available area. Different furniture deployment between operating states is allowed; different inventory totals or unexplained area changes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "retained-shell-and-services",
+      "requirementId": "R-retained-shell-and-services",
+      "method": "visual",
+      "targetSlots": [
+        "daily-plan",
+        "event-plan"
+      ],
+      "criteria": "Using the southwest origin with x east and y north, verify a 12 × 9 m interior: D1 on the south at x 1–2.4 m, D2 on the east at y 1–2.2 m, north windows W1 at x 1–4 m and W2 at x 7–10 m, C1 at x 5.8–6.2 m and y 4.3–4.7 m, and S0 at x 11.4–12 m and y 8.4–9 m. Both doors open outward. P1 remains on the west wall at y 2 m and P2 on the east wall at y 6 m. Both plans identify the retained features and dimension their positions sufficiently to verify the records. Drawing orientation may vary if axes are clear; moved, missing or resized retained features fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "functional-zone-relationships",
+      "requirementId": "R-functional-zone-relationships",
+      "method": "visual",
+      "targetSlots": [
+        "daily-plan",
+        "event-plan"
+      ],
+      "criteria": "The furnished arrangement places Quiet Play in the northwest, Club Tables and event teaching/viewing in the east, and Welcome and Storage near D1. Each zone must support its assigned activity rather than merely carry a label. Boundaries and furniture orientation may vary within these relationships; reversing the locations or placing game handling remotely from arrival fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "occupied-clearances-and-access",
+      "requirementId": "R-occupied-clearances-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "daily-plan",
+        "event-plan",
+        "teaching-viewing-detail"
+      ],
+      "criteria": "Both plans and the teaching detail explicitly dimension 600 mm occupied-chair envelopes beyond seated table edges and a continuous route at least 1200 mm wide outside occupied furniture, including the narrowest points. Each plan locates a 1500 mm turning circle at arrival and another beside a club table; the detail identifies or references both and resolves the club-table clearance. Cross-references are acceptable where arrival lies outside the detail crop. Actual geometry must support the labels. Arrival, issue/return handling and spectator access must avoid passing through Quiet Play; overlapping clearances, blocked turning space or routes measured through occupied chairs fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "operating-state-capacity",
+      "requirementId": "R-operating-state-capacity",
+      "method": "visual",
+      "targetSlots": [
+        "daily-plan",
+        "event-plan",
+        "view-event"
+      ],
+      "criteria": "The daily layout provides two seats at each of six T1 tables and six seats at each of three T2 tables. The event layout keeps all 12 chess places, assigns six beginner places to one T2 and arranges 12 spectator places toward AV1. Both layouts provide two standing host positions. V3 visibly depicts the six-beginner and 12-spectator event arrangement consistently with the event plan; chess seating concealed by the quiet partition is verified from that plan. Missing capacity, extra player chairs beyond the retained 30, or an event view showing the daily social layout fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "visitor-flow-and-furniture-changeover",
+      "requirementId": "R-visitor-flow-and-furniture-changeover",
+      "method": "visual",
+      "targetSlots": [
+        "circulation-changeover"
+      ],
+      "criteria": "The diagram traces entry, bag deposit, game issue, seating and returns through identifiable locations. It explains a 15-minute operation by two hosts that leaves all six T1 tables and 12 chess chairs in use, keeps one T2 with six beginner chairs, transfers two folded T2 tables onto TR1 and redistributes the remaining 12 chairs to spectators. The trolley receives the folded tables horizontally. Movement paths and before/after inventory agree with the plans. Graphic sequencing is flexible; unaccounted tables or chairs, an absent host role, missing visitor stages or a changeover unsupported by the depicted routes fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "daily-plan",
+        "event-plan"
+      ]
+    },
+    {
+      "id": "event-operating-sequence",
+      "requirementId": "R-event-operating-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "circulation-changeover"
+      ],
+      "criteria": "The operating sequence records arrival at 18:30–19:00, teaching at 19:00–19:20, shared viewing at 19:20–20:30 and returns at 20:30–20:45. Activities include entry and issue during arrival, one host teaching six beginners while chess and spectator viewing continue, hosted display discussion during shared viewing, and returns, bag collection and departure in the final phase. A timeline, annotations or a readable record are acceptable. Changed times, reversed stages or interruption of the continuing chess session fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "teaching-and-viewing-detail",
+      "requirementId": "R-teaching-and-viewing-detail",
+      "method": "visual",
+      "targetSlots": [
+        "teaching-viewing-detail"
+      ],
+      "criteria": "The sheet includes both plan and section of the event teaching/viewing arrangement. It dimensions a 1800 × 900 mm T2 top at 750 mm height, six beginner seats, 12 spectator seats, a teaching host position and a 1600 × 900 mm AV1 mounted on the eastern social-area wall. Spectators face the display and the arrangement matches the event plan. Section cuts and seating geometry may vary; missing views, incorrect counts or dimensions, a freestanding display or contradictory positioning fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "event-plan"
+      ]
+    },
+    {
+      "id": "storage-capacity-and-envelopes",
+      "requirementId": "R-storage-capacity-and-envelopes",
+      "method": "visual",
+      "targetSlots": [
+        "storage-detail"
+      ],
+      "criteria": "Elevations and details locate two 1200 × 400 × 1800 mm S1 cabinets, each with five full-width open bays. Each clear bay measures 1120 × 360 × 320 mm and accommodates eight 300 × 300 × 70 mm boxes, giving 40 per cabinet and 80 total. Show 32 individually usable bag compartments with clear width/depth/height 300 × 400 × 400 mm, one 600 × 400 mm return tray near storage and a 1900 × 1000 × 1000 mm trolley holding two horizontal folded T2 envelopes of 1800 × 900 × 100 mm each. Repeated-module notation is acceptable if capacity and dimensions are unambiguous. Nominal external dimensions substituted for clear compartments, impossible packing, missing capacity or locations inconsistent with the plans fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "daily-plan",
+        "event-plan"
+      ]
+    },
+    {
+      "id": "retained-furniture-forms-and-finishes",
+      "requirementId": "R-retained-furniture-forms-and-finishes",
+      "method": "visual",
+      "targetSlots": [
+        "daily-plan",
+        "event-plan",
+        "view-daily-arrival",
+        "view-daily-chess",
+        "view-event"
+      ],
+      "criteria": "Retained T1 tables have 800 × 800 mm oak tops, 750 mm height and four black square steel legs; T2 tables have 1800 × 900 mm oak tops, 750 mm height and black folding steel trestles. S1 cabinets retain their 1200 × 400 × 1800 mm open-shelf form and #596854 finish. Plan chair footprints respect CH1's 450 × 500 mm envelope, and rendered chair proportions are compatible with the recorded 450 mm seat height. Verify dimensions in drawings and visible form/finish in perspectives without requiring hidden surfaces to be visible. Monochrome plan notation and lighting-related colour shifts are allowed; changed table construction, implausible scale or substituted finishes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "quiet-threshold-section",
+      "requirementId": "R-quiet-threshold-section",
+      "method": "visual",
+      "targetSlots": [
+        "quiet-zone-section"
+      ],
+      "criteria": "A section through the actual quiet entrance spans floor to the 3300 mm ceiling and shows a lightweight partition meeting that ceiling, an explicitly identified self-closing door, AC-01 lining on the quiet side, a 750 mm tabletop height and lighting mounting-height dimensions. AC-01 has 40 mm mineral-wool backing and extends to 2400 mm above the floor. The section agrees with the entrance location in plan. New door design and unspecified pendant heights are design choices; a partial-height boundary, unspecified closing action, incorrect acoustic build-up or omitted mounting heights fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "daily-plan"
+      ]
+    },
+    {
+      "id": "coordinated-materials-acoustics-and-lighting",
+      "requirementId": "R-coordinated-materials-acoustics-and-lighting",
+      "method": "visual",
+      "targetSlots": [
+        "quiet-zone-section",
+        "materials-ceiling",
+        "view-daily-arrival",
+        "view-daily-chess",
+        "view-event"
+      ],
+      "criteria": "The materials/ceiling sheet locates sealed matte FL-01 cork throughout activity and circulation areas, clear matte WD-01 oak on retained tops and new arrival joinery, and AC-01 lining matching the quiet section. Partition, door and panel positions agree. L-01 fixtures are surface-mounted at the ceiling; L-02 pendants are centred above occupied table positions in the applicable operating state; L-03 lights illuminate shelves in both S1 cabinets. Identify separate dimmers labelled L-01 and L-02 and a separate switch labelled L-03. The perspectives reproduce visible material, acoustic and fixture locations from the drawings. Exposure and viewpoint may vary; conflicting locations, missing layers or a shared control replacing the three separate controls fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "daily-plan",
+        "event-plan"
+      ]
+    },
+    {
+      "id": "perspective-cameras-and-state-captions",
+      "requirementId": "R-perspective-cameras-and-state-captions",
+      "method": "visual",
+      "targetSlots": [
+        "daily-plan",
+        "event-plan",
+        "view-daily-arrival",
+        "view-daily-chess",
+        "view-event"
+      ],
+      "criteria": "Both plans mark the specified camera positions and directions using the room coordinate system. V1 renders daily arrival/social play from (2,1) toward (3,7); V2 renders daily quiet chess from (1,8) toward (5,6); V3 renders event teaching/spectators from (10,2) toward (9,7). Each perspective is captioned with its viewpoint ID and daily or event state and is consistent with a 1.5 m eye height. Field of view may vary because it is unspecified. Relocated viewpoints, reversed sight directions, elevated aerial views, missing captions or incorrect operating states fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "signage-elevations-and-placement",
+      "requirementId": "R-signage-elevations-and-placement",
+      "method": "visual",
+      "targetSlots": [
+        "venue-signage",
+        "view-daily-arrival",
+        "quiet-zone-section",
+        "view-daily-chess"
+      ],
+      "criteria": "The signage sheet contains dimensioned elevations for both inscriptions. COMMON MOVE is placed at arrival and is visible there in V1; Quiet Play identifies the quiet-zone entrance in the signage elevation, quiet section and V2. The depicted signs agree in design and mounting placement across corresponding views. Typeface, sign material and unspecified sizes are design choices. Missing dimensions, swapped locations or contradictory sign placement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "walkthrough-duration-route-and-coordination",
+      "requirementId": "R-walkthrough-duration-route-and-coordination",
+      "method": "manual",
+      "targetSlots": [
+        "interior-walkthrough"
+      ],
+      "criteria": "Review the complete video and its duration: it must run 10 seconds and link arrival, the quiet-zone threshold and the event viewing area in a spatially coherent sequence. COMMON MOVE must be readable at arrival. The 3.3 m-high shell, retained openings, column, shaft, partition, furniture and event viewing arrangement agree with the corresponding drawings. Where shown, doors retain 2.2 m opening heights, windows retain 0.9 m sills and 1.8 m openings, and P1/P2 retain 0.3 m mounting heights. Material and L-01/L-02/L-03 fixture positions follow the coordinated sheet. Editing and camera paths may vary; skipped destinations, contradictory geometry, relocated fixtures or an incorrect event arrangement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "daily-plan",
+        "event-plan",
+        "quiet-zone-section",
+        "materials-ceiling",
+        "venue-signage"
+      ]
+    },
+    {
+      "id": "presentation-visible-reuse",
+      "requirementId": "R-presentation-visible-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "interior-presentation"
+      ],
+      "criteria": "The presentation visibly incorporates every listed source, including all three detail sheets and all three perspectives. Scaling, cropping and page recomposition are allowed when the original design evidence remains identifiable and readable. Text-only mentions, omitted source roles or replacement imagery with different room or furniture arrangements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "daily-plan",
+        "event-plan",
+        "circulation-changeover",
+        "teaching-viewing-detail",
+        "storage-detail",
+        "quiet-zone-section",
+        "materials-ceiling",
+        "view-daily-arrival",
+        "view-daily-chess",
+        "view-event",
+        "venue-signage"
+      ]
+    },
+    {
+      "id": "presentation-pages-records-and-paired-change",
+      "requirementId": "R-presentation-pages-records-and-paired-change",
+      "method": "content",
+      "targetSlots": [
+        "interior-presentation"
+      ],
+      "criteria": "The document has at least eight pages and places daily and event furniture arrangements together on one paired page. That page accounts for six T1 tables, three T2 tables and 30 player chairs through a 15-minute changeover by two hosts, explicitly showing two folded T2 tables on the trolley and 12 chairs becoming spectator seating. Repeated zone names, individual zone areas, furniture totals and FL-01/WD-01/AC-01 codes match the schedule and plans, including the 107.48 square metre allocation and separately identified partition footprints. Page order and explanatory style may vary; missing paired comparison, inconsistent records or unexplained inventory changes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "functional-schedule",
+        "daily-plan",
+        "event-plan",
+        "circulation-changeover"
+      ]
+    },
+    {
+      "id": "set-coordinated-planning-and-detail-system",
+      "requirementId": "R-set-coordinated-planning-and-detail-system",
+      "method": "visual",
+      "targetSlots": [
+        "daily-plan",
+        "event-plan",
+        "circulation-changeover",
+        "teaching-viewing-detail",
+        "storage-detail",
+        "quiet-zone-section",
+        "materials-ceiling",
+        "venue-signage"
+      ],
+      "criteria": "Plans and details describe one buildable interior with matching zone boundaries, retained features, storage locations, quiet entrance and teaching/viewing positions. Zone names, areas, inventory and material codes agree with the functional schedule wherever those records are repeated. Daily-to-event changes conserve six T1 tables, three T2 tables and 30 player chairs, park two folded T2 tables on TR1 and keep visitor and spectator routes outside Quiet Play. The quiet section and ceiling sheet coordinate a full-height boundary, self-closing door, acoustic lining and three separately controlled lighting layers.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "functional-schedule"
+      ]
+    },
+    {
+      "id": "set-perspectives-follow-coordinated-design",
+      "requirementId": "R-set-perspectives-follow-coordinated-design",
+      "method": "visual",
+      "targetSlots": [
+        "view-daily-arrival",
+        "view-daily-chess",
+        "view-event"
+      ],
+      "criteria": "V1 and V2 realize the daily plan, and V3 realizes the event plan, within the same shell and partition arrangement; viewpoint occlusion is allowed. Visible retained furniture, cork flooring, oak surfaces, acoustic panels, lighting and signage agree with the coordinated drawings and with each other. The event view retains six beginner places and 12 spectator places facing the eastern wall-mounted display without inventing a different social-area arrangement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-interior-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-interior-breadth-02/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "daily-plan",
+        "event-plan",
+        "quiet-zone-section",
+        "materials-ceiling",
+        "storage-detail",
+        "venue-signage"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "daily-space-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "daily-plan",
+      "subjectSlots": [
+        "view-daily-arrival",
+        "view-daily-chess"
+      ],
+      "notes": "The three perspectives use V1, V2 and V3 as specified, and the 10-second walkthrough and presentation reuse the same shell, partition and furniture arrangements shown in the corresponding plans."
+    },
+    {
+      "id": "event-space-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "event-plan",
+      "subjectSlots": [
+        "view-event"
+      ],
+      "notes": "The three perspectives use V1, V2 and V3 as specified, and the 10-second walkthrough and presentation reuse the same shell, partition and furniture arrangements shown in the corresponding plans."
+    },
+    {
+      "id": "retained-furniture-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "retained-club-furniture.png"
+      ],
+      "subjectSlots": [
+        "daily-plan",
+        "event-plan",
+        "view-daily-arrival",
+        "view-daily-chess",
+        "view-event"
+      ],
+      "notes": "The plans and perspectives preserve the retained furniture's oak tops, black table legs and #596854 cabinet finish."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "schedule-records-repeated",
+      "fromSlot": "functional-schedule",
+      "toSlots": [
+        "daily-plan",
+        "event-plan",
+        "interior-presentation"
+      ],
+      "extract": [
+        "zone names",
+        "zone areas",
+        "furniture totals",
+        "FL-01, WD-01 and AC-01 material codes"
+      ],
+      "notes": "The functional and furniture schedule, both furnished plans and presentation repeat identical zone names, zone areas, furniture totals and FL-01, WD-01 and AC-01 codes."
+    }
+  ]
+}

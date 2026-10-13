@@ -1,0 +1,234 @@
+{
+  "id": "bench-da-ecom-base-a-n24",
+  "title": "LOOP AGAIN — Refurbished handheld listings that make condition clear, 24 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n24",
+    "family-a"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "ECOMMERCE",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# LOOP AGAIN\n\n## Store identity\n- Store name: LOOP AGAIN\n- Listing phrase: See the wear. Know the bundle.\n- Channel: own storefront\n- Product family: Pocket P1\n- Audience: budget-conscious buyers comparing condition and accessories\n- Purchase labels: Unit; Condition; Included; Price\n\n## Stock\n| Unit | Product name | Shell color | Shell code | Grade | Storage | Dimensions | Price | USB-C cable count | Zip case count |\n|---|---|---|---|---|---|---|---|---|---|---|\n| PA-101 | Pocket P1 Pearl | Pearl | #E8E5DE | Grade A | 64 GB | 160 × 76 × 18 mm | USD 99 | 1 | 1 |\n| PA-102 | Pocket P1 Graphite | Graphite | #343A40 | Grade B | 64 GB | 160 × 76 × 18 mm | USD 79 | 1 | 0 |\n\n## Shared physical identity\n- Housing: horizontal rounded rectangle, 160 mm wide, 76 mm high, 18 mm deep\n- Front: centered landscape black screen, 80 × 45 mm\n- Left controls: black cross-shaped directional pad\n- Right controls: four black circular face buttons in a diamond\n- Lower front: two small black oval buttons below the screen\n- Rear: shallow centered rectangular recess and four corner screws\n- Top edge: centered USB-C port, small round power button to its left\n- USB-C cable: black, 1 m, USB-C connector at both ends\n- Zip case: charcoal fabric, 180 × 95 × 35 mm\n- Dimension reference: plain card, 85 × 54 mm\n\n## Condition observations\n- PA-101 rear: 6 mm horizontal hairline, upper-right shell\n- PA-101 front: clear screen and evenly matte face buttons\n- PA-101 port: evenly matte rim\n- PA-102 rear: 12 mm diagonal scratch descending rightward, upper-right shell\n- PA-102 front: polished lower-right face button; clear screen\n- PA-102 port: 3 mm pale scuff on the right lip\n- Grade A explanation: Light rear hairline; evenly matte controls.\n- Grade B explanation: Visible rear scratch; polished face button; port-edge scuff.\n\n## Storefront image geometry\n- Square product card: 1:1\n- Square product region: upper 75% of canvas height\n- Square product width: 85–90% of canvas width\n- Square caption region: lower 20% of canvas height\n- Square spacing band: 5% of canvas height between product and caption regions\n- Square product-region background: #FFFFFF\n- Portrait shopping panel: 9:16; text region in lower 30%\n- Landscape condition panel: 3:2; text region in rightmost 30%\n- Comparison panel: 3:2; two unit rows\n- Purchase text minimum height: 2.5% of the shorter image edge\n\n## Video sequence\n- Total duration: 10 seconds\n- PA-101 segment: 0–5 seconds\n- PA-102 segment: 5–10 seconds\n- Segment content: unit identity, grade, price, recorded wear and accessory inventory\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# LOOP AGAIN — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | direction-condition | Condition-first direction board | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 2 | direction-bundle | Bundle-first direction board | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | direction-record | Unit-record direction board | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 4 | direction-selection | Selected direction note | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 5 | information-hierarchy | Selling points and information hierarchy | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 6 | shot-inventory | Shot and image inventory | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 7 | unit-variants | Unit variant table | 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 8 | pearl-product-front | PA-101 front-led product card | 6, 14, 24 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | graphite-product-front | PA-102 front-led product card | 6, 14, 24 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | pearl-product-rear | PA-101 rear-led product card | 24 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | graphite-product-rear | PA-102 rear-led product card | 24 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | pearl-condition-bundle | PA-101 condition and accessory panel | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | graphite-condition-bundle | PA-102 condition and accessory panel | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 14 | pearl-rear-wear | PA-101 rear-wear close-up panel | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 15 | graphite-rear-wear | PA-102 rear-wear close-up panel | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 16 | pearl-port-controls | PA-101 port and control panel | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 17 | graphite-port-controls | PA-102 port and control panel | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 18 | unit-comparison | Two-unit condition and price comparison | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 19 | bundle-comparison | Two-unit accessory and bundle price comparison | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 20 | portrait-both | Two-unit portrait shopping panel | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 21 | portrait-pearl | PA-101 portrait shopping panel | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 22 | portrait-graphite | PA-102 portrait shopping panel | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 23 | product-video | Ten-second unit explanation video | 14, 24 | Format: video; 5 to 15 seconds. Stage: final. |\n| 24 | listing-presentation | Listing system presentation | 14, 24 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-unit-records.en.md",
+            "config": {
+              "text": "# Pocket P1 unit records\n\n## Inventory\n| Unit | Product name | Shell | Color code | Storage | Dimensions | Grade | Price | USB-C cables | Zip cases |\n|---|---|---|---|---|---|---|---|---|---|\n| PA-101 | Pocket P1 Pearl | Pearl | #E8E5DE | 64 GB | 160 × 76 × 18 mm | Grade A | USD 99 | 1 | 1 |\n| PA-102 | Pocket P1 Graphite | Graphite | #343A40 | 64 GB | 160 × 76 × 18 mm | Grade B | USD 79 | 1 | 0 |\n\n## Surface observations\n| Unit | Surface | Observation | Location | Extent |\n|---|---|---|---|---|\n| PA-101 | Front | Clear screen; evenly matte face buttons | Screen and right control cluster | Whole screen and four face buttons |\n| PA-101 | Rear | Horizontal hairline | Upper-right rear shell, viewed from behind | 6 mm |\n| PA-101 | Top edge | Evenly matte port rim | Center USB-C port | Full rim |\n| PA-102 | Front | Polished face button | Lower-right button in the four-button cluster | Button cap |\n| PA-102 | Front | Clear screen | Center screen | Whole screen |\n| PA-102 | Rear | Diagonal scratch descending rightward | Upper-right rear shell, viewed from behind | 12 mm |\n| PA-102 | Top edge | Pale scuff | Right lip of center USB-C port, viewed directly at the port | 3 mm |\n\n## Grade descriptions\n| Grade | Description |\n|---|---|\n| Grade A | Light rear hairline; evenly matte controls. |\n| Grade B | Visible rear scratch; polished face button; port-edge scuff. |\n\n## Accessory identity\n| Accessory | Appearance | Dimensions |\n|---|---|---|\n| USB-C cable | Black cable, USB-C connector at both ends | 1 m length |\n| Zip case | Charcoal fabric, perimeter zipper | 180 × 95 × 35 mm |\n\n## Image correspondence\n| Unit | Front | Rear | Port |\n|---|---|---|---|\n| PA-101 | 05-pearl-front.png | 06-pearl-rear.png | 07-pearl-port.png |\n| PA-102 | 08-graphite-front.png | 09-graphite-rear.png | 10-graphite-port.png |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 04-storefront-frame.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 11-budget-desk.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 08-graphite-front.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 05-pearl-front.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 10-graphite-port.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-6",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 07-pearl-port.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-7",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 06-pearl-rear.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-8",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: 09-graphite-rear.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "LOOP AGAIN | Refurbished handheld listings that make condition clear\n\nWe sell refurbished gaming handhelds through our own storefront. Build a product image system that helps buyers choose between two individual Pocket P1 units by seeing the condition and the bundle together. Print \"LOOP AGAIN\" and \"See the wear. Know the bundle.\" on the finished layouts. Where directions are requested, compare three approaches to organising this information, select one, and carry that approach through the listing.\n\nThe stock is PA-101, Pocket P1 Pearl, shell #E8E5DE, Grade A, USD 99; and PA-102, Pocket P1 Graphite, shell #343A40, Grade B, USD 79. Both have 64 GB storage and measure 160 × 76 × 18 mm. PA-101 has a 6 mm horizontal hairline on the upper-right rear shell and comes with one USB-C cable and one zip case. PA-102 has a 12 mm diagonal scratch on the upper-right rear shell, a polished lower-right face button and a 3 mm scuff on the right lip of the USB-C port; its bundle contains one USB-C cable. These marks remain visible at their recorded locations whenever those surfaces appear. Use the fixed labels \"Unit\", \"Condition\", \"Included\" and \"Price\" for the purchase information. Square product cards, portrait shopping panels and landscape detail panels share the same product facts. The dimension comparison uses a plain 85 × 54 mm card beside the handheld.\n\nAudience: budget-conscious buyers comparing wear and accessories, with the merchandising team choosing the listing system for these two units.\n\nInputs (attached): 01-client-facts.en.md contains the store identity, product facts and storefront geometry. 02-delivery-catalog.en.md lists every deliverable with its proportion, format and stage. 03-unit-records.en.md contains the individual condition records, grades and accessory counts. 04-storefront-frame.png defines the image regions and dimension reference. 05-pearl-front.png establishes PA-101's front and controls. 06-pearl-rear.png locates PA-101's rear hairline. 07-pearl-port.png establishes PA-101's top edge and port. 08-graphite-front.png locates PA-102's button wear. 09-graphite-rear.png locates PA-102's rear scratch. 10-graphite-port.png locates PA-102's port scuff. 11-budget-desk.png supplies the everyday desk atmosphere.\n\nDeliverables:\n1. Three direction boards, each comparing both units through a distinct hierarchy, image treatment and grade explanation\n2. One selection note naming the chosen direction and the information arrangement to carry forward\n3. Three written planning sheets: a one-page selling-points and information-hierarchy table with priorities, placements and minimum text heights; a one-page shot and image inventory with each image's role, proportion and required content; and a one-page unit-variant table covering both IDs, names, colors, dimensions, storage, grades, wear, bundles and prices\n4. Four square product cards, front-led and rear-led versions for each unit, with identity, grade, storage, price and bundle summary\n5. Six landscape condition-and-accessory panels: two complete unit panels with front, rear, port, accessory and dimension views; two rear-wear close-up panels; and two port-and-control close-up panels\n6. Two two-unit comparison panels, one covering grades, wear, storage and prices, and one covering accessory counts and bundle prices\n7. Three portrait shopping panels, one presenting both units and one dedicated to each unit, with grades, prices, wear and included accessories\n8. One 10-second product explanation video showing both units, their recorded wear, bundles and prices\n9. One presentation document of at least ten pages reusing the directions, selection, three planning sheets, final layouts and video frames, with a map from the product facts to their finished placements\n\nAcceptance:\n- The three direction boards come first and each use PA-101 and PA-102; the selection note names one board, and all three planning sheets, four product cards, six condition panels, two comparison panels, three portrait panels, video and presentation develop that selection.\n- The hierarchy table records LOOP AGAIN, See the wear. Know the bundle. and 64 GB; all final image categories, the video and presentation repeat all three. The shot inventory assigns front, rear, port, control and bundle views to the final layouts, and the unit-variant table records both units' complete differences.\n- The four product cards, six condition panels, two comparison panels and three portrait panels use Unit, Condition, Included and Price with the matching records: PA-101, Grade A, USD 99, one USB-C cable and one zip case; PA-102, Grade B, USD 79, one USB-C cable and a zip case count of 0. Both comparison panels contain both IDs and names; the grade comparison explains Grade A and Grade B through their wear.\n- The two complete unit panels label the handheld 160 × 76 × 18 mm and reference card 85 × 54 mm. The rear-wear panels show PA-101's 6 mm hairline and PA-102's 12 mm scratch; the port-and-control panels show each unit's port and face buttons, including PA-102's polished lower-right button and 3 mm port scuff. All final views retain the attached colors, controls and visible marks.\n- The four product cards use 85–90% product width and the lower 20% caption region; the three portrait panels and six condition panels use their 30% text regions. Purchase text is at least 2.5% of the shorter edge. The 10-second video gives each unit five seconds with its ID, grade, price, wear and bundle visible.\n- The presentation has at least ten pages, names the selected direction on page one, reuses all three planning sheets and every final image, and maps the phrase, storage, prices, four wear observations and accessory inventories to named final layouts and video time ranges.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n24/04-storefront-frame.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "a83512d68996e1ac6e4352e899e87b8feba7a19e5450e76b69d8fef63f6be006"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n24/11-budget-desk.png",
+      "nodeId": "provided-image-2",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "4f36a35c072e11bb02924ed57731f39f53d234b5f77dd2ef4e19993140220b90"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n24/08-graphite-front.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "3fdd8d6b65c56e6db5db4c0da89df48a18facb576a0c7f8c1dea91908a930e8d"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n24/05-pearl-front.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "4ebaa9d7d0288f022f63c8eb0e84d0edd4e28577f757cab0f93731bfa8e6b1ee"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n24/10-graphite-port.png",
+      "nodeId": "provided-image-5",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "36b187f2948755c38aa4d595b013940cb644297dbf683334e5b488c74afa268b"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n24/07-pearl-port.png",
+      "nodeId": "provided-image-6",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "0aeb6e2a8ae52a3ebd9f90664754ae6b1662ceec90cf10a953f445b9a3d52c3d"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n24/06-pearl-rear.png",
+      "nodeId": "provided-image-7",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "3300652f99a35c10e574bf1485ab08483adffb2ab1a4e34f2e4a57ae9ee4d254"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-a-n24/09-graphite-rear.png",
+      "nodeId": "provided-image-8",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "fb4e81866f38f08c3466b1ab6a8c1ce10f830f95f7d24a242503617334b3155c"
+    }
+  ]
+}

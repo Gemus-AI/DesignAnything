@@ -1,0 +1,468 @@
+{
+  "id": "bench-da-book-base-a-n24",
+  "title": "THE ENGRAVED SKY — Reader of nineteen historical astronomy plates, 24 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n24",
+    "family-a"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "ILLUSTRATION",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# THE ENGRAVED SKY - client facts\n\n## Edition\n- Title: THE ENGRAVED SKY\n- Cover descriptor: Nineteen Plates of the Historical Sky\n- Imprint: Meridian Sheet Press\n- ISBN: 978-1-7396-4412-8\n- Trim size: 240 × 300 mm, portrait\n- Extent: 128 pages\n- Text stock: 150 gsm matt coated\n- Binding: section-sewn paperback\n- Spine width: 12 mm at 128 pages\n- Spine text direction: top to bottom\n- Print run: 600 copies, short-run digital, four-colour\n- Primary ink: #1B2A4A\n- ISBN barcode: back cover, lower right, 40 × 25 mm\n- Cover thumbnail state: front cover at 24 mm wide\n- Reader: adults with an interest in the night sky and old printed matter\n\n## Grid and type\n| Field | Value |\n|---|---|\n| Page grid | 6 columns |\n| Column width | 29.5 mm |\n| Column gutter | 5 mm |\n| Inner margin | 20 mm |\n| Outer margin | 18 mm |\n| Head margin | 20 mm |\n| Foot margin | 24 mm |\n| Type area | 202 × 256 mm |\n| Baseline grid | 4 mm, 64 lines per page |\n| Caption zone | lowest 34 mm of the type area |\n| Bleed | 3 mm on all outer edges |\n| Running text | 10 pt serif |\n| Caption text | 8 pt sans-serif |\n\n## Chapters\n| No. | Chapter name | Plates | Count |\n|---|---|---|---|\n| 1 | Coloured Constellation Cards | plate-01 to plate-09 | 9 |\n| 2 | Charts by Right Ascension | plate-10, plate-11 | 2 |\n| 3 | Whole-Sky and Cosmography | plate-12, plate-13, plate-14 | 3 |\n| 4 | Instruments | plate-15, plate-16 | 2 |\n| 5 | Comets and Observation | plate-17, plate-18, plate-19 | 3 |\n\n## Caption fields, in order\n1. Collection title, as recorded in 03-plate-records.md\n2. Accession number\n3. Catalogue date and maker line\n4. Credit: Wellcome Collection - Public Domain Mark\n\n## Fixed strings\n- THE ENGRAVED SKY\n- Nineteen Plates of the Historical Sky\n- Meridian Sheet Press\n- Wellcome Collection\n- Public Domain Mark\n- No date recorded\n- No maker recorded\n- 978-1-7396-4412-8\n\n## Two plates of one constellation\n| File | Accession number | Constellation | Treatment |\n|---|---|---|---|\n| plate-01 | 46448i | Ursa Major | coloured engraved card |\n| plate-10 | 46168i | Ursa Major and Ursa Minor | line chart projected to 1808 |\n\n## Text density extremes\n| File | Accession number | Density on the sheet |\n|---|---|---|\n| plate-14 | 46469i | a whole sheet of engraved panel lettering |\n| plate-18 | 46180i | two columns of printed caption text under the image |\n| plate-03 | 46447i | a heading and scattered star names only |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# THE ENGRAVED SKY — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | direction-board-01 | Layout direction 1 board | 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process. |\n| 2 | direction-board-02 | Layout direction 2 board | 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | direction-board-03 | Layout direction 3 board | 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process. |\n| 4 | layout-specification | Layout specification sheet | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 5 | cover-flat | Cover flat | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | cover-object | Bound copy shot | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | cover-thumbnail | Cover thumbnail state | 14, 24 | Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | opener-chapter-1 | Chapter 1 opener | 6, 14, 24 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | opener-chapter-2 | Chapter 2 opener | 24 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | opener-chapter-3 | Chapter 3 opener | 24 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | opener-chapter-4 | Chapter 4 opener | 24 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | opener-chapter-5 | Chapter 5 opener | 24 | Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | spread-plate-01 | Plate spread, plate-01 | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 14 | spread-plate-03 | Plate spread, plate-03 | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 15 | spread-plate-09 | Plate spread, plate-09 | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 16 | spread-plate-10 | Plate spread, plate-10 | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 17 | spread-plate-13 | Plate spread, plate-13 | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 18 | spread-plate-14 | Plate spread, plate-14 | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 19 | spread-plate-18 | Plate spread, plate-18 | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 20 | spread-plate-19 | Plate spread, plate-19 | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 21 | index-by-accession | Index spread by accession number | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 22 | index-by-title | Index spread by collection title | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 23 | publication-video | Publication video, 12 seconds | 14, 24 | Format: video; 5 to 15 seconds. Stage: final. |\n| 24 | publication-presentation | Publication presentation document | 14, 24 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-plate-records.md",
+            "config": {
+              "text": "# Nineteen plates - collection records\n\nCredit line for every plate: Wellcome Collection\nRights label for every plate: Public Domain Mark\n\n| File | Chapter | Collection title | Accession number | Catalogue date and place | Catalogue maker |\n|---|---|---|---|---|---|\n| plate-01.jpg | 1 Coloured Constellation Cards | Astrology: constellations, the Great Bear. Coloured engraving. | 46448i | No date recorded | No maker recorded |\n| plate-02.jpg | 1 Coloured Constellation Cards | Astrology: signs of the zodiac, Lynx. Coloured engraving by S. Hall. | 46440i | No date recorded | Sidney Hall; Richard Rouse Bloxam |\n| plate-03.jpg | 1 Coloured Constellation Cards | Astrology: signs of the zodiac, Taurus. Coloured engraving by S. Hall. | 46447i | No date recorded | Sidney Hall; Richard Rouse Bloxam |\n| plate-04.jpg | 1 Coloured Constellation Cards | Astrology: signs of the zodiac, Pisces. Coloured engraving by S. Hall. | 46444i | No date recorded | Sidney Hall; Richard Rouse Bloxam |\n| plate-05.jpg | 1 Coloured Constellation Cards | Astrology: signs of the zodiac, Cancer. Coloured engraving by S. Hall. | 46458i | No date recorded | Sidney Hall; Richard Rouse Bloxam |\n| plate-06.jpg | 1 Coloured Constellation Cards | Astrology: signs of the zodiac, Scorpio. Coloured engraving. | 46446i | No date recorded | No maker recorded |\n| plate-07.jpg | 1 Coloured Constellation Cards | Astrology: signs of the zodiac, Libra. Coloured engraving. | 46438i | No date recorded | No maker recorded |\n| plate-08.jpg | 1 Coloured Constellation Cards | Astrology: signs of the zodiac, Pegasus. Coloured engraving. | 46443i | No date recorded | No maker recorded |\n| plate-09.jpg | 1 Coloured Constellation Cards | Astrology: various constellations. Coloured engraving by S. Hall. | 46450i | No date recorded | Sidney Hall |\n| plate-10.jpg | 2 Charts by Right Ascension | Astronomy: a chart of the constellations Great Bear and Little Bear. Engraving. | 46168i | No date recorded | No maker recorded |\n| plate-11.jpg | 2 Charts by Right Ascension | Astronomy: a chart of the constellation Orion. Engraving. | 46167i | No date recorded | No maker recorded |\n| plate-12.jpg | 3 Whole-Sky and Cosmography | Astronomy: a star map of the night sky in the southern hemisphere, with names of the constellations. Coloured engraving. | 498256i | No date recorded | No maker recorded |\n| plate-13.jpg | 3 Whole-Sky and Cosmography | Astronomy: a star map of the night sky. Coloured engraving by G. Zuliani after Castellan, with lettering by G. Pitteri, 1777. | 46468i | Venezia [Venice] : presso Antonio Zatta, 1777. | Zuliani, Giuliano, approximately 1730-approximately 1814.; Pitteri, G., active 1777. |\n| plate-14.jpg | 3 Whole-Sky and Cosmography | Astronomy: a star map of the night sky. Engraving, 1786. | 46469i | London, 1786. | Dunn, S., active 1786. |\n| plate-15.jpg | 4 Instruments | Astronomy: a large orrery, mounted on a dodecahedral base, decorated with signs of the zodiac. Engraving after B. Martin. | 46159i | London | Benjamin Martin |\n| plate-16.jpg | 4 Instruments | Astronomy: a mechanism for a model of the motion of a comet. Engraving after B. Martin. | 46166i | No date recorded | Benjamin Martin |\n| plate-17.jpg | 5 Comets and Observation | Astronomy: diagram of the path of comets. Engraving. | 46236i | [London] | No maker recorded |\n| plate-18.jpg | 5 Comets and Observation | Astronomy: comets in a night sky. Engraving. | 46180i | [London] | No maker recorded |\n| plate-19.jpg | 5 Comets and Observation | Astronomy: stars in the night sky, with Encke's comet. Coloured engraving by J. Basire, 1851 after C. Piazzi Smyth. | 46239i | [London], [1851] | Charles Piazzi Smyth; James Basire |\n\n# Lettering printed on each plate\n\n- plate-01.jpg: heading \"URSA MAJOR.\"; signature \"Sid.y Hall, sculp.\" at the lower right; star names Dubhe, Merak, Phachd, Megrez, Alioth, Mizar, Alcor, Benetnasch, el Kaphzah, el Phekrah and el Awla beside their star glyphs.\n- plate-02.jpg: heading \"LYNX\"; signature \"Sid.y Hall, sculp.t\" at the lower right; italic letters on the stars, no star names.\n- plate-03.jpg: heading \"TAURUS\"; star name Aldebaran; the Pleiades group lettered Alcyone, Pleione, Atlas and further names; compass letters at the upper left; signature \"Sid.y Hall, sculp.t\".\n- plate-04.jpg: heading \"PISCES\"; label \"er rischa\" at the knot of the cord; signature \"Sid.y Hall, sculp.t\".\n- plate-05.jpg: heading \"CANCER\" set vertically at the right; plate number \"Pl. 19\" at the lower right; labels Praesepe, Asellus Borealis, Asellus Australis, Tegmine and Pollux; neighbouring constellations LEO, LYNX, HYDRA, CANIS MINOR and GEMINI around the border.\n- plate-06.jpg: heading \"SCORPIO\" set vertically at the right; star name Lesath near the sting; signature \"Sid.y Hall, sculp.\" at the lower left.\n- plate-07.jpg: heading \"LIBRA.\"; star names Zuben El Chimali, Zuben el Genubi, Zuben el Akrab and Graffias; signature \"Sid.y Hall, sculp.\".\n- plate-08.jpg: heading \"PEGASUS AND EQUULEUS.\"; star names Scheat, Markab and Algenib; signature \"Sid.y Hall, sculp.t\".\n- plate-09.jpg: heading \"LACERTA, CYGNUS, LYRA, VULPECULA AND ANSER.\"; star names Deneb, Vega, Albireo and Azelfafage; signature \"Sid.y Hall, sculp.t\".\n- plate-10.jpg: heading \"CONSTELLATIONS. / URSA MAJOR and URSA MINOR / projected by right Ascension and Declination — corrected to the beginning of the Year 1808.\"; \"PLATE II\" at the upper right; notes \"The numbers letters & Greek Characters refer to the British Catalogue.\" and \"H. to Hevelius's. C.H. to C.Herschels.\"; imprint \"Published as the Act directs, Feb.1.st 1808, by Longman, Hurst, Rees & Orme Paternoster Row.\"; credits \"L.Hebert del.\" and \"T.Milton sculp.\"; axis label \"Right Ascension in Degrees and Time\".\n- plate-11.jpg: heading \"CONSTELLATION. / ORION.\"; \"Projected by right Ascension and Declination.\" and \"Corrected to the beginning of the Year 1808.\"; \"PLATE 1\" at the upper right; imprint \"Published as the Act directs, Jan.1.st 1808, by Longman Hurst, Rees & Orme Paternoster Row.\"; credits \"L.Hebert del.\" and \"Milton sculp.\"; labels \"Aldebaran the principal Star of the HYADES\", Betelgeux and Rigel.\n- plate-12.jpg: top lettering \"S. CŒLESTIAL HEMISPHERE\" across the sheet; note \"To find the Longitude of any fixed Star\" at the upper left; roundels labelled \"Ptolemaick System\" and \"Copernican System\"; constellation names inside the circle.\n- plate-13.jpg: \"TAVOLA COSMOGRAFICA II\" at the top centre and \"FOGLIO II\" at the top right; title \"PLANISFERIO CELESTE MERIDIONALE / TAGLIATO SULL' EQUATORE\"; four vignettes labelled \"Specola di Parigi\", \"Specola di Greenwich\", \"Specola di Cassel\" and \"Specola di Copenhaghen\"; imprint \"VENEZIA 1777 / Presso Antonio Zatta / Con Privilegio dell' Ecc.mo Senato\"; key \"Grandezza delle Stelle\" numbered 1 to 6; credits for the draughtsman, the engraver and the letterer along the foot.\n- plate-14.jpg: title \"COSMOGRAPHY EPITOMISED, / In Six Copper Plate Delineations. / By S. Dunn, Teacher of the Mathematical Sciences, LONDON, 1786.\"; panel headings \"SOLAR SYSTEM\", \"THE SPHERE\", \"COMPASS\", \"VARIATION CHART\" and \"MAGNETIC VARIATION\" with the stereographic and globular projections; imprint \"London. Printed for Rob.t Sayer N.o 53 in Fleet Street, as the Act directs, 10 June 1786.\"\n- plate-15.jpg: script line below the object \"The GRAND ORRERY as it was first Made by M.r Rowley.\"; \"Plate XIX.\" at the upper left; zodiac names and graduated scales around the horizon ring, including \"TROPICK\", \"MOVEABLE\" and \"ARCTICK CIRCLE\".\n- plate-16.jpg: heading \"A View of the Wheel-work of the COMETARIUM.\"; \"Plate XI.\" at the upper right; component keys lettered A to Q.\n- plate-17.jpg: title \"The SOLAR SYSTEM with the Orbits of 5 remarkable COMETS.\"; two explanatory lines beginning \"In this Scheme the Orbits of the Planets are drawn according to their mean distances from the Sun\"; \"to face Page 313. Vol:1.\" at the upper right; planet labels Saturn, Jupiter, Mars, Earth, Venus and Mercury; comet annotations with years along their orbits; the note beginning \"Note, the Sun is about 10 Inches Diameter\".\n- plate-18.jpg: caption heading \"COMETS.\"; the five comets labelled \"Comet of 1680.\", \"Donatis Comet 1858.\", \"Halleys Comet 1835.\", \"Comet of 1741.\" and \"Comet of 1811.\"; a small diagram labelled \"Orbit of a Comet.\"; two columns of caption text beginning \"Comets are heavenly bodies of a luminous and nebulous appearance\"; imprint \"London. James Reynolds, 174 Strand\"; a dated stamp \"Sep 25 1860\" at the lower right of the image.\n- plate-19.jpg: caption \"ENCKE'S COMET. / As seen at its re-appearance, on the 22.nd of September 1848. / At the Hartwell Observatory.\"; signature \"J.Basire sc.\" at the right.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: book-format-plan.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-01.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-02.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-03.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-04.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-6",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-05.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-7",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-06.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-8",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-07.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-9",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-08.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-10",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-09.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-11",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-10.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-12",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-11.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-13",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-12.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-14",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-13.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-15",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-14.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-16",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-15.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-17",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-16.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-18",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-17.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-19",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-18.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-20",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: plate-19.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-21",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: empty-bookshop-table.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "THE ENGRAVED SKY | Reader of nineteen historical astronomy plates\n\nMeridian Sheet Press is re-editing nineteen public-domain astronomy plates from Wellcome Collection into a reader that an adult can sit and read through and also look things up in. Nineteen plates, five chapters, names fixed: 1 Coloured Constellation Cards (nine plates), 2 Charts by Right Ascension (two plates), 3 Whole-Sky and Cosmography (three plates), 4 Instruments (two plates), 5 Comets and Observation (three plates). The plates argue with each other: plate-03 is a small hand-coloured card, plate-14 is a whole sheet of engraved panel lettering, plate-18 arrives with two columns of its own printed caption text, and plate-01 and plate-10 are the same constellation drawn twice, once as a coloured card and once as a line projection corrected to 1808. One grid has to hold all of them.\n\nThe book is 240 × 300 mm portrait, 128 pages, 150 gsm matt coated text stock, section-sewn paperback, spine 12 mm, printed four-colour in a run of 600. Primary ink #1B2A4A. The page grid is six columns of 29.5 mm with 5 mm gutters, inner margin 20 mm, outer 18 mm, head 20 mm, foot 24 mm, and the caption of every plate spread sits in the lowest 34 mm of the type area. Each plate caption carries four fields in this order: the collection title as recorded, the accession number, the catalogue date and maker line, and the credit. Credit the source as \"Wellcome Collection\" and give the rights label Public Domain Mark. Where the catalogue records no year, print \"No date recorded\"; where it records no maker, print \"No maker recorded\". The front cover carries the title THE ENGRAVED SKY and the descriptor \"Nineteen Plates of the Historical Sky\", the spine reads top to bottom, the imprint is Meridian Sheet Press, and the ISBN 978-1-7396-4412-8 barcode sits in the lower right of the back cover at 40 × 25 mm.\n\nAudience: the imprint's editor and production manager, who choose which layout goes to press and hand the pages to the printer.\n\nInputs (attached): 01-client-facts.en.md holds the format, grid and printed strings; 03-plate-records.md holds the nineteen collection titles, accession numbers, catalogue date and maker lines and the lettering read on each plate; book-format-plan.png gives the trim, bleed, spread grid and cover flat in millimetres; plate-01.jpg, plate-02.jpg, plate-03.jpg, plate-04.jpg, plate-05.jpg, plate-06.jpg, plate-07.jpg, plate-08.jpg, plate-09.jpg, plate-10.jpg, plate-11.jpg, plate-12.jpg, plate-13.jpg, plate-14.jpg, plate-15.jpg, plate-16.jpg, plate-17.jpg, plate-18.jpg and plate-19.jpg are the nineteen plates themselves; empty-bookshop-table.png is the shop context the finished copy sits in; 02-delivery-catalog.en.md lists the files to return.\n\nDeliverables:\n1. Three distinct layout directions, one board each, every board setting the same two plates, plate-03 and plate-18, so the three directions can be compared on the widest gap in text density\n2. One layout specification sheet naming the selected direction and stating trim 240 × 300 mm, 128 pages, spine 12 mm, the six-column 29.5 mm grid and the four caption fields in order\n3. The cover in three states: the flat with back cover, 12 mm spine and front cover; a three-dimensional shot of the bound copy standing on the bare display table of empty-bookshop-table.png; the front cover at 24 mm wide as a thumbnail\n4. Five chapter opener pages, one for each chapter, each reproducing its own chapter's plates as thumbnails: Coloured Constellation Cards nine, Charts by Right Ascension two, Whole-Sky and Cosmography three, Instruments two, Comets and Observation three\n5. Eight plate spreads, one each for plate-01, plate-03, plate-09, plate-10, plate-13, plate-14, plate-18 and plate-19, each carrying its four caption fields\n6. Two index spreads splitting the pack in half: plate-01 to plate-10 as thumbnails ordered by accession number, and plate-11 to plate-19 as thumbnails ordered by collection title\n7. One 12-second video turning from the cover through two chapter openers to the plate-14 and plate-18 spreads\n8. One presentation document of at least eight pages, naming the selected direction on page one and reusing the cover states, the five openers, the eight spreads and both index spreads\n\nAcceptance:\n- The specification sheet names one of the three direction boards as selected, and all five openers, all eight spreads, both index spreads and the three cover states follow that board\n- Trim 240 × 300 mm, spine 12 mm, the six-column 29.5 mm grid and the ink #1B2A4A appear on the specification sheet and again unchanged in the presentation document\n- All eight plate spreads carry the four caption fields in order with the collection title, accession number and catalogue date and maker line exactly as recorded in 03-plate-records.md; the plate-13 caption prints \"Venezia [Venice] : presso Antonio Zatta, 1777.\" and the plate-14 caption prints \"London, 1786.\"\n- Every plate spread closes its caption with \"Wellcome Collection\" and the rights label Public Domain Mark, and the plate-10 caption prints both \"No date recorded\" and \"No maker recorded\"\n- The plate-01 spread in Chapter 1 and the plate-10 spread in Chapter 2 both name Ursa Major and cross-refer to each other by accession number 46448i and 46168i\n- The five openers and the two index spreads each reproduce the plates named for them, so every supplied plate appears at least twice, and the text-heavy plate-14 and plate-18 spreads use the same column measure and the same lowest-34 mm caption zone as the plate-03 spread, and the five openers share one heading position and one folio treatment\n- All three cover states print THE ENGRAVED SKY and \"Nineteen Plates of the Historical Sky\", the title stays legible in the 24 mm thumbnail state, and the three-dimensional state stands the copy on the table and in the daylight of empty-bookshop-table.png\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/book-format-plan.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "25f0fa63209a91fec1e4b61e9e810aa738502f1b253fae5d9b29052904a3f995"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-01.jpg",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "c2ade2dd0d962e5d4cc4b84450d7cde55873cab19bb975b9c283882010f123cc"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-02.jpg",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "53671d9496cb140e698bb85684259838f8890e4f42fa632c6f7809bcba221c3b"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-03.jpg",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "397556154e5074ebabe6a9c5615fab8d32f5cc15c7b66bded8c5f1f0ba37ba8e"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-04.jpg",
+      "nodeId": "provided-image-5",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "33f8be03c904712ab9d9af77d3fd612a9393ccd70d8036ea886bd77111f995da"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-05.jpg",
+      "nodeId": "provided-image-6",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "457b6bde0a23a5f076fb604828e098def5949448378ef09e6dedebf40da306ec"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-06.jpg",
+      "nodeId": "provided-image-7",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "ff69ab93e1b9c66973d66e7b69492227b266271a48445985042b4fee8b170abc"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-07.jpg",
+      "nodeId": "provided-image-8",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "4cd46b3115670cbcec6f591d59a0b4a9e05dca52af94426549ff5310f13c10b0"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-08.jpg",
+      "nodeId": "provided-image-9",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "f15b50c518839e7366305437d556dd60a40e5d70a7e4280ae58de0af4107f770"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-09.jpg",
+      "nodeId": "provided-image-10",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "b785ce4f8c59f3a6f11dc3f2fd288ab8714c7ca729d10410f8349654c091a729"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-10.jpg",
+      "nodeId": "provided-image-11",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "8e0d3edcc20e953cd5881d3f6d0fa27ad0bb40f7cb1ca1a52d85c291317790b3"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-11.jpg",
+      "nodeId": "provided-image-12",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "b0138d4441c0786f5b7ffb60196350fe244f0e99366f4e28083d9005728fc08c"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-12.jpg",
+      "nodeId": "provided-image-13",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "3405bfb8459ba3ebf3619c4e3583b662fb8f1bbeb47154a2a1cc18681f8b67f7"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-13.jpg",
+      "nodeId": "provided-image-14",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "da1855c9847f4bbda92c60add1e87934f0b65e70be021cb1213a755bf132ac5a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-14.jpg",
+      "nodeId": "provided-image-15",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "2f68a14f5b0a5bfd1a796ea87d418bc74495c5e0e40d8eb70cd72e018997bfdd"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-15.jpg",
+      "nodeId": "provided-image-16",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "18effbf23ecbadde204a4ca62617db07748f1da27aaa8b7f630a544b95e2f456"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-16.jpg",
+      "nodeId": "provided-image-17",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "67f15353b2289ab5f6d77d6e1e552c254d75e200cce91bdef5917fb62323bb3c"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-17.jpg",
+      "nodeId": "provided-image-18",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "ee7d305b994bae283cb9fa9fcd2ba1411d8fdb2245e450ef836a55577fafbf94"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-18.jpg",
+      "nodeId": "provided-image-19",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "d55513d342fdf7cb9b96d2ccb03defeb462f5c7e4397114078a681fa7fa16a2f"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/plate-19.jpg",
+      "nodeId": "provided-image-20",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "55c817ae1a6688928898acb230c58e635244a8ecbfc3ca01b4ba3051dd18c77b"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-book-base-a-n24/empty-bookshop-table.png",
+      "nodeId": "provided-image-21",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "a3a225acabc8bbb3d7a1b6acc909e15cdf4f0a0b5c86b53b50effe289f4c1768"
+    }
+  ]
+}

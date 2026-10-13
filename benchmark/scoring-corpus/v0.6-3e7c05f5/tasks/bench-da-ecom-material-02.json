@@ -1,0 +1,562 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ecom-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "product-overview",
+      "label": "Product overview",
+      "description": "One product overview with the assembled FOLDLINE H35 hinge, SKU, pack price, two-hinge quantity and purchase headline.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "parts-inventory",
+      "label": "Parts inventory",
+      "description": "One parts inventory image with two hinges, two mounting plates, eight screws and cup, arm and plate callouts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "interface-dimensions",
+      "label": "Interface dimensions",
+      "description": "One interface dimensions image with three measured views, the opening arc and a 50 mm reference ruler.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "compatibility",
+      "label": "Door compatibility",
+      "description": "One compatibility image with three overlay arrangements and the eight door configurations C01–C08 with fit outcomes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "installation",
+      "label": "Four-step installation",
+      "description": "One four-panel installation image covering measurement, cup fastening, plate and arm attachment, and movement checks.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "purchase-checklist",
+      "label": "Purchase checklist",
+      "description": "One vertical purchase checklist with five checks, the SKU, pack contents, price and purchase headline.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "product-name",
+      "kind": "text-verbatim",
+      "text": "FOLDLINE H35",
+      "scope": "*",
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "purchase-headline",
+      "kind": "text-verbatim",
+      "text": "Measure before you order",
+      "scope": {
+        "slots": [
+          "product-overview",
+          "purchase-checklist"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FOLDLINE H35",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-hinge-gallery",
+      "slots": [
+        "product-overview",
+        "parts-inventory",
+        "interface-dimensions",
+        "compatibility",
+        "installation",
+        "purchase-checklist"
+      ],
+      "items": [
+        {
+          "item": "Visible hinge components represent the same Satin nickel product across assembled views, detached parts, diagrams and installation panels, allowing changes in viewpoint and illustration detail.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Repeated pack details, interface measurements and compatibility decisions agree across the gallery and with the specified product facts.",
+          "kind": "compliance"
+        },
+        {
+          "item": "All six images apply the supplied gallery geometry for their respective square, landscape or vertical layouts.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FOLDLINE H35"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "product-overview",
+      "parts-inventory",
+      "interface-dimensions",
+      "compatibility",
+      "installation",
+      "purchase-checklist"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge physical hinge performance or require photographic lighting and material rendering in technical diagrams."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "product-overview",
+        "parts-inventory",
+        "interface-dimensions",
+        "compatibility",
+        "installation",
+        "purchase-checklist"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-product-overview",
+      "requirementId": "R-format-product-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "product-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-parts-inventory",
+      "requirementId": "R-format-parts-inventory",
+      "method": "artifact-property",
+      "targetSlots": [
+        "parts-inventory"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-interface-dimensions",
+      "requirementId": "R-format-interface-dimensions",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interface-dimensions"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-compatibility",
+      "requirementId": "R-format-compatibility",
+      "method": "artifact-property",
+      "targetSlots": [
+        "compatibility"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-installation",
+      "requirementId": "R-format-installation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "installation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-purchase-checklist",
+      "requirementId": "R-format-purchase-checklist",
+      "method": "artifact-property",
+      "targetSlots": [
+        "purchase-checklist"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "product-form-and-finish",
+      "requirementId": "R-product-form-and-finish",
+      "method": "visual",
+      "targetSlots": [
+        "product-overview",
+        "parts-inventory",
+        "interface-dimensions",
+        "compatibility",
+        "installation",
+        "purchase-checklist"
+      ],
+      "criteria": "Each image visibly names the product and represents any shown hardware as the specified concealed cup hinge with a detachable mounting plate. Visible components retain the straight arm, recessed circular cup, two flange fixing holes and cross-shaped plate. Finished hardware appears Satin nickel; flat finish illustrations use #B9BEC4 as their base color, allowing shading and outlines. Viewpoint, simplification and occlusion may vary, but visible geometry must not contradict the supplied product forms.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "purchase-details-and-parts-inventory",
+      "requirementId": "R-purchase-details-and-parts-inventory",
+      "method": "visual",
+      "targetSlots": [
+        "product-overview",
+        "parts-inventory",
+        "purchase-checklist"
+      ],
+      "criteria": "The overview and checklist each show SKU FH35-F16, a GBP 12.00 price explicitly associated with one pack, and the required purchase headline. The overview shows an assembled hinge and communicates that the pack contains two hinges. The inventory and checklist each account for two hinges, two detachable mounting plates and eight countersunk wood screws sized 3.5 × 16 mm. Quantity labels may supplement representative depictions, but must make all quantities unambiguous and must not contradict pictured contents. The inventory separately identifies the cup, arm and plate with callouts pointing to the correct components. Missing, conflicting or ambiguous purchase information fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "measured-interface-and-ruler",
+      "requirementId": "R-measured-interface-and-ruler",
+      "method": "visual",
+      "targetSlots": [
+        "interface-dimensions"
+      ],
+      "criteria": "Provide distinguishable door-face, cup-section and cabinet-side views with dimension lines attached to the appropriate features. Show a 35 mm bore diameter, 12 mm depth, 5 mm door-edge-to-bore-edge gap, 22.5 mm door-edge-to-bore-center setback, 45 mm cup-fixing centers parallel to the door edge, an inclusive 18–22 mm door thickness range, 18 mm cabinet side, 16 mm full overlay, 0 mm plate height, 32 mm plate-fixing centers parallel to the cabinet front edge, and a 37 mm distance from that edge to the plate-fixing centerline. Depict and label a 110° opening arc. The dimensioned 50 mm ruler must be visually proportional to the door-face geometry, including the 35 mm bore, rather than merely carrying a correct numeral. Other views may use different scales if unambiguous. Missing values, incorrect measurement endpoints or a mismatched ruler scale fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "compatibility-records-and-arrangements",
+      "requirementId": "R-compatibility-records-and-arrangements",
+      "method": "visual",
+      "targetSlots": [
+        "compatibility"
+      ],
+      "criteria": "Include all eight uniquely identified records, with readable material, door thickness, arrangement, overlay, bore diameter, bore depth and outcome. C01 is MDF/18/full overlay/16/35/12/Fits; C02 is solid timber/22/full overlay/16/35/12/Fits; C03 is MDF/16/full overlay/16/35/12/Does not fit; C04 is MDF/18/half overlay/8/35/12/Does not fit; C05 is MDF/18/inset/0/35/12/Does not fit; C06 is MDF/18/full overlay/16/26/12/Does not fit; C07 is glass/18/full overlay/16/35/12/Does not fit; C08 is MDF/unknown/full overlay/16/35/12/Measure first. Dimensions are in mm. Shared values may appear once in a clearly applicable legend: 18 mm cabinet side, 5 mm edge gap, 45 mm cup-fixing centers, 0 mm plate height, 32 mm plate-fixing centers and 37 mm plate setback. Three diagrams must distinguish the physical overlay arrangements and associate 16 mm full overlay with conditional compatibility, 8 mm half overlay with incompatibility and 0 mm inset with incompatibility. Layout and record order may vary; omitted records, substituted configurations, incorrect outcomes or treating unknown thickness as confirmed compatibility fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "four-step-installation",
+      "requirementId": "R-four-step-installation",
+      "method": "visual",
+      "targetSlots": [
+        "installation"
+      ],
+      "criteria": "Show four numbered panels in the specified order, headed Measure the interfaces, Fasten the cups, Attach the plates and arms, and Check the movement. Panel 1 compares door material, thickness, overlay, cup preparation and plate-hole positions with the matching interface. Panel 2 seats the cups in prepared bores and secures both flange holes, using two screws per cup and four total. Panel 3 secures the plates at the 37 mm setback, using two screws per plate and four total, then clips the arms onto them. Panel 4 supports the door while checking both hinge connections and clearance through the 110° opening movement. Arrows, illustrations and concise captions may share the explanation, but must establish every action and quantity. Reordered steps, incorrect screw allocation or missing connection and movement checks fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "five-purchase-checks-and-decisions",
+      "requirementId": "R-five-purchase-checks-and-decisions",
+      "method": "visual",
+      "targetSlots": [
+        "purchase-checklist"
+      ],
+      "criteria": "Present five identifiable checks covering: MDF or solid timber and inclusive 18–22 mm door thickness; full overlay of 16 mm on an 18 mm cabinet side; cup preparation with 35 mm diameter, 12 mm depth, 5 mm edge gap, 22.5 mm center setback and 45 mm fixing centers; plate interface with 0 mm height, 32 mm fixing centers and 37 mm setback; and pack contents and price with FH35-F16, two hinges, two plates, eight 3.5 × 16 mm screws and GBP 12.00. The decision guidance must reserve Fits for all matching interface values, identify known mismatches as Does not fit, and direct any unknown interface measurement to Measure first. A single clearly applicable decision key is acceptable. Missing checks or values, or advice to purchase despite an unresolved measurement, fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "gallery-layout-geometry",
+      "requirementId": "R-gallery-layout-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "product-overview",
+        "parts-inventory",
+        "interface-dimensions",
+        "compatibility",
+        "installation",
+        "purchase-checklist"
+      ],
+      "criteria": "Apply the supplied gallery layout appropriate to each role: square for the overview, landscape for inventory, dimensions, compatibility and installation, and vertical for the checklist. Assess proportions rather than exact pixel dimensions. Keep essential content and diagram callouts inside 5% safe margins on both axes, place the main imagery in the upper 70% field, and reserve the lower 25% for the main text area. The overview has a white background and an assembled product spanning 85–90% of canvas width. Diagram labels may accompany their features within the safe image field. Material departures from these relative regions, clipped essential content, a nonwhite overview background or incorrect overview product scale fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "workbench-reference-role",
+      "requirementId": "R-workbench-reference-role",
+      "method": "diagnostic",
+      "targetSlots": [
+        "installation"
+      ],
+      "criteria": "Treat cabinet-workbench.png as atmosphere reference for a domestic installation setting; it does not establish additional hinge geometry, interface measurements or mandatory scene objects, and this diagnostic imposes no pass/fail condition.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ]
+    },
+    {
+      "id": "set-coherent-hinge-gallery",
+      "requirementId": "R-set-coherent-hinge-gallery",
+      "method": "visual",
+      "targetSlots": [
+        "product-overview",
+        "parts-inventory",
+        "interface-dimensions",
+        "compatibility",
+        "installation",
+        "purchase-checklist"
+      ],
+      "criteria": "Visible hinge components represent the same Satin nickel product across assembled views, detached parts, diagrams and installation panels, allowing changes in viewpoint and illustration detail. Repeated pack details, interface measurements and compatibility decisions agree across the gallery and with the specified product facts. All six images apply the supplied gallery geometry for their respective square, landscape or vertical layouts.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/03-door-fit-records.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-02/04-installation-sequence.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "reference-hinge-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "hinge-overall.png",
+        "hinge-cup.png",
+        "hinge-plate.png"
+      ],
+      "subjectSlots": [
+        "product-overview",
+        "parts-inventory",
+        "interface-dimensions",
+        "compatibility",
+        "installation",
+        "purchase-checklist"
+      ],
+      "notes": "Preserve the straight arm, circular recessed cup, two cup-fixing holes and cross-shaped detachable plate shown in the product images."
+    }
+  ]
+}

@@ -1,0 +1,1207 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-architecture-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "direction-linear",
+      "label": "Linear hall direction",
+      "description": "One linear hall direction board with programme zoning and public and service access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-courtyard",
+      "label": "Courtyard direction",
+      "description": "One courtyard direction board with programme zoning and public and service access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "direction-clustered",
+      "label": "Clustered hall direction",
+      "description": "One clustered hall direction board with programme zoning and public and service access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "selection-programme",
+      "label": "Selection and room programme",
+      "description": "One two-page document identifying the selected direction and recording room codes, names, net areas, clear heights, adjacencies and floor levels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "site-plan",
+      "label": "Site plan and zoning",
+      "description": "One dimensioned site plan with zoning, setbacks, pedestrian frontage, service gates and the exhaust band.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ground-floor",
+      "label": "Ground-floor plan",
+      "description": "One dimensioned ground-floor plan with the room programme, 18 stalls, 64 seats, aisles, kitchen openings and structural grid.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "building-sections",
+      "label": "Market and dining sections",
+      "description": "One sheet of two sections through the market, kitchen and dining room with dimensions, levels and exposed steel trusses.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "building-elevations",
+      "label": "South and east elevations",
+      "description": "One sheet of south and east elevations with entrance lettering, construction materials, openings and four hot-food exhaust positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "circulation-states",
+      "label": "Morning and lunchtime circulation",
+      "description": "One circulation sheet with 05:30 and 12:30 plan overlays, six movement sequences and delivery and waste collection times.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "produce-stall-detail",
+      "label": "Retained produce cart and stall detail",
+      "description": "One dimensioned P01 stall sheet with a plan, section and axonometric of the retained cart, shade and adjoining aisle.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "morning-receiving",
+      "label": "Morning receiving perspective",
+      "description": "One eye-level perspective of receiving and stall stocking at 05:30.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "lunchtime-dining",
+      "label": "Lunchtime dining perspective",
+      "description": "One eye-level perspective of shared dining and the adjoining market at 12:30.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "daily-life-video",
+      "label": "Morning-to-lunch building video",
+      "description": "One 10-second video connecting morning receiving and lunchtime dining through the selected building.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "project-presentation",
+      "label": "Market and dining presentation",
+      "description": "One presentation of at least 8 pages reusing the directions, selection, programme, drawings, circulation overlays and perspectives.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "COMMON TABLE",
+      "scope": {
+        "slots": [
+          "building-elevations",
+          "project-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "entrance-phrase",
+      "kind": "text-verbatim",
+      "text": "Fresh food, shared meals",
+      "scope": {
+        "slots": [
+          "building-elevations",
+          "project-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON TABLE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "selected-drawing-system",
+      "slots": [
+        "site-plan",
+        "ground-floor",
+        "building-sections",
+        "building-elevations",
+        "circulation-states",
+        "produce-stall-detail"
+      ],
+      "sourceSlots": [
+        "selection-programme"
+      ],
+      "items": [
+        {
+          "item": "The drawings develop the selected arrangement and agree on building placement, programme organisation, structural grid, levels, openings and public/service access.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The coordinated scheme retains separate east receiving and waste gates, separate kitchen service and return openings, and four hot-food stalls on the permitted east exhaust wall.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "inhabited-building-consistency",
+      "slots": [
+        "morning-receiving",
+        "lunchtime-dining"
+      ],
+      "sourceSlots": [
+        "ground-floor",
+        "building-sections",
+        "building-elevations"
+      ],
+      "items": [
+        {
+          "item": "Both inhabited views depict the drawing-defined building, preserving visible column positions, openings, roof profile and construction material locations.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Morning receiving and lunchtime dining show their specified activities within the same architectural scheme.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON TABLE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "site-plan",
+      "ground-floor",
+      "building-sections",
+      "building-elevations",
+      "circulation-states",
+      "produce-stall-detail",
+      "morning-receiving",
+      "lunchtime-dining"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not re-score prescribed programme records, dimensions, capacities, operating times, exact wording or export mechanics; those belong to factual acceptance checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "direction-linear",
+        "direction-courtyard",
+        "direction-clustered",
+        "selection-programme",
+        "site-plan",
+        "ground-floor",
+        "building-sections",
+        "building-elevations",
+        "circulation-states",
+        "produce-stall-detail",
+        "morning-receiving",
+        "lunchtime-dining",
+        "project-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "direction-linear",
+        "direction-courtyard",
+        "direction-clustered",
+        "site-plan",
+        "ground-floor",
+        "building-sections",
+        "building-elevations",
+        "circulation-states",
+        "produce-stall-detail",
+        "morning-receiving",
+        "lunchtime-dining"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-direction-linear",
+      "requirementId": "R-format-direction-linear",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-linear"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-courtyard",
+      "requirementId": "R-format-direction-courtyard",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-courtyard"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-direction-clustered",
+      "requirementId": "R-format-direction-clustered",
+      "method": "artifact-property",
+      "targetSlots": [
+        "direction-clustered"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-selection-programme",
+      "requirementId": "R-format-selection-programme",
+      "method": "artifact-property",
+      "targetSlots": [
+        "selection-programme"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-site-plan",
+      "requirementId": "R-format-site-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ground-floor",
+      "requirementId": "R-format-ground-floor",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ground-floor"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-building-sections",
+      "requirementId": "R-format-building-sections",
+      "method": "artifact-property",
+      "targetSlots": [
+        "building-sections"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-building-elevations",
+      "requirementId": "R-format-building-elevations",
+      "method": "artifact-property",
+      "targetSlots": [
+        "building-elevations"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-circulation-states",
+      "requirementId": "R-format-circulation-states",
+      "method": "artifact-property",
+      "targetSlots": [
+        "circulation-states"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-produce-stall-detail",
+      "requirementId": "R-format-produce-stall-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "produce-stall-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-morning-receiving",
+      "requirementId": "R-format-morning-receiving",
+      "method": "artifact-property",
+      "targetSlots": [
+        "morning-receiving"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-lunchtime-dining",
+      "requirementId": "R-format-lunchtime-dining",
+      "method": "artifact-property",
+      "targetSlots": [
+        "lunchtime-dining"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-daily-life-video",
+      "requirementId": "R-format-daily-life-video",
+      "method": "manual",
+      "targetSlots": [
+        "daily-life-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-project-presentation",
+      "requirementId": "R-format-project-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "project-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "three-distinct-arrangements",
+      "requirementId": "R-three-distinct-arrangements",
+      "method": "visual",
+      "targetSlots": [
+        "direction-linear",
+        "direction-courtyard",
+        "direction-clustered"
+      ],
+      "criteria": "The boards show three spatially distinct options corresponding to their assigned roles. Each identifies programme zones and public and service entry arrangements sufficiently to compare the options. Drawing style may vary; relabelling the same arrangement or omitting zoning or either access type fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "selection-and-complete-schedule",
+      "requirementId": "R-selection-and-complete-schedule",
+      "method": "content",
+      "targetSlots": [
+        "selection-programme"
+      ],
+      "criteria": "The document has two pages and unambiguously selects the linear, courtyard or clustered direction. Its table contains all 17 programme records, A01–A03, S01–S04 and B01–B10, with all six required fields. Each room has a stated clear height of at least 4200 mm and the adjacencies recorded in 03-programme.en.md, including the distinct kitchen service and dish-return connections. Table organisation may vary; missing records, fields, relationships or an unresolved choice fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ]
+    },
+    {
+      "id": "written-programme-fidelity",
+      "requirementId": "R-written-programme-fidelity",
+      "method": "content",
+      "targetSlots": [
+        "selection-programme",
+        "project-presentation"
+      ],
+      "criteria": "Both documents reproduce these code/name/net-area records in m²: A01 Market Aisles 180; A02 Shared Dining 192; A03 Entrance Hall 48; S01 Produce Stalls 72; S02 Pantry Stalls 36; S03 Fish Stalls 18; S04 Hot Food Stalls 36; B01 Shared Kitchen 72; B02 Receiving 24; B03 Cold Store 18; B04 Dry Store 18; B05 Dishwash 24; B06 Waste Hold 12; B07 Staff Room 18; B08 Toilets 36; B09 Plant 18; B10 Service Passage 18. Every record is assigned ±0.000 m, individually or through an unambiguous shared notation. Public and stalls-and-support subtotals are each 420 m², yielding 840 m². Pagination and table styling may differ; omissions, substitutions or incorrect values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ]
+    },
+    {
+      "id": "floor-programme-and-capacity",
+      "requirementId": "R-floor-programme-and-capacity",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor"
+      ],
+      "criteria": "The plan locates and labels A01 Market Aisles 180, A02 Shared Dining 192, A03 Entrance Hall 48, S01 Produce Stalls 72, S02 Pantry Stalls 36, S03 Fish Stalls 18, S04 Hot Food Stalls 36, B01 Shared Kitchen 72, B02 Receiving 24, B03 Cold Store 18, B04 Dry Store 18, B05 Dishwash 24, B06 Waste Hold 12, B07 Staff Room 18, B08 Toilets 36, B09 Plant 18 and B10 Service Passage 18, with areas in m² and an unambiguous ±0.000 m floor datum. The two group totals are 420 m² each. It shows exactly P01–P08, G01–G04, F01–F02 and H01–H04, each dimensioned 3000 mm square, and 64 countable dining seats. Shared dimension notation is acceptable if its applicability is clear; missing, duplicated or inconsistent programme records, stalls or seats fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "site-controls-and-access",
+      "requirementId": "R-site-controls-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "ground-floor"
+      ],
+      "criteria": "Both plans dimension the plot as 48000 mm east–west by 36000 mm north–south, show a north arrow and metric scale bar, and dimension all setbacks and both east gates consistently. With the southwest corner as origin, the building remains within x = 3000–45000 mm and y = 6000–30000 mm; larger setbacks are allowed. Receiving occupies x = 48000 mm, y = 27000–33000 mm with a 6000 mm gate, and waste occupies x = 48000 mm, y = 3000–6000 mm with a 3000 mm gate. The site plan shows zoning, the south public frontage and its 3000 mm pavement, the east 6000 mm service lane, and the east-facing exhaust band at y = 12000–24000 mm. The plot represents 1728 m² and enclosed footprint does not exceed 1008 m². Incorrect orientation, envelopes, dimensions, access positions or missing required annotations fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "structural-grid-and-aisle-width",
+      "requirementId": "R-structural-grid-and-aisle-width",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor",
+        "building-sections"
+      ],
+      "criteria": "The floor plan provides an identifiable structural grid, and its principal 12000 mm span agrees with the sections. Public aisle dimensions establish at least 2400 mm of unobstructed width, measured between actual obstructions rather than centre lines. Secondary spans and wider aisles may vary; conflicting principal spans, missing clear-width dimensions or visible encroachments below the minimum fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "section-coverage-and-levels",
+      "requirementId": "R-section-coverage-and-levels",
+      "method": "visual",
+      "targetSlots": [
+        "building-sections"
+      ],
+      "criteria": "Two distinct sections collectively cut through the market, Shared Kitchen and Shared Dining. They show exposed steel roof trusses, identify the 12000 mm principal span, label the ground floor ±0.000 m, state actual roof levels no higher than +6.500 m and dimension occupied-room clear heights of at least 4200 mm. Roof form may vary within these limits; a maximum-height note without actual roof levels, missing section coverage or insufficient clear height fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "movement-sequences-and-operating-states",
+      "requirementId": "R-movement-sequences-and-operating-states",
+      "method": "visual",
+      "targetSlots": [
+        "circulation-states",
+        "ground-floor"
+      ],
+      "criteria": "The circulation sheet provides labelled 05:30 and 12:30 plan overlays and six distinguishable routes: south pavement → Entrance Hall → Market Aisles → Shared Dining → Entrance Hall; East Receiving Gate → Receiving → Cold Store or Dry Store → stall rear access; Cold Store or Dry Store → kitchen raw preparation bench → cooking line; cooking line → meal-service opening → Shared Dining; Shared Dining → separate dish-return opening → Dishwash → kitchen clean rack; and stall rear access, kitchen and Dishwash → Service Passage → Waste Hold → East Waste Gate. Delivery and waste windows are explicitly 05:00–06:30 and 14:30–15:00. The overlays distinguish active morning receiving/stocking from active lunchtime shopping, meal service and dish returns, and do not depict waste collection as occurring during either snapshot. Any additional timing labels agree with trading 07:00–14:00, preparation 07:00–11:30, meal service 11:30–14:00 and dish returns 11:30–14:30. Receiving lies on the northeast service side and Waste Hold on the southeast service side. Routes agree with the floor plan, use separate east gates and kitchen openings, and keep goods and waste service access outside public aisles. Route colours and symbols may vary; missing links, contradictory operations or merged service/return openings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "perspective-activities",
+      "requirementId": "R-perspective-activities",
+      "method": "visual",
+      "targetSlots": [
+        "morning-receiving",
+        "lunchtime-dining"
+      ],
+      "criteria": "Both views use an eye-level viewpoint. The morning image visibly depicts an active receiving gate, incoming goods and stall stocking in the 05:30 state. The lunchtime image depicts occupied shared dining and adjoining market shopping, with meal service and dish returns operating through separate openings in the 12:30 state. Composition and people may vary; swapped states, absent specified activities or a view that excludes the adjoining market fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "retained-cart-detail-and-placement",
+      "requirementId": "R-retained-cart-detail-and-placement",
+      "method": "visual",
+      "targetSlots": [
+        "produce-stall-detail",
+        "ground-floor"
+      ],
+      "criteria": "The P01 sheet includes a dimensioned plan, section and axonometric showing the 3000 mm square stall, retained cart, shade and adjoining public aisle with at least 2400 mm clear width. Cart dimensions explicitly establish 1800 mm width, 750 mm depth and 900 mm counter height. The retained cream canvas shade, rounded steel front rail and left-hand weighing scale remain identifiable. The floor plan locates the two retained matching carts at P01 and P02. Viewpoint and drawing detail may differ; replacing the cart, reversing the scale, omitting a required view or obstructing the aisle fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "cart-fixed-features",
+      "requirementId": "R-cart-fixed-features",
+      "method": "visual",
+      "targetSlots": [
+        "produce-stall-detail"
+      ],
+      "criteria": "The detail's views or material annotations establish a galvanised steel cart body, rounded steel front rail, cream canvas canopy and mechanical weighing scale on the cart's left-hand side, with three green ventilated crates on its lower shelf. Features may be distributed across the three views; absent, substituted or contradictory features fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "fixed-construction",
+      "requirementId": "R-fixed-construction",
+      "method": "visual",
+      "targetSlots": [
+        "building-sections",
+        "building-elevations"
+      ],
+      "criteria": "Section drawings visibly expose the steel roof trusses, while elevation graphics or labels identify brick external walls and aluminium frames at glazed openings. Colour, brick bond and frame profiles may vary. Concealed or substituted roof structure, non-brick external wall construction or glazing assigned another frame material fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "elevations-sign-and-exhausts",
+      "requirementId": "R-elevations-sign-and-exhausts",
+      "method": "visual",
+      "targetSlots": [
+        "building-elevations"
+      ],
+      "criteria": "The sheet contains identifiable south and east elevations with openings and material locations. The south entrance sign carries COMMON TABLE and Fresh food, shared meals. All four hot-food stalls have corresponding exhausts on the east-facing external wall, positioned within y = 12000–24000 mm as verified against the plans. Sign styling and exhaust spacing may vary within the band; missing lettering, missing elevations, incorrect exhaust count or out-of-band placement fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "site-plan",
+        "ground-floor"
+      ]
+    },
+    {
+      "id": "perspectives-follow-drawings",
+      "requirementId": "R-perspectives-follow-drawings",
+      "method": "visual",
+      "targetSlots": [
+        "morning-receiving",
+        "lunchtime-dining"
+      ],
+      "criteria": "Visible columns, doors and windows, roof geometry and placements of brick, glazing and exposed steel agree with the corresponding drawing locations. Camera angle, lighting and movable activity props may differ. Invented structural bays, displaced openings, incompatible roof forms or relocated construction materials fail; features genuinely outside a view are not required to be visible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "ground-floor",
+        "building-sections",
+        "building-elevations"
+      ]
+    },
+    {
+      "id": "video-duration-route-and-building",
+      "requirementId": "R-video-duration-route-and-building",
+      "method": "manual",
+      "targetSlots": [
+        "daily-life-video"
+      ],
+      "criteria": "Review the whole video and its duration. It lasts 10 seconds and progresses from morning receiving and stocking to lunchtime shared dining through the selected architectural arrangement. Its visible columns, openings, roof profile and material locations remain consistent with the drawings throughout. Editing and time transition techniques may vary; incorrect duration, missing either operating state or architectural changes during the sequence fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "selection-programme",
+        "ground-floor",
+        "building-sections",
+        "building-elevations"
+      ]
+    },
+    {
+      "id": "presentation-length-cover-and-choice",
+      "requirementId": "R-presentation-length-cover-and-choice",
+      "method": "content",
+      "targetSlots": [
+        "project-presentation"
+      ],
+      "criteria": "The presentation contains at least eight pages. Its cover prints COMMON TABLE and Fresh food, shared meals, and its first page explicitly names the same direction selected in the selection document. Page order after the first page may vary; insufficient pages, cover wording placed only elsewhere or a missing or contradictory first-page choice fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "sourceSlots": [
+        "selection-programme"
+      ]
+    },
+    {
+      "id": "presentation-reuses-every-required-source",
+      "requirementId": "R-presentation-reuses-every-required-source",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "project-presentation"
+      ],
+      "criteria": "The presentation visibly incorporates recognisable material from every listed source: all three directions, the selected choice and programme schedule, all drawing sheets including the stall detail, both circulation states and both perspectives. Scaling, cropping and page recomposition are allowed when the source content remains identifiable and legible. Merely listing a source, omitting one or substituting incompatible work fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "sourceSlots": [
+        "direction-linear",
+        "direction-courtyard",
+        "direction-clustered",
+        "selection-programme",
+        "site-plan",
+        "ground-floor",
+        "building-sections",
+        "building-elevations",
+        "circulation-states",
+        "produce-stall-detail",
+        "morning-receiving",
+        "lunchtime-dining"
+      ]
+    },
+    {
+      "id": "selected-scheme-development",
+      "requirementId": "R-selected-scheme-development",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "ground-floor",
+        "building-sections",
+        "building-elevations",
+        "circulation-states",
+        "produce-stall-detail",
+        "morning-receiving",
+        "lunchtime-dining"
+      ],
+      "criteria": "The final image set develops the direction explicitly selected in the document. Building organisation, courtyard or hall relationships, programme locations and public/service access remain compatible across scales and views. Design development and increased detail are allowed; mixing incompatible options or depicting different underlying buildings fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "selection-programme"
+      ]
+    },
+    {
+      "id": "single-storey-and-common-datum",
+      "requirementId": "R-single-storey-and-common-datum",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "ground-floor",
+        "building-sections"
+      ],
+      "criteria": "The coordinated drawings accommodate 18 traders and the 64-seat dining room on one occupied storey. Ground floor, adjoining south pavement and east service lane share ±0.000 m. Roof structure may rise above the occupied storey within the permitted height; an additional occupied floor or a conflicting ground, pavement or lane datum fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "programme-adjacencies-and-area-basis",
+      "requirementId": "R-programme-adjacencies-and-area-basis",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor"
+      ],
+      "criteria": "The drawn arrangement implements the programme relationships: Entrance Hall connects south pavement, Market Aisles and Toilets; Market Aisles serve every stall group and Shared Dining; Shared Dining connects the kitchen meal-service and Dishwash return interfaces; produce and pantry stalls have service access; fish stalls connect Cold Store and service access; hot-food stalls adjoin Shared Kitchen and the east exhaust wall. Receiving connects its gate, both stores and Service Passage; Cold Store connects fish stalls and kitchen; Dry Store connects kitchen and Service Passage; Dishwash connects dining returns, kitchen clean rack and Service Passage; Waste Hold connects Service Passage and its gate; Staff Room connects Service Passage and Toilets; Plant connects Service Passage and external service access. Service Passage provides the scheduled rear/service connections. Net areas represent internal usable room or zone space; stall footprints do not absorb the separately allocated public aisles or Service Passage, and walls, structure and additional circulation use no more than the 168 m² envelope allowance. Layout geometry may vary; missing required connections, disconnected rooms or area double-counting fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "selection-programme"
+      ]
+    },
+    {
+      "id": "set-selected-drawing-system",
+      "requirementId": "R-set-selected-drawing-system",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "ground-floor",
+        "building-sections",
+        "building-elevations",
+        "circulation-states",
+        "produce-stall-detail"
+      ],
+      "criteria": "The drawings develop the selected arrangement and agree on building placement, programme organisation, structural grid, levels, openings and public/service access. The coordinated scheme retains separate east receiving and waste gates, separate kitchen service and return openings, and four hot-food stalls on the permitted east exhaust wall.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "selection-programme"
+      ]
+    },
+    {
+      "id": "set-inhabited-building-consistency",
+      "requirementId": "R-set-inhabited-building-consistency",
+      "method": "visual",
+      "targetSlots": [
+        "morning-receiving",
+        "lunchtime-dining"
+      ],
+      "criteria": "Both inhabited views depict the drawing-defined building, preserving visible column positions, openings, roof profile and construction material locations. Morning receiving and lunchtime dining show their specified activities within the same architectural scheme.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/03-programme.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-breadth-03/04-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "ground-floor",
+        "building-sections",
+        "building-elevations"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "selected-building-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "ground-floor",
+      "subjectSlots": [
+        "morning-receiving",
+        "lunchtime-dining"
+      ],
+      "notes": "Both perspectives and the video match the drawings' columns, openings, roof profile and material locations."
+    },
+    {
+      "id": "retained-produce-carts",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "existing-produce-cart.png"
+      ],
+      "subjectSlots": [
+        "produce-stall-detail",
+        "ground-floor"
+      ],
+      "notes": "The floor plan locates matching carts at P01 and P02."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "selected-direction",
+      "fromSlot": "selection-programme",
+      "toSlots": [
+        "project-presentation"
+      ],
+      "extract": [
+        "name of the selected architectural direction"
+      ],
+      "notes": "The selection and programme document names one choice; the site plan, floor plan, sections, elevations, circulation sheet, stall detail, perspectives, video and presentation develop that choice. The presentation's first page names it."
+    },
+    {
+      "id": "programme-records",
+      "fromSlot": "selection-programme",
+      "toSlots": [
+        "ground-floor",
+        "project-presentation"
+      ],
+      "extract": [
+        "every room code and English name",
+        "each room's net area",
+        "each room's floor level",
+        "public and stalls-and-support net area totals"
+      ],
+      "notes": "The selection and programme document, ground-floor plan and presentation repeat the room codes, English names, net areas and ±0.000 m floor level from 03-programme.en.md. Their totals are 420 m² public space and 420 m² stalls and support."
+    }
+  ]
+}

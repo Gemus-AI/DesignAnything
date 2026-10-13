@@ -1,0 +1,154 @@
+{
+  "id": "bench-da-product-material-01",
+  "title": "DAYREST — Screen-free bedside wake light, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# DAYREST — complete client component and bedside record\n\n## Product\n\n- Name: DAYREST.\n- Product: one complete screen-free bedside wake light.\n- Audience: urban residents reducing screen use before bed and using an independent wake reminder.\n- Interaction: physical controls, light cues and explicitly requested spoken setting feedback.\n- Product architecture: one externally powered lamp with a local controller and clock.\n- Enclosure, component arrangement, support, light aperture, diffuser construction and control-cap geometry: open design decisions.\n- Materials: frosted PC diffuser; woven polyester speaker covering; fine-textured matte PC/ABS housing.\n\n## Seven fixed modules, one of each\n\n- Dimension unit: mm.\n- W/D/H: each isolated module's own axes.\n- Module geometry: complete rigid envelopes; free mounting rotation; fixed dimensions and quantity.\n\n| ID | Component | Fixed complete envelope | Interface and identity |\n| --- | --- | --- | --- |\n| L01 | Warm/cool LED module | diameter 60 × thickness 6 | Circular disk; one emitting face; connection to C01; emitting face coupled to the chosen light path |\n| A01 | Speaker | diameter 30 × depth 12 | Circular front sound face; connection to C01; clear acoustic path to the exterior |\n| C01 | Controller and clock | 52 W × 36 D × 9 H | Rectangular module; central connection hub; current local time initialized for the supplied scenarios |\n| P01 | Low-voltage USB input | 24 W × 18 D × 5 H | One USB-C connector on its short exterior edge; connection to C01; existing external 5 V supply and cable |\n| E01 | Rotary push encoder | 16 W × 16 D × 12 H body, plus diameter 6 × 14 exposed shaft | Rigid perpendicular shaft; full shaft/body projection 26; one combined rotary/press input; custom cap geometry |\n| B01 | Snooze/stop switch | 12 W × 12 D × 6 H | One top actuation face; travel 1 mm; custom broad tactile cap |\n| M01 | Alarm-mode slide switch | 20 W × 8 D × 8 H | Three detented positions across 10 mm total travel: left OFF, center LIGHT, right LIGHT + TONE; custom knob, slot and exterior legend |\n\n## Connections and custom parts\n\n- Power connection: P01 -> C01.\n- Controller connections: C01 -> L01, A01, E01, B01, M01.\n- Connection detail: functional module topology.\n- Fixed-module arrangement: connected modules within the complete enclosure.\n- Custom parts: housing, diffuser, feet, control caps and fasteners, identified separately from the seven supplied modules.\n- Exploded assembly: parts belonging to the same complete lamp.\n- USB connector: physically accessible at the rear for setup.\n\n## Physical and optical envelope\n\n- Complete lamp maximum: 180 W × 150 D × 210 H mm, including feet, diffuser and exposed controls.\n- Actual dimensions and support arrangement: selected within the maximum envelope and bedside placement region.\n- E01 cap: identifiable and grippable.\n- B01 contact area: at least 28 mm across the shortest usable dimension.\n- E01/B01 distinction: both location and shape.\n- M01 low-light distinction: deliberate form, tactile features and/or restrained symbols, with English explanatory legends.\n- Control access: from the bed-facing right/front approach, with the lamp in its placed position.\n- Rear connection: accessible USB input and clear cable route to the rear of the bedside surface.\n- L01 output identity: warm/cool emitting face.\n- Light path: indirect or diffused, with the bare emitter shielded from the user's bed-level view.\n- Lighting illustrations: labeled operating states and relative intensity.\n\n## Alarm modes\n\n| M01 position | Daily schedule | Wake behavior |\n| --- | --- | --- |\n| OFF | Disarmed | Active ramp or alarm stops immediately |\n| LIGHT | Armed | Light sequence; alarm tone silent |\n| LIGHT + TONE | Armed | Same light sequence; tone begins at the stored wake time |\n\n- Setting speech: explicitly requested aid, available in LIGHT as well as LIGHT + TONE.\n- Idle speech: silent.\n\n## Manual light and setting behavior\n\n| Context | Physical action | Result |\n| --- | --- | --- |\n| Idle | E01 short press | Optional manual bedside light toggles on/off at its remembered level |\n| Manual light on | E01 clockwise detent | Level increases one step on the ordinal scale 0–5, clamped at the endpoints |\n| Manual light on | E01 counterclockwise detent | Level decreases one step on the ordinal scale 0–5, clamped at the endpoints |\n| Manual light off | E01 rotation | State unchanged |\n| Ramp/alarm inactive | E01 hold for 3 seconds | Setting buffer opens from the stored alarm, at the hour step |\n| Hour edit | E01 detent | One-hour change with wrap across 24 values |\n| Hour edit | E01 short press | Advance to minute edit |\n| Minute edit | E01 detent | Five-minute change with wrap across twelve values: 00,05,...55 |\n| Minute edit | E01 short press | Buffer committed; setting exits |\n| Either edit step | E01 hold for 3 seconds | Edit canceled; setting exits; stored alarm retained |\n| Ramp or active wake | E01 setting-entry action | Setting remains inactive |\n\n- Manual levels: six ordinal steps, 0–5.\n- Manual operation: stored wake time and M01 position unchanged.\n- Edited-value speech: edited hour or minute after each detent.\n- Commit speech: full confirmed time.\n- Cancel speech: full retained time.\n- Confirmation: restrained distinct physical light cue, with its expression selected in the design.\n\n## Wake, snooze and dismissal behavior\n\n- Armed ramp: starts 20 minutes before the stored wake time; target light reached at that time.\n- LIGHT + TONE: alarm tone begins at wake time.\n- LIGHT: alarm tone silent throughout the wake sequence.\n- Active wake, B01 short press: exactly 9 minutes of snooze; light and tone off; M01 remains armed; stored daily alarm unchanged.\n- Snooze end: immediate return of target light and mode-appropriate tone; ramp duration on return 0 minutes.\n- Ramp or active wake, B01 hold for 2 seconds: current occurrence dismissed; occurrence light and tone off; next daily occurrence remains armed.\n- Ramp or idle, B01 short press: state unchanged.\n\n## Demonstration baseline\n\n- Time basis: local clock time.\n- Power: connected throughout the examples.\n- Clock setup: complete.\n- Evening baseline: Monday 2026-09-14 at 21:30.\n- Stored wake: 07:00.\n- M01: LIGHT + TONE.\n- Manual light: off, remembered level 3.\n\n## E1 — manual light\n\n| Step | Action | Manual light | Stored wake |\n| --- | --- | --- | --- |\n| Baseline | Idle | Off, remembered level 3 | 07:00 |\n| 1 | E01 short press | On at 3 | 07:00 |\n| 2 | One clockwise E01 detent | On at 4 | 07:00 |\n| 3 | E01 short press | Off, remembered level 4 | 07:00 |\n\n## S-CANCEL and S-COMMIT — independent setting branches\n\n- Branch relationship: independent alternatives from the same stored 07:00 baseline.\n\n| Step | Action | Edit buffer or result |\n| --- | --- | --- |\n| Shared 1 | E01 hold for 3 seconds | Hour edit, initialized from 07:00 |\n| Shared 2 | One clockwise hour detent | Hour 08 |\n| Shared 3 | E01 short press | Minute edit |\n| Shared 4 | Two clockwise minute detents | Minute 05, then 10; edited time 08:10 |\n| S-CANCEL ending | E01 hold for 3 seconds | Stored 07:00 retained; full retained time spoken |\n| S-COMMIT ending | E01 short press | Stored 08:10 committed; full confirmed time spoken |\n\n- Speech representation: readable captions and a speaker symbol.\n\n## W — morning branch\n\n- Branch baseline: unchanged stored wake 07:00.\n- Date: Tuesday 2026-09-15.\n- M01: LIGHT + TONE throughout.\n\n| Time | Action or event | Light and tone | Schedule |\n| --- | --- | --- | --- |\n| 06:40 | Ramp begins | Light ramp active; tone silent | Stored 07:00 |\n| 06:50 | Halfway through ramp duration | Light ramp active; tone silent | Stored 07:00 |\n| 07:00 | Wake time | Target light and tone active | Stored 07:00 |\n| 07:02 | B01 short press | Light and tone off; snooze until 07:11 | Armed; stored 07:00 |\n| 07:11 | Snooze ends | Target light and tone return immediately | Armed; stored 07:00 |\n| 07:12 | B01 hold for 2 seconds | Current occurrence dismissed; light and tone off | Armed; stored 07:00 |\n\n- Next daily ramp: Wednesday 2026-09-16 at 06:40.\n- Separate LIGHT demonstration: same wake timing, alarm tone silent.\n- OFF state: schedule disarmed.\n\n## Bedside relationship\n\n| Element | Record |\n| --- | --- |\n| Cabinet top | 400 W × 300 D mm, 520 mm above floor |\n| Coordinate origin | Left/front corner; left x=0; front y=0 |\n| Rear wall | y=300 |\n| Bed | Right side, x>400 |\n| Lamp placement region | x=180..380, y=60..240; 200 × 180 mm |\n| Glass/book reserved region | x=20..130, y=70..210 |\n| Rear cable strip | y=240..300 |\n| Hand approach | Right/front at bedside height |\n\n- Lamp footprint: entirely within the lamp placement region.\n- Reserved region: available for the glass/book.\n- Cable path: rear USB connection to the rear strip, clear of the front bed-facing hand approach.\n- Evening scene: E1 manual light on at level 4; stored wake 07:00.\n- Morning scene: W immediately after the 07:02 snooze press; light and tone off until 07:11.\n- Both scenes: same complete lamp; M01 LIGHT + TONE; matching B01 cap, E01 cap and support arrangement.\n- Hand depiction: one restrained hand or an annotated hand-contact diagram.\n\n## Printed identity\n\n- Product name: DAYREST.\n- M01 exterior legends, left to right: OFF; LIGHT; LIGHT + TONE.\n\n## Supplied board record\n\n- Output count: six finished product-design boards.\n- Recorded board canvas: 3000 × 2200 pixels.\n- Recorded image format: PNG.\n- Board composition: multiple assigned views or state panels per board.\n- Product represented: one resolved complete lamp.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# DAYREST — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | complete-product | Complete product views | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | assembly-light-path | Assembly and light path | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | physical-operation | Manual light and setting actions | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | alarm-modes | Three alarm modes | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | morning-sequence | Morning wake and snooze sequence | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | bedside-use | Evening and morning bedside use | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: components.en.md",
+            "config": {
+              "text": "# DAYREST — seven isolated client modules\n\n- Dimension unit: mm.\n- Quantity: one of each module.\n- Supplied geometry: isolated component envelopes.\n\n| ID | Module | Envelope (mm) | Notes |\n| --- | --- | --- | --- |\n| L01 | LED disk | diameter 60, thickness 6 | one emitting face; warm / cool light |\n| A01 | Speaker | diameter 30, depth 12 | front sound face; acoustic path to exterior |\n| C01 | Controller + clock | 52 W x 36 D x 9 H | functional connection hub |\n| P01 | USB input | 24 W x 18 D x 5 H | USB-C on a short edge; given external 5 V supply and cable |\n| E01 | Push encoder | body 16 x 16 x 12; shaft diameter 6 x 14; full projection 26 | rotate + press, one input; shaft above body |\n| B01 | Snooze / stop | 12 W x 12 D x 6 H | travel 1; top actuation; custom tactile cap at least 28 across |\n| M01 | Three-position mode slide | 20 W x 8 D x 8 H | total travel 10; left OFF / center LIGHT / right LIGHT + TONE; cap, slot and legend open |\n\n## Fixed functional connections\n\n- P01 -> C01.\n- C01 -> L01, A01, E01, B01, M01.\n- Module geometry: rigid rotation allowed; fixed envelope dimensions.\n- Custom parts: housing / diffuser / caps, identified separately from fixed modules.\n\n## Whole product envelope\n\n- Complete lamp maximum: 180 W x 150 D x 210 H mm, including controls and feet.\n- Open decisions: arrangement, enclosure, support, diffuser and actual dimensions.\n- Access and paths: rear USB access, bed-facing controls, light path and sound path.\n- Complete control behavior: 01-client-facts.en.md.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: bedside-plan.en.md",
+            "config": {
+              "text": "# DAYREST — blank bedside relationship\n\n- Plan units: mm.\n\n| Element | Value |\n| --- | --- |\n| Bedside top | 400 W x 300 D, 520 above floor; x = 0 at the left edge, y = 0 at the front, rear wall at y = 300 |\n| Cable strip | y 240 .. 300 along the rear wall |\n| Reserved area (glass / book) | x 20 .. 130, y 70 .. 210 |\n| Blank lamp region | x 180 .. 380, y 60 .. 240 (200 x 180); outer form open |\n| Bed side | x > 400; hand approach from the right / front |\n\n- Complete lamp footprint: within the lamp region.\n- Reserved area: available for glass / book.\n- Control approach: right / front with the product in its placed position.\n- Rear USB cable: through the rear strip, clear of the hand approach.\n\n## Scenes\n\n- EVENING E1: manual light on at level 4; stored wake 07:00.\n- MORNING W: after the 07:02 snooze press, light / tone off until 07:11.\n- Both scenes: M01 LIGHT + TONE and the same finished lamp.\n- Complete setting and morning branches: 01-client-facts.en.md.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: component-envelopes.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: bedside-relationship.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: bedside-atmosphere.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "DAYREST | Screen-free bedside wake light\n\nWe are developing a complete bedside wake light for urban residents who want to put their screens away before bed and still have an independent morning alarm. The product name is \"DAYREST\"; print it on the lamp where it is legible in the finished exterior views. Build around one each of the seven supplied modules, L01, A01, C01, P01, E01, B01 and M01. The complete lamp, including feet and controls, fits within 180 W × 150 D × 210 H mm. We need you to resolve its enclosure, support, light path and control arrangement. Use a frosted PC diffuser, a woven polyester speaker covering and a fine-textured matte PC/ABS housing.\n\nOperation is screen-free and self-contained, using physical controls, light cues and requested spoken setting feedback. E01 is a rotary push control; B01 needs a tactile contact area at least 28 mm across its shortest usable dimension. Print the M01 mode legends \"OFF\", \"LIGHT\" and \"LIGHT + TONE\" in left-to-right order. An armed wake sequence starts 20 minutes before the stored time; B01 provides a 9-minute snooze and a 2-second hold to dismiss the current occurrence. The bedside top is 400 W × 300 D mm, 520 mm above the floor, with the bed on its right. Its lamp region is x=180..380, y=60..240; the rear cable strip is y=240..300. Controls face the right/front hand approach, the USB connection remains accessible from the rear, and the diffuser shields the bare LED face from the bed-level view.\n\nAudience: our product lead and industrial design team, for selecting the complete lamp design to take into enclosure development.\n\nInputs (attached): 01-client-facts.en.md contains the component identities, control behavior, demonstration branches and bedside records. 02-delivery-catalog.en.md lists the six finished deliverables with their proportions, formats and stages. components.en.md contains the seven module envelopes and their connection topology. bedside-plan.en.md contains the cabinet coordinates, placement regions and two scene records. component-envelopes.png provides dimensioned component geometry and the complete-product envelope. bedside-relationship.png establishes the bedside arrangement, hand approach and cable route that remain recognizable in the use scenes. bedside-atmosphere.png provides evening and morning references for warm neutral bedroom materials and ambient light.\n\nDeliverables:\n1. One complete-product board with front, right and top orthographic views, a rear three-quarter view, actual overall dimensions, material callouts and the printed DAYREST name\n2. One assembly and light-path board with an exploded view of all seven numbered modules, dimension labels, separately identified custom parts, connection routes and a section through the diffuser, LED face and speaker outlet\n3. One physical-operation board with the E1 manual-light sequence and separate S-CANCEL and S-COMMIT setting sequences, showing hand actions, control details, spoken-value captions and the chosen confirmation cue\n4. One alarm-mode board with three labeled panels for OFF, LIGHT and LIGHT + TONE, showing M01 positions, tactile distinctions and the corresponding light and sound states at the 07:00 wake time\n5. One morning-sequence board with six panels for W on Tuesday 2026-09-15 at 06:40, 06:50, 07:00, 07:02, 07:11 and 07:12, plus the next daily ramp time\n6. One bedside-use board with an evening E1 scene at manual level 4, a morning W scene immediately after the 07:02 snooze press, and a dimensioned placement inset locating the lamp, reserved area, cable and right/front hand approach\n\nAcceptance:\n- The complete-product board shows all four specified views of one lamp, its actual dimensions within 180 W × 150 D × 210 H mm, the DAYREST name and the three specified material finishes. The other five boards retain its diffuser, control locations, openings, seams and support arrangement.\n- The assembly and light-path board identifies one each of L01, A01, C01, P01, E01, B01 and M01 at their attached dimensions, including E01's 26 mm full projection. Its routes show P01 connected to C01 and C01 connected to L01, A01, E01, B01 and M01; its section shows a shielded LED light path, an exterior sound path and accessible rear USB connection. Custom parts carry a separate identification from the seven modules.\n- The physical-operation board dimensions B01's contact area at least 28 mm across its shortest usable dimension and distinguishes it from E01 by shape and location. E1 starts Monday 2026-09-14 at 21:30 with stored wake 07:00 and remembered manual level 3, then shows on at 3, one clockwise detent to 4 and off remembering 4. Both setting branches start independently at 07:00, use a 3-second E01 hold, edit the hour to 08, advance with a short press and edit minutes to 10 with two clockwise detents; S-CANCEL ends with a 3-second hold retaining 07:00, while S-COMMIT ends with a short press storing 08:10. Captions give the edited values and the full retained or confirmed time beside the visible confirmation cue.\n- The alarm-mode board repeats the exterior legends OFF, LIGHT and LIGHT + TONE in left, center and right positions. At 07:00, OFF shows the schedule disarmed, LIGHT shows target wake light with the alarm tone silent, and LIGHT + TONE shows target wake light with tone active. The physical-operation board identifies speech as requested setting feedback, including when M01 is LIGHT.\n- The morning-sequence board follows the unchanged 07:00 baseline: ramp starts at 06:40, continues at 06:50, reaches target light with tone at 07:00, turns both off after the short B01 press at 07:02, restores both immediately at 07:11, and turns both off after the 2-second B01 hold at 07:12. It labels M01 as LIGHT + TONE, stored wake as 07:00 and the next daily ramp as Wednesday 2026-09-16 at 06:40.\n- The bedside-use board places the whole footprint within x=180..380, y=60..240 on the 400 W × 300 D mm top at 520 mm height, preserves the glass/book area x=20..130, y=70..210 and routes the rear cable through y=240..300. Both scenes use the same controls and LIGHT + TONE position; the evening scene shows manual level 4, and the morning scene shows hand contact on B01 with light and tone off until 07:11. The hand approaches from the right/front, and the bed-level view shows the diffuser shielding the emitter.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/component-envelopes.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "01c74fb32250ad279e6074a11623b34bf3dd0752df7f5e545a216c6fe695e69a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-relationship.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "aa62dc9161e693f7520961448f224c6e2141e6d957d7fceb6241a5f113de2780"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-material-01/bedside-atmosphere.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "7c53d45b6cce2253f2434c62e8f5e45a5584964439c0ee884a6bb8962ac62492"
+    }
+  ]
+}

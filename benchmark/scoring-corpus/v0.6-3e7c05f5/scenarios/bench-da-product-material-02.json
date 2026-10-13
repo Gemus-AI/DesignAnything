@@ -1,0 +1,172 @@
+{
+  "id": "bench-da-product-material-02",
+  "title": "CIRCA — A countertop food-scrap dryer for a compact kitchen, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# CIRCA — client functional components and use conditions\n\n## Product\n\n- Product name: CIRCA.\n- Product: complete countertop food-scrap mixing and drying appliance.\n- Household: one to two people.\n- Product elements: enclosure, loading lid, bucket grip, interface, service doors, feet, ventilation openings and material/finish allocation.\n- Supplied identity: B1 bucket body, circular rim, flat base, underside coupling and attached internal mixing feature.\n- Open integration choices: whole-machine silhouette, module placement within fixed relationships, original CIRCA typography, controls, grip, lid mechanism, body partitions, filter side and air-opening positions.\n- Outer enclosure: finely textured PC/ABS, #D8D1C5.\n- B1 bucket: brushed 304 stainless steel.\n- Lid gasket: removable silicone.\n\n## Functional sequence\n\n| Step | Component or state | Condition and action |\n| --- | --- | --- |\n| Loading | B1, Idle | Selected scraps enter the seated bucket through the open lid; heating and drive off. |\n| Start request | B1, lid, E1 | Bucket seated and lid closed enable Start. |\n| Processing | Running, C1, D1 | Lid locked; internal stirrer mixes while C1 supplies controlled drying heat. |\n| Exhaust | C1, F1, exterior outlet | Moist exhaust travels from C1 through F1 to the designed outlet. |\n| Cooling | Cooling | Heating and drive stop; controlled cooling continues; lid locked. |\n| Removal | Ready | Machine stopped and cool; normal lid opening and bucket removal available. |\n\n- Power arrangement: rear cord interface.\n- Processing arrangement: contained mixing and drying with a ducted exhaust path.\n- Routine user access: loading lid, removable B1, lid gasket and F1 service door.\n- Drive and electronics access: technician-only panel.\n- Output handling: processed material emptied into a generic unbranded receptacle outside the appliance.\n\n## B1 removable bucket\n\n| Property | Value |\n| --- | --- |\n| Quantity | 1 |\n| Body | Straight-sided metal bucket; circular rim; flat base |\n| Body envelope | Diameter 180 × 170 H mm |\n| Maximum removal / stowed-grip envelope | Diameter 190 × 180 H mm |\n| Free internal cylindrical envelope | Diameter 160 × 145 usable H mm, before mixing feature and headspace |\n| Nominal allowed scrap fill | 2.0 L |\n| Fill marking | MAX 2.0 L, inside the bucket below the rim; vertical position open |\n| Grip | Designed lifting grip; stows within diameter 190 × 180 H mm envelope; handling after cooling |\n| Drive interface | Sealed underside coupling |\n| Mixing feature | Supplied internal feature attached to B1 throughout removal, emptying and cleaning |\n| Vessel role | Single normal food-loading and residue-removal vessel |\n\n## Fixed component envelopes\n\nAll dimensions are in mm and contain ordinary fixed projections.\n\n| ID | Quantity | Envelope | Relationship and orientation |\n| --- | --- | --- | --- |\n| B1 | 1 | Body diameter 180 × 170 H; removal envelope diameter 190 × 180 H | Nested inside the intended open well of C1; shared vertical axis |\n| C1 | 1 | Diameter 210 × 200 H | Upright cylindrical thermal cradle enclosing seated B1; diameter 25 takeoff on upper side; takeoff clocking open |\n| D1 | 1 | 90 W × 100 D × 70 H | Upright, immediately below C1 on the same vertical shaft axis; 6 mm gap between external envelopes |\n| F1 | 1 | 60 W × 70 D × 120 H | Upright; rotation about vertical axis available; opposite diameter 25 ports centered on front/back 60 × 120 faces |\n| E1 | 1 | 80 × 55 × 20 | Rigid cuboid rotation available; at least 10 mm clear of C1 |\n\n- Module geometry: supplied dimensions and handedness.\n- Integration parts: custom enclosure pieces, ductwork, seals, fasteners and lifting grip.\n- B1/C1 overlap: functional nesting inside C1's open well.\n\n## Air path and interfaces\n\n| Interface | Geometry or access |\n| --- | --- |\n| Exhaust | Diameter 25 clear route from C1 to F1 and then to exterior |\n| C1 takeoff | Upper side, angular position open |\n| Duct clearance | Route outside bucket, drive and electronics volumes |\n| Service-base cooling | Separate visible cooling-air intake, distinct from exhaust outlet |\n| E1 separation | At least 10 mm clear of C1 |\n| F1 routine access | Front or either side of appliance |\n| F1 extraction | Straight corridor at least 140 mm beyond its access face; cassette fully withdrawn |\n| Rear power cord | Rear exit and 40 mm clear bend zone |\n\n## Loading and removal case\n\n- Example batch: 1.0 L of drained vegetable peelings and cut fruit scraps.\n- Nominal use limit: 2.0 L including mixing headspace.\n- Example feed condition: drained plant scraps, with free liquids, oil, hard bones, shells, cutlery and other non-food objects outside the feed selection.\n- Loading condition: Idle, B1 seated, lid open, heating and drive off.\n- Start condition: B1 seated and lid closed.\n- Running and Cooling access condition: lid locked; bucket retained inside the machine.\n- Normal removal condition: Ready, stopped and cool.\n- Bucket extraction allowance: upright vertical lift of at least 200 mm above the seated position, with deployed grip and hand clearance.\n- Emptying destination: separate generic unbranded receptacle outside the appliance.\n\n## Cleaning and filter access\n\n- Maintenance condition: Unplugged after cooling.\n- Bucket sequence: removal with attached mixing feature, emptying, separate hand washing away from the appliance, drying, reseating.\n- Water-cleaning boundary: removable B1 separated from the appliance body; enclosure, C1, D1, F1 and E1 remain dry.\n- Filter access: separate accessible service door and straight corridor, F1 fully withdrawn.\n- Routine user-service parts: B1, removable lid gasket and F1.\n- Internal drive and electronics: retained behind a technician-only panel during routine maintenance.\n- Technical exploded scope: supplied functional components and designed integration parts.\n\n## Kitchen placement envelope\n\n| Element | Value |\n| --- | --- |\n| Countertop bay | 600 W × 600 D mm, level |\n| Rear boundary | Wall at countertop back edge |\n| Countertop height | 900 mm above floor |\n| Upper cabinet projection | 330 mm from rear wall |\n| Upper cabinet front | 270 mm behind countertop front |\n| Upper cabinet underside | 620 mm above countertop |\n| Closed appliance maximum | 300 W × 350 D × 360 H mm, including feet and closed lid |\n| Actual appliance dimensions | Selected dimensions stated on final boards |\n| Side body margins | At least 50 mm from each bay boundary |\n| Rear body margin | At least 80 mm from wall |\n| Front body margin | At least 60 mm from countertop front |\n| Cord bend zone | 40 mm within rear clearance |\n| Operating envelope | Actual lid sweep, at least 200 mm upright B1 lift and at least 140 mm straight F1 extraction corridor |\n| Overlay registration | Identical appliance dimensions and counter position in closed and full-operation overlays |\n| Surrounding geometry | Fixed wall, countertop and upper cabinet |\n| Decorative treatment | Kitchen colors and camera viewpoint open |\n\n## Exact printed wording\n\n| Wording | Location or purpose |\n| --- | --- |\n| CIRCA | Product/service name in original typography, printed on appliance body |\n| MAX 2.0 L | B1 interior below rim and controls/materials detail |\n| Start | Physical control or interface action |\n| Idle | Operating snapshot |\n| Running | Operating snapshot |\n| Cooling | Operating snapshot |\n| Ready | Operating snapshot |\n| Close lid | Blocked-start snapshot |\n| Install bucket | Blocked-start snapshot |\n| Unplugged | Maintenance condition and controls/materials annotation |\n\n- Status expression: exact text and a distinct symbol; color as supporting information.\n- Interface set: six alternative operating snapshots of the same appliance, plus a maintenance annotation.\n- Control type, location and symbols: design choices.\n- Warning placement: controls board and relevant usage views.\n\n## Six named operating snapshots\n\n| Exact display | Required behavior |\n| --- | --- |\n| Idle | Bucket seated; lid may open for loading. Start becomes available only after closing. Heater/drive off. |\n| Running | Bucket seated; lid locked; heating/mixing active. Bucket retained throughout the cycle. |\n| Cooling | Bucket seated; lid remains locked; heater/drive off; controlled cooling active. |\n| Ready | Heater/drive off; cool for normal opening and bucket removal. |\n| Close lid | Start requested with lid open and bucket seated; start blocked; heater/drive stay off. |\n| Install bucket | Start requested without B1, lid closed; start blocked; heater/drive stay off. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# CIRCA — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | closed-appliance | Closed appliance views and kitchen placement | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | loading-state | Open lid and food loading | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | bucket-removal | Bucket removal and operation clearances | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | maintenance-state | Bucket cleaning and filter replacement | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | technical-exploded | Component integration and technical exploded view | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | controls-materials | Operating controls and material finishes | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: components.en.md",
+            "config": {
+              "text": "# CIRCA — given functional components\n\nNominal component dimensions in mm; separate schematic scales and open whole-machine layout.\n\n| ID | Component | Envelope (mm) | Fixed relations |\n| --- | --- | --- | --- |\n| B1 | Removable bucket | Body diameter 180 × 170 H; circular rim, flat base | Removal / stowed-grip envelope diameter 190 × 180 H. Inner envelope diameter 160 × 145 usable H. MAX 2.0 L use limit includes mixing headspace. Bottom coupling; supplied mixing feature attached to B1. |\n| C1 | Thermal cradle | Envelope diameter 210 × 200 H; open well for B1 | B1 and C1 share a vertical axis. Diameter 25 exhaust takeoff on the upper side; clocking open. |\n| D1 | Drive module | 90 W × 100 D × 70 H | Directly below C1 on the same vertical axis. Coupling gap below C1: 6 mm. |\n| F1 | Filter cassette | 60 W × 70 D × 120 H; upright | Opposite diameter 25 ports centered on the 60 × 120 faces. Front or side user access; straight extraction corridor at least 140 mm beyond the access face. |\n| E1 | Electronics | 80 × 55 × 20; rigid rotation allowed | At least 10 mm clear of C1. Technician-only access; dry internal compartment. |\n\n- Component quantities: one each of B1 / C1 / D1 / F1 / E1.\n- F1 and E1 locations: open within the listed relationships.\n- Component envelopes: ordinary fixed projections contained within stated dimensions.\n- C1/D1 orientation: upright, common vertical shaft axis.\n- B1/C1 relationship: bucket nested within the cradle's intended open well.\n- Integration parts: body, lid, grip, ducts, doors, controls, seals and fasteners.\n- Supplied geometry: component envelopes and interfaces.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: kitchen-envelope.en.md",
+            "config": {
+              "text": "# CIRCA — empty client kitchen bay\n\nKitchen geometry in mm; empty countertop bay.\n\n| Element | Value |\n| --- | --- |\n| Bay top view | 600 W × 600 D, rear wall at the back, counter front at the front |\n| Counter depth | 600 |\n| Counter height above floor | 900 |\n| Clear height above counter | 620 |\n| Wall cabinet projection | 330; cabinet front is 270 behind the counter front |\n| Closed product maximum | 300 W × 350 D × 360 H |\n| Body margins | Sides at least 50; rear at least 80; front at least 60 |\n| Operating allowances | Actual lid; 200 bucket lift; 140 filter withdrawal |\n| Rear cord bend zone | 40 |\n\n- Counter surface: level.\n- Closed product envelope: feet and closed lid included.\n- Overlay relationship: identical appliance dimensions and product position in closed and full-operation overlays.\n- Operating paths: clear of wall, cabinet and countertop.\n- Cord bend zone: contained within rear body clearance.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: component-envelopes.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kitchen-bay.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: kitchen-atmosphere.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: bucket-identity.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "CIRCA | A countertop food-scrap dryer for a compact kitchen\n\nWe are developing CIRCA for one-to-two-person households that need somewhere to hold and process daily preparation scraps on a small kitchen counter. Design the complete appliance: enclosure, loading lid, bucket grip, controls, service doors, feet and ventilation. Our process mixes and dries scraps in the removable B1 bucket, seated inside the heated C1 cradle and driven by D1 below it. Exhaust travels through F1; E1 controls the sequence. The nominal fill limit is 2.0 L, and the loading example is 1.0 L of drained vegetable peelings and cut fruit scraps. Heating and mixing begin with the bucket seated and lid closed; the lid remains locked through Running and Cooling, with normal opening and removal available in Ready.\n\nThe B1 body is diameter 180 × 170 H mm, within a diameter 190 × 180 H mm removal and stowed-grip envelope. Retain its circular rim, flat base, bottom coupling and attached mixing feature. Develop the whole machine within 300 W × 350 D × 360 H mm, including feet and closed lid, and state its actual dimensions. The kitchen bay is 600 W × 600 D mm, with the countertop 900 mm above the floor and the upper cabinet underside 620 mm above the counter. Resolve the opening lid, a 200 mm vertical bucket lift and a 140 mm straight filter withdrawal in that bay. Use a finely textured PC/ABS outer enclosure in #D8D1C5, a brushed 304 stainless steel bucket and a removable silicone lid gasket. Print the product name \"CIRCA\" on the appliance and \"MAX 2.0 L\" inside B1 below the rim. The interface wording is fixed to Start, Idle, Running, Cooling, Ready, Close lid and Install bucket; Unplugged identifies the maintenance condition.\n\nAudience: our product team and appliance development partner, for selection of the complete product proposal and preparation of its mechanical development brief.\n\nInputs (attached): 01-client-facts.en.md contains the process, use conditions, component relationships and exact interface wording. 02-delivery-catalog.en.md lists the six final files and their proportions, formats and stages. components.en.md records the five supplied components and their dimensions and interfaces. kitchen-envelope.en.md records the counter, cabinet and operating clearances. component-envelopes.png diagrams the separate component envelopes and fixed relationships. kitchen-bay.png supplies the empty bay geometry in plan and side elevation. bucket-identity.png records the existing bucket's recognizable body, rim, base and underside coupling. kitchen-atmosphere.png provides warm, everyday kitchen materials and lighting.\n\nDeliverables:\n1. One closed-appliance board with front, right and top orthographic views, a three-quarter view, actual overall dimensions and a kitchen placement scene locating the rear cord, ventilation openings and body margins\n2. One loading-state board with the lid open, B1 seated, the designed grip stowed, a hand loading the 1.0 L example batch and an enlarged Idle interface with the transition to Start after closing\n3. One bucket-removal board with the Ready condition, the deployed grip, an upright lift of at least 200 mm, hand clearance, emptying into an external unbranded receptacle and dimensioned closed-position and full-operation overlays of the same kitchen placement\n4. One maintenance-state board with the Unplugged condition, the filter-service door open, F1 fully withdrawn along its straight corridor, B1 with its attached mixing feature being hand washed separately, drying before reseating and the removable lid gasket\n5. One technical exploded board identifying one each of B1, C1, D1, F1 and E1, their dimensioned installed envelopes and assembly relationships, the enclosure and access panels, the bucket coupling, the exhaust route, the separate cooling intake and F1's user replacement direction\n6. One controls and materials board with six interface snapshots labeled Idle, Running, Cooling, Ready, Close lid and Install bucket, the Start control, the Unplugged maintenance annotation, the bucket fill-mark detail and material and finish callouts for the enclosure, bucket and gasket\n\nAcceptance:\n- The closed-appliance and technical exploded boards describe the same machine within 300 W × 350 D × 360 H mm. Dimension B1's diameter 180 × 170 H mm body and diameter 190 × 180 H mm removal envelope, C1 at diameter 210 × 200 H mm, D1 at 90 W × 100 D × 70 H mm, F1 at 60 W × 70 D × 120 H mm and E1 at 80 × 55 × 20 mm. Show B1 nested in C1, D1 immediately below on their shared vertical axis with a 6 mm gap, F1 upright and E1 at least 10 mm clear of C1.\n- The closed-appliance scene and bucket-removal overlays use the same actual product dimensions and counter position in the 600 W × 600 D mm bay. Dimension side margins of at least 50 mm, rear clearance of at least 80 mm and front clearance of at least 60 mm, with the 40 mm rear cord bend zone inside the rear clearance. Show the cabinet projecting 330 mm from the wall, its front 270 mm behind the counter front and its underside 620 mm above the counter. Trace the actual lid sweep, 200 mm upright bucket lift with hand clearance and 140 mm filter corridor clear of the cabinet, wall and counter.\n- The loading, bucket-removal, maintenance and controls boards use matching openings, grip geometry and interface locations. Loading shows Idle with B1 seated and 1.0 L below the MAX 2.0 L mark; bucket removal shows Ready. Maintenance shows Unplugged after cooling, hand washing of B1 away from the body and a dry bucket before reseating, with the mixing feature remaining attached to B1.\n- The technical exploded and maintenance boards give F1 a separate front or side service door and a straight extraction corridor of at least 140 mm beyond its access face. The exploded board locates its opposite diameter 25 ports centrally on its 60 × 120 mm faces, traces a diameter 25 clear exhaust connection from C1 through F1 to the exterior, labels the separate cooling-air intake and shows E1 and D1 behind a technician-only panel. The duct route clears B1, D1 and E1.\n- The controls board contains all six named snapshots and the Start control. Idle shows heating and drive off; Running shows the lid locked with heating and mixing active; Cooling shows the lid locked, heating and drive off and cooling active; Ready shows normal opening available after cooling. Close lid depicts a blocked start with B1 seated and the lid open; Install bucket depicts a blocked start with B1 absent and the lid closed. Both blocked states show heating and drive off. Pair each status with its text and a distinct symbol, and label maintenance Unplugged.\n- The closed-appliance, loading, bucket-removal and maintenance boards carry CIRCA on the same body location. The loading and controls boards show MAX 2.0 L below B1's rim. The controls board identifies finely textured PC/ABS in #D8D1C5, brushed 304 stainless steel and a removable silicone lid gasket; the other five boards apply these materials to the same parts.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/component-envelopes.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "da7e4ffee98cd1a63411ad3f965845d7e731733bcf6c7336f9d5f899e23a1a32"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-bay.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "51b7bdb7b57f5add3ad78989ff936e03bdd4aa2d4921977b8e29f8b635fefb77"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/kitchen-atmosphere.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "9ccd54dd94ee135657470fe4b19f8255ff4784f1a198b8c6534eef2ea06348b8"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-product-material-02/bucket-identity.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "a825e7b37fcd333b995690beba5fd46c256745fa2341f5516a4818100858a9fb"
+    }
+  ]
+}

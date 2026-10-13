@@ -1,0 +1,1116 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-architecture-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "accommodation-schedule",
+      "label": "Accommodation and construction schedule",
+      "description": "A one-page schedule of eight rooms with areas, heights, adjacencies, floor levels and the glulam construction facts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "site-integration",
+      "label": "Site integration plan",
+      "description": "A site plan locating the building and its connections within the fixed terminus geometry.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ground-floor",
+      "label": "Ground-floor plan",
+      "description": "A dimensioned ground-floor plan with eight room records, furniture and passenger and driver capacities.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "roof-plan",
+      "label": "Roof plan",
+      "description": "A roof plan with levels, drainage direction, roof projections and the primary structural span.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "waiting-section",
+      "label": "Waiting room and apron section",
+      "description": "A dimensioned section through the waiting room, boarding platform and bus apron.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "driver-section",
+      "label": "Driver room and staff path section",
+      "description": "A dimensioned section through the driver room and north staff path with exposed glulam.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "four-elevations",
+      "label": "Four building elevations",
+      "description": "One sheet of four elevations with entrance wording, openings, levels and material divisions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "movement-boundaries",
+      "label": "Vehicle and pedestrian boundaries",
+      "description": "A boundary drawing of bus bays, turning radii, charging access and passenger and staff routes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entrance-canopy-detail",
+      "label": "Entrance and canopy detail",
+      "description": "A detail sheet of the platform threshold, canopy projection and glulam, brick and aluminium junctions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "morning-peak",
+      "label": "Morning peak arrival perspective",
+      "description": "An eye-level perspective of morning arrivals and boarding with the signed passenger entrance.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "off-peak-waiting",
+      "label": "Off-peak waiting perspective",
+      "description": "An eye-level perspective of sheltered waiting during off-peak operation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "driver-break",
+      "label": "Driver break interior perspective",
+      "description": "An occupied interior perspective of the four-seat driver room and its exposed glulam.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "arrival-video",
+      "label": "Arrival-to-waiting video",
+      "description": "A 10-second pedestrian journey from the west entrance to the signed public entrance and waiting room.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "operations-presentation",
+      "label": "Building and operations presentation",
+      "description": "A presentation of at least eight pages reusing the schedule, drawings, detail and three occupied perspectives.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "NORTHFIELD TERMINUS",
+      "scope": {
+        "slots": [
+          "four-elevations",
+          "morning-peak",
+          "arrival-video",
+          "operations-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "entrance-descriptor",
+      "kind": "text-verbatim",
+      "text": "Waiting and travel information",
+      "scope": {
+        "slots": [
+          "four-elevations",
+          "morning-peak",
+          "arrival-video"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "NORTHFIELD TERMINUS",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "site-and-circulation-system",
+      "slots": [
+        "site-integration",
+        "ground-floor",
+        "movement-boundaries"
+      ],
+      "items": [
+        {
+          "item": "Building position, public and staff entrance locations, platform access and route connections agree across the three drawings.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The fixed site geometry, charging access, continuous bicycle track and bus gates are retained, and pedestrian/building footprints remain outside the southern apron and complete outer turning disc.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "building-drawings-and-occupied-views",
+      "slots": [
+        "roof-plan",
+        "waiting-section",
+        "driver-section",
+        "four-elevations",
+        "entrance-canopy-detail",
+        "morning-peak",
+        "off-peak-waiting",
+        "driver-break"
+      ],
+      "sourceSlots": [
+        "ground-floor",
+        "accommodation-schedule"
+      ],
+      "items": [
+        {
+          "item": "Roof form, openings, entrance positions, structural locations and material divisions describe one building consistent with the floor plan and scheduled accommodation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The single-storey building uses the specified floor and roof limits, 6000 mm primary glulam span, exposed timber in Waiting and Driver rooms, brick infill and standing-seam aluminium roofing.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The morning, off-peak and driver-break images show distinct occupied scenes within the same resolved building and site design.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "NORTHFIELD TERMINUS"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "site-integration",
+      "ground-floor",
+      "roof-plan",
+      "waiting-section",
+      "driver-section",
+      "four-elevations",
+      "movement-boundaries",
+      "entrance-canopy-detail",
+      "morning-peak",
+      "off-peak-waiting",
+      "driver-break"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not impose an unstated architectural style, roof form, engineering certification or regulatory compliance requirement."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "accommodation-schedule",
+        "site-integration",
+        "ground-floor",
+        "roof-plan",
+        "waiting-section",
+        "driver-section",
+        "four-elevations",
+        "movement-boundaries",
+        "entrance-canopy-detail",
+        "morning-peak",
+        "off-peak-waiting",
+        "driver-break",
+        "operations-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "site-integration",
+        "ground-floor",
+        "roof-plan",
+        "waiting-section",
+        "driver-section",
+        "four-elevations",
+        "movement-boundaries",
+        "entrance-canopy-detail",
+        "morning-peak",
+        "off-peak-waiting",
+        "driver-break"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-accommodation-schedule",
+      "requirementId": "R-format-accommodation-schedule",
+      "method": "artifact-property",
+      "targetSlots": [
+        "accommodation-schedule"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-site-integration",
+      "requirementId": "R-format-site-integration",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-integration"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ground-floor",
+      "requirementId": "R-format-ground-floor",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ground-floor"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-roof-plan",
+      "requirementId": "R-format-roof-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "roof-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-waiting-section",
+      "requirementId": "R-format-waiting-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "waiting-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-driver-section",
+      "requirementId": "R-format-driver-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "driver-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-four-elevations",
+      "requirementId": "R-format-four-elevations",
+      "method": "artifact-property",
+      "targetSlots": [
+        "four-elevations"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-movement-boundaries",
+      "requirementId": "R-format-movement-boundaries",
+      "method": "artifact-property",
+      "targetSlots": [
+        "movement-boundaries"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-canopy-detail",
+      "requirementId": "R-format-entrance-canopy-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-canopy-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-morning-peak",
+      "requirementId": "R-format-morning-peak",
+      "method": "artifact-property",
+      "targetSlots": [
+        "morning-peak"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-off-peak-waiting",
+      "requirementId": "R-format-off-peak-waiting",
+      "method": "artifact-property",
+      "targetSlots": [
+        "off-peak-waiting"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-driver-break",
+      "requirementId": "R-format-driver-break",
+      "method": "artifact-property",
+      "targetSlots": [
+        "driver-break"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-arrival-video",
+      "requirementId": "R-format-arrival-video",
+      "method": "manual",
+      "targetSlots": [
+        "arrival-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-operations-presentation",
+      "requirementId": "R-format-operations-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "operations-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "schedule-completeness",
+      "requirementId": "R-schedule-completeness",
+      "method": "content",
+      "targetSlots": [
+        "accommodation-schedule"
+      ],
+      "criteria": "The schedule occupies one page and contains eight individually identifiable records: W-01 Waiting room 60 m²; I-01 Information 12 m²; D-01 Driver room 24 m²; K-01 Kitchenette 8 m²; T-01 Accessible toilet 8 m²; T-02 Staff toilet 4 m²; S-01 Store 4 m²; C-01 Circulation 24 m². Each record states Ground floor, ±0.000 and 3000 mm clear height. Adjacencies match the fact sheet: Waiting connects to the public entrance, Information and Circulation; Information adjoins Waiting and overlooks both bays; Driver connects to the staff entrance, Kitchenette and Staff toilet; Kitchenette and Staff toilet adjoin Driver; Accessible toilet connects to public circulation; Store connects to staff circulation; Circulation includes public and staff portions with separate entrances. Areas total 144 m², with 24 m² covering both circulation portions together. Construction text specifies a 6000 mm primary glulam span and exposed timber inside Waiting and Driver rooms. Table styling may vary; missing, contradictory or duplicated records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "floor-room-records",
+      "requirementId": "R-floor-room-records",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor"
+      ],
+      "criteria": "The plan visibly identifies all eight scheduled spaces with the required ID, name and net area: W-01 60, I-01 12, D-01 24, K-01 8, T-01 8, T-02 4, S-01 4 and C-01 24 m². Every room record identifies Ground floor, ±0.000 and 3000 mm clear height, either within its label or through an unambiguous room-record table on the sheet. The circulation allowance is shared between public and staff portions. Compare against the schedule while also enforcing these fixed client values; repeating a schedule error does not pass. Label placement and room arrangement may vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "accommodation-schedule"
+      ]
+    },
+    {
+      "id": "presentation-written-content",
+      "requirementId": "R-presentation-written-content",
+      "method": "content",
+      "targetSlots": [
+        "operations-presentation"
+      ],
+      "criteria": "Count at least eight pages and verify the exact project name on the opening page. Read all eight room records and confirm W-01 Waiting room 60 m², I-01 Information 12 m², D-01 Driver room 24 m², K-01 Kitchenette 8 m², T-01 Accessible toilet 8 m², T-02 Staff toilet 4 m², S-01 Store 4 m² and C-01 Circulation 24 m², each identifying Ground floor, ±0.000 and 3000 mm clear height. Confirm a 6000 mm primary span and the decision to expose glulam in Waiting and Driver rooms. These facts must remain readable alongside the incorporated design material; their order and page distribution may vary.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "accommodation-schedule"
+      ]
+    },
+    {
+      "id": "fixed-site-geometry",
+      "requirementId": "R-fixed-site-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "site-integration",
+        "movement-boundaries"
+      ],
+      "criteria": "Read dimensions, coordinate labels and relative geometry in both drawings using the southwest origin, x east and y north. Require the site rectangle (0,0)–(60000,40000); B-01 x=4000–19000, y=19000–22500 and B-02 x=20000–35000, y=19000–22500, both 15000 × 3500 mm with west-facing bus orientation; turning centre (48000,22000), inner radius 7000 and outer radius 12000 mm. Preserve CH-01 x=37500–38500, y=36500–37500; CH-02 x=43500–44500, y=36500–37500; CS-01 x=36000–46000, y=35000–39000 with service access from the east side of the turning reserve. Retain the north wall along y=40000 and east wall along x=60000; south exit x=6000–14000 and entry x=46000–54000, each 8000 mm wide; bicycle track x=0–60000, y=-4000–-2000, continuous across both gate approaches. The southern apron through y=22500 and the entire outer turning disc remain reserved, including the central island. Building and pedestrian footprints must not intrude into those areas; boarding meets their platform-edge boundary. Graphic styles may differ, but moved, missing or obstructed fixed features fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "entrance-routes-and-capacities",
+      "requirementId": "R-entrance-routes-and-capacities",
+      "method": "visual",
+      "targetSlots": [
+        "site-integration",
+        "ground-floor",
+        "movement-boundaries"
+      ],
+      "criteria": "Trace a continuous public route from the west pedestrian entrance through P-02 at x=0–35000, y=25500–28000 to the public building entrance and the platform P-01 at x=4000–35000, y=22500–25500. Both boarding points, (6500,22500) and (22500,22500), must be reachable along the platform. Trace a separate staff entrance connection to P-04 at x=2000–28000, y=38000–40000, retaining its connection through P-03 at x=2000–4000, y=28000–40000. Public and staff path widths are respectively 2500 and 2000 mm; the platform is 3000 mm wide. Entrance positions must agree across the drawings. Count 12 passenger seats, two wheelchair spaces, 10 recorded standing places and four driver seats on the furnished floor plan. Furniture arrangement may vary; missing capacity or disconnected routes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "building-envelope-levels-and-span",
+      "requirementId": "R-building-envelope-levels-and-span",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor",
+        "roof-plan",
+        "waiting-section",
+        "driver-section",
+        "entrance-canopy-detail"
+      ],
+      "criteria": "Correlate the building placement, roof outline, sections and canopy detail. Every building component and roof projection must remain within x=4000–28000 and y=28000–38000 mm, maintaining at least 4000 mm west and 2000 mm north setbacks. Drawings must agree on floor/platform datum ±0.000, apron -0.150 m, roof no higher than +4.200 m and primary glulam spans of 6000 mm. The building has one storey. Roof shape and internal arrangement may vary within these limits; an overhang outside the envelope, excess roof height or conflicting structural span fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "site-integration"
+      ]
+    },
+    {
+      "id": "construction-and-drawing-notation",
+      "requirementId": "R-construction-and-drawing-notation",
+      "method": "visual",
+      "targetSlots": [
+        "site-integration",
+        "ground-floor",
+        "roof-plan",
+        "waiting-section",
+        "driver-section",
+        "four-elevations",
+        "entrance-canopy-detail"
+      ],
+      "criteria": "The waiting and driver sections show visible timber beams or columns within their respective rooms. Sections and the detail establish a coherent glulam frame, brick infill and standing-seam aluminium roof assembly, with exposure demonstrated by drawn surfaces rather than an isolated material label. Check north arrows and graphic scales on each of the site, floor and roof plans, and graphic scales on each section and the elevation sheet. Symbols and graphic treatment may vary; concealed timber, incompatible assemblies or missing required orientation/scale aids fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "roof-plan-information",
+      "requirementId": "R-roof-plan-information",
+      "method": "visual",
+      "targetSlots": [
+        "roof-plan"
+      ],
+      "criteria": "The roof drawing communicates roof elevations, the direction water drains, the extent of overhangs and a legible 6000 mm primary span. Slopes or drainage arrows must describe an intelligible drainage direction consistent with the shown roof form. Roof geometry and drainage arrangement are open; omitted information or contradictory level and flow indications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "section-cut-coverage",
+      "requirementId": "R-section-cut-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "waiting-section",
+        "driver-section"
+      ],
+      "criteria": "The waiting section intersects the Waiting room, boarding platform and bus apron; the driver section intersects the Driver room and north staff path at locations compatible with the plans. Each section labels 3000 mm room clear height and applicable floor and roof levels and shows exposed glulam. The waiting cut demonstrates the platform/floor at ±0.000 and apron 150 mm lower; the driver cut demonstrates the north path at floor datum. Section direction and drawing composition may vary, but the required spatial relationships must be visible.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "ground-floor",
+        "site-integration"
+      ]
+    },
+    {
+      "id": "four-elevation-coverage",
+      "requirementId": "R-four-elevation-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "four-elevations"
+      ],
+      "criteria": "Identify four distinct, correctly oriented facade views on the sheet. Each communicates its openings, relevant levels and exterior material boundaries consistently with the plans. The applicable public-entrance view includes the required signage. Exterior brick, standing-seam aluminium roof covering and aluminium window/door frames must be identifiable through depiction or material annotation. View order and sheet layout may vary; a missing facade, inconsistent opening or contradictory material designation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "ground-floor",
+        "roof-plan"
+      ]
+    },
+    {
+      "id": "entrance-canopy-junction",
+      "requirementId": "R-entrance-canopy-junction",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-canopy-detail"
+      ],
+      "criteria": "The detail resolves the public threshold at platform datum, the canopy's projection, an exposed glulam connection and the interfaces with brick infill and the standing-seam aluminium roof layers. Drawn junctions or enlarged assembly views must communicate how these elements meet; a list of materials alone is insufficient. Connection design and roof layering may vary where the brief leaves them open, provided the detail agrees with the section and roof plan.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "waiting-section",
+        "roof-plan"
+      ]
+    },
+    {
+      "id": "three-operating-scenes",
+      "requirementId": "R-three-operating-scenes",
+      "method": "visual",
+      "targetSlots": [
+        "morning-peak",
+        "off-peak-waiting",
+        "driver-break"
+      ],
+      "criteria": "The morning image visibly depicts passengers arriving and boarding in morning conditions; the off-peak image depicts occupied waiting under shelter with a quieter operating scene; the driver image depicts staff taking a break inside the furnished Driver room. The driver view makes the room's seating and exposed timber understandable. People and camera positions may vary, and full design capacity need not be occupied. Repeating the same scene with only a changed label, omitting occupancy or replacing a required scene fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "public-entrance-signage",
+      "requirementId": "R-public-entrance-signage",
+      "method": "visual",
+      "targetSlots": [
+        "four-elevations",
+        "morning-peak"
+      ],
+      "criteria": "Both required phrases must be readable as signage physically associated with the passenger entrance in the applicable elevation and morning view. Typography, arrangement and sign construction may vary. Wording appearing only in a sheet title, image caption or unrelated facade location does not satisfy entrance placement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "perspectives-follow-drawings",
+      "requirementId": "R-perspectives-follow-drawings",
+      "method": "visual",
+      "targetSlots": [
+        "morning-peak",
+        "off-peak-waiting",
+        "driver-break"
+      ],
+      "criteria": "Match visible roof and building profiles, entrance positions, window/door openings, glulam locations and material boundaries to the drawings. Each image must depict the same one-storey building, with the Driver room corresponding to its planned interior. Allow perspective foreshortening, occlusion, changing activity and different lighting. Added storeys, relocated entrances, incompatible openings or a changed structural/material system fail. Morning and off-peak must each depict their own required operating scene.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "ground-floor",
+        "roof-plan",
+        "four-elevations",
+        "waiting-section",
+        "driver-section"
+      ]
+    },
+    {
+      "id": "arrival-video-journey-and-consistency",
+      "requirementId": "R-arrival-video-journey-and-consistency",
+      "method": "manual",
+      "targetSlots": [
+        "arrival-video"
+      ],
+      "criteria": "Review the complete video and verify a 10-second running time and a coherent pedestrian journey from the west pedestrian entrance along the platform-side route, through the public entrance and into waiting. The public entrance must visibly display NORTHFIELD TERMINUS and Waiting and travel information. Compare the depicted one-storey form, entrances, openings, structural positions and material divisions with the supplied drawings throughout the sequence. Camera movement and editing may vary; skipping required route stages, taking the staff or vehicle route, unreadable/missing entrance wording or changing the building design fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "site-integration",
+        "ground-floor",
+        "roof-plan",
+        "four-elevations",
+        "waiting-section"
+      ]
+    },
+    {
+      "id": "presentation-reuses-all-sources",
+      "requirementId": "R-presentation-reuses-all-sources",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "operations-presentation"
+      ],
+      "criteria": "Find visibly recognizable reuse of every listed source within the presentation, including both sections and all three occupied perspectives. Resizing, page recomposition and supplementary crops are allowed when source identity and relevant information remain legible. A textual mention, substitute design, illegibly reduced thumbnail or omission of any source does not count as reuse.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "accommodation-schedule",
+        "site-integration",
+        "ground-floor",
+        "roof-plan",
+        "waiting-section",
+        "driver-section",
+        "four-elevations",
+        "movement-boundaries",
+        "entrance-canopy-detail",
+        "morning-peak",
+        "off-peak-waiting",
+        "driver-break"
+      ]
+    },
+    {
+      "id": "schedule-guides-spatial-organisation",
+      "requirementId": "R-schedule-guides-spatial-organisation",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor"
+      ],
+      "criteria": "Check the plan against the schedule's spatial requirements: public entrance, Information and Circulation connect to Waiting; Information has a view toward both bays; the separate staff entrance serves Driver, which adjoins Kitchenette and Staff toilet; Accessible toilet is reached from public circulation and Store from staff circulation. Public and staff circulation portions together use the scheduled circulation allowance. Room shapes and arrangement may vary while preserving these relationships. Written adjacency claims contradicted by the doors, partitions or sightlines fail; export timestamps are not evidence of design sequence.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "accommodation-schedule"
+      ]
+    },
+    {
+      "id": "retained-yard-appearance",
+      "requirementId": "R-retained-yard-appearance",
+      "method": "visual",
+      "targetSlots": [
+        "site-integration",
+        "movement-boundaries",
+        "waiting-section",
+        "four-elevations",
+        "morning-peak",
+        "off-peak-waiting"
+      ],
+      "criteria": "Where retained yard elements are shown, preserve the fact sheet's dark asphalt and worn white bay markings, pale concrete platform with a 150 mm kerb above the apron, low concrete kerb and gravel central island, exposed grey concrete boundary walls and two upright grey metal charging cabinets on their concrete northeast service pad. Annotated views must not contradict the 2200 mm wall height above adjacent ground or 1800 mm cabinet height. The north development strip and existing pedestrian paths remain at platform datum. Drawing abstraction, lighting and view-dependent omission are allowed; visible replacement with incompatible surfaces, objects or levels fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-site-and-circulation-system",
+      "requirementId": "R-set-site-and-circulation-system",
+      "method": "visual",
+      "targetSlots": [
+        "site-integration",
+        "ground-floor",
+        "movement-boundaries"
+      ],
+      "criteria": "Building position, public and staff entrance locations, platform access and route connections agree across the three drawings. The fixed site geometry, charging access, continuous bicycle track and bus gates are retained, and pedestrian/building footprints remain outside the southern apron and complete outer turning disc.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-building-drawings-and-occupied-views",
+      "requirementId": "R-set-building-drawings-and-occupied-views",
+      "method": "visual",
+      "targetSlots": [
+        "roof-plan",
+        "waiting-section",
+        "driver-section",
+        "four-elevations",
+        "entrance-canopy-detail",
+        "morning-peak",
+        "off-peak-waiting",
+        "driver-break"
+      ],
+      "criteria": "Roof form, openings, entrance positions, structural locations and material divisions describe one building consistent with the floor plan and scheduled accommodation. The single-storey building uses the specified floor and roof limits, 6000 mm primary glulam span, exposed timber in Waiting and Driver rooms, brick infill and standing-seam aluminium roofing. The morning, off-peak and driver-break images show distinct occupied scenes within the same resolved building and site design.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "ground-floor",
+        "accommodation-schedule"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "building-in-occupied-views",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "ground-floor",
+      "subjectSlots": [
+        "morning-peak",
+        "off-peak-waiting",
+        "driver-break"
+      ],
+      "notes": "All three perspectives and the 10-second video follow the plans and elevations for the single-storey silhouette, entrances, openings, structural positions and material divisions; morning peak and off-peak appear as separate perspectives."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "scheduled-room-records",
+      "fromSlot": "accommodation-schedule",
+      "toSlots": [
+        "ground-floor",
+        "operations-presentation"
+      ],
+      "extract": [
+        "the eight room IDs, names and net areas",
+        "each room's floor designation, floor level and clear height"
+      ],
+      "notes": "The accommodation schedule, ground-floor plan and presentation repeat W-01 Waiting room 60 m², I-01 Information 12 m², D-01 Driver room 24 m², K-01 Kitchenette 8 m², T-01 Accessible toilet 8 m², T-02 Staff toilet 4 m², S-01 Store 4 m² and C-01 Circulation 24 m²; all eight records identify Ground floor, ±0.000 and 3000 mm clear height."
+    },
+    {
+      "id": "presentation-construction-facts",
+      "fromSlot": "accommodation-schedule",
+      "toSlots": [
+        "operations-presentation"
+      ],
+      "extract": [
+        "the ground-floor datum",
+        "the primary glulam span",
+        "the decision to expose glulam inside Waiting room and Driver room"
+      ],
+      "notes": "The presentation contains at least eight pages, prints \"NORTHFIELD TERMINUS\" on its opening page, and repeats the schedule's eight room names and areas, ±0.000 floor level, 6000 mm span and exposed glulam decision alongside the reused drawings and three perspectives."
+    }
+  ]
+}

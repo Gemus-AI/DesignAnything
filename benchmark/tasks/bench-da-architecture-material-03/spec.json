@@ -1,0 +1,1151 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-architecture-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "programme-specification",
+      "label": "Two-page programme specification",
+      "description": "A two-page programme specification recording eight rooms, retention commitments and operating hours.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "existing-retention-survey",
+      "label": "Existing-building survey and retention sheet",
+      "description": "One existing-building survey sheet locating the site, retained components and openings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "process",
+      "core": true
+    },
+    {
+      "id": "completed-site-plan",
+      "label": "Completed site plan",
+      "description": "One completed site plan relating the retained station, proposed extension and access routes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ground-floor-plan",
+      "label": "Dimensioned ground-floor plan",
+      "description": "One dimensioned ground-floor plan recording eight rooms and the retained structure.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "connection-section",
+      "label": "Section through the old and new connection",
+      "description": "One section through the Service Hall, D-02 and extension with levels and construction identified.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "south-east-elevations",
+      "label": "South and east elevation sheet",
+      "description": "One sheet containing south and east elevations with opening dimensions and material boundaries.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "roof-wall-junction",
+      "label": "New roof and retained wall junction detail",
+      "description": "One junction detail showing the new roof, independent glulam support and retained W-04.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "phase-one-operation",
+      "label": "Phase 1 construction and weekday operation",
+      "description": "One Phase 1 sheet showing extension construction beside the operating station and separated access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "phase-two-connection",
+      "label": "Phase 2 Sunday connection and Monday reopening",
+      "description": "One Phase 2 sheet showing the Sunday D-02 connection and Monday service reopening.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "completed-occupation",
+      "label": "Completed-occupation and quiet-route plan",
+      "description": "One occupation plan showing 20 shared places, 8 quiet places, sightlines and the separate quiet route.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entrance-perspective",
+      "label": "Completed public entrance perspective",
+      "description": "One eye-level entrance perspective showing the retained station, extension and fixed entrance wording.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "shared-quiet-perspective",
+      "label": "Shared and quiet interior perspective",
+      "description": "One eye-level interior perspective showing shared activity, quiet seating and their circulation relationship.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "extension-walkthrough",
+      "label": "Ten-second entrance-to-extension video",
+      "description": "One 10-second video following the route from the retained entrance into the completed extension.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "community-presentation",
+      "label": "Community extension presentation",
+      "description": "One presentation of at least 10 pages assembling the programme, architectural drawings, construction sequence and perspectives.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "COMMON HOURS",
+      "scope": {
+        "slots": [
+          "entrance-perspective",
+          "community-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "entrance-phrase",
+      "kind": "text-verbatim",
+      "text": "Time together, room to pause",
+      "scope": {
+        "slots": [
+          "entrance-perspective",
+          "community-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON HOURS",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-completed-building",
+      "slots": [
+        "completed-site-plan",
+        "ground-floor-plan",
+        "connection-section",
+        "south-east-elevations",
+        "roof-wall-junction",
+        "completed-occupation",
+        "entrance-perspective",
+        "shared-quiet-perspective"
+      ],
+      "sourceSlots": [
+        "existing-retention-survey",
+        "programme-specification"
+      ],
+      "items": [
+        {
+          "item": "All representations describe the same retained station and eastern extension, with compatible footprints, room relationships, D-02 connection, single-storey massing, roof profiles and opening positions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The completed building preserves the recorded existing fabric and levels, stays within the extension envelope and roof-height limit, and uses the specified materials in their applicable locations.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The occupation plan and interior perspective preserve the ground-floor plan's separate quiet route, visual connection, partitions and openings.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "continuous-operation-through-construction",
+      "slots": [
+        "phase-one-operation",
+        "phase-two-connection",
+        "completed-occupation"
+      ],
+      "sourceSlots": [
+        "existing-retention-survey",
+        "completed-site-plan",
+        "ground-floor-plan",
+        "programme-specification"
+      ],
+      "items": [
+        {
+          "item": "The construction phases and completed occupation use consistent retained-component locations, entrance positions and connection geometry.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The sequence preserves Monday–Saturday services and protected public areas, uses eastern worker access, confines connection work to Sunday 09:00–17:00 and enables Monday 09:00 reopening.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON HOURS"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "completed-site-plan",
+      "ground-floor-plan",
+      "connection-section",
+      "south-east-elevations",
+      "roof-wall-junction",
+      "phase-one-operation",
+      "phase-two-connection",
+      "completed-occupation",
+      "entrance-perspective",
+      "shared-quiet-perspective"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not rescore fixed room records, dimensions, retention coordinates, operating times or exact wording, and photorealistic lighting and material texture are not applicable to technical drawings."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "programme-specification",
+        "existing-retention-survey",
+        "completed-site-plan",
+        "ground-floor-plan",
+        "connection-section",
+        "south-east-elevations",
+        "roof-wall-junction",
+        "phase-one-operation",
+        "phase-two-connection",
+        "completed-occupation",
+        "entrance-perspective",
+        "shared-quiet-perspective",
+        "community-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "existing-retention-survey",
+        "completed-site-plan",
+        "ground-floor-plan",
+        "connection-section",
+        "south-east-elevations",
+        "roof-wall-junction",
+        "phase-one-operation",
+        "phase-two-connection",
+        "completed-occupation",
+        "entrance-perspective",
+        "shared-quiet-perspective"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-programme-specification",
+      "requirementId": "R-format-programme-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "programme-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-existing-retention-survey",
+      "requirementId": "R-format-existing-retention-survey",
+      "method": "artifact-property",
+      "targetSlots": [
+        "existing-retention-survey"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-completed-site-plan",
+      "requirementId": "R-format-completed-site-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "completed-site-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ground-floor-plan",
+      "requirementId": "R-format-ground-floor-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ground-floor-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-connection-section",
+      "requirementId": "R-format-connection-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "connection-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-south-east-elevations",
+      "requirementId": "R-format-south-east-elevations",
+      "method": "artifact-property",
+      "targetSlots": [
+        "south-east-elevations"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-roof-wall-junction",
+      "requirementId": "R-format-roof-wall-junction",
+      "method": "artifact-property",
+      "targetSlots": [
+        "roof-wall-junction"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-phase-one-operation",
+      "requirementId": "R-format-phase-one-operation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "phase-one-operation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-phase-two-connection",
+      "requirementId": "R-format-phase-two-connection",
+      "method": "artifact-property",
+      "targetSlots": [
+        "phase-two-connection"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-completed-occupation",
+      "requirementId": "R-format-completed-occupation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "completed-occupation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-perspective",
+      "requirementId": "R-format-entrance-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-shared-quiet-perspective",
+      "requirementId": "R-format-shared-quiet-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shared-quiet-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-extension-walkthrough",
+      "requirementId": "R-format-extension-walkthrough",
+      "method": "manual",
+      "targetSlots": [
+        "extension-walkthrough"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-community-presentation",
+      "requirementId": "R-format-community-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "community-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "complete-programme-record",
+      "requirementId": "R-complete-programme-record",
+      "method": "content",
+      "targetSlots": [
+        "programme-specification"
+      ],
+      "criteria": "Require two pages containing all eight room records: E-01 Service Hall 57 m², E-02 Staff Room 9.6 m², E-03 Toilets 11.6 m², E-04 Store 8.4 m², N-01 Shared Room 48 m², N-02 Quiet Room 18 m², N-03 Connecting Lobby 12 m² and N-04 Activity Store 6 m². Existing rooms have 3000 mm clear height, new rooms 3200 mm, and every floor is Ground, ±0.000. Capacities or provisions are respectively 20 activity places, 2 staff places, 2 existing cubicles with shared handwashing, existing service equipment, 20 activity places, 8 seated places, arrival and circulation, and shared activity equipment. Adjacencies must preserve E-01 access to D-01, E-02/E-03/E-04 and D-02; D-02 to N-03; N-03 to N-01 and a separate N-02 route; N-01 to N-04; and visibility between N-01 and N-02. Include retained C-01/C-02, W-01–W-04, R-01, P-01–P-03 and existing openings. Record Monday–Saturday 09:00–18:00 services, morning gathering 09:00–12:00, drop-in use 12:00–15:00, children/caregiver activities 15:00–18:00, Sunday connection 09:00–17:00 and Monday 09:00 reopening. Table styling and equivalent unit notation may vary; missing, substituted or contradictory records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ]
+    },
+    {
+      "id": "dimensioned-eight-room-plan",
+      "requirementId": "R-dimensioned-eight-room-plan",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor-plan"
+      ],
+      "criteria": "Show dimensioned room geometry and readable ID/name/area pairings for E-01 Service Hall 57 m², E-02 Staff Room 9.6 m², E-03 Toilets 11.6 m², E-04 Store 8.4 m², N-01 Shared Room 48 m², N-02 Quiet Room 18 m², N-03 Connecting Lobby 12 m² and N-04 Activity Store 6 m². Existing clear extents must remain E-01 x 8300–15800/y 4200–11800, E-02 x 4200–8200/y 4200–6600, E-03 x 4200–8200/y 6700–9600 and E-04 x 4200–8200/y 9700–11800, in mm. Identify retained components and connect the extension through the existing 2000 mm D-02 opening in W-04. New room shapes may vary within the envelope while meeting their areas and recorded adjacencies; relabelled rooms, incompatible dimensions or a substituted connection fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "presentation-room-records",
+      "requirementId": "R-presentation-room-records",
+      "method": "content",
+      "targetSlots": [
+        "community-presentation"
+      ],
+      "criteria": "The presentation must legibly repeat all eight programme ID/name/net-area combinations, whether in a schedule or readable reused drawings. Compare every record with the specification and the fixed client values; a missing room, swapped name, changed area or unreadable reproduction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "sourceSlots": [
+        "programme-specification"
+      ]
+    },
+    {
+      "id": "survey-and-plan-retention",
+      "requirementId": "R-survey-and-plan-retention",
+      "method": "visual",
+      "targetSlots": [
+        "existing-retention-survey",
+        "completed-site-plan",
+        "ground-floor-plan",
+        "phase-one-operation",
+        "phase-two-connection"
+      ],
+      "criteria": "Survey, site plan and ground-floor plan each need a north arrow and metric scale bar consistent with north along positive y. In the survey, ground-floor plan and both phase sheets, retain W-01 x 4000–16000/y 4000–4200, W-02 x 4000–4200/y 4000–12000, W-03 x 4000–16000/y 11800–12000 and W-04 x 15800–16000/y 4000–12000; retain 200 × 200 mm columns centred at (15900,4100) and (15900,11900). D-01 remains in W-01 at x 9000–11000 and D-02 in W-04 at y 7000–9000. The survey must also identify the site boundary, R-01, retained partitions P-01 x 8200–8300/y 4200–11800, P-02 x 4200–8200/y 6600–6700 and P-03 x 4200–8200/y 9600–9700, and openings S-01/S-02/I-01/I-02/I-03 at their recorded locations. Drawing scale and graphic conventions may differ; displaced or removed retained fabric, missing survey IDs or contradictory coordinates fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "section-levels-and-building-limits",
+      "requirementId": "R-section-levels-and-building-limits",
+      "method": "visual",
+      "targetSlots": [
+        "existing-retention-survey",
+        "completed-site-plan",
+        "connection-section",
+        "roof-wall-junction"
+      ],
+      "criteria": "The survey, section and junction must preserve R-01 with soffit +3.000 m and top +3.400 m, consistent with its 400 mm depth. The section must cut through E-01, D-02 and the extension, distinguish retained and new construction, and state 3000 mm existing clear height, 3200 mm new clear height and common finished floor ±0.000. Site plan and section must consistently contain the new building within x 16000–25000/y 4000–16000 and respect the +4.200 m roof-height limit. Section position and annotation style may vary while traversing the required spaces; altered roof levels, a floor step, an inadequate clear height or extension outside the limits fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "completed-site-and-access",
+      "requirementId": "R-completed-site-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "completed-site-plan"
+      ],
+      "criteria": "Distinguish the 28000 × 20000 mm site, existing footprint x 4000–16000/y 4000–12000, extension envelope x 16000–25000/y 4000–16000 and actual proposed footprint. The arrangement must preserve the 4000 mm southern setback and the envelope's 3000 mm eastern and 4000 mm northern setbacks. Locate the public footway on the south, entrance at D-01, approach x 9000–11000/y 0–4000 and construction gate at x 28000/y 14000–18000. Footprint design within the envelope may vary; confused boundaries, a relocated entrance or an incorrectly placed construction gate fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "elevations-and-opening-records",
+      "requirementId": "R-elevations-and-opening-records",
+      "method": "visual",
+      "targetSlots": [
+        "south-east-elevations"
+      ],
+      "criteria": "Provide identifiable south and east elevations with dimensions for represented openings and clear material transitions. Retained south openings must agree with D-01 at x 9000–11000, width 2000 mm and height 2200 mm; S-01 at x 5000–7000, width 2000 mm; and S-02 at x 12000–14500, width 2500 mm, both windows extending from 900 to 2100 mm above datum. D-01 retains its recessed glazed double-door form. Where D-02 is represented, preserve its 2000 mm width and 0–2200 mm vertical extent. New opening dimensions may vary consistently with the proposal; missing elevation directions, incorrect existing openings or indistinct material boundaries fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "roof-wall-junction-resolution",
+      "requirementId": "R-roof-wall-junction-resolution",
+      "method": "visual",
+      "targetSlots": [
+        "roof-wall-junction"
+      ],
+      "criteria": "Show a readable section of the new roof meeting retained W-04, with an identifiable independent glulam load path, exposed existing brick, a weather-sealing arrangement and a route for roof water to drain. The retained wall is 200 mm buff brick and the existing roof is 400 mm reinforced concrete. Detail geometry and drainage solution may vary; relying on the retained brick wall as the new roof's sole support, concealing the required exposed brick, or omitting the seal or drainage fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "construction-and-service-sequence",
+      "requirementId": "R-construction-and-service-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "phase-one-operation",
+        "phase-two-connection"
+      ],
+      "criteria": "Both sheets must label Monday–Saturday 09:00–18:00 public service access through D-01, protection of the existing building and forecourt x 4000–16000/y 0–4000, and worker access through the eastern gate at x 28000/y 14000–18000. Phase 1 must locate extension work east of the operating station while maintaining the public approach x 9000–11000/y 0–4000. Phase 2 must locate Sunday 09:00–17:00 connection work at D-02 and explicitly identify Monday 09:00 reopening. Graphic sequencing may vary; blocked operating areas during service hours, intersecting work access that prevents public use, wrong work location or incorrect times fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "presentation-retention-and-operation",
+      "requirementId": "R-presentation-retention-and-operation",
+      "method": "content",
+      "targetSlots": [
+        "community-presentation"
+      ],
+      "criteria": "The presentation must communicate weekday extension construction alongside Monday–Saturday 09:00–18:00 services, protected existing building and southern forecourt, public access through D-01, eastern worker access, Sunday D-02 connection work from 09:00–17:00 and Monday 09:00 reopening. Its reproduced retention drawings must preserve C-01/C-02, W-01–W-04 and D-01/D-02 at the recorded survey coordinates. Readable reused sheets or equivalent explanatory content are acceptable; an omitted phase, altered time, unavailable protected area or relocated retained component fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "sourceSlots": [
+        "existing-retention-survey",
+        "phase-one-operation",
+        "phase-two-connection"
+      ]
+    },
+    {
+      "id": "quiet-access-capacity-and-sightlines",
+      "requirementId": "R-quiet-access-capacity-and-sightlines",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor-plan",
+        "completed-occupation",
+        "shared-quiet-perspective"
+      ],
+      "criteria": "Trace a continuous N-03-to-N-02 route with at least 1500 mm unobstructed width in both plans, remaining clear of tables, games, occupied seating and Shared Room activity circulation. Count 20 usable activity places in N-01 and 8 seated places in N-02 on the occupation plan. Identify a credible intergenerational sightline between the rooms. The interior view must reproduce the plans' partition, openings and separate circulation arrangement. Furniture style and viewpoint may vary; insufficient places, a blocked or undersized quiet route, absent visual connection or contradictory partitions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "material-identification",
+      "requirementId": "R-material-identification",
+      "method": "visual",
+      "targetSlots": [
+        "connection-section",
+        "south-east-elevations",
+        "roof-wall-junction"
+      ],
+      "criteria": "Use legible labels or keyed material descriptions to identify retained exposed buff brick, exposed internal glulam posts and beams, exterior timber rainscreen and aluminium window frames wherever those elements occur in the drawings. Together the drawings must account for all four specified materials without contradictory assignments. Hatching and colours may vary; unexplained substitution, covered retained brick or concealed internal glulam fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "perspective-architectural-agreement",
+      "requirementId": "R-perspective-architectural-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-perspective",
+        "shared-quiet-perspective"
+      ],
+      "criteria": "Both images must use eye-level viewpoints and depict the completed proposal. The entrance view must show the public entrance and retained station in its extension context; the interior must show Shared Room, Quiet Room and connecting circulation. Compare visible single-storey volumes, roof shape, door/window locations and boundaries between buff brick, timber rainscreen, exposed glulam and aluminium framing against the architectural drawings. Lighting, furnishings and camera position may vary; an added storey, incompatible roof, moved opening or materially different construction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "ground-floor-plan",
+        "connection-section",
+        "south-east-elevations"
+      ]
+    },
+    {
+      "id": "walkthrough-route-and-consistency",
+      "requirementId": "R-walkthrough-route-and-consistency",
+      "method": "manual",
+      "targetSlots": [
+        "extension-walkthrough"
+      ],
+      "criteria": "Review the whole video for a 10-second journey beginning at the retained public entrance, passing through D-02 and arriving in the completed extension. The opening frame must visibly display COMMON HOURS and Time together, room to pause at that entrance with the specified spelling and capitalization. Throughout the journey, observable massing remains single-storey and roof profiles, openings, circulation and material boundaries agree with the drawings. Camera speed and framing may vary; incorrect duration, a substituted route, missing opening-frame wording or changing architecture fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "ground-floor-plan",
+        "connection-section",
+        "south-east-elevations",
+        "entrance-perspective"
+      ]
+    },
+    {
+      "id": "entrance-wording-placement",
+      "requirementId": "R-entrance-wording-placement",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-perspective"
+      ],
+      "criteria": "Both prescribed strings must be readable as signage physically located at the completed public entrance. Typography, sign construction and relative placement may vary; wording appearing only as an image caption, on an unrelated facade or away from the entrance fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "presentation-opening-page",
+      "requirementId": "R-presentation-opening-page",
+      "method": "content",
+      "targetSlots": [
+        "community-presentation"
+      ],
+      "criteria": "Require at least 10 pages and readable COMMON HOURS and Time together, room to pause on page one, with exact spelling and capitalization. Their typographic treatment may vary; either string appearing only on later pages or a presentation shorter than 10 pages fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ]
+    },
+    {
+      "id": "presentation-reuses-design-work",
+      "requirementId": "R-presentation-reuses-design-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "community-presentation"
+      ],
+      "criteria": "Every listed source must be visibly represented by recognizable, readable reused content within the presentation. Scaling, page composition and selective cropping are acceptable when the source's substantive information remains identifiable. Merely naming a deliverable, using an unreadable thumbnail, substituting unrelated artwork or omitting a source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "sourceSlots": [
+        "programme-specification",
+        "existing-retention-survey",
+        "completed-site-plan",
+        "ground-floor-plan",
+        "connection-section",
+        "south-east-elevations",
+        "roof-wall-junction",
+        "phase-one-operation",
+        "phase-two-connection",
+        "completed-occupation",
+        "entrance-perspective",
+        "shared-quiet-perspective"
+      ]
+    },
+    {
+      "id": "set-coherent-completed-building",
+      "requirementId": "R-set-coherent-completed-building",
+      "method": "visual",
+      "targetSlots": [
+        "completed-site-plan",
+        "ground-floor-plan",
+        "connection-section",
+        "south-east-elevations",
+        "roof-wall-junction",
+        "completed-occupation",
+        "entrance-perspective",
+        "shared-quiet-perspective"
+      ],
+      "criteria": "All representations describe the same retained station and eastern extension, with compatible footprints, room relationships, D-02 connection, single-storey massing, roof profiles and opening positions. The completed building preserves the recorded existing fabric and levels, stays within the extension envelope and roof-height limit, and uses the specified materials in their applicable locations. The occupation plan and interior perspective preserve the ground-floor plan's separate quiet route, visual connection, partitions and openings.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "existing-retention-survey",
+        "programme-specification"
+      ]
+    },
+    {
+      "id": "set-continuous-operation-through-construction",
+      "requirementId": "R-set-continuous-operation-through-construction",
+      "method": "visual",
+      "targetSlots": [
+        "phase-one-operation",
+        "phase-two-connection",
+        "completed-occupation"
+      ],
+      "criteria": "The construction phases and completed occupation use consistent retained-component locations, entrance positions and connection geometry. The sequence preserves Monday–Saturday services and protected public areas, uses eastern worker access, confines connection work to Sunday 09:00–17:00 and enables Monday 09:00 reopening.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/03-site-and-retention.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-material-03/04-rooms-and-operations.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "existing-retention-survey",
+        "completed-site-plan",
+        "ground-floor-plan",
+        "programme-specification"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "completed-station-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "ground-floor-plan",
+      "subjectSlots": [
+        "completed-site-plan",
+        "connection-section",
+        "south-east-elevations",
+        "completed-occupation",
+        "entrance-perspective",
+        "shared-quiet-perspective"
+      ],
+      "notes": "The two perspectives and video match the plans and elevations in single-storey massing, roof profiles, opening positions and material boundaries."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "programme-room-records",
+      "fromSlot": "programme-specification",
+      "toSlots": [
+        "ground-floor-plan",
+        "community-presentation"
+      ],
+      "extract": [
+        "the eight room IDs, room names and net areas"
+      ],
+      "notes": "The programme specification, ground-floor plan and presentation repeat E-01 Service Hall 57 m², E-02 Staff Room 9.6 m², E-03 Toilets 11.6 m², E-04 Store 8.4 m², N-01 Shared Room 48 m², N-02 Quiet Room 18 m², N-03 Connecting Lobby 12 m² and N-04 Activity Store 6 m²."
+    },
+    {
+      "id": "programme-heights-and-datum",
+      "fromSlot": "programme-specification",
+      "toSlots": [
+        "connection-section"
+      ],
+      "extract": [
+        "existing clear height",
+        "new clear height",
+        "shared finished-floor datum"
+      ],
+      "notes": "The specification and section state 3000 mm existing clear height, 3200 mm new clear height and the shared floor datum ±0.000."
+    }
+  ]
+}

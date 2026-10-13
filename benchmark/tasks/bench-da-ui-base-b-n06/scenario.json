@@ -1,0 +1,164 @@
+{
+  "id": "bench-da-ui-base-b-n06",
+  "title": "PAGEWIND — Offline reading and listening, with a deliberate handover, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "family-b"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "UIUX",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# PAGEWIND — product facts\n\n## Identity and interface\n- Product name: PAGEWIND.\n- Brand accent: #1F4E5F.\n- Supporting colours, typography, icons and component geometry: open design choices.\n- Night background: #18252B.\n- Night action colour: a lighter related accent where appropriate for contrast.\n- Main-area navigation order: Library, Downloads, Settings.\n- Reader, Player, overlays, mode-switch and continue-choice navigation: return action.\n- Non-empty Library and Downloads book identification: The Small Lantern; The Empty Bench; author PAGEWIND Studio.\n- The Small Lantern catalog artwork: lantern-cover-art.png.\n- Interface language: English.\n- Handover action labels: Listen; Read; Confirm.\n- Saved-text action label: Open saved text.\n- Timer-expired action label: Resume.\n- Status vocabulary: selected, disabled, playing, paused, pending; colour accompanied by text or symbols.\n- Body-text contrast target: at least 4.5:1.\n- Large-text and meaningful-icon contrast target: at least 3:1.\n- Required copy and controls: fully visible within the appropriate safe areas.\n\n## Books and source records\n- 03-books.md: two complete mini-book records.\n- LANTERN: The Small Lantern; author PAGEWIND Studio; 2 chapters; total narration 03:00.\n- L1: A light in the window; 6 sentences; nominal audio duration 90 seconds / 01:30.\n- L2: The walk home; 6 sentences; nominal audio duration 90 seconds / 01:30.\n- BENCH: The Empty Bench; author PAGEWIND Studio; 1 chapter; narration availability: not offered.\n- B1: Waiting; 6 sentences; audio timeline cells: empty, meaning narration not offered.\n- 04-chapter-text-and-timeline.md: complete original chapter wording and all sentence intervals.\n- 05-state-snapshots.md: named screen examples with connection, device, text anchor, chapter-relative audio position, playback, availability and save/sync status.\n- Texts, records and timing assignments: original author-owned inputs, distributable with the commission.\n- Content completeness: all 6 sentences of each chapter supplied.\n- Interface location wording: sentence IDs or equivalent Chapter 1, sentence 3 wording.\n- Chapter and book titles: exact source spelling.\n- Short explanatory interface copy: open wording within the supplied behaviour.\n\n## Position mapping\n- Text location: chapter plus sentence ID, independent of pagination, text size and viewport width.\n- Audio interval convention: inclusive start, exclusive end.\n- Read to Listen target: start of the current sentence, previewed before explicit confirmation.\n- Listen to Read result: paused playback and the sentence containing the current chapter-relative offset.\n- L1 00:37: L1-S03; sentence start 00:30.\n- L1 00:45: L1-S04.\n- Exact chapter-end state: last sentence completed; next chapter offered as an explicit action.\n- Playback-speed changes: retained media offset and nominal track duration.\n- Text progress representation: chapter and sentence anchor.\n- switch-to-audio: proposed target 00:30; stored audio offset 00:37 until confirmation.\n- offline-unavailable: proposed L2-S02 sentence-start target 00:15; retained Phone A record L2-S02 / 00:22; attempted playback blocked.\n- resume-local: saved text opens at L2-S02 with retained stored audio offset 00:22.\n\n## Offline availability\n- Download units: separate text and narration files for each chapter.\n- Phone A initial text availability: L1 and L2 saved.\n- Phone A initial L1 audio availability: ready.\n- Phone A initial L2 audio: 6 of 10 MB / 60%, incomplete.\n- Download percentage basis: file bytes.\n- Complete chapter audio threshold for offline use: 10 of 10 MB / 100%.\n- Offered narration online: streaming available.\n- Incomplete chapter audio offline: paused download; listening unavailable; saved text available where supplied; retry after reconnection.\n- download-complete: later snapshot following successful online download, now offline with complete L2 audio.\n- offline-player: complete local L2 audio playing at 00:22.\n- The Empty Bench narration: not offered in every connection state.\n- Local file availability: specific to each supplied device snapshot.\n- Phone C: offline empty library, with the two-book catalog still awaiting addition on that device.\n\n## Continuation\n- Record date: 24 August 2027, local date.\n- Phone A later local record: L2-S02 / L2 00:22, saved at 08:40.\n- Tablet B last received record: L2-S04 / L2 00:50, synced at 08:35.\n- Choice presentation: device name and local-save or received-sync status for each record.\n- Position application: explicit user selection.\n- Offline progress: retained locally, sync pending.\n- Cancellation result: current Phone A position retained.\n- resume-remote: explicit choice of received Tablet B record, L2-S04 / L2 00:50 applied, confirmed sync at 08:41.\n- Tablet B record meaning: stored received position.\n- Core Library, Reader, Player and Downloads sync snapshot: Synced at 08:20.\n- Snapshot relationship: related examples at their respective supplied states.\n- Screen data scope: fields relevant to the named screen state.\n\n## Reading and listening controls\n- Reader text sizes: 18, 22 and 26 logical pixels.\n- Reader defaults: 18; Day.\n- Reader appearance choices: Day; Night.\n- Appearance and reflow result: same sentence anchor.\n- Player controls: play/pause, labelled seek position, chapter duration, speed, Read and sleep timer.\n- Playback speeds: 1.0x; 1.5x.\n- Core Player defaults: 1.0x; timer Off.\n- Timer options: Off; 15 minutes; 30 minutes.\n- Timer completion: paused playback at the current media position.\n- timer-expired fixed example: paused at 00:37 with Resume available.\n- Timer-setting and timer-expired relationship: separate fixed snapshots.\n- Audio input: screen and timeline records.\n- Film audio: optional silence.\n\n## Artwork geometry\n| Artwork | Supplied artwork frame | Logical viewport | Scale | Top safe area | Bottom safe area |\n| --- | --- | --- | --- | --- | --- |\n| Standard phone screen | 1170 by 2532 | 390 by 844 | 3x | 47 logical units | 34 logical units |\n| reader-wide | 1290 by 2796 | 430 by 932 | 3x | 59 logical units | 34 logical units |\n| Specification board | 1800 by 1400 | Not applicable | Not applicable | Not applicable | Not applicable |\n\n- Supplied screen and specification artwork format: PNG.\n- Delivery-canvas proportions and formats: 02-delivery-catalog.en.md.\n- Artwork placement within a delivery canvas: centred proportional inset, preserving the supplied frame geometry.\n- Screen composition: one flat screen per physical file; an overlay belongs to its named screen.\n- reader-wide identity: compact-wide Phone A viewport, same L1-S03 content and anchor as reader.\n- Large-text and wide composition: reflowed content and fully visible controls.\n- Interface scope: rendered phone screens and their specified state variations.\n\n## Tier records\n- Tier 6: 6 finished screens.\n- Tier 14: 1 specification, 11 screens, 1 film of 12 seconds, 1 presentation of at least 8 pages.\n- Tier 24: 1 specification, 21 screens, 1 film of 12 seconds, 1 presentation of at least 12 pages.\n- Specification sequence in tiers 14 and 24: reading/listening specification, Library/Reader/Player/Downloads core screens, named state applications.\n- Specification contents: page × entry × data table; component × state × value table; position, download and continuation rules.\n- Component state coverage: default, pressed, disabled, error.\n- Cross-application constants: state vocabulary, control identity and location grammar.\n- Presentation and film sources: actual delivered screen designs, with individual screen files retained.\n- Tier 24 expansion: additional states of existing screens and settings.\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# PAGEWIND — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | specification | Reading and listening specification | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 2 | library | Library | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | reader | Reader at the saved sentence | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | player | Player at the saved media offset | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | downloads | Downloads in progress | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | switch-to-audio | Reading to listening confirmation | 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | switch-to-text | Listening to reading result | 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | offline-unavailable | Incomplete narration offline | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | resume-local | Local reading continuation | 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | sync-choice | Device continuation choice | 6, 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | reader-settings | Reader appearance settings | 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | player-timer | Player sleep timer settings | 14, 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | reader-night | Reader in Night mode | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 14 | reader-large | Reader with large text | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 15 | player-speed | Player at increased speed | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 16 | timer-expired | Player paused by the timer | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 17 | download-paused | Download paused offline | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 18 | download-complete | Complete download available offline | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 19 | offline-player | Playback from a complete local file | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 20 | resume-remote | Chosen device position applied | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 21 | reader-wide | Reader in the wider phone viewport | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 22 | library-empty | Empty offline library on Phone C | 24 | Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final. |\n| 23 | handover-film | Confirmed reading and listening handover | 14, 24 | Format: video; 5 to 15 seconds. Stage: final. |\n| 24 | presentation | Reading and listening system presentation | 14, 24 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-books.md",
+            "config": {
+              "text": "# Books\n\n| book_id | title | author | synopsis | chapters | audio_total | audio_offer |\n| --- | --- | --- | --- | --- | --- | --- |\n| LANTERN | The Small Lantern | PAGEWIND Studio | A quiet story about a shared light on the journey home. | 2 | 03:00 | offered |\n| BENCH | The Empty Bench | PAGEWIND Studio | A short reflection on noticing an ordinary station. | 1 | none | not offered |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 04-chapter-text-and-timeline.md",
+            "config": {
+              "text": "# Chapter text and timeline\n\n| chapter_id | sentence_id | sentence_number | text | audio_start_seconds | audio_end_seconds |\n| --- | --- | --- | --- | --- | --- |\n| L1 | L1-S01 | 1 | The last tram slowed beside the square, and Mara noticed a small lantern glowing behind the closed flower stall. | 0 | 15 |\n| L1 | L1-S02 | 2 | She stepped down with an empty shopping bag and listened as the doors folded shut behind her. | 15 | 30 |\n| L1 | L1-S03 | 3 | A folded note beside the lantern said that anyone walking toward the hill could borrow its light. | 30 | 45 |\n| L1 | L1-S04 | 4 | Mara lifted the handle carefully, leaving the note where the next traveller would be able to find it. | 45 | 60 |\n| L1 | L1-S05 | 5 | Across the square, a man carrying a broken umbrella waited for the rain to become a little softer. | 60 | 75 |\n| L1 | L1-S06 | 6 | She raised the lantern, and he smiled before stepping out from the shelter of the station clock. | 75 | 90 |\n| L2 | L2-S01 | 1 | They followed the narrow path beside the houses, keeping the lantern between them as they walked uphill. | 0 | 15 |\n| L2 | L2-S02 | 2 | The light reached only a few steps ahead, but it was enough to show the edge of each shallow puddle. | 15 | 30 |\n| L2 | L2-S03 | 3 | At the bend, the man pointed toward his door and thanked Mara for the company on the wet path. | 30 | 45 |\n| L2 | L2-S04 | 4 | She continued alone until the square was hidden by the hill and the rain sounded softer in the trees. | 45 | 60 |\n| L2 | L2-S05 | 5 | Near her own gate, Mara found a dry place for the lantern and wrote a new note on the back of a receipt. | 60 | 75 |\n| L2 | L2-S06 | 6 | In the morning, someone else would see the little light and decide which way to carry it next. | 75 | 90 |\n| B1 | B1-S01 | 1 | I reached the platform early and chose the bench farthest from the ticket machine. |  |  |\n| B1 | B1-S02 | 2 | Without a screen in my hands, I began to notice the small spaces between the announcements. |  |  |\n| B1 | B1-S03 | 3 | A cleaner moved a leaf away from the yellow line and then carried on toward the stairs. |  |  |\n| B1 | B1-S04 | 4 | The bench beside me remained empty, although several people paused to look down the track. |  |  |\n| B1 | B1-S05 | 5 | When the train arrived, I folded the newspaper that I had never opened. |  |  |\n| B1 | B1-S06 | 6 | For once, the waiting had felt like part of the journey rather than a space to fill. |  |  |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-5",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 05-state-snapshots.md",
+            "config": {
+              "text": "# State snapshots\n\n| screen_role | connection | device | text_anchor | audio_chapter | audio_position | playback | local_availability | save_sync_status |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| library | online | Phone A | L1-S03 | L1 | 00:37 | paused | L1 ready; L2 downloading 6 of 10 MB; BENCH text online only; BENCH audio not offered | Synced at 08:20 |\n| reader | online | Phone A | L1-S03 | L1 | 00:37 | paused | L1 and L2 text ready; L1 audio ready | Synced at 08:20 |\n| player | online | Phone A | L1-S03 | L1 | 00:37 | playing at 1.0x | L1 audio ready | Synced at 08:20 |\n| switch-to-audio | online | Phone A | L1-S03 | L1 | 00:30 | awaiting confirmation | L1 audio ready | No position change until confirmed |\n| switch-to-text | online | Phone A | L1-S03 | L1 | 00:37 | paused after switch | L1 text ready | Save local text anchor L1-S03 |\n| downloads | online | Phone A | L1-S03 | L1 | 00:37 | paused | L1 text/audio ready; L2 text ready, audio downloading 6 of 10 MB (60%); BENCH text not downloaded and audio not offered | Synced at 08:20 |\n| offline-unavailable | offline | Phone A | L2-S02 | L2 | 00:15 | blocked proposed target; stored L2-S02/00:22 unchanged | L2 text ready; L2 audio incomplete, 6 of 10 MB (60%) | Saved on this device; sync pending |\n| resume-local | offline | Phone A | L2-S02 | L2 | 00:22 | paused | L2 text ready; L2 audio incomplete | Local save 08:40; sync pending |\n| sync-choice | online | Phone A | L2-S02 | L2 | 00:22 | paused | Phone A text ready; stored Tablet B position L2-S04 at 00:50, last synced 08:35 | Phone A local save 08:40; choose explicitly; no automatic overwrite |\n| reader-settings | online | Phone A | L1-S03 | L1 | 00:37 | paused | Text size 18 selected; options 18,22,26 logical px; Day selected; Night available | Changing appearance keeps L1-S03 |\n| player-timer | online | Phone A | L1-S03 | L1 | 00:37 | playing at 1.0x | Sleep timer 15 minutes selected; options Off,15,30 minutes | Timer does not move media position |\n| reader-night | online | Phone A | L1-S03 | L1 | 00:37 | paused | Night; size 18; L1 text ready | Same anchor after appearance change |\n| reader-large | online | Phone A | L1-S03 | L1 | 00:37 | paused | Day; size 26; L1 text ready | Same anchor after reflow |\n| player-speed | online | Phone A | L1-S03 | L1 | 00:37 | playing at 1.5x | L1 audio ready; timer Off | Media offset remains 00:37 of 01:30 |\n| timer-expired | online | Phone A | L1-S03 | L1 | 00:37 | paused by sleep timer | Timer finished; Resume available | Fixed pause snapshot at 00:37; not a demand to calculate elapsed playback |\n| download-paused | offline | Phone A | L1-S03 | L1 | 00:37 | paused | L2 audio download paused at 6 of 10 MB (60%); incomplete and unavailable offline | Local files retained; resume download when online |\n| download-complete | offline | Phone A | L2-S02 | L2 | 00:22 | paused | L2 audio ready, 10 of 10 MB (100%); L2 text ready | Later local snapshot after successful online download; now offline |\n| offline-player | offline | Phone A | L2-S02 | L2 | 00:22 | playing at 1.0x | L2 complete local audio; timer Off | Local save; sync pending |\n| resume-remote | online | Phone A | L2-S04 | L2 | 00:50 | paused | User explicitly chose stored Tablet B position; L2 text ready | Position applied; synced at 08:41 |\n| reader-wide | online | Phone A | L1-S03 | L1 | 00:37 | paused | Day; size 18; compact-wide phone viewport 430 by 932 | Same content and anchor as reader |\n| library-empty | offline | Phone C |  |  |  | not playing | No local books or downloads; two-book catalog exists but has not been added here | No saved local progress; go online to add a book |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: viewport-constraints.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: lantern-cover-art.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: commute-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "PAGEWIND | Offline reading and listening, with a deliberate handover\n\nPAGEWIND serves readers who move between a few minutes of reading and listening during their commute. The product direction is fixed: quiet, content-led screens with #1F4E5F as the brand accent. Print PAGEWIND on Library and Downloads. The catalog contains The Small Lantern and The Empty Bench, both by PAGEWIND Studio. Use the supplied lantern artwork to identify The Small Lantern wherever its cover appears. Main-area navigation reads Library, Downloads, Settings, in that order; Reader, Player, their overlays and continuation choices have a return action.\n\nReading position belongs to a sentence, while listening position belongs to a chapter-relative media time. In The Small Lantern, L1-S03 spans 00:30–00:45: switching from reading previews 00:30 and starts after confirmation; switching from playback at 00:37 returns to that sentence. Use the exact action labels \"Listen\", \"Read\" and \"Confirm\" for this handover. Each narrated chapter lasts 01:30. L2 audio at 6 of 10 MB, or 60%, becomes available offline at 10 of 10 MB, or 100%. The continuation choice compares Phone A's L2-S02 / 00:22 saved at 08:40 with the received Tablet B record L2-S04 / 00:50 synced at 08:35, on 24 August 2027. Apply a record after an explicit choice. Standard screens use a 390 × 844 logical viewport with top/bottom safe areas of 47/34 logical units; reader-wide uses 430 × 932 with 59/34. These are platform-neutral layouts. Centre each complete artwork frame proportionally within its delivery canvas. Body text needs contrast of at least 4.5:1, large text and meaningful icons 3:1; pair status colours with words or symbols. Night uses #18252B as its background. Reader sizes are 18, 22 and 26 logical units, initially 18 and Day; Player starts at 1.0x with its timer Off, and offers 1.5x, 15 minutes and 30 minutes.\n\nAudience: product and interface engineering teams deciding how reading, listening, offline access and explicit cross-device continuation should behave in the first release.\n\nInputs (attached): 01-client-facts.en.md contains the fixed product behaviour, dimensions and control values. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. 03-books.md contains the two book records. 04-chapter-text-and-timeline.md contains the complete chapter text and sentence-to-audio intervals. 05-state-snapshots.md supplies each named screen's connection, position, availability and save status. viewport-constraints.png defines the two screen envelopes and safe areas. lantern-cover-art.png supplies the existing catalog artwork for The Small Lantern. commute-reference.png supplies the reading-to-listening atmosphere.\n\nDeliverables:\n1. One finished Library screen identifying both books and the paused L1 position at 00:37\n2. One finished Reader screen at L1-S03, with the complete six-sentence chapter available in its reading flow, size 18, Day and the Listen action\n3. One finished Player screen playing L1 at 00:37 of 01:30, with Read, speed 1.0x and timer Off\n4. One finished Downloads screen showing both books, separate text and narration availability, and L2 audio at 6 of 10 MB (60%)\n5. One finished offline-unavailable screen for the blocked L2-S02 listening attempt, with its proposed 00:15 start, retained 00:22 position and an Open saved text action\n6. One finished sync-choice screen comparing Phone A and the received Tablet B record, with explicit selection and cancellation\n\nAcceptance:\n- Compose all six screens in the 390 × 844 logical viewport with 47/34 top/bottom safe areas; keep complete controls inside those areas and meet the 4.5:1 body-text and 3:1 large-text/icon contrast thresholds.\n- Print PAGEWIND, The Small Lantern and The Empty Bench on Library and Downloads; use the lantern artwork for The Small Lantern and repeat Library, Downloads, Settings in that order on both screens.\n- Keep Reader anchored at L1-S03 and Player at L1 00:37 of 01:30; use the supplied chapter wording and the exact Listen and Read labels, with Reader at 18/Day and Player at 1.0x/Off.\n- Distinguish file progress from playback on Downloads and offline-unavailable: 6 of 10 MB equals 60%; offline-unavailable pairs its disabled Listen action with a written incomplete-download explanation, offers Open saved text, and retains L2-S02 / 00:22 while identifying 00:15 as the proposed start.\n- Label both devices and record statuses on sync-choice: Phone A, L2-S02 / 00:22, local save 08:40; Tablet B, L2-S04 / 00:50, synced 08:35; date 24 August 2027. Give each record an explicit selection action and explain that cancellation retains Phone A's position.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/viewport-constraints.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "17f4547cd430175fb4434a643f2cc0bb952e34a8bace7f559f1afc483ce04124"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/lantern-cover-art.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "e8787a444a7a50779f08e316ff596cdd7cc802d3e79a38f41b430374e1279a97"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-ui-base-b-n06/commute-reference.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "a155482e5de3686c5e955985a563c42e50a975ea4135929ae679a145ab6170a5"
+    }
+  ]
+}

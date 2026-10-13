@@ -1,0 +1,1126 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-book-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "publication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "layout-specification",
+      "label": "One-page layout specification",
+      "description": "A one-page specification of publication dimensions, binding, paper, grid, typography and caption fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "outer-cover",
+      "label": "Flat outer cover, pages 20 and 1",
+      "description": "A flat outer-cover layout pairing the back and front panels with the fixed publication wording.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cover-thumbnail",
+      "label": "Front-cover thumbnail",
+      "description": "A reduced front-cover view carrying the finished publication name, issue number and subtitle.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "contents-spread",
+      "label": "Contents, pages 2–3",
+      "description": "A contents spread listing six photographic features and the caption and author/source sections with page numbers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "photo-spread-04",
+      "label": "Photographic spread, pages 4–5",
+      "description": "The first photographic spread with one principal archive image, its caption and all six attribution fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "photo-spread-06",
+      "label": "Photographic spread, pages 6–7",
+      "description": "The second photographic spread with one principal archive image, its caption and all six attribution fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "photo-spread-08",
+      "label": "Photographic spread, pages 8–9",
+      "description": "The third photographic spread with one principal archive image, its caption and all six attribution fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "photo-spread-10",
+      "label": "Photographic spread, pages 10–11",
+      "description": "The fourth photographic spread with one principal archive image, its caption and all six attribution fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "photo-spread-12",
+      "label": "Photographic spread, pages 12–13",
+      "description": "The fifth photographic spread with one principal archive image, its caption and all six attribution fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "photo-spread-14",
+      "label": "Photographic spread, pages 14–15",
+      "description": "The sixth photographic spread with one principal archive image, its caption and all six attribution fields.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "caption-register",
+      "label": "Caption register, pages 16–17",
+      "description": "A caption-register spread containing all six archive entries in the final reading order.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "author-source",
+      "label": "Author and sources, pages 18–19",
+      "description": "An author/source spread with photography and design credits, six source links and record IDs, photograph status and publication details.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "magazine-video",
+      "label": "Ten-second magazine video",
+      "description": "A 10-second video of the folded cover in three dimensions and all six photographic spreads in reading order.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "editorial-presentation",
+      "label": "Editorial presentation of at least eight pages",
+      "description": "A presentation of at least eight pages reusing the specification and finished publication layouts with the sequencing rationale.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "publication-name",
+      "kind": "text-verbatim",
+      "text": "WORK / ARCHIVE",
+      "scope": {
+        "slots": [
+          "outer-cover",
+          "cover-thumbnail"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "issue-number",
+      "kind": "text-verbatim",
+      "text": "Issue 01",
+      "scope": {
+        "slots": [
+          "outer-cover",
+          "cover-thumbnail"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "cover-subtitle",
+      "kind": "text-verbatim",
+      "text": "Ohio, 1941–42",
+      "scope": {
+        "slots": [
+          "outer-cover",
+          "cover-thumbnail"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "WORK / ARCHIVE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "publication-grid-and-caption-system",
+      "slots": [
+        "contents-spread",
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "caption-register",
+        "author-source"
+      ],
+      "sourceSlots": [
+        "layout-specification"
+      ],
+      "items": [
+        {
+          "item": "The interior layouts visibly derive from the specified six-column page grid with 15 mm margins and 4 mm gutters; elements may span columns and photographic compositions may vary while retaining that underlying structure.",
+          "kind": "compliance"
+        },
+        {
+          "item": "The caption register and author/source spread agree with the specification's applicable caption-field sequence and typographic sizes, allowing line wrapping and spacing adjustments for different content lengths.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "finished-cover-states",
+      "slots": [
+        "outer-cover",
+        "cover-thumbnail"
+      ],
+      "items": [
+        {
+          "item": "The thumbnail reproduces the outer cover's front panel with the same title treatment, issue number, subtitle, composition and photographic content if present; reduction in scale is allowed.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "identityAnchors": {
+      "none": "The supplied photographs are fixed editorial source material, while cross-file consistency concerns publication layouts and is evaluated through visual checks and sets."
+    },
+    "brandToken": "WORK / ARCHIVE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "outer-cover",
+      "cover-thumbnail",
+      "contents-spread",
+      "photo-spread-04",
+      "photo-spread-06",
+      "photo-spread-08",
+      "photo-spread-10",
+      "photo-spread-12",
+      "photo-spread-14",
+      "caption-register",
+      "author-source"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge editorial typography, hierarchy, composition and readability, but do not score the supplied historical photographs' inherent photographic quality or demand material and lighting realism from flat publication layouts."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "layout-specification",
+        "outer-cover",
+        "cover-thumbnail",
+        "contents-spread",
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "caption-register",
+        "author-source",
+        "editorial-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "outer-cover",
+        "cover-thumbnail",
+        "contents-spread",
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "caption-register",
+        "author-source"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-layout-specification",
+      "requirementId": "R-format-layout-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "layout-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-outer-cover",
+      "requirementId": "R-format-outer-cover",
+      "method": "artifact-property",
+      "targetSlots": [
+        "outer-cover"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cover-thumbnail",
+      "requirementId": "R-format-cover-thumbnail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cover-thumbnail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-contents-spread",
+      "requirementId": "R-format-contents-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "contents-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-photo-spread-04",
+      "requirementId": "R-format-photo-spread-04",
+      "method": "artifact-property",
+      "targetSlots": [
+        "photo-spread-04"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-photo-spread-06",
+      "requirementId": "R-format-photo-spread-06",
+      "method": "artifact-property",
+      "targetSlots": [
+        "photo-spread-06"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-photo-spread-08",
+      "requirementId": "R-format-photo-spread-08",
+      "method": "artifact-property",
+      "targetSlots": [
+        "photo-spread-08"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-photo-spread-10",
+      "requirementId": "R-format-photo-spread-10",
+      "method": "artifact-property",
+      "targetSlots": [
+        "photo-spread-10"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-photo-spread-12",
+      "requirementId": "R-format-photo-spread-12",
+      "method": "artifact-property",
+      "targetSlots": [
+        "photo-spread-12"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-photo-spread-14",
+      "requirementId": "R-format-photo-spread-14",
+      "method": "artifact-property",
+      "targetSlots": [
+        "photo-spread-14"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-caption-register",
+      "requirementId": "R-format-caption-register",
+      "method": "artifact-property",
+      "targetSlots": [
+        "caption-register"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-author-source",
+      "requirementId": "R-format-author-source",
+      "method": "artifact-property",
+      "targetSlots": [
+        "author-source"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-magazine-video",
+      "requirementId": "R-format-magazine-video",
+      "method": "manual",
+      "targetSlots": [
+        "magazine-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-editorial-presentation",
+      "requirementId": "R-format-editorial-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "editorial-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "specification-completeness",
+      "requirementId": "R-specification-completeness",
+      "method": "content",
+      "targetSlots": [
+        "layout-specification"
+      ],
+      "criteria": "The specification occupies one page and explicitly identifies the publication dimensions, extent, saddle-stitch binding, inside and cover stocks, grid, margins, gutters, numerical type sizes, actual font family names and an ordered caption-field scheme. The stocks must be 120 gsm uncoated inside and 200 gsm uncoated cover. A generic font category, an unordered field inventory, or an omitted specification fails; the designer may choose the fonts, sizes and field order.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "geometry-values-and-presentation-repetition",
+      "requirementId": "R-geometry-values-and-presentation-repetition",
+      "method": "content",
+      "targetSlots": [
+        "layout-specification",
+        "editorial-presentation"
+      ],
+      "criteria": "Both documents explicitly state trim of 200 × 300 mm, an extent of 20 pages, spine-panel width of 0 mm, six columns on each page, margins of 15 mm and gutters of 4 mm. Equivalent unit notation is acceptable; missing, contradictory or merely implied values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "author-source-geometry-repetition",
+      "requirementId": "R-author-source-geometry-repetition",
+      "method": "visual",
+      "targetSlots": [
+        "author-source"
+      ],
+      "criteria": "The publication details visibly state a 200 × 300 mm trim, 20 pages including covers and saddle-stitch binding, agreeing with the specification. Equivalent wording is allowed; an omitted value or a different binding fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "layout-specification"
+      ]
+    },
+    {
+      "id": "physical-construction",
+      "requirementId": "R-physical-construction",
+      "method": "content",
+      "targetSlots": [
+        "layout-specification"
+      ],
+      "criteria": "The production description identifies a 20-page sample whose covers count toward the extent, a 200 × 300 mm trim, saddle stitching, no spine panel and zero bleed allowance. Different terminology is acceptable when physically equivalent; treating the covers as additional pages or specifying a positive spine or bleed fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "cover-panel-placement-and-readable-copy",
+      "requirementId": "R-cover-panel-placement-and-readable-copy",
+      "method": "visual",
+      "targetSlots": [
+        "outer-cover",
+        "cover-thumbnail"
+      ],
+      "criteria": "The flat cover shows the back panel at left and front panel at right. Its front panel and the reduced front-cover image each display all three prescribed strings with matching wording. The thumbnail must remain legible at its delivered viewing size and reproduce the finished front-cover design. Swapped panels, absent text or text that becomes unreadable after reduction fails; scale changes are allowed.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "cover-hierarchy-and-publisher-identification",
+      "requirementId": "R-cover-hierarchy-and-publisher-identification",
+      "method": "visual",
+      "targetSlots": [
+        "outer-cover"
+      ],
+      "criteria": "Typography provides the cover's principal emphasis, and both panels visibly identify WORK / ARCHIVE as the publication or publisher. Photograph use and different front/back hierarchies are allowed. An unidentified back panel or a cover without typographic emphasis fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "editorial-page-allocation",
+      "requirementId": "R-editorial-page-allocation",
+      "method": "visual",
+      "targetSlots": [
+        "outer-cover",
+        "contents-spread",
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "caption-register",
+        "author-source"
+      ],
+      "criteria": "The layouts implement the specified 20-page allocation: covers at 1 and 20, contents at 2–3, photographs at 4–5 through 14–15, register at 16–17 and author/source material at 18–19. Interior spreads place the even page on the left and the following odd page on the right. Printed folios are not mandatory, but visible folios and content placement must not contradict this allocation.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "contents-completeness",
+      "requirementId": "R-contents-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "contents-spread"
+      ],
+      "criteria": "The contents has six identifiable photographic-feature entries plus entries for the caption register and author/source section. Each entry points to the corresponding opening page or full page pair. Editorial feature titles may vary from archive titles if the correspondence is clear; missing entries, wrong destinations or ambiguous feature identification fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "caption-register",
+        "author-source"
+      ]
+    },
+    {
+      "id": "principal-image-inventory-and-reading-order",
+      "requirementId": "R-principal-image-inventory-and-reading-order",
+      "method": "visual",
+      "targetSlots": [
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "contents-spread",
+        "caption-register"
+      ],
+      "criteria": "Each photographic spread has one principal photograph, and the six principal photographs form a complete, nonduplicated use of p64, p65, p77, p78, p79 and p82. Any editorial permutation is allowed. Reading the spreads from pages 4–5 to 14–15 establishes the order that both contents and register must follow. Missing photographs, repeated principal photographs or mismatched entry order fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "archive-fields-and-caption-accuracy",
+      "requirementId": "R-archive-fields-and-caption-accuracy",
+      "method": "visual",
+      "targetSlots": [
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "caption-register"
+      ],
+      "criteria": "Every displayed archive entry supplies its photo ID, Alfred T. Palmer, company, city, month/year and FSA/OWI Collection, with attribution unambiguously applying to the entry. Match p64 to Goodyear Tire and Rubber Co., Akron, December 1941; p65 to Goodyear Aircraft Corp., Akron, December 1941; p77, p78 and p79 to Owens-Corning Fiberglas Corporation, Toledo, February 1942; and p82 to Owens-Corning Fiberglas Corp., Akron, February 1942. Captions must preserve the supplied meanings: p64 a woman using an iron in self-sealing fuel-tank manufacture; p65 an electronics technician at a bench; p77 a furnace melting material for glass-fibre thermal insulation for naval vessels; p78 a continuously operating gas-fired furnace for glass-fibre insulation wool; p79 raw-material storage bins for fibreglass batch; p82 a brick factory facade and stacks in Akron. Source-faithful paraphrases and equivalent date formatting are allowed. Misattribution, generic circa-1939 dating, or invented worker identities, precise operations, temperatures, chemical compositions, production rates or emissions measurements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "photograph-preservation-and-crop-anchors",
+      "requirementId": "R-photograph-preservation-and-crop-anchors",
+      "method": "visual",
+      "targetSlots": [
+        "outer-cover",
+        "cover-thumbnail",
+        "contents-spread",
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "caption-register",
+        "author-source"
+      ],
+      "criteria": "All photographic material is recognizable as content from the six supplied source images. Photographs preserve source orientation, undistorted proportions and original colour; people, equipment and industrial details are not regenerated or altered. Uniform scaling, film-border removal and rectangular crops are permitted. In each principal photographic spread, the crop retains the working person wherever the source has one and its named industrial subject: fuel-tank manufacture for p64, the electronics technician and bench for p65, the respective furnaces for p77 and p78, storage bins for p79 and the factory exterior for p82. Unrelated photography, recolouring, mirroring, stretching or removal of a required principal-image anchor fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "caption-register-records",
+      "requirementId": "R-caption-register-records",
+      "method": "visual",
+      "targetSlots": [
+        "caption-register"
+      ],
+      "criteria": "The register contains six distinct entries with photo ID, LC-DIG record ID, source-based caption, date, place, company and credit. The record mapping is p64 → LC-DIG-fsac-1a35064, p65 → LC-DIG-fsac-1a35065, p77 → LC-DIG-fsac-1a35077, p78 → LC-DIG-fsac-1a35078, p79 → LC-DIG-fsac-1a35079 and p82 → LC-DIG-fsac-1a35082. Places retain the supplied city and Ohio identification. Caption phrasing may be editorially paraphrased without changing its factual meaning. Missing entries or fields, mismatched record IDs or incorrect credits fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "source-links-rights-and-credit-separation",
+      "requirementId": "R-source-links-rights-and-credit-separation",
+      "method": "visual",
+      "targetSlots": [
+        "author-source"
+      ],
+      "criteria": "The spread visibly associates each full record ID with its primary URL: LC-DIG-fsac-1a35064 with https://www.flickr.com/photos/library_of_congress/2179048633; LC-DIG-fsac-1a35065 with https://www.flickr.com/photos/library_of_congress/2179048769; LC-DIG-fsac-1a35077 with https://www.flickr.com/photos/library_of_congress/2179839100; LC-DIG-fsac-1a35078 with https://www.flickr.com/photos/library_of_congress/2179839248; LC-DIG-fsac-1a35079 with https://www.flickr.com/photos/library_of_congress/2179839424; and LC-DIG-fsac-1a35082 with https://www.flickr.com/photos/library_of_congress/2179050977. Line wrapping is allowed if URLs remain reconstructable. Credit names the Library of Congress, Prints and Photographs Division and FSA/OWI Collection, identifies Alfred T. Palmer as the historical photographer, and separately identifies the delivering designer for present-day magazine design. A statement clearly identifies the photographs as U.S. public-domain government works. Missing or substituted primary links, incorrect ID/link pairings, missing institutional attribution, absent rights status or conflated photography/design credits fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "specified-caption-order-and-type-sizes",
+      "requirementId": "R-specified-caption-order-and-type-sizes",
+      "method": "visual",
+      "targetSlots": [
+        "caption-register",
+        "author-source"
+      ],
+      "criteria": "Compare applicable caption and source fields with the ordered scheme and text-role sizes stated in the specification. Both spreads must preserve that field order and use the corresponding typographic sizes at publication scale. Wrapping and spacing may adapt to content length; omitted applicable fields, reordered fields or visibly incompatible type sizing fail. Do not infer a size mismatch merely from differently scaled previews.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "layout-specification"
+      ]
+    },
+    {
+      "id": "edition-printing-and-publication-details",
+      "requirementId": "R-edition-printing-and-publication-details",
+      "method": "visual",
+      "targetSlots": [
+        "author-source"
+      ],
+      "criteria": "The publication details identify WORK / ARCHIVE and Issue 01 and report an edition of 300 copies, four-colour digital printing, 120 gsm uncoated interior paper and 200 gsm uncoated cover paper. Equivalent production terminology is allowed. An omitted production fact, swapped paper weights or contradictory edition or printing information fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "editorial-sequencing-rationale",
+      "requirementId": "R-editorial-sequencing-rationale",
+      "method": "content",
+      "targetSlots": [
+        "editorial-presentation"
+      ],
+      "criteria": "The presentation explains at least two distinct transitions between photographs that are actually adjacent in the delivered reading order. Each explanation identifies a concrete visual relationship involving materials, operations or people and clearly frames the sequencing rationale as present-day editorial interpretation. Different sequences and interpretations are allowed. Generic statements without two identifiable adjacent pairs, discussion of pairs that are not adjacent, or invented historical relationships presented as archival fact fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14"
+      ]
+    },
+    {
+      "id": "presentation-length-and-complete-reuse",
+      "requirementId": "R-presentation-length-and-complete-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "editorial-presentation"
+      ],
+      "criteria": "The document has at least eight pages and visibly reproduces the delivered specification, flat outer cover, front-cover thumbnail, contents, all six finished photographic spreads, caption register and author/source spread. Multiple reproduced assets may share a presentation page, and scaling is allowed if their content and layout remain identifiable. Omitted assets, textual descriptions in place of reproductions or reuse of materially different layouts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "layout-specification",
+        "outer-cover",
+        "cover-thumbnail",
+        "contents-spread",
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "caption-register",
+        "author-source"
+      ]
+    },
+    {
+      "id": "video-duration-folded-cover-and-layout-reuse",
+      "requirementId": "R-video-duration-folded-cover-and-layout-reuse",
+      "method": "manual",
+      "targetSlots": [
+        "magazine-video"
+      ],
+      "criteria": "Review the whole video and its duration metadata. It lasts 10 seconds, allowing only frame-quantization rounding, shows the folded saddle-stitched cover as a three-dimensional object, and presents all six delivered photographic layouts in their page order. The folded front cover displays WORK / ARCHIVE, Issue 01 and Ohio, 1941–42 and matches the delivered cover design. Camera movement, transitions and perspective may vary. A flat-only cover depiction, missing or reordered spreads, changed layouts, absent cover wording or a materially different duration fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "outer-cover",
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14"
+      ]
+    },
+    {
+      "id": "set-publication-grid-and-caption-system",
+      "requirementId": "R-set-publication-grid-and-caption-system",
+      "method": "visual",
+      "targetSlots": [
+        "contents-spread",
+        "photo-spread-04",
+        "photo-spread-06",
+        "photo-spread-08",
+        "photo-spread-10",
+        "photo-spread-12",
+        "photo-spread-14",
+        "caption-register",
+        "author-source"
+      ],
+      "criteria": "The interior layouts visibly derive from the specified six-column page grid with 15 mm margins and 4 mm gutters; elements may span columns and photographic compositions may vary while retaining that underlying structure. The caption register and author/source spread agree with the specification's applicable caption-field sequence and typographic sizes, allowing line wrapping and spacing adjustments for different content lengths.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "layout-specification"
+      ]
+    },
+    {
+      "id": "set-finished-cover-states",
+      "requirementId": "R-set-finished-cover-states",
+      "method": "visual",
+      "targetSlots": [
+        "outer-cover",
+        "cover-thumbnail"
+      ],
+      "criteria": "The thumbnail reproduces the outer cover's front panel with the same title treatment, issue number, subtitle, composition and photographic content if present; reduction in scale is allowed.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-book-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-book-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "presentation-production-values",
+      "fromSlot": "layout-specification",
+      "toSlots": [
+        "editorial-presentation"
+      ],
+      "extract": [
+        "trim dimensions",
+        "page count",
+        "spine panel width",
+        "columns per page",
+        "margin size",
+        "gutter size"
+      ],
+      "notes": "The layout specification records 200 × 300 mm, 20 pages, a 0 mm spine panel, six columns per page, 15 mm margins and 4 mm gutters; the presentation repeats these six values, and the author/source spread repeats the trim, page count and binding."
+    },
+    {
+      "id": "author-source-production-values",
+      "fromSlot": "layout-specification",
+      "toSlots": [
+        "author-source"
+      ],
+      "extract": [
+        "trim dimensions",
+        "page count",
+        "binding method"
+      ],
+      "notes": "The layout specification records 200 × 300 mm, 20 pages, a 0 mm spine panel, six columns per page, 15 mm margins and 4 mm gutters; the presentation repeats these six values, and the author/source spread repeats the trim, page count and binding."
+    },
+    {
+      "id": "caption-system",
+      "fromSlot": "layout-specification",
+      "toSlots": [
+        "caption-register",
+        "author-source"
+      ],
+      "extract": [
+        "caption field order",
+        "type sizes by text role"
+      ],
+      "notes": "The caption register and author/source spread use the specification's caption field order and type sizes."
+    }
+  ]
+}

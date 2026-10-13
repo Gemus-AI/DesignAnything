@@ -1,0 +1,1252 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-landscape-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "site-analysis",
+      "label": "Site analysis and zone area schedule",
+      "description": "A one-page analysis with four zone areas, paving, shade, occupancy and the three planting species.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "masterplan",
+      "label": "Street masterplan",
+      "description": "A street masterplan with the boundary, four zones, retained assets, beds, crossings, planting, seating and lighting.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "grading-drainage",
+      "label": "Grading and drainage plan",
+      "description": "A grading and drainage plan with levels, flow routes, inlet and overflow records, drainage conditions and storage arithmetic.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "section-dry",
+      "label": "Dry cross-section A-A",
+      "description": "A dry A-A cross-section with street widths, crossfalls, rim levels and the level bed floor.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "section-rain",
+      "label": "Design-ponding cross-section A-A",
+      "description": "An A-A cross-section at design ponding with the 99.825 m water level, 150 mm depth and 50 mm downstream freeboard.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "rain-garden-detail",
+      "label": "Rain garden construction detail",
+      "description": "A construction detail sheet connecting the inlet, sediment pocket, bed, underdrain, overflow and adjacent shop crossing.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "planting-plan",
+      "label": "Planting plan",
+      "description": "A planting plan with CE, JE and IS allocations, quantities and four retained trees.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "planting-materials",
+      "label": "Planting and materials schedule",
+      "description": "A planting and materials schedule with the site and zone names, areas, plant codes, species, quantities, sizes and paving build-ups.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "access-maintenance",
+      "label": "Shop access and maintenance plan",
+      "description": "An access and maintenance plan with entrance thresholds, four crossings, walking and cycling routes, delivery stopping and sediment-removal access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "perspective-dry",
+      "label": "Dry afternoon eastward perspective",
+      "description": "An eastward dry-afternoon street perspective with walking, cycling, shop arrival and short stays.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "perspective-rain",
+      "label": "Rainy afternoon eastward perspective",
+      "description": "A rainy-afternoon perspective from the dry scene's camera position with ponded beds and continuous shop access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "perspective-dusk",
+      "label": "Dusk westward perspective",
+      "description": "A westward dusk street perspective with the selected lighting, shopfronts, planting and shared movement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "street-sequence",
+      "label": "Dry-to-rain street sequence",
+      "description": "A 10-second eastward street sequence transitioning from dry conditions to design ponding.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Street design presentation",
+      "description": "A presentation of at least eight pages reusing the analysis, plans, sections, detail, schedule and three street perspectives.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "site-name",
+      "kind": "text-verbatim",
+      "text": "MILL ROW",
+      "scope": {
+        "slots": [
+          "masterplan",
+          "planting-materials"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "south-walk",
+      "kind": "text-verbatim",
+      "text": "South Walk",
+      "scope": {
+        "slots": [
+          "site-analysis",
+          "masterplan",
+          "planting-materials",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "shared-lane",
+      "kind": "text-verbatim",
+      "text": "Shared Lane",
+      "scope": {
+        "slots": [
+          "site-analysis",
+          "masterplan",
+          "planting-materials",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "rain-garden",
+      "kind": "text-verbatim",
+      "text": "Rain Garden",
+      "scope": {
+        "slots": [
+          "site-analysis",
+          "masterplan",
+          "planting-materials",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "shop-forecourt",
+      "kind": "text-verbatim",
+      "text": "Shop Forecourt",
+      "scope": {
+        "slots": [
+          "site-analysis",
+          "masterplan",
+          "planting-materials",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "carex-elata",
+      "kind": "text-verbatim",
+      "text": "Carex elata",
+      "scope": {
+        "slots": [
+          "site-analysis",
+          "masterplan",
+          "planting-plan",
+          "planting-materials",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "juncus-effusus",
+      "kind": "text-verbatim",
+      "text": "Juncus effusus",
+      "scope": {
+        "slots": [
+          "site-analysis",
+          "masterplan",
+          "planting-plan",
+          "planting-materials",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "iris-sibirica",
+      "kind": "text-verbatim",
+      "text": "Iris sibirica",
+      "scope": {
+        "slots": [
+          "site-analysis",
+          "masterplan",
+          "planting-plan",
+          "planting-materials",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "MILL ROW",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coherent-drainage-system",
+      "slots": [
+        "grading-drainage",
+        "section-dry",
+        "section-rain",
+        "rain-garden-detail"
+      ],
+      "sourceSlots": [
+        "masterplan"
+      ],
+      "items": [
+        {
+          "item": "Bed footprints, crossings and drainage structures occupy corresponding positions across the plan, sections and construction detail.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The drawings reconcile the fixed falls, horizontal bed floors, design water levels, storage depth and downstream freeboard without conflicting geometry.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "coherent-planting-and-access",
+      "slots": [
+        "masterplan",
+        "planting-plan",
+        "access-maintenance"
+      ],
+      "sourceSlots": [
+        "site-analysis",
+        "planting-materials"
+      ],
+      "items": [
+        {
+          "item": "Zone areas, species identities and proposed planting quantities agree wherever repeated in the drawings and written schedules.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The plans preserve the fixed bands, recorded entrances and trees, protected utility corridor and required clear routes.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "coherent-street-scenes",
+      "slots": [
+        "perspective-dry",
+        "perspective-rain",
+        "perspective-dusk"
+      ],
+      "sourceSlots": [
+        "masterplan"
+      ],
+      "items": [
+        {
+          "item": "The three scenes depict the masterplan's same street, including shopfronts, beds, crossings, seating, planting and applicable lighting positions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Dry and rainy afternoon scenes share the eastward camera position, while the dusk scene looks west and all states retain continuous access.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "MILL ROW"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "masterplan",
+      "grading-drainage",
+      "section-dry",
+      "section-rain",
+      "rain-garden-detail",
+      "planting-plan",
+      "access-maintenance",
+      "perspective-dry",
+      "perspective-rain",
+      "perspective-dusk"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not reward changing the fixed street arrangement or judge engineering performance beyond the supplied geometry, drainage records and stated targets."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "site-analysis",
+        "masterplan",
+        "grading-drainage",
+        "section-dry",
+        "section-rain",
+        "rain-garden-detail",
+        "planting-plan",
+        "planting-materials",
+        "access-maintenance",
+        "perspective-dry",
+        "perspective-rain",
+        "perspective-dusk",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "grading-drainage",
+        "section-dry",
+        "section-rain",
+        "rain-garden-detail",
+        "planting-plan",
+        "access-maintenance",
+        "perspective-dry",
+        "perspective-rain",
+        "perspective-dusk"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-site-analysis",
+      "requirementId": "R-format-site-analysis",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-analysis"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-masterplan",
+      "requirementId": "R-format-masterplan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-grading-drainage",
+      "requirementId": "R-format-grading-drainage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "grading-drainage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-section-dry",
+      "requirementId": "R-format-section-dry",
+      "method": "artifact-property",
+      "targetSlots": [
+        "section-dry"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-section-rain",
+      "requirementId": "R-format-section-rain",
+      "method": "artifact-property",
+      "targetSlots": [
+        "section-rain"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-rain-garden-detail",
+      "requirementId": "R-format-rain-garden-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "rain-garden-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-planting-plan",
+      "requirementId": "R-format-planting-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "planting-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-planting-materials",
+      "requirementId": "R-format-planting-materials",
+      "method": "artifact-property",
+      "targetSlots": [
+        "planting-materials"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-access-maintenance",
+      "requirementId": "R-format-access-maintenance",
+      "method": "artifact-property",
+      "targetSlots": [
+        "access-maintenance"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-perspective-dry",
+      "requirementId": "R-format-perspective-dry",
+      "method": "artifact-property",
+      "targetSlots": [
+        "perspective-dry"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-perspective-rain",
+      "requirementId": "R-format-perspective-rain",
+      "method": "artifact-property",
+      "targetSlots": [
+        "perspective-rain"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-perspective-dusk",
+      "requirementId": "R-format-perspective-dusk",
+      "method": "artifact-property",
+      "targetSlots": [
+        "perspective-dusk"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-street-sequence",
+      "requirementId": "R-format-street-sequence",
+      "method": "manual",
+      "targetSlots": [
+        "street-sequence"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "analysis-completeness",
+      "requirementId": "R-analysis-completeness",
+      "method": "content",
+      "targetSlots": [
+        "site-analysis"
+      ],
+      "criteria": "The analysis occupies one page and provides a readable zone schedule covering names, areas, paving, shade and proposed simultaneous occupancy, together with the three prescribed species. Paving, shade and occupancy proposals may vary; missing fields or invented client-fixed occupancy requirements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "fixed-band-arrangement",
+      "requirementId": "R-fixed-band-arrangement",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "grading-drainage",
+        "section-dry",
+        "section-rain",
+        "planting-plan",
+        "access-maintenance"
+      ],
+      "criteria": "The drawings describe the same four bands, ordered south to north as South Walk, Shared Lane, Rain Garden and Shop Forecourt. Their north–south extents correspond to y = 0–2, 2–6, 6–8 and 8–12 m respectively. Drawing styles may differ, but reordered bands, changed widths or an interrupted southern route fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "document-zone-records",
+      "requirementId": "R-document-zone-records",
+      "method": "content",
+      "targetSlots": [
+        "site-analysis",
+        "planting-materials",
+        "presentation"
+      ],
+      "criteria": "Each document associates South Walk with 160 m², Shared Lane with 320 m², Rain Garden with 160 m² and Shop Forecourt with 320 m², totaling 960 m². Table or prose presentation is acceptable; missing associations, swapped values or inconsistent totals fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "masterplan-completeness",
+      "requirementId": "R-masterplan-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan"
+      ],
+      "criteria": "The plan includes a readable north arrow and scale bar, an 80 m east–west by 12 m north–south boundary, all four named zones with their fixed areas, four entrances, four trees, four bed footprints, planting labels, seating and lighting locations. Symbols and annotation placement may vary; omitted elements or geometry contradicting the recorded layout fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "document-species-repetition",
+      "requirementId": "R-document-species-repetition",
+      "method": "content",
+      "targetSlots": [
+        "planting-materials",
+        "presentation"
+      ],
+      "criteria": "Both documents repeat the analysis's three prescribed full species names without substitutions. The schedule maps CE to Carex elata, JE to Juncus effusus and IS to Iris sibirica. Typography and ordering may vary; missing species or incorrect code mappings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "site-analysis"
+      ]
+    },
+    {
+      "id": "plant-quantity-agreement",
+      "requirementId": "R-plant-quantity-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "planting-plan"
+      ],
+      "criteria": "The planting drawing identifies CE, JE and IS and provides quantities that reconcile with the schedule for each species. Where bed subtotals appear, they sum to the stated totals and agree with corresponding schedule entries. Designer-selected quantities are allowed; inconsistent counts, missing codes or species substitutions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "planting-materials"
+      ]
+    },
+    {
+      "id": "schedule-completeness",
+      "requirementId": "R-schedule-completeness",
+      "method": "content",
+      "targetSlots": [
+        "planting-materials"
+      ],
+      "criteria": "The schedule identifies the project and every zone with its area, supplies code, full name, quantity and planting size for each prescribed species, and states paving build-ups for the proposed ground finishes. Schedule organization and proposed sizes or build-ups may vary; absent fields or paving descriptions that omit their build-up fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "grading-agreement",
+      "requirementId": "R-grading-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "grading-drainage",
+        "section-dry",
+        "section-rain",
+        "rain-garden-detail"
+      ],
+      "criteria": "Together the drawings establish a 0.5% eastward street fall, a 1% northward Shared Lane crossfall and a 1% southward Shop Forecourt crossfall. Corresponding surfaces, inlet openings and overflows agree wherever represented; the A-A views correspond to I1 and O1 at x = 17 m. Cross-sections may communicate the longitudinal fall by notes rather than apparent transverse slope. Reversed drainage, incompatible levels or relocated drainage elements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "aa-section-geometry",
+      "requirementId": "R-aa-section-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "section-dry",
+        "section-rain"
+      ],
+      "criteria": "Both drawings depict x = 17 m looking east with south on the left and matching fixed geometry. Labels identify the bed floor at 99.675 m and downstream rim at 99.875 m; the southern walk and northern forecourt edge are 99.915 m. Show the 2 m clear southern walk and the 4 m shared lane, with the remaining band widths consistent with the fixed section. The rainy drawing labels 99.825 m water level, 150 mm ponding and 50 mm downstream freeboard. The dry drawing shows dry conditions; a reference water-level annotation is acceptable. Missing level or width information, altered geometry between states or ponding on the clear route fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "drainage-records-and-storage",
+      "requirementId": "R-drainage-records-and-storage",
+      "method": "visual",
+      "targetSlots": [
+        "grading-drainage"
+      ],
+      "criteria": "The plan states an 800 m² catchment, 25 mm rainfall, runoff coefficient 0.90, 18 m³ storage and 24-hour drawdown target. It shows four 15 m by 2 m level-bottomed beds spanning x = 2–17, 22–37, 42–57 and 62–77 m at y = 6–8 m, with the calculation 120 m² × 0.15 m = 18 m³ or the equivalent expanded geometric calculation. I1–I4 sit at x = 17, 37, 57 and 77 m on y = 6 m; O1–O4 use those x positions on y = 8 m. For B1–B4 respectively, floor levels are 99.675, 99.575, 99.475 and 99.375 m; water and overflow crest levels are 99.825, 99.725, 99.625 and 99.525 m; downstream rims are 99.875, 99.775, 99.675 and 99.575 m. Spot levels and flow arrows must support the prescribed falls and 150 mm storage depth with at least 50 mm downstream freeboard. Equivalent units and notation are acceptable; missing brief figures, sloping bed floors, misplaced structures or incompatible arithmetic fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "construction-detail-function",
+      "requirementId": "R-construction-detail-function",
+      "method": "visual",
+      "targetSlots": [
+        "rain-garden-detail"
+      ],
+      "criteria": "The detail visibly connects a stone-curb inlet opening to an individual sediment pocket and horizontal storage bed, and identifies the underdrain, overflow and adjacent flush stone-capped shop crossing. The underdrain connection corresponds to the overflow location, and the overflow crest corresponds to design water level. The crossing remains clear at design ponding. Construction representation may vary; disconnected drainage components, a missing sediment pocket, a sloping storage floor or an obstructed crossing fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "retained-assets-and-access",
+      "requirementId": "R-retained-assets-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "access-maintenance"
+      ],
+      "criteria": "Both plans retain E1–E4 at x = 19, 39, 59 and 79 m on y = 12 m and T1–T4 at x = 10, 30, 50 and 70 m on y = 10 m, with 1 m tree-protection radii. Preserve the full-length utility corridor at y = 0–1.5 m. Dimension the continuous 2 m southern footway and crossings at x = 18–20, 38–40, 58–60 and 78–80 m across y = 6–8 m. The access plan associates E1–E4 with thresholds 99.905, 99.805, 99.705 and 99.605 m, shows walking and cycling movement, locates delivery stopping within Shop Forecourt and provides sediment-removal access to the beds. Crossings are flush stone-capped bridges, level north–south and following the street's eastward fall. Symbol styles may vary; moved assets, missing dimensions or thresholds, blocked routes or absent servicing provisions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "planting-plan-completeness",
+      "requirementId": "R-planting-plan-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "planting-plan"
+      ],
+      "criteria": "The drawing allocates the prescribed rain-garden species to identified beds, provides readable species codes and quantities, and retains all four trees at the recorded positions. Their recorded 4 m crown diameter should be respected where crowns are represented to scale. Plant distribution and graphic conventions may vary; unallocated quantities, missing beds or removed or displaced trees fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "perspective-layout-and-cameras",
+      "requirementId": "R-perspective-layout-and-cameras",
+      "method": "visual",
+      "targetSlots": [
+        "perspective-dry",
+        "perspective-rain",
+        "perspective-dusk"
+      ],
+      "criteria": "All three views depict the planned shopfronts, bed and crossing geometry, seating and planting, with visible shop use and continuous walking and cycling routes. The dry and rainy afternoon views share camera position, direction and recognizable landmark alignment; rainfall, people and other transient activity may change. The rainy view shows ponded garden beds while shop access remains usable. The dusk view faces west and places lights at the masterplan's locations. Changed spatial design, mismatched paired cameras, the wrong dusk direction or interrupted access fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan"
+      ]
+    },
+    {
+      "id": "street-sequence-transition",
+      "requirementId": "R-street-sequence-transition",
+      "method": "manual",
+      "targetSlots": [
+        "street-sequence"
+      ],
+      "criteria": "Review the entire sequence and its duration. It lasts 10 seconds, uses the established eastward viewpoint and visibly progresses from dry beds to design ponding while preserving the masterplan's shopfronts, beds, crossings, seating and planting. Weather and street activity may evolve; a different viewpoint, changing built geometry, absent transition or inundated clear crossings fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "masterplan",
+        "perspective-dry",
+        "perspective-rain"
+      ]
+    },
+    {
+      "id": "presentation-content",
+      "requirementId": "R-presentation-content",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation has at least eight pages. Its first page identifies the four bands in their fixed south-to-north order, and its contents repeat the analysis's four correct zone-area associations and three prescribed full species names alongside completed drawings and all three scene states. Page organization after page one may vary; insufficient pages, an unidentified opening arrangement or omitted or contradictory facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "site-analysis"
+      ]
+    },
+    {
+      "id": "presentation-drawing-reuse",
+      "requirementId": "R-presentation-drawing-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Every listed source is visibly reused in the presentation. Resizing, readable excerpts and page recomposition are allowed when the source remains identifiable and its relevant content is preserved. A missing source, an unrelated replacement or a thumbnail too small to verify the reused content fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "site-analysis",
+        "masterplan",
+        "grading-drainage",
+        "section-dry",
+        "section-rain",
+        "rain-garden-detail",
+        "planting-plan",
+        "planting-materials",
+        "access-maintenance",
+        "perspective-dry",
+        "perspective-rain",
+        "perspective-dusk"
+      ]
+    },
+    {
+      "id": "existing-street-character",
+      "requirementId": "R-existing-street-character",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "perspective-dry",
+        "perspective-rain",
+        "perspective-dusk"
+      ],
+      "criteria": "The proposed street preserves the recorded northern two-story red-brown brick frontage, cream stone lintels, dark timber shop doors, gray stone curbs and the rhythm of four trees between entrances. Plans retain curb lines at y = 6 and 8 m with the required crossing and inlet openings; perspectives preserve the recognizable frontage and curb character. Ground finishes may be developed within the brief. Lighting and weather may alter apparent colors, but replacement of the retained frontage character or removal of the recorded assets fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-coherent-drainage-system",
+      "requirementId": "R-set-coherent-drainage-system",
+      "method": "visual",
+      "targetSlots": [
+        "grading-drainage",
+        "section-dry",
+        "section-rain",
+        "rain-garden-detail"
+      ],
+      "criteria": "Bed footprints, crossings and drainage structures occupy corresponding positions across the plan, sections and construction detail. The drawings reconcile the fixed falls, horizontal bed floors, design water levels, storage depth and downstream freeboard without conflicting geometry.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan"
+      ]
+    },
+    {
+      "id": "set-coherent-planting-and-access",
+      "requirementId": "R-set-coherent-planting-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "masterplan",
+        "planting-plan",
+        "access-maintenance"
+      ],
+      "criteria": "Zone areas, species identities and proposed planting quantities agree wherever repeated in the drawings and written schedules. The plans preserve the fixed bands, recorded entrances and trees, protected utility corridor and required clear routes.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "site-analysis",
+        "planting-materials"
+      ]
+    },
+    {
+      "id": "set-coherent-street-scenes",
+      "requirementId": "R-set-coherent-street-scenes",
+      "method": "visual",
+      "targetSlots": [
+        "perspective-dry",
+        "perspective-rain",
+        "perspective-dusk"
+      ],
+      "criteria": "The three scenes depict the masterplan's same street, including shopfronts, beds, crossings, seating, planting and applicable lighting positions. Dry and rainy afternoon scenes share the eastward camera position, while the dusk scene looks west and all states retain continuous access.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-03/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "masterplan"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "street-space-identity",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "masterplan",
+      "subjectSlots": [
+        "perspective-dry",
+        "perspective-rain",
+        "perspective-dusk"
+      ],
+      "notes": "The three perspectives and 10-second sequence use the masterplan's shopfronts, beds, crossings, seating and planting."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "analysis-zone-areas",
+      "fromSlot": "site-analysis",
+      "toSlots": [
+        "masterplan",
+        "planting-materials",
+        "presentation"
+      ],
+      "extract": [
+        "the four zone names and their associated areas"
+      ],
+      "notes": "The site analysis, masterplan, planting and materials schedule and presentation repeat South Walk 160 m², Shared Lane 320 m², Rain Garden 160 m² and Shop Forecourt 320 m²; the masterplan shows the 80 m by 12 m boundary, north arrow and scale bar."
+    },
+    {
+      "id": "analysis-plant-species",
+      "fromSlot": "site-analysis",
+      "toSlots": [
+        "masterplan",
+        "planting-plan",
+        "planting-materials",
+        "presentation"
+      ],
+      "extract": [
+        "the three full plant names"
+      ],
+      "notes": "The masterplan, planting plan, planting and materials schedule and presentation repeat the analysis's Carex elata, Juncus effusus and Iris sibirica; the planting plan and schedule use CE, JE and IS with matching quantities."
+    }
+  ]
+}

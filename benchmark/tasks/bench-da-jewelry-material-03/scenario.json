@@ -1,0 +1,134 @@
+{
+  "id": "bench-da-jewelry-material-03",
+  "title": "VELT — Titanium housing and interchangeable finishes for a smart ring, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "FASHION",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# VELT\n\n## Product\n- Product: VELT\n- Module: M18\n- Intended users: adults wearing a health-tracking ring as everyday jewellery\n- Intended finger circumference: 56–57 mm\n- Housing material: Grade 5 titanium\n- Cap material: Grade 5 titanium\n- Cap count: 3\n- Cap coverage: upper 120°, from 300° through 0° to 60°\n- Housing and cap interface: one shared system\n- Maximum assembled outside diameter: 25 mm\n- Maximum assembled axial width: 8.5 mm\n\n## Module geometry\n| Feature | Value |\n|---|---|\n| Clear bore diameter | 18 mm |\n| Outside diameter | 22 mm |\n| Axial width | 7 mm |\n| Front face | z = 0 mm |\n| Rear face | z = 7 mm |\n| Positive z | Front towards rear |\n| Angular origin | Top of front view |\n| Positive angle | Clockwise in front view |\n| Sensor surface | Inner cylindrical surface |\n| Sensor centre | 180°, z = 3.5 mm |\n| Sensor circumferential arc width | 4 mm |\n| Sensor axial length | 5 mm |\n| Charging contact surface | Front annular face, z = 0 mm |\n| Charging contact count | 2 |\n| Charging contact diameter | 1 mm each |\n| Charging contact centre radius | 10 mm |\n| Charging contact angles | 150°, 210° |\n| Housing access opening diameter | 1.6 mm per contact |\n| Cap attachment location | Outside the module envelope |\n\n## Existing appearance\n- Module body and exposed liner: matte black polymer\n- Sensor window: dark green, rounded rectangular surface\n- Charging contacts: two circular gold-coloured pads\n\n## Finishes\n| Name | Material | Surface | Application |\n|---|---|---|---|\n| Satin | Grade 5 titanium | Brushed | Daytime worn image |\n| Ink | Grade 5 titanium | Black PVD over brushed surface | Evening worn image |\n| Flute | Grade 5 titanium | Milled grooves with satin surface | Charging detail image |\n\n## Printed wording\n- Name: VELT\n- Phrase: One ring, three finishes\n- Location: finish catalogue\n\n## Wearing and charging context\n- Daytime clothing: shirt cuff\n- Evening clothing: dark tailored sleeve\n- Charging cradle: two pins aligned with the front-face contacts\n- Charging image state: Flute cap fitted; ring slightly lifted from cradle\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# VELT — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | housing-drawing | Final housing drawing | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | cap-assembly | Interchangeable cap assembly | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | finish-catalogue | Three-finish catalogue | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | satin-daytime | Satin daytime worn image | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | ink-evening | Ink evening worn image | 6 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | flute-charging | Flute charging detail | 6 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: module-envelope.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: daily-materials.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: existing-module.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "VELT | Titanium housing and interchangeable finishes for a smart ring\n\nWe are developing VELT for adults who wear a health-tracking ring as everyday jewellery and want to change its appearance between work and evening occasions. Design a Grade 5 titanium housing and three interchangeable titanium caps for our existing M18 module. The finishes are Satin, with a brushed surface; Ink, with black PVD over a brushed surface; and Flute, with milled grooves and a satin surface. Each cap occupies the upper 120° of the ring and attaches to the same housing. The assembled ring, with any cap fitted, has a maximum outside diameter of 25 mm and a maximum axial width of 8.5 mm.\n\nThe black M18 module has an 18 mm clear bore, a 22 mm outside diameter and a 7 mm axial width; the intended finger circumference is 56–57 mm. Its inner sensor window measures 4 mm circumferentially by 5 mm axially. Two charging contacts, each 1 mm in diameter, sit on the front annular face. The attached drawing locates these features: angles run clockwise from the top in front view, and z runs from the front face towards the rear. The sensor centre is at 180°, z = 3.5 mm; the contact centres are at radius 10 mm, at 150° and 210°. Provide a 1.6 mm clear access opening over each contact and preserve the full sensor window and clear bore. Develop the cap attachment outside the module envelope, with an illustrated release action and rounded exposed edges. Print \"VELT\" and \"One ring, three finishes\" on the finish catalogue.\n\nAudience: our jewellery lead, product team and manufacturing partner, choosing the housing and cap system for a sampling brief aimed at adult everyday wearers.\n\nInputs (attached): 01-client-facts.en.md contains the module dimensions, materials, finish names and required wording. 02-delivery-catalog.en.md lists the deliverables, proportions, formats and stages. module-envelope.png provides the fixed module geometry and sensor and charging locations. existing-module.png establishes the existing black liner, green sensor window and paired gold contacts. daily-materials.png provides the neutral clothing, metal and charging-desk atmosphere.\n\nDeliverables:\n1. One final housing drawing sheet with front and side views, an axial section through the sensor, module and assembled dimensions, sensor exposure and both charging access openings\n2. One exploded assembly sheet with the module, housing and all three caps, enlarged shared attachment details, release and fitting sequences, and exposed-edge radii\n3. One finish catalogue with matched exterior and inner views of Satin, Ink and Flute, material and finish labels, VELT and the phrase One ring, three finishes\n4. One daytime worn image of Satin on an adult hand with a shirt cuff, showing the cap profile and its junction with the housing\n5. One evening worn image of Ink on an adult hand with a dark tailored sleeve, showing the same housing and cap junction\n6. One charging detail image of Flute with its cap fitted, showing the ring lifted slightly from a two-pin charging cradle and both contact access paths\n\nAcceptance:\n- The housing drawing dimensions the M18 envelope at 18 mm clear bore, 22 mm outside diameter and 7 mm axial width, and states the intended finger circumference of 56–57 mm.\n- The housing drawing and exploded assembly sheet locate the 4 mm × 5 mm sensor window at 180°, z = 3.5 mm, and the two 1 mm contacts at radius 10 mm and angles 150° and 210°; their sections show the full sensor window exposed and a 1.6 mm clear opening over each contact.\n- The housing drawing, exploded assembly sheet and finish catalogue use one Grade 5 titanium housing and one shared attachment interface for all three upper 120° caps; each assembled finish stays within 25 mm outside diameter and 8.5 mm axial width. The assembly sheet labels the release action and exposed-edge radii.\n- The finish catalogue prints VELT and One ring, three finishes, identifies Satin as brushed titanium, Ink as black PVD over brushed titanium and Flute as grooved satin titanium, and shows the same housing beneath all three caps.\n- The daytime worn image uses Satin and the evening worn image uses Ink; both reproduce the housing profile, cap junction and respective finish shown in the housing drawing and finish catalogue.\n- The charging detail image uses Flute with its cap fitted and shows two cradle pins aligned with the two 1.6 mm access openings, preserving the contact positions shown in the housing drawing.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/module-envelope.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "d3db3c9f941106d831e3f35ac29f70e981b703ededa72acdfcdc21fe887b9db0"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/daily-materials.png",
+      "nodeId": "provided-image-2",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "fb3b87c6e887977135473df49ff51c3c23ea2bf0a1ef9c7b85f74185947c2f35"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-03/existing-module.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "86678d24a5cbb6ef7719d105117c4706691bc27cfea79409a27585f78561c75a"
+    }
+  ]
+}

@@ -1,0 +1,1173 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-photo-base-b-n14",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "lighting-specification",
+      "label": "Photographic language and lighting specification",
+      "description": "A two-page photographic specification with lighting facts, exposure choices and the tier's complete still-image register.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "opening-spread",
+      "label": "P01 opening spread portrait",
+      "description": "The opening spread portrait of Nora with the finished spoon, carrying the studio name and feature title.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "opening-portrait-crop",
+      "label": "P01-V opening portrait crop",
+      "description": "A central portrait crop of the P01 exposure carrying the studio name and feature title.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "seated-working-portrait",
+      "label": "P02 seated working portrait",
+      "description": "A seated portrait of Nora shaping the spoon handle with the straight knife.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "standing-inspection-portrait",
+      "label": "P03 standing inspection portrait",
+      "description": "A standing portrait of Nora inspecting the dry spoon bowl.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "workshop-overview",
+      "label": "E01 workshop overview",
+      "description": "A room view linking Nora, the north window, the bench and the east-wall cabinet.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "bench-to-cabinet",
+      "label": "E02 bench-to-cabinet environment",
+      "description": "An environment photograph across Nora's bench toward the east-wall cabinet.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tools-returned",
+      "label": "E03 tools-returned environment",
+      "description": "An environment photograph of Nora returning both knives to the cabinet.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "blank-detail",
+      "label": "D01 rough blank detail",
+      "description": "A detail of the rough cherrywood blank and pale ash-handled straight knife, captioned D01 and Blank.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "hollowing-hands",
+      "label": "D02 right-handed hollowing detail",
+      "description": "A detail of Nora's right hand operating the walnut-handled hook knife, captioned D02 and Hollowing.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "finished-spoon-square",
+      "label": "D03 square finished-spoon detail",
+      "description": "A square photograph of the entire oiled spoon on the bench, captioned D03 and Oiled.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "hook-blade-contact",
+      "label": "D04 hook-blade contact detail",
+      "description": "A close detail of the hook blade meeting the bowl with the right-hand grip visible, captioned D04 and Hollowing.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "studio-film",
+      "label": "Ten-second studio film",
+      "description": "A ten-second film tracing Blank, Hollowing and Oiled with Nora and the established spoon and tools.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "story-presentation",
+      "label": "Editorial story presentation",
+      "description": "A story presentation reusing the specification, every still image and three film frames across at least eight pages for tier 14 or twelve pages for tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "studio-name",
+      "kind": "text-verbatim",
+      "text": "ALDER BENCH",
+      "scope": {
+        "slots": [
+          "opening-spread",
+          "opening-portrait-crop",
+          "studio-film",
+          "story-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "feature-title",
+      "kind": "text-verbatim",
+      "text": "A spoon, from blank to bowl",
+      "scope": {
+        "slots": [
+          "opening-spread",
+          "opening-portrait-crop",
+          "studio-film",
+          "story-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "blank-caption",
+      "kind": "text-verbatim",
+      "text": "Blank",
+      "scope": {
+        "slots": [
+          "blank-detail"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "hollowing-caption",
+      "kind": "text-verbatim",
+      "text": "Hollowing",
+      "scope": {
+        "slots": [
+          "hollowing-hands",
+          "hook-blade-contact"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "oiled-caption",
+      "kind": "text-verbatim",
+      "text": "Oiled",
+      "scope": {
+        "slots": [
+          "finished-spoon-square"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "ALDER BENCH",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "portrait-and-room-language",
+      "slots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned"
+      ],
+      "sourceSlots": [
+        "lighting-specification"
+      ],
+      "items": [
+        {
+          "item": "Portraits and room views follow the specification's lighting language and retain a coherent warm gray workshop treatment.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Nora, her wardrobe, tool construction and mapped workshop remain consistent across viewpoints; the two opening treatments align as one exposure.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "four-detail-sequence",
+      "slots": [
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "sourceSlots": [
+        "lighting-specification",
+        "opening-spread"
+      ],
+      "items": [
+        {
+          "item": "Details follow the established lighting and depict the same spoon and knives seen in the portrait story, allowing the specified carving and oiling changes.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The four ID/caption pairs, hollowing handedness and completed spoon proportions agree with the client and shot records.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "ALDER BENCH"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Art Design",
+    "slots": [
+      "opening-spread",
+      "opening-portrait-crop",
+      "seated-working-portrait",
+      "standing-inspection-portrait",
+      "workshop-overview",
+      "bench-to-cabinet",
+      "tools-returned",
+      "blank-detail",
+      "hollowing-hands",
+      "finished-spoon-square",
+      "hook-blade-contact"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not reward redesign of the fixed subject, wardrobe, tools, workshop or documentary direction, or substitute aesthetic preference for copy, geometry, record accuracy and continuity checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "lighting-specification",
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact",
+        "story-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-lighting-specification",
+      "requirementId": "R-format-lighting-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "lighting-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-opening-spread",
+      "requirementId": "R-format-opening-spread",
+      "method": "artifact-property",
+      "targetSlots": [
+        "opening-spread"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-opening-portrait-crop",
+      "requirementId": "R-format-opening-portrait-crop",
+      "method": "artifact-property",
+      "targetSlots": [
+        "opening-portrait-crop"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-seated-working-portrait",
+      "requirementId": "R-format-seated-working-portrait",
+      "method": "artifact-property",
+      "targetSlots": [
+        "seated-working-portrait"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-standing-inspection-portrait",
+      "requirementId": "R-format-standing-inspection-portrait",
+      "method": "artifact-property",
+      "targetSlots": [
+        "standing-inspection-portrait"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-workshop-overview",
+      "requirementId": "R-format-workshop-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "workshop-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-bench-to-cabinet",
+      "requirementId": "R-format-bench-to-cabinet",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bench-to-cabinet"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tools-returned",
+      "requirementId": "R-format-tools-returned",
+      "method": "artifact-property",
+      "targetSlots": [
+        "tools-returned"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-blank-detail",
+      "requirementId": "R-format-blank-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "blank-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-hollowing-hands",
+      "requirementId": "R-format-hollowing-hands",
+      "method": "artifact-property",
+      "targetSlots": [
+        "hollowing-hands"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-finished-spoon-square",
+      "requirementId": "R-format-finished-spoon-square",
+      "method": "artifact-property",
+      "targetSlots": [
+        "finished-spoon-square"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-hook-blade-contact",
+      "requirementId": "R-format-hook-blade-contact",
+      "method": "artifact-property",
+      "targetSlots": [
+        "hook-blade-contact"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-studio-film",
+      "requirementId": "R-format-studio-film",
+      "method": "manual",
+      "targetSlots": [
+        "studio-film"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-story-presentation",
+      "requirementId": "R-format-story-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "story-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "identity-and-handedness-14",
+      "requirementId": "R-identity-and-handedness-14",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "hook-blade-contact"
+      ],
+      "criteria": "Visible identity and wardrobe must agree with nora-identity.png and the full identity record, including the gray center-parted bob, brown eyes, left-cheek mole, rolled indigo sleeves, single-square-pocket rust apron, charcoal trousers, brown lace-up boots and absence of jewelry. Natural occlusion and framing are allowed. D02 and D04 must visibly use the right hand with the walnut-handled hook knife; every visible straight knife must retain the pale ash handle and straight steel blade. Conflicting identity, extra apron pockets, switched handles or reversed handedness fails. Film evidence is assessed separately by whole-file review.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "opening-treatments-14-24",
+      "requirementId": "R-opening-treatments-14-24",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "opening-portrait-crop"
+      ],
+      "criteria": "Verify that P01-V is the central 2:3 crop of the P01 photographic exposure, with identical pose, spoon, grain, shadows and room details. Both show Nora at the bench holding the finished spoon and carry both required strings. Assess publication-crops.png against the 360 × 240 mm spread, 3 mm outer bleed, central 160 × 240 mm crop and fold at 180 mm. The face, both hands and complete spoon must clear the fold by 12 mm and the relevant trim or crop boundary by 9 mm; printed copy also needs the 9 mm inset. Independent restaging, off-center extraction, missing copy or breached protections fails. Cover and end-card placement are checked in the document and film rules.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "mapped-workshop-and-stations",
+      "requirementId": "R-mapped-workshop-and-stations",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "criteria": "Compare visible room relationships and perspective with workshop-plan.png, workshop-mark.png and the geometry and station records. Preserve the 6000 × 4000 mm room, north window at x 1600–4000 mm with center height 1400 mm, bench at x 1800–4200 and y 1200–2100 mm, and east cabinet at x 5200–5800 and y 800–2300 mm. Where visible, retain the west door, matte gray concrete floor and square dark walnut plaque with three equal vertical recessed slots above the cabinet. E01 must show Nora, window, bench and cabinet together from C2. All shots must have perspectives consistent with their recorded C1, C2 or C3 station and the 900 mm south-of-bench clearance. Framing may omit objects not required in a shot; relocated furniture, a wrong wall or incompatible perspective fails. Infer spatial compatibility rather than claiming exact measurements from uncalibrated photographs.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "detail-stages-14",
+      "requirementId": "R-detail-stages-14",
+      "method": "visual",
+      "targetSlots": [
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "criteria": "Read the captions and require D01/Blank, D02/Hollowing, D03/Oiled and D04/Hollowing. The images must depict the recorded subjects, including rough solid-bowl stock with the ash-handled straight knife, partial hollowing, the entire finished spoon on the bench in a square view, and the hook blade contacting the bowl. Compare the evolving workpiece with spoon-and-tools.png: the same cherrywood grain landmark, oval bowl, tapered handle and rounded end persist through material removal and oiling. The completed D03 silhouette must be compatible with 240 mm length and 65 mm bowl width. Changes caused by carving, oil and viewpoint are allowed; mismatched grain, incorrect stage, omitted labels or incompatible proportions fails. Film sequence and duration are checked separately.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "lighting-follows-specification",
+      "requirementId": "R-lighting-follows-specification",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "criteria": "Read the specification and compare the still photographs with its north-window direction, white-reflector fill, 2:1 lighting ratio and 5200 K white balance, also using the supplied empty-room atmosphere. Visible walls retain the warm gray #D8D2C8 plaster palette. Viewpoint, subject orientation and exposure choices may vary while maintaining a compatible light source, moderate contrast and color rendering. Conflicting shadows, a changed dominant source, strong unexplained color shifts or contradictory wall treatment fails. Judge visual compatibility rather than treating images as exact photometric measurements; the film is reviewed separately.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "lighting-specification"
+      ]
+    },
+    {
+      "id": "documentary-treatment",
+      "requirementId": "R-documentary-treatment",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "criteria": "The story must communicate credible making through the required working views, contextual portraits and room photographs. Relevant details reveal wood fibers, tool wear and natural skin texture; grips, blade contact and workpiece placement are physically readable. Opening and inspection portraits may be posed as specified, and close details need not show the whole room. An incoherent maker-tool-bench relationship, implausible working gestures or smoothing that removes the requested material evidence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "single-session-continuity",
+      "requirementId": "R-single-session-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "criteria": "The images must be compatible with one morning workshop session, preserving location, wardrobe and workpiece continuity while allowing the specified carving progression and tool return. Any visible clock, calendar or session notation must agree with the supplied date and time window. A second location, night-time transition or contradictory visible record fails. Do not require a timestamp or infer an exact date from daylight alone.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "shot-record-subjects-and-proportions",
+      "requirementId": "R-shot-record-subjects-and-proportions",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "criteria": "Match each delivered role to its applicable row in 03-shot-records.en.md and require the recorded subject, activity, workpiece stage and composition proportion. This includes seated handle shaping for P02, standing dry-bowl inspection for P03, blank selection for P04/E04, profile hollowing for P05, dry-grain inspection for P06, the oiled spoon toward the window for P07, cabinet context for E02, both knives being returned for E03, room-context hollowing for E05 and the oiled spoon resting on the bench beside Nora for E06 where those roles apply. Artistic framing may vary within the recorded proportion and required content. A substituted action, incorrect stage or wrong aspect relationship fails; portrait and environment images need not acquire printed labels unless required elsewhere.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "specification-14",
+      "requirementId": "R-specification-14",
+      "method": "content",
+      "targetSlots": [
+        "lighting-specification"
+      ],
+      "criteria": "Require a two-page process specification that establishes the photographic approach and lighting setup before the still-image sequence. It must state the mapped north-window position, including its 1400 mm center height, white reflector, 2:1 lit-to-shadow ratio, 5200 K white balance and concrete selected shutter and aperture settings. Its register must correctly associate all eleven applicable shot IDs with their proportions and C1/C2/C3 stations from 03-shot-records.en.md. Exposure choices are the designer's decision; omissions, placeholders, incorrect client values or incomplete or mismatched register entries fails. Do not infer authoring chronology from the finished photographs.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ]
+    },
+    {
+      "id": "presentation-repeated-specification-facts",
+      "requirementId": "R-presentation-repeated-specification-facts",
+      "method": "content",
+      "targetSlots": [
+        "story-presentation"
+      ],
+      "criteria": "Read presentation page 2 and require the same north-window position, 2:1 light ratio and 5200 K white balance established in the specification. Cross-check each reproduced still photograph's attached shot ID and proportion against the specification register and shot records. Equivalent notation such as 5200K is acceptable; misplaced page-two facts, missing labels, swapped IDs or incorrect proportions fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "sourceSlots": [
+        "lighting-specification"
+      ]
+    },
+    {
+      "id": "presentation-reuse-14",
+      "requirementId": "R-presentation-reuse-14",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "story-presentation"
+      ],
+      "criteria": "The presentation must visibly reuse the delivered specification and each of the eleven delivered still images. Resizing and page-layout adaptation are allowed when the source remains identifiable and required content remains legible. A textual mention, replacement rendering, missing source or reuse of only one opening treatment fails. Film-frame provenance is checked by the manual film rule.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "sourceSlots": [
+        "lighting-specification",
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ]
+    },
+    {
+      "id": "presentation-content-14",
+      "requirementId": "R-presentation-content-14",
+      "method": "content",
+      "targetSlots": [
+        "story-presentation"
+      ],
+      "criteria": "Require at least eight pages, both exact required strings on the cover, the specification before the photographic story, and a readable progression from arrival at the bench through making to the completed spoon. Include three film-frame reproductions and explicit, correctly associated identifications of right-handed work, the pale ash straight-knife handle, the dark walnut hook-knife handle and the finished 240 mm length and 65 mm bowl width. Any background or session facts stated must agree with the client record. Missing evidence identifications, incorrect dimensions, insufficient pages or an incoherent work sequence fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ]
+    },
+    {
+      "id": "film-whole-file-and-frame-provenance",
+      "requirementId": "R-film-whole-file-and-frame-provenance",
+      "method": "manual",
+      "targetSlots": [
+        "studio-film",
+        "story-presentation"
+      ],
+      "criteria": "Watch the complete film and verify its ten-second duration and the film record: Blank at 0–3 seconds, Hollowing at 3–7 seconds and Oiled at 7–10 seconds with closing title overlay. Require the approved Nora and wardrobe, both established knives, the same cherrywood spoon and persistent grain landmark through the three stages. Hollowing must use the walnut-handled hook knife in her right hand; the straight knife keeps its pale ash handle. Check C1/C3-compatible viewpoints, mapped workshop continuity, the specified north-window lighting, reflector-compatible 2:1 contrast and 5200 K appearance. The closing title must legibly include ALDER BENCH and A spoon, from blank to bowl. Compare the presentation's three claimed film frames with the actual video. Editing and shot lengths within the recorded passages may vary; wrong timing, reversed stages or handedness, changed identity or objects, absent closing copy or frames not found in the film fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "lighting-specification"
+      ]
+    },
+    {
+      "id": "set-portrait-and-room-language",
+      "requirementId": "R-set-portrait-and-room-language",
+      "method": "visual",
+      "targetSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned"
+      ],
+      "criteria": "Portraits and room views follow the specification's lighting language and retain a coherent warm gray workshop treatment. Nora, her wardrobe, tool construction and mapped workshop remain consistent across viewpoints; the two opening treatments align as one exposure.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "lighting-specification"
+      ]
+    },
+    {
+      "id": "set-four-detail-sequence",
+      "requirementId": "R-set-four-detail-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "criteria": "Details follow the established lighting and depict the same spoon and knives seen in the portrait story, allowing the specified carving and oiling changes. The four ID/caption pairs, hollowing handedness and completed spoon proportions agree with the client and shot records.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-photo-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-photo-base-b-n14/03-shot-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "lighting-specification",
+        "opening-spread"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "nora-reference",
+      "kind": "identity-consistency",
+      "subject": "character",
+      "anchorAssets": [
+        "nora-identity.png"
+      ],
+      "subjectSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "hollowing-hands",
+        "hook-blade-contact"
+      ],
+      "notes": "The attached identity sheet fixes her appearance."
+    },
+    {
+      "id": "spoon-reference",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "spoon-and-tools.png"
+      ],
+      "subjectSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned",
+        "blank-detail",
+        "hollowing-hands",
+        "finished-spoon-square",
+        "hook-blade-contact"
+      ],
+      "notes": "Follow her working sequence from a rough cherrywood blank through hollowing to an oiled spoon, 240 mm long with a 65 mm-wide oval bowl."
+    },
+    {
+      "id": "workshop-reference",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "workshop-plan.png",
+        "workshop-mark.png"
+      ],
+      "subjectSlots": [
+        "opening-spread",
+        "opening-portrait-crop",
+        "seated-working-portrait",
+        "standing-inspection-portrait",
+        "workshop-overview",
+        "bench-to-cabinet",
+        "tools-returned"
+      ],
+      "notes": "Preserve the bench, east-wall tool cabinet and existing three-slot workshop mark in their mapped positions."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "lighting-facts-on-page-two",
+      "fromSlot": "lighting-specification",
+      "toSlots": [
+        "story-presentation"
+      ],
+      "extract": [
+        "north-window position",
+        "lit-side-to-shadow-side ratio",
+        "white balance"
+      ],
+      "notes": "Its north-window position, 2:1 ratio and 5200 K setting recur on presentation page 2; each reproduced photograph in the presentation carries its matching shot ID and proportion."
+    },
+    {
+      "id": "shot-register-labels",
+      "fromSlot": "lighting-specification",
+      "toSlots": [
+        "story-presentation"
+      ],
+      "extract": [
+        "shot ID and proportion associated with each still-image output"
+      ],
+      "notes": "Its north-window position, 2:1 ratio and 5200 K setting recur on presentation page 2; each reproduced photograph in the presentation carries its matching shot ID and proportion."
+    }
+  ]
+}

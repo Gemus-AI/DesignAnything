@@ -1,0 +1,134 @@
+{
+  "id": "bench-da-jewelry-material-02",
+  "title": "FIELDWEAVE — A textile replacement strap for PineTime, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "FASHION",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# FIELDWEAVE — client facts\n\n## Existing watch (fixed)\n\n- Watch in watch-front.jpg: PineTime, photographed front-on, unmodified\n- Case: rounded rectangular, black, narrow reflective bezel edge\n- Overall dimensions, published hardware specification: 37.5 × 40 × 11 mm\n- Controls: one side button, single position\n- Display: rectangular opening; screen in the photograph neutral / inactive\n- Strap mounting: two opposite positions, original spring bars, retention recessed in the lug\n- Nominal band width, official watch-band documentation: 20 mm\n- Replacement targets: original black strap, original buckle\n- Watch back: original, carries sensor and charging functions\n- Figures absent from the published sources: spring-bar diameter, tip travel, recess depth, lug section\n\n## Strap and hardware decisions\n\n| Item | Decision |\n| --- | --- |\n| Strap body | woven polyester textile |\n| Closure and rigid strap hardware | stainless steel |\n| Stitching | polyester thread |\n| Strap construction | two separate pieces, one per mounting position |\n| Terminal width at the case | 20 mm nominal, each piece |\n| Colourway | one |\n| Length change between fit profiles | adjustment travel on the closure |\n| Open to the designer | weave, colour, edge treatment, steel finish, nominal segment lengths, adjustment travel |\n\n## Fit targets\n\n| Label | Wrist circumference | Posture | Clothing |\n| --- | --- | --- | --- |\n| W160 | 160 mm | relaxed hand | shirt cuff |\n| W190 | 190 mm | gently flexed wrist | casual short sleeves |\n\n- Range covered by one pair of strap pieces and one closure: 150–200 mm\n- Wearing side in both images: adult left wrist\n- Closure behaviour: opened and secured by hand, length setting visible, free end held\n- Wearing-image framing: complete case, strap-to-case transition and closed strap visible; cropping allowed\n- Inset per wearing image: one underside view of closure and stored free end\n- Camera, clothing colour, skin tone and arm hair: open\n\n## Board set\n\n| Board | Content |\n| --- | --- |\n| 1 | complete watch, both strap pieces fitted, strap closed |\n| 2 | material and closure specification |\n| 3 | connection detail at a mounting position |\n| 4 | closure and length-adjustment detail |\n| 5 | wearing image W160 with underside inset |\n| 6 | wearing image W190 with underside inset |\n\n- Total final boards: 6\n- Name printed on boards 1, 2, 5, 6: FIELDWEAVE\n- Line printed on board 2: \"Wrist range 150–200 mm\"\n- Label printed at the terminal on board 3: \"20 mm nominal\"\n- Labels printed on boards 5 and 6: \"W160 / 160 mm\", \"W190 / 190 mm\"\n\n| Scope record | Items |\n| --- | --- |\n| Items outside this set | durability testing, electronics change, production tolerance sheet, watch-back pattern, screen interface work |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# FIELDWEAVE — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | complete-watch | Board 1 — Complete watch and closed strap | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 2 | material-closure-specification | Board 2 — Material and closure specification | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | mounting-connection | Board 3 — Strap connection detail | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | closure-adjustment | Board 4 — Closure and length adjustment | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | wearing-w160 | Board 5 — W160 wearing view | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | wearing-w190 | Board 6 — W190 wearing view | 6 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: watch-front.jpg",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: watch-envelope.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: textile-steel-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "FIELDWEAVE | A textile replacement strap for PineTime\n\nWe are commissioning a replacement strap for the existing PineTime shown in watch-front.jpg, for people who want to keep their watch and change how it feels during commuting and light activity. Retain its black rounded rectangular case, narrow reflective bezel edge, rectangular display opening, single side button and original back with its sensor and charging functions. The published case dimensions are 37.5 × 40 × 11 mm. Use the two original mounting positions and spring bars, with their recessed retention; each strap terminal is 20 mm nominal.\n\nThe strap is two separate pieces of woven polyester textile, with polyester stitching and stainless steel closure and rigid hardware. Develop one colourway and one closure covering wrist circumferences of 150–200 mm. Weave, colour, edge treatment, steel finish, nominal segment lengths and adjustment travel are yours to resolve. The same pair of pieces and closure serves both fit profiles through closure adjustment: W160 is a 160 mm adult left wrist with a relaxed hand and shirt cuff; W190 is a 190 mm adult left wrist, gently flexed, with casual short sleeves. The closure opens and secures by hand, exposes the length setting and holds the free end. Print the project name \"FIELDWEAVE\" on boards 1, 2, 5 and 6.\n\nAudience: existing-watch owners and our accessories team, choosing a strap design to take into sampling for daily commuting and light activity.\n\nInputs (attached): 01-client-facts.en.md contains the watch record, material decisions, fit profiles and board contents. 02-delivery-catalog.en.md records the six deliverables and their proportions, formats and stages. watch-front.jpg is the identity reference for the existing PineTime case, button and display, with the original strap and buckle as replacement targets. watch-envelope.png is the constraint drawing of the published overall envelope and nominal terminal width. textile-steel-reference.png is an atmosphere reference for woven texture, steel finish and everyday clothing.\n\nDeliverables:\n1. One complete-watch board, board 1, with both replacement strap pieces fitted and the strap closed\n2. One final material and closure specification board, board 2, identifying weave, colour, edge treatment, polyester stitching, stainless steel finish, nominal segment lengths and closure adjustment travel, with the line \"Wrist range 150–200 mm\"\n3. One connection-detail board, board 3, with assembled and separated views of one mounting position, the original spring bar, recessed retention and the terminal label \"20 mm nominal\"\n4. One closure and length-adjustment board, board 4, with open and secured states, the adjustment path, free-end retention and settings for W160 and W190\n5. One wearing board, board 5, labelled \"W160 / 160 mm\", showing the relaxed adult left wrist with a shirt cuff and one underside inset of the closure and stored free end\n6. One wearing board, board 6, labelled \"W190 / 190 mm\", showing the gently flexed adult left wrist with casual short sleeves and one underside inset of the closure and stored free end\n\nAcceptance:\n- Board 1 shows both textile pieces attached to the PineTime in watch-front.jpg; boards 3, 5 and 6 preserve that case, bezel edge, display opening and side-button position wherever visible.\n- Board 2 specifies woven polyester textile, polyester thread and stainless steel hardware, states the chosen segment lengths and adjustment travel, and prints \"Wrist range 150–200 mm\"; boards 1, 3, 4, 5 and 6 use its single colourway, edge treatment and hardware finish.\n- Board 3 labels the terminal \"20 mm nominal\" and depicts the original spring bar and recessed retention in its assembled and separated views; boards 1, 5 and 6 repeat the same terminal construction at both mounting positions.\n- Board 4 shows how the closure opens, secures, adjusts and stores the free end; its W160 and W190 settings use the same two strap pieces and closure, with the corresponding setting repeated in the underside inset on boards 5 and 6.\n- Boards 5 and 6 print \"W160 / 160 mm\" and \"W190 / 190 mm\" respectively and match their specified wrist posture and clothing; each board shows the complete case, strap-to-case transition and closed strap, plus one underside inset.\n- Boards 1, 2, 5 and 6 print \"FIELDWEAVE\" with identical spelling.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/watch-front.jpg",
+      "nodeId": "provided-image-1",
+      "role": "identity",
+      "mimeType": "image/jpeg",
+      "sha256": "61dd9f670fddd3042464f5c0d194fc77e05ef0572328bc8ee487cc55ec8c277d"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/watch-envelope.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "7420b754efefefec4af5f045ece2b106a56afefd9d928aebe97a7ba9795199f3"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-jewelry-material-02/textile-steel-reference.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "72ad25b9bd4096baaf63de8d44d480c9eb7468916726136f7d37d3d17c4b31b2"
+    }
+  ]
+}

@@ -1,0 +1,1293 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-game-material-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "tactical-specification",
+      "label": "Tactical specification",
+      "description": "A two-page tactical specification recording the asset inventory, cover rules, faction system, palette, lighting and asset states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "interface-architecture",
+      "label": "Interface information architecture",
+      "description": "One information architecture table for the tactical overview, crane interaction and cover inspection.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "master-plan",
+      "label": "Master map plan",
+      "description": "One master plan with 12 asset instance IDs, coordinates, orientations, gameplay anchors and three camera positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "route-cover-overlay",
+      "label": "Route and cover overlay",
+      "description": "One matching map overlay identifying North, Middle and South routes, clear widths and full-cover and low-cover positions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tank-yard-view",
+      "label": "Tank Yard southwest view",
+      "description": "One Tank Yard view from the southwest using the master plan's asset arrangement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "belt-lane-view",
+      "label": "Belt Lane northwest view",
+      "description": "One Belt Lane view from the northwest using the master plan's asset arrangement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "crane-court-view",
+      "label": "Crane Court southeast view",
+      "description": "One Crane Court view from the southeast using the master plan's asset arrangement.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "asset-continuity",
+      "label": "Industrial asset continuity sheet",
+      "description": "One T01, C01 and G01 continuity sheet with four views per asset, dimensions, two states and close-up and map-scale depictions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "faction-interaction-signage",
+      "label": "Faction and interaction signage",
+      "description": "One signage sheet containing two faction emblems, three area labels, two action prompts and Ready and Locked treatments.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "controller-interaction",
+      "label": "Controller interaction screen",
+      "description": "One G01-01 interaction screen with controller A and X prompts, cover inspection and a Locked example.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "touch-interaction",
+      "label": "Touch interaction screen",
+      "description": "One matching G01-01 interaction screen with two touch actions, cover inspection and a Locked example.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tactical-hero",
+      "label": "Tactical overview hero",
+      "description": "One complete battlefield hero with SWITCHYARD, both spawn labels, Relay, three area labels and both faction identifiers.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "map-flythrough",
+      "label": "Ten-second map flythrough",
+      "description": "One 10-second flythrough travelling from West Spawn through Relay to East Spawn.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "map-presentation",
+      "label": "Map presentation",
+      "description": "One presentation of at least 10 pages reusing the process documents and finished map work with repeated asset, faction and state facts.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "game-name",
+      "kind": "text-verbatim",
+      "text": "SWITCHYARD",
+      "scope": {
+        "slots": [
+          "controller-interaction",
+          "touch-interaction",
+          "tactical-hero",
+          "map-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "crane-action",
+      "kind": "text-verbatim",
+      "text": "Activate crane",
+      "scope": {
+        "slots": [
+          "faction-interaction-signage",
+          "controller-interaction",
+          "touch-interaction"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "cover-action",
+      "kind": "text-verbatim",
+      "text": "Inspect cover",
+      "scope": {
+        "slots": [
+          "faction-interaction-signage",
+          "controller-interaction",
+          "touch-interaction"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SWITCHYARD",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "battlefield-spatial-system",
+      "slots": [
+        "route-cover-overlay",
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "tactical-hero"
+      ],
+      "sourceSlots": [
+        "master-plan"
+      ],
+      "items": [
+        {
+          "item": "Asset locations, orientations, gameplay anchors and route openings describe one battlefield across the drawings and rendered views.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The battlefield preserves the fixed anchors, central G01-01 crane, twelve-instance inventory and traversable crane openings.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "industrial-asset-language",
+      "slots": [
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "asset-continuity",
+        "tactical-hero"
+      ],
+      "sourceSlots": [
+        "tactical-specification"
+      ],
+      "items": [
+        {
+          "item": "Asset proportions, identifying features and material assignments remain recognizable across close-up, orthographic and map-scale depictions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The images follow the specified steel and cream palette and northwest lighting, and state changes alter beacon treatment while preserving silhouettes.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "faction-and-interaction-system",
+      "slots": [
+        "faction-interaction-signage",
+        "controller-interaction",
+        "touch-interaction",
+        "tactical-hero"
+      ],
+      "sourceSlots": [
+        "tactical-specification",
+        "interface-architecture"
+      ],
+      "items": [
+        {
+          "item": "Faction colour-and-shape associations agree across signage, interaction screens and the overview hero.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Controller and touch screens preserve matching camera, inset, labels, values and action positions while expressing their respective input mappings.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Ready and Locked treatments agree with the interface architecture, including a padlock and label for Locked.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "SWITCHYARD"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Game Design",
+    "slots": [
+      "master-plan",
+      "route-cover-overlay",
+      "tank-yard-view",
+      "belt-lane-view",
+      "crane-court-view",
+      "asset-continuity",
+      "faction-interaction-signage",
+      "controller-interaction",
+      "touch-interaction",
+      "tactical-hero"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge executable gameplay, engine performance or production-ready collision implementation from these design exports."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "tactical-specification",
+        "interface-architecture",
+        "master-plan",
+        "route-cover-overlay",
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "asset-continuity",
+        "faction-interaction-signage",
+        "controller-interaction",
+        "touch-interaction",
+        "tactical-hero",
+        "map-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "master-plan",
+        "route-cover-overlay",
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "asset-continuity",
+        "faction-interaction-signage",
+        "controller-interaction",
+        "touch-interaction",
+        "tactical-hero"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-tactical-specification",
+      "requirementId": "R-format-tactical-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "tactical-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-interface-architecture",
+      "requirementId": "R-format-interface-architecture",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interface-architecture"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-master-plan",
+      "requirementId": "R-format-master-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "master-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-route-cover-overlay",
+      "requirementId": "R-format-route-cover-overlay",
+      "method": "artifact-property",
+      "targetSlots": [
+        "route-cover-overlay"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tank-yard-view",
+      "requirementId": "R-format-tank-yard-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "tank-yard-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-belt-lane-view",
+      "requirementId": "R-format-belt-lane-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "belt-lane-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-crane-court-view",
+      "requirementId": "R-format-crane-court-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "crane-court-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-asset-continuity",
+      "requirementId": "R-format-asset-continuity",
+      "method": "artifact-property",
+      "targetSlots": [
+        "asset-continuity"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-faction-interaction-signage",
+      "requirementId": "R-format-faction-interaction-signage",
+      "method": "artifact-property",
+      "targetSlots": [
+        "faction-interaction-signage"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-controller-interaction",
+      "requirementId": "R-format-controller-interaction",
+      "method": "artifact-property",
+      "targetSlots": [
+        "controller-interaction"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-touch-interaction",
+      "requirementId": "R-format-touch-interaction",
+      "method": "artifact-property",
+      "targetSlots": [
+        "touch-interaction"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tactical-hero",
+      "requirementId": "R-format-tactical-hero",
+      "method": "artifact-property",
+      "targetSlots": [
+        "tactical-hero"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-map-flythrough",
+      "requirementId": "R-format-map-flythrough",
+      "method": "manual",
+      "targetSlots": [
+        "map-flythrough"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-map-presentation",
+      "requirementId": "R-format-map-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "map-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "specification-content",
+      "requirementId": "R-specification-content",
+      "method": "content",
+      "targetSlots": [
+        "tactical-specification"
+      ],
+      "criteria": "The document has two pages and records four T01 tanks, six C01 conveyors and two G01 cranes, with their instance IDs and respective length × width × height values of 8000 × 8000 × 10000 mm, 12000 × 4000 × 1200 mm and 16000 × 8000 × 12000 mm. It specifies full cover at tank bodies and crane legs, low cover along conveyor sides, solid tank and conveyor footprints and passage beneath crane beams. It records the 64 × 64-cell boundary, 2 m cells, southwest origin and fixed West Spawn (4, 32), East Spawn (60, 32), Relay and G01-01 (32, 32). It includes Amber Union as a #FFB547 square, Blue Assembly as a #67C5FF triangle, painted steel #596368, cream #D9D2BD, concrete #85877F, interface backing #18232D, white interface text and northwest lighting. Idle has an unlit circular beacon; Active has an illuminated circular beacon with three short radial marks, with unchanged silhouette and collision envelope. Organization may vary; missing or contradictory facts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ]
+    },
+    {
+      "id": "interface-architecture-records",
+      "requirementId": "R-interface-architecture-records",
+      "method": "content",
+      "targetSlots": [
+        "interface-architecture"
+      ],
+      "criteria": "A readable table covers all three requested surfaces and agrees with the interface records. Overview fields include SWITCHYARD, West Spawn, East Spawn, Relay, Tank Yard, Belt Lane and Crane Court as persistent labels. Interaction fields include SWITCHYARD, Relay 50%, 03:00, Activate crane, Inspect cover, Ready and Locked. Both actions start Ready. A maps to Activate crane in the upper lower-right action row; X maps to Inspect cover in the lower row; touch uses equivalently labelled buttons in those same regions. Ready includes the action, input indicator and Ready label; Locked includes the action, padlock and Locked label. Equivalent table organization is allowed; missing fields, changed starting values or conflicting mappings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ]
+    },
+    {
+      "id": "map-grid-and-inventory",
+      "requirementId": "R-map-grid-and-inventory",
+      "method": "visual",
+      "targetSlots": [
+        "master-plan",
+        "route-cover-overlay"
+      ],
+      "criteria": "Both drawings depict the same 128 m-square battlefield on a 64 × 64 grid with 2 m cells, referenced from the southwest corner with east as positive X and north as positive Y. West Spawn is at (4, 32), East Spawn at (60, 32) and Relay at (32, 32). The drawings account for the same four tanks, six conveyors and two cranes and agree with the specification. Annotation style may differ between drawings; shifted anchors, incorrect scale, missing instances or changed placement fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "tactical-specification"
+      ]
+    },
+    {
+      "id": "master-plan-placement-records",
+      "requirementId": "R-master-plan-placement-records",
+      "method": "visual",
+      "targetSlots": [
+        "master-plan"
+      ],
+      "criteria": "The plan legibly associates each of T01-01 through T01-04, C01-01 through C01-06 and G01-01 through G01-02 with one centre coordinate and one orientation. Centres lie on grid intersections; orientations are 0, 90, 180 or 270 degrees clockwise from north, with local length north-south at zero degrees. All instances occupy ground elevation 0 mm within the boundary, and their total exterior envelopes do not overlap. G01-01 is centred at (32, 32). Footprints reflect 8 × 8 m tank envelopes, 12 × 4 m conveyors and 16 × 8 m cranes. Other legal positions are design choices; duplicate IDs, inconsistent annotations or illegal geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "route-connectivity-and-cover",
+      "requirementId": "R-route-connectivity-and-cover",
+      "method": "visual",
+      "targetSlots": [
+        "route-cover-overlay"
+      ],
+      "criteria": "North, Middle and South are distinguishable west-to-east paths, each connected to Relay. Dimension annotations identify the narrowest traversable connections, and the drawn geometry supports at least 4 m of clear width throughout. Paths avoid solid tank and conveyor footprints and the four 1 × 1 m corner legs of each crane; ground-level passage beneath crane beams remains available. Cover markings assign full cover to tank bodies and crane legs and low cover to conveyor sides, matching the specification. Route shape and graphic notation may vary; disconnected paths, unsupported width claims or incorrect cover classes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "master-plan",
+        "tactical-specification"
+      ]
+    },
+    {
+      "id": "area-cameras",
+      "requirementId": "R-area-cameras",
+      "method": "visual",
+      "targetSlots": [
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view"
+      ],
+      "criteria": "Each view shows its assigned area from the requested side: southwest for Tank Yard, northwest for Belt Lane and southeast for Crane Court. Three identifiable camera markers on the plan correspond to those viewpoints and their visible spatial relationships. Lens, elevation and framing may vary within those directions; a wrong area, wrong approach direction or missing corresponding camera marker fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "master-plan"
+      ]
+    },
+    {
+      "id": "rendered-layout-continuity",
+      "requirementId": "R-rendered-layout-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "tactical-hero"
+      ],
+      "criteria": "Visible tanks, conveyors and cranes can be matched to the plan using position, orientation, neighbouring instances and the Relay crane. Views preserve the planned route openings and asset relationships. Perspective, occlusion and area-specific cropping are allowed; moved, rotated, added or omitted assets where their planned locations are visible fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "master-plan"
+      ]
+    },
+    {
+      "id": "continuity-sheet-records",
+      "requirementId": "R-continuity-sheet-records",
+      "method": "visual",
+      "targetSlots": [
+        "asset-continuity"
+      ],
+      "criteria": "The sheet identifies T01, C01 and G01 and repeats the correct length, width and height for each. Each type has front, side, rear and top views, Idle and Active details, and paired close-up and map-scale depictions. Views agree geometrically: T01 has an 8 m-diameter cylindrical body, domed roof, side ladder and roof beacon; C01 has a black belt, three cream panels on each long side, four paired supports and an end beacon; G01 has four 1 × 1 m corner legs, chamfered upper frame, central hook, attached console and upper beacon. Crane details agree with a 10 m beam underside, a hook parked above 6 m in both states and a console within the southwest leg footprint at zero orientation. Graphic simplification at map scale is allowed if identifying features remain recognizable; missing views, incorrect dimensions or conflicting geometry fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "tactical-specification"
+      ]
+    },
+    {
+      "id": "asset-art-and-state-continuity",
+      "requirementId": "R-asset-art-and-state-continuity",
+      "method": "visual",
+      "targetSlots": [
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "asset-continuity",
+        "tactical-hero"
+      ],
+      "criteria": "Visible asset surfaces retain the specified recognition features, steel and cream material assignments and industrial kit appearance. Ground treatment uses weathered concrete with base colour #85877F, and environmental illumination is consistent with northwest daylight. Compare specified base colours while allowing shading and wear. Wherever states are depicted, Idle uses an unlit circular beacon and Active an illuminated circular beacon with three short radial marks; asset silhouettes remain unchanged. Natural occlusion is allowed; altered recognition features, contradictory material assignments, reversed lighting or state-dependent structural changes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "tactical-specification"
+      ]
+    },
+    {
+      "id": "signage-records",
+      "requirementId": "R-signage-records",
+      "method": "visual",
+      "targetSlots": [
+        "faction-interaction-signage"
+      ],
+      "criteria": "The sheet contains both named faction emblems, the area labels Tank Yard, Belt Lane and Crane Court, the action prompts Activate crane and Inspect cover, and recognizable Ready and Locked treatments. Locked includes a padlock and its label. Layout and grouping may vary; omitted, misspelled or substituted labels, missing emblems or an unidentifiable state treatment fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "faction-system-repetition",
+      "requirementId": "R-faction-system-repetition",
+      "method": "visual",
+      "targetSlots": [
+        "faction-interaction-signage",
+        "controller-interaction",
+        "touch-interaction",
+        "tactical-hero"
+      ],
+      "criteria": "Every target includes both faction identifiers and preserves their associations: Amber Union with a square and #FFB547, Blue Assembly with a triangle and #67C5FF. Interface faction plates also carry their respective faction names. Size and placement may vary; omitted identifiers, exchanged shapes or colours, or disagreement with the specification fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "tactical-specification"
+      ]
+    },
+    {
+      "id": "matched-interface-records",
+      "requirementId": "R-matched-interface-records",
+      "method": "visual",
+      "targetSlots": [
+        "controller-interaction",
+        "touch-interaction"
+      ],
+      "criteria": "Both screens show the G01-01 console interaction with the same camera and composition and a cover-inspection inset containing a visible C01 conveyor. Both print SWITCHYARD, Activate crane, Inspect cover, Relay 50% and 03:00 exactly. The action rows occupy matching lower-right positions, with crane action above cover inspection. A separate Locked example sits in the inset above the rows. Interface backing uses #18232D and text uses #FFFFFF. Controller-specific indicators may change to touch buttons; changed camera, missing inset content, mismatched values or displaced action rows fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "interface-architecture"
+      ]
+    },
+    {
+      "id": "input-and-state-equivalence",
+      "requirementId": "R-input-and-state-equivalence",
+      "method": "visual",
+      "targetSlots": [
+        "controller-interaction",
+        "touch-interaction"
+      ],
+      "criteria": "The controller screen pairs A with Activate crane and X with Inspect cover; the touch screen provides corresponding labelled buttons in the same positions. Both available actions use their recorded Ready starting state, including action label, input indicator and Ready label. Each screen separately demonstrates Locked with an action label, padlock and Locked label, consistent with the architecture table. Input-indicator styling may differ by device; swapped mappings, missing state evidence or disagreement between the table and screens fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "interface-architecture"
+      ]
+    },
+    {
+      "id": "interface-accessibility",
+      "requirementId": "R-interface-accessibility",
+      "method": "visual",
+      "targetSlots": [
+        "controller-interaction",
+        "touch-interaction"
+      ],
+      "criteria": "Assess each screen against the 2560 × 1440 logical reference: all text remains at least 64 logical units from every edge and has a character height of at least 18 logical units. Visible text/background combinations meet 4.5:1 contrast, and icons and disabled controls meet 3:1. Each screen visibly contains the Ready crane action and a separate padlocked Locked treatment. Export resolution may vary; undersized or out-of-inset text, inadequate contrast or missing state treatment fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "hero-completeness",
+      "requirementId": "R-hero-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "tactical-hero"
+      ],
+      "criteria": "The hero presents the complete playable battlefield and includes legible SWITCHYARD, West Spawn, East Spawn, Relay, Tank Yard, Belt Lane and Crane Court labels. Location labels correspond to the planned anchors and areas. Perspective and label placement may vary; cropping away part of the battlefield, omitting labels or assigning labels to incorrect locations fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "master-plan"
+      ]
+    },
+    {
+      "id": "flythrough-content-and-continuity",
+      "requirementId": "R-flythrough-content-and-continuity",
+      "method": "manual",
+      "targetSlots": [
+        "map-flythrough"
+      ],
+      "criteria": "Review the complete video and its duration. It lasts 10 seconds and travels from West Spawn through Relay to East Spawn in that sequence. Visible asset positions and orientations agree with the master plan; asset features, steel and cream palette, weathered concrete and northwest daylight agree with the specification and continuity sheet. Any depicted Idle or Active state uses the corresponding beacon treatment without changing the asset silhouette. Camera speed and height may vary; incorrect duration or travel order, relocated assets or inconsistent asset appearance fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "master-plan",
+        "tactical-specification",
+        "asset-continuity"
+      ]
+    },
+    {
+      "id": "presentation-facts-and-opening",
+      "requirementId": "R-presentation-facts-and-opening",
+      "method": "content",
+      "targetSlots": [
+        "map-presentation"
+      ],
+      "criteria": "The presentation contains at least 10 pages and prints SWITCHYARD on page one. Alongside the relevant reused work it states the dimensions for T01, C01 and G01, associates Amber Union with #FFB547 and a square, associates Blue Assembly with #67C5FF and a triangle, and names both Idle and Active. These facts agree with the specification and fixed client records. Page order after the opening may vary; insufficient pages, missing opening copy, omitted facts or contradictory values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "sourceSlots": [
+        "tactical-specification"
+      ]
+    },
+    {
+      "id": "presentation-reuses-deliverables",
+      "requirementId": "R-presentation-reuses-deliverables",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "map-presentation"
+      ],
+      "criteria": "The presentation visibly reuses recognizable material from every listed source, including both process documents, both map drawings, all three area views and both input screens. Scaling, cropping and page recomposition are allowed when the source remains identifiable and its relevant content readable. Merely naming a deliverable, replacing it with unrelated work or omitting any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "sourceSlots": [
+        "tactical-specification",
+        "interface-architecture",
+        "master-plan",
+        "route-cover-overlay",
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "asset-continuity",
+        "faction-interaction-signage",
+        "controller-interaction",
+        "touch-interaction",
+        "tactical-hero"
+      ]
+    },
+    {
+      "id": "set-battlefield-spatial-system",
+      "requirementId": "R-set-battlefield-spatial-system",
+      "method": "visual",
+      "targetSlots": [
+        "route-cover-overlay",
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "tactical-hero"
+      ],
+      "criteria": "Asset locations, orientations, gameplay anchors and route openings describe one battlefield across the drawings and rendered views. The battlefield preserves the fixed anchors, central G01-01 crane, twelve-instance inventory and traversable crane openings.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "master-plan"
+      ]
+    },
+    {
+      "id": "set-industrial-asset-language",
+      "requirementId": "R-set-industrial-asset-language",
+      "method": "visual",
+      "targetSlots": [
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "asset-continuity",
+        "tactical-hero"
+      ],
+      "criteria": "Asset proportions, identifying features and material assignments remain recognizable across close-up, orthographic and map-scale depictions. The images follow the specified steel and cream palette and northwest lighting, and state changes alter beacon treatment while preserving silhouettes.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "tactical-specification"
+      ]
+    },
+    {
+      "id": "set-faction-and-interaction-system",
+      "requirementId": "R-set-faction-and-interaction-system",
+      "method": "visual",
+      "targetSlots": [
+        "faction-interaction-signage",
+        "controller-interaction",
+        "touch-interaction",
+        "tactical-hero"
+      ],
+      "criteria": "Faction colour-and-shape associations agree across signage, interaction screens and the overview hero. Controller and touch screens preserve matching camera, inset, labels, values and action positions while expressing their respective input mappings. Ready and Locked treatments agree with the interface architecture, including a padlock and label for Locked.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-game-material-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/03-asset-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-game-material-02/04-interface-records.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "tactical-specification",
+        "interface-architecture"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "battlefield-arrangement",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "master-plan",
+      "subjectSlots": [
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "tactical-hero"
+      ],
+      "notes": "The three key-area views, hero and flythrough follow the master plan's instance positions and orientations."
+    },
+    {
+      "id": "industrial-kit-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "industrial-kit.png"
+      ],
+      "subjectSlots": [
+        "tank-yard-view",
+        "belt-lane-view",
+        "crane-court-view",
+        "asset-continuity",
+        "tactical-hero"
+      ],
+      "notes": "The key-area views, continuity sheet, hero and flythrough preserve T01's two cream bands, C01's three cream side panels and G01's chamfered upper corners."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specified-cover",
+      "fromSlot": "tactical-specification",
+      "toSlots": [
+        "route-cover-overlay"
+      ],
+      "extract": [
+        "full-cover and low-cover classifications"
+      ],
+      "notes": "The overlay identifies three connected routes and dimensions their narrowest traversable connections at 4 m or greater; its full-cover and low-cover markings follow the specification."
+    },
+    {
+      "id": "specified-asset-records",
+      "fromSlot": "tactical-specification",
+      "toSlots": [
+        "asset-continuity"
+      ],
+      "extract": [
+        "three asset type IDs",
+        "length, width and height for each asset type"
+      ],
+      "notes": "The continuity sheet repeats all three asset IDs and their dimensions from the specification, shows four views per type and both Idle and Active states, and carries the same identifying features into its map-scale depictions."
+    },
+    {
+      "id": "specified-factions",
+      "fromSlot": "tactical-specification",
+      "toSlots": [
+        "faction-interaction-signage",
+        "controller-interaction",
+        "touch-interaction",
+        "tactical-hero"
+      ],
+      "extract": [
+        "Amber Union colour code and square emblem",
+        "Blue Assembly colour code and triangle emblem"
+      ],
+      "notes": "The signage sheet, interaction screens and hero repeat the specification's Amber Union square in #FFB547 and Blue Assembly triangle in #67C5FF."
+    },
+    {
+      "id": "specified-interface-states",
+      "fromSlot": "interface-architecture",
+      "toSlots": [
+        "controller-interaction",
+        "touch-interaction"
+      ],
+      "extract": [
+        "Ready and Locked states and their associated presentations"
+      ],
+      "notes": "The information architecture table and both interaction screens use the same Ready and Locked states."
+    },
+    {
+      "id": "presentation-facts",
+      "fromSlot": "tactical-specification",
+      "toSlots": [
+        "map-presentation"
+      ],
+      "extract": [
+        "asset dimensions for T01, C01 and G01",
+        "both faction colour codes and shapes",
+        "Idle and Active state names"
+      ],
+      "notes": "The presentation has at least 10 pages, prints SWITCHYARD on its opening page and repeats the specification's asset dimensions, both faction colour codes and shapes, and Idle and Active state names alongside the reused work."
+    }
+  ]
+}

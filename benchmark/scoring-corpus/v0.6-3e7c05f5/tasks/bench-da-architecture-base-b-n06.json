@@ -1,0 +1,602 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-architecture-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "site-plan",
+      "label": "Site and arrival plan",
+      "description": "A dimensioned site plan of the retained hall, south yard, visitor arrival and item delivery route.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ground-floor-comparison",
+      "label": "Existing and proposed ground floor",
+      "description": "An existing-and-proposed ground-floor comparison sheet with component IDs, room names, areas, equipment and circulation dimensions.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "transverse-section",
+      "label": "Transverse workshop section",
+      "description": "A transverse section through Teaching, a retained truss and a rooflight, with structural levels and a plywood-to-brick junction inset.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "entrance-view",
+      "label": "South entrance eye-level view",
+      "description": "An eye-level view of the south entrance, retained brick facade and COMMON REPAIR entrance lettering.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "course-day-view",
+      "label": "Course Day occupied view",
+      "description": "An occupied view headed Course Day with twelve learners, eight makers and two operators in the workshop.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "open-workshop-view",
+      "label": "Open Workshop occupied view",
+      "description": "An occupied view headed Open Workshop with six learners, eight makers and two operators using the same equipment layout.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "entrance-name",
+      "kind": "text-verbatim",
+      "text": "COMMON REPAIR",
+      "scope": {
+        "slots": [
+          "entrance-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "entrance-phrase",
+      "kind": "text-verbatim",
+      "text": "Repair together",
+      "scope": {
+        "slots": [
+          "entrance-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "course-day-heading",
+      "kind": "text-verbatim",
+      "text": "Course Day",
+      "scope": {
+        "slots": [
+          "course-day-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "open-workshop-heading",
+      "kind": "text-verbatim",
+      "text": "Open Workshop",
+      "scope": {
+        "slots": [
+          "open-workshop-view"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "COMMON REPAIR",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-coordinated-workshop",
+      "slots": [
+        "site-plan",
+        "ground-floor-comparison",
+        "transverse-section",
+        "entrance-view",
+        "course-day-view",
+        "open-workshop-view"
+      ],
+      "items": [
+        {
+          "item": "Plans, section and views describe the same retained hall, openings, structural bays, rooflights and proposed room arrangement.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The section and views agree on exposed brick and steel, repaired concrete and freestanding plywood-lined rooms with glazed upper walls.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The two operating views retain the same six teaching tables and four making benches while changing learner occupancy from twelve to six.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "COMMON REPAIR"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "site-plan",
+      "ground-floor-comparison",
+      "transverse-section",
+      "entrance-view",
+      "course-day-view",
+      "open-workshop-view"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not rescore exact wording, recorded geometry, equipment or occupant counts, specification repetition, presentation coverage or video duration, which are handled by explicit compliance checks."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "ground-floor-comparison",
+        "transverse-section",
+        "entrance-view",
+        "course-day-view",
+        "open-workshop-view"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-site-plan",
+      "requirementId": "R-format-site-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ground-floor-comparison",
+      "requirementId": "R-format-ground-floor-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ground-floor-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-transverse-section",
+      "requirementId": "R-format-transverse-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "transverse-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-view",
+      "requirementId": "R-format-entrance-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-course-day-view",
+      "requirementId": "R-format-course-day-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "course-day-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-open-workshop-view",
+      "requirementId": "R-format-open-workshop-view",
+      "method": "artifact-property",
+      "targetSlots": [
+        "open-workshop-view"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "site-placement",
+      "requirementId": "R-site-placement",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan"
+      ],
+      "criteria": "Read the plan as a 30000 mm east–west by 24000 mm north–south site. The 24000 × 12000 mm hall starts at site coordinate (3000,9000), leaving 3000 mm west, east and north setbacks and a 9000 mm south yard. Show public arrival across the south yard to D-01 and item delivery to east-side D-02. Graphic orientation may vary if north and the relationships remain unambiguous; displaced boundaries, incorrect setbacks or swapped arrivals fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "recorded-building-geometry",
+      "requirementId": "R-recorded-building-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor-comparison"
+      ],
+      "criteria": "Compare existing and proposed geometry against the hall-local record, with origin at the southwest exterior corner. Exterior bounds are 24000 × 12000 mm and brick walls are 300 mm thick. C-01–C-05 lie at y=300 and C-06–C-10 at y=11700, using x=300, 6150, 12000, 17850 and 23700 in order; columns are 200 × 200 mm. T-01–T-05 connect corresponding south and north columns at these x coordinates. Retain W-01 south, W-02 east, W-03 north, W-04 west, S-01 slab and R-01 pitched roof. D-01 occupies south x=1500–4500; D-02 east y=1500–4500; D-03 north x=19500–20700. South windows O-01 and O-02 occupy x=7500–9900 and 14100–16500. North-pitch rooflights K-01–K-05 occupy y=7500–9500 and x=1200–4200, 5700–8700, 10200–13200, 14700–17700 and 19200–22200 respectively. Existing P-01 is centred at x=18000 over y=300–11700, 100 mm thick, and must disappear from the proposed built layout. Drawing conventions may vary; omission, relocation, resizing or invented retained openings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "fixed-construction-direction",
+      "requirementId": "R-fixed-construction-direction",
+      "method": "visual",
+      "targetSlots": [
+        "transverse-section",
+        "entrance-view",
+        "course-day-view",
+        "open-workshop-view"
+      ],
+      "criteria": "Where visible, retain exposed brick, exposed steel columns and trusses, and a patched, sealed concrete floor. New enclosed rooms read as freestanding timber construction with birch plywood below clear upper glazing, leaving the existing roof structure exposed. Interior evidence should agree with plywood rising to 2100 mm, enclosed ceilings at 3000 mm and room tops at 3100 mm. Viewpoint and natural material variation are allowed; covering the retained structure or substituting a different construction system fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-plan-annotations",
+      "requirementId": "R-tier6-plan-annotations",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "ground-floor-comparison"
+      ],
+      "criteria": "The site plan explicitly dimensions the site and hall to the specified sizes. Each sheet carries a readable north indication, metric scale bar and ±0.000 datum. Annotation placement and drafting style may vary; missing dimensions on the site plan or missing orientation, scale or datum on either sheet fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-retention-labels",
+      "requirementId": "R-tier6-retention-labels",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor-comparison"
+      ],
+      "criteria": "Both plan states identify the ten columns, five trusses, four perimeter walls, slab, roof, three doors, two windows and five rooflights with their correct IDs and corresponding positions. Identify P-01 for removal and distinguish every new partition with the label New. Leaders, legends and overhead linework are acceptable if associations are clear; missing or reassigned IDs and ambiguous removal status fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-room-layout-and-equipment",
+      "requirementId": "R-tier6-room-layout-and-equipment",
+      "method": "visual",
+      "targetSlots": [
+        "ground-floor-comparison"
+      ],
+      "criteria": "The proposed plan labels all eight rooms with their specified net areas, totalling 192 m2, excluding partitions and shared circulation. Show a dimensioned public route of at least 1500 mm clear with equipment in place, D-01 arrival into Reception, a Tool Store counter visible from Reception, and the ordered D-02–Intake–Making–Collection route. Reception is beside Collection, Teaching beside Making, Intake beside D-02, and Staff Room beside Tool Store; Teaching and Accessible Toilet have direct public-route access. Equipment footprints comprise six 1800 × 750 mm teaching tables, twelve 450 × 450 mm chairs, four 1800 × 900 mm making benches, eight 400 × 400 mm stools, one 2400 × 600 mm tool counter, three 1200 × 450 mm tool shelves, one 1600 × 700 mm reception desk, one 1800 × 750 mm intake table, two 1200 × 450 mm collection shelves and two 900 × 600 mm carts, one in Intake and one in Collection. Layout choices may vary within these relationships; incorrect areas, missing equipment, blocked clearance or broken routes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-section",
+      "requirementId": "R-tier6-section",
+      "method": "visual",
+      "targetSlots": [
+        "transverse-section"
+      ],
+      "criteria": "The transverse cut passes through Teaching, a retained truss and a north-pitch rooflight. Dimension 11400 mm between column centres and identify floor/yard ±0.000, truss underside +4.800, eaves +5.400 and ridge +6.900. The ridge is centred transversely at y=6000. Include a legible junction inset identifying 18 mm birch plywood and a 20 mm recessed connection to retained brick. Exposed steel and brick must be identifiable. Drafting style may vary; incorrect measurement endpoints, levels, missing cut features or an undimensioned junction fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-entrance-and-view-coordination",
+      "requirementId": "R-tier6-entrance-and-view-coordination",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-view",
+        "course-day-view",
+        "open-workshop-view"
+      ],
+      "criteria": "The eye-level entrance image displays the project name and phrase at the public entrance and preserves the south facade's west-to-east D-01, O-01, O-02 order. D-01 is 3000 mm wide with head at 3600 mm; each window is 2400 mm wide with sill at 1800 mm and head at 3600 mm. Across the three views, visible columns, rooflights and material boundaries correspond to the plans and section. Perspective and occlusion are allowed; extra openings, relocated structure or incompatible construction fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "ground-floor-comparison",
+        "transverse-section"
+      ]
+    },
+    {
+      "id": "tier6-operating-states",
+      "requirementId": "R-tier6-operating-states",
+      "method": "visual",
+      "targetSlots": [
+        "course-day-view",
+        "open-workshop-view"
+      ],
+      "criteria": "Each occupied Teaching-and-Making view uses its designated heading. Course Day visibly accounts for twelve learners, eight makers and two operators; Open Workshop accounts for six learners, eight makers and two operators. The six teaching tables and four making benches retain the same layout and inventory. Course Day seats two learners per table; Open Workshop seats one; each making bench serves two makers in both states. One operator is at Reception and one at Tool Store. Camera and gestures may vary, but occupants must be countable; wrong totals, roles, equipment counts or changed furniture arrangements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-tier6-coordinated-workshop",
+      "requirementId": "R-set-tier6-coordinated-workshop",
+      "method": "visual",
+      "targetSlots": [
+        "site-plan",
+        "ground-floor-comparison",
+        "transverse-section",
+        "entrance-view",
+        "course-day-view",
+        "open-workshop-view"
+      ],
+      "criteria": "Plans, section and views describe the same retained hall, openings, structural bays, rooflights and proposed room arrangement. The section and views agree on exposed brick and steel, repaired concrete and freestanding plywood-lined rooms with glazed upper walls. The two operating views retain the same six teaching tables and four making benches while changing learner occupancy from twelve to six.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-architecture-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/03-building-records.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-architecture-base-b-n06/04-operations-equipment.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "same-converted-hall",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "ground-floor-comparison",
+      "subjectSlots": [
+        "entrance-view",
+        "course-day-view",
+        "open-workshop-view"
+      ],
+      "notes": "Match all eight views and the 10-second walkthrough to the plans, sections and elevations, including the six teaching tables, four making benches, retained rooflights and new room heights."
+    }
+  ]
+}

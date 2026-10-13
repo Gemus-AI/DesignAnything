@@ -1,0 +1,25 @@
+RELAY | A modular sofa with replaceable covers and serviceable joints
+
+We are developing RELAY for households that rearrange their living room and replace worn upholstery one part at a time. The module system is settled: L is a left chaise, 900 × 1600 mm; S is an armless seat, 900 × 900 mm; R is a right-arm seat, 900 × 900 mm. Left and right are viewed from the front. All three have a 780 mm overall height, a 420 mm seat height and 120 mm removable feet. Each joined seam uses two retained over-centre latch assemblies, positioned 250 mm and 650 mm from the rear edge. Joining is tool-free; replacing the latch hardware uses a 4 mm hex key. Develop the upholstery details and fabric applications around these dimensions and the existing S module's rounded cushion corners and inset double stitching.
+
+The frame is 18 mm birch plywood with a clear water-based finish; the feet are solid smoked oak with hardwax oil; the latch hardware is black powder-coated steel. Our three cover colours are F01 Oat #C7B9A5, F02 Moss #65705B and F03 Clay #A86E57, all in the same 70% polyester, 30% cotton weave at 360 g/m², with a 30°C gentle wash and air drying. Each module has separate seat, back-cushion and body covers. Service parts comprise these covers, cushion inserts, latch assemblies and feet. Arrangement A joins L-S-R into a 2700 × 1600 mm sofa; Arrangement B separates L from the joined S-R pair with a 600 mm gap. Use the attached 7 m × 4 m living room, with its 2.7 m clear height and drawn openings, for the room applications. Print "RELAY" on the module overview, service sheets, fabric sheets and presentation, and "Replace the cover, keep the module" on the cover-change sheet, fabric family sheet and presentation.
+
+Audience: households choosing a sofa that can move between room arrangements, and our furniture and upholstery teams deciding the range and service details.
+
+Inputs (attached): 01-client-facts.en.md contains the module, arrangement, hardware, fabric and maintenance records. 02-delivery-catalog.en.md lists the deliverables with their proportions, formats and stages. living-room-plan.png is the constraint image for the room boundary, door and windows. module-interfaces.png is the constraint drawing for module envelopes and latch mounting positions. existing-seat-module.png is the identity image for the existing S module's upholstery profile, seam placement and feet. current-furniture-1.png is a reference for the current range's pale oak and grey wool character. current-furniture-2.png is a reference for the second piece in that range. current-furniture-3.png is a reference for the third piece in that range. current-furniture-4.png is a reference for the fourth piece in that range. household-cover-change.png is an atmosphere reference for changing a cover in an occupied family living room.
+
+Deliverables:
+1. One finished module overview with plan, front and side views of L, S and R, their dimensions and the shared upholstery details
+2. Two arrangement plates: Arrangement A in F01 Oat before a cover change, and the same Arrangement A in F02 Moss after the change
+3. One illustrated joining and cover-change sheet, with latch positions, the removal and refitting sequence, and the three cover pieces per module
+4. One fabric family sheet with F01 Oat, F02 Moss and F03 Clay, their colour codes, weave composition, weight and care information
+5. One room application of Arrangement B in F01 Oat, combining a furnished view and a dimensioned plan of the supplied living room
+
+Acceptance:
+- Dimension L at 900 × 1600 mm and S and R at 900 × 900 mm on the module overview; show the shared 780 mm overall height, 420 mm seat height, 120 mm feet, 40 mm cushion corner radius and stitching inset of 15 mm.
+- Give each Arrangement A plate the same L-S-R order, 2700 × 1600 mm footprint and four engaged latch assemblies; label the first F01 Oat and the second F02 Moss, retaining the module profiles and seam positions through the cover change.
+- On the joining and cover-change sheet, locate the two latches per seam at 250 mm and 650 mm from the rear, identify the 4 mm hex key for hardware replacement, and illustrate disconnecting, lifting cushions, removing covers, refitting and reconnecting.
+- On the fabric family sheet, print all three colour names and codes, 70% polyester, 30% cotton, 360 g/m² and 30°C gentle wash with air drying; print RELAY and Replace the cover, keep the module on this sheet and the cover-change sheet, and RELAY on the module overview.
+- In the Arrangement B room application, account for one L, one S and one R, two engaged and two parked latch assemblies, the 600 mm separation and a route at least 900 mm wide from the drawn door to the seating; retain the supplied room's 7 m × 4 m boundary and opening positions.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

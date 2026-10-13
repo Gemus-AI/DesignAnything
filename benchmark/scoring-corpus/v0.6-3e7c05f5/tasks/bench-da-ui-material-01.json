@@ -1,0 +1,1110 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ui-material-01",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "digital-product",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "interface-specification",
+      "label": "Interface flow and component specification",
+      "description": "One interface specification containing the ten-screen flow table and component state values.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "welcome",
+      "label": "Welcome screen",
+      "description": "One Welcome screen with the complete museum mark and the Buy tickets and Museum guide entries.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ticket-types",
+      "label": "Ticket types screen",
+      "description": "One Ticket types screen with admission eligibility, prices and the four-ticket selection.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "workshop",
+      "label": "Workshop selection screen",
+      "description": "One Workshop screen with two adult places selected and the four-year-old's option disabled.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "basket-review",
+      "label": "Unpaid basket review screen",
+      "description": "One Basket review screen with the P0 itemisation and unpaid USD 50.00 total.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "card-payment",
+      "label": "Card payment screen",
+      "description": "One Card payment screen directing the visitor to the left-hand reader for the USD 50.00 basket.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "payment-unknown",
+      "label": "Unknown payment result screen",
+      "description": "One Payment unknown screen with the P1 pending result and existing-attempt status check.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "ticket-confirmed",
+      "label": "Ticket confirmation screen",
+      "description": "One Ticket confirmed screen with P2 payment reference RM-0912-084, all entitlements and right-hand collection.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "print-failed",
+      "label": "Paid printing failure screen",
+      "description": "One Print failed screen preserving the P3 paid reference and entitlements with help at information desk I.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "museum-overview",
+      "label": "Museum overview screen",
+      "description": "One Museum overview screen with eight area records, opening hours and the return-to-basket action.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "object-lab-route",
+      "label": "Object Lab route screen",
+      "description": "One Object Lab route screen showing north and the K–F–C–G2 visitor path.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "browse-return-comparison",
+      "label": "B0 browse and return comparison",
+      "description": "One annotated three-panel B0 comparison of the unpaid basket, museum overview and preserved returned basket.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "browse-return-video",
+      "label": "B0 interaction video",
+      "description": "One 10-second B0 interaction video with a pressed Museum guide action and the preserved unpaid basket.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "handoff-presentation",
+      "label": "Visitor kiosk handoff presentation",
+      "description": "One presentation of at least eight pages reusing the specification, ten screens, B0 comparison and video stills.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "museum-name",
+      "kind": "text-verbatim",
+      "text": "RIVERROOM MUSEUM",
+      "scope": {
+        "slots": [
+          "welcome",
+          "ticket-types",
+          "ticket-confirmed",
+          "handoff-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "welcome-buy",
+      "kind": "text-verbatim",
+      "text": "Buy tickets",
+      "scope": {
+        "slots": [
+          "welcome"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "welcome-guide",
+      "kind": "text-verbatim",
+      "text": "Museum guide",
+      "scope": {
+        "slots": [
+          "welcome"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "existing-payment-status-label",
+      "kind": "text-verbatim",
+      "text": "Check payment status",
+      "scope": {
+        "slots": [
+          "payment-unknown"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "basket-return-label",
+      "kind": "text-verbatim",
+      "text": "Back to basket",
+      "scope": {
+        "slots": [
+          "museum-overview",
+          "browse-return-comparison"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "RIVERROOM MUSEUM",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "specified-interface-family",
+      "slots": [
+        "welcome",
+        "ticket-types",
+        "workshop",
+        "basket-review",
+        "card-payment",
+        "payment-unknown",
+        "ticket-confirmed",
+        "print-failed",
+        "museum-overview",
+        "object-lab-route",
+        "browse-return-comparison"
+      ],
+      "sourceSlots": [
+        "interface-specification"
+      ],
+      "items": [
+        {
+          "item": "The ten screens and comparison-board interfaces consistently apply the specification's colour, typography, spacing, component states and navigation conventions.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The comparison-board panels preserve the corresponding delivered screen designs and show the same unpaid basket before and after the information detour.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Transaction and museum information agree across the interface family, with differences limited to the commissioned payment states, screen purposes and eligibility states.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "RIVERROOM MUSEUM"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "welcome",
+      "ticket-types",
+      "workshop",
+      "basket-review",
+      "card-payment",
+      "payment-unknown",
+      "ticket-confirmed",
+      "print-failed",
+      "museum-overview",
+      "object-lab-route",
+      "browse-return-comparison"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not judge physical kiosk fabrication, photorealistic materials or lighting, or originality of the supplied museum identity and fixed visitor-plan geography."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "interface-specification",
+        "welcome",
+        "ticket-types",
+        "workshop",
+        "basket-review",
+        "card-payment",
+        "payment-unknown",
+        "ticket-confirmed",
+        "print-failed",
+        "museum-overview",
+        "object-lab-route",
+        "browse-return-comparison",
+        "handoff-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "welcome",
+        "ticket-types",
+        "workshop",
+        "basket-review",
+        "card-payment",
+        "payment-unknown",
+        "ticket-confirmed",
+        "print-failed",
+        "museum-overview",
+        "object-lab-route",
+        "browse-return-comparison"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-interface-specification",
+      "requirementId": "R-format-interface-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "interface-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-welcome",
+      "requirementId": "R-format-welcome",
+      "method": "artifact-property",
+      "targetSlots": [
+        "welcome"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ticket-types",
+      "requirementId": "R-format-ticket-types",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ticket-types"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-workshop",
+      "requirementId": "R-format-workshop",
+      "method": "artifact-property",
+      "targetSlots": [
+        "workshop"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-basket-review",
+      "requirementId": "R-format-basket-review",
+      "method": "artifact-property",
+      "targetSlots": [
+        "basket-review"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-card-payment",
+      "requirementId": "R-format-card-payment",
+      "method": "artifact-property",
+      "targetSlots": [
+        "card-payment"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-payment-unknown",
+      "requirementId": "R-format-payment-unknown",
+      "method": "artifact-property",
+      "targetSlots": [
+        "payment-unknown"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-ticket-confirmed",
+      "requirementId": "R-format-ticket-confirmed",
+      "method": "artifact-property",
+      "targetSlots": [
+        "ticket-confirmed"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-print-failed",
+      "requirementId": "R-format-print-failed",
+      "method": "artifact-property",
+      "targetSlots": [
+        "print-failed"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-museum-overview",
+      "requirementId": "R-format-museum-overview",
+      "method": "artifact-property",
+      "targetSlots": [
+        "museum-overview"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-object-lab-route",
+      "requirementId": "R-format-object-lab-route",
+      "method": "artifact-property",
+      "targetSlots": [
+        "object-lab-route"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-browse-return-comparison",
+      "requirementId": "R-format-browse-return-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "browse-return-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-browse-return-video",
+      "requirementId": "R-format-browse-return-video",
+      "method": "manual",
+      "targetSlots": [
+        "browse-return-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-handoff-presentation",
+      "requirementId": "R-format-handoff-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "handoff-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "specification-flow-and-component-tables",
+      "requirementId": "R-specification-flow-and-component-tables",
+      "method": "content",
+      "targetSlots": [
+        "interface-specification"
+      ],
+      "criteria": "Require both requested tables. The flow table names Welcome, Ticket types, Workshop, Basket review, Card payment, Payment unknown, Ticket confirmed, Print failed, Museum overview and Object Lab route, with their entry paths and transferred data. It distinguishes unpaid P0, pending P1, paid collection-ready P2, paid print-failed P3 and the B0 information branch returning to P0. The component table gives usable state values, colours, contrast ratios, touch sizes and navigation behavior. Equivalent table formatting is allowed; omitted screens, states, entries or data relationships fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "specified-component-states-and-contrast",
+      "requirementId": "R-specified-component-states-and-contrast",
+      "method": "content",
+      "targetSlots": [
+        "interface-specification"
+      ],
+      "criteria": "The specification defines implementable values for all four component states, identifies foreground/background colours and records contrast ratios meeting at least 4.5:1 for body text and 3:1 for large text and meaningful icons. State meaning must also be conveyed by words or symbols. Different compliant colour pairings are allowed; generic state names without values, insufficient ratios or colour-only state meanings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "device-and-control-handoff",
+      "requirementId": "R-device-and-control-handoff",
+      "method": "content",
+      "targetSlots": [
+        "interface-specification"
+      ],
+      "criteria": "Read the device and navigation specification for the landscape logical coordinate system, 480 × 270 mm active surface, lower and upper display heights of 850 and 1120 mm, 380–1220 mm touch reach band and 1120 mm wheelchair forward-reach limit. Controls must remain within the mounted display. Navigation uses on-screen touch; the contactless reader is below the display on the visitor's left and the outlet below it on the right, with their centres at 750 mm. Equivalent diagrams or tables are acceptable. Contradictory measurements, swapped hardware or navigation requiring off-screen controls fail; do not measure exported pixel dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "screen-system-and-content-fit",
+      "requirementId": "R-screen-system-and-content-fit",
+      "method": "visual",
+      "targetSlots": [
+        "welcome",
+        "ticket-types",
+        "workshop",
+        "basket-review",
+        "card-payment",
+        "payment-unknown",
+        "ticket-confirmed",
+        "print-failed",
+        "museum-overview",
+        "object-lab-route",
+        "browse-return-comparison"
+      ],
+      "criteria": "Compare the ten interfaces and each comparison-board panel with the specification. They use #164D59 as the primary interface colour and controls consistent with minimum 64 × 64 logical-unit targets and 16-unit gaps. Assess logical sizing relative to each interface panel and the specification, allowing uniform export scaling. Required content is visible inside each screen without clipping or dependence on an unseen continuation. Missing content, undersized targets, crowded gaps or departure from the specified system fail; exact exported pixel counts are outside this check.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "interface-specification"
+      ]
+    },
+    {
+      "id": "visible-component-state-applications",
+      "requirementId": "R-visible-component-state-applications",
+      "method": "visual",
+      "targetSlots": [
+        "welcome",
+        "workshop",
+        "print-failed"
+      ],
+      "criteria": "Welcome actions visibly use the specified default treatment; the four-year-old workshop option is visibly unavailable; and Print failed communicates its error with readable text or a meaningful symbol. Treatments and text/icon contrast must agree with the specification. Styling may vary by component as specified, but an enabled ineligible option, colour-only error indication or contradictory state appearance fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "interface-specification"
+      ]
+    },
+    {
+      "id": "admission-and-workshop-records",
+      "requirementId": "R-admission-and-workshop-records",
+      "method": "visual",
+      "targetSlots": [
+        "ticket-types",
+        "workshop",
+        "basket-review",
+        "ticket-confirmed",
+        "print-failed"
+      ],
+      "criteria": "Read the transaction across these screens: two adults, one nine-year-old and one four-year-old produce four admission tickets, including the free ticket. Ticket types shows the three age bands, corresponding unit prices and quantities 2, 1 and 1. Workshop identifies Light & Water at USD 5.00 per place, admission and age-six eligibility, exactly two available places at 14:00, and the 14:30–15:00 session; both places belong to the adults, with none allocated to either child. Basket review accounts for USD 32.00 adult admission, USD 8.00 young admission, USD 0.00 under-six admission and USD 10.00 workshop, with admission subtotal USD 40.00 and total USD 50.00. Later screens retain these entitlements. Equivalent readable grouping is allowed; changed allocations, missing free admission or inconsistent arithmetic fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "payment-state-semantics-and-hardware-directions",
+      "requirementId": "R-payment-state-semantics-and-hardware-directions",
+      "method": "visual",
+      "targetSlots": [
+        "basket-review",
+        "card-payment",
+        "payment-unknown",
+        "ticket-confirmed",
+        "print-failed"
+      ],
+      "criteria": "The depicted sequence and specification place unpaid review before the USD 50.00 contactless-card instruction, which directs the visitor left and below the screen. P1 communicates an unresolved result and a query of the existing payment attempt, without asserting success or initiating another charge. P2 visibly records one USD 50.00 payment, RM-0912-084, four admissions and two 14:30 workshop places on 12 September 2026, directing collection right and below the screen. P3 retains the same paid amount, reference and valid entitlements, explains that printing failed, and makes assistance at information desk I inside F the next step. Equivalent directional text or graphics are allowed; reversed directions, repayment, changed references or invalidated entitlements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "interface-specification"
+      ]
+    },
+    {
+      "id": "museum-overview-area-records",
+      "requirementId": "R-museum-overview-area-records",
+      "method": "visual",
+      "targetSlots": [
+        "museum-overview"
+      ],
+      "criteria": "Read all eight area records with their IDs and visitor labels: F Foyer, I Information desk, C Shared visitor corridor, T Toilets, G1 River Stories, G2 Object Lab, W Light & Water and G3 Archive Study. F, I, C and T are open and free; I is in F and offers ticket/printing assistance; T is reached from C. G1 and G2 are open with admission required, with their recorded exhibition subjects conveyed. W requires admission plus the valid 14:30 workshop add-on. G3 is closed for maintenance, with entry and tickets unavailable, and open G2 is offered as the admission-required alternative. Show hours 10:00–18:00 and last admission 17:00. Concise equivalent record wording is allowed; missing areas, incorrect access or conflicting status fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "route-and-facility-relationships",
+      "requirementId": "R-route-and-facility-relationships",
+      "method": "visual",
+      "targetSlots": [
+        "object-lab-route"
+      ],
+      "criteria": "Compare with visitor-plan.png: the destination is G2 Object Lab, and the highlighted route starts at kiosk K inside F, proceeds east along C and then north into G2. North is visibly indicated and agrees with the supplied plan. Any other depicted connections preserve F–C and C–T/G1/G2/W, I remains inside F, and G3 has no open entry. The route stays on one floor and uses the recorded step-free passages. Simplified shapes or rotation are allowed when labels, connectivity and north rotate consistently; invented shortcuts, reversed geography or a route through closed G3 fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "b0-three-panel-comparison",
+      "requirementId": "R-b0-three-panel-comparison",
+      "method": "visual",
+      "targetSlots": [
+        "browse-return-comparison"
+      ],
+      "criteria": "The board shows three identifiable panels in browse-and-return order, matching the delivered Basket review and Museum overview designs. Both basket panels remain unpaid P0 with four admission tickets, two adult workshop places and USD 50.00; the overview provides Back to basket. Branch and preservation annotations sit outside the interfaces. Panel scaling and annotation layout may vary; missing panels, annotations embedded as interface content, a paid return or changed basket fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "basket-review",
+        "museum-overview"
+      ]
+    },
+    {
+      "id": "b0-video-interaction",
+      "requirementId": "R-b0-video-interaction",
+      "method": "manual",
+      "targetSlots": [
+        "browse-return-video"
+      ],
+      "criteria": "Review the entire video and its duration. It lasts 10 seconds and depicts unpaid Basket review, activation of Museum guide with a discernible pressed state matching the specification, Museum overview, and activation of Back to basket returning to unpaid review. The initial and returned baskets retain four admissions, two adult workshop places and USD 50.00, with no payment event. Interfaces agree with the delivered screens and board. Transition style may vary; missing interaction stages, an imperceptible pressed state, a changed basket or incorrect duration fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "interface-specification",
+        "basket-review",
+        "museum-overview",
+        "browse-return-comparison"
+      ]
+    },
+    {
+      "id": "admission-and-workshop-access",
+      "requirementId": "R-admission-and-workshop-access",
+      "method": "visual",
+      "targetSlots": [
+        "ticket-types",
+        "workshop",
+        "museum-overview"
+      ],
+      "criteria": "The purchase and information screens collectively explain that today's admission includes G1 and G2, while W requires both admission and the workshop add-on. The free under-six ticket remains an admission entitlement, and workshop access is limited by the recorded eligibility and session. Information may be distributed across the relevant screens; absent access explanations or claims of workshop access through admission alone fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "price-basis-and-currency",
+      "requirementId": "R-price-basis-and-currency",
+      "method": "visual",
+      "targetSlots": [
+        "ticket-types",
+        "workshop",
+        "basket-review",
+        "card-payment",
+        "payment-unknown",
+        "ticket-confirmed",
+        "print-failed"
+      ],
+      "criteria": "Monetary amounts that appear use USD with two decimal places. Basket review makes the tax-inclusive basis clear, and the displayed line items fully account for USD 50.00. A shared currency heading is acceptable when its scope is unambiguous. Added taxes, fees, unexplained charges, another currency or contradictory totals fail; every screen need not repeat the tax statement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "prepayment-quantity-editing",
+      "requirementId": "R-prepayment-quantity-editing",
+      "method": "visual",
+      "targetSlots": [
+        "ticket-types",
+        "workshop",
+        "basket-review"
+      ],
+      "criteria": "Before payment, the interface visibly provides quantity adjustment or a clear path back to editable selections. The specification and control states enforce workshop availability and age eligibility, including the ineligible four-year-old. Delivered snapshots retain the commissioned basket. Different editing controls are allowed; no prepayment editing path or controls permitting invalid workshop selections fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "interface-specification"
+      ]
+    },
+    {
+      "id": "english-touchscreen-journey",
+      "requirementId": "R-english-touchscreen-journey",
+      "method": "visual",
+      "targetSlots": [
+        "welcome",
+        "ticket-types",
+        "workshop",
+        "basket-review",
+        "card-payment",
+        "payment-unknown",
+        "ticket-confirmed",
+        "print-failed",
+        "museum-overview",
+        "object-lab-route"
+      ],
+      "criteria": "Visitor-facing instructions, actions and explanations are in English. Welcome exposes both purchase and museum-guide entry points, and subsequent screens visibly identify the next action or destination needed to complete purchase or reach G2. Area IDs and payment references are allowed alongside plain-language labels. Missing journey entry points, untranslated instructions or unexplained codes replacing essential visitor guidance fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "presentation-source-reuse",
+      "requirementId": "R-presentation-source-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "handoff-presentation"
+      ],
+      "criteria": "The presentation visibly incorporates identifiable material from the specification, every one of the ten delivered screens, the B0 comparison board and still frames corresponding to the delivered video. Scaling, page composition and useful cropping are allowed when each source remains recognizable. Merely naming a source, substituting a different interface version or omitting any source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "interface-specification",
+        "welcome",
+        "ticket-types",
+        "workshop",
+        "basket-review",
+        "card-payment",
+        "payment-unknown",
+        "ticket-confirmed",
+        "print-failed",
+        "museum-overview",
+        "object-lab-route",
+        "browse-return-comparison"
+      ]
+    },
+    {
+      "id": "presentation-length-and-specification-recap",
+      "requirementId": "R-presentation-length-and-specification-recap",
+      "method": "content",
+      "targetSlots": [
+        "handoff-presentation"
+      ],
+      "criteria": "The document has at least eight pages and an explicit specification recap agreeing with the source specification: logical canvas 1920 × 1080 units, primary colour #164D59, touch targets at least 64 × 64 logical units and gaps at least 16 logical units. These are stated design values, not measurements of export pixels. Recap placement may vary; too few pages, missing values, incorrect units or conflicting values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "sourceSlots": [
+        "interface-specification"
+      ]
+    },
+    {
+      "id": "presentation-cover-existing-identity",
+      "requirementId": "R-presentation-cover-existing-identity",
+      "method": "content",
+      "targetSlots": [
+        "handoff-presentation"
+      ],
+      "criteria": "Inspect the cover against museum-mark.png. It bears the complete existing icon and RIVERROOM MUSEUM wordmark in their supplied relative arrangement and proportions. Uniform scaling and either the supplied colours or an entirely white lockup are permitted. A missing icon, recreated or altered lettering, rearrangement, distortion, partial recolouring or identity appearing only on an interior page fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ]
+    },
+    {
+      "id": "set-specified-interface-family",
+      "requirementId": "R-set-specified-interface-family",
+      "method": "visual",
+      "targetSlots": [
+        "welcome",
+        "ticket-types",
+        "workshop",
+        "basket-review",
+        "card-payment",
+        "payment-unknown",
+        "ticket-confirmed",
+        "print-failed",
+        "museum-overview",
+        "object-lab-route",
+        "browse-return-comparison"
+      ],
+      "criteria": "The ten screens and comparison-board interfaces consistently apply the specification's colour, typography, spacing, component states and navigation conventions. The comparison-board panels preserve the corresponding delivered screen designs and show the same unpaid basket before and after the information detour. Transaction and museum information agree across the interface family, with differences limited to the commissioned payment states, screen purposes and eligibility states.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-01.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-01/02-delivery-catalog.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "interface-specification"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "supplied-museum-lockup",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "museum-mark.png"
+      ],
+      "subjectSlots": [
+        "welcome",
+        "ticket-types",
+        "ticket-confirmed"
+      ],
+      "notes": "Welcome, Ticket types, Ticket confirmed and the presentation cover use the complete museum-mark.png lockup with its icon, lettering and arrangement preserved; scaling is uniform and any recolouring changes the whole lockup to white."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specification-values-in-presentation",
+      "fromSlot": "interface-specification",
+      "toSlots": [
+        "handoff-presentation"
+      ],
+      "extract": [
+        "logical canvas dimensions",
+        "primary interface colour",
+        "minimum touch target dimensions in logical units",
+        "minimum gap between adjacent touch targets in logical units"
+      ],
+      "notes": "All ten screens and the B0 board panels use its 1920 × 1080 logical canvas, #164D59 primary colour, minimum 64 × 64 touch targets and minimum 16-unit gaps; the presentation repeats these values."
+    }
+  ]
+}

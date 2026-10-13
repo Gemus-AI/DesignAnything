@@ -1,0 +1,1182 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-landscape-breadth-02",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "space",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "site-analysis",
+      "label": "Site analysis and zoning schedule",
+      "description": "A one-page site analysis with zone areas, surfaces, shade, capacities, tide levels and plant names.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "protection-masterplan",
+      "label": "Protection and trail masterplan",
+      "description": "A masterplan locating protected zones, public facilities, planting, patrol access and drawing viewpoints.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "bird-hide-section",
+      "label": "Bird Hide terrain and sightline section",
+      "description": "A section along x = 80 m through Bird Hide, terrain, tide levels and observation sightlines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "rest-deck-section",
+      "label": "Rest Deck terrain and sightline section",
+      "description": "A section along x = 180 m through Rest Deck, terrain, tide levels and observation sightlines.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-planting",
+      "label": "Materials and planting schedule",
+      "description": "A schedule of zone areas, plant codes, species, quantities, sizes, retained patches and construction materials.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "entrance-wayfinding",
+      "label": "Entrance wayfinding sign",
+      "description": "An entrance sign with the site name, visitor message and directions to both observation nodes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "wetland-interpretation",
+      "label": "Wetland interpretation panel",
+      "description": "An interpretation panel with the site name, visitor message, two tide levels and three recorded plants.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "low-tide-plan",
+      "label": "Low tide use plan",
+      "description": "A site use plan at Low tide +0.20 m showing water extent, node capacities and public and patrol access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "high-tide-plan",
+      "label": "High tide use plan",
+      "description": "A site use plan at High tide +1.80 m showing water extent, node capacities and public and patrol access.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "high-tide-perspective",
+      "label": "Bird Hide southwest perspective at High tide",
+      "description": "A southwest perspective of Bird Hide and its northward wetland outlook at High tide.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "low-tide-perspective",
+      "label": "Bird Hide southeast perspective at Low tide",
+      "description": "A southeast perspective of Bird Hide and its northward wetland outlook at Low tide.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "observation-node-details",
+      "label": "Observation node detail sheet",
+      "description": "A detail sheet for both observation nodes covering dimensions, shade, seating, viewing openings and route connections.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "tide-transition",
+      "label": "Bird Hide tide transition video",
+      "description": "A 10-second fixed-camera view from Bird Hide transitioning between the two labelled tide levels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "landscape-presentation",
+      "label": "Landscape presentation",
+      "description": "A presentation of at least eight pages reusing the site analysis and completed landscape work.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "site-name",
+      "kind": "text-verbatim",
+      "text": "REEDHAVEN",
+      "scope": {
+        "slots": [
+          "protection-masterplan",
+          "entrance-wayfinding",
+          "wetland-interpretation",
+          "materials-planting",
+          "landscape-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "visitor-message",
+      "kind": "text-verbatim",
+      "text": "Watch quietly. Stay on the path.",
+      "scope": {
+        "slots": [
+          "entrance-wayfinding",
+          "wetland-interpretation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "bird-hide-name",
+      "kind": "text-verbatim",
+      "text": "Bird Hide",
+      "scope": {
+        "slots": [
+          "entrance-wayfinding"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "rest-deck-name",
+      "kind": "text-verbatim",
+      "text": "Rest Deck",
+      "scope": {
+        "slots": [
+          "entrance-wayfinding"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "REEDHAVEN",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "coordinated-site-and-tide-system",
+      "slots": [
+        "protection-masterplan",
+        "bird-hide-section",
+        "rest-deck-section",
+        "low-tide-plan",
+        "high-tide-plan",
+        "high-tide-perspective",
+        "low-tide-perspective",
+        "observation-node-details"
+      ],
+      "sourceSlots": [
+        "site-analysis",
+        "materials-planting"
+      ],
+      "items": [
+        {
+          "item": "Plans, sections, details and perspectives describe the same node locations, footprints, public-route connections, shade structures and retained patrol boardwalk, allowing projection and visibility differences.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Zone boundaries, public-construction limits, terrain, retained reed patches, viewing gaps and tidal creek agree with the fixed site records and the written schedules.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Low- and high-tide depictions agree with the section elevations while retaining the same facilities and open public and patrol access.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "signs-follow-site-records",
+      "slots": [
+        "entrance-wayfinding",
+        "wetland-interpretation"
+      ],
+      "sourceSlots": [
+        "protection-masterplan",
+        "site-analysis",
+        "materials-planting"
+      ],
+      "items": [
+        {
+          "item": "Entrance wayfinding identifies the planned observation destinations, and interpretation uses the recorded tide elevations and plant identities without contradictory information.",
+          "kind": "compliance"
+        },
+        {
+          "item": "Both signs display the required site name and visitor message accurately.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "REEDHAVEN"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Spatial Design",
+    "slots": [
+      "protection-masterplan",
+      "bird-hide-section",
+      "rest-deck-section",
+      "entrance-wayfinding",
+      "wetland-interpretation",
+      "low-tide-plan",
+      "high-tide-plan",
+      "high-tide-perspective",
+      "low-tide-perspective",
+      "observation-node-details"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge exact site records, required wording, page count or video duration, which belong to compliance checks, or demand photorealistic material texture and lighting in technical drawings."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "site-analysis",
+        "protection-masterplan",
+        "bird-hide-section",
+        "rest-deck-section",
+        "materials-planting",
+        "entrance-wayfinding",
+        "wetland-interpretation",
+        "low-tide-plan",
+        "high-tide-plan",
+        "high-tide-perspective",
+        "low-tide-perspective",
+        "observation-node-details",
+        "landscape-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "protection-masterplan",
+        "bird-hide-section",
+        "rest-deck-section",
+        "entrance-wayfinding",
+        "wetland-interpretation",
+        "low-tide-plan",
+        "high-tide-plan",
+        "high-tide-perspective",
+        "low-tide-perspective",
+        "observation-node-details"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-site-analysis",
+      "requirementId": "R-format-site-analysis",
+      "method": "artifact-property",
+      "targetSlots": [
+        "site-analysis"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-protection-masterplan",
+      "requirementId": "R-format-protection-masterplan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "protection-masterplan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-bird-hide-section",
+      "requirementId": "R-format-bird-hide-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "bird-hide-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-rest-deck-section",
+      "requirementId": "R-format-rest-deck-section",
+      "method": "artifact-property",
+      "targetSlots": [
+        "rest-deck-section"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-planting",
+      "requirementId": "R-format-materials-planting",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-planting"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-entrance-wayfinding",
+      "requirementId": "R-format-entrance-wayfinding",
+      "method": "artifact-property",
+      "targetSlots": [
+        "entrance-wayfinding"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-wetland-interpretation",
+      "requirementId": "R-format-wetland-interpretation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "wetland-interpretation"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-low-tide-plan",
+      "requirementId": "R-format-low-tide-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "low-tide-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-high-tide-plan",
+      "requirementId": "R-format-high-tide-plan",
+      "method": "artifact-property",
+      "targetSlots": [
+        "high-tide-plan"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-high-tide-perspective",
+      "requirementId": "R-format-high-tide-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "high-tide-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-low-tide-perspective",
+      "requirementId": "R-format-low-tide-perspective",
+      "method": "artifact-property",
+      "targetSlots": [
+        "low-tide-perspective"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-observation-node-details",
+      "requirementId": "R-format-observation-node-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "observation-node-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-tide-transition",
+      "requirementId": "R-format-tide-transition",
+      "method": "manual",
+      "targetSlots": [
+        "tide-transition"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-landscape-presentation",
+      "requirementId": "R-format-landscape-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "landscape-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "document-zone-records",
+      "requirementId": "R-document-zone-records",
+      "method": "content",
+      "targetSlots": [
+        "site-analysis",
+        "materials-planting",
+        "landscape-presentation"
+      ],
+      "criteria": "Each document must associate Visitor Margin with 9,600 m², Habitat Buffer with 4,800 m² and Habitat Core with 14,400 m². Tables, diagrams or prose are acceptable; missing zones, swapped areas or contradictory totals fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "masterplan-boundary-and-protection",
+      "requirementId": "R-masterplan-boundary-and-protection",
+      "method": "visual",
+      "targetSlots": [
+        "protection-masterplan"
+      ],
+      "criteria": "Show a 240 m east–west by 120 m north–south rectangle, with southwest origin and north increasing y. Identify Visitor Margin at y = 0–40 m as 9,600 m², Habitat Buffer at y = 40–60 m as 4,800 m² and Habitat Core at y = 60–120 m as 14,400 m². All public paths, decks, supports, roof projections and furniture must remain inside Visitor Margin; the other bands must retain habitat-management access status. Graphic style may vary, but displaced boundaries, incorrect areas or public construction crossing y = 40 m fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "route-connectivity-and-patrol-access",
+      "requirementId": "R-route-connectivity-and-patrol-access",
+      "method": "visual",
+      "targetSlots": [
+        "protection-masterplan",
+        "low-tide-plan",
+        "high-tide-plan",
+        "observation-node-details"
+      ],
+      "criteria": "The drawings must establish a connected public route from (0,20) to the two correctly assigned node centres, with at least 2.40 m unobstructed width. Detail-sheet connections may use an inset or connection diagram. On the masterplan and both tide plans, retain the patrol route continuously across x = 0–240 m within y = 8–11 m, with 3 m clear width. Route shape may vary within the permitted band; disconnected nodes, narrowed passages, shifted centres or patrol obstructions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "section-terrain-levels-and-sightlines",
+      "requirementId": "R-section-terrain-levels-and-sightlines",
+      "method": "visual",
+      "targetSlots": [
+        "bird-hide-section",
+        "rest-deck-section"
+      ],
+      "criteria": "Each section must reproduce the ground records (y, elevation): (0, +3.40), (8, +3.10), (11, +3.00), (20, +2.80), (32, +2.60), (40, +2.40), (48, +1.92), (60, +1.20), (80, +0.60), (100, +0.20), (120, -0.40), with linear interpolation and a common datum. Require labels for public deck +3.00 m, patrol deck +3.20 m and tides +0.20 m and +1.80 m. Seated and standing sightlines must originate 1.20 m and 1.60 m above the public deck, respectively, and address the near and far ground targets at y = 48 m and y = 100 m through the viewing gaps. Drawing scale may vary; altered profiles, inconsistent levels or wrongly positioned or obstructed sightlines fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "plant-and-material-records",
+      "requirementId": "R-plant-and-material-records",
+      "method": "content",
+      "targetSlots": [
+        "site-analysis",
+        "materials-planting"
+      ],
+      "criteria": "Both documents must correctly map JM to Juncus maritimus, PM to Puccinellia maritima and PA to Phragmites australis. The materials schedule must additionally specify 36 JM in 2 L pots and 60 PM in 0.5 L pots within Visitor Margin, retain three PA patches, and describe grooved timber decking and stainless steel mesh viewing screens. Equivalent table arrangements are acceptable; species substitutions, incorrect code mappings, quantities, sizes or materials fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "masterplan-planting-and-reed-gaps",
+      "requirementId": "R-masterplan-planting-and-reed-gaps",
+      "method": "visual",
+      "targetSlots": [
+        "protection-masterplan"
+      ],
+      "criteria": "Include the three correct code-to-species mappings and spatially assigned planting quantities totalling 36 JM and 60 PM inside Visitor Margin. Grouped planting symbols with quantity callouts are acceptable. Preserve PA at x = 25–55, 110–140 and 210–230 m, each within y = 40–58 m, retaining the northward viewing gaps at x = 80 m and x = 180 m. Missing or relocated patches, blocked viewing corridors or unassigned planting totals fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "sign-information",
+      "requirementId": "R-sign-information",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-wayfinding",
+        "wetland-interpretation"
+      ],
+      "criteria": "The entrance sign must provide usable wayfinding to Bird Hide and Rest Deck. The interpretation panel must explain the two tidal states, pair Low tide with +0.20 m and High tide with +1.80 m, and explain Juncus maritimus, Puccinellia maritima and Phragmites australis. Both signs must visibly carry the required site name and visitor message. Wording of explanatory prose and graphic treatment may vary; absent destinations, missing plant explanations, incorrect tide records or illegible required information fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "node-and-perspective-agreement",
+      "requirementId": "R-node-and-perspective-agreement",
+      "method": "visual",
+      "targetSlots": [
+        "observation-node-details",
+        "high-tide-perspective",
+        "low-tide-perspective"
+      ],
+      "criteria": "The detail sheet must dimension Bird Hide at 8 m east–west by 6 m north–south and Rest Deck at 6 m east–west by 4 m north–south. Wherever visible in perspectives, their proportions, shade structures, placement and connections must agree with the masterplan and details; an off-camera Rest Deck need not be shown. Perspective water must correspond to +1.80 m in the high-tide view and +0.20 m in the low-tide view relative to the sections. Perspective foreshortening is allowed; redesigned facilities, incompatible footprints or water at contradictory heights fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "protection-masterplan",
+        "bird-hide-section",
+        "rest-deck-section"
+      ]
+    },
+    {
+      "id": "site-analysis-schedule",
+      "requirementId": "R-site-analysis-schedule",
+      "method": "content",
+      "targetSlots": [
+        "site-analysis"
+      ],
+      "criteria": "Provide one page containing all three zones, their areas and plant names, plus both tide elevations. Record Visitor Margin as existing ground and grooved timber public decking, with roof shade at Bird Hide, slatted shade at Rest Deck and total node capacity 36. Record Habitat Buffer as existing wetland ground and retained reeds, shaded by existing reeds, with public capacity 0; record Habitat Core as existing mudflat and tidal creek, open sky, with public capacity 0. Layout and prose may vary; omitted categories, incorrect assignments or more than one page fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "masterplan-drawing-information",
+      "requirementId": "R-masterplan-drawing-information",
+      "method": "visual",
+      "targetSlots": [
+        "protection-masterplan"
+      ],
+      "criteria": "The plan must visibly include a north arrow, usable scale bar, site outline, zone-area annotations, planting codes, both node outlines, public circulation and patrol access. Mark and distinguish the section lines at x = 80 m and x = 180 m and both perspective camera positions and viewing directions. Symbols and legend style may vary; missing or ambiguous required drawing information fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "section-location-and-boundaries",
+      "requirementId": "R-section-location-and-boundaries",
+      "method": "visual",
+      "targetSlots": [
+        "bird-hide-section",
+        "rest-deck-section"
+      ],
+      "criteria": "The Bird Hide drawing must identify the x = 80 m cut and the Rest Deck drawing the x = 180 m cut, each covering the recorded south–north section from y = 0 to y = 120 m. Show the appropriate node, existing terrain, proposed deck, both water levels and seated and standing observation lines, with zone transitions identifiable at y = 40 m and y = 60 m. Different drawing scales are allowed; wrong cuts, omitted protection boundaries or missing section components fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "schedule-retained-extents-and-construction",
+      "requirementId": "R-schedule-retained-extents-and-construction",
+      "method": "content",
+      "targetSlots": [
+        "materials-planting"
+      ],
+      "criteria": "The schedule must identify the project and provide the required zone and planting records with construction descriptions. Describe the retained PA patches at x = 25–55, 110–140 and 210–230 m, all within y = 40–58 m, with respective areas 540, 540 and 360 m², combined extent 1,440 m² and top elevation +3.60 m. Text, tables or annotated diagrams may carry these records. Missing extents, treating retained reeds as new planting or descriptions contradicting the specified construction fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ]
+    },
+    {
+      "id": "tide-plan-water-and-use",
+      "requirementId": "R-tide-plan-water-and-use",
+      "method": "visual",
+      "targetSlots": [
+        "low-tide-plan",
+        "high-tide-plan"
+      ],
+      "criteria": "Show the same site and facilities in both plans, identifying Low tide as +0.20 m and High tide as +1.80 m. Outside the creek, water meets the ground at y = 100 m at low tide and y = 50 m at high tide, inundating the lower ground northward; the recorded creek remains water-filled. Both plans must label Bird Hide capacity 24 and Rest Deck capacity 12 and show public and patrol routes remaining open. Water rendering may vary, but reversed or unchanged tide extents, changed site geometry, missing capacities or submerged or closed access fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "protection-masterplan"
+      ]
+    },
+    {
+      "id": "perspective-camera-positions",
+      "requirementId": "R-perspective-camera-positions",
+      "method": "visual",
+      "targetSlots": [
+        "protection-masterplan",
+        "high-tide-perspective",
+        "low-tide-perspective"
+      ],
+      "criteria": "The high-tide image must view Bird Hide and its wetland outlook from the southwest; the low-tide image must do so from the southeast. Match each image to an identifiable masterplan camera marker with a compatible viewing direction. Framing and rendering style may differ; swapped tide/view assignments, incompatible camera markers or views that omit Bird Hide or its wetland outlook fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "observation-node-detail-content",
+      "requirementId": "R-observation-node-detail-content",
+      "method": "visual",
+      "targetSlots": [
+        "observation-node-details"
+      ],
+      "criteria": "Provide identifiable details for both Bird Hide and Rest Deck, including footprint dimensions, seating, viewing openings and connections maintaining at least 2.40 m clear public-route width. Bird Hide must have roof shade and Rest Deck a slatted canopy. Plans, sections, elevations or axonometrics may be combined; a missing node, absent required detail, wrong shade type or obstructed route connection fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tide-transition-content",
+      "requirementId": "R-tide-transition-content",
+      "method": "manual",
+      "targetSlots": [
+        "tide-transition"
+      ],
+      "criteria": "Review the complete video for a 10-second duration and a stationary viewpoint from Bird Hide as water rises from Low tide +0.20 m to High tide +1.80 m. Both state labels and elevations must be readable at the corresponding stages. Visible facilities must retain the planned geometry and construction, and water heights must agree with the sections. Timing of the intermediate rise may vary; camera movement, reversed tide progression, changing facilities, incorrect endpoints or missing labels fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "protection-masterplan",
+        "bird-hide-section",
+        "rest-deck-section",
+        "observation-node-details"
+      ]
+    },
+    {
+      "id": "presentation-reuses-delivered-work",
+      "requirementId": "R-presentation-reuses-delivered-work",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "landscape-presentation"
+      ],
+      "criteria": "The presentation must visibly incorporate the delivered site analysis at its opening and recognizable content from every listed source role. Scaling, page composition and legible crops are allowed if they preserve the substantive work. Merely naming a deliverable, substituting unrelated imagery or omitting either member of a paired deliverable fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "site-analysis",
+        "protection-masterplan",
+        "bird-hide-section",
+        "rest-deck-section",
+        "materials-planting",
+        "entrance-wayfinding",
+        "wetland-interpretation",
+        "low-tide-plan",
+        "high-tide-plan",
+        "high-tide-perspective",
+        "low-tide-perspective",
+        "observation-node-details"
+      ]
+    },
+    {
+      "id": "presentation-length-and-repeated-facts",
+      "requirementId": "R-presentation-length-and-repeated-facts",
+      "method": "content",
+      "targetSlots": [
+        "landscape-presentation"
+      ],
+      "criteria": "Count at least eight pages and verify that the presentation repeats the analysis's zone-to-area and tide-to-elevation mappings. Those records must also equal Visitor Margin 9,600 m², Habitat Buffer 4,800 m², Habitat Core 14,400 m², Low tide +0.20 m and High tide +1.80 m. Placement and typography may vary; fewer pages, missing mappings, contradictions with the analysis or jointly repeated incorrect values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "sourceSlots": [
+        "site-analysis"
+      ]
+    },
+    {
+      "id": "patrol-boardwalk-construction",
+      "requirementId": "R-patrol-boardwalk-construction",
+      "method": "visual",
+      "targetSlots": [
+        "bird-hide-section",
+        "rest-deck-section",
+        "high-tide-perspective",
+        "low-tide-perspective"
+      ],
+      "criteria": "Where the existing patrol boardwalk is visible, preserve its weathered transverse timber decking, square timber posts and two horizontal timber rails; the recorded railing rises 1.10 m above its deck. Sections may represent these features schematically, and perspectives need not reveal off-camera elements. Replacing the patrol structure with a different construction or showing contradictory rail geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "recorded-creek-geometry",
+      "requirementId": "R-recorded-creek-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "protection-masterplan",
+        "low-tide-plan",
+        "high-tide-plan"
+      ],
+      "criteria": "Retain the tidal creek within x = 150–160 m and y = 60–120 m across the plans. Its recorded bed is -0.80 m, so both specified tides must leave water in the creek even where adjacent ground remains exposed. A bed-elevation label is not required, but any depicted elevation must agree. Stylized water edges are acceptable when location and extent remain clear; relocating, filling, drying or materially resizing the creek fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-coordinated-site-and-tide-system",
+      "requirementId": "R-set-coordinated-site-and-tide-system",
+      "method": "visual",
+      "targetSlots": [
+        "protection-masterplan",
+        "bird-hide-section",
+        "rest-deck-section",
+        "low-tide-plan",
+        "high-tide-plan",
+        "high-tide-perspective",
+        "low-tide-perspective",
+        "observation-node-details"
+      ],
+      "criteria": "Plans, sections, details and perspectives describe the same node locations, footprints, public-route connections, shade structures and retained patrol boardwalk, allowing projection and visibility differences. Zone boundaries, public-construction limits, terrain, retained reed patches, viewing gaps and tidal creek agree with the fixed site records and the written schedules. Low- and high-tide depictions agree with the section elevations while retaining the same facilities and open public and patrol access.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "site-analysis",
+        "materials-planting"
+      ]
+    },
+    {
+      "id": "set-signs-follow-site-records",
+      "requirementId": "R-set-signs-follow-site-records",
+      "method": "visual",
+      "targetSlots": [
+        "entrance-wayfinding",
+        "wetland-interpretation"
+      ],
+      "criteria": "Entrance wayfinding identifies the planned observation destinations, and interpretation uses the recorded tide elevations and plant identities without contradictory information. Both signs display the required site name and visitor message accurately.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-landscape-breadth-02.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-landscape-breadth-02/03-site-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "protection-masterplan",
+        "site-analysis",
+        "materials-planting"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "planned-space-in-perspectives",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorSlot": "protection-masterplan",
+      "subjectSlots": [
+        "high-tide-perspective",
+        "low-tide-perspective"
+      ],
+      "notes": "Both tide-use plans label capacities of 24 and 12 respectively; the perspectives and 10-second video match the masterplan's facilities and the sections' water levels."
+    },
+    {
+      "id": "retained-patrol-boardwalk",
+      "kind": "identity-consistency",
+      "subject": "space",
+      "anchorAssets": [
+        "patrol-boardwalk.png"
+      ],
+      "subjectSlots": [
+        "bird-hide-section",
+        "rest-deck-section",
+        "high-tide-perspective",
+        "low-tide-perspective"
+      ],
+      "notes": "patrol-boardwalk.png establishes the existing boardwalk's recognisable timber construction."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "analysis-facts-in-presentation",
+      "fromSlot": "site-analysis",
+      "toSlots": [
+        "landscape-presentation"
+      ],
+      "extract": [
+        "the three zone names and their corresponding areas",
+        "the Low tide and High tide elevations"
+      ],
+      "notes": "The presentation contains at least 8 pages and repeats the site analysis's three zone areas and both tide levels."
+    }
+  ]
+}

@@ -1,0 +1,592 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ecom-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "shopping-hero",
+      "label": "Shopping hero",
+      "description": "One square shopping hero with the labeled carton and six sealed pouches on white.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "range-comparison",
+      "label": "Three-product range comparison",
+      "description": "One three-product comparison with two pouches per SKU and each product's code, name, pouch weight and piece count.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "portion-comparison",
+      "label": "Measured portion comparison",
+      "description": "One portion comparison with two rounds, four crackers, six apple rings, their opened pouches and a shared 100 mm scale bar.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "carton-unboxing",
+      "label": "Overhead carton unboxing",
+      "description": "One overhead unboxing image with the labeled lid and six pouches arranged in three columns of two.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "vertical-gift",
+      "label": "Vertical household gift image",
+      "description": "One vertical household gift image with the closed labeled carton, box quantity and price.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "product-detail",
+      "label": "Product contents and food information",
+      "description": "One product detail image with the box contents, three food records, shared storage and producer details, and box price.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-name",
+      "kind": "text-verbatim",
+      "text": "FEN PANTRY",
+      "scope": {
+        "slots": [
+          "shopping-hero",
+          "carton-unboxing",
+          "vertical-gift",
+          "product-detail"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "box-quantity",
+      "kind": "text-verbatim",
+      "text": "6 pouches | Net weight 560 g",
+      "scope": {
+        "slots": [
+          "shopping-hero",
+          "carton-unboxing",
+          "vertical-gift",
+          "product-detail"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "box-price",
+      "kind": "text-verbatim",
+      "text": "Box price: GBP 24.00",
+      "scope": {
+        "slots": [
+          "vertical-gift",
+          "product-detail"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "FEN PANTRY",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "same-snack-box-across-shopping-images",
+      "slots": [
+        "shopping-hero",
+        "range-comparison",
+        "portion-comparison",
+        "carton-unboxing",
+        "vertical-gift",
+        "product-detail"
+      ],
+      "items": [
+        {
+          "item": "Recurring pouches retain the same SKU-to-color mapping, silhouette, label placement and window geometry across views, allowing perspective, lighting and opened-package deformation.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Recurring cartons retain the same kraft construction, physical proportions and centered cream lid-label design across closed and open views.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The set consistently represents one six-pouch box containing two pouches of each specified SKU, with no contradictory quantities, weights or product identities.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "FEN PANTRY"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "shopping-hero",
+      "range-comparison",
+      "portion-comparison",
+      "carton-unboxing",
+      "vertical-gift",
+      "product-detail"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not reward redesigning the supplied packaging or food identities, or judge manufacturing feasibility and food-record truth beyond the supplied facts."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "shopping-hero",
+        "range-comparison",
+        "portion-comparison",
+        "carton-unboxing",
+        "vertical-gift",
+        "product-detail"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-shopping-hero",
+      "requirementId": "R-format-shopping-hero",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shopping-hero"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-range-comparison",
+      "requirementId": "R-format-range-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "range-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-portion-comparison",
+      "requirementId": "R-format-portion-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "portion-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-carton-unboxing",
+      "requirementId": "R-format-carton-unboxing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "carton-unboxing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-vertical-gift",
+      "requirementId": "R-format-vertical-gift",
+      "method": "artifact-property",
+      "targetSlots": [
+        "vertical-gift"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-product-detail",
+      "requirementId": "R-format-product-detail",
+      "method": "artifact-property",
+      "targetSlots": [
+        "product-detail"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "inventory-and-range-records",
+      "requirementId": "R-inventory-and-range-records",
+      "method": "visual",
+      "targetSlots": [
+        "shopping-hero",
+        "carton-unboxing",
+        "range-comparison"
+      ],
+      "criteria": "The hero and unboxing each visibly account for exactly six sealed pouches: two of each SKU. The range image contains three distinguishable groups, each with two pouches and readable code, product name, weight per pouch and pieces per pouch. Required mappings are FP01/Oat Rounds/120 g/6, FP02/Rye Crackers/100 g/10 and FP03/Apple Rings/60 g/12. Numerals or spelled-out piece counts are acceptable; omitted, duplicated, swapped or ambiguous products fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "portions-and-shared-scale",
+      "requirementId": "R-portions-and-shared-scale",
+      "method": "visual",
+      "targetSlots": [
+        "portion-comparison"
+      ],
+      "criteria": "Count exactly two displayed oat rounds, four displayed rye crackers and six displayed apple rings, each group beside its corresponding opened pouch. Read group totals of 40 g, 40 g and 30 g and dimension annotations identifying a 50 mm round diameter, a 60 × 30 mm cracker and a 40 mm ring outer diameter. A single shared bar is labeled 100 mm. Relative to that bar, round diameter is one-half, cracker length and width are three-fifths and three-tenths, and ring outer diameter is two-fifths. Minor rendering variation is acceptable; separate scaling, incorrect labels, extra displayed pieces or mismatched pouches fail. Any stated per-piece weights must agree with 20 g, 10 g and 5 g respectively.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "packaging-geometry-and-colors",
+      "requirementId": "R-packaging-geometry-and-colors",
+      "method": "visual",
+      "targetSlots": [
+        "shopping-hero",
+        "range-comparison",
+        "portion-comparison",
+        "carton-unboxing",
+        "vertical-gift",
+        "product-detail"
+      ],
+      "criteria": "Where packaging is depicted, compare it with the supplied references and packaging facts. Pouches have 160 × 220 × 40 mm proportions, rectangular pillow construction and straight sealed ends. Their cream base is #F3EBDD; centered 140 × 55 mm bands begin 25 mm below the top and use Brown #7A583A for FP01, Olive #65734B for FP02 and Rust #B45736 for FP03. Bands carry the correct SKU, name and pouch weight. Centered clear windows measure proportionally 120 × 100 mm and begin 95 mm below the top. Cartons are hinged rectangular Kraft #B99368 boxes with exterior proportions 520 × 260 × 110 mm, interior proportions consistent with 500 × 240 × 90 mm where visible, and centered cream 180 × 80 mm lid labels. Assess physical proportions rather than requiring printed dimensions. Perspective, realistic lighting and opened pouch deformation are allowed; redesigned silhouettes, misplaced labels or windows, swapped band colors and materially distorted proportions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "framing-and-text-zones",
+      "requirementId": "R-framing-and-text-zones",
+      "method": "visual",
+      "targetSlots": [
+        "shopping-hero",
+        "range-comparison",
+        "portion-comparison",
+        "carton-unboxing",
+        "vertical-gift"
+      ],
+      "criteria": "The hero has square framing, a white #FFFFFF background and a combined carton-and-pouch silhouette occupying 85–90% of image width; its wording appears on physical packaging. In the four supporting images, all added copy, including annotations, remains in the bottom 30% of the frame and at least 5% of frame width or height from the corresponding edges, following listing-frames.png. Physical package printing is exempt from the added-copy zone. Natural object shadows are acceptable; a colored hero backdrop, floating hero copy, incorrect group coverage or added text outside the permitted zone fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "required-copy-and-placement",
+      "requirementId": "R-required-copy-and-placement",
+      "method": "visual",
+      "targetSlots": [
+        "shopping-hero",
+        "carton-unboxing",
+        "vertical-gift",
+        "product-detail"
+      ],
+      "criteria": "Carton lid labels visibly carry the brand and complete box-quantity wording. Both the vertical gift and product detail images also present the brand and quantity strings, plus the exact price wording. Typography and line breaks may vary while preserving the words, punctuation and readable sequence. Missing, obscured, contradictory or incorrectly placed wording fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "complete-readable-food-records",
+      "requirementId": "R-complete-readable-food-records",
+      "method": "visual",
+      "targetSlots": [
+        "product-detail"
+      ],
+      "criteria": "Read the detail image against 03-food-records.en.md. FP01 must show Oat Rounds, 120 g, 'Oats (45%), wheat flour, butter (milk), sugar, salt.' and 'Contains oats, wheat and milk.' FP02 must show Rye Crackers, 100 g, 'Rye flour (60%), wheat flour, water, rapeseed oil, salt.' and 'Contains rye and wheat.' FP03 must show Apple Rings, 60 g, 'Apples (100%).' and 'Allergens: none.' Shared records must reproduce 'Store in a cool, dry place. Reseal after opening.', 'Fen Pantry Foods Ltd' and '18 Mill Lane, Ely, Cambridgeshire, CB7 4AB, United Kingdom'. Box contents must identify two pouches per SKU, six total and 560 g total; any SKU weight subtotals must be 240 g, 200 g and 120 g respectively. Follow information-zones.png and assess body type at an image width normalized to 390 logical units: the minimum is 16 logical units. Layout and line wrapping may vary; omitted or altered records, incorrect associations, illegibility or undersized body text fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "unboxing-arrangement",
+      "requirementId": "R-unboxing-arrangement",
+      "method": "visual",
+      "targetSlots": [
+        "carton-unboxing"
+      ],
+      "criteria": "An overhead view shows one open carton, its readable lid label and six flat pouches packed in three columns of two. FP01 occupies the left column, FP02 the center and FP03 the right. Each lower pouch is exposed enough to be independently recognized and counted. Modest overlap is permitted; fully concealed lower pouches, an incorrect SKU order, a different packing arrangement or a view that prevents inspection fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "household-gift-scene",
+      "requirementId": "R-household-gift-scene",
+      "method": "visual",
+      "targetSlots": [
+        "vertical-gift"
+      ],
+      "criteria": "Use portrait framing with one closed, labeled carton resting on a household table. The domestic setting and lighting should remain consistent with the everyday reference in family-table.png; exact props and camera placement may vary. Box quantity and price must be readable within the prescribed copy zone. An open carton, absent table, missing wording or a setting inconsistent with the household reference fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "food-shapes-and-appearance",
+      "requirementId": "R-food-shapes-and-appearance",
+      "method": "visual",
+      "targetSlots": [
+        "shopping-hero",
+        "range-comparison",
+        "portion-comparison",
+        "carton-unboxing",
+        "vertical-gift",
+        "product-detail"
+      ],
+      "criteria": "Where food is visible, preserve its supplied product appearance. Oat rounds are flat golden-brown circular biscuits with visible oat flakes, lightly irregular edges and proportions consistent with 50 mm diameter and 10 mm thickness. Rye crackers are medium-brown rectangles with fine grain texture, five docking holes in one central row and 60 × 30 × 4 mm proportions. Apple rings have pale-gold flesh, a narrow red peel edge, softly wrinkled surfaces and proportions consistent with 40 mm outer diameter, 12 mm inner diameter and 5 mm thickness. Natural piece variation and perspective are allowed; substituted food forms, wrong hole patterns or materially incorrect geometry fail. Hidden dimensions need not be exposed solely for this check.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-same-snack-box-across-shopping-images",
+      "requirementId": "R-set-same-snack-box-across-shopping-images",
+      "method": "visual",
+      "targetSlots": [
+        "shopping-hero",
+        "range-comparison",
+        "portion-comparison",
+        "carton-unboxing",
+        "vertical-gift",
+        "product-detail"
+      ],
+      "criteria": "Recurring pouches retain the same SKU-to-color mapping, silhouette, label placement and window geometry across views, allowing perspective, lighting and opened-package deformation. Recurring cartons retain the same kraft construction, physical proportions and centered cream lid-label design across closed and open views. The set consistently represents one six-pouch box containing two pouches of each specified SKU, with no contradictory quantities, weights or product identities.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-material-03/03-food-records.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-pouch-identities",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "oat-rounds.png",
+        "rye-crackers.png",
+        "apple-rings.png"
+      ],
+      "subjectSlots": [
+        "shopping-hero",
+        "range-comparison",
+        "portion-comparison",
+        "carton-unboxing",
+        "vertical-gift",
+        "product-detail"
+      ],
+      "notes": "The shopping hero, range comparison, portion comparison, unboxing image, vertical gift image and product detail image preserve the attached pouch silhouettes, label positions, Cream #F3EBDD base and three specified band colors."
+    }
+  ]
+}

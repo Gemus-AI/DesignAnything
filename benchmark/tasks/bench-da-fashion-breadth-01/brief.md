@@ -1,0 +1,27 @@
+STILL HOUR | Summer homewear for sleeping and everyday living
+
+We need one short-sleeved top and one pair of shorts for adults who move between reading, making breakfast and sleeping in the same summer outfit. Develop one design in two size adaptations, with a shared neckline family, sleeve type, pocket arrangement, openings and seam language. Body A is 1600 mm tall, with chest, waist and hip circumferences of 920, 800 and 1000 mm. Body B is 1850 mm tall, with corresponding circumferences of 1120, 1000 and 1120 mm. Both sizes belong to the same gender-neutral range. Show Body A standing with arms relaxed, and Body B both seated with knees bent and side-lying with knees lightly bent. The top must cover the waist and the shorts must cover the upper thighs in all three poses.
+
+Choose one shell for both garments: F1, 100% cotton, plain weave, 125 g/m²; or F2, 95% cotton / 5% elastane, single jersey, 165 g/m². Set one final colorway using two or three named colors with six-digit hexadecimal codes and consistent placement across both sizes. Provide at least one garment pocket for a folded 100 × 100 mm reading cloth, with an opening and usable internal depth each at least 110 mm. Resolve dressing, waist adjustment and the inside surfaces together; place any hard fittings clear of the outer shoulder and outer hip contact areas during side-lying. Print "STILL HOUR" and "Summer homewear" on an inside identification label, with both lines legible on the construction details board.
+
+Audience: our clothing design team and sample maker, for selecting the summer outfit and preparing its first samples.
+
+Inputs (attached): 01-client-facts.en.md records the range identity and fixed project facts. 02-delivery-catalog.en.md lists the six deliverables with their proportions, formats and stages. bodies-and-use.en.md supplies the body measurements, fit targets and wearing situations. materials.en.md supplies the two shell options and optional waist elastic. body-and-pose-guide.png is the constraint image locating body measurement levels and the three poses. material-swatches.png is the identity image for the two available fabric surfaces. summer-living-room.png is the atmosphere reference for the home setting and evening light.
+
+Deliverables:
+1. One front flat-view and material specification board, with the complete top and shorts in both sizes, finished garment measurements, the chosen shell specification, a schematic swatch and the final color-placement key
+2. One back flat-view board, with the complete top and shorts in both sizes, top back lengths, shorts inseams and rear seam and pocket placement
+3. One construction details board covering both sizes, with dimensioned pocket openings, usable depths and positions, dressing and waist adjustment, inside seam finishes, waist casing and the identification label
+4. One standing home image of Body A wearing the complete outfit with arms relaxed
+5. One seated home image of Body B wearing the complete outfit with knees bent
+6. One side-lying home image of Body B wearing the complete outfit with knees lightly bent
+
+Acceptance:
+- The front and back boards show the same top and shorts in both sizes. On the front board, label finished full chest circumference within 1040–1120 mm for Body A and 1240–1320 mm for Body B, and finished full hip circumference within 1100–1180 mm for Body A and 1220–1300 mm for Body B. State each size's chosen top back length and shorts inseam in mm on both boards.
+- The front and construction details boards state relaxed and comfortably extended full waist circumferences for each size: relaxed below 800 mm and extended at least 800 mm for Body A; relaxed below 1000 mm and extended at least 1000 mm for Body B. The details board explains the top and shorts dressing approach and shows the corresponding adjustment construction; any T1 elastic has its width in mm and its enclosing casing shown.
+- The construction details board dimensions at least one garment pocket per size with an opening and usable internal depth each at least 110 mm. Dimension its position separately for Body A and Body B, and match its placement and construction on the front board, back board and three wearing images wherever visible.
+- The construction details board shows the inside seam finish, waist contact surface and label attachment, with "STILL HOUR" and "Summer homewear" legible on the label. Its fitting placement and the side-lying image keep any hard fittings clear of the outer shoulder and outer hip contact areas.
+- The front board states the selected F1 or F2 composition, structure and mass as listed in this letter, identifies its use on both garments, and names two or three colors with six-digit hexadecimal codes. All six boards use that color placement; monochrome technical views carry keys to the same named colors.
+- The standing, seated and side-lying images show the complete outfit in the three specified poses, with waist and upper-thigh coverage. Across these images and the flat views, preserve the neckline family, sleeve type, openings and seam arrangement, while showing the separately dimensioned size adaptations through pocket placement, garment proportions and pose-specific folds.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

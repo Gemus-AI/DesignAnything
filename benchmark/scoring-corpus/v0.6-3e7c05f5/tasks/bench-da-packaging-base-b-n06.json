@@ -1,0 +1,663 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-packaging-base-b-n06",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "pane-flat-artwork",
+      "label": "PANE labels and starter dieline",
+      "description": "A PANE flat artwork board with complete B01 and R01 front-and-back labels, the S01 carton dieline, all package copy, dimensions, folds, glue area and material annotations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pane-closed-family",
+      "label": "PANE assembled packaging family",
+      "description": "A closed PANE family board showing B01, sealed R01 and S01 with readable flat front-and-back labels for all three items and dimension, capacity and material annotations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "surface-closed-family",
+      "label": "SURFACE assembled packaging family",
+      "description": "A closed SURFACE family board showing B02, sealed R02 and S02 with readable flat front-and-back labels for all three items and dimension, capacity and material annotations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "floor-closed-family",
+      "label": "FLOOR assembled packaging family",
+      "description": "A closed FLOOR family board showing B03, sealed R03 and S03 with readable flat front-and-back labels for all three items and dimension, capacity and material annotations.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "pane-refill-sequence",
+      "label": "PANE four-step refill sequence",
+      "description": "A four-panel B01/R01 PANE refill sequence with the existing station boundary, exact transfer equation and station prerequisite sentence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "combined-retail-display",
+      "label": "Three-SKU combined retail display",
+      "description": "A dimensioned combined retail display with one each of S01–S03 and R01–R03, starter and refill headings and the station prerequisite.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-name",
+      "kind": "text-verbatim",
+      "text": "RETURNHOUSE",
+      "scope": {
+        "slots": [
+          "pane-flat-artwork",
+          "pane-closed-family",
+          "surface-closed-family",
+          "floor-closed-family",
+          "pane-refill-sequence",
+          "combined-retail-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "starter-purchase-message",
+      "kind": "text-verbatim",
+      "text": "STARTER KIT",
+      "scope": {
+        "slots": [
+          "pane-flat-artwork",
+          "pane-closed-family",
+          "surface-closed-family",
+          "floor-closed-family",
+          "combined-retail-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "refill-purchase-message",
+      "kind": "text-verbatim",
+      "text": "REFILL ONLY",
+      "scope": {
+        "slots": [
+          "pane-flat-artwork",
+          "pane-closed-family",
+          "surface-closed-family",
+          "floor-closed-family",
+          "combined-retail-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "bottle-label",
+      "kind": "text-verbatim",
+      "text": "DEDICATED BOTTLE",
+      "scope": {
+        "slots": [
+          "pane-flat-artwork",
+          "pane-closed-family",
+          "surface-closed-family",
+          "floor-closed-family"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "station-boundary-label",
+      "kind": "text-verbatim",
+      "text": "RETURNHOUSE refill station",
+      "scope": {
+        "slots": [
+          "pane-refill-sequence"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "retail-station-prerequisite",
+      "kind": "text-verbatim",
+      "text": "Refill station required; not included.",
+      "scope": {
+        "slots": [
+          "combined-retail-display"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "RETURNHOUSE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier6-packaging-and-use-system",
+      "slots": [
+        "pane-flat-artwork",
+        "pane-closed-family",
+        "surface-closed-family",
+        "floor-closed-family",
+        "pane-refill-sequence",
+        "combined-retail-display"
+      ],
+      "items": [
+        {
+          "item": "PANE artwork, assembled packaging, sequence and displayed packs preserve the same package designs and matching B01/R01/S01 identity.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The range shares the off-white and deep-ink base, readable code/name identification and consistent bottle, starter and refill message hierarchy while retaining each assigned SKU accent.",
+          "kind": "consistency"
+        },
+        {
+          "item": "P20 remains common while contents pair only by matching SKU codes, and the existing refill station remains separate from starter and refill purchases.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "RETURNHOUSE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "pane-flat-artwork",
+      "pane-closed-family",
+      "surface-closed-family",
+      "floor-closed-family",
+      "pane-refill-sequence",
+      "combined-retail-display"
+    ],
+    "layoutExtras": false,
+    "naRules": "Design quality must not re-score exact copy or dimensional compliance, demand a redesigned refill station, or infer mechanical performance from rendered packaging."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": "*",
+      "criteria": "Deliver exactly the 6 named independent items for tier 6. Duplicate exports do not add items. Only six final static artworks are commissioned; no process, video or presentation is required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "pane-flat-artwork",
+        "pane-closed-family",
+        "surface-closed-family",
+        "floor-closed-family",
+        "pane-refill-sequence",
+        "combined-retail-display"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-pane-flat-artwork",
+      "requirementId": "R-format-pane-flat-artwork",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pane-flat-artwork"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pane-closed-family",
+      "requirementId": "R-format-pane-closed-family",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pane-closed-family"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-surface-closed-family",
+      "requirementId": "R-format-surface-closed-family",
+      "method": "artifact-property",
+      "targetSlots": [
+        "surface-closed-family"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-floor-closed-family",
+      "requirementId": "R-format-floor-closed-family",
+      "method": "artifact-property",
+      "targetSlots": [
+        "floor-closed-family"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-pane-refill-sequence",
+      "requirementId": "R-format-pane-refill-sequence",
+      "method": "artifact-property",
+      "targetSlots": [
+        "pane-refill-sequence"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-combined-retail-display",
+      "requirementId": "R-format-combined-retail-display",
+      "method": "artifact-property",
+      "targetSlots": [
+        "combined-retail-display"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "common-p20-geometry",
+      "requirementId": "R-common-p20-geometry",
+      "method": "visual",
+      "targetSlots": [
+        "pane-flat-artwork",
+        "pane-closed-family",
+        "surface-closed-family",
+        "floor-closed-family"
+      ],
+      "criteria": "Any exposed or dimensioned connector must agree with P20: bottle collar OD 28 mm, opening 18 mm and band height 10 mm; cartridge shoulder 28 mm; stem OD 16 mm, bore 8 mm and insertion length 14 mm. Body silhouettes and closure exteriors may vary. Concealed geometry need not be exposed on every board, but a contradictory dimension, incompatible connector or SKU-specific replacement interface fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "matching-starter-contents",
+      "requirementId": "R-matching-starter-contents",
+      "method": "visual",
+      "targetSlots": [
+        "pane-flat-artwork",
+        "pane-closed-family",
+        "surface-closed-family",
+        "floor-closed-family"
+      ],
+      "criteria": "The starter's visible contents or readable contents statement must identify one empty 500 mL dedicated bottle and one sealed 20 mL concentrate cartridge with matching numeric codes: S01/B01/R01, S02/B02/R02, S03/B03/R03 or S04/B04/R04 as appropriate. Closed cartons and flat artwork may establish contents through their copy. Filled starter bottles, mismatched codes, extra contents presented as included, or a refill sold as including a new bottle fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "labelled-existing-station",
+      "requirementId": "R-labelled-existing-station",
+      "method": "visual",
+      "targetSlots": [
+        "pane-refill-sequence"
+      ],
+      "criteria": "Docking and transfer must occur at a neutral, visibly delineated boundary labelled RETURNHOUSE refill station. Its drawing style may vary, but it must read as existing equipment separate from either purchased pack. An unlabelled boundary, direct pouring that bypasses the station, or depiction of the station as included fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-pane-artwork-construction",
+      "requirementId": "R-tier6-pane-artwork-construction",
+      "method": "visual",
+      "targetSlots": [
+        "pane-flat-artwork"
+      ],
+      "criteria": "Show dimensioned front and back bottle labels at 50 W × 90 H mm and cartridge labels at 40 W × 55 H mm, each with 2 mm rounded corners and a 3 mm text inset. The complete S01 cutting and folding layout must distinguish fold lines and the glue area and state assembled W/D/H no greater than 145/90/255 mm. Carton construction may vary within those limits; missing construction information or contradictory dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-pane-artwork-complete-copy",
+      "requirementId": "R-tier6-pane-artwork-complete-copy",
+      "method": "visual",
+      "targetSlots": [
+        "pane-flat-artwork"
+      ],
+      "criteria": "Read the B01, R01 and S01 front and back artwork against the complete PANE copy records in 01-client-facts.en.md. Every prescribed line must appear on its corresponding surface, including category, quantities, pairing restrictions, next-refill instruction and station prerequisite. Typography and wrapping may vary without changing wording; omissions, substitutions, illegibility or text assigned to the wrong item fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-assembled-range-and-copy",
+      "requirementId": "R-tier6-assembled-range-and-copy",
+      "method": "visual",
+      "targetSlots": [
+        "pane-closed-family",
+        "surface-closed-family",
+        "floor-closed-family"
+      ],
+      "criteria": "Each board must show its dedicated bottle, sealed refill and closed starter carton, with readable flat front and back artwork for all three. Verify all nine items against the attachment's complete copy records and map PANE to #3C77A0, SURFACE to #BD714D and FLOOR to #5B7F64, using the common #F7F5EF/#233D45 base. Code and name must remain readable beside the accent. Lighting and text wrapping may vary; missing lines, wrong purchase labels, duplicated SKUs or reassigned accents fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier6-materials-and-envelopes",
+      "requirementId": "R-tier6-materials-and-envelopes",
+      "method": "visual",
+      "targetSlots": [
+        "pane-flat-artwork",
+        "pane-closed-family",
+        "surface-closed-family",
+        "floor-closed-family"
+      ],
+      "criteria": "Each board must annotate the bottle as HDPE, cartridge and removable closures as PP, and carton as 350 g/m² uncoated folding paperboard. Read 2 HDPE on bottle backs, 5 PP on cartridge backs and 21 PAP on carton backs; any shown closure underside must use 5 PP. Dimension evidence must keep bottle W/D/H within 70/65/230 mm and cartridge W/D/H within 60/32/110 mm, including storage closures. Surface rendering may vary, but wrong materials, misplaced marks or oversized packages fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-pane-refill-sequence",
+      "requirementId": "R-tier6-pane-refill-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "pane-refill-sequence"
+      ],
+      "criteria": "Four ordered panels must track the same B01 PANE bottle: select it empty with sealed R01, dock the matching pair at P20, perform enclosed transfer, then remove and reclose B01 with the spent cartridge separated. Panel 3 must read exactly '20 mL concentrate + 480 mL station carrier = 500 mL working fill'; the board must read 'Refill station required; not included in either pack.' Panel composition may vary; replacement bottles, mismatched codes, open pouring, missing steps or altered required text fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier6-combined-retail",
+      "requirementId": "R-tier6-combined-retail",
+      "method": "visual",
+      "targetSlots": [
+        "combined-retail-display"
+      ],
+      "criteria": "Show exactly one each of S01, S02, S03, R01, R02 and R03 in one or two rows, with dimension evidence for a footprint and total envelope no greater than 600 W × 300 D × 450 H mm. Match the source packaging's forms, artwork and SKU accents. Separate first-purchase and repeat-purchase groups with STARTER KIT and REFILL ONLY and print 'Refill station required; not included.' Layout and display materials may vary; missing or duplicate packs, changed packaging, excess dimensions or absent headings fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "pane-closed-family",
+        "surface-closed-family",
+        "floor-closed-family"
+      ]
+    },
+    {
+      "id": "set-tier6-packaging-and-use-system",
+      "requirementId": "R-set-tier6-packaging-and-use-system",
+      "method": "visual",
+      "targetSlots": [
+        "pane-flat-artwork",
+        "pane-closed-family",
+        "surface-closed-family",
+        "floor-closed-family",
+        "pane-refill-sequence",
+        "combined-retail-display"
+      ],
+      "criteria": "PANE artwork, assembled packaging, sequence and displayed packs preserve the same package designs and matching B01/R01/S01 identity. The range shares the off-white and deep-ink base, readable code/name identification and consistent bottle, starter and refill message hierarchy while retaining each assigned SKU accent. P20 remains common while contents pair only by matching SKU codes, and the existing refill station remains separate from starter and refill purchases.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-packaging-base-b-n06.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-packaging-base-b-n06/interface-envelope.en.md"
+      ],
+      "visualScope": "set"
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "shared-p20-connector",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "p20-connector-identity.png"
+      ],
+      "subjectSlots": [
+        "pane-closed-family",
+        "surface-closed-family",
+        "floor-closed-family",
+        "pane-refill-sequence"
+      ],
+      "notes": "p20-connector-identity.png records the collar and insertion-stem geometry shared by the range."
+    },
+    {
+      "id": "pane-packaging-retail-reuse",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "pane-closed-family",
+      "subjectSlots": [
+        "combined-retail-display"
+      ],
+      "notes": "All three reuse the assembled packaging and print STARTER KIT, REFILL ONLY and Refill station required; not included."
+    },
+    {
+      "id": "surface-packaging-retail-reuse",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "surface-closed-family",
+      "subjectSlots": [
+        "combined-retail-display"
+      ],
+      "notes": "All three reuse the assembled packaging and print STARTER KIT, REFILL ONLY and Refill station required; not included."
+    },
+    {
+      "id": "floor-packaging-retail-reuse",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorSlot": "floor-closed-family",
+      "subjectSlots": [
+        "combined-retail-display"
+      ],
+      "notes": "All three reuse the assembled packaging and print STARTER KIT, REFILL ONLY and Refill station required; not included."
+    }
+  ]
+}

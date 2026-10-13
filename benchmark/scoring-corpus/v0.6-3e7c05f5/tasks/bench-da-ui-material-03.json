@@ -1,0 +1,1372 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ui-material-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "digital-product",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "process-specification",
+      "label": "Booking flow and component specification",
+      "description": "One specification containing the booking flow table, nine stable field IDs and component state values.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "choose-time",
+      "label": "Choose venue and time screen",
+      "description": "One English venue and time screen with both venues and R1 14:00–15:00 selected.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "details-en",
+      "label": "English details draft screen",
+      "description": "One English details screen with the populated draft before validation.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "validation-en",
+      "label": "English validation screen",
+      "description": "One English validation screen with an error summary and the participants and agreement errors.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "language-comparison",
+      "label": "Portuguese and Polish validation comparison",
+      "description": "One comparison board containing complete Portuguese and Polish validation screens with identical draft data and errors.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "corrected",
+      "label": "Portuguese corrected details screen",
+      "description": "One Portuguese corrected details screen with participants 12 and agreement true.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "review",
+      "label": "Portuguese booking review screen",
+      "description": "One Portuguese Review screen containing the unsubmitted booking summary and submission action.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "edit-details",
+      "label": "English edited activity screen",
+      "description": "One English details screen with Neighbour Sketch Circle and the Return to review action.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "recovery-board",
+      "label": "Submission conflict and alternative time board",
+      "description": "One recovery board containing the English conflict and alternative screens with the preserved corrected draft.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "confirmed",
+      "label": "English booking confirmation screen",
+      "description": "One English confirmation screen for NS-1042 at 16:30–17:30 with the inclusive cancellation deadline.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cancel-review",
+      "label": "Portuguese cancellation review screen",
+      "description": "One Portuguese cancellation review screen retaining confirmed NS-1042 at 14:20.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "cancellation-outcomes",
+      "label": "Portuguese cancellation outcomes board",
+      "description": "One board containing equal-size Portuguese screens for cancellation at 14:20 and an independent late attempt at 14:40.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "language-interaction",
+      "label": "Twelve-second language switching and correction video",
+      "description": "One 12-second interaction video with English, Portuguese and Polish validation followed by correction.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "handoff-presentation",
+      "label": "Booking interface handoff presentation",
+      "description": "One presentation of at least eight pages reusing the specification, all screen deliverables and the interaction sequence.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "service-name",
+      "kind": "text-verbatim",
+      "text": "NEIGHBOUR SPACE",
+      "scope": {
+        "slots": [
+          "choose-time",
+          "details-en",
+          "validation-en",
+          "language-comparison",
+          "corrected",
+          "review",
+          "edit-details",
+          "recovery-board",
+          "confirmed",
+          "cancel-review",
+          "cancellation-outcomes"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "english-continue",
+      "kind": "text-verbatim",
+      "text": "Continue",
+      "scope": {
+        "slots": [
+          "choose-time",
+          "details-en",
+          "validation-en"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "english-submission",
+      "kind": "text-verbatim",
+      "text": "Submit booking",
+      "scope": {
+        "slots": [
+          "handoff-presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "portuguese-continue",
+      "kind": "text-verbatim",
+      "text": "Continuar",
+      "scope": {
+        "slots": [
+          "language-comparison",
+          "corrected"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "polish-continue",
+      "kind": "text-verbatim",
+      "text": "Dalej",
+      "scope": {
+        "slots": [
+          "language-comparison"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "portuguese-submission",
+      "kind": "text-verbatim",
+      "text": "Submeter reserva",
+      "scope": {
+        "slots": [
+          "review"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "illustrative-branch-label",
+      "kind": "text-verbatim",
+      "text": "Estado ilustrativo",
+      "scope": {
+        "slots": [
+          "cancellation-outcomes"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "NEIGHBOUR SPACE",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "shared-interface-system",
+      "slots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "sourceSlots": [
+        "process-specification"
+      ],
+      "items": [
+        {
+          "item": "All screens implement the specification's shared component treatments, typography, safe-area logic, navigation hierarchy and service identity; localised wrapping may adapt without changing component meaning.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Selected, unavailable, error, confirmed, cancelled and disabled states retain consistent meanings and use text or symbols in addition to colour.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Each screen uses its prescribed English, Portuguese or Polish display language, with the same reachable three-language control and unchanged raw record strings.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "draft-through-submission",
+      "slots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed"
+      ],
+      "items": [
+        {
+          "item": "The record changes only at the specified correction, activity edit, replacement-time selection and successful explicit submission; language changes preserve the current step, data and active errors.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The 10:00 availability, 10:06 conflict and 10:08 successful submission remain distinct, and NS-1042 appears as a created booking only after explicit final submission.",
+          "kind": "compliance"
+        }
+      ]
+    },
+    {
+      "id": "cancellation-from-confirmed-record",
+      "slots": [
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "sourceSlots": [
+        "confirmed"
+      ],
+      "items": [
+        {
+          "item": "Cancellation review and both illustrative outcomes retain the same confirmed booking identity and corrected, edited booking details.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The two independently sourced outcomes share the inclusive 2027-09-18 14:30 deadline: explicit cancellation at 14:20 releases this booking's time, while the separate 14:40 attempt retains confirmation and the hold.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "NEIGHBOUR SPACE"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "choose-time",
+      "details-en",
+      "validation-en",
+      "language-comparison",
+      "corrected",
+      "review",
+      "edit-details",
+      "recovery-board",
+      "confirmed",
+      "cancel-review",
+      "cancellation-outcomes"
+    ],
+    "layoutExtras": false,
+    "naRules": "Judge interface hierarchy, typography and multilingual layout quality without scoring photorealistic materials, physical lighting or exact export pixel dimensions."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "process-specification",
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes",
+        "handoff-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-process-specification",
+      "requirementId": "R-format-process-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "process-specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-choose-time",
+      "requirementId": "R-format-choose-time",
+      "method": "artifact-property",
+      "targetSlots": [
+        "choose-time"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-details-en",
+      "requirementId": "R-format-details-en",
+      "method": "artifact-property",
+      "targetSlots": [
+        "details-en"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-validation-en",
+      "requirementId": "R-format-validation-en",
+      "method": "artifact-property",
+      "targetSlots": [
+        "validation-en"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-language-comparison",
+      "requirementId": "R-format-language-comparison",
+      "method": "artifact-property",
+      "targetSlots": [
+        "language-comparison"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-corrected",
+      "requirementId": "R-format-corrected",
+      "method": "artifact-property",
+      "targetSlots": [
+        "corrected"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-review",
+      "requirementId": "R-format-review",
+      "method": "artifact-property",
+      "targetSlots": [
+        "review"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-edit-details",
+      "requirementId": "R-format-edit-details",
+      "method": "artifact-property",
+      "targetSlots": [
+        "edit-details"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-recovery-board",
+      "requirementId": "R-format-recovery-board",
+      "method": "artifact-property",
+      "targetSlots": [
+        "recovery-board"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-confirmed",
+      "requirementId": "R-format-confirmed",
+      "method": "artifact-property",
+      "targetSlots": [
+        "confirmed"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cancel-review",
+      "requirementId": "R-format-cancel-review",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cancel-review"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-cancellation-outcomes",
+      "requirementId": "R-format-cancellation-outcomes",
+      "method": "artifact-property",
+      "targetSlots": [
+        "cancellation-outcomes"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-language-interaction",
+      "requirementId": "R-format-language-interaction",
+      "method": "manual",
+      "targetSlots": [
+        "language-interaction"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-handoff-presentation",
+      "requirementId": "R-format-handoff-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "handoff-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "specification-tables-and-field-contract",
+      "requirementId": "R-specification-tables-and-field-contract",
+      "method": "content",
+      "targetSlots": [
+        "process-specification"
+      ],
+      "criteria": "Require readable flow and component-value tables. The field contract must contain venue_id, booking_date, start_time, duration_minutes, full_name, email, activity_name, participants and accept_rules with the supplied types and restrictions. Cover every named screen and branch, the Polish validation and correction views, and the intermediate returns to English Review. Record raw-entry preservation, participants within venue capacity, and agreement required before Review. The component table must cover default, pressed, disabled and error states with their supplied values; an omitted field, state or journey branch fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ]
+    },
+    {
+      "id": "numbered-journey-boundary",
+      "requirementId": "R-numbered-journey-boundary",
+      "method": "content",
+      "targetSlots": [
+        "process-specification"
+      ],
+      "criteria": "The flow must identify steps 1, 2 and 3 with the supplied English names in sequence. Booking-status views, including confirmation and both cancellation outcomes, must be outside that numbered progression; the supplied step-0 notation is acceptable. Review must remain unsubmitted and neither a draft nor Review may reserve time.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ]
+    },
+    {
+      "id": "screen-names-follow-specification",
+      "requirementId": "R-screen-names-follow-specification",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "Each complete screen must identify its applicable page and state consistently with the specification. Use the supplied localised display names for Portuguese and Polish while preserving the underlying state mapping; validation-zh denotes Portuguese, and the Polish comparison shares that record. Board captions may identify internal record keys. Missing identification, wrong step or state, or contradictory naming fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "process-specification"
+      ]
+    },
+    {
+      "id": "complete-screen-safe-areas-and-language-access",
+      "requirementId": "R-complete-screen-safe-areas-and-language-access",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "Inspect every complete screen, including both panels of each board. Require a portrait screen with top and bottom content exclusions corresponding proportionally to the supplied 62- and 34-unit safe areas, the service name and doorway mark, persistent labels on displayed fields, and a reachable language control offering all three supplied language labels. A visible selector may open the choices rather than displaying them all permanently. Cropped screens, content intruding into safe areas, placeholder-only labels or an absent language route fail; do not judge export pixel dimensions.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "screen-component-values-and-accessibility",
+      "requirementId": "R-screen-component-values-and-accessibility",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "Compare visible components with the supplied palette and specification: page #F6F8F7 with #172B2E text; primary action #165A63 with white text; white fields with #637579 borders; errors #A12622; and selected outlines #165A63. Use the logical screen frame to assess touch areas of at least 44 × 44 units and the specified contrast thresholds. Selection must include a check and localised label, unavailability an icon and label, and errors linked text and an icon; booking status must also communicate beyond colour. The late branch must show disabled cancellation using #D9E1E2 and #465455 with a deadline explanation. Minor rasterisation differences are acceptable; wrong semantic colours, inadequate targets, low contrast or colour-only states fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "process-specification"
+      ]
+    },
+    {
+      "id": "document-component-and-accessibility-values",
+      "requirementId": "R-document-component-and-accessibility-values",
+      "method": "content",
+      "targetSlots": [
+        "process-specification",
+        "handoff-presentation"
+      ],
+      "criteria": "The specification must state the supplied component values, including pressed fill #123F46 with white text and an inset outline, disabled fill #D9E1E2 with #465455 text and explanatory status text, and the supplied field, error and selection treatments. It must state minimum touch targets and both contrast thresholds, body text at 16 logical units with 24-unit line height, and large text at least 24 units. Inspect component examples in both documents for agreement with these values and redundant state cues. The presentation need not reproduce the entire component table, but its stated values and reused interface examples must not contradict it.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ]
+    },
+    {
+      "id": "venue-availability-and-recovery",
+      "requirementId": "R-venue-availability-and-recovery",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "recovery-board"
+      ],
+      "criteria": "The initial English screen must show both venues with capacities 20 and 8, both duration choices, and R1 on 2027-09-18 selected for 14:00–15:00. All shown start choices must follow 30-minute boundaries. Availability must account for the full selected interval within R1 09:00–18:00 or C1 08:00–20:00: any positive occupied overlap is invalid, while touching an occupied boundary is allowed. Recovery must distinguish the 10:06 conflict from the 10:00 snapshot and select available R1 16:30–17:30. Retain Neighbour Sketch Circle, Lin Wei, lin.wei@example.com, 12 participants and accepted agreement wherever the retained record is exposed. The initial over-capacity draft is intentional and must proceed to the specified validation, not be silently corrected.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "populated-details-before-validation",
+      "requirementId": "R-populated-details-before-validation",
+      "method": "visual",
+      "targetSlots": [
+        "details-en"
+      ],
+      "criteria": "Require English step-2 details populated with Lin Wei, lin.wei@example.com, Saturday Sketch Circle and Participants 24, with agreement unchecked. Retained booking context must remain R1, 2027-09-18, 14:00 and 60 minutes wherever shown. There must be no active field errors or validation summary yet, despite the invalid participants and agreement values. Premature errors, cleared entries or corrected values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "validation-language-preservation-and-correction",
+      "requirementId": "R-validation-language-preservation-and-correction",
+      "method": "visual",
+      "targetSlots": [
+        "validation-en",
+        "language-comparison",
+        "corrected"
+      ],
+      "criteria": "Compare English validation with both Portuguese and Polish board panels: all must remain on step 2 with the supplied initial draft and exactly two active field-linked errors, one for participants and one for accept_rules, plus the localised summary. Read the error texts against the corresponding glossary entries. Raw names and email must remain unchanged; translated labels, venue displays and duration units may differ. The corrected Portuguese screen must change only participants to 12 and agreement to selected, remove both errors and the active error summary, and keep the other draft values. Lost data, translated raw activity text, reassigned errors or an extra error fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "review-edit-conflict-and-explicit-submission",
+      "requirementId": "R-review-edit-conflict-and-explicit-submission",
+      "method": "visual",
+      "targetSlots": [
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed"
+      ],
+      "criteria": "Portuguese Review must show the complete corrected booking summary, Por submeter and Submeter reserva, with no reference or reserved-time claim. English Edit details must preserve the corrected record while changing only activity_name to Neighbour Sketch Circle and providing Return to review. The recovery panels must retain this edit, show the exact English glossary conflict and saved-draft messages, and expose Change time followed by Return to review. Failed submission at 10:06 must not create a reference. Confirmation must identify successful explicit submission at 10:08 after returning to Review, producing NS-1042 for R1 on 2027-09-18 at 16:30–17:30 with the edited details and inclusive 14:30 cancellation deadline. Sequence annotations are acceptable; automatic confirmation on Continue or time selection fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "independent-cancellation-outcomes",
+      "requirementId": "R-independent-cancellation-outcomes",
+      "method": "visual",
+      "targetSlots": [
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "The Portuguese cancellation review must retain confirmed NS-1042 at 14:20 and provide Confirmar cancelamento and Manter reserva. Both outcome panels must carry Estado ilustrativo and independently derive from the same confirmed R1 booking at 16:30–17:30 with the edited activity and corrected details. The 14:20 confirmation branch must show Reserva cancelada and the localised release message; the independent 14:40 branch must remain Reserva confirmada, show disabled cancellation and the exact localised passed-deadline message. Each branch must repeat 2027-09-18 14:30 with inclusive meaning and provide Voltar à reserva. A sequential cancelled-then-confirmed story, changed reference, omitted deadline or release of another booking fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "confirmed"
+      ]
+    },
+    {
+      "id": "interaction-sequence-and-pressed-state",
+      "requirementId": "R-interaction-sequence-and-pressed-state",
+      "method": "manual",
+      "targetSlots": [
+        "language-interaction"
+      ],
+      "criteria": "Review the whole video for four successive 3-second segments totalling 12 seconds: English validation, Portuguese validation, Polish validation and Polish correction. The Continue activation must visibly demonstrate the supplied pressed treatment, including #123F46 fill, white text and inset outline. Through language changes retain step 2, Lin Wei, lin.wei@example.com, Saturday Sketch Circle, R1, 2027-09-18, 14:00, 60 minutes, participants 24, unchecked agreement and exactly two errors linked to participants and accept_rules, with each locale's glossary summary and messages. The final segment changes only participants to 12 and agreement to true and clears both errors. Wrong order or duration, missing pressed feedback, data loss, changed error attachment or a non-Polish final correction fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance."
+    },
+    {
+      "id": "handoff-explanation-and-repeated-facts",
+      "requirementId": "R-handoff-explanation-and-repeated-facts",
+      "method": "content",
+      "targetSlots": [
+        "handoff-presentation"
+      ],
+      "criteria": "Require at least eight pages explaining the numbered flow and outside-step booking-status views, language changes preserving raw entries and errors, correction, the separate activity edit, availability conflict and recovery, and cancellation alternatives. Repeat applicable specification page and state names, the literal primary colour #165A63, and the stated logical screen size 390 × 844; this checks printed specification facts, not export dimensions. Explain the failed 10:06 submission without a reference, return to Review after selecting 16:30–17:30, and explicit Submit booking at 10:08 creating NS-1042. Both cancellation branches must independently trace to that confirmed record and repeat the inclusive deadline 2027-09-18 14:30, distinguishing release at 14:20 from retained confirmation at 14:40. Missing explanations or contradictory timing, state or preservation claims fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "sourceSlots": [
+        "process-specification"
+      ]
+    },
+    {
+      "id": "handoff-visible-source-reuse",
+      "requirementId": "R-handoff-visible-source-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "handoff-presentation"
+      ],
+      "criteria": "Require identifiable, legible reuse of the specification and every delivered screen role, including both panels of each board. The video sequence must be visibly represented through an embedded sequence or ordered frames covering all four segments. Scaling, slide composition and explanatory annotations may vary. Merely listing files, showing unrelated replacement screens or omitting any source role fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "sourceSlots": [
+        "process-specification",
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ]
+    },
+    {
+      "id": "supplied-locales-and-terminology",
+      "requirementId": "R-supplied-locales-and-terminology",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "Read visible system labels, venue names, duration units, actions, agreement text, venue rules, validation messages and booking-status messages against the supplied English, Portuguese and Polish glossary, retaining its spelling and diacritics. English applies to choose-time, details-en, validation-en, edit-details, both recovery panels and confirmed; Portuguese applies to corrected, review, cancel-review and both cancellation outcomes; the language board contains Portuguese and Polish. Raw personal names, email, activity names, venue IDs and reference remain unchanged. The internal key validation-zh must not cause a Chinese-language display. Wrapping may vary; mistranslation, mixed system locales, substituted languages or clipped terms fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "comparison-board-completeness",
+      "requirementId": "R-comparison-board-completeness",
+      "method": "visual",
+      "targetSlots": [
+        "language-comparison",
+        "recovery-board",
+        "cancellation-outcomes"
+      ],
+      "criteria": "Each board must present two complete flat portrait screens side by side at matching scale. Language comparison pairs Portuguese and Polish validation, recovery pairs English conflict and alternative, and cancellation outcomes pairs the two Portuguese branches. Surrounding canvas and captions may vary. Unequal panel sizes, cropped interfaces, perspective mockups or an omitted panel fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "screen-text-metrics",
+      "requirementId": "R-screen-text-metrics",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "Using the complete logical screen frame as the scale reference, assess body copy against the supplied 16-unit size and 24-unit line height. Longer Portuguese and Polish text may wrap or redistribute layout while maintaining these values, readable labels and reachable controls. Judge the screen artwork rather than surrounding board captions. Shrinking body text to fit translations, visibly cramped line spacing or clipped text fails; allow normal rasterisation tolerance.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "free-booking-record",
+      "requirementId": "R-free-booking-record",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "review"
+      ],
+      "criteria": "Venue choices and the complete Review summary must communicate a free booking using the applicable glossary term, with no paid venue, fee, deposit or payment requirement. A single shared free-booking indication may cover both venue choices. Any charge or contradictory price information fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "navigation-preserves-current-record",
+      "requirementId": "R-navigation-preserves-current-record",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "Each complete screen must expose its applicable primary action and a return route consistent with its position in the journey. Back navigation, Previous, Return to review, Keep booking or Back to booking may serve the relevant context; a first-step return need not invent an earlier numbered booking step. Visible navigation and any accompanying state explanation must preserve the current draft or confirmed record. The late branch may disable cancellation while retaining an available return route. Missing routes, destructive resets or actions implying premature submission or cancellation fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-shared-interface-system",
+      "requirementId": "R-set-shared-interface-system",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "All screens implement the specification's shared component treatments, typography, safe-area logic, navigation hierarchy and service identity; localised wrapping may adapt without changing component meaning. Selected, unavailable, error, confirmed, cancelled and disabled states retain consistent meanings and use text or symbols in addition to colour. Each screen uses its prescribed English, Portuguese or Polish display language, with the same reachable three-language control and unchanged raw record strings.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "process-specification"
+      ]
+    },
+    {
+      "id": "set-draft-through-submission",
+      "requirementId": "R-set-draft-through-submission",
+      "method": "visual",
+      "targetSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed"
+      ],
+      "criteria": "The record changes only at the specified correction, activity edit, replacement-time selection and successful explicit submission; language changes preserve the current step, data and active errors. The 10:00 availability, 10:06 conflict and 10:08 successful submission remain distinct, and NS-1042 appears as a created booking only after explicit final submission.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "set-cancellation-from-confirmed-record",
+      "requirementId": "R-set-cancellation-from-confirmed-record",
+      "method": "visual",
+      "targetSlots": [
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "criteria": "Cancellation review and both illustrative outcomes retain the same confirmed booking identity and corrected, edited booking details. The two independently sourced outcomes share the inclusive 2027-09-18 14:30 deadline: explicit cancellation at 14:20 releases this booking's time, while the separate 14:40 attempt retains confirmation and the hold.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ui-material-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/04-terminology.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ui-material-03/05-booking-states.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "confirmed"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-doorway-mark",
+      "kind": "identity-consistency",
+      "subject": "logo",
+      "anchorAssets": [
+        "doorway-symbol.png"
+      ],
+      "subjectSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes"
+      ],
+      "notes": "The existing doorway symbol remains the service mark; the primary colour is #165A63."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specification-page-and-state-names",
+      "fromSlot": "process-specification",
+      "toSlots": [
+        "choose-time",
+        "details-en",
+        "validation-en",
+        "language-comparison",
+        "corrected",
+        "review",
+        "edit-details",
+        "recovery-board",
+        "confirmed",
+        "cancel-review",
+        "cancellation-outcomes",
+        "handoff-presentation"
+      ],
+      "extract": [
+        "applicable page names",
+        "applicable state names"
+      ],
+      "notes": "Every screen deliverable and the handoff presentation repeat the applicable page and state names from that specification; the presentation also repeats #165A63 and the 390 × 844 logical screen size."
+    },
+    {
+      "id": "handoff-design-values",
+      "fromSlot": "process-specification",
+      "toSlots": [
+        "handoff-presentation"
+      ],
+      "extract": [
+        "primary colour #165A63",
+        "logical screen size 390 × 844"
+      ],
+      "notes": "Every screen deliverable and the handoff presentation repeat the applicable page and state names from that specification; the presentation also repeats #165A63 and the 390 × 844 logical screen size."
+    }
+  ]
+}

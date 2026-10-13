@@ -1,0 +1,31 @@
+COMMON COOL | Public information for a cooler pause in Harbour Ward
+
+We run COMMON COOL in Harbour Ward and need a coordinated set of street posters, community handouts and mobile information cards for residents, outdoor workers and visitors. The service runs 1 July–31 August 2027, offering cool indoor seating and drinking water free of charge. No booking. No purchase needed. Everyone is welcome. Print "COMMON COOL" and "Take a cooler pause." with the service period on every street, community and mobile artwork and in the video.
+
+Our three venues have different opening hours. L1, Loom Library, 14 Harbour Walk, opens daily 10:00–18:00 and offers cool indoor seating, drinking water and toilets; it is closed on 18 July 2027 for maintenance. L2, Depot Hall, 6 Tram Square, opens daily 12:00–20:00 and offers cool indoor seating, drinking water and phone charging; on 24 July 2027 it opens 12:00–16:00 because of rehearsal. L3, Canal Reading Room, 22 Reed Street, opens daily 09:00–16:00 and offers cool indoor seating, drinking water, toilets and phone charging; a workshop closes it 12:00–14:00 on 5 August 2027, leaving opening periods of 09:00–12:00 and 14:00–16:00 that day.
+
+The direction is fixed: a calm, respectful public-service voice, the attached wordmark, primary color #143D45 and a white background. Use L1, L2 and L3 beside their venue names as recurring identifiers. The hierarchy is place first, usable hours and dated changes second, then address, facilities and access. Label normal schedules "Regular hours" and exceptions "Temporary change"; pair facility symbols with their facility names. Venue-specific pieces carry their complete venue record, including both schedules and the exception reason. Directory overviews and the community change digest carry all three complete records. The access guide carries the shared offer and access terms plus all three venue names and addresses.
+
+Street posters are A2, with 3 mm bleed and a minimum 5 mm safe margin; at a 2 m reading distance, the leading venue name or directory heading has a minimum capital height of 20 mm, with remaining copy at least 5 mm. Community handouts are A4 with the same bleed and safe margin, read at 0.4 m with a minimum capital height of 2 mm throughout. Mobile cards are read at 0.4 m on a logical display area of 90 × 160 mm, with a minimum capital height of 1.8 mm and a 5% inset on every edge. Text contrast is at least 4.5:1; large headings and meaningful graphics reach at least 3:1. Carry these rules into every application.
+
+Audience: Harbour Ward communications staff and venue teams will use the work to approve a public rollout that helps residents, outdoor workers and visitors choose a place and understand when and how to use it.
+
+Inputs (attached): 01-client-facts.en.md holds the fixed identity, service terms and reading requirements. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. 03-service-records.en.md holds the three venue records and their dated exceptions. 04-reading-frames.png provides the carrier geometry, margins and minimum letter heights. 05-common-cool-wordmark.png supplies the existing wordmark to retain across the campaign. 06-harbour-daylight.png provides the bright street conditions and mix of people the materials will reach.
+
+Deliverables:
+1. One one-page information hierarchy specification covering content priority, carrier assignment, minimum letter heights, type family and weights, #143D45, physical sizes, margins and the two schedule labels
+2. Four A2 portrait street posters: three complete venue-specific regular-service posters and one complete three-venue directory
+3. Three A4 portrait community handouts: a complete three-venue directory, an offer and access guide, and a complete three-venue temporary-change digest
+4. Four portrait mobile cards: a complete three-venue directory and three venue-specific change cards, one for each dated exception
+5. One 10-second motion extension of the mobile directory, with all three venue names, COMMON COOL, Take a cooler pause. and the service period visible in both its first and last frames
+6. One rollout presentation of at least 8 pages, reusing the specification, all street posters, community handouts, mobile cards and video frames, with an index connecting fixed facts to named applications
+
+Acceptance:
+- The information hierarchy specification comes first and records A2/A4 sizes, #143D45, Regular hours and Temporary change; the street posters and community handouts apply its sizes, color and labels, the mobile cards repeat its color and labels, and the presentation prints these same specifications beside reused examples.
+- All eleven static applications and the video carry the supplied wordmark, COMMON COOL, Take a cooler pause. and 1 July–31 August 2027; the static applications repeat the shared free offer and access terms, and the presentation repeats the name, campaign line and service period.
+- Every venue-specific poster and mobile card carries its complete associated record; the street, community and mobile directories and community change digest carry all three complete records. The access guide carries the shared offer, access terms and all three venue names and addresses.
+- The three mobile change cards and community change digest foreground the relevant dates and altered opening status: Loom Library closed on 18 July 2027, Depot Hall open 12:00–16:00 on 24 July 2027, and Canal Reading Room open 09:00–12:00 and 14:00–16:00 on 5 August 2027, with each reason and regular schedule retained.
+- Every static application follows its carrier's letter heights, margins and reading distance from the letter, meets the 4.5:1 text and 3:1 large-heading/graphic contrast thresholds, uses venue identifiers with names, and pairs facility symbols with text.
+- The video lasts 10 seconds, draws its wording from the mobile directory and carries the five specified content elements in both endpoint frames; the presentation contains at least 8 pages, reuses all eleven static applications and both endpoint frames, and locates the three temporary exceptions in its application index.
+
+Please clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts.

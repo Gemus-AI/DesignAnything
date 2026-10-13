@@ -1,0 +1,1220 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-furniture-breadth-03",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "physical-object",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "specification",
+      "label": "Specification and state schedule",
+      "description": "A two-page specification and state schedule covering dimensions, capacities, materials, connections, dismantled parts and operating states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "system-drawing",
+      "label": "S4 and L2 system drawing",
+      "description": "One dimensioned system drawing of S4 and L2 columns with front, side and plan views, shared controls and door swings.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "assembly",
+      "label": "Exploded assembly and parts schedule",
+      "description": "One exploded assembly drawing with numbered parts, column connections, floor anchors and the largest dismantled part.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "small-compartment",
+      "label": "S4 helmet compartment study",
+      "description": "One S4 compartment study with section, clear opening, D1 door components and helmet insertion path.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "large-compartment",
+      "label": "L2 backpack compartment study",
+      "description": "One L2 compartment study with section, clear opening, D1 door components and upright backpack insertion path.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "compact-station",
+      "label": "Compact station layout",
+      "description": "One Compact station layout combining a dimensioned plan and assembled perspective of one S4 and one L2 column.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "standard-station",
+      "label": "Standard station layout",
+      "description": "One Standard station layout combining a dimensioned plan and assembled perspective of two S4 and two L2 columns.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "expanded-station",
+      "label": "Expanded station layout",
+      "description": "One Expanded station layout combining a dimensioned plan and assembled perspective of three S4 and three L2 columns.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "storage-sequence",
+      "label": "Public storage storyboard",
+      "description": "One four-step public storage storyboard with card access, equipment placement, control height and compartment state changes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "retrieval-sequence",
+      "label": "Public retrieval storyboard",
+      "description": "One three-step public retrieval storyboard with same-card access, equipment removal and compartment state changes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "maintenance-sequence",
+      "label": "Rear maintenance storyboard",
+      "description": "One five-stage maintenance storyboard with rear approach, isolation, panel access, lock and wiring work, and return to service.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "materials-status",
+      "label": "Materials and status board",
+      "description": "One materials and status board with steel specifications, coating code, removable tray detail and three word-and-symbol indicators.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "operation-video",
+      "label": "Helmet storage and retrieval video",
+      "description": "One 12-second video following helmet storage and retrieval through the Available, Occupied and Available states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "presentation",
+      "label": "Station system presentation",
+      "description": "One presentation of at least 10 pages reusing the specification, drawings, three station layouts, operating sequences and materials board.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "project-name",
+      "kind": "text-verbatim",
+      "text": "WAYKEEP",
+      "scope": {
+        "slots": [
+          "compact-station",
+          "standard-station",
+          "expanded-station",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "station-tagline",
+      "kind": "text-verbatim",
+      "text": "Store your gear. Continue your journey.",
+      "scope": {
+        "slots": [
+          "compact-station",
+          "standard-station",
+          "expanded-station",
+          "presentation"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "available-label",
+      "kind": "text-verbatim",
+      "text": "Available",
+      "scope": {
+        "slots": [
+          "materials-status"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "occupied-label",
+      "kind": "text-verbatim",
+      "text": "Occupied",
+      "scope": {
+        "slots": [
+          "materials-status"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "service-label",
+      "kind": "text-verbatim",
+      "text": "Service",
+      "scope": {
+        "slots": [
+          "materials-status"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "WAYKEEP",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "cabinet-and-fabrication-system",
+      "slots": [
+        "system-drawing",
+        "assembly",
+        "small-compartment",
+        "large-compartment",
+        "compact-station",
+        "standard-station",
+        "expanded-station",
+        "maintenance-sequence",
+        "materials-status"
+      ],
+      "sourceSlots": [
+        "specification"
+      ],
+      "items": [
+        {
+          "item": "Column geometry, compartment arrangements, door construction, trays, joints and service access describe one compatible cabinet system across drawings and assembled views.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Depicted dimensions, construction and material assignments agree with the specification, allowing diagrammatic simplification and lighting variation without changing the stated design.",
+          "kind": "consistency"
+        }
+      ]
+    },
+    {
+      "id": "station-operation-and-status-system",
+      "slots": [
+        "compact-station",
+        "standard-station",
+        "expanded-station",
+        "storage-sequence",
+        "retrieval-sequence",
+        "maintenance-sequence"
+      ],
+      "sourceSlots": [
+        "system-drawing",
+        "materials-status"
+      ],
+      "items": [
+        {
+          "item": "Public and maintenance interactions use the same control placement, compartment geometry and front-versus-rear access arrangement established by the system drawing.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Every displayed compartment state retains the materials board's word-and-symbol pairing across station scales and operating sequences.",
+          "kind": "consistency"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "WAYKEEP"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Product Design",
+    "slots": [
+      "system-drawing",
+      "assembly",
+      "small-compartment",
+      "large-compartment",
+      "compact-station",
+      "standard-station",
+      "expanded-station",
+      "storage-sequence",
+      "retrieval-sequence",
+      "maintenance-sequence",
+      "materials-status"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not infer actual structural strength, lock security or fabrication certification from drawings, renders or animation."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "specification",
+        "system-drawing",
+        "assembly",
+        "small-compartment",
+        "large-compartment",
+        "compact-station",
+        "standard-station",
+        "expanded-station",
+        "storage-sequence",
+        "retrieval-sequence",
+        "maintenance-sequence",
+        "materials-status",
+        "presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "system-drawing",
+        "assembly",
+        "small-compartment",
+        "large-compartment",
+        "compact-station",
+        "standard-station",
+        "expanded-station",
+        "storage-sequence",
+        "retrieval-sequence",
+        "maintenance-sequence",
+        "materials-status"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-specification",
+      "requirementId": "R-format-specification",
+      "method": "artifact-property",
+      "targetSlots": [
+        "specification"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-system-drawing",
+      "requirementId": "R-format-system-drawing",
+      "method": "artifact-property",
+      "targetSlots": [
+        "system-drawing"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-assembly",
+      "requirementId": "R-format-assembly",
+      "method": "artifact-property",
+      "targetSlots": [
+        "assembly"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-small-compartment",
+      "requirementId": "R-format-small-compartment",
+      "method": "artifact-property",
+      "targetSlots": [
+        "small-compartment"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-large-compartment",
+      "requirementId": "R-format-large-compartment",
+      "method": "artifact-property",
+      "targetSlots": [
+        "large-compartment"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1200 by 1800 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-compact-station",
+      "requirementId": "R-format-compact-station",
+      "method": "artifact-property",
+      "targetSlots": [
+        "compact-station"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-standard-station",
+      "requirementId": "R-format-standard-station",
+      "method": "artifact-property",
+      "targetSlots": [
+        "standard-station"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-expanded-station",
+      "requirementId": "R-format-expanded-station",
+      "method": "artifact-property",
+      "targetSlots": [
+        "expanded-station"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-storage-sequence",
+      "requirementId": "R-format-storage-sequence",
+      "method": "artifact-property",
+      "targetSlots": [
+        "storage-sequence"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-retrieval-sequence",
+      "requirementId": "R-format-retrieval-sequence",
+      "method": "artifact-property",
+      "targetSlots": [
+        "retrieval-sequence"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1920 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-maintenance-sequence",
+      "requirementId": "R-format-maintenance-sequence",
+      "method": "artifact-property",
+      "targetSlots": [
+        "maintenance-sequence"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-materials-status",
+      "requirementId": "R-format-materials-status",
+      "method": "artifact-property",
+      "targetSlots": [
+        "materials-status"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-operation-video",
+      "requirementId": "R-format-operation-video",
+      "method": "manual",
+      "targetSlots": [
+        "operation-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-presentation",
+      "requirementId": "R-format-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "specification-and-state-schedule",
+      "requirementId": "R-specification-and-state-schedule",
+      "method": "content",
+      "targetSlots": [
+        "specification"
+      ],
+      "criteria": "The document has two pages and explicitly covers every listed topic. It records 500 mm column pitch, 600 mm depth, 1800 mm height, four small compartments per S4 and two large compartments per L2, with minimum clear interiors in width × depth × height order. Its state schedule distinguishes an empty ready compartment, a compartment assigned to a user's card, and an isolated maintenance compartment. Organization may vary; missing topics or conflicting records fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ]
+    },
+    {
+      "id": "drawing-and-layout-dimensions",
+      "requirementId": "R-drawing-and-layout-dimensions",
+      "method": "visual",
+      "targetSlots": [
+        "system-drawing",
+        "compact-station",
+        "standard-station",
+        "expanded-station"
+      ],
+      "criteria": "Every target explicitly identifies pitch as 500 mm and cabinet depth as 600 mm. Compact depicts one S4 and one L2 with 4 small and 2 large compartments; Standard depicts two of each with 8 and 4; Expanded depicts three of each with 12 and 6. Column ordering may vary, but visible geometry and dimension or capacity annotations must agree.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "written-dimension-repetition",
+      "requirementId": "R-written-dimension-repetition",
+      "method": "content",
+      "targetSlots": [
+        "specification",
+        "presentation"
+      ],
+      "criteria": "Each document explicitly states a 500 mm column pitch and 600 mm cabinet depth. These may appear in prose, tables or legible drawing annotations; omission or contradictory values fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ]
+    },
+    {
+      "id": "system-drawing-coverage",
+      "requirementId": "R-system-drawing-coverage",
+      "method": "visual",
+      "targetSlots": [
+        "system-drawing"
+      ],
+      "criteria": "Both column types have identifiable front, side and plan representations, including their 1800 mm height, shared public controls and dimensioned door-opening sweeps. Views must describe compatible geometry. Sheet arrangement and drawing style may vary; a missing view, missing controls or undimensioned swing fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "compartment-clearances-and-equipment",
+      "requirementId": "R-compartment-clearances-and-equipment",
+      "method": "visual",
+      "targetSlots": [
+        "small-compartment",
+        "large-compartment"
+      ],
+      "criteria": "Each study includes a section and a dimensioned clear opening. The S4 study documents at least 420 × 500 × 360 mm of usable interior and traces a 330 × 260 × 250 mm helmet entering it; the L2 study documents at least 420 × 500 × 760 mm and traces a 320 × 220 × 650 mm backpack. Dimensions use width × depth × height, and both items finish upright. Larger clear interiors are allowed within the fixed cabinet and door system. Paths must account for actual opening and hardware obstructions; depicting only an item already inside is insufficient.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "d1-component-records",
+      "requirementId": "R-d1-component-records",
+      "method": "visual",
+      "targetSlots": [
+        "system-drawing",
+        "small-compartment",
+        "large-compartment"
+      ],
+      "criteria": "Relevant small and large leaves retain 460 × 400 mm and 460 × 800 mm width × height, with 20 mm folded depth. Detail evidence preserves a black recessed vertical paddle measuring 40 × 100 mm, centered vertically with its centerline 60 mm from the right edge, and two exposed stainless steel hinges on the left edge with centers 80 mm from the top and bottom. The lock cassette remains rear-mounted and connected to the controller. Detail callouts may be distributed across the studies, but visible components in every target must agree; substituted hardware or conflicting dimensions fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "station-footprints-and-access",
+      "requirementId": "R-station-footprints-and-access",
+      "method": "visual",
+      "targetSlots": [
+        "compact-station",
+        "standard-station",
+        "expanded-station"
+      ],
+      "criteria": "Each layout combines a dimensioned plan and an assembled perspective. Compact, Standard and Expanded use footprints of 1500 × 2700, 2500 × 2700 and 3500 × 2700 mm, with respective column banks 1000, 2000 and 3000 mm wide and 250 mm allowance at each end. Plans allocate 600 mm cabinet depth, 1200 mm front aisle and 900 mm rear aisle, measuring aisles with doors and rear panels closed. Door and rear-panel opening envelopes are marked and agree with the depicted arrangement. Orientation and graphic treatment may vary; incorrect allocations or missing envelopes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "public-control-position",
+      "requirementId": "R-public-control-position",
+      "method": "visual",
+      "targetSlots": [
+        "storage-sequence",
+        "retrieval-sequence"
+      ],
+      "criteria": "Both public sequences visibly locate the shared controls on the public front and identify their center at 1100 mm above the floor. Framing may vary between panels, but interactions must use that control location. Rear-side public access or an absent or conflicting height fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "rear-maintenance-sequence",
+      "requirementId": "R-rear-maintenance-sequence",
+      "method": "visual",
+      "targetSlots": [
+        "maintenance-sequence"
+      ],
+      "criteria": "The storyboard makes the rear approach and five stages legible: isolate an empty compartment; open and remove its rear service panel for access; reach the lock cassette and wiring through the empty compartment; refit components and close the panel; run a controller cycle and restore use. Stages 1–4 show Service and stage 5 shows Available. Composition may vary, but missing stages, work through stored equipment, front maintenance access or premature return to Available fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "assembly-connections-and-part-envelope",
+      "requirementId": "R-assembly-connections-and-part-envelope",
+      "method": "visual",
+      "targetSlots": [
+        "assembly"
+      ],
+      "criteria": "The drawing identifies four M8 bolts at each adjacent-column joint, their 6 mm hex key operation, and four M10 floor anchors per column base. It identifies and dimensions the largest dismantled part, demonstrating that it fits the 1800 × 600 × 100 mm envelope; smaller parts are allowed. Generic fastener labels, totals that obscure per-joint or per-column quantities, or a depicted larger dismantled component fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "written-construction-and-material-facts",
+      "requirementId": "R-written-construction-and-material-facts",
+      "method": "content",
+      "targetSlots": [
+        "specification",
+        "presentation"
+      ],
+      "criteria": "Both documents identify four M8 joint bolts, a 6 mm hex key, four M10 floor anchors per column and the largest dismantled part with dimensions within the specified envelope. Both assign 1.5 mm galvanized steel and powder coating #243C46 to cabinets and doors, and 2 mm 304 stainless steel to removable trays. Equivalent table or prose organization is allowed; omitted quantities, swapped material assignments or conflicting specifications fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ]
+    },
+    {
+      "id": "materials-and-removable-tray",
+      "requirementId": "R-materials-and-removable-tray",
+      "method": "visual",
+      "targetSlots": [
+        "materials-status"
+      ],
+      "criteria": "The board identifies cabinet and door construction as 1.5 mm galvanized steel with powder coating #243C46 and trays as 2 mm 304 stainless steel. A detail makes the tray's removability understandable. Available, Occupied and Service each appear with a different symbol. Swatch presentation and symbol design are open; missing thicknesses, grades, coating code, tray detail or an indicator fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "station-header-copy",
+      "requirementId": "R-station-header-copy",
+      "method": "visual",
+      "targetSlots": [
+        "compact-station",
+        "standard-station",
+        "expanded-station"
+      ],
+      "criteria": "Each assembled station visibly carries the exact project name and tagline on its physical header. Typography and arrangement may vary within the shared system. Copy appearing only as a sheet title, a caption or elsewhere outside the station header does not satisfy this requirement.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "presentation-opening-copy",
+      "requirementId": "R-presentation-opening-copy",
+      "method": "content",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The opening page visibly includes the exact project name and complete tagline. Either live text or legible embedded artwork counts; placement only on later pages fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ]
+    },
+    {
+      "id": "state-symbol-reuse",
+      "requirementId": "R-state-symbol-reuse",
+      "method": "visual",
+      "targetSlots": [
+        "compact-station",
+        "standard-station",
+        "expanded-station",
+        "storage-sequence",
+        "retrieval-sequence",
+        "maintenance-sequence"
+      ],
+      "criteria": "Every displayed state uses the exact label and its corresponding symbol from the materials board. Symbols must remain distinguishable without relying only on their words. Scale and placement may adapt to the view; swapped symbols, changed meanings or a displayed state missing its word or symbol fail. A file need not display states that its depicted situation does not require.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "materials-status"
+      ]
+    },
+    {
+      "id": "card-operated-public-sequences",
+      "requirementId": "R-card-operated-public-sequences",
+      "method": "visual",
+      "targetSlots": [
+        "storage-sequence",
+        "retrieval-sequence"
+      ],
+      "criteria": "Storage has four numbered steps: select an available size at shared controls; tap a card to unlock the assigned door; open and place equipment; close and lock. Its state remains Available for steps 1–3 and becomes Occupied at step 4. Retrieval has three numbered steps: tap the same card; open the assigned door and remove equipment; close and lock. Its state is Occupied for steps 1–2 and Available at step 3. Both provide an identifiable helmet and compartment for video reuse. Panel style may vary, but missing, reordered or contradictory actions and state changes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "operation-video-continuity",
+      "requirementId": "R-operation-video-continuity",
+      "method": "manual",
+      "targetSlots": [
+        "operation-video"
+      ],
+      "criteria": "Review the complete video and verify a 12-second duration. It follows the same identifiable helmet and compartment geometry established by the public storyboards through storage and retrieval, with a legible Available–Occupied–Available progression. Camera movement and editing may vary; substituted equipment, inconsistent geometry, missing retrieval or incorrect state order fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "storage-sequence",
+        "retrieval-sequence"
+      ]
+    },
+    {
+      "id": "presentation-source-coverage",
+      "requirementId": "R-presentation-source-coverage",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "presentation"
+      ],
+      "criteria": "The presentation contains at least 10 pages and visibly reuses identifiable material from every source role, including all three station layouts and both public sequences. Resizing, cropping and rearrangement are allowed when the relevant design or sequence remains recognizable and legible. Merely naming a deliverable, replacing it with unrelated artwork or omitting a source fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "sourceSlots": [
+        "specification",
+        "system-drawing",
+        "assembly",
+        "small-compartment",
+        "large-compartment",
+        "compact-station",
+        "standard-station",
+        "expanded-station",
+        "storage-sequence",
+        "retrieval-sequence",
+        "maintenance-sequence",
+        "materials-status"
+      ]
+    },
+    {
+      "id": "exploded-assembly-and-parts-index",
+      "requirementId": "R-exploded-assembly-and-parts-index",
+      "method": "visual",
+      "targetSlots": [
+        "assembly"
+      ],
+      "criteria": "An exploded view separates components sufficiently to explain assembly, with numbered callouts that map to a readable parts schedule. Column joints, floor anchoring and the largest dismantled component are identifiable in the drawing. Explosion direction and illustration style may vary; an assembled-only view, unmatched callouts or missing required components fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "freestanding-station-setting",
+      "requirementId": "R-freestanding-station-setting",
+      "method": "visual",
+      "targetSlots": [
+        "compact-station",
+        "standard-station",
+        "expanded-station"
+      ],
+      "criteria": "The assembled perspectives establish freestanding lockers in a canopy-covered shared mobility station setting, with public front access and ground-supported installation on a concrete slab. Floor anchoring is compatible with freestanding construction. Surrounding scenery may vary; a wall-dependent cabinet system or a setting that contradicts the stated installation fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "set-cabinet-and-fabrication-system",
+      "requirementId": "R-set-cabinet-and-fabrication-system",
+      "method": "visual",
+      "targetSlots": [
+        "system-drawing",
+        "assembly",
+        "small-compartment",
+        "large-compartment",
+        "compact-station",
+        "standard-station",
+        "expanded-station",
+        "maintenance-sequence",
+        "materials-status"
+      ],
+      "criteria": "Column geometry, compartment arrangements, door construction, trays, joints and service access describe one compatible cabinet system across drawings and assembled views. Depicted dimensions, construction and material assignments agree with the specification, allowing diagrammatic simplification and lighting variation without changing the stated design.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "specification"
+      ]
+    },
+    {
+      "id": "set-station-operation-and-status-system",
+      "requirementId": "R-set-station-operation-and-status-system",
+      "method": "visual",
+      "targetSlots": [
+        "compact-station",
+        "standard-station",
+        "expanded-station",
+        "storage-sequence",
+        "retrieval-sequence",
+        "maintenance-sequence"
+      ],
+      "criteria": "Public and maintenance interactions use the same control placement, compartment geometry and front-versus-rear access arrangement established by the system drawing. Every displayed compartment state retains the materials board's word-and-symbol pairing across station scales and operating sequences.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-furniture-breadth-03.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-furniture-breadth-03/03-equipment-and-sites.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "system-drawing",
+        "materials-status"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "existing-d1-door-family",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "existing-d1-doors.png"
+      ],
+      "subjectSlots": [
+        "system-drawing",
+        "small-compartment",
+        "large-compartment"
+      ],
+      "notes": "The system drawing and studies retain the D1 door sizes, black recessed paddle and two exposed hinges recorded in the inputs."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specified-system-dimensions",
+      "fromSlot": "specification",
+      "toSlots": [
+        "system-drawing",
+        "compact-station",
+        "standard-station",
+        "expanded-station",
+        "presentation"
+      ],
+      "extract": [
+        "column pitch",
+        "cabinet depth"
+      ],
+      "notes": "The specification, system drawing, three station layouts and presentation repeat the 500 mm column pitch and 600 mm cabinet depth; the layouts contain S4/L2 column counts of 1/1, 2/2 and 3/3, giving small/large compartment totals of 4/2, 8/4 and 12/6."
+    },
+    {
+      "id": "specified-connections-and-parts",
+      "fromSlot": "specification",
+      "toSlots": [
+        "assembly",
+        "presentation"
+      ],
+      "extract": [
+        "bolt count and size per column joint",
+        "hex key size",
+        "floor anchor count and size per column",
+        "largest dismantled part dimensions"
+      ],
+      "notes": "The specification, exploded assembly drawing and presentation identify four M8 bolts per column joint, the 6 mm hex key, four M10 anchors per column and a largest dismantled part within 1800 × 600 × 100 mm."
+    },
+    {
+      "id": "specified-materials",
+      "fromSlot": "specification",
+      "toSlots": [
+        "materials-status",
+        "presentation"
+      ],
+      "extract": [
+        "cabinet and door material and thickness",
+        "powder coating code",
+        "removable tray material and thickness"
+      ],
+      "notes": "The specification, materials board and presentation repeat 1.5 mm galvanized steel, powder coating #243C46 and 2 mm 304 stainless steel trays."
+    }
+  ]
+}

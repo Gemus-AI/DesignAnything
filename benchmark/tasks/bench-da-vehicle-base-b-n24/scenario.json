@@ -1,0 +1,152 @@
+{
+  "id": "bench-da-vehicle-base-b-n24",
+  "title": "NEARLINK — Low-floor community shuttle exterior and interior, 24 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n24",
+    "family-b"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "PRODUCT",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# NEARLINK — chassis and service records\n\n## Project\n\n- Operator and vehicle identification: NEARLINK.\n- Scope: complete vehicle exterior and passenger interior.\n- Passengers: older passengers, caregivers with strollers and ordinary passengers.\n- Design language: contemporary or slightly ahead of the 2026 market; clean purposeful surfacing, considered lighting, modern materials and colours, credible everyday proportions.\n- Existing operator symbol: three open circles stacked vertically and linked by a straight vertical spine.\n- Symbol and name locations: front and boarding-side exterior identification.\n- Drawing content: chassis hard points, clear regions, placement ranges and component envelopes.\n\n## Coordinate system and exterior envelope\n\n| Record | Value |\n|---|---|\n| Units | mm |\n| Longitudinal axis | x=0 at front; x=7000 at rear |\n| Transverse axis | y=0 centreline; negative y left/driver side; positive y right/boarding side |\n| Vertical datum | z=0 road plane |\n| Complete body envelope | 7000 L by 2200 W by 3000 H |\n| Body sides | y=-1100 and y=1100 |\n| Front axle centre | x=1400 |\n| Rear axle centre | x=5400 |\n| Wheelbase | 4000 |\n| Wheels | Four; diameter 650 |\n| Wheel centre height | z=325 |\n| Wheel centre lateral positions | y=-850 and y=850 |\n| Exterior design scope | Form, glazing, lamps, panels, roof expression and graphic placement within the body envelope |\n\n## Interior floor and occupied volumes\n\n| Record | Coordinates or value |\n|---|---|\n| Interior clear width | y=-1000 to 1000 |\n| Level passenger floor | x=1800–6500; z=320 |\n| Passenger ceiling | z=2700 |\n| Continuous main aisle in N8 and F6 | x=1800–6500; y=-250 to 500; width 750 |\n| Front wheelhouses | x=1050–1750; y=-1000 to -650 and y=650–1000; z=320–700 |\n| Rear wheelhouses | x=5050–5750; y=-1000 to -650 and y=650–1000; z=320–700 |\n| Rear service volume | x=6500–6850; y=-1000 to 1000; z=320–850 |\n| Reserved driver-control zone | x=250–1750; y=-1000 to 0; existing controls retained |\n| Wheelhouse and service-volume occupancy | Solid component volumes |\n| Main-aisle occupancy | Clear of fixed and parked objects; temporary passenger and stroller passage during labelled boarding/alighting steps |\n| Passenger seat counts | Passenger seats only; driver counted separately |\n\n## Fixed seating and flexible zone\n\n| Record | Value |\n|---|---|\n| Fixed passenger seats | Six; three per side |\n| Forward fixed-seat range on each side | Two complete seating-use envelopes within x=3500–5000 |\n| Rear fixed-seat range on each side | One complete seating-use envelope within x=5800–6500 |\n| Left fixed-seat band | y=-1000 to -500 |\n| Right fixed-seat band | y=500–1000 |\n| Minimum clear use envelope per fixed seat | 700 L by 450 W mm, including intended seated-use and leg space |\n| Flexible zone F | x=1800–3500; y=-1000 to -250 |\n| Adjustable seats | Two individually identifiable tip-up seats, T1 and T2 |\n| Deployed use envelope per tip-up | 600 L by 750 W mm; both envelopes wholly within F and mutually separate |\n| Folded projection per tip-up | At most 120 mm from the left inner wall |\n| Seating design scope | Seat form, exact placement within the ranges, mounting expression and upholstery treatment |\n\n## Service modes\n\n| Mode | Fixed seats | T1 and T2 | Available passenger seats | Flexible-zone occupancy |\n|---|---:|---|---:|---|\n| N8 | 6 | Both deployed | 8 | Two tip-up use envelopes; stroller absent |\n| F6 | 6 | Both folded | 6 | Longitudinal stroller envelope 1000 L by 600 W mm and separate caregiver standing envelope 500 by 500 mm |\n\n- F6 stroller and caregiver envelopes: wholly within F, clear of folded-seat projections and the 750 mm aisle.\n- Flexible-bay equipment: proposed support and retention locations at the bay boundaries.\n- Stroller illustration: occupant optional.\n\n## Passenger doorway, landing and bridge\n\n| Record | Value |\n|---|---|\n| Passenger doorway count and side | One; right side |\n| Doorway longitudinal position | x=1900–3100 |\n| Doorway clear width | 1200 mm |\n| Doorway clear height | 2100 mm above floor z=320 |\n| Door design scope | Leaves, motion, visible exterior/interior correspondence and stowed state |\n| Inside turning/landing rectangle | x=1900–3100; y=-250 to 1000; 1200 by 1250 mm |\n| Landing occupancy | Clear standing geometry; temporary traveller occupancy during turning or passage |\n| Bridge clear width | 1100 mm |\n| Bridge longitudinal span | x=1950–3050 |\n| Deployed bridge inboard edge | y=1100; z=320 |\n| Deployed bridge plan reach | 700 mm, ending at y=1800 |\n| Deployed bridge outboard height | z=300 |\n| Bridge descent | 20 mm over 700 mm horizontal reach; nominal slope 1:35 |\n| Underfloor bridge stow allowance | x=1950–3050; y=350–1100; z=100–300 |\n| Door/bridge state pairs | Door open with bridge deployed; door closed with bridge stowed |\n\n## Right-side stop cases\n\n| Stop | Name | Route | Curb top | Curb edge | Vehicle-side gap | Clear landing rectangle |\n|---|---|---|---|---|---|---|\n| S1 | Library forecourt | R1 | z=300 | y=1200 | 100 mm from y=1100 vehicle side | x=1700–3500; y=1200–3000 |\n| S2 | Hall forecourt | R2 | z=300 | y=1200 | 100 mm from y=1100 vehicle side | x=1700–3500; y=1200–3000 |\n\n- Stop condition: stationary vehicle at a right-side boarding pad.\n- Scene extent: vehicle, boarding interface and neutral forecourt surroundings.\n- Boarding interface: floor z=320, curb z=300, bridge deployed at the passenger doorway.\n\n## Passenger sequence\n\n| Step | Vehicle and passenger state |\n|---:|---|\n| 1 | Vehicle stopped; boarding passengers held outside |\n| 2 | Passenger door open |\n| 3 | Bridge deployed |\n| 4 | Exiting passengers clear the doorway and bridge |\n| 5 | Boarding passengers enter |\n| 6 | Bridge folded/stowed after passage clears |\n| 7 | Passenger door closed |\n\n| Case | Stop and route | Mode | Passenger action and spatial record |\n|---|---|---|---|\n| E1 | S1; R1 | N8 | Older passenger boards and reaches a deployed near-door tip-up seat; visible support points and clear path; walking stick optional |\n| E2 | S1; R1 | F6 | Caregiver and stroller board with T1/T2 already folded; entry, turning and parking; separate caregiver envelope and clear aisle |\n| E3 | S1; R1 | N8 | One passenger alights; another waits outside beyond the bridge path |\n| E4 | S2; R2 | F6 | E2 entry, turning and parking sequence repeated at S2 with R2 information |\n\n- All passenger-use illustrations and film shots: vehicle stopped.\n- Doorway flow: exiting passengers first, boarding passengers second.\n\n## Installed support and information\n\n| Provision | Record |\n|---|---|\n| Passenger support | Interior and doorway rails and grasp points |\n| Request controls | Physical buttons bearing STOP |\n| Support rail diameter | 35 mm |\n| Rail clearance to adjacent surfaces | 38 mm |\n| Specified support-to-background light reflectance value difference | At least 30 points |\n| Flexible-bay provisions | Support and retention locations integrated with the actual bay |\n| Door information | LET PASSENGERS EXIT FIRST |\n| Flexible-bay information | FOLD BOTH SEATS BEFORE STROLLER PARKING |\n| Installation records | Locations on the actual layout and sections; proposed placement dimensions |\n| Spatial relationship | Clear aisle, doorway, turning rectangle and required passenger envelopes; support/retention contact permitted at seating or bay boundaries |\n\n## Operator and route copy\n\n- Operator name: NEARLINK.\n- Name locations: front and boarding-side exterior identification, sheet titles and presentation cover.\n- Default route: R1.\n\n| Route | Name | Full stop sequence | Exterior route/destination | Interior next stop |\n|---|---|---|---|---|\n| R1 | Community Loop | Library → Pool → Market | R1 / MARKET | NEXT STOP / POOL |\n| R2 | Garden Link | Courtyard → Hall → Gardens | R2 / GARDENS | NEXT STOP / HALL |\n\n- Interior route strip: complete three-stop sequence for the displayed route.\n\n## Colourways and materials\n\n| Colourway | Body base | Family accent | Application |\n|---|---|---|---|\n| A | Warm-white #E8E6DD | Teal #1A655E | Default |\n| B | Warm-white #E8E6DD | Plum #655168 | Explicitly named B views |\n\n- Colour codes: digital colour targets.\n- Shared across A and B: body geometry, seat layout and part-to-material assignments.\n- Fixed seat-cover material: recycled PET fabric.\n- Fixed floor material: nonslip rubber.\n- Open material assignments: body panels, interior lining and support finishes.\n- Open colour treatments: accent placement, window framing, upholstery treatment and support contrast within the fixed palettes and contrast target.\n- Technical linework: neutral drawing colours with intended colourway identified.\n- Coloured renderings and swatches: corresponding A or B palette.\n\n## Image records\n\n| File | Role | Content |\n|---|---|---|\n| chassis-plan.png | Constraint | Plan of chassis hard points, clear regions and seating ranges |\n| chassis-elevation.png | Constraint | Right elevation of body, floor, doorway, wheel and bridge-stow limits |\n| operator-stop-identity.png | Identity | Existing stop post with three vertically linked open circles |\n| forecourt-boarding-reference.png | Reference | Forecourt waiting atmosphere with a walking aid and stroller |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# NEARLINK — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | hardpoints-states | Hard-point and state specification | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | materials-colourways | Materials and colourways A and B | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | exterior-a-overview | Colourway A exterior overview | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | exterior-a-rear-left | Colourway A rear-left exterior | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | exterior-a-dusk | Colourway A dusk exterior | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | exterior-b-front-right | Colourway B front-right exterior | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | exterior-b-rear-left | Colourway B rear-left exterior | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | exterior-b-dusk | Colourway B dusk exterior | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | layout-n8-f6 | N8 and F6 passenger layouts | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | layout-f6-turning | F6 boarding and turning enlargement | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | interior-a-n8 | Colourway A N8 interior | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | interior-a-f6 | Colourway A F6 interior | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | interior-b-n8 | Colourway B N8 interior | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 14 | interior-b-f6 | Colourway B F6 interior | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 15 | facilities-a | Colourway A installed passenger facilities | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 16 | facilities-b | Colourway B installed passenger facilities | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 17 | case-e1 | E1 older-passenger boarding | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 18 | case-e2 | E2 caregiver and stroller boarding | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 19 | case-e3 | E3 alighting and outside waiting | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 20 | case-e4 | E4 Hall forecourt boarding on R2 | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 21 | case-e1-support-detail | E1 hand-support and seating detail | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 22 | case-e3-waiting-detail | E3 exit-path and waiting detail | 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: final. |\n| 23 | observation-boarding-film | Exterior observation and E2 boarding film | 14, 24 | Format: video; 5 to 15 seconds. Stage: final. |\n| 24 | vehicle-presentation | NEARLINK vehicle presentation | 14, 24 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: chassis-plan.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: chassis-elevation.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: operator-stop-identity.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: forecourt-boarding-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "NEARLINK | Low-floor community shuttle exterior and interior\n\nWe run NEARLINK between neighbourhood service points and need one coordinated exterior and passenger interior. The body envelope is 7000 L by 2200 W by 3000 H mm, wheelbase 4000 mm and wheel diameter 650 mm. The right-side passenger doorway occupies x=1900–3100, with a 1200 mm clear opening above the 320 mm passenger floor. Develop contemporary surfaces, glazing and lighting around these fixed positions. Retain the operator's existing symbol of three vertically linked open circles beside the printed name \"NEARLINK\" on the front and boarding side.\n\nThe near-door seating group makes this vehicle useful to different passengers. N8 offers six fixed seats and two deployed tip-up seats, T1 and T2; F6 folds both tip-ups for a 1000 by 600 mm stroller space and a separate 500 by 500 mm caregiver space. Both arrangements retain the 750 mm clear aisle. Boarding and alighting use the same right-side door and 1100 mm wide bridge, which reaches 700 mm from the 320 mm floor to the 300 mm curb. Give passengers physical STOP request buttons, 35 mm diameter support rails with 38 mm adjacent-surface clearance, and a specified support-to-background light reflectance value difference of at least 30 points. Print \"LET PASSENGERS EXIT FIRST\" at the door and \"FOLD BOTH SEATS BEFORE STROLLER PARKING\" at the flexible bay. Use recycled PET seat fabric and nonslip rubber flooring. Colourway A combines #E8E6DD with #1A655E; B changes the accent to #655168. A and route R1 are the defaults; the attached records define both routes and cases E1–E4.\n\nAudience: the operator's fleet and service teams and the vehicle design partner, deciding how older passengers, caregivers with strollers and ordinary passengers share the shuttle and its boarding space.\n\nInputs (attached): 01-client-facts.en.md contains the chassis coordinates, seating envelopes, operating sequence, route copy, colourways and material requirements. 02-delivery-catalog.en.md lists each deliverable's proportion, format and stage. chassis-plan.png is the constraint drawing for chassis hard points, clear regions and seating ranges. chassis-elevation.png is the constraint drawing for the right-side body, floor, doorway, wheels and bridge stowage. operator-stop-identity.png supplies the existing stop-post symbol to carry onto the vehicle. forecourt-boarding-reference.png supplies the atmosphere of passengers waiting with a walking aid and stroller at a neighbourhood forecourt.\n\nDeliverables:\n1. One hard-point and state specification document recording chassis coordinates, seat envelopes, N8/F6, door and bridge states, physical passenger controls, fixed copy and part-to-material assignments\n2. One materials and colour sheet defining colourways A and B, body-panel and lining materials, recycled PET upholstery, nonslip rubber flooring and support contrast\n3. Six exterior design sheets: an A/R1 sheet with front, right-side and rear orthographic views plus a front-right perspective; an A/R1 rear-left perspective; an A/R1 dusk view; a B/R1 front-right perspective; a B/R1 rear-left perspective; and a B/R1 dusk view, with both dusk views showing the door closed and bridge stowed\n4. Two dimensioned passenger layout sheets: paired N8/F6 plans with open/deployed and closed/stowed door-and-bridge states, and an enlarged F6 entry/turning/parking plan with the stroller and caregiver envelopes\n5. Four passenger-interior views: N8 and F6 in colourway A, and the matching N8 and F6 views in colourway B\n6. Two installed facilities sheets, one per colourway, with matching door and flexible-bay sections, physical STOP buttons, support rails, information surfaces and material callouts\n7. Six passenger-use sheets with numbered sequence frames: E1 older-passenger boarding at S1 in N8; E2 caregiver/stroller boarding at S1 in F6; E3 alighting at S1 in N8; E4 caregiver/stroller boarding at S2 on R2 in F6; an E1 close view following hand support to the deployed tip-up seat; and an E3 exterior close view of the exit path and waiting passenger\n8. One 12-second stopped-vehicle film combining an exterior observation with the E2 boarding sequence at S1\n9. One presentation document of at least twelve pages reusing the specification, both colourways, six exterior sheets, two layouts, four interiors, installed facilities and six passenger-use sheets\n\nAcceptance:\n- Establish the hard-point and state specification first. Repeat its 4000 mm wheelbase and 1200 mm doorway width on the orthographic exterior sheet, both passenger layout sheets and presentation; repeat N8 and F6 on the paired layout, corresponding interior views and presentation, and F6 on the enlarged turning plan.\n- Preserve one body and seating design across all six exterior sheets, four interior views and two facilities sheets: 7000 by 2200 by 3000 mm body, 650 mm wheels and doorway at x=1900–3100. Dimension the paired layout's eight N8 seats, six F6 seats, 750 mm aisle, 1200 by 1250 mm landing and folded-seat projections of at most 120 mm; dimension the 1000 by 600 mm stroller and separate 500 by 500 mm caregiver envelopes on both layouts.\n- Repeat the specification's material assignments on the materials sheet, all interior views and both facilities sheets. Locate physical STOP buttons and dimension 35 mm rails with 38 mm adjacent-surface clearance on both facilities sheets; state the minimum 30-point light reflectance value difference and place both fixed door and flexible-bay phrases at their installed locations.\n- Match all six passenger-use sheets to their named case and detail, with E4 using S2 and R2. Carry the stopped-vehicle sequence into the sheets and 12-second E2 film: waiting, door opening, bridge deployment, exiting passengers clearing, boarding, bridge stowage and door closure. Dimension the 320 mm floor, 300 mm curb, 100 mm gap and 1100 by 700 mm bridge on E1–E4, and match both close views to their parent case.\n- Apply A's #E8E6DD/#1A655E and B's #E8E6DD/#655168 to their named exterior, interior and facilities sheets. Carry NEARLINK and the linked-circle symbol on front and boarding-side identification, and NEARLINK in sheet titles and on the presentation cover. Use R1 / MARKET and NEXT STOP / POOL with Library → Pool → Market by default; use R2 / GARDENS and NEXT STOP / HALL with Courtyard → Hall → Gardens on E4.\n- Give the presentation at least twelve pages, reuse all six exterior sheets, both layouts, four interior views, both facilities sheets and six passenger-use sheets, and compare A/B using the same viewing angles. Repeat the 4000 mm wheelbase, 1200 mm doorway width, N8/F6 seat counts and both colourway codes beside the corresponding work.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n24/chassis-plan.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "31794b809c294892fc4fc6cb73988ff3a08aa2bd50be8cf11b4a2e59a3e8810d"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n24/chassis-elevation.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "4eb4304c700632a059b47ff11ae0ffca0da65086a29e0535b7784b5d981e32cb"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n24/operator-stop-identity.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "5e8ff439fa1ad0e0a06a6ebdd91b94ba1d76b85d71aade02f3961028af37b2b5"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-vehicle-base-b-n24/forecourt-boarding-reference.png",
+      "nodeId": "provided-image-4",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "f37423e6f2344a9322d35c7924a1ca09db519ffc00f25d24c8d92c92a71764ef"
+    }
+  ]
+}

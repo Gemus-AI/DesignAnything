@@ -1,0 +1,174 @@
+{
+  "id": "bench-da-infovis-material-01",
+  "title": "OPEN COURT ATLAS — A basketball game through time, position and score, 14 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n14",
+    "material"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GRAPHIC",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# OPEN COURT ATLAS\n\n## Project\n- Subtitle: A basketball game through time, position and score\n- Client: Open Court Learning Lab\n- Game: Harbor vs Orchard\n- Audience: basketball fans and adult tactical-analysis newcomers\n- Record preparation date: 8 September 2026\n- Source credit: Open Court Learning Lab, 2026\n- Publication carriers: landscape arena and web graphics; portrait phone cards; A4 handout\n\n## Fixed identity\n| Team ID | Team name | Color | Emblem |\n| --- | --- | --- | --- |\n| HBR | Harbor | #0072B2 | Anchor |\n| ORC | Orchard | #E69F00 | Tree |\n\n## Game totals\n| Measure | Value | Unit |\n| --- | --- | --- |\n| Halves | 2 | halves |\n| Half duration | 6 | minutes |\n| Half duration | 360 | seconds |\n| Full elapsed range | 0–720 | seconds |\n| Half boundary | 360 | seconds |\n| Events | 48 | events |\n| Shot attempts | 36 | attempts |\n| Made shots | 25 | shots |\n| Missed shots | 11 | shots |\n| Harbor attempts | 19 | attempts |\n| Orchard attempts | 17 | attempts |\n| One-point attempts | 4 | attempts |\n| Contextual rebounds | 8 | events |\n| Contextual turnovers | 4 | events |\n\n## Score checkpoints\n| Checkpoint | Elapsed seconds | Harbor points | Orchard points |\n| --- | --- | --- | --- |\n| Start | 0 | 0 | 0 |\n| Half-time | 360 | 13 | 15 |\n| Last event E048 | 719 | 30 | 28 |\n| End | 720 | 30 | 28 |\n\n## Coordinates and clocks\n- Grid units: practice-grid units\n- x range: 0–100\n- y range: 0–50\n- Origin: bottom left\n- Positive x direction: right\n- Positive y direction: up\n- Left basket: (5,25)\n- Right basket: (95,25)\n- Half 1 attacking ends: Harbor right; Orchard left\n- Half 2 attacking ends: Harbor left; Orchard right\n- Remaining-clock formula: half × 360 − elapsedSec, formatted mm:ss\n- Same-time ordering: eventSeq\n- Same-time pairs: E022 then E023 at 319 seconds; E044 then E045 at 660 seconds\n- Scoring increment: pointsAdded; made shots add attemptedPoints; other results add 0\n- Cumulative score order: Harbor–Orchard\n\n## Focus events\n| Event | Player | Jersey | Half | Elapsed seconds | Remaining clock | Position | Points added | Score before | Score after |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| E015 | Tess Vale | 11 | 1 | 184 | 02:56 | (74,40) | 3 | 7–7 | 10–7 |\n| E024 | Nico Reed | 8 | 1 | 352 | 00:08 | (25,39) | 3 | 13–12 | 13–15 |\n| E038 | Rae Sol | 12 | 2 | 570 | 02:30 | (74,10) | 3 | 23–22 | 23–25 |\n| E048 | Rowan Lin | 15 | 2 | 719 | 00:01 | (10,25) | 2 | 28–28 | 30–28 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# OPEN COURT ATLAS — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | data-summary | Data summary and chart inventory | 14 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 2 | event-timeline | Overall event timeline | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 3 | score-chart | Cumulative-score step chart | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 4 | full-shot-map | Full-game shot map | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 5 | harbor-shot-map | Harbor shot map | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 6 | orchard-shot-map | Orchard shot map | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 7 | half-one-detail | Half 1 linked detail | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | half-two-detail | Half 2 linked detail | 14 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | event-e015 | E015 portrait event card | 14 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | event-e024 | E024 portrait event card | 14 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | event-e038 | E038 portrait event card | 14 | Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | event-e048-handout | E048 A4 event handout | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n| 13 | event-e048-video | E048 linked-event video | 14 | Format: video; 5 to 15 seconds. Stage: final. |\n| 14 | atlas-presentation | Atlas presentation | 14 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: events.md",
+            "config": {
+              "text": "# Events\n\n| eventId | eventSeq | half | elapsedSec | clockRemaining | teamId | playerId | eventType | attemptedPoints | result | pointsAdded | x | y | harborScore | orchardScore |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| E001 | 1 | 1 | 12 | 05:48 | HBR | H01 | shot | 2 | made | 2 | 88 | 24 | 2 | 0 |\n| E002 | 2 | 1 | 26 | 05:34 | ORC | O02 | shot | 3 | missed | 0 | 25 | 39 | 2 | 0 |\n| E003 | 3 | 1 | 28 | 05:32 | HBR | H04 | rebound | 0 | na | 0 | 8 | 26 | 2 | 0 |\n| E004 | 4 | 1 | 42 | 05:18 | HBR | H02 | shot | 3 | made | 3 | 75 | 39 | 5 | 0 |\n| E005 | 5 | 1 | 59 | 05:01 | ORC | O01 | shot | 2 | made | 2 | 12 | 22 | 5 | 2 |\n| E006 | 6 | 1 | 75 | 04:45 | HBR | H03 | turnover | 0 | na | 0 | 58 | 15 | 5 | 2 |\n| E007 | 7 | 1 | 90 | 04:30 | ORC | O03 | shot | 3 | made | 3 | 25 | 10 | 5 | 5 |\n| E008 | 8 | 1 | 103 | 04:17 | HBR | H05 | shot | 2 | missed | 0 | 84 | 34 | 5 | 5 |\n| E009 | 9 | 1 | 105 | 04:15 | ORC | O04 | rebound | 0 | na | 0 | 90 | 29 | 5 | 5 |\n| E010 | 10 | 1 | 124 | 03:56 | ORC | O05 | shot | 2 | made | 2 | 10 | 29 | 5 | 7 |\n| E011 | 11 | 1 | 139 | 03:41 | HBR | H01 | shot | 3 | missed | 0 | 73 | 9 | 5 | 7 |\n| E012 | 12 | 1 | 141 | 03:39 | HBR | H04 | rebound | 0 | na | 0 | 92 | 27 | 5 | 7 |\n| E013 | 13 | 1 | 148 | 03:32 | HBR | H04 | shot | 2 | made | 2 | 91 | 27 | 7 | 7 |\n| E014 | 14 | 1 | 167 | 03:13 | ORC | O02 | turnover | 0 | na | 0 | 42 | 37 | 7 | 7 |\n| E015 | 15 | 1 | 184 | 02:56 | HBR | H03 | shot | 3 | made | 3 | 74 | 40 | 10 | 7 |\n| E016 | 16 | 1 | 202 | 02:38 | ORC | O01 | shot | 2 | missed | 0 | 11 | 28 | 10 | 7 |\n| E017 | 17 | 1 | 205 | 02:35 | HBR | H05 | rebound | 0 | na | 0 | 9 | 24 | 10 | 7 |\n| E018 | 18 | 1 | 221 | 02:19 | HBR | H01 | shot | 2 | made | 2 | 85 | 19 | 12 | 7 |\n| E019 | 19 | 1 | 241 | 01:59 | ORC | O03 | shot | 3 | made | 3 | 24 | 11 | 12 | 10 |\n| E020 | 20 | 1 | 260 | 01:40 | HBR | H02 | shot | 3 | missed | 0 | 74 | 40 | 12 | 10 |\n| E021 | 21 | 1 | 282 | 01:18 | ORC | O05 | shot | 2 | made | 2 | 12 | 26 | 12 | 12 |\n| E022 | 22 | 1 | 319 | 00:41 | HBR | H03 | shot | 1 | made | 1 | 85 | 25 | 13 | 12 |\n| E023 | 23 | 1 | 319 | 00:41 | HBR | H03 | shot | 1 | missed | 0 | 85 | 25 | 13 | 12 |\n| E024 | 24 | 1 | 352 | 00:08 | ORC | O02 | shot | 3 | made | 3 | 25 | 39 | 13 | 15 |\n| E025 | 25 | 2 | 374 | 05:46 | HBR | H01 | shot | 2 | made | 2 | 12 | 23 | 15 | 15 |\n| E026 | 26 | 2 | 388 | 05:32 | ORC | O03 | shot | 3 | made | 3 | 74 | 10 | 15 | 18 |\n| E027 | 27 | 2 | 405 | 05:15 | HBR | H02 | shot | 3 | missed | 0 | 24 | 40 | 15 | 18 |\n| E028 | 28 | 2 | 407 | 05:13 | ORC | O04 | rebound | 0 | na | 0 | 9 | 24 | 15 | 18 |\n| E029 | 29 | 2 | 428 | 04:52 | ORC | O01 | turnover | 0 | na | 0 | 61 | 36 | 15 | 18 |\n| E030 | 30 | 2 | 441 | 04:39 | HBR | H03 | shot | 3 | made | 3 | 26 | 11 | 18 | 18 |\n| E031 | 31 | 2 | 462 | 04:18 | ORC | O05 | shot | 2 | made | 2 | 88 | 28 | 18 | 20 |\n| E032 | 32 | 2 | 480 | 04:00 | HBR | H04 | shot | 2 | made | 2 | 10 | 25 | 20 | 20 |\n| E033 | 33 | 2 | 496 | 03:44 | ORC | O02 | shot | 3 | missed | 0 | 75 | 39 | 20 | 20 |\n| E034 | 34 | 2 | 498 | 03:42 | HBR | H05 | rebound | 0 | na | 0 | 92 | 28 | 20 | 20 |\n| E035 | 35 | 2 | 515 | 03:25 | HBR | H02 | shot | 3 | made | 3 | 25 | 39 | 23 | 20 |\n| E036 | 36 | 2 | 535 | 03:05 | ORC | O01 | shot | 2 | made | 2 | 85 | 20 | 23 | 22 |\n| E037 | 37 | 2 | 550 | 02:50 | HBR | H01 | turnover | 0 | na | 0 | 39 | 14 | 23 | 22 |\n| E038 | 38 | 2 | 570 | 02:30 | ORC | O03 | shot | 3 | made | 3 | 74 | 10 | 23 | 25 |\n| E039 | 39 | 2 | 588 | 02:12 | HBR | H04 | shot | 2 | missed | 0 | 11 | 27 | 23 | 25 |\n| E040 | 40 | 2 | 590 | 02:10 | ORC | O04 | rebound | 0 | na | 0 | 8 | 25 | 23 | 25 |\n| E041 | 41 | 2 | 610 | 01:50 | ORC | O05 | shot | 2 | missed | 0 | 90 | 30 | 23 | 25 |\n| E042 | 42 | 2 | 612 | 01:48 | HBR | H05 | rebound | 0 | na | 0 | 92 | 27 | 23 | 25 |\n| E043 | 43 | 2 | 632 | 01:28 | HBR | H01 | shot | 2 | made | 2 | 12 | 23 | 25 | 25 |\n| E044 | 44 | 2 | 660 | 01:00 | ORC | O01 | shot | 1 | made | 1 | 85 | 25 | 25 | 26 |\n| E045 | 45 | 2 | 660 | 01:00 | ORC | O01 | shot | 1 | missed | 0 | 85 | 25 | 25 | 26 |\n| E046 | 46 | 2 | 684 | 00:36 | HBR | H03 | shot | 3 | made | 3 | 26 | 11 | 28 | 26 |\n| E047 | 47 | 2 | 703 | 00:17 | ORC | O05 | shot | 2 | made | 2 | 88 | 28 | 28 | 28 |\n| E048 | 48 | 2 | 719 | 00:01 | HBR | H04 | shot | 2 | made | 2 | 10 | 25 | 30 | 28 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-4",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: players.md",
+            "config": {
+              "text": "# Players\n\n| teamId | teamName | playerId | playerName | jerseyNumber |\n| --- | --- | --- | --- | --- |\n| HBR | Harbor | H01 | Mira Chen | 4 |\n| HBR | Harbor | H02 | Alex Noor | 7 |\n| HBR | Harbor | H03 | Tess Vale | 11 |\n| HBR | Harbor | H04 | Rowan Lin | 15 |\n| HBR | Harbor | H05 | Sam Ives | 22 |\n| ORC | Orchard | O01 | Jules Park | 3 |\n| ORC | Orchard | O02 | Nico Reed | 8 |\n| ORC | Orchard | O03 | Rae Sol | 12 |\n| ORC | Orchard | O04 | Eden Mori | 18 |\n| ORC | Orchard | O05 | Lee Arden | 25 |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-5",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: game-data.en.md",
+            "config": {
+              "text": "# Open Court Learning Lab: game data\n\n## Record coverage\n- Client: Open Court Learning Lab\n- Game: Harbor vs Orchard friendly\n- Audience: adult basketball newcomers\n- Source: Open Court Learning Lab, 2026\n- Preparation date: 8 September 2026\n- Coverage: every scoring event and every shot attempt, plus selected contextual rebounds and turnovers\n- Event records: 48, E001–E048\n- Player records: 10\n- Unrecorded context: passes, fouls, possessions, assists and defensive tracking\n\n## Clock\n| Measure | Value |\n| --- | --- |\n| Number of halves | 2 |\n| Half duration | 6 minutes; 360 seconds |\n| Half 1 elapsed interval | 0–360 seconds |\n| Half 2 elapsed interval | 360–720 seconds |\n| Elapsed-time basis | Playing time across both halves, excluding the break |\n| Remaining clock at each half's start | 06:00 |\n| Remaining-clock formula | half × 360 − elapsedSec, formatted mm:ss |\n| Events at elapsed 360 | 0 |\n| Same-time ordering field | eventSeq |\n| Events at elapsed 319 | E022, then E023 |\n| Events at elapsed 660 | E044, then E045 |\n\n## Scoring\n| Event condition | attemptedPoints | result | pointsAdded |\n| --- | --- | --- | --- |\n| Free throw, made | 1 | made | 1 |\n| Free throw, missed | 1 | missed | 0 |\n| Two-point field attempt, made | 2 | made | 2 |\n| Two-point field attempt, missed | 2 | missed | 0 |\n| Three-point field attempt, made | 3 | made | 3 |\n| Three-point field attempt, missed | 3 | missed | 0 |\n| Rebound | 0 | na | 0 |\n| Turnover | 0 | na | 0 |\n\n- Shot accounting: one row per attempt\n- Recorded point-value field: attemptedPoints\n- Cumulative scores: immediately after each event\n- Before-event score: preceding row's cumulative score; 0–0 before E001\n- Score order: Harbor–Orchard\n- Score between events: preceding event's cumulative score\n- Scoring formula: acting team's new score = preceding score + pointsAdded\n\n| Score checkpoint | Elapsed seconds | Harbor | Orchard |\n| --- | --- | --- | --- |\n| Start | 0 | 0 | 0 |\n| Half-time | 360 | 13 | 15 |\n| E048 | 719 | 30 | 28 |\n| End | 720 | 30 | 28 |\n\n## Column dictionary\n| Column | Definition |\n| --- | --- |\n| eventId | Stable unique event identity E001–E048, with leading zeroes |\n| eventSeq | Integer chronological sequence 1–48, including same-clock ordering |\n| half | Half number, 1 or 2 |\n| elapsedSec | Integer seconds elapsed across both halves, excluding the break |\n| clockRemaining | Remaining time within the named half, mm:ss |\n| teamId | Team responsible for the recorded action: HBR or ORC |\n| playerId | Acting player's identifier in players.md |\n| eventType | shot, rebound or turnover |\n| attemptedPoints | 1, 2 or 3 for a shot; 0 for other events |\n| result | made, missed or na |\n| pointsAdded | Points credited to teamId by the event |\n| x, y | Action position in the global practice grid |\n| harborScore, orchardScore | Cumulative team scores immediately after the event |\n\n## Coordinate frame\n| Property | Value |\n| --- | --- |\n| x extent | 0–100 practice-grid units |\n| y extent | 0–50 practice-grid units |\n| Origin | Bottom left |\n| Positive x | Right |\n| Positive y | Up |\n| Left basket | (5,25) |\n| Right basket | (95,25) |\n| Grid aspect ratio | 2:1 |\n| Stored orientation | One global frame across both halves |\n| Position meaning | Recorded action location |\n| Reference image | court-coordinate-reference.png |\n\n| Half | Harbor attacking end | Orchard attacking end |\n| --- | --- | --- |\n| 1 | Right, (95,25) | Left, (5,25) |\n| 2 | Left, (5,25) | Right, (95,25) |\n\n- Shared-coordinate meaning: separate event identities at the same recorded position\n- Position-label relationship: label anchor at the recorded x,y coordinate\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-6",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: deliverable-details.en.md",
+            "config": {
+              "text": "# Event counts and focus records\n\n## Event totals\n| Scope | Events | Shot attempts | Made shots | Missed shots | Rebounds | Turnovers |\n| --- | --- | --- | --- | --- | --- | --- |\n| Full game | 48 | 36 | 25 | 11 | 8 | 4 |\n| Harbor | 26 | 19 | 13 | 6 | 5 | 2 |\n| Orchard | 22 | 17 | 12 | 5 | 3 | 2 |\n\n## Half records\n| Half | Event range | Event count | Elapsed start, seconds | Elapsed end, seconds | Starting score, Harbor–Orchard | Ending score, Harbor–Orchard | Focus events |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| 1 | E001–E024 | 24 | 0 | 360 | 0–0 | 13–15 | E015, E024 |\n| 2 | E025–E048 | 24 | 360 | 720 | 13–15 | 30–28 | E038, E048 |\n\n## Focus-event records\n| eventId | half | elapsedSec | clockRemaining | teamId | teamName | playerId | playerName | jerseyNumber | eventType | attemptedPoints | result | pointsAdded | x | y | harborBefore | orchardBefore | harborAfter | orchardAfter |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| E015 | 1 | 184 | 02:56 | HBR | Harbor | H03 | Tess Vale | 11 | shot | 3 | made | 3 | 74 | 40 | 7 | 7 | 10 | 7 |\n| E024 | 1 | 352 | 00:08 | ORC | Orchard | O02 | Nico Reed | 8 | shot | 3 | made | 3 | 25 | 39 | 13 | 12 | 13 | 15 |\n| E038 | 2 | 570 | 02:30 | ORC | Orchard | O03 | Rae Sol | 12 | shot | 3 | made | 3 | 74 | 10 | 23 | 22 | 23 | 25 |\n| E048 | 2 | 719 | 00:01 | HBR | Harbor | H04 | Rowan Lin | 15 | shot | 2 | made | 2 | 10 | 25 | 28 | 28 | 30 | 28 |\n\n## One-point attempts\n| eventId | eventSeq | elapsedSec | teamId | playerId | attemptedPoints | result | pointsAdded | x | y |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| E022 | 22 | 319 | HBR | H03 | 1 | made | 1 | 85 | 25 |\n| E023 | 23 | 319 | HBR | H03 | 1 | missed | 0 | 85 | 25 |\n| E044 | 44 | 660 | ORC | O01 | 1 | made | 1 | 85 | 25 |\n| E045 | 45 | 660 | ORC | O01 | 1 | missed | 0 | 85 | 25 |\n\n## Units\n| Field group | Unit |\n| --- | --- |\n| elapsedSec | seconds |\n| clockRemaining | mm:ss |\n| x, y | practice-grid units |\n| attemptedPoints, pointsAdded, cumulative scores | points |\n| Event and attempt totals | counts |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: court-coordinate-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: team-emblems.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: courtside-reading-scene.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "OPEN COURT ATLAS | A basketball game through time, position and score\n\nOpen Court Learning Lab needs a visual atlas of Harbor vs Orchard for basketball fans and adults beginning to read tactical graphics. The supplied record contains 48 events, E001–E048, across two six-minute halves: 36 shot attempts, eight rebounds and four turnovers. Harbor has 19 attempts and Orchard has 17. The score begins at 0–0, reaches 13–15 at half-time and finishes at 30–28, always in Harbor–Orchard order. Build the atlas around a reader finding the same event in time, on the court and at its score change.\n\nThe direction is fixed: linked timelines, step charts and point maps using Harbor blue #0072B2 with an anchor emblem and Orchard orange #E69F00 with a tree emblem. Pair team colors with direct names and distinct symbols. The global court grid runs from x = 0–100 and y = 0–50 in practice-grid units, with its origin at bottom left and baskets at (5,25) and (95,25). Harbor attacks right in half 1 and left in half 2; Orchard attacks the opposite end. Preserve this orientation throughout. Elapsed time runs from 0 to 720 seconds, with the half boundary at 360. Print \"Harbor vs Orchard\" and the source credit \"Open Court Learning Lab, 2026\" on every finished chart, event card, video and presentation title page. Print \"OPEN COURT ATLAS\" on the written summary and presentation cover.\n\nAudience: basketball fans and tactical-analysis newcomers, with the learning lab's editorial team choosing the graphics for phone reading, arena display and a printed handout.\n\nInputs (attached): 01-client-facts.en.md contains the project facts and fixed identity. 02-delivery-catalog.en.md lists every deliverable's proportion, format and stage. events.md supplies the 48 event records. players.md supplies the ten player identities and jersey numbers. game-data.en.md defines the clock, scoring and global coordinates. deliverable-details.en.md supplies event counts and the four focus-event records. court-coordinate-reference.png is the constraint image for the global grid and basket positions. team-emblems.png is the identity image containing the existing Harbor anchor and Orchard tree emblems. courtside-reading-scene.png is an atmosphere reference for phone and arena-screen viewing.\n\nDeliverables:\n1. A two-page data summary and chart inventory stating each chart's data columns, chart type, units, carrier and printed wording, with team and result encodings, event-linking examples, clock rules, coordinate orientation, overlap treatment, the 0–720-second range and final score 30–28\n2. One landscape overall event timeline containing all 48 events, their event IDs and the 360-second half boundary\n3. One landscape cumulative-score step chart containing all 25 scoring changes, half-time and final scores, with E015, E024, E038 and E048 labeled\n4. Three shot maps: the full game's 36 attempts, Harbor's 19 attempts and Orchard's 17 attempts, each identifying event ID, half, team, outcome and attempted point value\n5. Two half-detail boards, each linking a time strip and global-coordinate map of its 24 events, with starting and ending scores and the half's attacking directions\n6. Four key-event summaries for E015, E024, E038 and E048, one card each with half, both time readings, team, player name, jersey number, attempted points, result, points added, before-and-after scores and a location map; E015, E024 and E038 as portrait phone cards, and E048 as a one-page A4 handout with a beginner's reading key\n7. One 10-second video following E048 through the timeline, court position and score change, with its event ID visible throughout and the closing score 30–28\n8. One presentation of at least eight pages reusing the summary, timeline, score chart, three shot maps, two half details and four event cards, with an explanation of the shared reading system\n\nAcceptance:\n- Establish the data summary and chart inventory first. Repeat its 0–720-second range, final score 30–28 and source credit Open Court Learning Lab, 2026 on the overall timeline, score chart and presentation; use its team and outcome encodings across all charts, cards and video.\n- On the overall timeline and half-detail boards, preserve all 48 event IDs and actual timestamps. Display E022 before E023 at 319 seconds and E044 before E045 at 660 seconds, with both records individually readable. On the score chart, begin at 0–0, hold 13–15 at 360 seconds and hold 30–28 from 719 through 720 seconds; each scoring increment equals that event's pointsAdded.\n- Plot 36, 19 and 17 attempts respectively on the full-game, Harbor and Orchard maps, including all four one-point attempts in the full-game map. On these maps, both half-detail boards and all four event cards, retain the supplied x,y positions, bottom-left origin and half-specific attacking ends; connect displaced labels to their recorded locations.\n- On the four event cards, repeat the focus-event records in deliverable-details.en.md and the player names and jerseys in players.md. Link E015, E024, E038 and E048 by identical event IDs across the timeline, score chart, relevant maps, half details and cards. The E048 card and video show Rowan Lin, jersey 15, at (10,25), adding 2 points to change 28–28 into 30–28.\n- Give every finished chart and event card a title, visible units, a reading annotation, Harbor vs Orchard and the source credit. Apply direct team labels and distinct symbols, plus distinguishable made, missed, rebound and turnover cues, on every view containing those categories. Preserve those distinctions in grayscale and repeat the relevant wording and units in the video and presentation.\n- Deliver the landscape charts, three portrait cards and A4 E048 handout with matching event values. Assemble the presentation last, with at least eight pages and the named preceding artworks; repeat OPEN COURT ATLAS on its cover and the written summary. The 10-second video follows E048 in timeline–position–score order.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-01/court-coordinate-reference.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "9da669595e5687d105714bb59fbc5888513dbc7371fb335195fc4f8c1d6c46be"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-01/team-emblems.png",
+      "nodeId": "provided-image-2",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "bed90de1fba889b2636350054b03373088cb62b351be052d23be04179ae5c3e6"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-infovis-material-01/courtside-reading-scene.png",
+      "nodeId": "provided-image-3",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "c8c7d2ca683a7ef5bfab7800992e44a6c7efdece7c4c654b400bc15e9ee13d0f"
+    }
+  ]
+}

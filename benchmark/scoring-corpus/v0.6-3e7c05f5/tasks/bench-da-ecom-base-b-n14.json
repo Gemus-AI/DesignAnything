@@ -1,0 +1,1059 @@
+{
+  "specVersion": 3,
+  "taskId": "bench-da-ecom-base-b-n14",
+  "finalSelectionPolicy": "explicit-or-last-exported",
+  "subjectType": "identity-communication",
+  "notes": "Source draft. Original client-defined facts, no completed design answer inputs. Independent review, actual model runs and judge calibration pending. A routing check is not a scored design result.",
+  "slots": [
+    {
+      "id": "information-hierarchy",
+      "label": "Selling points and information hierarchy",
+      "description": "A one-page table of selling points, information priorities, placements and minimum text sizes.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "shot-list",
+      "label": "Shot and image list",
+      "description": "A shot list recording the role, proportion and required content of every final image and video.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "process",
+      "core": true,
+      "minPages": 8
+    },
+    {
+      "id": "fern-main",
+      "label": "Fern Study main image",
+      "description": "A square Fern Study main image with the kit, brand, tagline, SKU and price.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fern-inventory",
+      "label": "Fern Study inventory and dimensions",
+      "description": "A Fern Study inventory and dimensions panel with all supplied items and the guide as a scale reference.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fern-steps",
+      "label": "Fern Study four-stage instructions",
+      "description": "A four-stage Fern Study instruction panel with two-strand preparation and the scissors supply label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fern-finished",
+      "label": "Fern Study finished example",
+      "description": "A Fern Study finished-example panel with the complete twelve-leaf motif and outcome label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fern-materials",
+      "label": "Fern Study material details",
+      "description": "A Fern Study material-detail panel with cotton weave, two needles and four complete thread records.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "motif-shopping-card",
+      "label": "Motif comparison shopping card",
+      "description": "A vertical comparison card with both motifs, SKU records, prices, brand, tagline and outcome labels.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "purchase-contents",
+      "label": "Purchase contents and project outcomes",
+      "description": "A shared purchase-contents panel with labeled groups for supplied goods, scissors and completed examples.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fern-stitches",
+      "label": "Fern Study stitch close-up",
+      "description": "A Fern Study stitch close-up panel identifying stem stitch, satin stitch and straight stitch.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fern-tabletop",
+      "label": "Fern Study tabletop application",
+      "description": "A Fern Study tabletop image with the kit ready for work and the scissors supply label.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "fern-states",
+      "label": "Fern Study project states",
+      "description": "A Fern Study comparison panel of preprinted, six-leaf partial and twelve-leaf completed states.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "image"
+      ],
+      "stage": "final",
+      "core": true
+    },
+    {
+      "id": "kit-explanation-video",
+      "label": "Kit product explanation video",
+      "description": "A ten-second product explanation video covering Fern Study at tier 14 and both kits at tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "video"
+      ],
+      "stage": "final",
+      "core": false
+    },
+    {
+      "id": "product-presentation",
+      "label": "Product visual presentation",
+      "description": "A presentation reusing the specifications and final work with at least eight pages at tier 14 and ten pages at tier 24.",
+      "expected": 1,
+      "alternativesAllowed": false,
+      "mediaKinds": [
+        "document"
+      ],
+      "stage": "final",
+      "core": true,
+      "minPages": 8
+    }
+  ],
+  "constraints": [
+    {
+      "id": "brand-wording",
+      "kind": "text-verbatim",
+      "text": "SMALL HOURS",
+      "scope": {
+        "slots": [
+          "fern-main",
+          "motif-shopping-card"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "tagline",
+      "kind": "text-verbatim",
+      "text": "Your first stitches, clearly guided",
+      "scope": {
+        "slots": [
+          "fern-main",
+          "motif-shopping-card"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    },
+    {
+      "id": "supplied-materials-label",
+      "kind": "text-verbatim",
+      "text": "In your kit",
+      "scope": {
+        "slots": [
+          "fern-inventory",
+          "purchase-contents"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "scissors-label",
+      "kind": "text-verbatim",
+      "text": "You supply: scissors",
+      "scope": {
+        "slots": [
+          "fern-steps",
+          "fern-tabletop",
+          "purchase-contents"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": false
+    },
+    {
+      "id": "outcome-label",
+      "kind": "text-verbatim",
+      "text": "Finished example - stitch it yourself",
+      "scope": {
+        "slots": [
+          "fern-finished",
+          "motif-shopping-card",
+          "purchase-contents"
+        ],
+        "select": "all"
+      },
+      "caseSensitive": true,
+      "critical": true
+    }
+  ],
+  "setConsistency": [
+    {
+      "id": "brand-spelling",
+      "kind": "token-agreement",
+      "token": "SMALL HOURS",
+      "maxEditDistance": 2,
+      "caseSensitive": true
+    }
+  ],
+  "setVlmRubric": [
+    {
+      "id": "tier14-shop-image-system",
+      "slots": [
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished",
+        "fern-materials",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-stitches",
+        "fern-tabletop",
+        "fern-states"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-list"
+      ],
+      "items": [
+        {
+          "item": "All ten images implement the specification documents' hierarchy, heading color, placement and text-scale decisions as one coherent shop system.",
+          "kind": "consistency"
+        },
+        {
+          "item": "Fern's fabric, hoop, shared stock, motif geometry and thread assignments remain identifiable across inventory, instruction, close-up, tabletop and project-state views, allowing changes in viewpoint and completion.",
+          "kind": "consistency"
+        },
+        {
+          "item": "The comparison and purchase panels preserve both individual SKU records and consistently distinguish supplied goods, buyer-owned tools and completed outcomes.",
+          "kind": "compliance"
+        }
+      ]
+    }
+  ],
+  "scoringCoverage": {
+    "brandToken": "SMALL HOURS"
+  },
+  "dqRubric": {
+    "checklistVersion": "dq-v1",
+    "domainFacet": "Graphic Design",
+    "slots": [
+      "fern-main",
+      "fern-inventory",
+      "fern-steps",
+      "fern-finished",
+      "fern-materials",
+      "motif-shopping-card",
+      "purchase-contents",
+      "fern-stitches",
+      "fern-tabletop",
+      "fern-states"
+    ],
+    "layoutExtras": false,
+    "naRules": "The design-quality checklist must not judge redesign of the supplied kit components or double-score exact wording, product records, motif counts, dimensions, layout geometry and reuse requirements covered by these rules."
+  },
+  "requirementChecks": [
+    {
+      "id": "delivery",
+      "requirementId": "R-delivery",
+      "method": "delivery",
+      "targetSlots": [
+        "information-hierarchy",
+        "shot-list",
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished",
+        "fern-materials",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-stitches",
+        "fern-tabletop",
+        "fern-states",
+        "product-presentation"
+      ],
+      "criteria": "Deliver exactly the 14 named independent items for tier 14. Duplicate exports do not add items. PDF pages do not add items. The video is required but non-core for M1.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ]
+    },
+    {
+      "id": "selection",
+      "requirementId": "R-selection",
+      "method": "final-selection",
+      "targetSlots": "*",
+      "criteria": "Use the explicitly marked final version; if none is marked, use the last exported version.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "requirementId": "R-independent",
+      "method": "visual",
+      "targetSlots": [
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished",
+        "fern-materials",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-stitches",
+        "fern-tabletop",
+        "fern-states"
+      ],
+      "criteria": "Each static role is a separate complete export. Multi-view technical boards are allowed where commissioned; do not count one contact sheet or duplicate export as several roles.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "format-information-hierarchy",
+      "requirementId": "R-format-information-hierarchy",
+      "method": "artifact-property",
+      "targetSlots": [
+        "information-hierarchy"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-shot-list",
+      "requirementId": "R-format-shot-list",
+      "method": "artifact-property",
+      "targetSlots": [
+        "shot-list"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: process.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "format-fern-main",
+      "requirementId": "R-format-fern-main",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fern-main"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1080 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "width",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fern-inventory",
+      "requirementId": "R-format-fern-inventory",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fern-inventory"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fern-steps",
+      "requirementId": "R-format-fern-steps",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fern-steps"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fern-finished",
+      "requirementId": "R-format-fern-finished",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fern-finished"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fern-materials",
+      "requirementId": "R-format-fern-materials",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fern-materials"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-motif-shopping-card",
+      "requirementId": "R-format-motif-shopping-card",
+      "method": "artifact-property",
+      "targetSlots": [
+        "motif-shopping-card"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1080 by 1920 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-purchase-contents",
+      "requirementId": "R-format-purchase-contents",
+      "method": "artifact-property",
+      "targetSlots": [
+        "purchase-contents"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fern-stitches",
+      "requirementId": "R-format-fern-stitches",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fern-stitches"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fern-tabletop",
+      "requirementId": "R-format-fern-tabletop",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fern-tabletop"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-fern-states",
+      "requirementId": "R-format-fern-states",
+      "method": "artifact-property",
+      "targetSlots": [
+        "fern-states"
+      ],
+      "criteria": "Read the original file properties: Format: PNG, 1600 by 2400 proportion, long side at least 1024 pixels. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "contentType",
+          "op": "eq",
+          "value": "image/png"
+        },
+        {
+          "name": "height",
+          "op": "min",
+          "value": 1024
+        }
+      ]
+    },
+    {
+      "id": "format-kit-explanation-video",
+      "requirementId": "R-format-kit-explanation-video",
+      "method": "manual",
+      "targetSlots": [
+        "kit-explanation-video"
+      ],
+      "criteria": "Format: video; 5 to 15 seconds. Stage: final. Inspect the entire original file, not only a sample page or frame.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "manualReason": "Inspect the complete SHA-bound original film and confirm the stated length and final stage. The video slot is scored on delivery only; duration is not read automatically, because a correct segmented delivery and a provider generation cap are both indistinguishable from a short film to a property reader. This is a complete-original manual check, not a scored output or human acceptance."
+    },
+    {
+      "id": "format-product-presentation",
+      "requirementId": "R-format-product-presentation",
+      "method": "artifact-property",
+      "targetSlots": [
+        "product-presentation"
+      ],
+      "criteria": "Read the original file properties: Format: presentation document; at least eight actual pages. Stage: final.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "properties": [
+        {
+          "name": "pageCount",
+          "op": "min",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "id": "brand-color-system",
+      "requirementId": "R-brand-color-system",
+      "method": "visual",
+      "targetSlots": [
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished",
+        "fern-materials",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-stitches",
+        "fern-tabletop",
+        "fern-states"
+      ],
+      "criteria": "Backgrounds read as warm white, product image wells as white, headings as pine green #264C43, and information panels as cream #F5F0E6. Allow ordinary rendering and display differences, but fail a visibly different heading color, panel color or background system.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "sku-records-and-sale-units",
+      "requirementId": "R-sku-records-and-sale-units",
+      "method": "visual",
+      "targetSlots": [
+        "fern-main",
+        "motif-shopping-card"
+      ],
+      "criteria": "Each main image identifies its own kit by the correct name, code and USD 24 price. Each shopping card presents both complete records, with USD 24 visibly associated with each individual kit. Swapped names or codes, missing prices, or a price presented as buying both kits fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "sku-motif-structure",
+      "requirementId": "R-sku-motif-structure",
+      "method": "visual",
+      "targetSlots": [
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished",
+        "fern-materials",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-stitches",
+        "fern-tabletop",
+        "fern-states"
+      ],
+      "criteria": "Where a full motif is visible, Fern Study has one upright curved stem and six opposite leaf pairs; Daisy Study has three eight-petal flowers, each with a stem and two leaves. Preprinted and partial views retain the same underlying design. Cropped material or stitch details need not expose the entire motif, but visible elements must agree with their SKU. Missing, extra or substituted motif elements fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "motif-physical-scale",
+      "requirementId": "R-motif-physical-scale",
+      "method": "visual",
+      "targetSlots": [
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished",
+        "fern-materials",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-stitches",
+        "fern-tabletop",
+        "fern-states"
+      ],
+      "criteria": "Full motifs occupy a 100 × 100 mm design area relative to the supplied 150 mm inner hoop diameter and 250 × 250 mm fabric. Use visible component relationships or dimension annotations as evidence; permit perspective and close-up cropping. A full motif visibly enlarged or reduced to an incompatible physical scale fails. Printing a dimension on every image is not required.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "per-artifact"
+    },
+    {
+      "id": "tier14-specifications",
+      "requirementId": "R-tier14-specifications",
+      "method": "content",
+      "targetSlots": [
+        "information-hierarchy",
+        "shot-list"
+      ],
+      "criteria": "The specifications occupy the initial process stage. Each records heading color #264C43, a 150 mm inner hoop diameter and all three exact purchase labels. The hierarchy is a one-page selling-points table with priorities, placements and minimum text sizes. The shot list assigns all ten final images and the video their roles, proportions and required content. Missing assignments, conflicting facts or absent required specification fields fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ]
+    },
+    {
+      "id": "tier14-shot-list-and-layout",
+      "requirementId": "R-tier14-shot-list-and-layout",
+      "method": "visual",
+      "targetSlots": [
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished",
+        "fern-materials",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-stitches",
+        "fern-tabletop",
+        "fern-states"
+      ],
+      "criteria": "Each image fulfills its assigned shot-list purpose and required content. The main and shopping card visibly carry the exact brand and tagline with the applicable SKU records. Apply square main, 2:3 detail and 9:16 card proportions; an upper 20% information band; a lower 80% white product well; 5% outer margins; and minimum text height of 3% of the shorter side, with typography in the band. The main product group occupies 85–90% of the well's width and its heading follows the specified #264C43. The tabletop view arranges the Fern kit for starting work. Missing assigned content or incompatible relative geometry fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-list"
+      ]
+    },
+    {
+      "id": "tier14-stock-materials-and-scale",
+      "requirementId": "R-tier14-stock-materials-and-scale",
+      "method": "visual",
+      "targetSlots": [
+        "fern-inventory",
+        "fern-materials",
+        "fern-tabletop"
+      ],
+      "criteria": "The inventory shows one hoop, one cotton square, four skeins, two No. 7 needles, one guide and one box, with 150/166 mm hoop diameters, 250 × 250 mm fabric, 38 mm needles, 100 × 140 mm guide and 270 × 270 × 35 mm box correctly recorded across the inventory and material panels. The inventory repeats the specified inner diameter and explicitly dimensions the hoop, fabric and guide. The material panel exposes cotton weave and two needles and lists T01 Pine #365744, T02 Sage #90A889, T03 Cream #F3E9D2 and T04 Ochre #C99236, each 8 m and six-strand. Inventory and tabletop preserve the physical size relationships of hoop, fabric and guide. Perspective is allowed; missing records, wrong stock or incompatible relative sizes fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "shot-list"
+      ]
+    },
+    {
+      "id": "tier14-instructions-stitches-and-states",
+      "requirementId": "R-tier14-instructions-stitches-and-states",
+      "method": "visual",
+      "targetSlots": [
+        "fern-steps",
+        "fern-stitches",
+        "fern-states"
+      ],
+      "criteria": "Instructions progress through mounting, separating two strands and threading, stitching, and trimming/gathering the back; the preparation detail visibly separates two strands from six. Close-ups identify stem stitch on the T04 Ochre stem, satin stitch on T02 Sage left leaves and T01 Pine right leaves, and straight stitch on T03 Cream veins, using two working strands. The state panel shows a complete gray unstitched outline; a completed stem with the bottom three leaf pairs filled and veined and the upper three pairs still outlined; and all twelve leaves filled and veined. Different viewpoints are allowed. Wrong stitches, colors, sequence, partial-leaf placement or completion counts fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "set"
+    },
+    {
+      "id": "tier14-purchase-status",
+      "requirementId": "R-tier14-purchase-status",
+      "method": "visual",
+      "targetSlots": [
+        "fern-finished",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-steps",
+        "fern-tabletop"
+      ],
+      "criteria": "Completed examples in the finished panel, shopping card and purchase panel carry 'Finished example - stitch it yourself', with the card's label clearly associated with each kit's outcome. Scissors in the instruction, tabletop and purchase views carry 'You supply: scissors'. The purchase panel covers both kits in three distinct labeled groups and places one hoop, one SKU-specific fabric square, four skeins, two needles, one guide and one box per kit under 'In your kit'. Its labels repeat the specification exactly. Ambiguous label associations, incomplete stock or tools/outcomes classified as supplied goods fail.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "per-artifact",
+      "sourceSlots": [
+        "information-hierarchy"
+      ]
+    },
+    {
+      "id": "tier14-explanation-video",
+      "requirementId": "R-tier14-explanation-video",
+      "method": "manual",
+      "targetSlots": [
+        "kit-explanation-video"
+      ],
+      "criteria": "Review the full video and its duration. It lasts ten seconds, shows the supplied Fern materials, visibly explains two-strand preparation and presents the completed outcome. Fern Study, EK-01 and USD 24 are readable, and completed work is labeled 'Finished example - stitch it yourself'. Component identity, stock, motif and thread assignments agree with the supplied references and final Fern images. Editing and camera movement may vary; missing required content, contradictory product facts or a different duration fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "manualReason": "Inspect complete SHA-bound original outputs. This source draft contains no completed professional or model-output review; partial-frame/page sampling cannot prove whole-output compliance.",
+      "sourceSlots": [
+        "shot-list",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished"
+      ]
+    },
+    {
+      "id": "tier14-presentation-reuse",
+      "requirementId": "R-tier14-presentation-reuse",
+      "method": "deck-reuse",
+      "targetSlots": [
+        "product-presentation"
+      ],
+      "criteria": "The presentation contains at least eight pages and recognizably reuses both specifications and every one of the ten final images. It also includes three stills identifiable as frames from the delivered video. Scaling and editorial cropping are allowed when the reused source remains identifiable. A fact-mapping page links brand colors, quantities, dimensions, fixed wording and both SKU records to explicitly named visuals. Missing sources, replacement artwork, fewer than three video stills or an incomplete mapping fails.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-list",
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished",
+        "fern-materials",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-stitches",
+        "fern-tabletop",
+        "fern-states"
+      ]
+    },
+    {
+      "id": "set-tier14-shop-image-system",
+      "requirementId": "R-set-tier14-shop-image-system",
+      "method": "visual",
+      "targetSlots": [
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished",
+        "fern-materials",
+        "motif-shopping-card",
+        "purchase-contents",
+        "fern-stitches",
+        "fern-tabletop",
+        "fern-states"
+      ],
+      "criteria": "All ten images implement the specification documents' hierarchy, heading color, placement and text-scale decisions as one coherent shop system. Fern's fabric, hoop, shared stock, motif geometry and thread assignments remain identifiable across inventory, instruction, close-up, tabletop and project-state views, allowing changes in viewpoint and completion. The comparison and purchase panels preserve both individual SKU records and consistently distinguish supplied goods, buyer-owned tools and completed outcomes.",
+      "inputFiles": [
+        "benchmarks/design-anything/v0.6/scenarios/bench-da-ecom-base-b-n14.json",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/01-client-facts.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/02-delivery-catalog.en.md",
+        "benchmarks/design-anything/v0.6/assets/bench-da-ecom-base-b-n14/03-kit-records.en.md"
+      ],
+      "visualScope": "set",
+      "sourceSlots": [
+        "information-hierarchy",
+        "shot-list"
+      ]
+    }
+  ],
+  "identityConsistency": [
+    {
+      "id": "shared-kit-component-identity",
+      "kind": "identity-consistency",
+      "subject": "product",
+      "anchorAssets": [
+        "hoop-identity.png",
+        "threads-identity.png",
+        "needles-identity.png",
+        "guide-identity.png",
+        "box-identity.png"
+      ],
+      "subjectSlots": [
+        "fern-main",
+        "fern-inventory",
+        "fern-steps",
+        "fern-finished"
+      ],
+      "notes": "The material-detail panel lists T01–T04 with their names, color codes, 8 m lengths and six-strand construction, plus two No. 7 needles; the main, inventory, instruction and finished-example images preserve the corresponding component shapes and thread assignments."
+    }
+  ],
+  "carryThrough": [
+    {
+      "id": "specified-heading-color",
+      "fromSlot": "information-hierarchy",
+      "toSlots": [
+        "fern-main"
+      ],
+      "extract": [
+        "the specified heading color"
+      ],
+      "notes": "The two specification documents come first and record #264C43, the 150 mm inner hoop diameter and the three purchase-status labels; the main image uses that heading color, the inventory panel repeats that diameter, and the purchase-contents panel repeats those labels exactly."
+    },
+    {
+      "id": "specified-inner-hoop-diameter",
+      "fromSlot": "shot-list",
+      "toSlots": [
+        "fern-inventory"
+      ],
+      "extract": [
+        "the specified inner hoop diameter"
+      ],
+      "notes": "The two specification documents come first and record #264C43, the 150 mm inner hoop diameter and the three purchase-status labels; the main image uses that heading color, the inventory panel repeats that diameter, and the purchase-contents panel repeats those labels exactly."
+    },
+    {
+      "id": "specified-purchase-status-wording",
+      "fromSlot": "information-hierarchy",
+      "toSlots": [
+        "purchase-contents"
+      ],
+      "extract": [
+        "the three exact purchase-status labels"
+      ],
+      "notes": "The two specification documents come first and record #264C43, the 150 mm inner hoop diameter and the three purchase-status labels; the main image uses that heading color, the inventory panel repeats that diameter, and the purchase-contents panel repeats those labels exactly."
+    }
+  ]
+}

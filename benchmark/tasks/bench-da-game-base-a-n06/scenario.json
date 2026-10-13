@@ -1,0 +1,180 @@
+{
+  "id": "bench-da-game-base-a-n06",
+  "title": "NEXT DOOR — Two-player puzzles in familiar neighbourhood objects, 6 deliverables",
+  "tags": [
+    "design-anything-bench",
+    "authoring-draft",
+    "n6",
+    "family-a"
+  ],
+  "scenarioVersion": 1,
+  "benchmarkVersion": "v0.6",
+  "domain": "GAME",
+  "targetFunctionalNodeRange": [
+    0,
+    200
+  ],
+  "targetZoneRange": [
+    0,
+    24
+  ],
+  "budget": {
+    "maxToolCalls": 120,
+    "maxSteps": 120,
+    "maxWallTimeMs": 5400000
+  },
+  "permissionMode": "auto-accept",
+  "setup": {
+    "initialCanvas": {
+      "nodes": [
+        {
+          "id": "provided-document-1",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 01-client-facts.en.md",
+            "config": {
+              "text": "# NEXT DOOR\n\n## Project\n- Product: NEXT DOOR\n- Genre: two-player cooperative neighbourhood puzzle game\n- Audience: pairs seeking short, relaxed cooperative sessions\n- Base location: Mail Court S01\n- Expanded locations: Wash Passage S02; Stair Landing S03; Roof Garden S04\n- Visual direction: open comparison\n- Existing identity objects: mailbox and utility cabinet\n\n## Characters and ownership\n| ID | Name | Height | Role | Colour | Symbol | States |\n| --- | --- | --- | --- | --- | --- | --- |\n| C01 | Bea | 1600 mm | Mailbox flap holder | #1F4E5F | Circle | Idle; Holding |\n| C02 | Kit | 1750 mm | Cabinet wheel operator | #B35C1E | Triangle | Idle; Turning |\n\n## Object identity\n| IDs | Object | Width × depth × height | Fixed features | States |\n| --- | --- | --- | --- | --- |\n| P01; P03 | Mailbox | 400 × 300 × 600 mm | Rounded crown; raised vertical front rib; one brass flap knob; rear mounting plate | Rest; Engaged |\n| P02; P04 | Utility Cabinet | 600 × 250 × 800 mm | Flat top; three horizontal vents above wheel; five-spoke wheel; two right-side hinges | Rest; Engaged |\n\n- P01 body: muted red, #A84438\n- P02 body: grey-green, #68756B\n- P03 body: cream, #D8CCAE\n- P04 body: blue-grey, #61798A\n- Mailbox Rest: flap closed\n- Mailbox Engaged: flap held at 60 degrees from closed\n- Utility Cabinet Rest: wheel stationary, connection lamp unlit\n- Utility Cabinet Engaged: wheel turning clockwise, connection lamp lit\n\n## Puzzle geometry and timing\n- Playable footprint: 8000 × 6000 mm\n- Grid cell: 1000 × 1000 mm\n- Coordinate origin: southwest corner\n- Mailbox operating point: x 2500 mm, y 3000 mm\n- Cabinet operating point: x 5500 mm, y 3000 mm\n- Operating-point separation: 3000 mm\n- Interaction radius: 1000 mm around each operating point\n- Completion threshold: 3 seconds of continuous overlapping operation\n- Progress reset: overlap interruption\n- Completed result: connection lamp illuminated and shared route open\n\n## Interface\n- Logical canvas: 1920 × 1080 units\n- Player views: two vertical views, each 960 × 1080 units\n- Safe inset: 48 units on all four sides of each player view\n- Default minimum text character height: 26 logical units\n- Text contrast: at least 4.5:1\n- Icon contrast: at least 3:1\n- Unavailable control contrast: at least 3:1\n- Unavailable control symbol: lock\n- Prompt anchor: bottom centre of the relevant player view, inside its safe area\n- Printed title: NEXT DOOR\n- Printed object labels: Mailbox; Utility Cabinet\n- Printed prompts: Hold flap; Turn wheel\n- Printed duration: 3 s\n\n| Puzzle state | Counter | Symbol |\n| --- | --- | --- |\n| Idle | 0/2 | Hollow circle |\n| Ready | 1/2 | Half-filled circle |\n| Linked | 2/2 | Chain |\n| Completed | 2/2 | Check mark |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-2",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 02-delivery-catalog.en.md",
+            "config": {
+              "text": "# NEXT DOOR — delivery catalog\n\nThis table lists every commissioned deliverable with its tier, file format and stage. What each deliverable must contain is stated in the commission letter.\n\n| # | id | Deliverable | Tiers | Format and stage |\n|---|---|---|---|---|\n| 1 | direction-one | World and art direction one | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 2 | direction-two | World and art direction two | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 3 | direction-three | World and art direction three | 14, 24 | Format: PNG, 1800 by 1200 proportion, long side at least 1024 pixels. Stage: process. |\n| 4 | direction-selection | Selected direction note | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 5 | art-style-rules | Art style rule sheet | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 6 | asset-inventory | Character and object inventory | 14, 24 | Format: presentation document; at least eight actual pages. Stage: process. |\n| 7 | bea-character | Bea C01 character sheet | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 8 | kit-character | Kit C02 character sheet | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 9 | bea-action-views | Bea C01 additional action views | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 10 | kit-action-views | Kit C02 additional action views | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 11 | mailbox-p01 | Mailbox P01 object sheet | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 12 | cabinet-p02 | Utility Cabinet P02 object sheet | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 13 | mailbox-p03 | Mailbox P03 object sheet | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 14 | cabinet-p04 | Utility Cabinet P04 object sheet | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 15 | mail-court-scene | Mail Court S01 puzzle scene | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 16 | wash-passage-scene | Wash Passage S02 puzzle scene | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 17 | stair-landing-scene | Stair Landing S03 puzzle scene | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 18 | roof-garden-scene | Roof Garden S04 puzzle scene | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 19 | mail-court-interface | Mail Court interface comparison | 6, 14, 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 20 | wash-passage-interface | Wash Passage interface comparison | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 21 | stair-landing-interface | Stair Landing interface comparison | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 22 | roof-garden-interface | Roof Garden interface comparison | 24 | Format: PNG, 2400 by 1600 proportion, long side at least 1024 pixels. Stage: final. |\n| 23 | cooperation-preview | Mail Court cooperation preview | 14, 24 | Format: video; 5 to 15 seconds. Stage: final. |\n| 24 | art-presentation | NEXT DOOR art presentation | 14, 24 | Format: presentation document; at least eight actual pages. Stage: final. |\n"
+            }
+          }
+        },
+        {
+          "id": "provided-document-3",
+          "type": "text-prompt",
+          "data": {
+            "label": "Provided: 03-game-records.en.md",
+            "config": {
+              "text": "# Game records\n\n## Character records\n| ID | Name | Height | Ownership | Action | States |\n| --- | --- | --- | --- | --- | --- |\n| C01 | Bea | 1600 mm | #1F4E5F circle | Mailbox flap hold | Idle; Holding |\n| C02 | Kit | 1750 mm | #B35C1E triangle | Clockwise cabinet wheel rotation | Idle; Turning |\n\n## Object records\n| ID | Label | Width × depth × height | Body colour | Features | States |\n| --- | --- | --- | --- | --- | --- |\n| P01 | Mailbox | 400 × 300 × 600 mm | #A84438 | Rounded crown; raised vertical front rib; one brass flap knob; rear mounting plate | Rest; Engaged |\n| P02 | Utility Cabinet | 600 × 250 × 800 mm | #68756B | Flat top; three horizontal vents above wheel; five-spoke wheel; two right-side hinges | Rest; Engaged |\n| P03 | Mailbox | 400 × 300 × 600 mm | #D8CCAE | Rounded crown; raised vertical front rib; one brass flap knob; rear mounting plate | Rest; Engaged |\n| P04 | Utility Cabinet | 600 × 250 × 800 mm | #61798A | Flat top; three horizontal vents above wheel; five-spoke wheel; two right-side hinges | Rest; Engaged |\n\n- Mailbox Rest: flap closed\n- Mailbox Engaged: flap at 60 degrees from closed\n- Utility Cabinet Rest: stationary wheel; unlit lamp\n- Utility Cabinet Engaged: clockwise wheel rotation; lit lamp\n\n## Location records\n| ID | Location | Characters | Mailbox | Cabinet | Footprint |\n| --- | --- | --- | --- | --- | --- |\n| S01 | Mail Court | C01; C02 | P01 | P02 | 8000 × 6000 mm |\n| S02 | Wash Passage | C01; C02 | P03 | P04 | 8000 × 6000 mm |\n| S03 | Stair Landing | C01; C02 | P01 | P04 | 8000 × 6000 mm |\n| S04 | Roof Garden | C01; C02 | P03 | P02 | 8000 × 6000 mm |\n\n## Shared layout\n| Property | Value |\n| --- | --- |\n| Origin | Southwest corner |\n| Cell edge | 1000 mm |\n| Mailbox operating point | x 2500 mm; y 3000 mm |\n| Cabinet operating point | x 5500 mm; y 3000 mm |\n| Operating-point separation | 3000 mm |\n| Interaction radius | 1000 mm |\n| Mailbox character operating position | x 2500 mm; y 2500 mm |\n| Cabinet character operating position | x 5500 mm; y 2500 mm |\n\n## Puzzle state records\n| State label | Counter | Condition | Symbol |\n| --- | --- | --- | --- |\n| Idle | 0/2 | Neither input active | Hollow circle |\n| Ready | 1/2 | One input active | Half-filled circle |\n| Linked | 2/2 | Both inputs active; overlap below 3 seconds | Chain |\n| Completed | 2/2 | Continuous overlap reaches 3 seconds; completion latched | Check mark |\n\n- Duration label: 3 s\n- Overlap interruption before completion: progress returns to zero; state becomes Ready with one active input or Idle with neither input active\n- Completion result: connection lamp lit; shared route open\n- Ownership channels: colour and shape together\n\n## Input records\n| Actor | Prompt | Controller | Touch | Keyboard and mouse | Prompt position |\n| --- | --- | --- | --- | --- | --- |\n| Bea | Hold flap | Hold south face button | Hold on-screen flap control | Hold Space | Bottom centre of left player view |\n| Kit | Turn wheel | Rotate left stick clockwise | Drag on-screen wheel clockwise | Hold left mouse button and drag wheel clockwise | Bottom centre of right player view |\n\n## Screen geometry\n| Region | Left | Top | Right | Bottom | Unit |\n| --- | --- | --- | --- | --- | --- |\n| Full canvas | 0 | 0 | 1920 | 1080 | Logical unit |\n| Bea view | 0 | 0 | 960 | 1080 | Logical unit |\n| Kit view | 960 | 0 | 1920 | 1080 | Logical unit |\n| Bea safe area | 48 | 48 | 912 | 1032 | Logical unit |\n| Kit safe area | 1008 | 48 | 1872 | 1032 | Logical unit |\n\n- Default minimum text character height: 26 logical units\n- Text contrast: 4.5:1 minimum\n- Icon and unavailable control contrast: 3:1 minimum\n- Unavailable control symbol: lock\n"
+            }
+          }
+        },
+        {
+          "id": "provided-image-1",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: screen-constraint.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-2",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: interaction-grid.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-3",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: mailbox-identity.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-4",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: cabinet-identity.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        },
+        {
+          "id": "provided-image-5",
+          "type": "image-upload",
+          "data": {
+            "label": "Provided: sofa-reference.png",
+            "config": {
+              "expanded": true,
+              "files": []
+            }
+          }
+        }
+      ],
+      "edges": []
+    }
+  },
+  "steps": [
+    {
+      "kind": "send",
+      "stepId": "brief",
+      "turnKey": "brief-turn",
+      "userMessage": "NEXT DOOR | Two-player puzzles in familiar neighbourhood objects\n\nWe are developing NEXT DOOR for pairs who enjoy short, relaxed cooperative games. Two neighbours, Bea and Kit, repair shared spaces by operating familiar objects together. Bea holds a mailbox flap while Kit turns a utility cabinet wheel; 3 seconds of overlapping operation completes the link. A break in overlap resets that progress. The first puzzle is Mail Court. The expanded range adds Wash Passage, Stair Landing and Roof Garden, using the same interaction. The world and rendering style are open for comparison; the attached mailbox and cabinet are the existing objects around which the art develops.\n\nBea is 1600 mm tall and carries the circle ownership symbol in #1F4E5F; Kit is 1750 mm tall and carries the triangle in #B35C1E. The mailbox measures 400 × 300 × 600 mm and the cabinet 600 × 250 × 800 mm, in width × depth × height order. Each playable space occupies an 8000 × 6000 mm grid with 1000 mm cells, operating points 3000 mm apart and a 1000 mm interaction radius. The interface uses a 1920 × 1080 logical canvas, divided into two 960 × 1080 views, with a 48-unit inset inside each view. Default text character height is at least 26 logical units. Print \"NEXT DOOR\" on every interface sheet and use \"Hold flap\" and \"Turn wheel\" as the interaction prompts. Object labels are Mailbox and Utility Cabinet; the puzzle indicators are Idle, Ready, Linked and Completed, with counters 0/2, 1/2, 2/2 and 2/2 respectively, and a 3 s duration label.\n\nAudience: the art director and gameplay team, choosing a visual world and preparing a playable slice for people who enjoy light cooperation.\n\nInputs (attached): 01-client-facts.en.md contains the fixed project facts. 02-delivery-catalog.en.md contains the deliverable proportions, formats and stages. 03-game-records.en.md contains character, object, location, state and control records. screen-constraint.png supplies the logical canvas, split and safe areas. interaction-grid.png supplies the playable footprint, operating points and reach circles. mailbox-identity.png records the existing mailbox silhouette and fittings. cabinet-identity.png records the existing cabinet silhouette and fittings. sofa-reference.png provides the shared living-room play context.\n\nDeliverables:\n1. Two character sheets, one each for Bea C01 and Kit C02, with front, side and back views, Idle and Holding or Turning poses, dimensions, a close-up and a map icon\n2. Two object sheets, one each for Mailbox P01 and Utility Cabinet P02, with front, side and back views, Rest and Engaged states, dimensions, a close-up and a map icon\n3. One Mail Court S01 puzzle scene sheet showing both operating positions, the connection route and visual treatments for Idle, Ready, Linked and Completed\n4. One Mail Court interface sheet with controller and touch layouts, both character prompts, object labels, counters and all four puzzle state treatments\n\nAcceptance:\n- The character and object sheets establish the clothing colours, accessory counts and silhouettes used in the Mail Court scene and interface; their close-ups and map icons retain those features, Bea's circle and Kit's triangle.\n- The character sheets state C01 at 1600 mm and C02 at 1750 mm; the object sheets state P01 at 400 × 300 × 600 mm and P02 at 600 × 250 × 800 mm, retaining the mailbox's rounded crown, raised front rib and brass knob, and the cabinet's flat top, three vents and five-spoke wheel.\n- The Mail Court scene follows the 8000 × 6000 mm grid, 3000 mm operating-point separation and 1000 mm reach circles; the scene and interface show Idle 0/2, Ready 1/2, Linked 2/2 and Completed 2/2, with completion after 3 seconds of overlap and progress reset when overlap breaks.\n- The interface sheet prints NEXT DOOR, Mail Court, Mailbox, Utility Cabinet, Hold flap, Turn wheel and 3 s; controller and touch versions place equivalent prompts at the bottom centre of the corresponding player view, using the controls in 03-game-records.en.md.\n- Both interface layouts use the 1920 × 1080 logical canvas, two 960 × 1080 views, 48-unit internal safe margins and a minimum character height of 26 logical units; text contrast is at least 4.5:1, icons and unavailable controls at least 3:1, and unavailable controls carry a lock icon.\n- The scene and interface pair Bea's #1F4E5F with a circle and Kit's #B35C1E with a triangle; puzzle states use the hollow circle, half-filled circle, chain and check mark assigned to Idle, Ready, Linked and Completed.\n\nPlease clearly mark which version you consider the final deliverable. If nothing is marked, the last exported version counts."
+    },
+    {
+      "kind": "nudge",
+      "stepId": "deliver",
+      "maxTotalTurns": 100,
+      "advanceIdleTimeoutMs": 180000
+    }
+  ],
+  "graphContract": {
+    "functionalNodeRange": [
+      0,
+      200
+    ],
+    "zoneRange": [
+      0,
+      24
+    ]
+  },
+  "referenceAssets": [
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/screen-constraint.png",
+      "nodeId": "provided-image-1",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "fe0be7954e39657df0277611c9bbc288e293482cdbe51210ac84269a5ca2c97b"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/interaction-grid.png",
+      "nodeId": "provided-image-2",
+      "role": "constraint",
+      "mimeType": "image/png",
+      "sha256": "5911da09867d1eefcfdf4de95c62e5c77633b5ba6125a41cfcc5f595028d3504"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/mailbox-identity.png",
+      "nodeId": "provided-image-3",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "f6f38ccf2aeca571b9e762a566db7dfc6265c40667d133df81e498d04083b47a"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/cabinet-identity.png",
+      "nodeId": "provided-image-4",
+      "role": "identity",
+      "mimeType": "image/png",
+      "sha256": "f904675794df35c4abf9d2365d79acf5f9acf3ad2ba87cf2a3cfac937f1e31ee"
+    },
+    {
+      "path": "benchmarks/design-anything/v0.6/assets/bench-da-game-base-a-n06/sofa-reference.png",
+      "nodeId": "provided-image-5",
+      "role": "reference",
+      "mimeType": "image/png",
+      "sha256": "29af2031875b8e699a3ec1dc15c829e268499a6d67779f4cdb285660d5a403e2"
+    }
+  ]
+}
