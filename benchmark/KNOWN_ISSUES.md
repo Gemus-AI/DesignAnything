@@ -1,42 +1,36 @@
 # Known issues
 
-## The scoring corpus is not the run corpus
+## Scoring corpus versions
 
-The official scores of the paper (corpus `v0.6`, evaluator `v1.18`) were computed against `scoring-corpus/v0.6-3e7c05f5/`. Every official evaluation record of the two Design Anything configurations names this corpus: its `taskSetSha` is `sha256:3e7c05f57e269c2964da67774e095d72fe0be0e93b1878f961d75650ec0fb6b9`, and its per-task `specSha` matches the corresponding file in `scoring-corpus/v0.6-3e7c05f5/tasks/`.
+This release uses the corrected scoring corpus in `scoring-corpus/v0.6-c21d5896/`. It contains all 228 tasks: 225 are unchanged from `v0.6-3e7c05f5`, and three Book A tasks use the later astronomical-prints brief.
 
-The agents received the files in `tasks/`. The scoring corpus is a separately frozen copy of the same tasks. The paper's appendix states that execution and scoring use the same frozen task specifications for all systems; for the tasks listed below that is not exactly the case, and we report the differences here. We verified which corpus was scored only for the records of the two Design Anything configurations; the other systems' records are not part of this release.
+The released evaluations retain their recorded corpus identities. The six corrected Book A evaluations name `c21d5896`; the other 450 evaluations name `3e7c05f5`. The latter evaluations' per-task `specSha` values also match the corrected corpus because their specifications did not change. Earlier Book A specifications and scenarios are kept in `scoring-corpus/v0.6-3e7c05f5-book-a/`, with instructions for reconstructing the earlier complete corpus and checking both digests.
 
-All 228 files of the scoring corpus were re-serialised, so none of them is byte-identical to the run corpus. After parsing the JSON, three groups of tasks still differ:
+### Book A family
 
-- **Book A family (three tasks).** The scoring corpus holds an earlier version of this project family: an archival photography book. The agents received a later version on a different subject, astronomical prints. The scenario file, the reference images and the evaluation specification all differ. These three tasks were therefore scored against a brief the agents did not receive.
-- **Comparison scope.** In a group of tasks, the identity-consistency rules of the run corpus carry a `comparisonScope` field (which properties of the anchor must be preserved) that the scoring-corpus version lacks.
-- **One requirement check.** In one task, one requirement check is worded and typed differently.
+The tasks `bench-da-book-base-a-n06`, `bench-da-book-base-a-n14` and `bench-da-book-base-a-n24` exist in two versions: an earlier archival photography book and a later book of astronomical prints.
 
-The generated list below gives every task that differs and the JSON paths that differ. `index.csv` carries the same information per task (`scoringDiffers`, `scoringDiffFields`). To compare a task yourself, parse both files and compare the resulting objects; comparing the raw bytes will report every task as different.
+Both Design Anything configurations received the astronomical-prints brief. Their original evaluations used the earlier photography-book specifications. This release replaces those six evaluations with the 25 September 2026 rescoring, using evaluator v1.18 and the specifications for the brief they received. The paper's reported numbers are computed from these rescored evaluations.
+
+The paper's OpenDesign and JarvisHub baselines received the earlier photography-book brief and were scored against that version; their scores are unchanged. Codex received the later astronomical-prints brief and was also rescored. Baseline evaluation records and baseline input sets are not included in this release. The shared task ids therefore do not imply that all systems received the same Book A brief.
+
+### Remaining differences from the Design Anything run corpus
+
+The files in `tasks/` are the run corpus of the two Design Anything configurations. The corrected scoring corpus remains a separately frozen copy. Three tasks are byte-identical to the run corpus and 196 differ only in JSON formatting. After parsing the JSON, 28 tasks still differ in identity-consistency comparison scope, and one task (`bench-da-brand-base-a-n14`) differs in a requirement check.
+
+The generated list below gives every remaining task that differs and the JSON paths that differ. `index.csv` carries the same information per task (`scoringDiffers`, `scoringDiffFields`). Compare parsed JSON objects to distinguish content changes from formatting changes.
 
 **28 tasks** — differing fields: `spec:identityConsistency[].comparisonScope`
 
 `bench-da-architecture-base-a-n06`, `bench-da-architecture-base-a-n14`, `bench-da-architecture-base-a-n24`, `bench-da-brand-base-b-n06`, `bench-da-brand-base-b-n14`, `bench-da-brand-base-b-n24`, `bench-da-brand-breadth-01`, `bench-da-brand-breadth-02`, `bench-da-brand-breadth-03`, `bench-da-interior-base-a-n06`, `bench-da-interior-base-a-n14`, `bench-da-interior-base-a-n24`, `bench-da-interior-base-b-n06`, `bench-da-interior-base-b-n14`, `bench-da-interior-base-b-n24`, `bench-da-interior-breadth-01`, `bench-da-interior-material-03`, `bench-da-landscape-base-a-n06`, `bench-da-landscape-base-a-n14`, `bench-da-landscape-base-a-n24`, `bench-da-packaging-base-a-n06`, `bench-da-packaging-base-a-n14`, `bench-da-packaging-base-a-n24`, `bench-da-packaging-base-b-n06`, `bench-da-packaging-base-b-n14`, `bench-da-packaging-base-b-n24`, `bench-da-packaging-breadth-02`, `bench-da-packaging-material-02`
 
-**1 task** — differing fields: `spec:constraints[]`, `spec:dqRubric.naRules`, `spec:dqRubric.slots[]`, `spec:requirementChecks[]`, `spec:scoringCoverage.brandToken`, `spec:scoringCoverage.identityAnchors.none`, `spec:setConsistency[].token`, `spec:setVlmRubric[]`, `spec:slots[].description`, `spec:slots[].id`, `spec:slots[].label`, `scenario:referenceAssets[]`, `scenario:setup.initialCanvas.nodes[]`, `scenario:steps[].userMessage`, `scenario:title`
-
-`bench-da-book-base-a-n06`
-
-**1 task** — differing fields: `spec:carryThrough[]`, `spec:constraints[]`, `spec:dqRubric.naRules`, `spec:dqRubric.slots[]`, `spec:identityConsistency`, `spec:requirementChecks[]`, `spec:scoringCoverage.brandToken`, `spec:scoringCoverage.identityAnchors`, `spec:setConsistency[].token`, `spec:setVlmRubric[]`, `spec:slots[].description`, `spec:slots[].id`, `spec:slots[].label`, `scenario:referenceAssets[]`, `scenario:setup.initialCanvas.nodes[]`, `scenario:steps[].userMessage`, `scenario:title`
-
-`bench-da-book-base-a-n14`
-
-**1 task** — differing fields: `spec:carryThrough[]`, `spec:constraints[]`, `spec:dqRubric.naRules`, `spec:dqRubric.slots[]`, `spec:identityConsistency`, `spec:requirementChecks[]`, `spec:scoringCoverage.brandToken`, `spec:scoringCoverage.identityAnchors`, `spec:setConsistency[].token`, `spec:setVlmRubric[].id`, `spec:setVlmRubric[].items[]`, `spec:setVlmRubric[].slots[]`, `spec:setVlmRubric[].sourceSlots[]`, `spec:setVlmRubric[].items[].item`, `spec:slots[].description`, `spec:slots[].id`, `spec:slots[].label`, `scenario:referenceAssets[]`, `scenario:setup.initialCanvas.nodes[]`, `scenario:steps[].userMessage`, `scenario:title`
-
-`bench-da-book-base-a-n24`
-
 **1 task** — differing fields: `spec:requirementChecks[].criteria`, `spec:requirementChecks[].manualReason`, `spec:requirementChecks[].method`, `spec:requirementChecks[].properties`
 
 `bench-da-brand-base-a-n14`
 
-The remaining 196 tasks differ only in JSON formatting (the parsed content is identical).
+The remaining 199 tasks are identical after parsing the JSON.
 
-The evaluator does not check that the scoring corpus and the run corpus are the same version; it only records the digest of the corpus it read.
+The evaluator records the digest of the corpus it read; this does not by itself prove that the system received that corpus version.
 
 ## Outdated authoring notes
 

@@ -44,9 +44,11 @@ The two machines also used separate judge caches, so the same output scored on b
 
 ## What the identity fields prove
 
-Every evaluation record carries identity fields: `evaluatorVersion`, `rubricVersion`, the SHA-256 of every prompt template (`prompts.*`), the pixel, palette and style rule versions, the style-encoder weights digest, the judge model name, and the digest of the scoring corpus (`taskSetSha`). For all 456 official records of the two Design Anything configurations, each of these fields equals the value computed from the code in this directory (and `classifierModel` reads `deepseek-flash`). A few records have an empty `csdWeightsSha256` because no style vectors were computed for them; for those the field is not compared.
+Every evaluation record carries identity fields: `evaluatorVersion`, `rubricVersion`, the SHA-256 of each prompt template (`prompts.*`), the pixel, palette and style rule versions, the style-encoder weights digest, the judge model name, and the digest of the scoring corpus (`taskSetSha`). All 456 released records match the base prompt digests and rule versions computed from this snapshot, and `classifierModel` reads `deepseek-flash`. Non-null `csdWeightsSha256` values match the published weights lock. Six corrected Book A records name corpus `c21d5896`; the other 450 retain `3e7c05f5`. Each record's per-task `specSha` matches its recorded corpus.
 
-These fields show that every official record used the same prompts, rule versions and scoring corpus as this code. They do **not** distinguish between different commits that share the version string `v1.18`, and they cannot tell the two judge switches apart. The code identity rests on the scoring notes summarised above.
+The six corrected evaluations contain a design-quality (M3) pass judged by `deepseek-flash` via the environment variable `BENCH_DQ_JUDGE_MODEL_ID`. The published snapshot does not expose that variable; its default design-quality judge is `claude-opus-4.8`. The six records' `prompts.dqSha` and `dqChecklistSha` match the prompt and checklist digests computed from the published code, but their judge configuration differs. That pass is documented and retained in `evaluation.json`, but is not reproducible with the snapshot as published. The other 450 released evaluations remain `not-run` for M3.
+
+Matching identity fields does not distinguish commits sharing `v1.18` or prove that all judge configurations and corpus versions were identical. The scoring notes describe the original scoring; the six Book A replacements are the 25 September 2026 rescoring against the brief those configurations received.
 
 ## Changes from the original files
 

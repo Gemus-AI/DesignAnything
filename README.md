@@ -8,7 +8,7 @@ Project page: <https://designanything.gemus.ai>
 
 | Path | Contents | Status |
 | --- | --- | --- |
-| `benchmark/` | The 228 tasks exactly as the evaluated agents received them (`brief.md`, `scenario.json`, `spec.json` per task), the scoring corpus the official scores were computed against, and an index | Released |
+| `benchmark/` | The 228 tasks received by the two Design Anything configurations (`brief.md`, `scenario.json`, `spec.json` per task), the scoring corpus the official scores were computed against, and an index | Released |
 | `benchmark/KNOWN_ISSUES.md` | Where the scoring corpus differs from the tasks the agents received, and other caveats | Released |
 | `protocol/PROTOCOL.md` | The evaluation protocol: task format, export-pack format, measures, judge configuration | Released |
 | `evaluator/` | Source snapshot of evaluator v1.18 as used for the official scores, with notes on its provenance and on the internal modules it depends on | Released as readable source; it does not run on its own |
@@ -22,7 +22,7 @@ The text materials that tasks supply are embedded in each `scenario.json`, so ev
 - 19 domains × 12 tasks = 228 tasks, corresponding to 152 distinct projects.
 - 38 project families appear at three scales, requesting 6, 14 and 24 artifacts (114 tasks). These families share background and inputs across scales.
 - 57 reference-material tasks and 57 breadth tasks are independent projects requesting 6 or 14 artifacts each.
-- The paper reports results for corpus `v0.6` and evaluator `v1.18`. The task-set digest of the scoring corpus is `sha256:3e7c05f57e269c2964da67774e095d72fe0be0e93b1878f961d75650ec0fb6b9`.
+- The paper reports results for corpus `v0.6` and evaluator `v1.18`. The corrected scoring corpus has digest `sha256:c21d5896cb922e2bbc4bb00dac0b8597bbb903c3cdfa784f606aa09a6b0902ed`. Six corrected Book A evaluations name this corpus; the remaining 450 retain the earlier `3e7c05f5` identity.
 
 See `benchmark/README.md` for the file formats and `protocol/PROTOCOL.md` for how outputs are scored.
 
@@ -31,8 +31,8 @@ See `benchmark/README.md` for the file formats and `protocol/PROTOCOL.md` for ho
 What we verified before publishing, and what you can check yourself today:
 
 - **Tasks.** We verified that the files in `benchmark/tasks/` are byte-identical to the task files bundled with the runs reported in the paper (`benchmark/README.md` says how strongly for each task). The run archives are not public, so today you can check this only through the digests in `index.csv`; the planned dataset release will let you check it against the runs.
-- **Scoring corpus.** You can recompute the digest of `benchmark/scoring-corpus/v0.6-3e7c05f5/tasks/` and compare it with the `taskSetSha` that every official evaluation record names (`benchmark/README.md` shows how). We also verified each record's per-task `specSha` against these files; the records themselves will be released with the dataset.
-- **Evaluator.** You can read the evaluator code and the exact prompts it sent to the judge. According to the scoring notes, 101 of the 456 official records were produced by exactly this code; for the rest, `evaluator/README.md` explains what is and is not known.
+- **Scoring corpus.** Recompute the digest of `benchmark/scoring-corpus/v0.6-c21d5896/tasks/` and reconstruct the earlier corpus with the historical Book A overlay (`benchmark/README.md` shows how). Each evaluation's per-task `specSha` was checked against the corpus named by its own `taskSetSha`.
+- **Evaluator.** You can read the evaluator code and the exact prompts it sent to the judge. According to the scoring notes, 101 of the original 456 records were produced by exactly this code; for the other original records and the six corrected evaluations, `evaluator/README.md` explains what is and is not known.
 - You cannot yet re-run the evaluator from this repository: it imports a few modules of the platform it was developed in. `evaluator/README.md` lists them and what each does.
 - The judge's replies and the per-task evaluation records are not part of this release, so the paper's numbers cannot be recomputed from this repository alone.
 
