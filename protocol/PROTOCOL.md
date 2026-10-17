@@ -25,7 +25,7 @@ A system receives the English brief and the supplied materials, and nothing else
 
 - the brief: `steps[0].userMessage` of `scenario.json` (also `brief.md`);
 - the text materials: each `text-prompt` node of `setup.initialCanvas.nodes` carries one document in full;
-- the image materials: the files listed in `referenceAssets` (to be released with the dataset).
+- the image materials: the files listed in `referenceAssets` (released as the Hugging Face dataset DesignAnything-Bench, https://huggingface.co/datasets/Gemus-AI/DesignAnything-Bench).
 
 Systems never see the evaluation specification. In the paper, no system used skills written for a particular design domain, and none received task-specific hints. Each task contributes one final result per configuration.
 

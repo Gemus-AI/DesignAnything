@@ -4,6 +4,8 @@ DesignAnything-Bench is the benchmark introduced in the paper *Design Anything, 
 
 Project page: <https://designanything.gemus.ai>
 
+Datasets: input images <https://huggingface.co/datasets/Gemus-AI/DesignAnything-Bench> and Design Anything results <https://huggingface.co/datasets/Gemus-AI/DesignAnything-Results>
+
 ## What this repository contains
 
 | Path | Contents | Status |
@@ -12,8 +14,8 @@ Project page: <https://designanything.gemus.ai>
 | `benchmark/KNOWN_ISSUES.md` | Where the scoring corpus differs from the tasks the agents received, and other caveats | Released |
 | `protocol/PROTOCOL.md` | The evaluation protocol: task format, export-pack format, measures, judge configuration | Released |
 | `evaluator/` | Source snapshot of evaluator v1.18 as used for the official scores, with notes on its provenance and on the internal modules it depends on | Released as readable source; it does not run on its own |
-| Input images | The reference images that some tasks supply (the `referenceAssets` of each `scenario.json`) | Not in this repository; planned for release with the dataset |
-| Results | Design Anything outputs and per-task evaluation records | Not in this repository; planned for release as a dataset |
+| Input images | The reference images that some tasks supply (the `referenceAssets` of each `scenario.json`) | Not in this repository; released as the Hugging Face dataset [DesignAnything-Bench](https://huggingface.co/datasets/Gemus-AI/DesignAnything-Bench) |
+| Results | Design Anything outputs and per-task evaluation records | Not in this repository; released as the Hugging Face dataset [DesignAnything-Results](https://huggingface.co/datasets/Gemus-AI/DesignAnything-Results) |
 
 The text materials that tasks supply are embedded in each `scenario.json`, so every task is complete except for its input images.
 
@@ -30,11 +32,11 @@ See `benchmark/README.md` for the file formats and `protocol/PROTOCOL.md` for ho
 
 What we verified before publishing, and what you can check yourself today:
 
-- **Tasks.** We verified that the files in `benchmark/tasks/` are byte-identical to the task files bundled with the runs reported in the paper (`benchmark/README.md` says how strongly for each task). The run archives are not public, so today you can check this only through the digests in `index.csv`; the planned dataset release will let you check it against the runs.
+- **Tasks.** We verified that the files in `benchmark/tasks/` are byte-identical to the task files bundled with the runs reported in the paper (`benchmark/README.md` says how strongly for each task). The run archives are not public, so you can check this only through the digests in `index.csv`; the Results dataset publishes each run's outputs and evaluation, not the task files the run received.
 - **Scoring corpus.** Recompute the digest of `benchmark/scoring-corpus/v0.6-c21d5896/tasks/` and reconstruct the earlier corpus with the historical Book A overlay (`benchmark/README.md` shows how). Each evaluation's per-task `specSha` was checked against the corpus named by its own `taskSetSha`.
 - **Evaluator.** You can read the evaluator code and the exact prompts it sent to the judge. According to the scoring notes, 101 of the original 456 records were produced by exactly this code; for the other original records and the six corrected evaluations, `evaluator/README.md` explains what is and is not known.
 - You cannot yet re-run the evaluator from this repository: it imports a few modules of the platform it was developed in. `evaluator/README.md` lists them and what each does.
-- The judge's replies and the per-task evaluation records are not part of this release, so the paper's numbers cannot be recomputed from this repository alone.
+- The judge's replies and the per-task evaluation records are not in this repository, so the paper's numbers cannot be recomputed from it alone. The evaluation records are published with the outputs in the Results dataset.
 
 ## Verifying the files
 

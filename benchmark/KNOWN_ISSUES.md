@@ -38,7 +38,7 @@ Every evaluation specification has a `notes` field written while the tasks were 
 
 ## Input images are not included
 
-The tasks' input images are not in this repository. Each `scenario.json` lists them in `referenceAssets` with their SHA-256 digests. They are planned for release with the dataset, after a separate review of their redistribution licenses.
+The tasks' input images are not in this repository. Each `scenario.json` lists them in `referenceAssets` with their SHA-256 digests. They are released, after a separate review of their redistribution licenses, as the Hugging Face dataset DesignAnything-Bench (https://huggingface.co/datasets/Gemus-AI/DesignAnything-Bench), each under its own license.
 
 ## Licence lines inside scenario files
 

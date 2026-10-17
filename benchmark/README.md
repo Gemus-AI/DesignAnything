@@ -36,7 +36,7 @@ The scenario file is what the harness sends to the system under test. The fields
 
 The remaining fields configure the runner used for the paper's own system and are published unchanged so that the file digests stay checkable: `budget` (per-turn limits on tool calls, model steps and wall time), `permissionMode`, `graphContract`, `targetFunctionalNodeRange`, `targetZoneRange`, and `steps[1]`, a `nudge` step. The nudge step is described in `protocol/PROTOCOL.md`. Other systems should receive the brief and the materials and nothing else.
 
-The input images themselves are not in this repository. Their SHA-256 digests in `referenceAssets` will let you check them once they are released with the dataset.
+The input images themselves are not in this repository. They are released as the Hugging Face dataset DesignAnything-Bench (https://huggingface.co/datasets/Gemus-AI/DesignAnything-Bench), where each image is stored under its SHA-256 digest, so the digests in `referenceAssets` let you check them.
 
 ## `spec.json`
 
@@ -74,7 +74,7 @@ The evaluation specification turns the brief into scoring criteria. Systems neve
 
 ## Checking the files yourself
 
-- **The run corpus is what the two Design Anything configurations received.** Before publishing, we verified that the files in `tasks/` are byte-identical to the corpus bundled with the DeepSeek-backed runs, and to the authoring layer each task came from. For the GPT-backed runs, `gptArmCheck` says how strong the check is for each task. The run archives are not public yet; once the dataset is released, these checks can be repeated against it.
+- **The run corpus is what the two Design Anything configurations received.** Before publishing, we verified that the files in `tasks/` are byte-identical to the corpus bundled with the DeepSeek-backed runs, and to the authoring layer each task came from. For the GPT-backed runs, `gptArmCheck` says how strong the check is for each task. The run archives are not public, so these checks cannot be repeated against them; the Results dataset publishes each run's outputs and evaluation, not the task files the run received.
 - **Each evaluation names the corpus it was scored against.** Six corrected Book A records name `sha256:c21d5896cb922e2bbc4bb00dac0b8597bbb903c3cdfa784f606aa09a6b0902ed`; the other 450 retain `sha256:3e7c05f57e269c2964da67774e095d72fe0be0e93b1878f961d75650ec0fb6b9`. Each record's `requirements.specSha` matches the specification in the corpus named by its own `taskSetSha`. The 225 unchanged specifications are identical in both scoring corpora. The historical Book A overlay explains reconstruction of the earlier complete corpus; the generator recomputes both full digests.
 
 The task-set digest is computed over the `.json` files of the `tasks/` directory, sorted by file name: for each file, feed `<file name>:<hex SHA-256 of the file>;` into a running SHA-256, and prefix the result with `sha256:`.
